@@ -48,7 +48,7 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install linters
-        run: pip install mypy ruff isort black
+        run: pip install mypy ruff isort black types-docutils
       - name: Run linters
         run: |
           mypy dispel
