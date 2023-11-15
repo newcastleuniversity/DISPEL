@@ -29,7 +29,7 @@ jobs:
           sudo apt-get -y install libsndfile1
           python -m venv venv
           source venv/bin/activate
-          pip install ".[docs,dev]"
+          pip install ".[docs,dev]" pytest
       - name: Run tests
         run: pytest --cov dispel --cov-report term --cov-report xml:coverage.xml --junitxml junit.xml
       - name: Upload coverage to Codecov
@@ -48,10 +48,10 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install linters
-        run: pip install mypy ruff isort black
+        run: pip install mypy ruff isort black types-Deprecated types-docutils
       - name: Run linters
         run: |
-          mypy --install-types dispel
+          mypy dispel
           ruff dispel tests
           isort -c dispel tests
           black dispel tests --check
@@ -76,7 +76,7 @@ jobs:
       - name: Install dependencies
         run: pip install ".[docs]" pytest
       - name: Run doctest
-        run: pytest --doctest-glob="*.rst" --doctest-plus docs dispel --junitxml junit.xml
+        run: pytest --doctest-glob="*.rst" --doctest-plus ".[docs,dispel]" --junitxml junit.xml
 
   release:
     runs-on: ubuntu-latest
