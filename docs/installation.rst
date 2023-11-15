@@ -8,13 +8,13 @@ From sources
 ------------
 
 The sources for Digital Signal Processing Library can be downloaded
-from the `Gitlab repo`_.
+from the `Github repo`_.
 
 You can clone the public repository:
 
 .. code-block:: console
 
-    $ git clone # TODO UPDATE THE LINK TO THE REPO
+    $ git clone https://github.com/newcastleuniversity/DISPEL.git
 
 Once you have a copy of the source, you can install it using pip:
 
@@ -22,4 +22,4 @@ Once you have a copy of the source, you can install it using pip:
 
     $ pip install .
 
-.. _Gitlab repo: https://gitlab.com/ # TODO UPDATE THE LINK TO THE REPO
+.. _Github repo: https://github.com/newcastleuniversity/DISPEL
