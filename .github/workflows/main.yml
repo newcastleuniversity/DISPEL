@@ -74,7 +74,7 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies and run doc tests
         run: |
-          pip install ".[docs]" pytest pytest-xdist
+          pip install ".[docs]" pytest pytest-xdist pytest-doctestplus mypy-extensions
           python -m pytest --doctest-glob="*.rst" --doctest-plus ".[docs,dispel]" --junitxml junit.xml
 
   release:
@@ -90,3 +90,24 @@ jobs:
         run: npm install semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github -D
       - name: Run semantic-release
         run: npx semantic-release
+
+  pages:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+      - name: Install dependencies
+        run: pip install ".[docs]"
+      - name: Generate documentation
+        run: |
+          sphinx-apidoc -e -M -o docs/api dispel
+          make -C docs html
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./docs/_build/html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
