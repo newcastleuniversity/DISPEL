@@ -29,9 +29,9 @@ jobs:
           sudo apt-get -y install libsndfile1
           python -m venv venv
           source venv/bin/activate
-          pip install ".[docs,dev]" pytest
+          pip install ".[docs,dev]"
       - name: Run tests
-        run: pytest --cov dispel --cov-report term --cov-report xml:coverage.xml --junitxml junit.xml
+        run: python -m pytest --cov dispel --cov-report term --cov-report xml:coverage.xml --junitxml junit.xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
@@ -76,7 +76,7 @@ jobs:
       - name: Install dependencies
         run: pip install ".[docs]" pytest
       - name: Run doctest
-        run: pytest --doctest-glob="*.rst" --doctest-plus ".[docs,dispel]" --junitxml junit.xml
+        run: python -m pytest --doctest-glob="*.rst" --doctest-plus ".[docs,dispel]" --junitxml junit.xml
 
   release:
     runs-on: ubuntu-latest
