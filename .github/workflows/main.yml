@@ -48,10 +48,10 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install linters
-        run: pip install mypy ruff isort black types-docutils
+        run: pip install mypy ruff isort black
       - name: Run linters
         run: |
-          mypy dispel
+          mypy --install-types dispel
           ruff dispel tests
           isort -c dispel tests
           black dispel tests --check
@@ -74,7 +74,7 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install dependencies
-        run: pip install ".[docs]"
+        run: pip install ".[docs]" pytest
       - name: Run doctest
         run: pytest --doctest-glob="*.rst" --doctest-plus docs dispel --junitxml junit.xml
 
