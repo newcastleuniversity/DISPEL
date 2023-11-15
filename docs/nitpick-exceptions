@@ -1,0 +1,51 @@
+# dataclass
+py:class dataclasses.InitVar
+py:class DataFrame
+
+# pandas
+py:class pandas._libs.tslibs.timedeltas.Timedelta
+py:class pandas._libs.tslibs.timestamps.Timestamp
+py:class pandas.core.frame.DataFrame
+py:class pandas.core.series.Series
+
+# numpy
+py:class numpy.float64
+py:class numpy.int64
+
+# scikit-learn
+py:class sklearn.linear_model._base.LinearRegression
+
+# matplotlib
+py:class matplotlib.axes._axes.Axes
+
+# plotly
+py:class plotly.graph_objs.Figure
+py:class plotly.graph_objs._figure.Figure
+
+# sphinx
+py:class sphinx.application.Sphinx
+py:class sphinx.util.docutils.SphinxDirective
+
+# ground
+py:class ground.core.geometries.Multisegment
+py:class ground.core.hints.Scalar
+py:class ground.core.hints.Point
+py:class ground.core.geometries.Segment
+py:class ground.core.geometries.Point
+py:class ground.hints.Point
+py:class Coordinate
+
+# broken inheritance references
+py:class AV
+py:class ValueDefinition
+py:class ValueDefinitionPrototype
+py:class AggregationsDefinitionType
+py:class EntityType
+py:class RawDataValueDefinition
+
+# Sphinx lack of support for typing.Literal
+py:class speed
+py:class pressure
+py:class jerk
+py:class left
+py:class right

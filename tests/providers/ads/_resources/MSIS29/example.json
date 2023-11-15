@@ -1,0 +1,1116 @@
+{
+  "uuid": "63871101-f583-43c7-ad3a-4d563af03f26",
+  "userId": "e7bd99fdfa8a23ede0f828709ea70835aa975893944f0b3b3cc93fcd065b5946",
+  "activationCode": "",
+  "receptionDate": 1595234779471,
+  "mobileSession": {
+    "uuidSession": "7e535876-9492-4df3-9da6-30d4b472977e",
+    "sessionCode": "konectomMsis",
+    "evaluationCodes": [
+      "msis29"
+    ],
+    "isFinished": true,
+    "startDate": "2020-07-20T10:45:33.65+02:00",
+    "endDate": "2020-07-20T10:46:14.175+02:00"
+  },
+  "mobileDevice": {
+    "model": "iPhone XS",
+    "modelCode": "iPhone11,2",
+    "osVersion": "13.5.1",
+    "kernelVersion": null,
+    "buildNumber": "26",
+    "versionNumber": "0.2.7",
+    "platform": "iOS",
+    "screen": {
+      "widthPixels": 375,
+      "heightPixels": 812,
+      "densityDpi": 463,
+      "xDpi": null,
+      "yDpi": null,
+      "scaleFactor": 3
+    }
+  },
+  "mobileEvaluationTest": {
+    "code": "msis29",
+    "finished": true,
+    "exitReason": "nominal",
+    "startDate": "2020-07-20T10:45:33.676+02:00",
+    "beginTimestamp": 1595234733676,
+    "endTimestamp": 1595234774175,
+    "levels": [
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234733682",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234738147",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "3",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "0",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234733682",
+        "endTimestamp": "1595234738147"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234738361",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234739003",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "1",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234738361",
+        "endTimestamp": "1595234739002"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234739212",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234739803",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "4",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "2",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234739212",
+        "endTimestamp": "1595234739803"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234740224",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234740641",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "3",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234740224",
+        "endTimestamp": "1595234740641"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234740850",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234741549",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "3",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "4",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234740850",
+        "endTimestamp": "1595234741549"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234741757",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234742401",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "4",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "5",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234741757",
+        "endTimestamp": "1595234742401"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234742609",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234743354",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "6",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234742609",
+        "endTimestamp": "1595234743354"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234743564",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234744197",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "3",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "7",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234743564",
+        "endTimestamp": "1595234744196"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234744409",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234745022",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "4",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "8",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234744409",
+        "endTimestamp": "1595234745022"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234745232",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234745922",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "9",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234745232",
+        "endTimestamp": "1595234745922"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234746133",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234746765",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "2",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "10",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234746133",
+        "endTimestamp": "1595234746765"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234746975",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234747465",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "4",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "11",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234746975",
+        "endTimestamp": "1595234747465"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234747677",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234748591",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "12",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234747677",
+        "endTimestamp": "1595234748591"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234748802",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234749322",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "3",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "13",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234748802",
+        "endTimestamp": "1595234749322"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234749532",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234750151",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "4",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "14",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234749532",
+        "endTimestamp": "1595234750151"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234750364",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234750905",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "15",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234750364",
+        "endTimestamp": "1595234750904"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234751116",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234751779",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "3",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "16",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234751116",
+        "endTimestamp": "1595234751779"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234751987",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234752481",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "4",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "17",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234751987",
+        "endTimestamp": "1595234752481"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234752695",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234753276",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "18",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234752695",
+        "endTimestamp": "1595234753276"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234753487",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234753977",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "2",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "19",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234753487",
+        "endTimestamp": "1595234753977"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234754184",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234754619",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "4",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "20",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234754184",
+        "endTimestamp": "1595234754619"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234754830",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234755336",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "21",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234754830",
+        "endTimestamp": "1595234755336"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234755540",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234755952",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "2",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "22",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234755540",
+        "endTimestamp": "1595234755952"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234756160",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234756660",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "4",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "23",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234756160",
+        "endTimestamp": "1595234756660"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234756869",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234770402",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "2",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "24",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234756869",
+        "endTimestamp": "1595234770402"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234770614",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234770924",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "3",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "25",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234770614",
+        "endTimestamp": "1595234770924"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234771129",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234771694",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "4",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "26",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234771129",
+        "endTimestamp": "1595234771694"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234771900",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234772400",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "2",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "27",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234771900",
+        "endTimestamp": "1595234772400"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595234772604",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595234773150",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMsis29",
+            "value": "28",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595234772604",
+        "endTimestamp": "1595234773150"
+      }
+    ]
+  }
+}

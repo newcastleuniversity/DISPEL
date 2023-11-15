@@ -1,0 +1,122 @@
+{
+  "uuid": "b621da61-b40f-471e-968c-0c62858b779c",
+  "userId": "1c5f1554eeeb05e947b9077320dd39641d32da22b91ac4d94d0abe67dc24d6df",
+  "activationCode": "",
+  "receptionDate": 1595234640273,
+  "mobileSession": {
+    "uuidSession": "5f49f3cb-4a7a-441d-941b-ae523b9028b8",
+    "sessionCode": "konectomDaily",
+    "evaluationCodes": [
+      "mood",
+      "cps",
+      "pinch",
+      "drawing",
+      "gripForce",
+      "sbtUtt"
+    ],
+    "isFinished": false,
+    "startDate": "2020-07-20T09:17:03.871+02:00",
+    "endDate": null
+  },
+  "mobileDevice": {
+    "model": "iPhone XS",
+    "modelCode": "iPhone11,2",
+    "osVersion": "13.5.1",
+    "kernelVersion": null,
+    "buildNumber": "26",
+    "versionNumber": "0.2.7",
+    "platform": "iOS",
+    "screen": {
+      "widthPixels": 375,
+      "heightPixels": 812,
+      "densityDpi": 463,
+      "xDpi": null,
+      "yDpi": null,
+      "scaleFactor": 3
+    }
+  },
+  "mobileEvaluationTest": {
+    "code": "mood",
+    "finished": true,
+    "exitReason": "nominal",
+    "startDate": "2020-07-20T09:17:03.873+02:00",
+    "beginTimestamp": 1595229423873,
+    "endTimestamp": 1595229427410,
+    "levels": [
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595229424971",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595229423898",
+                    "unit": "ms"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMoodscale",
+            "value": "mood",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595229423898",
+        "endTimestamp": "1595229425621"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1595229426171",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsDisplay",
+                    "value": "1595229425639",
+                    "unit": "ms"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMoodscale",
+            "value": "physicalState",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1595229425639",
+        "endTimestamp": "1595229426714"
+      }
+    ]
+  }
+}

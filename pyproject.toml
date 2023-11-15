@@ -1,0 +1,95 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "dispel/_version.py"
+
+[project]
+name = "dispel"
+authors = [
+    {name = "Alf Scotland and Gautier Cosne and Adrien Juraver and Angelos Karatsidis and Joaquin Penalver de Andres"},
+]
+description = "A python DIgital Signal ProcEssing Library developed to standardize extraction of sensor-derived measures (SDMs) from wearables or smartphones data."
+readme = "README.rst"
+classifiers = [
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+]
+
+requires-python = ">=3.8"
+dependencies = [
+    'networkx',
+    'pandas==1.3.5',
+    'numpy',
+    'scipy',
+    'scikit-learn',
+    'fastdtw',
+    'gatspy',
+    'ground>=2.0.5',
+    'bentley_ottmann>=1.0.0',
+    'deprecated',
+    'packaging',
+    'jellyfish',
+    'PyWavelets',
+    'multimethod==1.5',
+    'soundfile',
+    'unidecode==1.2.0',
+    'numpy-quaternion==2022.4.3',
+    'h5py',
+    'wrapt==1.14.0'
+]
+
+dynamic = ["version"]
+
+[project.optional-dependencies]
+docs = [
+    'docutils',
+    'sphinx',
+    'urllib3<2',  # addressing LibreSSL issue on M1 Mac
+    'jinja2',
+    'numpydoc',
+    'pydata_sphinx_theme',
+    'sphinxcontrib-mermaid',
+    'sphinx_mdinclude',
+    'sphinx-plotly-directive'
+]
+dev = [
+    'coverage',
+    'ruff',
+    'black',
+    'isort',
+    'doc8',
+    'mypy',
+    'types-docutils',
+    'types-Jinja2',
+    'types-Deprecated',
+    'pre-commit',
+    'pytest',
+    'pytest-cov',
+    'pytest-doctestplus',
+    'pytest-profiling',
+    'pytest-runner',
+    'pytest-sphinx',
+    'pytest-sugar',
+    'pytest-icdiff',
+    'pytest-deadfixtures',
+    'pytest-xdist',
+    'watchdog',
+]
+
+[tool.pytest.ini_options]
+addopts = "-n auto"
+junit_family = "xunit2"
+testpaths = ["tests",]
+
+[tool.ruff]
+select = ["D"]
+ignore = ["D105"]  # D105: Missing docstring in magic method
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
