@@ -74,7 +74,7 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies and run doc tests
         run: |
-          pip install ".[docs]" pytest
+          pip install ".[docs]" pytest pytest-xdist
           python -m pytest --doctest-glob="*.rst" --doctest-plus ".[docs,dispel]" --junitxml junit.xml
 
   release:
