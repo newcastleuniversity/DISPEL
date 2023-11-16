@@ -78,6 +78,7 @@ jobs:
           python -m pytest --doctest-glob="*.rst" --doctest-plus ".[docs,dispel]" --junitxml junit.xml
 
   release:
+    needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/release'
     steps:
@@ -102,7 +103,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10
+          python-version: "3.10"
       - name: Install dependencies
         run: pip install ".[docs]"
       - name: Generate documentation
@@ -114,18 +115,3 @@ jobs:
         with:
           publish_dir: ./docs/_build/html
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-  publish:
-    runs-on: ubuntu-latest
-    needs: release
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.10
-      - name: Build and publish
-        run: |
-          pip install build twine
-          python -m build
-          twine upload dist/* -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_PASSWORD }}
