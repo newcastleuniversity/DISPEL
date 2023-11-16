@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.3...v1.0.4) (2023-11-16)
+
+
+### Bug Fixes
+
+* **pages:** update link for cognition and upper .rst ([713ba57](https://github.com/newcastleuniversity/DISPEL/commit/713ba5771bb474550419fc6e29fec5c618845c37))
+
 ## [1.0.3](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.2...v1.0.3) (2023-11-16)
 
 
