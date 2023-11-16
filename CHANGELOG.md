@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.1...v1.0.2) (2023-11-16)
+
+
+### Bug Fixes
+
+* **pages:** add pytest docplus as a dependency to generate the page ([bee88c7](https://github.com/newcastleuniversity/DISPEL/commit/bee88c7ced73f45634800f74bb4065ebd117ee0c))
+
 ## [1.0.1](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.0...v1.0.1) (2023-11-16)
 
 
