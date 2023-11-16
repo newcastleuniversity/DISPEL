@@ -11,8 +11,8 @@ Lower extremity assessments
 
 .. feature-list::
    :name: Six-minute Walk test
-   :steps: dispel.providers.generic.tasks.gait.GaitStepsInclLee
+   :steps: dispel.providers.generic.tasks.gait.steps.GaitStepsInclLee
 
 .. feature-list::
    :name: Two-minute Walk test
-   :steps: dispel.providers.apdm.tasks.gait.STEPS
+   :steps: dispel.providers.apdm.tasks.gait.TwoMinuteWalkTestProcessingSteps
