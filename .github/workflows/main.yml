@@ -89,6 +89,9 @@ jobs:
       - name: Install semantic-release
         run: npm install semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github -D
       - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
 
   pages:
