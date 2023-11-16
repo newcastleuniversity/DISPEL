@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.0...v1.0.1) (2023-11-16)
+
+
+### Bug Fixes
+
+* **CI:** temporarily disable tests on release branch ([f483150](https://github.com/newcastleuniversity/DISPEL/commit/f483150cd728afb8d3af5e461b06793509dadff2))
+* **pages:** change sequence of jobs and update python version for pages ([6ed6314](https://github.com/newcastleuniversity/DISPEL/commit/6ed6314d6d107365a17937d5bb80640cee961a00))
+* **release:** change package.json dependency to gitlab ([25040d0](https://github.com/newcastleuniversity/DISPEL/commit/25040d0ed0cfe783c78a9034a58c8c738e54bb4f))
+
 # 1.0.0 (2023-11-16)
 
 
