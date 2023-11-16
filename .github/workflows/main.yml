@@ -105,7 +105,7 @@ jobs:
         with:
           python-version: "3.10"
       - name: Install dependencies
-        run: pip install ".[docs]"
+        run: pip install ".[docs]" pytest pytest-xdist pytest-doctestplus mypy-extensions
       - name: Generate documentation
         run: |
           sphinx-apidoc -e -M -o docs/api dispel
