@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.2...v1.0.3) (2023-11-16)
+
+
+### Bug Fixes
+
+* **pages:** fix missing Six-minute Walk test and Two-minute Walk test attributes ([3ba4772](https://github.com/newcastleuniversity/DISPEL/commit/3ba4772ed6f30be3edf886c756455dfa0c34a849))
+
 ## [1.0.2](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.1...v1.0.2) (2023-11-16)
 
 
