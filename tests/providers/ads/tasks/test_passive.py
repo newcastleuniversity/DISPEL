@@ -1,22 +1,22 @@
 """Tests for :mod:`dispel.providers.ads.tasks.passive`."""
 from copy import deepcopy
 
-from dispel.data.collections import FeatureSet
+from dispel.data.collections import MeasureSet
 from dispel.data.core import Reading
 from dispel.providers.ads.tasks.passive import process_passive
 from tests.processing.helper import assert_dict_values
 
 
 def test_process_passive(example_reading_passive):
-    """Unit test to ensure the Passive features are well computed."""
+    """Unit test to ensure the Passive measures are well computed."""
     reading = deepcopy(example_reading_passive)
     process_passive(reading)
     assert isinstance(reading, Reading)
 
-    fs = reading.get_level("passive").feature_set
-    assert isinstance(fs, FeatureSet)
+    ms = reading.get_level("passive").measure_set
+    assert isinstance(ms, MeasureSet)
 
-    expected_pt_features = {
+    expected_pt_measures = {
         "passive-steps": 2308,
         "passive-active_duration": 48,
         "passive-avg_act_pace-mean": 1.7305275,
@@ -26,4 +26,4 @@ def test_process_passive(example_reading_passive):
         "passive-avg_act_pace-max": 12.202964,
         "passive-avg_act_pace-q95": 5.494567,
     }
-    assert_dict_values(fs, expected_pt_features)
+    assert_dict_values(ms, expected_pt_measures)

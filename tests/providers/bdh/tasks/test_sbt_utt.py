@@ -3,12 +3,12 @@
 import pytest
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureSet
+from dispel.data.measures import MeasureSet
 from dispel.providers.bdh.tasks.sbt_utt import process_sbt_utt
 from tests.conftest import resource_path
 from tests.processing.helper import (
     assert_dict_values,
-    assert_unique_feature_ids,
+    assert_unique_measure_ids,
     read_results,
 )
 
@@ -23,22 +23,22 @@ def test_process_utt_wo_turns(example_reading_sbt_utt_no_turns):
 
 
 def test_sbtutt_process(example_reading_processed_sbt_utt):
-    """Unit test to ensure the SBT-UTT features are well computed."""
+    """Unit test to ensure the SBT-UTT measures are well computed."""
     expected = read_results(EXAMPLE_SBTUTT_PATH, False)
 
-    feature_set_sbt = example_reading_processed_sbt_utt.get_level("sbt").feature_set
-    feature_set_utt = example_reading_processed_sbt_utt.get_level("utt").feature_set
+    measure_set_sbt = example_reading_processed_sbt_utt.get_level("sbt").measure_set
+    measure_set_utt = example_reading_processed_sbt_utt.get_level("utt").measure_set
 
-    assert isinstance(feature_set_sbt, FeatureSet)
-    assert isinstance(feature_set_utt, FeatureSet)
+    assert isinstance(measure_set_sbt, MeasureSet)
+    assert isinstance(measure_set_utt, MeasureSet)
 
-    assert_dict_values(feature_set_sbt, expected[0][1], relative_error=1e-2)
-    assert_dict_values(feature_set_utt, expected[1][1], relative_error=1e-2)
-    assert_unique_feature_ids(example_reading_processed_sbt_utt)
+    assert_dict_values(measure_set_sbt, expected[0][1], relative_error=1e-2)
+    assert_dict_values(measure_set_utt, expected[1][1], relative_error=1e-2)
+    assert_unique_measure_ids(example_reading_processed_sbt_utt)
 
 
 @pytest.mark.xfail(raises=ValueError)
 def test_sbtutt_process_bdh_input_bug(example_reading_sbt_utt_bug):
-    """Ensure SBT-UTT features are well computed with BDH format."""
+    """Ensure SBT-UTT measures are well computed with BDH format."""
     res = process_sbt_utt(example_reading_sbt_utt_bug).get_reading()
     assert isinstance(res, Reading)

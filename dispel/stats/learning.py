@@ -1,9 +1,9 @@
 """Inter-session Learning analysis.
 
 A module where functions are provided to compute and extract learning parameters from
-feature collections containing processed features. The module provides class and
+measure collections containing processed measures. The module provides class and
 functions to compute and extract parameters from fitted model by curve fit and compute
-relevant learning related features.
+relevant learning related measures.
 """
 from dataclasses import dataclass
 from typing import Dict, Optional, Tuple, Union, cast
@@ -14,7 +14,7 @@ from scipy.optimize import curve_fit
 from scipy.stats import norm, zscore
 from sklearn.metrics import r2_score
 
-from dispel.data.collections import FeatureCollection
+from dispel.data.collections import MeasureCollection
 
 NumericType = Union[float, int, np.ndarray, pd.Series]
 
@@ -62,7 +62,7 @@ class LearningCurve:
         x
             The trial numbers associated with data points.
         y
-            The feature data points.
+            The measure data points.
 
         Returns
         -------
@@ -73,7 +73,7 @@ class LearningCurve:
         return cls(asymptote=asymptote, slope=slope)
 
     def get_warm_up(self, data: Union[pd.Series, np.ndarray]) -> int:
-        """Compute the warm-up argmax for feature values and fitted parameters.
+        """Compute the warm-up argmax for measure values and fitted parameters.
 
         The ``warm_up`` here is actually the minimum number of trials the user has to
         perform in order to reach 90% of the optimal performance (asymptote value) given
@@ -82,12 +82,12 @@ class LearningCurve:
         Parameters
         ----------
         data
-            A numpy array series containing ordered feature values.
+            A numpy array series containing ordered measure values.
 
         Returns
         -------
         int
-            The argmax of the first occurrence of the feature values that reaches 90% of
+            The argmax of the first occurrence of the measure values that reaches 90% of
             the optimal performance given by the model.
 
         Raises
@@ -186,8 +186,8 @@ class LearningParameters:
     #: The subject's id
     subject_id: str
 
-    #: The feature id
-    feature_id: str
+    #: The measure id
+    measure_id: str
 
     #: The learning model
     model: LearningModel
@@ -199,7 +199,7 @@ class LearningParameters:
         """Convert learning parameters to dictionary format."""
         return dict(
             subject_id=self.subject_id,
-            feature_id=self.feature_id,
+            measure_id=self.measure_id,
             **self.model.to_dict(),
             **self.delay_parameters.to_dict(),
         )
@@ -217,7 +217,7 @@ def compute_delay(data: pd.Series) -> DelayParameters:
     -------
     DelayParameters
         A :class:`dispel.stats.learning.DelayParameters` with the values of the mean,
-        median and maximum delay between consecutive trials for a given feature and
+        median and maximum delay between consecutive trials for a given measure and
         subject in days.
     """
     day_diff = data.diff().dt.total_seconds() / 86_400
@@ -231,7 +231,7 @@ def reject_outliers(data: pd.Series, sigma: float) -> pd.Series:
     Parameters
     ----------
     data
-        A pandas series composed of feature values for only one feature and only one
+        A pandas series composed of measure values for only one measure and only one
         user and trials numbers as index.
     sigma
         The standard deviation threshold above which the data points are to be
@@ -269,7 +269,7 @@ def compute_learning_model(
     Parameters
     ----------
     data
-        A pandas series composed of feature values for only one feature and only one
+        A pandas series composed of measure values for only one measure and only one
         user and trials numbers as index.
     tolerance
         The tolerance threshold above which the data points are to be considered
@@ -329,7 +329,7 @@ def compute_learning_model(
 
 
 class LearningResult:
-    """The learning results for one feature and one or multiple subjects."""
+    """The learning results for one measure and one or multiple subjects."""
 
     _COLUMNS = [
         "subject_id",
@@ -345,18 +345,18 @@ class LearningResult:
     ]
 
     def __init__(self):
-        self.feature_id = None
+        self.measure_id = None
         self._parameters = pd.DataFrame(columns=self._COLUMNS)
         self._new_data: Dict[str, pd.Series] = {}
 
     def _add_learning_result(self, other: "LearningResult"):
         # pylint: disable=protected-access
-        if other.feature_id:
-            if self.feature_id and self.feature_id != other.feature_id:
+        if other.measure_id:
+            if self.measure_id and self.measure_id != other.measure_id:
                 raise ValueError(
-                    "Cannot append learning results for different features."
+                    "Cannot append learning results for different measures."
                 )
-            self.feature_id = other.feature_id
+            self.measure_id = other.measure_id
             self._parameters = self._parameters.append(
                 other._parameters, ignore_index=True
             )
@@ -386,7 +386,7 @@ class LearningResult:
         Parameters
         ----------
         learning_parameters
-            The learning parameters for the feature and subject in question.
+            The learning parameters for the measure and subject in question.
 
         Returns
         -------
@@ -402,17 +402,17 @@ class LearningResult:
         Parameters
         ----------
         learning_parameters
-            The learning parameters for the feature and subject in question.
+            The learning parameters for the measure and subject in question.
 
         Raises
         ------
         ValueError
-            If the learning parameters are for a different feature than the one
+            If the learning parameters are for a different measure than the one
             concerning the learning result.
         """
-        self.feature_id = self.feature_id or learning_parameters.feature_id
-        if self.feature_id != learning_parameters.feature_id:
-            raise ValueError("Cannot append learning results for different features.")
+        self.measure_id = self.measure_id or learning_parameters.measure_id
+        if self.measure_id != learning_parameters.measure_id:
+            raise ValueError("Cannot append learning results for different measures.")
 
         self._parameters = self._parameters.append(
             learning_parameters.to_dict(), ignore_index=True
@@ -464,7 +464,7 @@ class LearningResult:
         Returns
         -------
         pandas.Series
-            A pandas series containing the new data points for the feature in question
+            A pandas series containing the new data points for the measure in question
             (without outliers).
 
         Raises
@@ -481,22 +481,22 @@ class LearningResult:
 
 
 def extract_learning_for_one_subject(
-    feature_collection: FeatureCollection,
+    measure_collection: MeasureCollection,
     subject_id: str,
-    feature_id: str,
+    measure_id: str,
     tolerance: float = 0.99,
     reset_trials: bool = True,
 ) -> LearningResult:
-    """Compute learning for a unique subject and a unique feature.
+    """Compute learning for a unique subject and a unique measure.
 
     Parameters
     ----------
-    feature_collection
-        A feature collection containing any features and any subjects.
+    measure_collection
+        A measure collection containing any measures and any subjects.
     subject_id
         The identifier of the subject for which the delay is to be computed.
-    feature_id
-        The identifier of the feature for which the delay is to be computed.
+    measure_id
+        The identifier of the measure for which the delay is to be computed.
     tolerance
         The tolerance threshold above which the data points are to be considered
         outliers and therefore rejected. Should be between ``0`` and ``1``.
@@ -507,23 +507,23 @@ def extract_learning_for_one_subject(
     Returns
     -------
     LearningResult
-        The learning result for one subject of the feature in question. See:
+        The learning result for one subject of the measure in question. See:
         :class:`dispel.stats.learning.LearningResult`.
     """
-    # Retrieve feature values
-    feature_values = feature_collection.get_feature_values_over_time(
-        subject_id=subject_id, feature_id=feature_id, index=["start_date", "trial"]
+    # Retrieve measure values
+    measure_values = measure_collection.get_measure_values_over_time(
+        subject_id=subject_id, measure_id=measure_id, index=["start_date", "trial"]
     ).dropna()
 
     # Compute learning model and delay parameters
     model, delay_parameters = compute_learning_model(
-        feature_values, tolerance, reset_trials
+        measure_values, tolerance, reset_trials
     )
 
     return LearningResult.from_parameters(
         LearningParameters(
             subject_id=subject_id,
-            feature_id=feature_id,
+            measure_id=measure_id,
             model=model,
             delay_parameters=delay_parameters,
         )
@@ -531,19 +531,19 @@ def extract_learning_for_one_subject(
 
 
 def extract_learning_for_all_subjects(
-    feature_collection: FeatureCollection,
-    feature_id: str,
+    measure_collection: MeasureCollection,
+    measure_id: str,
     tolerance: float = 0.99,
     reset_trials: bool = True,
 ) -> LearningResult:
-    """Compute learning parameters for all subjects in a feature collection.
+    """Compute learning parameters for all subjects in a measure collection.
 
     Parameters
     ----------
-    feature_collection
-        A feature collection containing any features and any subjects.
-    feature_id
-        The feature id on which the learning parameters are to be computed.
+    measure_collection
+        A measure collection containing any measures and any subjects.
+    measure_id
+        The measure id on which the learning parameters are to be computed.
     tolerance
         The tolerance threshold above which the data points are to be considered
         outliers and therefore rejected. Should be between ``0`` and ``1``.
@@ -554,18 +554,18 @@ def extract_learning_for_all_subjects(
     Returns
     -------
     LearningResult
-        The learning result for all subjects of the feature in question. See:
+        The learning result for all subjects of the measure in question. See:
         :class:`dispel.stats.learning.LearningResult`.
     """
     learning_results = (
         extract_learning_for_one_subject(
-            feature_collection,
+            measure_collection,
             subject_id=subject_id,
-            feature_id=feature_id,
+            measure_id=measure_id,
             tolerance=tolerance,
             reset_trials=reset_trials,
         )
-        for subject_id in feature_collection.subject_ids
+        for subject_id in measure_collection.subject_ids
     )
 
     return sum(learning_results, LearningResult())

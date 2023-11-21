@@ -35,12 +35,12 @@ For further details on :class:`~dispel.data.core.Reading` and the data model tak
 
 from typing import Any, Callable, Dict, Iterable, List, Optional
 
-from dispel.data.collections import FeatureSet
+from dispel.data.collections import MeasureSet
 from dispel.data.core import Device, Reading, ReadingSchema, Session
 from dispel.data.devices import AndroidPlatform, IOSPlatform, PlatformType, Screen
 from dispel.data.epochs import EpochDefinition
-from dispel.data.features import FeatureValue
 from dispel.data.levels import Context, Level, LevelId
+from dispel.data.measures import MeasureValue
 from dispel.data.raw import RawDataSet, RawDataSetDefinition, RawDataValueDefinition
 from dispel.data.values import Value, ValueDefinition
 from dispel.io.utils import flatten, load_json
@@ -245,15 +245,15 @@ def _parse_value_definition(id_: str, data: Dict, cls):
     )
 
 
-def parse_feature_definition(id_: str, data: Dict) -> ValueDefinition:
-    """Parse a feature definition.
+def parse_measure_definition(id_: str, data: Dict) -> ValueDefinition:
+    """Parse a measure definition.
 
     Parameters
     ----------
     id_
-        The id of the feature value definition
+        The id of the measure value definition
     data
-        The feature definition in BDH json format
+        The measure definition in BDH json format
 
     Returns
     -------
@@ -441,26 +441,26 @@ def parse_raw_data_set_definition(id_: str, data: Dict) -> RawDataSetDefinition:
     )
 
 
-def parse_features(
+def parse_measures(
     data: Dict[str, Any], definitions: Iterable[ValueDefinition]
-) -> FeatureSet:
-    """Parse features from a reading.
+) -> MeasureSet:
+    """Parse measures from a reading.
 
     Parameters
     ----------
     data
-        The data dictionary for features in BDH json format
+        The data dictionary for measures in BDH json format
     definitions
-        The definitions for the features
+        The definitions for the measures
 
     Returns
     -------
-    FeatureSet
-        The created feature set.
+    MeasureSet
+        The created measure set.
     """
     # create dictionary of definitions to match
     def_dict = {str(x.id): x for x in definitions}
-    return FeatureSet([FeatureValue(def_dict[k], v) for k, v in data.items()])
+    return MeasureSet([MeasureValue(def_dict[k], v) for k, v in data.items()])
 
 
 def parse_evaluation(data: Dict) -> BDHEvaluation:
@@ -593,7 +593,7 @@ def enrich_context(schema, level_id, context):
 def parse_level(
     data: dict,
     schema: ReadingSchema,
-    feature_definitions: List[ValueDefinition],
+    measure_definitions: List[ValueDefinition],
     raw_data_definitions: Dict[Any, RawDataSetDefinition],
 ) -> Level:
     """Parse level id from dictionary containing level info.
@@ -604,8 +604,8 @@ def parse_level(
         Dictionary containing level info
     schema
         The schema from data header
-    feature_definitions
-        list of feature definitions
+    measure_definitions
+        list of measure definitions
     raw_data_definitions
         Dict of raw data definitions
 
@@ -615,7 +615,7 @@ def parse_level(
          The parsed level
     """
     # pylint: disable=unused-argument
-    # TODO investigate how to use feature_definitions
+    # TODO investigate how to use measure_definitions
     raw_data_sets = []
     config = data.get(KEYS.configuration)
     if not config:
@@ -624,15 +624,15 @@ def parse_level(
             id_ = "6mwt"
     else:
         id_ = get_level_id(config, schema)
-    # Initialize feature_set to None
-    feature_set = None
+    # Initialize measure_set to None
+    measure_set = None
 
-    # Specific case of NeuroQol where we already have computed features.
+    # Specific case of NeuroQol where we already have computed measures.
     if schema.name == "neuroqol-activity":
-        feature_set = FeatureSet(
+        measure_set = MeasureSet(
             values=[
-                float(data["mobile_computed_features"]["t_score"]),
-                float(data["mobile_computed_features"]["standard_error"]),
+                float(data["mobile_computed_measures"]["t_score"]),
+                float(data["mobile_computed_measures"]["standard_error"]),
             ],
             definitions=[
                 ValueDefinition(
@@ -669,14 +669,14 @@ def parse_level(
         end=epoch.end,
         context=context,
         raw_data_sets=raw_data_sets,
-        feature_set=feature_set,
+        measure_set=measure_set,
     )
 
 
 def parse_levels(
     data: dict,
     schema: ReadingSchema,
-    feature_definitions: List[ValueDefinition],
+    measure_definitions: List[ValueDefinition],
     raw_data_definitions: Dict[Any, RawDataSetDefinition],
 ) -> List[Level]:
     """Parse levels from dict.
@@ -687,8 +687,8 @@ def parse_levels(
         Dict containing data body
     schema
         The schema from data header
-    feature_definitions
-        list of feature definitions
+    measure_definitions
+        list of measure definitions
     raw_data_definitions
         Dict of raw data definitions
 
@@ -708,7 +708,7 @@ def parse_levels(
     data = create_levels(data, schema)
     raw_data_definitions = update_raw_data_definition(raw_data_definitions, schema)
     return [
-        parse_level(level_data, schema, feature_definitions, raw_data_definitions)
+        parse_level(level_data, schema, measure_definitions, raw_data_definitions)
         for level_data in data[KEYS.levels]
     ]
 
@@ -751,21 +751,21 @@ def parse_bdh_reading(data: Dict) -> BDHReading:
     schema = parse_schema(data_header[KEYS.schema_id])
     evaluation = parse_evaluation(data_header)
 
-    feature_definitions = []
+    measure_definitions = []
 
-    if KEYS.features in data_header:
-        header_features = data_header[KEYS.features]
-        if "mobile_computed_features" in header_features:
-            mcf = header_features["mobile_computed_features"]
-            if "activity_features" in mcf:
-                for id_, data_def in mcf["activity_features"].items():
-                    feature_definitions.append(
-                        parse_feature_definition("mobile_" + id_, data_def)
+    if KEYS.measures in data_header:
+        header_measures = data_header[KEYS.measures]
+        if "mobile_computed_measures" in header_measures:
+            mcf = header_measures["mobile_computed_measures"]
+            if "activity_measures" in mcf:
+                for id_, data_def in mcf["activity_measures"].items():
+                    measure_definitions.append(
+                        parse_measure_definition("mobile_" + id_, data_def)
                     )
-        if "activity_features" in header_features:
-            for id_, data_def in header_features["activity_features"].items():
-                feature_definitions.append(
-                    parse_feature_definition("pre-existing_" + id_, data_def)
+        if "activity_measures" in header_measures:
+            for id_, data_def in header_measures["activity_measures"].items():
+                measure_definitions.append(
+                    parse_measure_definition("pre-existing_" + id_, data_def)
                 )
 
     raw_data_definitions = {}
@@ -781,7 +781,7 @@ def parse_bdh_reading(data: Dict) -> BDHReading:
     device = parse_device(data_header[KEYS.acquisition_provenance][KEYS.source_device])
 
     parsed_levels = parse_levels(
-        data_body, schema, feature_definitions, raw_data_definitions
+        data_body, schema, measure_definitions, raw_data_definitions
     )
 
     session = parse_session(data_header)
@@ -790,7 +790,7 @@ def parse_bdh_reading(data: Dict) -> BDHReading:
         evaluation=evaluation,
         schema=schema,
         levels=parsed_levels,
-        feature_set=None,
+        measure_set=None,
         date=data_header.get(KEYS.creation_date_time, None),
         device=device,
         session=session,

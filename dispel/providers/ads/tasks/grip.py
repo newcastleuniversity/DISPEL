@@ -1,6 +1,6 @@
 """Grip Force test related functionality.
 
-This module contains functionality to extract features for the *Grip Force*
+This module contains functionality to extract measures for the *Grip Force*
 test (GRIP).
 """
 import functools
@@ -10,8 +10,8 @@ from typing import Any, Dict, Iterable, List, Optional, Set, Tuple
 import numpy as np
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.levels import Context, Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import DEFAULT_COLUMNS, USER_ACC_MAP, RawDataValueDefinition
 from dispel.data.validators import GREATER_THAN_ZERO, RangeValidator
 from dispel.data.values import AbbreviatedValue as AV
@@ -33,7 +33,7 @@ from dispel.providers.generic.sensor import (
     Resample,
     SetTimestampIndex,
 )
-from dispel.providers.generic.tremor import TremorFeatures
+from dispel.providers.generic.tremor import TremorMeasures
 from dispel.providers.registry import process_factory
 from dispel.stats.core import variation
 from dispel.utils import to_camel_case
@@ -58,7 +58,7 @@ class PlateauModality(AVEnum):
     """Enumerated constant representing the plateau modality.
 
     This modality defines the subpart of the plateau that is kept
-    for feature computation.
+    for measure computation.
     """
 
     def __init__(
@@ -564,7 +564,7 @@ def time_defined_plateau(
     level
         Any Level
     plateau
-        A plateau modality defining the time windows on which features
+        A plateau modality defining the time windows on which measures
         will be computed.
 
     Returns
@@ -620,7 +620,7 @@ class TransformTimeDefinedPlateau(TransformStep):
 
 
 class TransformPressureError(TransformStep):
-    """A TransformStep for pressure error related features."""
+    """A TransformStep for pressure error related measures."""
 
     def __init__(self, level_id, plateau: Optional[PlateauModality] = None):
         def _pressure_error(data):
@@ -773,7 +773,7 @@ def _hand_to_level_id(hand: HandModality) -> str:
 
 
 class ExtractRMSPressure(ExtractStep):
-    """An extraction processing step for pressure accuracy features.
+    """An extraction processing step for pressure accuracy measures.
 
     Parameters
     ----------
@@ -808,8 +808,8 @@ class ExtractRMSPressure(ExtractStep):
             data_set_ids = [id_ + f"_{plateau.av}" for id_ in data_set_ids]
         description += "."
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("pressure", "pressure"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("pressure", "pressure"),
             data_type="float64",
             modalities=modalities,
             aggregation=AV("root mean square error", "RMSE"),
@@ -859,7 +859,7 @@ def applied_force(
 
 
 class ExtractAppliedForceStats(ExtractMultipleStep):
-    """An extraction processing step for applied force features.
+    """An extraction processing step for applied force measures.
 
     Parameters
     ----------
@@ -925,8 +925,8 @@ class ExtractAppliedForceStats(ExtractMultipleStep):
             ]
         description += "."
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("applied force", "applied_force"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("applied force", "applied_force"),
             data_type="float64",
             modalities=modalities,
             description=description,
@@ -998,8 +998,8 @@ class ExtractMeanAppliedForceDiff(ExtractMultipleStep):
             ]
         description += "."
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("MAF difference", "maf_diff"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("MAF difference", "maf_diff"),
             data_type="float64",
             modalities=modalities,
             description=description,
@@ -1030,8 +1030,8 @@ class ExtractThumbPositionVariation(ExtractMultipleStep):
                 position=position,
             )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("coefficient of variation", "cv"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("coefficient of variation", "cv"),
             data_type="float64",
             description="The coefficient of variation of the {position} for "
             f"the {hand}.",
@@ -1110,7 +1110,7 @@ def reaction_time_between_level(plateau: pd.DataFrame, level: Level) -> pd.DataF
 
 
 class TransformTimeRelatedInfo(TransformStep):
-    """An extraction processing step for Time related features."""
+    """An extraction processing step for Time related measures."""
 
     def __init__(self, level_id: str):
         super().__init__(
@@ -1133,7 +1133,7 @@ class TransformTimeRelatedInfo(TransformStep):
 
 
 class ExtractReactionTimeStats(AggregateRawDataSetColumn):
-    """An extraction processing step for Reaction Time features.
+    """An extraction processing step for Reaction Time measures.
 
     Parameters
     ----------
@@ -1142,8 +1142,8 @@ class ExtractReactionTimeStats(AggregateRawDataSetColumn):
     """
 
     def __init__(self, hand: HandModality):
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("reaction time", "rt"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("reaction time", "rt"),
             data_type="float64",
             modalities=[hand.av],
             description=f"The {{aggregation}} time taken to initiate force "
@@ -1202,7 +1202,7 @@ def compute_transition(
 
 
 class ExtractTransitionTime(ExtractStep):
-    """An extraction processing step for Transition Time features.
+    """An extraction processing step for Transition Time measures.
 
     Parameters
     ----------
@@ -1221,8 +1221,8 @@ class ExtractTransitionTime(ExtractStep):
     ):
         cat_from, cat_to = transition
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("transition time", "tt"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("transition time", "tt"),
             data_type="float64",
             modalities=[
                 hand.av,
@@ -1296,18 +1296,18 @@ class TransformOvershoot(TransformStep):
 
 
 class ExtractOvershootStats(AggregateRawDataSetColumn):
-    """An extraction processing step for overshoot features.
+    """An extraction processing step for overshoot measures.
 
     Parameters
     ----------
     hand
-        The hand on which the overshoot features are to be computed.
+        The hand on which the overshoot measures are to be computed.
     """
 
     def __init__(self, hand: HandModality):
         level_id = f"{hand.abbr}-all"
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV(
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV(
                 f"{hand.abbr} pressure overshoot", f"{hand.abbr}-pressure_overshoot"
             ),
             data_type="float64",
@@ -1325,15 +1325,15 @@ class ExtractOvershootStats(AggregateRawDataSetColumn):
         )
 
 
-class GripTremorFeatures(ProcessingStepGroup):
-    """A group of grip processing steps for tremor features.
+class GripTremorMeasures(ProcessingStepGroup):
+    """A group of grip processing steps for tremor measures.
 
     Parameters
     ----------
     hand
-        The hand on which the tremor features are to be computed.
+        The hand on which the tremor measures are to be computed.
     sensor
-        The sensor on which the tremor features are to be computed.
+        The sensor on which the tremor measures are to be computed.
     """
 
     def __init__(self, hand: HandModality, sensor: SensorModality):
@@ -1350,7 +1350,7 @@ class GripTremorFeatures(ProcessingStepGroup):
                 columns=DEFAULT_COLUMNS,
                 freq=20,
             ),
-            TremorFeatures(
+            TremorMeasures(
                 sensor=sensor, data_set_id=f"{data_set_id}_renamed_ts_resampled"
             ),
         ]
@@ -1440,7 +1440,7 @@ for _hand in HandModality:
             if _cat != _cat_to:
                 STEPS += [ExtractTransitionTime(hand=_hand, transition=(_cat, _cat_to))]
     STEPS += [
-        GripTremorFeatures(_hand, sensor)
+        GripTremorMeasures(_hand, sensor)
         for sensor in [SensorModality.ACCELEROMETER, SensorModality.GYROSCOPE]
     ]
 

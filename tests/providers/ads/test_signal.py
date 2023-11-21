@@ -20,7 +20,7 @@ def test_get_dtw_distance(
     example_reading_draw,
     height_screen,
 ):
-    """Test the good calculation of the sim related features."""
+    """Test the good calculation of the sim related measures."""
     # FIXME replace fixture with synthetic data and make test case test-module
     #  independent
     ref = get_reference_path(

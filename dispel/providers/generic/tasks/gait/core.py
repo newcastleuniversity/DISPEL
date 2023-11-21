@@ -8,8 +8,8 @@ import pandas as pd
 from scipy.signal import find_peaks
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import RawDataValueDefinition
 from dispel.data.validators import BETWEEN_MINUS_ONE_AND_ONE, GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
@@ -301,7 +301,7 @@ class DetectStepsProcessingBase(TransformStep, metaclass=ABCMeta):
 
 
 class GaitBoutExtractStep(ExtractStep):
-    """Base class for gait bouts feature extraction."""
+    """Base class for gait bouts measure extraction."""
 
     bout_strategy: BoutStrategy
 
@@ -383,8 +383,8 @@ class ExtractStepCount(GaitBoutExtractStep):
         the levels for extraction.
     """
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("step count", "sc"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("step count", "sc"),
         data_type="uint16",
         validator=GREATER_THAN_ZERO,
         description="The number of steps detected with {step_detector} "
@@ -394,7 +394,7 @@ class ExtractStepCount(GaitBoutExtractStep):
     transform_function = step_count
 
     def get_definition(self, **kwargs) -> ValueDefinition:
-        """Get the feature definition."""
+        """Get the measure definition."""
         step_detector = get_step_detector_from_data_set_ids(
             next(iter(self.get_data_set_ids())), 1
         )
@@ -494,8 +494,8 @@ class ExtractPowerBoutDivSteps(GaitBoutExtractStep):
             "algorithm and the bout strategy {bout_strategy_repr}."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step power", "sp"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step power", "sp"),
             data_type="int16",
             validator=GREATER_THAN_ZERO,
             description=description,
@@ -735,7 +735,7 @@ class TransformStepDurationWithoutBout(TransformStep):
 
 
 class GaitBoutAggregateStep(AggregateRawDataSetColumn):
-    """Base class for gait bouts agg raw data set feature extraction."""
+    """Base class for gait bouts agg raw data set measure extraction."""
 
     bout_strategy: BoutStrategy
 
@@ -771,13 +771,13 @@ class GaitBoutAggregateStep(AggregateRawDataSetColumn):
 
 
 class ExtractStepPowerAll(GaitBoutAggregateStep):
-    """Extract step power related features.
+    """Extract step power related measures.
 
     Parameters
     ----------
     data_set_ids
         The data set ids that will be considered to extract step power
-        features.
+        measures.
     """
 
     def __init__(self, data_set_ids: List[str], **kwargs):
@@ -788,8 +788,8 @@ class ExtractStepPowerAll(GaitBoutAggregateStep):
             "strategy {bout_strategy_repr}."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step power", "sp"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step power", "sp"),
             data_type="float64",
             unit="m^2/s^3",
             validator=GREATER_THAN_ZERO,
@@ -802,13 +802,13 @@ class ExtractStepPowerAll(GaitBoutAggregateStep):
 
 
 class ExtractStepIntensityAll(GaitBoutAggregateStep):
-    """Extract step intensity related features.
+    """Extract step intensity related measures.
 
     Parameters
     ----------
     data_set_ids
         The data set ids that will be considered to extract step intensity
-        features.
+        measures.
     """
 
     def __init__(self, data_set_ids: List[str], **kwargs):
@@ -819,8 +819,8 @@ class ExtractStepIntensityAll(GaitBoutAggregateStep):
             "strategy {bout_strategy_repr}."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step intensity", "si"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step intensity", "si"),
             data_type="float64",
             unit="m/s^2",
             validator=GREATER_THAN_ZERO,
@@ -833,13 +833,13 @@ class ExtractStepIntensityAll(GaitBoutAggregateStep):
 
 
 class ExtractStepDurationAll(GaitBoutAggregateStep):
-    """Extract step duration related features.
+    """Extract step duration related measures.
 
     Parameters
     ----------
     data_set_ids
         The data set ids that will be considered to extract step duration
-        features.
+        measures.
     """
 
     def __init__(self, data_set_ids: List[str], **kwargs):
@@ -850,8 +850,8 @@ class ExtractStepDurationAll(GaitBoutAggregateStep):
             "strategy {bout_strategy_repr}."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step duration", "step_dur"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step duration", "step_dur"),
             data_type="float64",
             unit="s",
             validator=GREATER_THAN_ZERO,
@@ -923,7 +923,7 @@ def walking_detection_harmonic(
 
     A sliding window of three seconds is moved through the time series of
     vertical acceleration to detect walking bouts. Walking is identified based
-    on spectral features computed on the temporal window. More specifically,
+    on spectral measures computed on the temporal window. More specifically,
     walking is seen if the maximum amplitude of the power spectral density
     in the walking frequency band [0.6 Hz - 2.0 Hz] is more significant (and
     more distant than a given threshold) than the maximum amplitude of the
@@ -1044,7 +1044,7 @@ def movement_detection(
         axis=0,
     )
 
-    # 2. Extract features from a moving sliding window (mean_x and sum_std)
+    # 2. Extract measures from a moving sliding window (mean_x and sum_std)
     mean_x = (
         acc_filtered.loc[:, "userAccelerationX"]
         .abs()
@@ -1879,7 +1879,7 @@ class TransformGaitRegularityWithoutBout(_TransformGaitRegularityBase):
 
 
 class ExtractStepRegularity(GaitBoutAggregateStep):
-    """Extract step regularity aggregate features.
+    """Extract step regularity aggregate measures.
 
     Parameters
     ----------
@@ -1895,8 +1895,8 @@ class ExtractStepRegularity(GaitBoutAggregateStep):
             "strategy {bout_strategy_repr}."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step regularity", "step_regularity"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step regularity", "step_regularity"),
             data_type="float64",
             validator=BETWEEN_MINUS_ONE_AND_ONE,
             description=description,
@@ -1908,7 +1908,7 @@ class ExtractStepRegularity(GaitBoutAggregateStep):
 
 
 class ExtractStrideRegularity(GaitBoutAggregateStep):
-    """Extract stride regularity aggregate features.
+    """Extract stride regularity aggregate measures.
 
     Parameters
     ----------
@@ -1924,8 +1924,8 @@ class ExtractStrideRegularity(GaitBoutAggregateStep):
             "strategy {bout_strategy_repr}."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("stride regularity", "stride_regularity"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("stride regularity", "stride_regularity"),
             data_type="float64",
             validator=BETWEEN_MINUS_ONE_AND_ONE,
             description=description,

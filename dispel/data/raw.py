@@ -130,7 +130,7 @@ def _create_value_definition_dict(
         for definition in definitions:
             if definition.id in res:
                 raise ValueError(
-                    f"Duplicate feature value definition for {definition.id}"
+                    f"Duplicate measure value definition for {definition.id}"
                 )
             res[definition.id] = definition
 

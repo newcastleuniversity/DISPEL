@@ -409,17 +409,17 @@ class WrappedResult(FlagMixIn, Generic[WrappedResultType]):
 
     Parameters
     ----------
-    feature_value
-        The value of the feature returned by the extraction function.
+    measure_value
+        The value of the measure returned by the extraction function.
 
     Attributes
     ----------
-    feature_value
-        The value of the feature returned by the extraction function.
+    measure_value
+        The value of the measure returned by the extraction function.
 
     Examples
     --------
-    Assuming we wanted to flag features directly inside a custom extraction function
+    Assuming we wanted to flag measures directly inside a custom extraction function
     based on some metrics calculated, one can do
 
     >>> from dispel.processing.extract import WrappedResult
@@ -437,18 +437,18 @@ class WrappedResult(FlagMixIn, Generic[WrappedResultType]):
 
     During processing, the class `ExtractStep` allows the transformation function to
     output ``WrappedResult`` objects. The extract step will automatically add any flags
-    present in the ``WrappedResult`` object to the feature value. The ``WrappedResult``
+    present in the ``WrappedResult`` object to the measure value. The ``WrappedResult``
     class supports basic operations with other scalars or ``WrappedResult`` object:
 
     >>> from dispel.processing.extract import WrappedResult
-    >>> res1 = WrappedResult(feature_value=1)
-    >>> res2 = WrappedResult(feature_value=2)
+    >>> res1 = WrappedResult(measure_value=1)
+    >>> res2 = WrappedResult(measure_value=2)
     >>> melted_res = res1 + res2
     >>> melted_res2 = res1 + 1
     """
 
-    def __init__(self, feature_value: WrappedResultType, *args, **kwargs):
-        self.feature_value: WrappedResultType = feature_value
+    def __init__(self, measure_value: WrappedResultType, *args, **kwargs):
+        self.measure_value: WrappedResultType = measure_value
         super().__init__(*args, **kwargs)
 
     def _binary_operator(
@@ -457,15 +457,15 @@ class WrappedResult(FlagMixIn, Generic[WrappedResultType]):
         other: Union[WrappedResultType, "WrappedResult[WrappedResultType]"],
     ) -> "WrappedResult[WrappedResultType]":
         """Perform binary operation on values."""
-        # Get feature value for both WrappedResult and float object
+        # Get measure value for both WrappedResult and float object
         if is_wrapped := isinstance(other, WrappedResult):
-            value_other = cast(WrappedResult, other).feature_value
+            value_other = cast(WrappedResult, other).measure_value
         else:
             value_other = other
 
         # Create a new WrappedResult object with the combination
         res = WrappedResult(
-            func(self.feature_value, value_other)
+            func(self.measure_value, value_other)
         )  # type: WrappedResult[WrappedResultType]
 
         # Inherit flag from current objet
@@ -480,7 +480,7 @@ class WrappedResult(FlagMixIn, Generic[WrappedResultType]):
     def _unary_operation(
         self, func: Callable[[WrappedResultType], WrappedResultType]
     ) -> "WrappedResult[WrappedResultType]":
-        res = WrappedResult(func(self.feature_value))
+        res = WrappedResult(func(self.measure_value))
         res.add_flags(self)
         return res
 

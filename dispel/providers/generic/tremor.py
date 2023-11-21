@@ -7,7 +7,7 @@ from dispel.processing.modalities import SensorModality
 from dispel.processing.transform import Add, Apply
 from dispel.providers.generic.sensor import (
     ExtractAverageSignalEnergy,
-    ExtractPowerSpectrumFeatures,
+    ExtractPowerSpectrumMeasures,
 )
 from dispel.signal.core import euclidean_norm, uniform_power_spectrum
 
@@ -46,7 +46,7 @@ class PowerSpectrumDensity(Apply):
         )
 
 
-class TremorFeatures(ProcessingStepGroup):
+class TremorMeasures(ProcessingStepGroup):
     r"""A group of tremor processing steps according a given data set.
 
     Parameters
@@ -57,7 +57,7 @@ class TremorFeatures(ProcessingStepGroup):
         The data set id on which the transformation is to be performed ('accelerometer',
         'gyroscope').
     columns
-        The columns onto which the signal's tremor features are to be extracted.
+        The columns onto which the signal's tremor measures are to be extracted.
     lower_bound
         The lower bound of frequencies below which the signal is filtered.
     upper_bound
@@ -94,7 +94,7 @@ class TremorFeatures(ProcessingStepGroup):
         # initialize processing steps
         steps: List[ProcessingStep] = []
 
-        # Define a new data set id specific to the power spectrum features
+        # Define a new data set id specific to the power spectrum measures
         power_spectrum_id = data_set_id
 
         # Optional addition of the norm
@@ -126,7 +126,7 @@ class TremorFeatures(ProcessingStepGroup):
                 )
             )
         steps.append(
-            ExtractPowerSpectrumFeatures(
+            ExtractPowerSpectrumMeasures(
                 sensor=sensor,
                 data_set_id=power_spectrum_id,
                 columns=all_columns,

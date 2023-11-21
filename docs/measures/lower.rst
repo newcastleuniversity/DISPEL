@@ -1,18 +1,18 @@
 Lower extremity assessments
 ===========================
 
-.. feature-list::
+.. measure-list::
     :name: Static Balance test
     :steps: dispel.providers.generic.tasks.sbt_utt.sbt.SBTProcessingSteps
 
-.. feature-list::
+.. measure-list::
     :name: U-turn test
     :steps: dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps
 
-.. feature-list::
+.. measure-list::
    :name: Six-minute Walk test
    :steps: dispel.providers.generic.tasks.gait.steps.GaitStepsInclLee
 
-.. feature-list::
+.. measure-list::
    :name: Two-minute Walk test
    :steps: dispel.providers.apdm.tasks.gait.TwoMinuteWalkTestProcessingSteps

@@ -47,4 +47,4 @@ _env = Environment(loader=FileSystemLoader(_templates_path))
 _env.tests["range_validator"] = is_range_validator
 _env.tests["set_validator"] = is_set_validator
 
-FEATURES_DETAIL = _env.get_template("feature_detail.rst")
+MEASURES_DETAIL = _env.get_template("measure_detail.rst")

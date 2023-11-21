@@ -1,18 +1,18 @@
-"""Extensions to Sphinx to automatically document features."""
+"""Extensions to Sphinx to automatically document measures."""
 from importlib import import_module
 
 from docutils.parsers.rst import directives  # type: ignore
 from sphinx.application import Sphinx
 
 from dispel.processing.trace import (
-    FeatureTrace,
+    MeasureTrace,
     get_ancestor_source_graph,
     get_edge_parameters,
     get_traces,
     inspect,
 )
 from dispel.sphinxext.dispel_directive import DispelDirective
-from dispel.sphinxext.templates import FEATURES_DETAIL
+from dispel.sphinxext.templates import MEASURES_DETAIL
 
 
 def get_variable(path):
@@ -34,8 +34,8 @@ def get_variable(path):
     return getattr(module, variable)
 
 
-class FeatureListDirective(DispelDirective):
-    """A directive to automatically document feature lists."""
+class MeasureListDirective(DispelDirective):
+    """A directive to automatically document measure lists."""
 
     option_spec = {
         "steps": directives.unchanged_required,
@@ -44,26 +44,26 @@ class FeatureListDirective(DispelDirective):
 
     def run(self):
         """Run the directive."""
-        # determine features
+        # determine measures
         steps_path = self.options["steps"]
         steps = get_variable(steps_path)
 
         graph = inspect(steps)  # type: ignore
 
-        def _trace_to_tuple(trace: FeatureTrace):
+        def _trace_to_tuple(trace: MeasureTrace):
             agg = get_ancestor_source_graph(graph, trace)
             parameters = get_edge_parameters(agg)
-            return trace.step, trace.feature, parameters
+            return trace.step, trace.measure, parameters
 
-        features = list(_trace_to_tuple(t) for t in get_traces(graph, FeatureTrace))
+        measures = list(_trace_to_tuple(t) for t in get_traces(graph, MeasureTrace))
 
-        rst_text = FEATURES_DETAIL.render(
-            name=self.options["name"], features=features, graph=graph
+        rst_text = MEASURES_DETAIL.render(
+            name=self.options["name"], measures=measures, graph=graph
         )
 
-        return self._parse(rst_text, "<feature-list>")
+        return self._parse(rst_text, "<measure-list>")
 
 
 def setup(app: Sphinx):
     """Run the set-up of the extension."""
-    app.add_directive("feature-list", FeatureListDirective)
+    app.add_directive("measure-list", MeasureListDirective)

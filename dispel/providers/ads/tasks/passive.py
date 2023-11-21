@@ -1,13 +1,13 @@
 """Passive testing related functionality.
 
-This module contains functionality to extract features for *Passive Testing*.
+This module contains functionality to extract measures for *Passive Testing*.
 """
 from typing import List
 
 import numpy as np
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinition, FeatureValueDefinitionPrototype
+from dispel.data.measures import MeasureValueDefinition, MeasureValueDefinitionPrototype
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
 from dispel.processing import ProcessingStep
@@ -28,9 +28,9 @@ class ExtractNumberOfSteps(ExtractStep):
     """Extract the total number of steps."""
 
     def __init__(self):
-        definition = FeatureValueDefinition(
+        definition = MeasureValueDefinition(
             task_name=TASK_NAME,
-            feature_name=AV("total steps", "steps"),
+            measure_name=AV("total steps", "steps"),
             data_type="int",
             validator=GREATER_THAN_ZERO,
         )
@@ -51,9 +51,9 @@ class ExtractNumberOfActiveMinutes(ExtractStep):
         return data.averageActivePace.count()
 
     def __init__(self):
-        definition = FeatureValueDefinition(
+        definition = MeasureValueDefinition(
             task_name=TASK_NAME,
-            feature_name=AV("active duration", "active_duration"),
+            measure_name=AV("active duration", "active_duration"),
             description="Number of active minutes during the day.",
             data_type="int",
             validator=GREATER_THAN_ZERO,
@@ -76,8 +76,8 @@ class AggregateAverageActivePace(AggregateRawDataSetColumn):
             "each bout of one minute."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("average active pace", "avg_act_pace"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("average active pace", "avg_act_pace"),
             data_type="float64",
             unit="s.steps^-1",
             description=description,

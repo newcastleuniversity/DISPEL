@@ -98,8 +98,8 @@
       "version": "2.0.0"
     },
     "activity_start_local_datetime": "2021-03-16T04:14:00.261000+05:30",
-    "features": {
-      "activity_features": {
+    "measures": {
+      "activity_measures": {
         "response_to_physical": {
           "description": "The validated answer to the physical state question, rescaled between 0 and 100"
         },
@@ -173,7 +173,7 @@
         "sensor_validity": {}
       }
     ],
-    "features": {
+    "measures": {
       "response_to_physical": 100,
       "response_to_psychological": 100,
       "total_score": 100.0

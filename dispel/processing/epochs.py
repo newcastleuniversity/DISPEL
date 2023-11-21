@@ -8,8 +8,8 @@ import pandas as pd
 
 from dispel.data.core import Reading
 from dispel.data.epochs import Epoch, EpochDefinition
-from dispel.data.features import FeatureValue
-from dispel.data.levels import Level, LevelEpoch, LevelEpochFeatureValue
+from dispel.data.levels import Level, LevelEpoch, LevelEpochMeasureValue
+from dispel.data.measures import MeasureValue
 from dispel.data.raw import (
     RawDataSet,
     RawDataSetDefinition,
@@ -30,7 +30,7 @@ from dispel.processing.transform import TransformStepChainMixIn
 
 
 class LevelEpochDefinitionMixIn:
-    """A mixin-class for processing steps producing epoch feature sets.
+    """A mixin-class for processing steps producing epoch measure sets.
 
     Parameters
     ----------
@@ -55,7 +55,7 @@ class LevelEpochDefinitionMixIn:
         super().__init__(*args, **kwargs)
 
     def get_definition(self, **_kwargs) -> EpochDefinition:
-        """Get the feature definition.
+        """Get the measure definition.
 
         Other Parameters
         ----------------
@@ -189,8 +189,8 @@ class CreateLevelEpochStep(
             respectively.
         """
         _epoch = LevelEpoch(start=row.start, end=row.end, definition=definition)
-        if "feature_values" in row.index:
-            for _value in row.feature_values:
+        if "measure_values" in row.index:
+            for _value in row.measure_values:
                 _epoch.set(_value)
 
         return _epoch
@@ -370,7 +370,7 @@ class LevelEpochIdFilter(LevelEpochFilter):
 
 
 class LevelEpochProcessingStepMixIn(DataSetProcessingStepProtocol, metaclass=ABCMeta):
-    """A mixin class for all processing steps using epochs to create features.
+    """A mixin class for all processing steps using epochs to create measures.
 
     Parameters
     ----------
@@ -379,7 +379,7 @@ class LevelEpochProcessingStepMixIn(DataSetProcessingStepProtocol, metaclass=ABC
 
     Examples
     --------
-    The most common use case will be extracting features for epochs using
+    The most common use case will be extracting measures for epochs using
     :class:`LevelEpochExtractStep`. The mixin class can also be combined with
     :class:`CreateLevelEpochStep` to create new epochs from existing epochs.
 
@@ -552,24 +552,24 @@ class LevelEpochProcessingResult(LevelProcessingResult):
 
 
 class LevelEpochExtractStep(LevelEpochProcessingStepMixIn, ExtractStep):
-    """A feature extraction processing step for epochs.
+    """A measure extraction processing step for epochs.
 
     Examples
     --------
     Assuming you have a set of epochs that for which you would like to extract a
-    specific feature from a data set leveraging the data between the start and the end
+    specific measure from a data set leveraging the data between the start and the end
     of each epoch, you can do this as follows:
 
     >>> from dispel.data.values import AbbreviatedValue as AV
-    >>> from dispel.data.features import FeatureValueDefinition
+    >>> from dispel.data.measures import MeasureValueDefinition
     >>> from dispel.processing.data_set import transformation
     >>> from dispel.processing.epochs import LevelEpochExtractStep, LevelEpochIdFilter
     >>> class MyLevelEpochExtractStep(LevelEpochExtractStep):
     ...     data_set_ids = 'data_set_id'
     ...     epoch_filter = LevelEpochIdFilter('a')
-    ...     definition = FeatureValueDefinition(
+    ...     definition = MeasureValueDefinition(
     ...         task_name=AV('My Task', 'MT'),
-    ...         feature_name=AV('Maximum', 'max'),
+    ...         measure_name=AV('Maximum', 'max'),
     ...         data_type='int16'
     ...     )
     ...
@@ -577,12 +577,12 @@ class LevelEpochExtractStep(LevelEpochProcessingStepMixIn, ExtractStep):
     ...     def max(self, data: pd.DataFrame) -> float:
     ...        return data['column'].max()
 
-    The example above will create a feature value for each epoch containing the maximum
+    The example above will create a measure value for each epoch containing the maximum
     of the `'column'` column in the data set with the `'data_set_id'`.
     """
 
-    def get_value(self, value: Any, **kwargs) -> FeatureValue:
-        """Get a feature value based on the definition.
+    def get_value(self, value: Any, **kwargs) -> MeasureValue:
+        """Get a measure value based on the definition.
 
         Parameters
         ----------
@@ -593,11 +593,11 @@ class LevelEpochExtractStep(LevelEpochProcessingStepMixIn, ExtractStep):
 
         Returns
         -------
-        FeatureValue
+        MeasureValue
             The ``value`` wrapped with the definition from :meth:`get_definition`.
         """
         assert "epoch" in kwargs, "Missing epoch in passed arguments"
-        return LevelEpochFeatureValue(
+        return LevelEpochMeasureValue(
             kwargs["epoch"], self.get_definition(**kwargs), value
         )
 
@@ -611,9 +611,9 @@ class LevelEpochExtractStep(LevelEpochProcessingStepMixIn, ExtractStep):
         res
             Any result returned by the extraction step. If res is a WrappedResult, the
             flag contained in the object will be automatically added to the
-            :class:`~dispel.data.features.FeatureValue` hence the flagged wrapped
+            :class:`~dispel.data.measures.MeasureValue` hence the flagged wrapped
             results will always translate into flagged
-            :class:`~dispel.data.features.FeatureValue` .
+            :class:`~dispel.data.measures.MeasureValue` .
         level
             The current level
         reading

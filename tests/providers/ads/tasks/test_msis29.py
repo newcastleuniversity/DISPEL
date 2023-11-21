@@ -9,7 +9,7 @@ from dispel.providers.generic.surveys import (
     ConcatenateSurveyLevels,
 )
 from dispel.providers.generic.tasks.msis29 import process_msis29
-from tests.processing.helper import assert_feature_from_reading_value
+from tests.processing.helper import assert_measure_from_reading_value
 
 
 def test_concatenate_survey_levels(example_reading_msis29_multiple_answers):
@@ -42,39 +42,39 @@ def test_concatenate_survey_levels(example_reading_msis29_multiple_answers):
     assert len(data) == level_count
 
 
-def _assert_msis_29_features(
+def _assert_msis_29_measures(
     reading, expected_all, expected_physical, expected_psychological
 ):
     res = process_msis29(reading).get_reading()
 
-    assert_feature_from_reading_value(
+    assert_measure_from_reading_value(
         res, "msis29-ans_all", expected_all, SURVEY_RESPONSES_LEVEL_ID
     )
-    assert_feature_from_reading_value(
+    assert_measure_from_reading_value(
         res, "msis29-ans_phys", expected_physical, SURVEY_RESPONSES_LEVEL_ID
     )
-    assert_feature_from_reading_value(
+    assert_measure_from_reading_value(
         res, "msis29-ans_psy", expected_psychological, SURVEY_RESPONSES_LEVEL_ID
     )
 
 
 def test_process_msis29_ads(example_reading_msis29):
-    """Unit test to ensure the MSIS29 scale features are well computed."""
-    _assert_msis_29_features(example_reading_msis29, 73, 50, 23)
+    """Unit test to ensure the MSIS29 scale measures are well computed."""
+    _assert_msis_29_measures(example_reading_msis29, 73, 50, 23)
 
 
 def test_process_msis29_ads_multiple_answers(example_reading_msis29_multiple_answers):
     """Test multiple answers."""
-    _assert_msis_29_features(example_reading_msis29_multiple_answers, 75, 55, 20)
+    _assert_msis_29_measures(example_reading_msis29_multiple_answers, 75, 55, 20)
 
 
 def test_process_msis29_ads_answer(example_reading_msis29):
-    """Unit test to ensure the MSIS29 answer features are well computed."""
+    """Unit test to ensure the MSIS29 answer measures are well computed."""
     res = process_msis29(example_reading_msis29).get_reading()
 
-    assert_feature_from_reading_value(
+    assert_measure_from_reading_value(
         res, "msis29-q_1-res", 3, SURVEY_RESPONSES_LEVEL_ID
     )
-    assert_feature_from_reading_value(
+    assert_measure_from_reading_value(
         res, "msis29-q_29-res", 1, SURVEY_RESPONSES_LEVEL_ID
     )

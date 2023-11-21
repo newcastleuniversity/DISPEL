@@ -7,18 +7,18 @@ from pandas.testing import assert_frame_equal
 from dispel.data.validators import RangeValidator, SetValidator
 from dispel.data.values import ValueDefinition
 from dispel.docutils import (
-    convert_feature_value_definition_to_dict,
-    feature_value_definitions_to_data_frame,
-    get_feature_value_definitions_data_frame,
+    convert_measure_value_definition_to_dict,
+    get_measure_value_definitions_data_frame,
+    measure_value_definitions_to_data_frame,
 )
 from dispel.processing import ProcessingStep
 from dispel.processing.extract import ExtractStep
-from dispel.processing.trace import collect_feature_value_definitions
+from dispel.processing.trace import collect_measure_value_definitions
 from dispel.providers.registry import PROCESSING_STEPS
 
 
-def test_convert_feature_value_definition_to_dict():
-    """Test convert_feature_value_definition_to_dict."""
+def test_convert_measure_value_definition_to_dict():
+    """Test convert_measure_value_definition_to_dict."""
     definition = ValueDefinition(
         id_="test",
         name="Test",
@@ -28,7 +28,7 @@ def test_convert_feature_value_definition_to_dict():
     )
     step = ExtractStep("dummy", lambda *_: None, definition)
 
-    assert convert_feature_value_definition_to_dict(step, definition) == {
+    assert convert_measure_value_definition_to_dict(step, definition) == {
         "id": "test",
         "name": "Test",
         "description": "Test description",
@@ -49,14 +49,14 @@ def test_convert_feature_value_definition_to_dict():
         (RangeValidator(lower_bound=0, upper_bound=1), 0, 1),
     ],
 )
-def test_convert_feature_value_definition_to_dict_range_validator(
+def test_convert_measure_value_definition_to_dict_range_validator(
     validator, values_min, values_max
 ):
-    """Test convert_feature_value_definition_to_dict with range validator."""
+    """Test convert_measure_value_definition_to_dict with range validator."""
     definition = ValueDefinition(id_="test", name="Test", validator=validator)
     step = ExtractStep("dummy", lambda *_: None, definition)
 
-    assert convert_feature_value_definition_to_dict(step, definition) == {
+    assert convert_measure_value_definition_to_dict(step, definition) == {
         "id": "test",
         "name": "Test",
         "description": None,
@@ -73,14 +73,14 @@ def test_convert_feature_value_definition_to_dict_range_validator(
     "values,expected",
     [({1: "one", 2: "two"}, {1: "one", 2: "two"}), ([1, 2, 3], {1, 2, 3})],
 )
-def test_convert_feature_value_definition_to_dict_set_validator(values, expected):
-    """Test convert_feature_value_definition_to_dict with set validator."""
+def test_convert_measure_value_definition_to_dict_set_validator(values, expected):
+    """Test convert_measure_value_definition_to_dict with set validator."""
     definition = ValueDefinition(
         id_="test", name="Test", validator=SetValidator(values)
     )
     step = ExtractStep("dummy", lambda *_: None, definition)
 
-    assert convert_feature_value_definition_to_dict(step, definition) == {
+    assert convert_measure_value_definition_to_dict(step, definition) == {
         "id": "test",
         "name": "Test",
         "description": None,
@@ -93,11 +93,11 @@ def test_convert_feature_value_definition_to_dict_set_validator(values, expected
     }
 
 
-def test_feature_value_definitions_to_data_frame():
-    """Test feature value definitions to data frame."""
+def test_measure_value_definitions_to_data_frame():
+    """Test measure value definitions to data frame."""
     step = ProcessingStep()
     definition = ValueDefinition("a", "A")
-    data = feature_value_definitions_to_data_frame({(step, definition)})
+    data = measure_value_definitions_to_data_frame({(step, definition)})
     expected = pd.DataFrame(
         [
             {
@@ -116,9 +116,9 @@ def test_feature_value_definitions_to_data_frame():
     assert_frame_equal(data, expected)
 
 
-def test_get_feature_value_definitions_data_frame():
-    """Test get feature value definitions data frame."""
-    data = get_feature_value_definitions_data_frame()
+def test_get_measure_value_definitions_data_frame():
+    """Test get measure value definitions data frame."""
+    data = get_measure_value_definitions_data_frame()
     assert isinstance(data, pd.DataFrame)
     expected = {
         "id",
@@ -130,7 +130,7 @@ def test_get_feature_value_definitions_data_frame():
         "values_max",
         "values_in",
         "produced_by",
-        "feature_name",
+        "measure_name",
         "aggregation",
         "task_name",
         *[f"modality_{i}" for i in range(4)],
@@ -145,10 +145,10 @@ def test_get_feature_value_definitions_data_frame():
         pytest.param(v, id=f"{codes}-{rtype}")
         for (codes, rtype), v in PROCESSING_STEPS.items()
         if codes != ("voice-activity",)
-        # FIXME: remove once voice features are implemented
+        # FIXME: remove once voice measures are implemented
     ),
 )
-def test_feature_definition_generation(steps):
-    """A simple test to ensure feature value definitions can be collected."""
-    res = list(collect_feature_value_definitions(steps))
+def test_measure_definition_generation(steps):
+    """A simple test to ensure measure value definitions can be collected."""
+    res = list(collect_measure_value_definitions(steps))
     assert len(res) > 0

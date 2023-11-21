@@ -33,9 +33,9 @@ from dispel.processing.epochs import (
     LevelEpochProcessingStepMixIn,
 )
 from dispel.processing.extract import (
-    AggregateFeatures,
+    AggregateMeasures,
     ExtractStep,
-    FeatureDefinitionMixin,
+    MeasureDefinitionMixin,
 )
 from dispel.processing.level import (
     DefaultLevelFilter,
@@ -52,7 +52,7 @@ class TraceType(Enum):
     STEP_GENERIC = "step"
     STEP_GROUP = "step-group"
     DATA_SET = "data_set"
-    FEATURE = "feature"
+    MEASURE = "measure"
     EPOCH = "epoch"
 
 
@@ -151,23 +151,23 @@ class DataSetTrace(_LevelTraceBase):
 
 
 @dataclass
-class FeatureTrace(_LevelTraceBase):
-    """The trace of a feature.
+class MeasureTrace(_LevelTraceBase):
+    """The trace of a measure.
 
     Attributes
     ----------
-    feature
-        The definition of the feature
+    measure
+        The definition of the measure
     """
 
-    trace_type = TraceType.FEATURE
+    trace_type = TraceType.MEASURE
 
     # FIXME: remove step -> inconsistent with DataTrace and EpochTrace, step is in edge!
-    step: FeatureDefinitionMixin
-    feature: ValueDefinition
+    step: MeasureDefinitionMixin
+    measure: ValueDefinition
 
     def __hash__(self):
-        return hash((repr(self.level), self.feature.id))
+        return hash((repr(self.level), self.measure.id))
 
 
 @dataclass
@@ -325,8 +325,8 @@ def _visit_transform_step(
 def _visit_extract_step(
     graph: nx.MultiDiGraph, step: ExtractStep, **kwargs
 ) -> StepTrace:
-    def _callback(**_kwargs) -> FeatureTrace:
-        return FeatureTrace(
+    def _callback(**_kwargs) -> MeasureTrace:
+        return MeasureTrace(
             _get_level_filter(step),
             step,
             step.get_definition(**_kwargs),
@@ -336,15 +336,15 @@ def _visit_extract_step(
     return step_trace
 
 
-def _create_feature_extract_traces(
-    graph: nx.MultiDiGraph, step: FeatureDefinitionMixin, **kwargs
+def _create_measure_extract_traces(
+    graph: nx.MultiDiGraph, step: MeasureDefinitionMixin, **kwargs
 ):
     assert isinstance(step, ProcessingStep), "step must inherit from ProcessingStep"
 
     _add_trace_node(graph, step_trace := StepTrace(step))
     _add_trace_node(
         graph,
-        output_trace := FeatureTrace(
+        output_trace := MeasureTrace(
             _get_level_filter(step),
             step,
             step.get_definition(**kwargs),
@@ -354,28 +354,28 @@ def _create_feature_extract_traces(
     return step_trace, output_trace
 
 
-def _visit_aggregate_features_step(
-    graph: nx.MultiDiGraph, step: AggregateFeatures, **kwargs
+def _visit_aggregate_measures_step(
+    graph: nx.MultiDiGraph, step: AggregateMeasures, **kwargs
 ) -> StepTrace:
-    step_trace, output_trace = _create_feature_extract_traces(graph, step, **kwargs)
+    step_trace, output_trace = _create_measure_extract_traces(graph, step, **kwargs)
 
-    feature_trace_dict: Dict[DefinitionIdType, FeatureTrace] = {
-        t.feature.id: t for t in get_traces(graph, FeatureTrace)
+    measure_trace_dict: Dict[DefinitionIdType, MeasureTrace] = {
+        t.measure.id: t for t in get_traces(graph, MeasureTrace)
     }
-    for feature_id in step.get_feature_ids(**kwargs):
-        if feature_id not in feature_trace_dict:
+    for measure_id in step.get_measure_ids(**kwargs):
+        if measure_id not in measure_trace_dict:
             warnings.warn(
-                f"{feature_id} not observed in inspection. Will not create "
-                f"edges to step and output feature.",
+                f"{measure_id} not observed in inspection. Will not create "
+                f"edges to step and output measure.",
                 UserWarning,
             )
             continue
 
         graph.add_edge(
-            feature_trace_dict[feature_id], step_trace, type=TraceRelation.INPUT
+            measure_trace_dict[measure_id], step_trace, type=TraceRelation.INPUT
         )
         graph.add_edge(
-            feature_trace_dict[feature_id],
+            measure_trace_dict[measure_id],
             output_trace,
             type=TraceRelation.INPUT,
             step=step,
@@ -384,10 +384,10 @@ def _visit_aggregate_features_step(
     return step_trace
 
 
-def _visit_feature_definition_mixin_step(
-    graph: nx.MultiDiGraph, step: FeatureDefinitionMixin, **kwargs
+def _visit_measure_definition_mixin_step(
+    graph: nx.MultiDiGraph, step: MeasureDefinitionMixin, **kwargs
 ) -> StepTrace:
-    step_trace, _ = _create_feature_extract_traces(graph, step, **kwargs)
+    step_trace, _ = _create_measure_extract_traces(graph, step, **kwargs)
     return step_trace
 
 
@@ -421,7 +421,7 @@ def _visit_level_epoch_extract_step(
     graph: nx.MultiDiGraph, step: LevelEpochExtractStep, **kwargs
 ) -> StepTrace:
     def _callback(**_kwargs):
-        return FeatureTrace(
+        return MeasureTrace(
             _get_level_filter(step),
             step,
             step.get_definition(**_kwargs),
@@ -517,10 +517,10 @@ def _visit_processing_step(
     # Extracts
     elif isinstance(step, ExtractStep):
         trace = _visit_extract_step(graph, step, **kwargs)
-    elif isinstance(step, AggregateFeatures):
-        trace = _visit_aggregate_features_step(graph, step, **kwargs)
-    elif isinstance(step, FeatureDefinitionMixin):
-        trace = _visit_feature_definition_mixin_step(graph, step, **kwargs)
+    elif isinstance(step, AggregateMeasures):
+        trace = _visit_aggregate_measures_step(graph, step, **kwargs)
+    elif isinstance(step, MeasureDefinitionMixin):
+        trace = _visit_measure_definition_mixin_step(graph, step, **kwargs)
     # Transformations
     elif isinstance(step, TransformStep):
         trace = _visit_transform_step(graph, step, **kwargs)
@@ -614,26 +614,26 @@ def get_ancestors(
 def _rel_filter_sources(
     _graph: nx.MultiDiGraph, _trace: Trace, predecessor: Trace
 ) -> bool:
-    return isinstance(predecessor, (DataSetTrace, FeatureTrace))
+    return isinstance(predecessor, (DataSetTrace, MeasureTrace))
 
 
 def get_ancestor_source_graph(
-    graph: nx.MultiDiGraph, trace: FeatureTrace
+    graph: nx.MultiDiGraph, trace: MeasureTrace
 ) -> nx.MultiDiGraph:
-    """Get a subgraph of all sources leading to the extraction of a feature.
+    """Get a subgraph of all sources leading to the extraction of a measure.
 
     Parameters
     ----------
     graph
         The graph containing all traces.
     trace
-        A trace of a feature for which to return the source graph.
+        A trace of a measure for which to return the source graph.
 
     Returns
     -------
     networkx.MultiDiGraph
         A subgraph of `graph` comprised of nodes and edges only from data
-        sets and features leading to the extraction of the provided feature
+        sets and measures leading to the extraction of the provided measure
         through `trace`.
     """
     return nx.subgraph(
@@ -651,15 +651,15 @@ def get_edge_parameters(graph: nx.MultiDiGraph) -> Dict[ProcessingStep, Set[Para
     return parameters
 
 
-def collect_feature_value_definitions(
+def collect_measure_value_definitions(
     steps: Iterable[ProcessingStep], **kwargs
-) -> Iterator[Tuple[FeatureDefinitionMixin, ValueDefinition]]:
-    """Collect all feature value definitions from a list of processing steps.
+) -> Iterator[Tuple[MeasureDefinitionMixin, ValueDefinition]]:
+    """Collect all measure value definitions from a list of processing steps.
 
     Parameters
     ----------
     steps
-        The steps from which to collect the feature value definitions.
+        The steps from which to collect the measure value definitions.
     kwargs
         See :func:`inspect`.
 
@@ -669,6 +669,6 @@ def collect_feature_value_definitions(
         The processing step in question along with the value definition.
     """
     graph = inspect(steps, **kwargs)
-    for trace in get_traces(graph, FeatureTrace):
+    for trace in get_traces(graph, MeasureTrace):
         # FIXME: infer step from input nodes
-        yield trace.step, trace.feature
+        yield trace.step, trace.measure

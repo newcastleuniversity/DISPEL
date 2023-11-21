@@ -5,7 +5,7 @@ from copy import deepcopy
 import pytest
 
 from dispel.data.core import Reading
-from dispel.io.export import export_features
+from dispel.io.export import export_measures
 from dispel.providers.bdh import PROVIDER_ID
 from dispel.providers.bdh.io import read_bdh
 from dispel.providers.bdh.tasks.ft import process_ft
@@ -16,7 +16,7 @@ PATH_FT = resource_path(PROVIDER_ID, "FINGERTAP/fingertap_uat_3.json")
 PATH_DEVIATED_FT = resource_path(
     PROVIDER_ID, "FINGERTAP/deviation_one_side_tapping.json"
 )
-FEATURE = "mobile_computed_features"
+MEASURE = "mobile_computed_measures"
 TAPS = "number_of_successful_taps"
 
 
@@ -47,19 +47,19 @@ def deviated_record():
 
 
 def test_agreement_mobile_dal(processed_ft, ft_record):
-    """Test the agreement between mobile computed features and DISPEL features."""
+    """Test the agreement between mobile computed measures and DISPEL measures."""
     assert isinstance(processed_ft, Reading)
     right_hand_score = (
-        processed_ft.get_level("right").feature_set.get("ft-right-valtap").value
+        processed_ft.get_level("right").measure_set.get("ft-right-valtap").value
     )
     left_hand_score = (
-        processed_ft.get_level("left").feature_set.get("ft-left-valtap").value
+        processed_ft.get_level("left").measure_set.get("ft-left-valtap").value
     )
     dispel_total_taps = right_hand_score + left_hand_score
-    mobile_computed_total_taps = ft_record["body"][FEATURE][TAPS]
+    mobile_computed_total_taps = ft_record["body"][MEASURE][TAPS]
     assert mobile_computed_total_taps == dispel_total_taps
     assert mobile_computed_total_taps == 276
-    assert mobile_computed_total_taps == processed_ft.feature_set.get("ft-valtap").value
+    assert mobile_computed_total_taps == processed_ft.measure_set.get("ft-valtap").value
 
 
 def test_all_taps_timestamp_consistency(processed_ft):
@@ -129,8 +129,8 @@ def test_all_taps_timestamp_consistency(processed_ft):
         ),
     ],
 )
-def test_bdh_ft_features(processed_ft, level, expected):
-    """Test feature values for Konectom - Finger Tapping Assessment."""
+def test_bdh_ft_measures(processed_ft, level, expected):
+    """Test measure values for Konectom - Finger Tapping Assessment."""
     assert_level_values(processed_ft, level, expected)
 
 
@@ -141,6 +141,6 @@ def test_bdh_flagging(deviated_record):
         "ft-behavioral-deviation-invalid_min_n_taps",
     }
 
-    df = export_features(deviated_record)
+    df = export_measures(deviated_record)
     res = {inv for i in df.flag_ids.unique() for inv in i.split(";")}
     assert expected == res

@@ -4,9 +4,9 @@ from typing import Tuple
 import pandas as pd
 from numpy import deg2rad
 
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.flags import FlagSeverity, FlagType
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import ACCELEROMETER_COLUMNS, GRAVITY_COLUMNS
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
@@ -255,8 +255,8 @@ class LargeTurnsPerMinute(ExtractStep):
         "gyroscope_ts_rotated_resampled_butterworth_low_pass_filter_x_turns",
         "accelerometer",
     ]
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("large_turns_per_min", "large_turns_per_min"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("large_turns_per_min", "large_turns_per_min"),
         data_type="float32",
         validator=GREATER_THAN_ZERO,
         description="The number of large turns per minute.",
@@ -298,8 +298,8 @@ class ExcessiveTurns(FlagLevelStep):
     @flag
     def _turns_per_minute(self, level: Level, **_kwargs) -> bool:
         task_name = _kwargs["task_name"].abbr.lower()
-        feature_id = f"{task_name}-large_turns_per_min"
-        turns_per_minute = level.feature_set.get(feature_id).value
+        measure_id = f"{task_name}-large_turns_per_min"
+        turns_per_minute = level.measure_set.get(measure_id).value
         return turns_per_minute < self.acceptance_threshold
 
 
@@ -315,8 +315,8 @@ class PercentageNotMoving(ExtractStep):
     """Extract percentage of recording where no walking is detected.."""
 
     data_set_ids = ["movement_bouts"]
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("perc_not_moving", "perc_not_moving"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("perc_not_moving", "perc_not_moving"),
         data_type="float32",
         validator=GREATER_THAN_ZERO,
         description="The percentage of the signal with no movement detected.",
@@ -333,8 +333,8 @@ class PercentageNotWalking(ExtractStep):
     """Extract percentage of recording where no walking is detected.."""
 
     data_set_ids = ["walking_placement_no_turn_bouts"]
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("perc_not_walking", "perc_not_walking"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("perc_not_walking", "perc_not_walking"),
         data_type="float32",
         validator=GREATER_THAN_ZERO,
         description="The percentage of the signal with no walking detected.",
@@ -368,8 +368,8 @@ class NoMovementDetected(FlagLevelStep):
     @flag
     def _no_movement_period(self, level: Level, **_kwargs) -> bool:
         task_name = _kwargs["task_name"].abbr.lower()
-        feature_id = f"{task_name}-perc_not_moving"
-        perc_not_walking = level.feature_set.get(feature_id).value
+        measure_id = f"{task_name}-perc_not_moving"
+        perc_not_walking = level.measure_set.get(measure_id).value
         return perc_not_walking < self.acceptance_threshold
 
 
@@ -399,8 +399,8 @@ class NotEnoughRectilinearWalkingOnBeltDetected(FlagLevelStep):
     @flag
     def _no_walking_period(self, level: Level, **_kwargs) -> bool:
         task_name = _kwargs["task_name"].abbr.lower()
-        feature_id = f"{task_name}-perc_not_walking"
-        perc_not_walking = level.feature_set.get(feature_id).value
+        measure_id = f"{task_name}-perc_not_walking"
+        perc_not_walking = level.measure_set.get(measure_id).value
         return perc_not_walking < self.acceptance_threshold
 
 

@@ -1,22 +1,22 @@
-"""Utility functions for feature definition documentation."""
+"""Utility functions for measure definition documentation."""
 from itertools import starmap
 from typing import Dict, Iterable, Optional, Tuple
 
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinition
+from dispel.data.measures import MeasureValueDefinition
 from dispel.data.validators import RangeValidator, SetValidator
 from dispel.data.values import ValueDefinition
 from dispel.processing.core import ProcessingStep
-from dispel.processing.extract import FeatureDefinitionMixin
-from dispel.processing.trace import collect_feature_value_definitions
+from dispel.processing.extract import MeasureDefinitionMixin
+from dispel.processing.trace import collect_measure_value_definitions
 from dispel.providers.registry import PROCESSING_STEPS
 
 
-def convert_feature_value_definition_to_dict(
+def convert_measure_value_definition_to_dict(
     step: ProcessingStep, definition: ValueDefinition
 ) -> Dict[str, Optional[str]]:
-    """Convert a feature value definition into a dictionary representation.
+    """Convert a measure value definition into a dictionary representation.
 
     Parameters
     ----------
@@ -49,11 +49,11 @@ def convert_feature_value_definition_to_dict(
             values_in = validator.allowed_values
 
     # Additional parameters
-    feature_definition_kwargs = {}
-    if isinstance(definition, FeatureValueDefinition):
-        feature_definition_kwargs = {
+    measure_definition_kwargs = {}
+    if isinstance(definition, MeasureValueDefinition):
+        measure_definition_kwargs = {
             "task_name": definition.task_name,
-            "feature_name": definition.feature_name,
+            "measure_name": definition.measure_name,
             **{
                 f"modality_{i}": str(m)
                 for i, m in enumerate(definition.modalities or [])
@@ -71,48 +71,48 @@ def convert_feature_value_definition_to_dict(
         "values_max": values_max,
         "values_in": values_in,
         "produced_by": repr(step),
-        **feature_definition_kwargs,
+        **measure_definition_kwargs,
     }
 
 
-def feature_value_definitions_to_data_frame(
-    definitions: Iterable[Tuple[FeatureDefinitionMixin, ValueDefinition]]
+def measure_value_definitions_to_data_frame(
+    definitions: Iterable[Tuple[MeasureDefinitionMixin, ValueDefinition]]
 ) -> pd.DataFrame:
-    """Convert a list of feature value definitions into a data frame.
+    """Convert a list of measure value definitions into a data frame.
 
     Parameters
     ----------
     definitions
-        A list of tuples of processing steps and the produced feature value definitions
+        A list of tuples of processing steps and the produced measure value definitions
         to be converted into a data frame representation.
 
     Returns
     -------
     pandas.DataFrame
         The definitions as data frame. See also
-        :func:`convert_feature_value_definition_to_dict` on the specific columns
+        :func:`convert_measure_value_definition_to_dict` on the specific columns
         provided.
 
     """
-    return pd.DataFrame(starmap(convert_feature_value_definition_to_dict, definitions))
+    return pd.DataFrame(starmap(convert_measure_value_definition_to_dict, definitions))
 
 
-def get_feature_value_definitions_data_frame() -> pd.DataFrame:
-    """Get a data frame of all available features in the library.
+def get_measure_value_definitions_data_frame() -> pd.DataFrame:
+    """Get a data frame of all available measures in the library.
 
     Returns
     -------
     pandas.DataFrame
-        A data frame containing all feature value definitions. See also
-        :func:`feature_value_definitions_to_data_frame`.
+        A data frame containing all measure value definitions. See also
+        :func:`measure_value_definitions_to_data_frame`.
     """
     instrument_data = []
 
     for steps in PROCESSING_STEPS.values():
         if isinstance(steps, ProcessingStep):
             steps = [steps]
-        definitions = collect_feature_value_definitions(steps)
-        data = feature_value_definitions_to_data_frame(definitions)
+        definitions = collect_measure_value_definitions(steps)
+        data = measure_value_definitions_to_data_frame(definitions)
         instrument_data.append(data)
 
     return pd.concat(instrument_data, ignore_index=True)

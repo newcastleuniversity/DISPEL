@@ -4,7 +4,7 @@ from typing import Any, Iterable, List, Optional
 import pandas as pd
 from packaging import version
 
-from dispel.data.collections import FeatureSet
+from dispel.data.collections import MeasureSet
 from dispel.data.core import Evaluation, Reading, ReadingSchema, Session
 from dispel.data.devices import Device
 from dispel.data.levels import Context, Level, Modalities
@@ -23,8 +23,8 @@ class ADSReading(Reading):
         The session information
     levels
         An iterable of levels
-    feature_set
-        A list of features already processed on the device
+    measure_set
+        A list of measures already processed on the device
     schema
         The schema of the reading
     date
@@ -38,14 +38,14 @@ class ADSReading(Reading):
         evaluation: Evaluation,
         session: Session,
         levels: Optional[Iterable[Level]] = None,
-        feature_set: Optional[FeatureSet] = None,
+        measure_set: Optional[MeasureSet] = None,
         schema: Optional[ReadingSchema] = None,
         date: Any = None,
         device: Optional[Device] = None,
     ):
         date_ = pd.Timestamp(date, unit="ms")
         super().__init__(
-            evaluation, session, levels, feature_set, schema, date_, device
+            evaluation, session, levels, measure_set, schema, date_, device
         )
 
 

@@ -25,7 +25,7 @@ def noop():
 
 @pytest.fixture
 def collection_data_frame():
-    """Fixture representing the info obtained from a features csv file."""
+    """Fixture representing the info obtained from a measures csv file."""
     data = pd.DataFrame(
         {
             "subject_id": {
@@ -124,7 +124,7 @@ def collection_data_frame():
                 8: True,
                 9: True,
             },
-            "feature_id": {
+            "measure_id": {
                 0: "feat_01",
                 1: "feat_01",
                 2: "feat_01",
@@ -136,19 +136,19 @@ def collection_data_frame():
                 8: "feat_02",
                 9: "feat_02",
             },
-            "feature_name": {
-                0: "feature_01",
-                1: "feature_01",
-                2: "feature_01",
-                3: "feature_01",
-                4: "feature_02",
-                5: "feature_02",
-                6: "feature_02",
-                7: "feature_02",
-                8: "feature_02",
-                9: "feature_02",
+            "measure_name": {
+                0: "measure_01",
+                1: "measure_01",
+                2: "measure_01",
+                3: "measure_01",
+                4: "measure_02",
+                5: "measure_02",
+                6: "measure_02",
+                7: "measure_02",
+                8: "measure_02",
+                9: "measure_02",
             },
-            "feature_value": {
+            "measure_value": {
                 0: 10.0,
                 1: 4.0,
                 2: 8.0,
@@ -160,7 +160,7 @@ def collection_data_frame():
                 8: 6.0,
                 9: np.nan,
             },
-            "feature_unit": {
+            "measure_unit": {
                 0: "s",
                 1: "s",
                 2: "s",
@@ -172,7 +172,7 @@ def collection_data_frame():
                 8: "s",
                 9: "s",
             },
-            "feature_type": {
+            "measure_type": {
                 0: "float64",
                 1: "float64",
                 2: "float64",

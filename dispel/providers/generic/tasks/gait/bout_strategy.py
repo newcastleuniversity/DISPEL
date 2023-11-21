@@ -21,7 +21,7 @@ class BoutStrategy:
         Create a view of the datasets.
 
         A user can combined information from the walking bout detection and
-        the datasets to generate a view of the data on which walking features
+        the datasets to generate a view of the data on which walking measures
         will be computed.
 
         Parameters

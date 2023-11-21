@@ -3,7 +3,7 @@ from dispel.providers.generic.tasks.draw.intersections import (
     Point,
     Segment,
     get_intersection_data,
-    get_intersection_features,
+    get_intersection_measures,
     get_ratio,
 )
 
@@ -40,10 +40,10 @@ def test_get_intersection_data(intersection_data):
     assert isinstance(user["seg"][0], Segment)
 
 
-def test_get_intersection_features(intersection_data_formatted):
+def test_get_intersection_measures(intersection_data_formatted):
     """Test the good computation of intersection detection."""
     user, ref = intersection_data_formatted
-    result = get_intersection_features(user, ref)
+    result = get_intersection_measures(user, ref)
     assert len(result) == 2
     assert result.tsDiff[1] == 3
     assert result["cross_per_sec"][0] == 0.3333333333333333

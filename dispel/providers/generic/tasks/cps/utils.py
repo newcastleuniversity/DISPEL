@@ -30,7 +30,7 @@ EXPECTED_DURATION_D2D = 20
 """The expected duration of the digit-to-digit part."""
 
 MINIMAL_N_DATA_POINTS = 3
-r"""The # of data points for a feature below which we create flag."""
+r"""The # of data points for a measure below which we create flag."""
 
 CPS_BASIC_AGGREGATION: List[Tuple[str, str]] = [
     *DEFAULT_AGGREGATIONS,
@@ -58,7 +58,7 @@ r"""Abbreviation for the reaction time."""
 
 CPS_FLAG_NEDP = Flag(
     "cps-behavioral-deviation-nedp",
-    reason="Not enough data points used to compute the feature",
+    reason="Not enough data points used to compute the measure",
 )
 
 
@@ -392,26 +392,26 @@ def study2and3back(data: pd.DataFrame) -> pd.DataFrame:
     corr_data = data.loc[data.expected == data.actual]
     corr_data.reset_index(drop=True, inplace=True)
     # init list
-    feature_dict = defaultdict(list)
+    measure_dict = defaultdict(list)
 
     for index, item in enumerate(corr_data["expected"]):
         # enumerate through the different lags
         for lag in NBACKS:
             if item == corr_data["expected"].shift(lag)[index]:
-                feature_dict[f"back{lag}"].append(
+                measure_dict[f"back{lag}"].append(
                     corr_data["reactionTime"].shift(lag)[index]
                 )
-                feature_dict[f"current{lag}"].append(corr_data["reactionTime"][index])
+                measure_dict[f"current{lag}"].append(corr_data["reactionTime"][index])
 
-    # add rtBack features
+    # add rtBack measures
     series_list = [
-        pd.Series(feature_dict[f"back{it}"], name=f"rtBack{it}", dtype="float64")
+        pd.Series(measure_dict[f"back{it}"], name=f"rtBack{it}", dtype="float64")
         for it in NBACKS
     ]
 
-    # add rtCurrent features
+    # add rtCurrent measures
     series_list += [
-        pd.Series(feature_dict[f"current{it}"], name=f"rtCurrent{it}", dtype="float64")
+        pd.Series(measure_dict[f"current{it}"], name=f"rtCurrent{it}", dtype="float64")
         for it in NBACKS
     ]
     return pd.concat(series_list, axis=1)

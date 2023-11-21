@@ -655,7 +655,7 @@ def test_bdh_draw_non_continuous_flag(
     ],
 )
 def test_draw_process_bdh(example_reading_processed_draw, level, expected):
-    """Unit test to ensure the drawing features are well computed."""
+    """Unit test to ensure the drawing measures are well computed."""
     assert_level_values(example_reading_processed_draw, level, expected)
 
 
@@ -670,8 +670,8 @@ def test_draw_process_bdh_no_corner(example_reading_processed_draw_bug_no_corner
     _ = example_reading_processed_draw_bug_no_corner
 
 
-def test_draw_process_bdh_features(example_reading_processed_draw_bug_parsing):
-    """Test drawing record with existing features in the json file."""
+def test_draw_process_bdh_measures(example_reading_processed_draw_bug_parsing):
+    """Test drawing record with existing measures in the json file."""
     _ = example_reading_processed_draw_bug_parsing
 
 

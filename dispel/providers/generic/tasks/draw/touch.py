@@ -15,7 +15,7 @@ from dispel.data.levels import Level
 from dispel.data.validators import RangeValidator, ValidationException
 from dispel.providers.generic.tasks.draw.intersections import (
     get_intersection_data,
-    get_intersection_features,
+    get_intersection_measures,
 )
 from dispel.providers.generic.tasks.draw.shapes import (
     extract_distance_axis_sc,
@@ -308,10 +308,10 @@ class DrawShape:
         return get_intersection_data(data.reset_index(), self.get_reference)
 
     @cached_property
-    def intersection_features(self) -> pd.DataFrame:
-        """Get intersection detection features."""
+    def intersection_measures(self) -> pd.DataFrame:
+        """Get intersection detection measures."""
         user, ref = self.intersection_data
-        return get_intersection_features(user, ref)
+        return get_intersection_measures(user, ref)
 
     @cached_property
     def deceleration_data(self) -> pd.DataFrame:

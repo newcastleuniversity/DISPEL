@@ -17,10 +17,10 @@ def test_pinch_process_bdh_bug():
 
 @pytest.mark.parametrize("level_id, expected", read_results(RESULTS_PATH_PINCH_UAT))
 def test_pinch_process_bdh_uat(example_reading_processed_pinch_uat, level_id, expected):
-    """Test features on a BDH formatted reading using the latest format."""
+    """Test measures on a BDH formatted reading using the latest format."""
     assert_level_values(example_reading_processed_pinch_uat, level_id, expected)
 
 
 def test_pinch_process_bdh_overwrite(example_reading_processed_pinch_overwrite):
-    """Test features on a BDH formatted reading using the latest format."""
+    """Test measures on a BDH formatted reading using the latest format."""
     _ = example_reading_processed_pinch_overwrite

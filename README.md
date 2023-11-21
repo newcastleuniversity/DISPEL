@@ -1,8 +1,8 @@
-======
-DISPEL
-======
+![Dispel Logo](./docs/_static/dispel-logo.png)
 
-A python DIgital Signal ProcEssing Library developed to standardize extraction of sensor-derived measures (SDMs) from wearables or smartphones data.
+--------------------------------------------------------------------------------
+
+DISPEL is a python DIgital Signal ProcEssing Library developed to standardize extraction of sensor-derived measures (SDMs) from wearables or smartphones data.
 
 - 👋 **Goodbye to Guesswork:** Transparency is key, and with DISPEL, you can track and standardize every step of your data analysis, ditching the guesswork for good.
 
@@ -19,12 +19,22 @@ A python DIgital Signal ProcEssing Library developed to standardize extraction o
 - 🏆 **Real-World Ready:** Step out of the lab and into the world with confidence. DISPEL equips you with the tools to factor in real-world variables, ensuring your research stays relevant and resilient.
 
 
-Contribution
-------------
-Join our efforts in enhancing DISPEL's capabilities by contributing new processing modules and improvements; for detailed guidelines, please refer to our <CONTRIBUTING.rst> file.
+## Contribution
 
-Documentation
--------------
+Join our efforts in enhancing DISPEL's capabilities by contributing new processing modules and improvements; for detailed guidelines, please refer to our [CONTRIBUTING](CONTRIBUTING.rst) file.
 
-See our `documentation <https://newcastleuniversity.github.io/DISPEL>` # TODO UPDATE LINK_
+## Documentation
+
+See our [documentation](https://newcastleuniversity.github.io/DISPEL)
 for how to install and get started with `DISPEL`.
+
+## The Team
+
+DISPEL is a community-driven project with several skillful engineers and researchers contributing to it.
+
+DISPEL is currently maintained by [Alf Scotland](https://github.com/alf-scotland), [Angelos Karatsidis](https://github.com/akaratsidis),  with major contributions of talented individuals in various forms and means.
+A non-exhaustive list needs to mention: Gautier Cosne, Adrien Juraver, Joaquin Penalver de Andres, Ali Neishabouri, Clément Dulong, Oussama Tchita, Loïc Carment, Angéline Plaud, Kevin Bouaou.
+
+## License
+
+DISPEL has a MIT-license, as found in the [LICENSE](LICENSE) file.

@@ -1,6 +1,6 @@
 """Voice assessment related functionality.
 
-This module contains functionality to extract features for the
+This module contains functionality to extract measures for the
 *Voice* assessment.
 """
 import base64

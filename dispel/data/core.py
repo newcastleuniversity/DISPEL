@@ -8,9 +8,9 @@ import pandas as pd
 
 from dispel.data.devices import Device
 from dispel.data.epochs import Epoch
-from dispel.data.features import FeatureSet, FeatureValue
 from dispel.data.flags import Flag, FlagMixIn
 from dispel.data.levels import Level, LevelEpoch, LevelId, LevelIdType
+from dispel.data.measures import MeasureSet, MeasureValue
 from dispel.data.raw import RawDataSet
 from dispel.data.values import ValueDefinition
 from dispel.utils import plural
@@ -118,8 +118,8 @@ class Reading(FlagMixIn):
         The evaluation information for this reading
     session
         The session information for this reading
-    feature_set
-        A list of features already processed on the device
+    measure_set
+        A list of measures already processed on the device
     schema
         The schema of the reading
     date
@@ -135,8 +135,8 @@ class Reading(FlagMixIn):
         The session information for this reading
     levels
         An iterable of Level
-    feature_set
-        A list of features already processed on the device
+    measure_set
+        A list of measures already processed on the device
     schema
         The schema of the reading
     date
@@ -150,7 +150,7 @@ class Reading(FlagMixIn):
         evaluation: Evaluation,
         session: Optional[Session] = None,
         levels: Optional[Iterable[Level]] = None,
-        feature_set: Optional[FeatureSet] = None,
+        measure_set: Optional[MeasureSet] = None,
         schema: Optional[ReadingSchema] = None,
         date: Any = None,
         device: Optional[Device] = None,
@@ -158,7 +158,7 @@ class Reading(FlagMixIn):
         super().__init__()
         self.evaluation = evaluation
         self.session = session
-        self.feature_set: FeatureSet = feature_set or FeatureSet()
+        self.measure_set: MeasureSet = measure_set or MeasureSet()
         self.schema = schema
         self.date = pd.Timestamp(date) if date else None
         self.device = device
@@ -291,17 +291,17 @@ class Reading(FlagMixIn):
         """
         return self.get_level(level_id).get_raw_data_set(data_set_id)
 
-    def get_feature_set(self, level_id: Optional[LevelIdType] = None) -> FeatureSet:
-        """Get feature_set from level identified with level_id."""
+    def get_measure_set(self, level_id: Optional[LevelIdType] = None) -> MeasureSet:
+        """Get measure_set from level identified with level_id."""
         if not level_id:
-            return self.feature_set
-        return self.get_level(level_id).feature_set
+            return self.measure_set
+        return self.get_level(level_id).measure_set
 
-    def get_merged_feature_set(self) -> FeatureSet:
-        """Get a feature set containing all the reading's feature values."""
+    def get_merged_measure_set(self) -> MeasureSet:
+        """Get a measure set containing all the reading's measure values."""
         return sum(
-            (self.feature_set, *(level.feature_set for level in self.levels)),
-            FeatureSet(),
+            (self.measure_set, *(level.measure_set for level in self.levels)),
+            MeasureSet(),
         )
 
     @singledispatchmethod
@@ -315,21 +315,21 @@ class Reading(FlagMixIn):
             return level
         return self.get_level(level)
 
-    @set.register(FeatureSet)
-    def _feature_set(
+    @set.register(MeasureSet)
+    def _measure_set(
         self,
-        value: FeatureSet,
+        value: MeasureSet,
         level: Optional[Union[LevelIdType, Level]] = None,
     ):
         if level is None:
-            self.feature_set += value
+            self.measure_set += value
         else:
             self._get_level(level).set(value)
 
-    @set.register(FeatureValue)
-    def _feature_value(
+    @set.register(MeasureValue)
+    def _measure_value(
         self,
-        value: FeatureValue,
+        value: MeasureValue,
         level: Optional[Union[LevelIdType, Level]] = None,
         epoch: Optional[LevelEpoch] = None,
     ):
@@ -337,11 +337,11 @@ class Reading(FlagMixIn):
             epoch.set(value)
         else:
             if level is None:
-                feature_set = self.feature_set
+                measure_set = self.measure_set
             else:
-                feature_set = self._get_level(level).feature_set
+                measure_set = self._get_level(level).measure_set
 
-            feature_set.set(value)
+            measure_set.set(value)
 
     @set.register(RawDataSet)
     def _raw_data_set(
@@ -354,7 +354,7 @@ class Reading(FlagMixIn):
         self._get_level(level).set(value, concatenate=concatenate, overwrite=overwrite)
 
     @set.register(LevelEpoch)
-    def _epoch_feature_set(self, value: LevelEpoch, level: Union[LevelIdType, Level]):
+    def _epoch_measure_set(self, value: LevelEpoch, level: Union[LevelIdType, Level]):
         self._get_level(level).set(value)
 
     @set.register(Level)
@@ -391,4 +391,4 @@ class Reading(FlagMixIn):
         self.add_flag(value)
 
 
-EntityType = Union[Reading, Level, RawDataSet, FeatureValue, LevelEpoch]
+EntityType = Union[Reading, Level, RawDataSet, MeasureValue, LevelEpoch]

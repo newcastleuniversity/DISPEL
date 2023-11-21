@@ -6,7 +6,7 @@ entities:
     - :class:`~dispel.data.core.Reading`,
     - :class:`~dispel.data.core.Level`,
     - :class:`~dispel.data.raw.RawDataSet`,
-    - :class:`~dispel.data.features.FeatureValue`.
+    - :class:`~dispel.data.measures.MeasureValue`.
 
 It links the creation of each entity with its creators.
 """
@@ -21,9 +21,9 @@ from networkx.classes.coreviews import MultiAdjacencyView
 from networkx.classes.reportviews import NodeView
 
 from dispel.data.core import EntityType, Reading
-from dispel.data.features import FeatureValue
 from dispel.data.flags import Flag, FlagMixIn, verify_flag_uniqueness
 from dispel.data.levels import Level, LevelEpoch
+from dispel.data.measures import MeasureValue
 from dispel.data.raw import RawDataSet
 from dispel.processing.core import (
     FlagError,
@@ -179,8 +179,8 @@ class DataTrace:
     @populate.register(Reading)
     def _reading(self, entity: Reading):
         """Populate data trace with newly created reading."""
-        for feature in entity.feature_set.values():
-            self.add_trace(entity, cast(FeatureValue, feature))
+        for measure in entity.measure_set.values():
+            self.add_trace(entity, cast(MeasureValue, measure))
 
         for level in entity.levels:
             self.add_trace(entity, level)
@@ -192,8 +192,8 @@ class DataTrace:
         for raw_data_set in entity.raw_data_sets:
             self.add_trace(entity, raw_data_set)
 
-        for feature in entity.feature_set.values():
-            self.add_trace(entity, cast(FeatureValue, feature))
+        for measure in entity.measure_set.values():
+            self.add_trace(entity, cast(MeasureValue, measure))
 
     @populate.register(ProcessingResult)
     def _processing_result(self, entity: ProcessingResult):
@@ -374,17 +374,17 @@ class DataTrace:
     def _reading_level(self, source: Reading, result: Level):
         self._add_trace(source, result, allow_multiple_parents=False)
 
-    @add_trace.register(Reading, FeatureValue)
-    def _reading_feature(self, source: Reading, result: FeatureValue):
+    @add_trace.register(Reading, MeasureValue)
+    def _reading_measure(self, source: Reading, result: MeasureValue):
         self._add_trace(source, result, allow_multiple_parents=False)
 
     @add_trace.register(Level, RawDataSet)
     def _level_container(self, source: Level, result: RawDataSet):
         self._add_trace(source, result, allow_multiple_parents=False)
 
-    @add_trace.register(Level, FeatureValue)
-    def _level_feature(
-        self, source: Level, result: FeatureValue, step: Optional[ProcessingStep] = None
+    @add_trace.register(Level, MeasureValue)
+    def _level_measure(
+        self, source: Level, result: MeasureValue, step: Optional[ProcessingStep] = None
     ):
         self._add_trace(source, result, step, allow_multiple_parents=False)
 
@@ -392,16 +392,16 @@ class DataTrace:
     def _level_epoch(self, source: Level, result: LevelEpoch, step: ProcessingStep):
         self._add_trace(source, result, step, allow_multiple_parents=False)
 
-    @add_trace.register(FeatureValue, Level)
-    def _feature_level(self, source: FeatureValue, result: Level, step: ProcessingStep):
+    @add_trace.register(MeasureValue, Level)
+    def _measure_level(self, source: MeasureValue, result: Level, step: ProcessingStep):
         self._add_trace(source, result, step)
 
     @add_trace.register(RawDataSet, RawDataSet)
     def _transform(self, source: RawDataSet, result: RawDataSet, step: TransformStep):
         self._add_trace(source, result, step)
 
-    @add_trace.register(RawDataSet, FeatureValue)
-    def _extract(self, source: RawDataSet, result: FeatureValue, step: ExtractStep):
+    @add_trace.register(RawDataSet, MeasureValue)
+    def _extract(self, source: RawDataSet, result: MeasureValue, step: ExtractStep):
         self._add_trace(source, result, step)
 
     @add_trace.register(RawDataSet, LevelEpoch)
@@ -410,9 +410,9 @@ class DataTrace:
     ):
         self._add_trace(source, result, step)
 
-    @add_trace.register(LevelEpoch, FeatureValue)
-    def _extract_level_epoch_feature(
-        self, source: LevelEpoch, result: FeatureValue, step: ExtractStep
+    @add_trace.register(LevelEpoch, MeasureValue)
+    def _extract_level_epoch_measure(
+        self, source: LevelEpoch, result: MeasureValue, step: ExtractStep
     ):
         self._add_trace(source, result, step)
 
@@ -420,9 +420,9 @@ class DataTrace:
     def _concatenate(self, source: RawDataSet, result: Level, step: ConcatenateLevels):
         self._add_trace(source, result, step)
 
-    @add_trace.register(FeatureValue, FeatureValue)
+    @add_trace.register(MeasureValue, MeasureValue)
     def _aggregate(
-        self, source: FeatureValue, result: FeatureValue, step: ProcessingStep
+        self, source: MeasureValue, result: MeasureValue, step: ProcessingStep
     ):
         self._add_trace(source, result, step)
 
@@ -440,7 +440,7 @@ class DataTrace:
     def check_data_set_usage(self) -> List[RawDataSet]:
         r"""Check the usage of the raw data sets inside the data trace graph.
 
-        It means checking if all leaf nodes are :class:`dispel.data.features.FeatureValue`
+        It means checking if all leaf nodes are :class:`dispel.data.measures.MeasureValue`
         and raise warnings if any are found.
 
         Returns
@@ -451,24 +451,24 @@ class DataTrace:
         Warns
         -----
         UserWarning
-            If leaf entities do not correspond to feature values.
+            If leaf entities do not correspond to measure values.
 
         Raises
         ------
         ValueError
-            If a leaf node if neither a feature value nor a raw data set.
+            If a leaf node if neither a measure value nor a raw data set.
         """
         unused_data_sets: List[RawDataSet] = []
         for node in self.leaves():
             if isinstance(node, RawDataSet):
                 unused_data_sets.append(node)
                 warnings.warn(
-                    "No feature has been created from the following entity " f"{node=}",
+                    "No measure has been created from the following entity " f"{node=}",
                     UserWarning,
                 )
-            elif not isinstance(node, FeatureValue):
+            elif not isinstance(node, MeasureValue):
                 raise ValueError(
-                    "The created leaf nodes should either be raw data sets or feature "
+                    "The created leaf nodes should either be raw data sets or measure "
                     f"values. Found {type(node)}"
                 )
 
@@ -499,26 +499,26 @@ class DataTrace:
         verify_flag_uniqueness(flags)
         return flags
 
-    def get_feature_flags(self, entity: Optional[EntityType] = None) -> List[Flag]:
-        """Get all feature flags related to the entity.
+    def get_measure_flags(self, entity: Optional[EntityType] = None) -> List[Flag]:
+        """Get all measure flags related to the entity.
 
-        If no entity is provided, the default entity is the reading and every feature
+        If no entity is provided, the default entity is the reading and every measure
         flag coming from the reading will be returned.
 
         Parameters
         ----------
         entity
-            An optional entity whose related feature flags are to be retrieved,
+            An optional entity whose related measure flags are to be retrieved,
             if ``None`` is provided the default entity is the root of the data trace.
 
         Returns
         -------
         List[Flag]
-            A list of all feature flags related to the entity. If no entity is
-            provided, all feature flags are returned.
+            A list of all measure flags related to the entity. If no entity is
+            provided, all measure flags are returned.
         """
         entity = self.root if entity is None else entity
-        feature_flags: List[Flag] = []
+        measure_flags: List[Flag] = []
         nodes = chain(
             nx.algorithms.ancestors(self._graph, entity),
             [entity],
@@ -526,8 +526,8 @@ class DataTrace:
         )
 
         for node in nodes:
-            if isinstance(node, FeatureValue):
-                feature_flags += node.get_flags()
+            if isinstance(node, MeasureValue):
+                measure_flags += node.get_flags()
 
-        verify_flag_uniqueness(feature_flags)
-        return feature_flags
+        verify_flag_uniqueness(measure_flags)
+        return measure_flags

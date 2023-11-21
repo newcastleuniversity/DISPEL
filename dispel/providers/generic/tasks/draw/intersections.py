@@ -113,8 +113,8 @@ def get_intersection_data(
     Returns
     -------
     Tuple[pandas.DataFrame, pandas.DataFrame]
-        The proper user data frame to compute tremor-related features and the
-        proper reference data to compute tremor-related features.
+        The proper user data frame to compute tremor-related measures and the
+        proper reference data to compute tremor-related measures.
     """
     new_user = user[["x", "y", "tsTouch"]].copy()
     new_ref = ref.copy()
@@ -189,7 +189,7 @@ def _data_filter_selection(
     return model_data
 
 
-def get_intersection_features(
+def get_intersection_measures(
     user: pd.DataFrame,
     ref: pd.DataFrame,
 ) -> pd.DataFrame:
@@ -206,7 +206,7 @@ def get_intersection_features(
     Returns
     -------
     pandas.DataFrame
-        A pandas data frame containing tremor features related to path
+        A pandas data frame containing tremor measures related to path
         intersection.
     """
 
@@ -271,10 +271,10 @@ def get_intersection_features(
 def compute_intersection_analysis(
     user: pd.DataFrame, reference: pd.DataFrame
 ) -> pd.DataFrame:
-    """Compute the tremor-related features according to intersections.
+    """Compute the tremor-related measures according to intersections.
 
     First get only the valid user trajectory, then format the data needed, and
-    then extract the features.
+    then extract the measures.
 
     Parameters
     ----------
@@ -287,8 +287,8 @@ def compute_intersection_analysis(
     Returns
     -------
     pandas.DataFrame
-        The proper pandas data frame to compute tremor features.
+        The proper pandas data frame to compute tremor measures.
     """
     new_data = get_valid_path(user)
     new_user, new_ref = get_intersection_data(new_data, reference)
-    return get_intersection_features(new_user, new_ref)
+    return get_intersection_measures(new_user, new_ref)

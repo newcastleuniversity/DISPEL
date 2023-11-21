@@ -1,4 +1,4 @@
-"""A module containing models for features."""
+"""A module containing models for measures."""
 from typing import Any, Callable, ClassVar, Dict, List, Optional, Type, Union, cast
 
 import numpy as np
@@ -17,12 +17,12 @@ from dispel.data.values import (
 )
 
 
-class FeatureValue(FlagMixIn, Value):
-    """A feature value."""
+class MeasureValue(FlagMixIn, Value):
+    """A measure value."""
 
     def __repr__(self):
         return (
-            f"<FeatureValue ({self.definition}): {self.value} "
+            f"<MeasureValue ({self.definition}): {self.value} "
             f"({self.flag_count_repr})>"
         )
 
@@ -31,7 +31,7 @@ class FeatureValue(FlagMixIn, Value):
         return "" if value is None else str(value)
 
     def to_dict(self, stringify: bool = False) -> Dict[str, Optional[Any]]:
-        """Get a dictionary representation of feature information.
+        """Get a dictionary representation of measure information.
 
         Parameters
         ----------
@@ -42,28 +42,28 @@ class FeatureValue(FlagMixIn, Value):
         Returns
         -------
         Dict[str, Optional[Any]]
-            A dictionary summarizing feature value information.
+            A dictionary summarizing measure value information.
         """
-        feature_min, feature_max = None, None
+        measure_min, measure_max = None, None
         if isinstance(self.definition.validator, RangeValidator):
-            feature_min = self.definition.validator.lower_bound
-            feature_max = self.definition.validator.upper_bound
+            measure_min = self.definition.validator.lower_bound
+            measure_max = self.definition.validator.upper_bound
 
         if stringify:
             value = str(self.value)
-            feature_min = self._to_string(feature_min)
-            feature_max = self._to_string(feature_max)
+            measure_min = self._to_string(measure_min)
+            measure_max = self._to_string(measure_max)
         else:
             value = self.value
 
         return dict(
-            feature_id=str(self.id),
-            feature_name=self.definition.name,
-            feature_value=value,
-            feature_unit=self.definition.unit,
-            feature_type=self.definition.data_type,
-            feature_min=feature_min,
-            feature_max=feature_max,
+            measure_id=str(self.id),
+            measure_name=self.definition.name,
+            measure_value=value,
+            measure_unit=self.definition.unit,
+            measure_type=self.definition.data_type,
+            measure_min=measure_min,
+            measure_max=measure_max,
         )
 
 
@@ -71,21 +71,21 @@ def _join_not_none(separator, values):
     return separator.join(map(str, filter(lambda x: x is not None, values)))
 
 
-class FeatureId(DefinitionId):
-    """The definition of a feature id for a task.
+class MeasureId(DefinitionId):
+    """The definition of a measure id for a task.
 
     Parameters
     ----------
     task_name
         The name and abbreviation of the task. Note that if no abbreviation is provided
         the name is used directly in the id.
-    feature_name
-        The name of the feature and its abbreviation.
+    measure_name
+        The name of the measure and its abbreviation.
     modalities
-        The modalities and their abbreviations under which the feature is constituted.
+        The modalities and their abbreviations under which the measure is constituted.
     aggregation
-        A method that was used to aggregate a sequence of the underlying feature,
-        e.g., for the feature ``mean response time`` it would be ``mean``.
+        A method that was used to aggregate a sequence of the underlying measure,
+        e.g., for the measure ``mean response time`` it would be ``mean``.
 
     Notes
     -----
@@ -97,10 +97,10 @@ class FeatureId(DefinitionId):
     Examples
     --------
     >>> from dispel.data.values import AbbreviatedValue as AV
-    >>> from dispel.data.features import FeatureId
-    >>> FeatureId(
+    >>> from dispel.data.measures import MeasureId
+    >>> MeasureId(
     ...     task_name=AV('Cognitive Processing Speed', 'CPS'),
-    ...     feature_name=AV('reaction time', 'rt'),
+    ...     measure_name=AV('reaction time', 'rt'),
     ...     modalities=[AV('digit-to-digit', 'dtd')],
     ...     aggregation='mean'
     ... )
@@ -110,12 +110,12 @@ class FeatureId(DefinitionId):
     def __init__(
         self,
         task_name: Union[str, AV],
-        feature_name: Union[str, AV],
+        measure_name: Union[str, AV],
         modalities: Optional[List[Union[str, AV]]] = None,
         aggregation: Optional[Union[str, AV]] = None,
     ):
         self.task_name = AV.wrap(task_name)
-        self.feature_name = AV.wrap(feature_name)
+        self.measure_name = AV.wrap(measure_name)
         self.modalities = None
         if modalities:
             self.modalities = list(map(AV.wrap, modalities))
@@ -128,7 +128,7 @@ class FeatureId(DefinitionId):
                 "_".join(map(lambda x: x.abbr.lower(), self.modalities))
                 if self.modalities
                 else None,
-                self.feature_name.abbr.lower(),
+                self.measure_name.abbr.lower(),
                 self.aggregation.abbr.lower() if self.aggregation else None,
             ],
         )
@@ -153,8 +153,8 @@ class FeatureId(DefinitionId):
         raise NotImplementedError("Not unambiguous parsing of ids possible")
 
 
-class FeatureValueDefinition(ValueDefinition):
-    """The definition of features from tasks.
+class MeasureValueDefinition(ValueDefinition):
+    """The definition of measures from tasks.
 
     Parameters
     ----------
@@ -162,11 +162,11 @@ class FeatureValueDefinition(ValueDefinition):
         The full name of the task and its abbreviation, e.g., ``Cognitive Processing
         Speed test`` and ``CPS`` passed using
         :class:`~dispel.data.values.AbbreviatedValue`.
-    feature_name
-        The name of the feature, e.g. ``reaction time`` and its abbreviation passed
+    measure_name
+        The name of the measure, e.g. ``reaction time`` and its abbreviation passed
         using :class:`~dispel.data.values.AbbreviatedValue`. Note that aggregation
         methods are specified in ``aggregation`` and should not be direclty part of the
-        feature name.
+        measure name.
     unit
         See :class:`~dispel.data.values.ValueDefinition`.
     description
@@ -182,7 +182,7 @@ class FeatureValueDefinition(ValueDefinition):
         CPS test. Abbreviations of the modalities can be passed using
         :class:`~dispel.data.values.AbbreviatedValue`.
     aggregation
-        If the feature is the result of an aggregation, the method that was used to
+        If the measure is the result of an aggregation, the method that was used to
         aggregate. E.g. for ``mean response time`` it would be ``mean``. Abbreviations
         are passed using :class:`~dispel.data.values.AbbreviatedValue`.
     precision
@@ -191,11 +191,11 @@ class FeatureValueDefinition(ValueDefinition):
     Examples
     --------
     >>> from dispel.data.values import AbbreviatedValue as AV
-    >>> from dispel.data.features import FeatureValueDefinition
+    >>> from dispel.data.measures import MeasureValueDefinition
     >>> from dispel.data.validators import RangeValidator
-    >>> FeatureValueDefinition(
+    >>> MeasureValueDefinition(
     ...     task_name = AV('Cognitive Processing Speed test', 'CPS'),
-    ...     feature_name = AV('response time', 'rt'),
+    ...     measure_name = AV('response time', 'rt'),
     ...     unit = 's',
     ...     description = 'The mean time to respond to a presented stimulus',
     ...     data_type = 'float64',
@@ -206,13 +206,13 @@ class FeatureValueDefinition(ValueDefinition):
     ...     ],
     ...     aggregation = 'mean'
     ... )
-    <FeatureValueDefinition: cps-dtd_key1-rt-mean (CPS digit-to-digit ...>
+    <MeasureValueDefinition: cps-dtd_key1-rt-mean (CPS digit-to-digit ...>
     """
 
     def __init__(
         self,
         task_name: Union[str, AV],
-        feature_name: Union[str, AV],
+        measure_name: Union[str, AV],
         unit: Optional[str] = None,
         description: Optional[str] = None,
         data_type: Optional[str] = None,
@@ -222,15 +222,15 @@ class FeatureValueDefinition(ValueDefinition):
         precision: Optional[int] = None,
     ):
         self.task_name = AV.wrap(task_name)
-        self.feature_name = AV.wrap(feature_name)
+        self.measure_name = AV.wrap(measure_name)
         self.modalities = None
         if modalities:
             self.modalities = list(map(AV.wrap, modalities))
         self.aggregation = AV.wrap(aggregation) if aggregation else None
 
-        id_ = FeatureId(
+        id_ = MeasureId(
             task_name=self.task_name,
-            feature_name=self.feature_name,
+            measure_name=self.measure_name,
             modalities=self.modalities,
             aggregation=aggregation,
         )
@@ -241,7 +241,7 @@ class FeatureValueDefinition(ValueDefinition):
                 self.task_name.abbr.upper(),
                 " ".join(map(str, self.modalities)) if self.modalities else None,
                 self.aggregation if self.aggregation else None,
-                self.feature_name,
+                self.measure_name,
             ],
         )
 
@@ -256,15 +256,15 @@ class FeatureValueDefinition(ValueDefinition):
         )
 
 
-class FeatureValueDefinitionPrototype(ValueDefinitionPrototype):
-    """A task feature value definition prototype.
+class MeasureValueDefinitionPrototype(ValueDefinitionPrototype):
+    """A task measure value definition prototype.
 
     This is a convenience method that populates the ``cls`` argument with the
-    :class:`~dispel.data.features.FeatureValueDefinition` class.
+    :class:`~dispel.data.measures.MeasureValueDefinition` class.
     """
 
     def __init__(self, **kwargs: Any):
-        cls = kwargs.pop("cls", FeatureValueDefinition)
+        cls = kwargs.pop("cls", MeasureValueDefinition)
         super().__init__(cls=cls, **kwargs)
 
 
@@ -286,27 +286,27 @@ def row_to_definition(row: pd.Series) -> ValueDefinition:
     MissingColumnError
         If required fields are missing from the pandas' series.
     """
-    expected_columns = {"feature_id", "feature_name", "feature_unit", "feature_type"}
+    expected_columns = {"measure_id", "measure_name", "measure_unit", "measure_type"}
     if not expected_columns.issubset(row.index):
         raise MissingColumnError(expected_columns - set(row.index))
 
     validator = None
-    if {"feature_min", "feature_max"} <= set(row.index):
+    if {"measure_min", "measure_max"} <= set(row.index):
         validator = RangeValidator(
-            lower_bound=cast(Optional[float], np.float_(row.feature_min)),
-            upper_bound=cast(Optional[float], np.float_(row.feature_max)),
+            lower_bound=cast(Optional[float], np.float_(row.measure_min)),
+            upper_bound=cast(Optional[float], np.float_(row.measure_max)),
         )
     return ValueDefinition(
-        id_=row.feature_id,
-        name=row.feature_name,
-        unit=row.feature_unit,
-        data_type=row.feature_type,
+        id_=row.measure_id,
+        name=row.measure_name,
+        unit=row.measure_unit,
+        data_type=row.measure_type,
         validator=validator,
     )
 
 
-def row_to_value(row: pd.Series) -> FeatureValue:
-    """Convert a pandas series to a feature value.
+def row_to_value(row: pd.Series) -> MeasureValue:
+    """Convert a pandas series to a measure value.
 
     Parameters
     ----------
@@ -315,45 +315,45 @@ def row_to_value(row: pd.Series) -> FeatureValue:
 
     Returns
     -------
-    FeatureValue
-        The corresponding feature value.
+    MeasureValue
+        The corresponding measure value.
 
     Raises
     ------
     MissingColumnError
-        If ``feature_value`` field is missing from the pandas' series.
+        If ``measure_value`` field is missing from the pandas' series.
     """
-    if "feature_value" not in row.index:
-        raise MissingColumnError("feature_value")
-    return FeatureValue(
+    if "measure_value" not in row.index:
+        raise MissingColumnError("measure_value")
+    return MeasureValue(
         row_to_definition(row),
-        np.array([row["feature_value"]]).astype(row["feature_type"])[0],
+        np.array([row["measure_value"]]).astype(row["measure_type"])[0],
     )
 
 
-class FeatureSet(ValueSet):
-    """A collection of features."""
+class MeasureSet(ValueSet):
+    """A collection of measures."""
 
-    VALUE_CLS: ClassVar[Type[Value]] = FeatureValue
+    VALUE_CLS: ClassVar[Type[Value]] = MeasureValue
 
     @classmethod
-    def from_data_frame(cls, data: pd.DataFrame) -> "FeatureSet":
-        """Create a FeatureSet from a data frame.
+    def from_data_frame(cls, data: pd.DataFrame) -> "MeasureSet":
+        """Create a MeasureSet from a data frame.
 
         Parameters
         ----------
         data
-            A data frame containing information about features
+            A data frame containing information about measures
 
         Returns
         -------
-        FeatureSet
-            A feature set derived from the provided data frame.
+        MeasureSet
+            A measure set derived from the provided data frame.
         """
         return cls(data.apply(row_to_value, axis=1).to_list())
 
     def to_list(self, stringify: bool = False) -> List[Dict[str, Optional[Any]]]:
-        """Convert feature set to a list of feature dictionaries.
+        """Convert measure set to a list of measure dictionaries.
 
         Parameters
         ----------
@@ -364,9 +364,9 @@ class FeatureSet(ValueSet):
         Returns
         -------
         List[Dict[str, Optional[Any]]]
-            A dictionary summarizing feature value information.
+            A dictionary summarizing measure value information.
         """
         return [
-            cast(self.VALUE_CLS, feature).to_dict(stringify)  # type: ignore
-            for feature in self.values()
+            cast(self.VALUE_CLS, measure).to_dict(stringify)  # type: ignore
+            for measure in self.values()
         ]

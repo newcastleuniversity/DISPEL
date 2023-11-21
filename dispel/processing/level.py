@@ -507,7 +507,7 @@ class LevelProcessingStep(
 
     .. doctest:: processing-step
 
-        >>> from dispel.data.features import FeatureValue
+        >>> from dispel.data.measures import MeasureValue
         >>> from dispel.data.values import ValueDefinition
         >>> from dispel.processing import process
         >>> from dispel.processing.level import (LevelProcessingStep,
@@ -519,13 +519,13 @@ class LevelProcessingStep(
         ...             step=self,
         ...             sources=raw_data_set,
         ...             level=level,
-        ...             result=FeatureValue(
-        ...                 ValueDefinition('my-feature-id', 'max value'),
+        ...             result=MeasureValue(
+        ...                 ValueDefinition('my-measure-id', 'max value'),
         ...                 raw_data_set.data.max().max()
         ...             )
         ...         )
         >>> _ = process(reading, MyLevelStep())
-        >>> reading.get_feature_set('my-level').get_raw_value('my-feature-id')
+        >>> reading.get_measure_set('my-level').get_raw_value('my-measure-id')
         5
 
     """

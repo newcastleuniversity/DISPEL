@@ -273,7 +273,7 @@ class CPSModalityFilter(LevelFilter):
 
 
 class RegressionMode(AVEnum):
-    """Enumerated constant representing the linear regression features."""
+    """Enumerated constant representing the linear regression measures."""
 
     ALL_RESPONSES = ("all keys", "all")
     ONE_ANS_REM = ("one answer removed", "1rem")

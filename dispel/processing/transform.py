@@ -478,7 +478,7 @@ class ConcatenateLevels(LevelFilterProcessingStepMixin, ProcessingStep):
             raw_data_sets=merged_raw_data_sets,
         )
 
-        # TODO: Implement support for feature set concatenation
+        # TODO: Implement support for measure set concatenation
 
         yield ProcessingResult(step=self, sources=raw_data_sets, result=new_level)
 

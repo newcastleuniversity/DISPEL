@@ -81,7 +81,7 @@ class SBTBoutStrategyModality(AVEnum):
 
 
 class SBTBoutExtractStep(ExtractStep):
-    """Base class for SBT bouts feature extraction."""
+    """Base class for SBT bouts measure extraction."""
 
     bout_strategy: SBTBoutStrategy
 

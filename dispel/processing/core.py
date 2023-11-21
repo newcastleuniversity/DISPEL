@@ -21,9 +21,9 @@ from typing import (
 )
 
 from dispel.data.core import EntityType, Reading
-from dispel.data.features import FeatureSet, FeatureValue
 from dispel.data.flags import Flag, FlagSeverity, FlagType
 from dispel.data.levels import Level, LevelEpoch
+from dispel.data.measures import MeasureSet, MeasureValue
 from dispel.data.raw import RawDataSet
 from dispel.data.values import AbbreviatedValue as AV
 from dispel.processing.flags import FlagStepMixin
@@ -100,7 +100,7 @@ class ProcessingResult(ProcessingResultBase):
     sources: SourcesType
 
     #: The result of the processing function
-    result: Union[Level, FeatureValue, FeatureSet, LevelEpoch, RawDataSet]
+    result: Union[Level, MeasureValue, MeasureSet, LevelEpoch, RawDataSet]
 
     def get_kwargs(self) -> Dict[str, Any]:
         """Get key word arguments for the additional class attributes.
@@ -389,7 +389,7 @@ class ProcessingStep:
     :meth:`process_reading` function is called with the reading and additional arguments
     passed to :func:`process`. Results from the process step are expected to be an
     instance of :class:`ProcessingResult`. For a comprehensive description see
-    :ref:`feature-extraction`.
+    :ref:`measure-extraction`.
 
     The method :meth:`flag_reading` can be overwritten to ensure that the reading
     about to be processed is valid, and return
@@ -422,7 +422,7 @@ class ProcessingStep:
 
     .. doctest:: processing-step
 
-        >>> from dispel.data.features import FeatureValue
+        >>> from dispel.data.measures import MeasureValue
         >>> from dispel.data.values import ValueDefinition
         >>> from dispel.processing import process
         >>> from dispel.processing.core import ProcessingResult, ProcessingStep
@@ -434,13 +434,13 @@ class ProcessingStep:
         ...         yield ProcessingResult(
         ...             step=self,
         ...             sources=raw_data_set,
-        ...             result=FeatureValue(
-        ...                 ValueDefinition('my-feature-id','max value'),
+        ...             result=MeasureValue(
+        ...                 ValueDefinition('my-measure-id','max value'),
         ...                 data.max().max()
         ...             )
         ...         )
         >>> _ = process(reading, MyStep())
-        >>> reading.feature_set.get_raw_value('my-feature-id')
+        >>> reading.measure_set.get_raw_value('my-measure-id')
         5
     """
 
@@ -612,7 +612,7 @@ class CoreProcessingStepGroup(ProcessingStep):
     ...                 lambda data_set: 5,
     ...                 ValueDefinitionPrototype(
     ...                     id_='x',
-    ...                     feature_name='{placeholder} x'
+    ...                     measure_name='{placeholder} x'
     ...                 )
     ...             ),
     ...         ],
@@ -621,9 +621,9 @@ class CoreProcessingStepGroup(ProcessingStep):
     ...     ...
     ... ]
 
-    The above extract step will result in a feature value with the name ``A name x``.
+    The above extract step will result in a measure value with the name ``A name x``.
     For further applications of :class:`CoreProcessingStepGroup` see also
-    :ref:`feature-extraction`.
+    :ref:`measure-extraction`.
     """
 
     steps: List[ProcessingStep]

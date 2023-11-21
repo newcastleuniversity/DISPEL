@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 from scipy import signal
 
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import RawDataValueDefinition
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
@@ -19,7 +19,7 @@ from dispel.processing.extract import (
     DEFAULT_AGGREGATIONS,
     AggregateRawDataSetColumn,
     ExtractStep,
-    FeatureDefinitionMixin,
+    MeasureDefinitionMixin,
 )
 from dispel.processing.level import ProcessingStepGroup
 from dispel.processing.transform import TransformStep
@@ -599,7 +599,7 @@ TURN_ID_MAPPING = {
 
 
 class TurnModalityMixIn(
-    FeatureDefinitionMixin, DataSetProcessingStepMixin, metaclass=ABCMeta
+    MeasureDefinitionMixin, DataSetProcessingStepMixin, metaclass=ABCMeta
 ):
     """A modality to filter on subsets of turns.
 
@@ -631,8 +631,8 @@ class TurnModalityMixIn(
 class ExtractNumberOfTurns(TurnModalityMixIn, ExtractStep):
     """Extract the number of turns during the utt test."""
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("number of turns", "turns"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("number of turns", "turns"),
         data_type="int",
         validator=GREATER_THAN_ZERO,
         description=f"The number of turns detected during the "
@@ -652,8 +652,8 @@ class AggregateAbsTurnSpeed(TurnModalityMixIn, AggregateRawDataSetColumn):
 
     aggregations = DEFAULT_AGGREGATIONS
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("absolute turn speed", "ts"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("absolute turn speed", "ts"),
         unit="rad/s",
         data_type="float64",
         validator=GREATER_THAN_ZERO,
@@ -672,8 +672,8 @@ class AggregateTurnDuration(TurnModalityMixIn, AggregateRawDataSetColumn):
 
     aggregations = DEFAULT_AGGREGATIONS
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("turn duration", "dur"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("turn duration", "dur"),
         unit="s",
         data_type="float64",
         validator=GREATER_THAN_ZERO,
@@ -700,8 +700,8 @@ class AggregateTurnSpeedProperties(TurnModalityMixIn, AggregateRawDataSetColumn)
             self.data_set_id,
             self.column_id,
             aggregations=DEFAULT_AGGREGATIONS,
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=AV(
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=AV(
                     f"{self.column_id}_{self.data_set_id}",
                     f"{self.column_id}_{self.data_set_id}",
                 ),
@@ -719,8 +719,8 @@ class AggregateTurnSpeedProperties(TurnModalityMixIn, AggregateRawDataSetColumn)
         )
 
 
-class ExtractTurnFeatures(ProcessingStepGroup):
-    """Extract Turn Features based on Turn Selection Modality."""
+class ExtractTurnMeasures(ProcessingStepGroup):
+    """Extract Turn Measures based on Turn Selection Modality."""
 
     def __init__(self, turns_data_set_id, turn_modality, **kwargs):
         steps: List[ProcessingStep] = [

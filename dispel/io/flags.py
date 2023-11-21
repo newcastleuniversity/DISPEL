@@ -1,4 +1,4 @@
-"""Functions to manage flags when generating feature export."""
+"""Functions to manage flags when generating measure export."""
 
 from typing import Any, Dict, Iterable, List
 
@@ -40,9 +40,9 @@ def format_all_flags(reading: Reading) -> Dict[str, Any]:
             data_set_flag = format_flag(data_set)
             if len(data_set_flag) > 0:
                 flags["level"][lvl_id][ds_id] = data_set_flag
-        feature_set = level.feature_set
-        for f_id in feature_set.ids():
-            feat_flag = format_flag(feature_set.get(f_id))  # type: ignore
+        measure_set = level.measure_set
+        for f_id in measure_set.ids():
+            feat_flag = format_flag(measure_set.get(f_id))  # type: ignore
             if len(feat_flag) > 0:
                 flags["level"][lvl_id][str(f_id)] = feat_flag
     return flags

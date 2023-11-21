@@ -31,11 +31,11 @@ from dispel.providers.generic.tasks.pinch.modalities import (
     BubbleSizeModality,
     FingerModality,
 )
-from dispel.providers.generic.tremor import TremorFeatures
+from dispel.providers.generic.tremor import TremorMeasures
 from tests.processing.helper import (
     assert_dict_values,
     assert_level_values,
-    assert_unique_feature_ids,
+    assert_unique_measure_ids,
     read_results,
 )
 from tests.providers.ads.conftest import (
@@ -167,7 +167,7 @@ def test_pinch_phone_orientation_transformation(
 
 @pytest.mark.parametrize("level_id,expected", read_results(RESULTS_PATH_PINCH2))
 def test_pinch_process(example_reading_processed_pinch2, level_id, expected):
-    """Unit test to ensure the pinch features are well computed."""
+    """Unit test to ensure the pinch measures are well computed."""
     assert_level_values(example_reading_processed_pinch2, level_id, expected)
 
 
@@ -177,13 +177,13 @@ def test_pinch_process(example_reading_processed_pinch2, level_id, expected):
 def test_pinch_process_new_format(
     example_reading_processed_pinch_new_format, level_id, expected
 ):
-    """Unit test to ensure the pinch new format features are well computed."""
+    """Unit test to ensure the pinch new format measures are well computed."""
     assert_level_values(example_reading_processed_pinch_new_format, level_id, expected)
 
 
-def test_pinch_process_ads_unique_feature_ids(example_reading_processed_pinch2):
-    """Test that feature ids are unique."""
-    assert_unique_feature_ids(example_reading_processed_pinch2)
+def test_pinch_process_ads_unique_measure_ids(example_reading_processed_pinch2):
+    """Test that measure ids are unique."""
+    assert_unique_measure_ids(example_reading_processed_pinch2)
 
 
 @pytest.mark.parametrize(
@@ -213,16 +213,16 @@ def test_pinch_process_ads_unique_feature_ids(example_reading_processed_pinch2):
         )
     ],
 )
-def test_compute_tremor_features(
+def test_compute_tremor_measures(
     example_reading_pinch2, sampling_frequency, expected_values
 ):
-    """Test :class:`dispel.processing.tremor_lib.TremorFeatures`."""
+    """Test :class:`dispel.processing.tremor_lib.TremorMeasures`."""
     reading = deepcopy(example_reading_pinch2)
     sensor = SensorModality.ACCELEROMETER
     columns = list("xyz")
     hand = "left"
 
-    class _PinchTremorFeatures(ProcessingStepGroup):
+    class _PinchTremorMeasures(ProcessingStepGroup):
         def __init__(self, hand_: str):
             steps = [
                 SetTimestampIndex(str(sensor), columns, "ts", duplicates="last"),
@@ -232,7 +232,7 @@ def test_compute_tremor_features(
                     columns=columns,
                     freq=sampling_frequency,
                 ),
-                TremorFeatures(
+                TremorMeasures(
                     sensor=sensor,
                     data_set_id=f"{str(sensor)}_ts_resampled",
                     columns=columns,
@@ -242,7 +242,7 @@ def test_compute_tremor_features(
                 steps, task_name="pinch", modalities=[hand_], level_filter=hand_
             )
 
-    step = _PinchTremorFeatures(hand)
+    step = _PinchTremorMeasures(hand)
     data = reading.get_level("left-medium").get_raw_data_set(str(sensor)).data.copy()
     data.rename(
         columns={
@@ -275,5 +275,5 @@ def test_compute_tremor_features(
         )
     )
     process(reading, step)
-    feature_set = reading.get_level(hand).feature_set
-    assert_dict_values(feature_set, expected_values)
+    measure_set = reading.get_level(hand).measure_set
+    assert_dict_values(measure_set, expected_values)

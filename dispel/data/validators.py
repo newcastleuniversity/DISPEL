@@ -36,7 +36,7 @@ class ValidationException(Exception):
 class RangeValidator:
     r"""A range validator.
 
-    The range validator can be used to ensure a feature value is within a given range.
+    The range validator can be used to ensure a measure value is within a given range.
     It is specified via the ``validator`` argument when creating
     :class:`~dispel.data.values.ValueDefinition`\ s.
 

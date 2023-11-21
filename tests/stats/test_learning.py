@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from dispel.data.collections import FeatureCollection
+from dispel.data.collections import MeasureCollection
 from dispel.stats.learning import (
     DelayParameters,
     LearningCurve,
@@ -29,13 +29,13 @@ np.random.seed(0)
 @pytest.fixture
 def single_user_learning_example():
     """Create a fixture for single user data for the learning analysis."""
-    return FeatureCollection.from_csv(EXAMPLE_PATH)
+    return MeasureCollection.from_csv(EXAMPLE_PATH)
 
 
 @pytest.fixture
 def multiple_user_learning_example():
     """Create a fixture for multiple user data for the learning analysis."""
-    return FeatureCollection.from_csv(EXAMPLE_PATH_2)
+    return MeasureCollection.from_csv(EXAMPLE_PATH_2)
 
 
 @pytest.mark.parametrize("asymptote, slope", [(2.5, 1.4), (2.0, 1.0), (3.0, 2.0)])
@@ -59,15 +59,15 @@ def test_compute_warm_up():
 
 
 def test_compute_delay(single_user_learning_example):
-    """Test the good computation of delay-related features."""
+    """Test the good computation of delay-related measures."""
     delay = compute_delay(single_user_learning_example.data.start_date)
     assert delay.mean == pytest.approx(1.0069029706790125)
     assert delay.median == pytest.approx(0.9955124652777778)
     assert delay.max == pytest.approx(1.3589436574074074)
 
 
-def get_single_feature_values(n, asymptote, slope):
-    """Create a data frame containing feature values."""
+def get_single_measure_values(n, asymptote, slope):
+    """Create a data frame containing measure values."""
     curve = LearningCurve(asymptote, slope)
 
     time_idx = pd.date_range("now", periods=n, freq="1d")
@@ -81,7 +81,7 @@ def get_single_feature_values(n, asymptote, slope):
 
 def test_compute_learning_model():
     """Test computation of learning and delay parameters."""
-    data = get_single_feature_values(10, 20, 2)
+    data = get_single_measure_values(10, 20, 2)
     model, delay = compute_learning_model(data)
 
     assert model.curve.asymptote == pytest.approx(20)
@@ -90,8 +90,8 @@ def test_compute_learning_model():
 
 
 def test_compute_learning_model_insufficient_data():
-    """Test that learning also works for single feature values."""
-    data = get_single_feature_values(1, 1, 1)
+    """Test that learning also works for single measure values."""
+    data = get_single_measure_values(1, 1, 1)
     model, delay = compute_learning_model(data)
 
     assert isinstance(model, LearningModel)
@@ -100,11 +100,11 @@ def test_compute_learning_model_insufficient_data():
 
 def test_extract_learning_for_one_subject(single_user_learning_example):
     """Test :func:`dispel.stats.learning.extract_learning_for_one_subject`."""
-    feature_id = "CPS-dtd-rt-mean-01"
+    measure_id = "CPS-dtd-rt-mean-01"
     subject_id = "4f96b3927ec780c373277094a01bb664a6bb67ca71b77296474a10f3a7ad36df"
     fc = single_user_learning_example
     learning_result = extract_learning_for_one_subject(
-        fc, feature_id=feature_id, subject_id=subject_id, reset_trials=False
+        fc, measure_id=measure_id, subject_id=subject_id, reset_trials=False
     )
 
     assert isinstance(learning_result, LearningResult)
@@ -123,11 +123,11 @@ def test_extract_learning_for_one_subject(single_user_learning_example):
 def test_extract_learning_for_all_subjects(multiple_user_learning_example):
     """Test :func:`dispel.stats.learning.extract_learning_for_all_subjects`."""
     fc = multiple_user_learning_example
-    learning_result = extract_learning_for_all_subjects(fc, "feature_id_1")
+    learning_result = extract_learning_for_all_subjects(fc, "measure_id_1")
     assert isinstance(learning_result, LearningResult)
     expected_columns = {
         "subject_id",
-        "feature_id",
+        "measure_id",
         "optimal_performance",
         "slope_coefficient",
         "learning_rate",

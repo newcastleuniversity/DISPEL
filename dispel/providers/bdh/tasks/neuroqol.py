@@ -4,8 +4,8 @@ from typing import List, Tuple, Type
 
 import pandas as pd
 
-from dispel.data.features import FeatureValue, FeatureValueDefinitionPrototype
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValue, MeasureValueDefinitionPrototype
 from dispel.data.raw import RawDataSet, RawDataSetDefinition, RawDataValueDefinition
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
@@ -35,23 +35,23 @@ r"""The name of the neuroqol sub tests."""
 
 def get_theta_scores(
     levels: List[Level],
-) -> Tuple[pd.DataFrame, List[Type[FeatureValue]]]:
+) -> Tuple[pd.DataFrame, List[Type[MeasureValue]]]:
     """Create a data frame with standard error theta and t scores."""
     len_levels = len(levels)
     theta_scores = [float] * len_levels
     standard_errors = [float] * len_levels
     level_names = [""] * len_levels
-    feature_values = [FeatureValue] * len_levels
+    measure_values = [MeasureValue] * len_levels
 
     # Enumerate through the levels to read the mobile_computed information
     for it, level in enumerate(levels):
         _id = str(level.id)
-        feature_id = f"mobile_computed_theta_score_{_id}"
+        measure_id = f"mobile_computed_theta_score_{_id}"
         level_names[it] = _id
-        feature_value = level.feature_set.get(feature_id)
-        feature_values[it] = feature_value  # type: ignore
-        theta_scores[it] = feature_value.value
-        standard_errors[it] = level.feature_set.get_raw_value(
+        measure_value = level.measure_set.get(measure_id)
+        measure_values[it] = measure_value  # type: ignore
+        theta_scores[it] = measure_value.value
+        standard_errors[it] = level.measure_set.get_raw_value(
             f"mobile_computed_standard_error_{_id}"
         )
     # Create a single dataframe with all the information
@@ -63,7 +63,7 @@ def get_theta_scores(
         }
     )
     df["t_score"] = df["theta_score"] * 10 + 50
-    return df, feature_values
+    return df, measure_values
 
 
 class ListNeuroqolThetaScores(ProcessingStep):
@@ -79,7 +79,7 @@ class ListNeuroqolThetaScores(ProcessingStep):
         ]
         new_data_set_id = "theta_scores"
 
-        data, feature_values = get_theta_scores(reading.levels)
+        data, measure_values = get_theta_scores(reading.levels)
 
         raw_data_sets = [
             RawDataSet(
@@ -95,7 +95,7 @@ class ListNeuroqolThetaScores(ProcessingStep):
 
         yield ProcessingResult(
             step=self,
-            sources=feature_values,
+            sources=measure_values,
             result=Level(
                 id_="all_levels",
                 start=reading.evaluation.start,
@@ -126,8 +126,8 @@ class ExtractNeuroqolTScore(ExtractNeuroqol):
     def get_definition(self, **kwargs) -> ValueDefinition:
         """Overwrite get_definition."""
         description = f"T-score for {self.level_name} rescaled between 0 and 100."
-        return FeatureValueDefinitionPrototype(
-            feature_name=AV("t score", "t_score"),
+        return MeasureValueDefinitionPrototype(
+            measure_name=AV("t score", "t_score"),
             data_type="float",
             validator=GREATER_THAN_ZERO,
             description=description,
@@ -146,8 +146,8 @@ class ExtractNeuroqolStandardError(ExtractNeuroqol):
     def get_definition(self, **kwargs) -> ValueDefinition:
         """Overwrite get_definition."""
         description = f"Standard Error for {self.level_name}."
-        return FeatureValueDefinitionPrototype(
-            feature_name=AV("Standard error", "standard_error"),
+        return MeasureValueDefinitionPrototype(
+            measure_name=AV("Standard error", "standard_error"),
             data_type="float",
             validator=GREATER_THAN_ZERO,
             description=description,

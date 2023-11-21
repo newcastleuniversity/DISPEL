@@ -493,7 +493,7 @@ def find_consec_element_and_count(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data : pd.DataFrame
-        Data frame to compute feature related to successfully written words
+        Data frame to compute measure related to successfully written words
         with(out) error, and also a streak of words with(out) error(s).
 
     Returns

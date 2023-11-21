@@ -2,7 +2,7 @@
 # pylint: disable=too-many-lines
 """Pinch test related functionality.
 
-This module contains functionality to extract features for the *Pinch* test
+This module contains functionality to extract measures for the *Pinch* test
 (PINCH).
 """
 from abc import ABCMeta, abstractmethod
@@ -25,9 +25,9 @@ import pandas as pd
 from scipy.signal import find_peaks
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.flags import Flag
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import DEFAULT_COLUMNS, USER_ACC_MAP, RawDataValueDefinition
 from dispel.data.validators import GREATER_THAN_ZERO, RangeValidator
 from dispel.data.values import AbbreviatedValue as AV
@@ -81,7 +81,7 @@ from dispel.providers.generic.tasks.pinch.modalities import (
     FingerModality,
 )
 from dispel.providers.generic.touch import Touch
-from dispel.providers.generic.tremor import TremorFeatures
+from dispel.providers.generic.tremor import TremorMeasures
 from dispel.signal.filter import butterworth_low_pass_filter
 from dispel.stats.core import percentile_95, variation, variation_increase
 
@@ -416,21 +416,21 @@ class TransformTotalDuration(TransformApplyMeltedLevels):
     apply = total_duration
 
 
-class TransformApplyFeatureMixin(metaclass=ABCMeta):
-    """A raw data set transformation processing step for features."""
+class TransformApplyMeasureMixin(metaclass=ABCMeta):
+    """A raw data set transformation processing step for measures."""
 
     description: str = ""
-    feature: str = ""
+    measure: str = ""
 
     @property
     def data_id(self):
-        """Get data set id from feature name."""
-        return self.feature.replace(" ", "_")
+        """Get data set id from measure name."""
+        return self.measure.replace(" ", "_")
 
     @property
-    def feature_id(self):
-        """Get data feature id from feature name."""
-        return self.feature.replace(" ", "-")
+    def measure_id(self):
+        """Get data measure id from measure name."""
+        return self.measure.replace(" ", "-")
 
     def get_data_set_id(self) -> str:
         """Get data set id."""
@@ -438,11 +438,11 @@ class TransformApplyFeatureMixin(metaclass=ABCMeta):
 
     def get_column_id(self) -> str:
         """Get column id."""
-        return self.feature_id
+        return self.measure_id
 
     def get_column_name(self) -> str:
         """Get column name."""
-        return f"{self.feature} data"
+        return f"{self.measure} data"
 
     def get_new_data_set_id(self) -> str:
         """Get new data set id."""
@@ -461,11 +461,11 @@ class TransformApplyFeatureMixin(metaclass=ABCMeta):
 
 
 class TransformReactionTimeByBubbleSize(
-    BubbleSizeTransformMixin, TransformApplyFeatureMixin, TransformMeltedLevels
+    BubbleSizeTransformMixin, TransformApplyMeasureMixin, TransformMeltedLevels
 ):
     """A transformation step to get user's reaction time by bubble size."""
 
-    feature = "bubble reaction time"
+    measure = "bubble reaction time"
     description = (
         "The time spent between the appearance of the "
         "pinch target and actually touching the screen"
@@ -479,7 +479,7 @@ class TransformReactionTimeByBubbleSize(
 
 
 class TransformParallelExplodeMeltedLevels(
-    TransformApplyFeatureMixin, TransformApplyMeltedLevels, metaclass=ABCMeta
+    TransformApplyMeasureMixin, TransformApplyMeltedLevels, metaclass=ABCMeta
 ):
     """A Transformation step that applies function with a post process."""
 
@@ -498,11 +498,11 @@ class TransformParallelExplodeMeltedLevels(
 
     def get_column_id(self) -> str:
         """Get column id."""
-        return f"{self.finger.abbr}-{self.outcome.abbr}-{self.feature_id}"
+        return f"{self.finger.abbr}-{self.outcome.abbr}-{self.measure_id}"
 
     def get_column_name(self) -> str:
         """Get column name."""
-        return f"{self.finger} {self.feature} data for {self.outcome} attempt"
+        return f"{self.finger} {self.measure} data for {self.outcome} attempt"
 
     @abstractmethod
     def get_property(self, target: PinchTarget) -> Any:
@@ -527,7 +527,7 @@ class TransformParallelExplodeMeltedLevels(
 class TransformContactDistance(TransformParallelExplodeMeltedLevels):
     """A raw data set transformation processing step for contact distance."""
 
-    feature = "contact distance"
+    measure = "contact distance"
     description = (
         "The distance between the initial point of "
         "contact with the screen and the surface of "
@@ -543,7 +543,7 @@ class TransformContactDistance(TransformParallelExplodeMeltedLevels):
 class TransformFirstPushes(TransformParallelExplodeMeltedLevels):
     """A raw data set transformation processing step first finger pushes."""
 
-    feature = "first push"
+    measure = "first push"
     description = (
         "The value of the first push of "
         "pressure applied on the screen by the "
@@ -568,7 +568,7 @@ class TransformWrapExplodeMeltedLevels(TransformApplyMeltedLevels):
 
 
 class TransformExplodeMeltedLevelsSuccess(
-    TransformApplyFeatureMixin, TransformWrapExplodeMeltedLevels
+    TransformApplyMeasureMixin, TransformWrapExplodeMeltedLevels
 ):
     """A Transformation step that applies a function on targets."""
 
@@ -582,17 +582,17 @@ class TransformExplodeMeltedLevelsSuccess(
 
     def get_column_id(self) -> str:
         """Get column id."""
-        return f"{self.outcome.abbr}-{self.feature_id}"
+        return f"{self.outcome.abbr}-{self.measure_id}"
 
     def get_column_name(self) -> str:
         """Get column name."""
-        return f"{self.outcome} {self.feature}"
+        return f"{self.outcome} {self.measure}"
 
 
 class TransformSuccessDeformingDuration(TransformExplodeMeltedLevelsSuccess):
     """A raw data set transformation step to get user's success duration."""
 
-    feature = "success duration"
+    measure = "success duration"
     description = (
         "Time spent before succeeding at deforming the"
         " target bubble during {outcome} pinch attempt."
@@ -610,7 +610,7 @@ class TransformPinchingDuration(TransformExplodeMeltedLevelsSuccess):
     To get the pinching duration of the user.
     """
 
-    feature = "pinching duration"
+    measure = "pinching duration"
     description = (
         "Time spent actually deforming the target "
         "bubble during {outcome} pinch attempt."
@@ -622,7 +622,7 @@ class TransformPinchingDuration(TransformExplodeMeltedLevelsSuccess):
 
 
 class TransformExplodeMeltedLevelsAttempt(
-    TransformApplyFeatureMixin, TransformWrapExplodeMeltedLevels
+    TransformApplyMeasureMixin, TransformWrapExplodeMeltedLevels
 ):
     """A Transformation step that applies a function on targets."""
 
@@ -636,17 +636,17 @@ class TransformExplodeMeltedLevelsAttempt(
 
     def get_column_id(self) -> str:
         """Get column id."""
-        return f"{self.attempt.abbr}-{self.feature_id}"
+        return f"{self.attempt.abbr}-{self.measure_id}"
 
     def get_column_name(self) -> str:
         """Get column name."""
-        return f"{self.attempt} {self.feature}"
+        return f"{self.attempt} {self.measure}"
 
 
 class TransformDwellTime(TransformExplodeMeltedLevelsAttempt):
     """A raw data set transformation step to get user's dwell time."""
 
-    feature = "dwell time"
+    measure = "dwell time"
     description = (
         "Time spent between the first screen touching "
         "and the initiation of the movement for "
@@ -661,7 +661,7 @@ class TransformDwellTime(TransformExplodeMeltedLevelsAttempt):
 class TransformDoubleTouchAsynchrony(TransformExplodeMeltedLevelsAttempt):
     """A transformation step to get user's double touch asynchrony."""
 
-    feature = "double touch asynchrony"
+    measure = "double touch asynchrony"
     description = (
         "Time difference between the first and second"
         " finger touching the screen for {attempt} "
@@ -674,7 +674,7 @@ class TransformDoubleTouchAsynchrony(TransformExplodeMeltedLevelsAttempt):
 
 
 class TransformAttempt(
-    TransformApplyFeatureMixin, TransformWrapExplodeMeltedLevels, metaclass=ABCMeta
+    TransformApplyMeasureMixin, TransformWrapExplodeMeltedLevels, metaclass=ABCMeta
 ):
     """A raw data set transformation processing step for finger.
 
@@ -701,11 +701,11 @@ class TransformAttempt(
 
     def get_column_id(self) -> str:
         """Get column id."""
-        return f"{self.finger.abbr}-{self.outcome.abbr}-{self.feature_id}"
+        return f"{self.finger.abbr}-{self.outcome.abbr}-{self.measure_id}"
 
     def get_column_name(self) -> str:
         """Get column name."""
-        return f"{self.finger} {self.feature} data for {self.outcome} attempt"
+        return f"{self.finger} {self.measure} data for {self.outcome} attempt"
 
     def get_finger(self, attempt: PinchAttempt) -> PinchTouch:
         """Get finger from an attempt."""
@@ -719,7 +719,7 @@ class TransformAttempt(
         raise NotImplementedError
 
     def _touch_function(self, target: PinchTarget) -> List[float]:
-        """Get the feature for a specific finger for all attempt."""
+        """Get the measure for a specific finger for all attempt."""
         touch_method = [
             self.get_property(self.get_finger(attempt))
             for attempt in target.get_attempts_from(self.outcome)
@@ -731,14 +731,14 @@ class TransformAttempt(
         return sum(touch_method, [])
 
     def get_apply_function(self) -> Any:
-        """Get the pinching attempts' for the specific feature."""
+        """Get the pinching attempts' for the specific measure."""
         return self._touch_function
 
 
 class TransformPressures(TransformAttempt):
     """A raw data set transformation processing step for finger pressures."""
 
-    feature = "pressure"
+    measure = "pressure"
     description = (
         "The pressure applied on the screen by the {finger} for {outcome} attempt."
     )
@@ -751,7 +751,7 @@ class TransformPressures(TransformAttempt):
 class TransformSpeed(TransformAttempt):
     """A raw data set transformation processing step to get finger speed."""
 
-    feature = "speed"
+    measure = "speed"
     description = "The speed of the {finger} during {outcome} pinch attempts."
 
     def get_property(self, attempt: Touch) -> List[float]:
@@ -762,7 +762,7 @@ class TransformSpeed(TransformAttempt):
 class TransformJerk(TransformAttempt):
     """A raw data set transformation processing step to get jerk movements."""
 
-    feature = "jerk"
+    measure = "jerk"
     description = "The jerk of the {finger} during {outcome} pinch attempts."
 
     def get_property(self, attempt: Touch) -> List[float]:
@@ -773,7 +773,7 @@ class TransformJerk(TransformAttempt):
 class TransformMeanSquaredJerk(TransformAttempt):
     """A raw data set transformation processing step for mean squared jerk."""
 
-    feature = "ms jerk"
+    measure = "ms jerk"
     description = (
         "The mean squared jerk of the {finger} during {outcome} pinch attempts."
     )
@@ -786,7 +786,7 @@ class TransformMeanSquaredJerk(TransformAttempt):
 class TransformPressureJerk(TransformAttempt):
     """A raw data set transformation processing step to get jerk pressure."""
 
-    feature = "pressure jerk"
+    measure = "pressure jerk"
     description = "The jerk pressure of the {finger} during {outcome} pinch attempts."
 
     def get_property(self, attempt: Touch) -> List[float]:
@@ -797,7 +797,7 @@ class TransformPressureJerk(TransformAttempt):
 class TransformMeanSquaredPressureJerk(TransformAttempt):
     """A processing step to get mean squared jerk pressure."""
 
-    feature = "ms pressure jerk"
+    measure = "ms pressure jerk"
     description = (
         "The mean squared jerk pressure of the {finger} "
         "during {outcome} pinch attempts."
@@ -818,8 +818,8 @@ class ExtractTotalPinchAttempts(TargetPropertiesExtractStep):
     """Extract the total pinch attempts."""
 
     transform_function = agg_column("total_pinches", "sum")
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("total pinch attempts", "att"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("total pinch attempts", "att"),
         description="The total number of pinch attempts on {size} size for "
         "the {hand} hand.",
         data_type="int32",
@@ -831,8 +831,8 @@ class ExtractSuccessfulPinchAttempts(TargetPropertiesExtractStep):
     """Extract successful pinch attempts."""
 
     transform_function = agg_column("successful_pinches", "sum")
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("successful pinch attempts", "succ"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("successful pinch attempts", "succ"),
         description="The number successful pinch attempts on {size} size for "
         "the {hand} hand.",
         data_type="int32",
@@ -843,8 +843,8 @@ class ExtractSuccessfulPinchAttempts(TargetPropertiesExtractStep):
 class ExtractPinchAccuracy(TargetPropertiesExtractStep):
     """A pinch accuracy extraction step."""
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("pinching accuracy", "acc"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("pinching accuracy", "acc"),
         data_type="float64",
         validator=RangeValidator(0, 1),
         description="The ratio of successful pinches on {size} size "
@@ -875,8 +875,8 @@ class ExtractPinchAccuracy(TargetPropertiesExtractStep):
         return np.float64(data["successful_pinches"].sum() / total_pinches)
 
 
-class ExtractSuccessBase(TransformApplyFeatureMixin, AggregateRawDataSetColumn):
-    """A feature extraction processing step for success modality.
+class ExtractSuccessBase(TransformApplyMeasureMixin, AggregateRawDataSetColumn):
+    """A measure extraction processing step for success modality.
 
     Parameters
     ----------
@@ -896,7 +896,7 @@ class ExtractSuccessBase(TransformApplyFeatureMixin, AggregateRawDataSetColumn):
 
     def get_column_id(self) -> str:
         """Get column id."""
-        return f"{self.outcome.av.abbr}-{self.feature_id}"
+        return f"{self.outcome.av.abbr}-{self.measure_id}"
 
     def get_definition(self, **kwargs) -> ValueDefinition:
         """Get value definition."""
@@ -905,11 +905,11 @@ class ExtractSuccessBase(TransformApplyFeatureMixin, AggregateRawDataSetColumn):
 
 
 class ExtractSuccessDeformingDuration(ExtractSuccessBase):
-    """A feature extraction processing step for multiple success durations."""
+    """A measure extraction processing step for multiple success durations."""
 
-    feature = "success duration"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("success duration", "sd"),
+    measure = "success duration"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("success duration", "sd"),
         data_type="float64",
         unit="s",
         validator=ATTEMPT_DURATION_VALIDATOR,
@@ -922,11 +922,11 @@ class ExtractSuccessDeformingDuration(ExtractSuccessBase):
 
 
 class ExtractPinchingDuration(ExtractSuccessBase):
-    """A feature extraction processing step for multiple pinching durations."""
+    """A measure extraction processing step for multiple pinching durations."""
 
-    feature = "pinching duration"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("pinching duration", "pd"),
+    measure = "pinching duration"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("pinching duration", "pd"),
         data_type="float64",
         unit="s",
         validator=ATTEMPT_DURATION_VALIDATOR,
@@ -937,10 +937,10 @@ class ExtractPinchingDuration(ExtractSuccessBase):
 
 
 class ExtractDwellTime(AggregateRawDataSetColumn):
-    """A feature extraction processing step for multiple dwell times."""
+    """A measure extraction processing step for multiple dwell times."""
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("dwell time", "dt"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("dwell time", "dt"),
         data_type="float64",
         unit="ms",
         validator=GREATER_THAN_ZERO,
@@ -962,8 +962,8 @@ class ExtractDwellTime(AggregateRawDataSetColumn):
 class ExtractDoubleTouchAsynchrony(AggregateRawDataSetColumn):
     """An extraction step for multiple double touch asynchrony values."""
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("double touch asynchrony", "dta"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("double touch asynchrony", "dta"),
         data_type="float64",
         unit="ms",
         validator=GREATER_THAN_ZERO,
@@ -982,8 +982,8 @@ class ExtractDoubleTouchAsynchrony(AggregateRawDataSetColumn):
         )
 
 
-class ExtractFingerSuccessBase(TransformApplyFeatureMixin, AggregateRawDataSetColumn):
-    """A feature extraction processing step for finger and success modalities.
+class ExtractFingerSuccessBase(TransformApplyMeasureMixin, AggregateRawDataSetColumn):
+    """A measure extraction processing step for finger and success modalities.
 
     Parameters
     ----------
@@ -1010,7 +1010,7 @@ class ExtractFingerSuccessBase(TransformApplyFeatureMixin, AggregateRawDataSetCo
 
     def get_column_id(self) -> str:
         """Get column id."""
-        return f"{self.finger.av.abbr}-{self.outcome.av.abbr}" f"-{self.feature_id}"
+        return f"{self.finger.av.abbr}-{self.outcome.av.abbr}" f"-{self.measure_id}"
 
     def get_definition(self, **kwargs) -> ValueDefinition:
         """Get value definition."""
@@ -1020,11 +1020,11 @@ class ExtractFingerSuccessBase(TransformApplyFeatureMixin, AggregateRawDataSetCo
 
 
 class ExtractContactDistance(ExtractFingerSuccessBase):
-    """A feature extraction processing step for multiple contact distances."""
+    """A measure extraction processing step for multiple contact distances."""
 
-    feature = "contact distance"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("contact distance", "cd"),
+    measure = "contact distance"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("contact distance", "cd"),
         data_type="float64",
         unit="point",
         description="The {aggregation} distance between the initial "
@@ -1036,11 +1036,11 @@ class ExtractContactDistance(ExtractFingerSuccessBase):
 
 
 class ExtractFirstPushes(ExtractFingerSuccessBase):
-    """A feature extraction processing step for first finger pushes."""
+    """A measure extraction processing step for first finger pushes."""
 
-    feature = "first push"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("first push", "fp"),
+    measure = "first push"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("first push", "fp"),
         data_type="float64",
         validator=GREATER_THAN_ZERO,
         description="The {aggregation} first pressure value applied on"
@@ -1055,11 +1055,11 @@ class ExtractFirstPushes(ExtractFingerSuccessBase):
 
 
 class ExtractPressures(ExtractFingerSuccessBase):
-    """A feature extraction processing step for multiple finger pressures."""
+    """A measure extraction processing step for multiple finger pressures."""
 
-    feature = "pressure"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("pressure", "press"),
+    measure = "pressure"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("pressure", "press"),
         data_type="float64",
         validator=GREATER_THAN_ZERO,
         description="The {aggregation} pressure applied on the screen "
@@ -1077,11 +1077,11 @@ class ExtractPressures(ExtractFingerSuccessBase):
 
 
 class ExtractSpeed(ExtractFingerSuccessBase):
-    """A feature extraction processing step for multiple finger speed."""
+    """A measure extraction processing step for multiple finger speed."""
 
-    feature = "speed"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("speed", "speed"),
+    measure = "speed"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("speed", "speed"),
         data_type="float64",
         validator=GREATER_THAN_ZERO,
         description="The {aggregation} speed "
@@ -1097,11 +1097,11 @@ class ExtractSpeed(ExtractFingerSuccessBase):
 
 
 class ExtractJerk(ExtractFingerSuccessBase):
-    """A feature extraction processing step for multiple jerk finger."""
+    """A measure extraction processing step for multiple jerk finger."""
 
-    feature = "jerk"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("movement jerk", "jerk"),
+    measure = "jerk"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("movement jerk", "jerk"),
         data_type="float64",
         description="The {aggregation} jerk "
         "by the {finger} of the {hand} hand for {size} size for "
@@ -1115,11 +1115,11 @@ class ExtractJerk(ExtractFingerSuccessBase):
 
 
 class ExtractMeanSquaredJerk(ExtractFingerSuccessBase):
-    """A feature extraction for multiple mean squared jerk."""
+    """A measure extraction for multiple mean squared jerk."""
 
-    feature = "ms jerk"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("mean squared jerk", "msj"),
+    measure = "ms jerk"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("mean squared jerk", "msj"),
         data_type="float64",
         unit="px^2/ms^6",
         validator=GREATER_THAN_ZERO,
@@ -1132,11 +1132,11 @@ class ExtractMeanSquaredJerk(ExtractFingerSuccessBase):
 
 
 class ExtractPressureJerk(ExtractFingerSuccessBase):
-    """A feature extraction processing step for multiple jerk pressures."""
+    """A measure extraction processing step for multiple jerk pressures."""
 
-    feature = "pressure jerk"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("pressure jerk", "press_jerk"),
+    measure = "pressure jerk"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("pressure jerk", "press_jerk"),
         data_type="float64",
         description="The {aggregation} jerk pressure applied on "
         "the screen for the {outcome} "
@@ -1147,11 +1147,11 @@ class ExtractPressureJerk(ExtractFingerSuccessBase):
 
 
 class ExtractMeanSquaredPressureJerk(ExtractFingerSuccessBase):
-    """A feature extraction for multiple mean squared jerk of pressures."""
+    """A measure extraction for multiple mean squared jerk of pressures."""
 
-    feature = "ms pressure jerk"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("mean squared pressure jerk", "mspj"),
+    measure = "ms pressure jerk"
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("mean squared pressure jerk", "mspj"),
         data_type="float64",
         unit="pa^2/ms^6",
         validator=GREATER_THAN_ZERO,
@@ -1168,14 +1168,14 @@ class ExtractMeanSquaredPressureJerk(ExtractFingerSuccessBase):
 
 
 class ExtractReactionTime(AggregateRawDataSetColumn):
-    """A feature reaction time extraction processing step."""
+    """A measure reaction time extraction processing step."""
 
     level_filter = LevelIdFilter("melted_levels")
     data_set_ids = "reaction-time"
     column_id = "reaction_time"
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("reaction time", "rt"),
+        measure_name=AV("reaction time", "rt"),
         data_type="float64",
         unit="ms",
         validator=ATTEMPT_DURATION_VALIDATOR_MS,
@@ -1197,12 +1197,12 @@ class ExtractReactionTime(AggregateRawDataSetColumn):
 class ExtractReactionTimeByBubbleSize(
     BubbleSizeTransformMixin, AggregateRawDataSetColumn
 ):
-    """A feature reaction time by bubble size extraction processing step."""
+    """A measure reaction time by bubble size extraction processing step."""
 
     data_set_ids = "bubble_reaction_time"
     column_id = "bubble-reaction-time"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("reaction time", "rt"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("reaction time", "rt"),
         data_type="float64",
         unit="ms",
         validator=ATTEMPT_DURATION_VALIDATOR_MS,
@@ -1218,9 +1218,9 @@ class ExtractReactionTimeByHand(HandModalityFilterMixin, AggregateRawDataSetColu
 
     data_set_ids = "reaction-time"
     column_id = "reaction_time"
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("reaction time", "rt"),
+        measure_name=AV("reaction time", "rt"),
         data_type="float64",
         unit="ms",
         validator=ATTEMPT_DURATION_VALIDATOR_MS,
@@ -1247,8 +1247,8 @@ class ExtractFirstReactionTimeByHand(HandModalityFilterMixin, ExtractStep):
     """A first pinch reaction time by hand extraction step."""
 
     data_set_ids = "melted_targets"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("first pinch reaction time", "fprt"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("first pinch reaction time", "fprt"),
         data_type="float64",
         unit="ms",
         validator=ATTEMPT_DURATION_VALIDATOR_MS,
@@ -1268,12 +1268,12 @@ class ExtractFirstReactionTimeByHand(HandModalityFilterMixin, ExtractStep):
 
 
 class ExtractTotalDuration(AggregateRawDataSetColumn):
-    """A feature total duration extraction processing step."""
+    """A measure total duration extraction processing step."""
 
     data_set_ids = "total-duration"
     column_id = "total_duration"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("duration", "dur"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("duration", "dur"),
         data_type="float64",
         unit="s",
         validator=ATTEMPT_DURATION_VALIDATOR,
@@ -1284,12 +1284,12 @@ class ExtractTotalDuration(AggregateRawDataSetColumn):
 
 
 class PinchAggregateModalitiesByHand(AggregateModalities):
-    """Base step to aggregate features by hand for PINCH task.
+    """Base step to aggregate measures by hand for PINCH task.
 
     Parameters
     ----------
     hand
-        The hand modality for which to aggregate features.
+        The hand modality for which to aggregate measures.
     """
 
     def __init__(self, hand: HandModality):
@@ -1301,7 +1301,7 @@ class PinchAggregateModalitiesByHand(AggregateModalities):
         new_kwargs = kwargs.copy()
         new_kwargs["modalities"] = [self.hand.av]
         new_kwargs["hand"] = self.hand.av
-        return cast(FeatureValueDefinitionPrototype, self.definition).create_definition(
+        return cast(MeasureValueDefinitionPrototype, self.definition).create_definition(
             **new_kwargs
         )
 
@@ -1342,7 +1342,7 @@ class AggregateDoubleTouchAsynchronyByHand(AggregateModalities):
         new_kwargs["modalities"] = [self.hand.av, self.attempt.av]
         new_kwargs["hand"] = self.hand.av
         new_kwargs["attempt"] = self.attempt.av
-        return cast(FeatureValueDefinitionPrototype, self.definition).create_definition(
+        return cast(MeasureValueDefinitionPrototype, self.definition).create_definition(
             **new_kwargs
         )
 
@@ -1386,7 +1386,7 @@ class AggregateTotalPinchAttemptsByHand(PinchAggregateModalitiesByHand):
 
 
 class PinchProcessingLevel(ProcessingStepGroup):
-    """A group of pinch processing steps for features by level id.
+    """A group of pinch processing steps for measures by level id.
 
     Parameters
     ----------
@@ -1403,7 +1403,7 @@ class PinchProcessingLevel(ProcessingStepGroup):
 
 
 class PinchProcessingLevelTarget(ProcessingStepGroup):
-    """A group of pinch processing steps for features by targets."""
+    """A group of pinch processing steps for measures by targets."""
 
     def __init__(self):
         steps = [PinchConcatenateTargetsLevels(), TransformReactionTime()]
@@ -1412,7 +1412,7 @@ class PinchProcessingLevelTarget(ProcessingStepGroup):
 
 
 class PinchProcessingSize(ProcessingStepGroup):
-    """A group of pinch processing steps for features by bubble size."""
+    """A group of pinch processing steps for measures by bubble size."""
 
     def __init__(self, size: BubbleSizeModality):
         steps = [
@@ -1426,7 +1426,7 @@ class PinchProcessingSize(ProcessingStepGroup):
 
 
 class PinchConcatenateHandsGroup(ProcessingStepGroup):
-    """A group of pinch processing steps for features by hands.
+    """A group of pinch processing steps for measures by hands.
 
     Parameters
     ----------
@@ -1455,7 +1455,7 @@ class PinchConcatenateHandsGroup(ProcessingStepGroup):
 
 
 class PinchReactionTimeByHand(ProcessingStepGroup):
-    """A group of pinch processing steps for reaction time features by hands.
+    """A group of pinch processing steps for reaction time measures by hands.
 
     Parameters
     ----------
@@ -1474,14 +1474,14 @@ class PinchReactionTimeByHand(ProcessingStepGroup):
 
 
 class PinchProcessingHandSensor(ProcessingStepGroup):
-    """A group of pinch processing steps for tremor features.
+    """A group of pinch processing steps for tremor measures.
 
     Parameters
     ----------
     hand
-        The hand on which the tremor features are to be computed.
+        The hand on which the tremor measures are to be computed.
     sensor
-        The sensor on which the tremor features are to be computed.
+        The sensor on which the tremor measures are to be computed.
     """
 
     def __init__(self, hand: HandModality, sensor: SensorModality):
@@ -1498,7 +1498,7 @@ class PinchProcessingHandSensor(ProcessingStepGroup):
                 columns=DEFAULT_COLUMNS,
                 freq=FREQ_20HZ,
             ),
-            TremorFeatures(
+            TremorMeasures(
                 sensor=sensor, data_set_id=f"{data_set_id}_renamed_ts_resampled"
             ),
         ]
@@ -1512,7 +1512,7 @@ class PinchProcessingHandSensor(ProcessingStepGroup):
 
 
 class PinchProcessingHandSize(ProcessingStepGroup):
-    """A group of pinch processing steps for features by bubbles and hands.
+    """A group of pinch processing steps for measures by bubbles and hands.
 
     Parameters
     ----------
@@ -1726,8 +1726,8 @@ class ExtractSingleShotDuration(HandModalityFilterMixin, AggregateRawDataSetColu
     data_set_ids = "single-shot-duration"
     column_id = "duration"
     aggregations = PINCH_BASIC_MODALITY_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("single_shot_dur", "dur1shot"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("single_shot_dur", "dur1shot"),
         data_type="float64",
         unit="s",
         validator=ATTEMPT_DURATION_VALIDATOR,
@@ -2038,8 +2038,8 @@ class ExtractTimeToPeakSpeedFinger(HandModalityFilterMixin, AggregateRawDataSetC
 
     data_set_ids = "time-to-peak-speed"
     aggregations = DEFAULT_AGGREGATIONS_Q95_CV
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("peak_time", "peaktime"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("peak_time", "peaktime"),
         data_type="float64",
         unit="s",
         description="The {aggregation} time to the first peak of speed "
@@ -2060,8 +2060,8 @@ class ExtractTimeToPeakAsynchronicity(
     column_id = "peak_asynchro"
     data_set_ids = "time-to-peak-speed"
     aggregations = DEFAULT_AGGREGATIONS_Q95_CV
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("peak speed asynchronicity", "peak_speed_async"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("peak speed asynchronicity", "peak_speed_async"),
         data_type="float64",
         unit="ms",
         description="The {aggregation} duration between the bottom finger "
@@ -2255,7 +2255,7 @@ class PinchFlag(ProcessingStepGroup):
 
 
 class PinchProcessingStepGroup(ProcessingStepGroup):
-    """A group of all pinch processing steps for features extraction."""
+    """A group of all pinch processing steps for measures extraction."""
 
     def __init__(self):
         steps = [

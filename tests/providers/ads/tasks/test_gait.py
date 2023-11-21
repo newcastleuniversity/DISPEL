@@ -3,7 +3,7 @@ from copy import deepcopy
 
 import pytest
 
-from dispel.data.collections import FeatureSet
+from dispel.data.collections import MeasureSet
 from dispel.processing import process
 from dispel.processing.assertions import (
     AssertEvaluationFinished,
@@ -18,7 +18,7 @@ from dispel.providers.generic.tasks.gait.steps import (
     StepsGPS,
 )
 from tests.conftest import noop
-from tests.processing.helper import assert_dict_values, assert_unique_feature_ids
+from tests.processing.helper import assert_dict_values, assert_unique_measure_ids
 from tests.providers.ads.conftest import (
     EXAMPLE_PATH_6MWT,
     EXAMPLE_PATH_6MWT_2455,
@@ -97,7 +97,7 @@ def user_input(user_input_arg):
     ],
 )
 def test_6mwt_process(user_input, expected, exception, gps_only, high_rel_err):
-    """Unit test to ensure the 6MWT features are well computed."""
+    """Unit test to ensure the 6MWT measures are well computed."""
     reading = deepcopy(user_input)
     with exception:
         if gps_only:
@@ -105,12 +105,12 @@ def test_6mwt_process(user_input, expected, exception, gps_only, high_rel_err):
         else:
             process(reading, GaitStepsInclLee())
 
-        feature_set = reading.get_merged_feature_set()
-        assert isinstance(feature_set, FeatureSet)
+        measure_set = reading.get_merged_measure_set()
+        assert isinstance(measure_set, MeasureSet)
 
-        assert_dict_values(feature_set, expected)
+        assert_dict_values(measure_set, expected)
         if high_rel_err is not None:
-            assert_dict_values(feature_set, high_rel_err, relative_error=1e-2)
+            assert_dict_values(measure_set, high_rel_err, relative_error=1e-2)
 
-        # Assert features are unique
-        assert_unique_feature_ids(reading)
+        # Assert measures are unique
+        assert_unique_measure_ids(reading)

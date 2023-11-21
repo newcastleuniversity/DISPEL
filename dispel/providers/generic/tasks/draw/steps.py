@@ -1,7 +1,7 @@
 # pylint: disable=duplicate-code
 """Drawing test related functionality.
 
-This module contains functionality to extract features for the *Drawing* test
+This module contains functionality to extract measures for the *Drawing* test
 (DRAW).
 """
 import warnings
@@ -26,9 +26,9 @@ import pandas as pd
 from scipy.spatial.distance import cdist
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureValue, FeatureValueDefinitionPrototype
 from dispel.data.flags import FlagSeverity, FlagType
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValue, MeasureValueDefinitionPrototype
 from dispel.data.raw import (
     DEFAULT_COLUMNS,
     PRESSURE_VALIDATOR,
@@ -48,12 +48,12 @@ from dispel.processing.extract import (
     BASIC_AGGREGATIONS,
     DEFAULT_AGGREGATIONS,
     DEFAULT_AGGREGATIONS_Q95_CV,
-    AggregateFeatures,
+    AggregateMeasures,
     AggregateModalities,
     AggregateRawDataSetColumn,
     ExtractMultipleStep,
     ExtractStep,
-    FeatureDefinitionMixin,
+    MeasureDefinitionMixin,
 )
 from dispel.processing.flags import flag
 from dispel.processing.level import (
@@ -90,7 +90,7 @@ from dispel.providers.generic.tasks.draw.modalities import (
 )
 from dispel.providers.generic.tasks.draw.shapes import get_user_path, get_valid_path
 from dispel.providers.generic.tasks.draw.touch import DrawShape, DrawTouch
-from dispel.providers.generic.tremor import TremorFeatures
+from dispel.providers.generic.tremor import TremorMeasures
 from dispel.signal.core import euclidean_norm, sparc
 from dispel.stats.core import variation
 
@@ -573,13 +573,13 @@ class TransformInstantSpeed(TransformStep, ValidPathAssertionMixin):
 
 
 class AggregateInstantSpeed(AggregateRawDataSetColumn):
-    """Extract instant speed features."""
+    """Extract instant speed measures."""
 
     data_set_ids = "instantaneous_speed"
 
     def __init__(self) -> None:
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("instant speed", "speed"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("instant speed", "speed"),
             data_type="float64",
             unit="point.s-1",
             description="The {aggregation} of the instantaneous speed while "
@@ -594,7 +594,7 @@ class AggregateInstantSpeed(AggregateRawDataSetColumn):
         )
 
 
-class ExtractShapeMixIn(LevelProcessingStep, FeatureDefinitionMixin, metaclass=ABCMeta):
+class ExtractShapeMixIn(LevelProcessingStep, MeasureDefinitionMixin, metaclass=ABCMeta):
     """A Transformation step that applies a function on targets."""
 
     data_set_ids = "shape"
@@ -634,7 +634,7 @@ class ExtractShapeMixIn(LevelProcessingStep, FeatureDefinitionMixin, metaclass=A
             step=self,
             sources=raw_data_set,
             level=level,
-            result=FeatureValue(self.get_definition(**kwargs_extended), res),
+            result=MeasureValue(self.get_definition(**kwargs_extended), res),
         )
 
 
@@ -643,8 +643,8 @@ class ExtractDuration(ExtractShapeMixIn, ValidPathAssertionMixin):
 
     properties = "all_data"
     extract = get_user_duration
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("drawing duration", "user_dur"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("drawing duration", "user_dur"),
         data_type="float64",
         unit="ms",
         validator=GREATER_THAN_ZERO,
@@ -657,10 +657,10 @@ class ExtractDuration(ExtractShapeMixIn, ValidPathAssertionMixin):
 class ExtractIntersections(ExtractShapeMixIn, ValidPathAssertionMixin):
     """Extract total number of intersections between the user and the model."""
 
-    properties = "intersection_features"
+    properties = "intersection_measures"
     extract = len
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("intersections", "cross"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("intersections", "cross"),
         data_type="int32",
         validator=GREATER_THAN_ZERO,
         description="The number of times the user cross the shape line "
@@ -677,10 +677,10 @@ class ExtractIntersectionsPerSeconds(ExtractShapeMixIn, ValidPathAssertionMixin)
         """Get the number of crossings per second."""
         return data["cross_per_sec"][0]
 
-    properties = "intersection_features"
+    properties = "intersection_measures"
     extract = get_cross_per_sec
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("intersections per second", "cross_per_sec"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("intersections per second", "cross_per_sec"),
         data_type="float64",
         validator=GREATER_THAN_ZERO,
         description="The mean number of intersection per second the user"
@@ -696,7 +696,7 @@ class ExtractIntersectionsFrequency(ExtractMultipleStep, ValidPathAssertionMixin
         def _intersection_frequency_factory(agg: str, agg_label: str) -> Dict[str, Any]:
             return dict(
                 func=lambda data: (
-                    1 / data["shape"][0].intersection_features["tsDiff"]
+                    1 / data["shape"][0].intersection_measures["tsDiff"]
                 ).agg(agg),
                 aggregation=AV(agg_label, agg),
                 unit="Hz",
@@ -705,7 +705,7 @@ class ExtractIntersectionsFrequency(ExtractMultipleStep, ValidPathAssertionMixin
         def _cv_intersection_frequency_factory() -> Dict[str, Any]:
             return dict(
                 func=lambda data: variation(
-                    data["shape"][0].intersection_features["freqDiff"]
+                    data["shape"][0].intersection_measures["freqDiff"]
                 ),
                 aggregation=AV("coefficient of variation", "cv"),
                 unit="Hz",
@@ -717,8 +717,8 @@ class ExtractIntersectionsFrequency(ExtractMultipleStep, ValidPathAssertionMixin
             for agg, agg_label in BASIC_AGGREGATIONS
         ]
         function += [_cv_intersection_frequency_factory()]
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("intersections frequency", "cross_freq"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("intersections frequency", "cross_freq"),
             data_type="float64",
             validator=GREATER_THAN_ZERO,
             description="The {aggregation} intersection frequency of the user"
@@ -745,8 +745,8 @@ class ExtractSparc(ExtractShapeMixIn, ValidPathAssertionMixin):
 
     properties = "aggregate_valid_touches"
     extract = sparc_call
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("smoothness score", "smooth"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("smoothness score", "smooth"),
         data_type="float64",
         validator=RangeValidator(upper_bound=0),
         description="A digital score of tremor using spectral arc length "
@@ -773,8 +773,8 @@ class ExtractSpeedAccuracy(ExtractShapeMixIn, ValidPathAssertionMixin):
         self.extract = lambda x, y: _extract_speed_acc(  # type: ignore
             x, y, aggregation
         )
-        self.definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("accuracy-normalized duration", "dur_acc"),
+        self.definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("accuracy-normalized duration", "dur_acc"),
             data_type="float64",
             unit="point-1.ms-1",
             aggregation=aggregation,
@@ -819,14 +819,14 @@ class ExtractDurationAccuracyNormedCombined(ExtractShapeMixIn, ValidPathAssertio
         return np.array([_extract_func(*properties)]).astype(self.target_dtype)[0]
 
     def __init__(self, **kwargs):
-        self.definition = FeatureValueDefinitionPrototype(
-            feature_name=AV(
+        self.definition = MeasureValueDefinitionPrototype(
+            measure_name=AV(
                 "accuracy and duration normalized then combined",
                 "dur_acc_normed_combined",
             ),
             data_type="float64",
             validator=GREATER_THAN_ZERO,
-            description="This feature is a combination of several measurements"
+            description="This measure is a combination of several measurements"
             "of the subject while drawing {shape} with their "
             "{hand} hand for the {attempt} attempt. It is "
             "computed by combining the duration and accuracy. The "
@@ -856,8 +856,8 @@ class ExtractDrawingCompletionRatio(ExtractShapeMixIn, ValidPathAssertionMixin):
 
     properties = "distance_ratio"
     extract = identity
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("completion ratio", "c_ratio"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("completion ratio", "c_ratio"),
         data_type="float",
         description="Percentage of completion of the shape {shape} shape with"
         " their {hand} hand for the {attempt} attempt.",
@@ -865,7 +865,7 @@ class ExtractDrawingCompletionRatio(ExtractShapeMixIn, ValidPathAssertionMixin):
 
 
 class ExtractPressure(ExtractMultipleStep, ValidPathAssertionMixin):
-    """Extract pressure-related features."""
+    """Extract pressure-related measures."""
 
     def __init__(self) -> None:
         function = {
@@ -887,8 +887,8 @@ class ExtractPressure(ExtractMultipleStep, ValidPathAssertionMixin):
             },
         ]
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("pressure", "press"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("pressure", "press"),
             data_type="float64",
             description=description,
         )
@@ -897,12 +897,12 @@ class ExtractPressure(ExtractMultipleStep, ValidPathAssertionMixin):
 
 
 class ExtractReactionTime(ExtractStep, ValidPathAssertionMixin):
-    """Extract reaction time features."""
+    """Extract reaction time measures."""
 
     data_set_ids = "screen"
     transform_function = reaction_time
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("reaction time", "rt"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("reaction time", "rt"),
         data_type="float64",
         unit="ms",
         validator=GREATER_THAN_ZERO,
@@ -913,11 +913,11 @@ class ExtractReactionTime(ExtractStep, ValidPathAssertionMixin):
 
 
 class ExtractReactionTimeAll(AggregateRawDataSetColumn, ValidPathAssertionMixin):
-    """Extract reaction time related features for all levels."""
+    """Extract reaction time related measures for all levels."""
 
     def __init__(self) -> None:
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("reaction time", "rt"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("reaction time", "rt"),
             data_type="float64",
             unit="ms",
             validator=GREATER_THAN_ZERO,
@@ -934,11 +934,11 @@ class ExtractReactionTimeAll(AggregateRawDataSetColumn, ValidPathAssertionMixin)
 
 
 class ExtractPressureAll(AggregateRawDataSetColumn, ValidPathAssertionMixin):
-    """Extract pressure related features for all levels."""
+    """Extract pressure related measures for all levels."""
 
     def __init__(self) -> None:
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("pressure", "press"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("pressure", "press"),
             data_type="float64",
             validator=PRESSURE_VALIDATOR,
             description="The {aggregation} pressure applied on the screen.",
@@ -953,11 +953,11 @@ class ExtractPressureAll(AggregateRawDataSetColumn, ValidPathAssertionMixin):
 
 
 class ExtractPressureAllCV(AggregateRawDataSetColumn, ValidPathAssertionMixin):
-    """Extract pressure related features for all levels."""
+    """Extract pressure related measures for all levels."""
 
     def __init__(self):
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("pressure", "press"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("pressure", "press"),
             data_type="float64",
             description="The {aggregation} pressure applied on the screen.",
         )
@@ -986,8 +986,8 @@ class ExtractDTW(ExtractShapeMixIn, ValidPathAssertionMixin):
 
     def __init__(self, aggregation: str, **kwargs):
         self.extract = lambda x: _dtw_agg_dist(aggregation, x)  # type: ignore
-        self.definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("similarity", "sim"),
+        self.definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("similarity", "sim"),
             data_type="float64",
             unit="point",
             aggregation=aggregation,
@@ -1002,15 +1002,15 @@ class ExtractDTW(ExtractShapeMixIn, ValidPathAssertionMixin):
         super().__init__(**kwargs)
 
 
-class DrawTremorFeatures(ProcessingStepGroup):
-    """A group of drawing processing steps for tremor features.
+class DrawTremorMeasures(ProcessingStepGroup):
+    """A group of drawing processing steps for tremor measures.
 
     Parameters
     ----------
     hand
-        The hand on which the tremor features are to be computed.
+        The hand on which the tremor measures are to be computed.
     sensor
-        The sensor on which the tremor features are to be computed.
+        The sensor on which the tremor measures are to be computed.
     """
 
     def __init__(self, hand: HandModality, sensor: SensorModality):
@@ -1026,7 +1026,7 @@ class DrawTremorFeatures(ProcessingStepGroup):
                 columns=DEFAULT_COLUMNS,
                 freq=FREQ_20HZ,
             ),
-            TremorFeatures(
+            TremorMeasures(
                 sensor=sensor, data_set_id=f"{data_set_id}_renamed_ts_resampled"
             ),
         ]
@@ -1040,8 +1040,8 @@ class DrawTremorFeatures(ProcessingStepGroup):
         )
 
 
-class DrawIntentionalTremorFeatures(ProcessingStepGroup):
-    """A group of drawing processing steps for tremor features."""
+class DrawIntentionalTremorMeasures(ProcessingStepGroup):
+    """A group of drawing processing steps for tremor measures."""
 
     def __init__(self) -> None:
         data_set_id = "deceleration"
@@ -1064,7 +1064,7 @@ class DrawIntentionalTremorFeatures(ProcessingStepGroup):
                 columns=["x_traj", "y_traj", "diss"],
                 freq=FREQ_60HZ,
             ),
-            TremorFeatures(
+            TremorMeasures(
                 sensor=SensorModality.INTENTIONAL,
                 data_set_id=f"{data_set_id}_renamed_ts_resampled",
                 add_norm=False,
@@ -1098,8 +1098,8 @@ class ExtractCornerMeanDistance(ExtractShapeMixIn, ValidPathAssertionMixin):
 
     properties = "corners_max_dist"
     extract = extract_mean_corner_max_dist
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("mean corner max distance", "corner"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("mean corner max distance", "corner"),
         data_type="float64",
         unit="point",
         validator=RangeValidator(
@@ -1112,17 +1112,17 @@ class ExtractCornerMeanDistance(ExtractShapeMixIn, ValidPathAssertionMixin):
     )
 
 
-class AggregateCornerMeanDistance(AggregateFeatures):
-    """Aggregate mean corner max distance feature over all attempts."""
+class AggregateCornerMeanDistance(AggregateMeasures):
+    """Aggregate mean corner max distance measure over all attempts."""
 
-    feature_ids = []
+    measure_ids = []
     for shape in ShapeModality:
         for attempt in AttemptModality:
             for hand in HandModality:
-                feature_ids += [f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-corner"]
-    definition = FeatureValueDefinitionPrototype(
+                measure_ids += [f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-corner"]
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("mean corner max distance", "corner"),
+        measure_name=AV("mean corner max distance", "corner"),
         data_type="float64",
         unit="point",
         aggregation="mean",
@@ -1147,8 +1147,8 @@ class ExtractAxesMeanDistance(ExtractShapeMixIn, ValidPathAssertionMixin):
 
     properties = "axis_overshoots"
     extract = extract_mean_axes_dist
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("mean axes overshoots", "axes_over"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("mean axes overshoots", "axes_over"),
         data_type="float64",
         unit="point",
         validator=RangeValidator(
@@ -1165,19 +1165,19 @@ class ExtractAxesMeanDistance(ExtractShapeMixIn, ValidPathAssertionMixin):
     )
 
 
-class AggregateAxesMeanDistance(AggregateFeatures):
-    """Aggregate mean corner max distance feature over all attempts."""
+class AggregateAxesMeanDistance(AggregateMeasures):
+    """Aggregate mean corner max distance measure over all attempts."""
 
-    feature_ids = []
+    measure_ids = []
     for shape in ShapeModality:
         for attempt in AttemptModality:
             for hand in HandModality:
-                feature_ids += [
+                measure_ids += [
                     f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-axes_over"
                 ]
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("mean axes overshoots", "axes_over"),
+        measure_name=AV("mean axes overshoots", "axes_over"),
         data_type="float64",
         unit="point",
         aggregation="mean",
@@ -1192,9 +1192,9 @@ class AggregateAxesMeanDistance(AggregateFeatures):
 
 
 class DrawAggregateModalitiesByHand(AggregateModalities):
-    """Base step to aggregate features by hand for DRAW task.
+    """Base step to aggregate measures by hand for DRAW task.
 
-    From the definition of the feature, all the features for the different
+    From the definition of the measure, all the measures for the different
     shapes and attempts are retrieved (see get_modalities).
     """
 
@@ -1204,7 +1204,7 @@ class DrawAggregateModalitiesByHand(AggregateModalities):
 
     def get_definition(self, **kwargs) -> ValueDefinition:
         """Get the definition."""
-        return cast(FeatureValueDefinitionPrototype, self.definition).create_definition(
+        return cast(MeasureValueDefinitionPrototype, self.definition).create_definition(
             modalities=[self.hand.av], hand=self.hand.av
         )
 
@@ -1219,9 +1219,9 @@ class DrawAggregateModalitiesByHand(AggregateModalities):
 
 
 class DrawAggregateModalitiesByHandAndShape(AggregateModalities):
-    """Base step to aggregate features by hand and shape for DRAW task.
+    """Base step to aggregate measures by hand and shape for DRAW task.
 
-    From the definition of the feature, all the features for the different
+    From the definition of the measure, all the measures for the different
     attempts are retrieved (see get_modalities).
     """
 
@@ -1232,7 +1232,7 @@ class DrawAggregateModalitiesByHandAndShape(AggregateModalities):
 
     def get_definition(self, **kwargs) -> ValueDefinition:
         """Get the definition."""
-        return cast(FeatureValueDefinitionPrototype, self.definition).create_definition(
+        return cast(MeasureValueDefinitionPrototype, self.definition).create_definition(
             modalities=[self.hand.av, self.shape.av],
             hand=self.hand.av,
             shape=self.shape,
@@ -1250,9 +1250,9 @@ class DrawAggregateModalitiesByHandAndShape(AggregateModalities):
 class AggregateSimilarityByHand(DrawAggregateModalitiesByHand):
     """Average similarity values by hand."""
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("similarity", "sim"),
+        measure_name=AV("similarity", "sim"),
         data_type="float64",
         unit="point",
         aggregation="mean",
@@ -1267,9 +1267,9 @@ class AggregateSimilarityByHand(DrawAggregateModalitiesByHand):
 class AggregateSpeedSimilarityByHand(DrawAggregateModalitiesByHand):
     """Average speed/similarity values by hand."""
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("accuracy-normalized duration", "dur_acc"),
+        measure_name=AV("accuracy-normalized duration", "dur_acc"),
         data_type="float64",
         unit="point-1.ms-1",
         aggregation="mean",
@@ -1287,9 +1287,9 @@ class AggregateSpeedSimilarityByHand(DrawAggregateModalitiesByHand):
 class AggregateSparcByHand(DrawAggregateModalitiesByHand):
     """Average sparc values by hand."""
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("smoothness score", "smooth"),
+        measure_name=AV("smoothness score", "smooth"),
         data_type="float64",
         validator=RangeValidator(upper_bound=0),
         aggregation="mean",
@@ -1302,9 +1302,9 @@ class AggregateSparcByHand(DrawAggregateModalitiesByHand):
 class AggregateDurationByHand(DrawAggregateModalitiesByHand):
     """Average duration of drawing by hand."""
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("drawing duration", "user_dur"),
+        measure_name=AV("drawing duration", "user_dur"),
         data_type="float64",
         unit="ms",
         validator=GREATER_THAN_ZERO,
@@ -1318,9 +1318,9 @@ class AggregateDurationByHand(DrawAggregateModalitiesByHand):
 class AggregateIntersectionsByHand(DrawAggregateModalitiesByHand):
     """Average total number of intersections by hand."""
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("intersections", "cross"),
+        measure_name=AV("intersections", "cross"),
         data_type="int32",
         validator=GREATER_THAN_ZERO,
         aggregation="mean",
@@ -1333,9 +1333,9 @@ class AggregateIntersectionsByHand(DrawAggregateModalitiesByHand):
 class AggregateIntersectionsPerSecondsByHand(DrawAggregateModalitiesByHand):
     """Average the mean number of intersections per second by hand."""
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("intersections per second", "cross_per_sec"),
+        measure_name=AV("intersections per second", "cross_per_sec"),
         data_type="float64",
         validator=GREATER_THAN_ZERO,
         aggregation="mean",
@@ -1345,20 +1345,20 @@ class AggregateIntersectionsPerSecondsByHand(DrawAggregateModalitiesByHand):
     )
 
 
-class AggregateSimilarity(AggregateFeatures):
+class AggregateSimilarity(AggregateMeasures):
     """Average similarity values by hand."""
 
-    feature_ids = []
+    measure_ids = []
     for shape in ShapeModality:
         for attempt in AttemptModality:
             for hand in HandModality:
-                feature_ids += [
+                measure_ids += [
                     f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-sim-mean"
                 ]
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("similarity", "sim"),
+        measure_name=AV("similarity", "sim"),
         data_type="float64",
         unit="point",
         aggregation="mean",
@@ -1370,20 +1370,20 @@ class AggregateSimilarity(AggregateFeatures):
     )
 
 
-class AggregateSpeedSimilarity(AggregateFeatures):
+class AggregateSpeedSimilarity(AggregateMeasures):
     """Average speed/similarity globally."""
 
-    feature_ids = []
+    measure_ids = []
     for shape in ShapeModality:
         for attempt in AttemptModality:
             for hand in HandModality:
-                feature_ids += [
+                measure_ids += [
                     f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-dur_acc-mean"
                 ]
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("accuracy-normalized duration", "dur_acc"),
+        measure_name=AV("accuracy-normalized duration", "dur_acc"),
         data_type="float64",
         unit="point-1.ms-1",
         validator=GREATER_THAN_ZERO,
@@ -1398,18 +1398,18 @@ class AggregateSpeedSimilarity(AggregateFeatures):
     )
 
 
-class AggregateSparc(AggregateFeatures):
+class AggregateSparc(AggregateMeasures):
     """Average smoothness scores globally."""
 
-    feature_ids = []
+    measure_ids = []
     for shape in ShapeModality:
         for attempt in AttemptModality:
             for hand in HandModality:
-                feature_ids += [f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-smooth"]
+                measure_ids += [f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-smooth"]
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("smoothness score", "smooth"),
+        measure_name=AV("smoothness score", "smooth"),
         data_type="float64",
         validator=RangeValidator(upper_bound=0),
         aggregation="mean",
@@ -1419,20 +1419,20 @@ class AggregateSparc(AggregateFeatures):
     )
 
 
-class AggregateDuration(AggregateFeatures):
+class AggregateDuration(AggregateMeasures):
     """Average duration of drawing on all shapes, attempts and hands."""
 
-    feature_ids = []
+    measure_ids = []
     for shape in ShapeModality:
         for attempt in AttemptModality:
             for hand in HandModality:
-                feature_ids += [
+                measure_ids += [
                     f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-user_dur"
                 ]
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("drawing duration", "user_dur"),
+        measure_name=AV("drawing duration", "user_dur"),
         data_type="float64",
         unit="ms",
         validator=GREATER_THAN_ZERO,
@@ -1443,20 +1443,20 @@ class AggregateDuration(AggregateFeatures):
     )
 
 
-class AggregateIntersectionsPerSeconds(AggregateFeatures):
+class AggregateIntersectionsPerSeconds(AggregateMeasures):
     """Average the number of intersections per second globally."""
 
-    feature_ids = []
+    measure_ids = []
     for shape in ShapeModality:
         for attempt in AttemptModality:
             for hand in HandModality:
-                feature_ids += [
+                measure_ids += [
                     f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-cross_per_sec"
                 ]
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("intersections per second", "cross_per_sec"),
+        measure_name=AV("intersections per second", "cross_per_sec"),
         data_type="float64",
         validator=GREATER_THAN_ZERO,
         aggregation="mean",
@@ -1466,18 +1466,18 @@ class AggregateIntersectionsPerSeconds(AggregateFeatures):
     )
 
 
-class AggregateIntersections(AggregateFeatures):
+class AggregateIntersections(AggregateMeasures):
     """Average the number of intersections globally."""
 
-    feature_ids = []
+    measure_ids = []
     for shape in ShapeModality:
         for attempt in AttemptModality:
             for hand in HandModality:
-                feature_ids += [f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-cross"]
+                measure_ids += [f"draw-{hand.abbr}_{shape.abbr}_{attempt.abbr}-cross"]
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("intersections", "cross"),
+        measure_name=AV("intersections", "cross"),
         data_type="int32",
         validator=GREATER_THAN_ZERO,
         aggregation="mean",
@@ -1490,9 +1490,9 @@ class AggregateIntersections(AggregateFeatures):
 class AggregateDistanceThresholdByHandAndShape(DrawAggregateModalitiesByHandAndShape):
     """Aggregate Distance threshold flag values by hand and shape."""
 
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=TASK_NAME,
-        feature_name=AV("distance threshold", "dist_thresh"),
+        measure_name=AV("distance threshold", "dist_thresh"),
         data_type="bool",
         description="Whether the user completes at least 80% of the expected "
         "shape {shape} with their {hand} hand for both attempts.",
@@ -1550,11 +1550,11 @@ class DrawTransformAndExtract(ProcessingStepGroup):
     Parameters
     ----------
     hand
-        The hand on which the tremor features are to be computed.
+        The hand on which the tremor measures are to be computed.
     shape
-        The shape on which the tremor features are to be computed.
+        The shape on which the tremor measures are to be computed.
     attempt
-        The attempt on which the tremor features are to be computed.
+        The attempt on which the tremor measures are to be computed.
     """
 
     def __init__(
@@ -1584,7 +1584,7 @@ class DrawTransformAndExtract(ProcessingStepGroup):
         if shape in [ShapeModality.SQUARE, ShapeModality.SQUARE_COUNTER_CLOCK]:
             steps += [
                 TransformDecelerationProfile(),
-                DrawIntentionalTremorFeatures(),  # type: ignore
+                DrawIntentionalTremorMeasures(),  # type: ignore
                 ExtractCornerMeanDistance(),
                 ExtractAxesMeanDistance(),
             ]
@@ -1661,9 +1661,9 @@ class AddRawPacmanScore(ExtractStep, ValidPathAssertionMixin):
     def __init__(self, level_filter: LevelFilter, **kwargs: object) -> None:
         data_set_ids = "shape"
         transform_function = compute_pacman_score
-        definition = FeatureValueDefinitionPrototype(
+        definition = MeasureValueDefinitionPrototype(
             task_name=TASK_NAME,
-            feature_name=AV("raw pacman score", "raw_pacman_score"),
+            measure_name=AV("raw pacman score", "raw_pacman_score"),
             description="The raw pacman score is the ratio between the number "
             "of eaten points and the total number of target points"
             ". A target point is considered eaten if that point is"
@@ -1767,7 +1767,7 @@ for _hand in HandModality:
     ]
 
     STEPS += [
-        DrawTremorFeatures(_hand, sensor)
+        DrawTremorMeasures(_hand, sensor)
         for sensor in [SensorModality.ACCELEROMETER, SensorModality.GYROSCOPE]
     ]
 
@@ -1810,7 +1810,7 @@ STEPS += [
     AggregateAxesMeanDistance(),
 ]
 
-# Extra pacman score features
+# Extra pacman score measures
 for hand in HandModality:
     for shape, attempt in product(ShapeModality, AttemptModality):
         modalities = [hand.av, shape.av, attempt.av]

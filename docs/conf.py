@@ -32,7 +32,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "sphinx_mdinclude",
     "pytest_doctestplus.sphinx.doctestplus",
-    "dispel.sphinxext.dispel_features",
+    "dispel.sphinxext.dispel_measures",
 ]
 
 templates_path = ["_templates"]
