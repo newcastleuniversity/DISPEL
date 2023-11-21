@@ -9,16 +9,16 @@
 
 from importlib.metadata import version
 
-project = "DIgital Signal ProcEssing Library"
+project = "dispel"
 author = (
     "Alf Scotland and Gautier Cosne and Adrien Juraver and Angelos Karatsidis "
     "and Joaquin Penalver de Andres"
 )
 
 # The full version, including alpha/beta/rc tags.
-release = version("dispel")
+release = version("dispel").split("+")[0]
 # The short X.Y version.
-version = ".".join(release.split(".")[:2])
+version = ".".join(release.split(".")[:3])
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -63,4 +63,5 @@ intersphinx_mapping = {
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "pydata_sphinx_theme"
+html_logo = "_static/dispel-logo.png"
 html_static_path = ["_static"]
