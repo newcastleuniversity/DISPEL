@@ -19,23 +19,22 @@ DISPEL is a python DIgital Signal ProcEssing Library developed to standardize ex
 - 🏆 **Real-World Ready:** Step out of the lab and into the world with confidence. DISPEL equips you with the tools to factor in real-world variables, ensuring your research stays relevant and resilient.
 
 
-Contribution
-------------
+## Contribution
+
 Join our efforts in enhancing DISPEL's capabilities by contributing new processing modules and improvements; for detailed guidelines, please refer to our ![CONTRIBUTING](CONTRIBUTING.rst) file.
 
-Documentation
--------------
+## Documentation
 
 See our ![documentation](https://newcastleuniversity.github.io/DISPEL)
 for how to install and get started with `DISPEL`.
 
-The Team
---------
+## The Team
+
 DISPEL is a community-driven project with several skillful engineers and researchers contributing to it.
 
 DISPEL is currently maintained by ![Alf Scotland](https://github.com/alf-scotland), [Angelos Karatsidis](https://github.com/akaratsidis),  with major contributions of talented individuals in various forms and means.
 A non-exhaustive list needs to mention: Ali Neishabouri, Clément Dulong, Oussama Tchita, Loïc Carment, Angéline Plaud, Kevin Bouaou.
 
-License
--------
+## License
+
 DISPEL has a MIT-license, as found in the [LICENSE](LICENSE) file.
