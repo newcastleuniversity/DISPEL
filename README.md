@@ -1,4 +1,4 @@
-![Dispel Logo](./docs/_static/img/dispel-logo.png)
+![Dispel Logo](./docs/_static/dispel-logo.png)
 
 --------------------------------------------------------------------------------
 
@@ -21,18 +21,18 @@ DISPEL is a python DIgital Signal ProcEssing Library developed to standardize ex
 
 ## Contribution
 
-Join our efforts in enhancing DISPEL's capabilities by contributing new processing modules and improvements; for detailed guidelines, please refer to our ![CONTRIBUTING](CONTRIBUTING.rst) file.
+Join our efforts in enhancing DISPEL's capabilities by contributing new processing modules and improvements; for detailed guidelines, please refer to our [CONTRIBUTING](CONTRIBUTING.rst) file.
 
 ## Documentation
 
-See our ![documentation](https://newcastleuniversity.github.io/DISPEL)
+See our [documentation](https://newcastleuniversity.github.io/DISPEL)
 for how to install and get started with `DISPEL`.
 
 ## The Team
 
 DISPEL is a community-driven project with several skillful engineers and researchers contributing to it.
 
-DISPEL is currently maintained by ![Alf Scotland](https://github.com/alf-scotland), [Angelos Karatsidis](https://github.com/akaratsidis),  with major contributions of talented individuals in various forms and means.
+DISPEL is currently maintained by [Alf Scotland](https://github.com/alf-scotland), [Angelos Karatsidis](https://github.com/akaratsidis),  with major contributions of talented individuals in various forms and means.
 A non-exhaustive list needs to mention: Ali Neishabouri, Clément Dulong, Oussama Tchita, Loïc Carment, Angéline Plaud, Kevin Bouaou.
 
 ## License
