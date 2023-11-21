@@ -1,6 +1,6 @@
 """Cognitive Processing Speed test related functionality.
 
-This module contains functionality to extract features for the *Cognitive
+This module contains functionality to extract measures for the *Cognitive
 Processing Speed* test.
 """
 # pylint: disable=no-member
@@ -9,9 +9,9 @@ from typing import Any, Callable, Dict, Iterable, List, Optional, Tuple, Union
 
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinition, FeatureValueDefinitionPrototype
 from dispel.data.flags import WrappedResult
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValueDefinition, MeasureValueDefinitionPrototype
 from dispel.data.raw import RawDataValueDefinition
 from dispel.data.validators import GREATER_THAN_ZERO, RangeValidator
 from dispel.data.values import AbbreviatedValue as AV
@@ -24,7 +24,7 @@ from dispel.processing.data_set import (
 from dispel.processing.extract import (
     DEFAULT_AGGREGATIONS,
     EXTENDED_AGGREGATIONS,
-    AggregateFeatures,
+    AggregateMeasures,
     AggregateModalities,
     AggregateRawDataSetColumn,
     ExtractStep,
@@ -92,8 +92,8 @@ class SequenceTransformMixin(metaclass=ABCMeta):
         super().__init__(*args, **kwargs)  # type: ignore
 
     @abstractmethod
-    def get_prototype_definition(self) -> FeatureValueDefinitionPrototype:
-        """Get the feature value definition."""
+    def get_prototype_definition(self) -> MeasureValueDefinitionPrototype:
+        """Get the measure value definition."""
         raise NotImplementedError
 
 
@@ -106,12 +106,12 @@ class SequenceModeKeyModalityDefinitionMixIn:
         The desired mode to compute the transformation
         (``digit-to-symbol``, ``digit-to-digit``).
     key_set
-        The specific key set filter on which you desire to extract features.
+        The specific key set filter on which you desire to extract measures.
     sequence
         The sequence type
     """
 
-    feature_name: AV
+    measure_name: AV
     description: str
     unit: Optional[str] = None
     data_type: Optional[str] = None
@@ -132,10 +132,10 @@ class SequenceModeKeyModalityDefinitionMixIn:
 
         super().__init__(*args, **kwargs)  # type: ignore
 
-    def get_prototype_definition(self) -> FeatureValueDefinitionPrototype:
-        """Get the feature value definition."""
-        return FeatureValueDefinitionPrototype(
-            feature_name=self.feature_name,
+    def get_prototype_definition(self) -> MeasureValueDefinitionPrototype:
+        """Get the measure value definition."""
+        return MeasureValueDefinitionPrototype(
+            measure_name=self.measure_name,
             data_type=self.data_type,
             unit=self.unit,
             validator=self.validator,
@@ -281,7 +281,7 @@ class ConfusionBase(
 
     @abstractmethod
     def apply_pair(self, data: pd.DataFrame, pair: PairType) -> float:
-        """Get the feature value definition."""
+        """Get the measure value definition."""
         raise NotImplementedError
 
     def function_factory(self, pair: PairType) -> dict:
@@ -298,9 +298,9 @@ class ConfusionBase(
 
 
 class ExtractConfusionBase(ConfusionBase):
-    """Confusion features extraction mix in."""
+    """Confusion measures extraction mix in."""
 
-    feature_name = AV("confusion", "conf")
+    measure_name = AV("confusion", "conf")
     validator = GREATER_THAN_ZERO
     description = (
         "The total number of time {subset[0]} was provided instead of {subset[1]} "
@@ -312,9 +312,9 @@ class ExtractConfusionBase(ConfusionBase):
 
 
 class ExtractConfusionRateBase(ConfusionBase):
-    """Confusion rate features extraction mix in."""
+    """Confusion rate measures extraction mix in."""
 
-    feature_name = AV("confusion rate", "confr")
+    measure_name = AV("confusion rate", "confr")
     validator = GREATER_THAN_ZERO
     description = "The confusion rate between {subset} "
 
@@ -324,25 +324,25 @@ class ExtractConfusionRateBase(ConfusionBase):
 
 
 class ExtractConfusionDTD(ExtractConfusionBase):
-    """Confusion features extraction."""
+    """Confusion measures extraction."""
 
     confusion_pair = list(DigitConfusionPairModality)
 
 
 class ExtractConfusionDTS(ExtractConfusionBase):
-    """Confusion features extraction."""
+    """Confusion measures extraction."""
 
     confusion_pair = list(SymbolConfusionPairModality)
 
 
 class ExtractConfusionRateDTD(ExtractConfusionRateBase):
-    """Confusion features extraction for digit."""
+    """Confusion measures extraction for digit."""
 
     confusion_pair = list(DigitConfusionPairModality)
 
 
 class ExtractConfusionRateDTS(ExtractConfusionRateBase):
-    """Confusion features extraction for digit."""
+    """Confusion measures extraction for digit."""
 
     confusion_pair = list(SymbolConfusionPairModality)
 
@@ -367,7 +367,7 @@ class KeyAnalysisBase(
 
     @abstractmethod
     def apply_key(self, data: pd.DataFrame, key: Any, agg: AV) -> WrappedResult[float]:
-        """Get the feature value definition."""
+        """Get the measure value definition."""
         raise NotImplementedError
 
     def function_factory(self, key: KeyType, agg: AV) -> dict:
@@ -392,7 +392,7 @@ class KeyAnalysisBase(
 class ExtractDifferencesKeyReactionTimeBase(KeyAnalysisBase):
     """Difference Reaction Time ExtractStep mix in."""
 
-    feature_name = AV("reaction time difference", "rt_diff")
+    measure_name = AV("reaction time difference", "rt_diff")
     description = "The {aggregation} absolute reaction time difference between {key} "
 
     def apply_key(self, data: pd.DataFrame, key: Any, agg: AV) -> WrappedResult[float]:
@@ -405,7 +405,7 @@ class ExtractDifferencesKeyReactionTimeBase(KeyAnalysisBase):
 class KeyReactionTimeBase(KeyAnalysisBase):
     """Reaction Time ExtractStep mix in."""
 
-    feature_name = AV_REACTION_TIME
+    measure_name = AV_REACTION_TIME
     description = "The {aggregation} reaction time for {key} "
 
     def apply_key(self, data: pd.DataFrame, key: Any, agg: AV) -> WrappedResult[float]:
@@ -417,7 +417,7 @@ class ExtractDigitSpecificReactionTimesDTD(KeyReactionTimeBase):
     """Digit to Digit Reaction Time ExtractStep.
 
     The digits 1, 6 and 9 are the most likely to be confused, and they
-    will be used to compute reaction time features.
+    will be used to compute reaction time measures.
     """
 
     key_list = [DigitEnum.DIGIT_1, DigitEnum.DIGIT_6, DigitEnum.DIGIT_9]
@@ -484,10 +484,10 @@ class ExtractDigit1Error(SequenceTransformMixin, ExtractStep):
     def _error_digit_1(self, data: pd.DataFrame) -> int:
         return len(data[data.expected == 1].loc[data.actual != 1])
 
-    def get_prototype_definition(self) -> FeatureValueDefinitionPrototype:
-        """Get the feature value definition."""
-        return FeatureValueDefinitionPrototype(
-            feature_name=AV("number of errors", "err"),
+    def get_prototype_definition(self) -> MeasureValueDefinitionPrototype:
+        """Get the measure value definition."""
+        return MeasureValueDefinitionPrototype(
+            measure_name=AV("number of errors", "err"),
             data_type="int16",
             validator=GREATER_THAN_ZERO,
             description=f"The number of errors when digit 1 is displayed for "
@@ -515,7 +515,7 @@ class ExtractTotalAnswersBase(SequenceModeKeyModalityDefinitionMixIn, ExtractCPS
 class ExtractErrorInThird(ExtractTotalAnswersBase):
     """Number of errors in a specific subset ExtractStep."""
 
-    feature_name = AV("number of errors", "err")
+    measure_name = AV("number of errors", "err")
     description = "The number of errors within the {subset} "
     subset_list = list(ThirdsModality)
 
@@ -540,7 +540,7 @@ class ExtractErrorInThird(ExtractTotalAnswersBase):
 class ExtractTotalNumError(ExtractTotalAnswersBase):
     """Total of errors ExtractStep."""
 
-    feature_name = AV("total number of errors", "err")
+    measure_name = AV("total number of errors", "err")
     description = "The total number of errors of the user "
 
     def get_function(self) -> Iterable[Dict[str, Any]]:
@@ -551,7 +551,7 @@ class ExtractTotalNumError(ExtractTotalAnswersBase):
 class ExtractCorrectByThird(ExtractTotalAnswersBase):
     """Number of errors in a specific subset ExtractStep."""
 
-    feature_name = AV("number of correct answers", "corr")
+    measure_name = AV("number of correct answers", "corr")
     description = "The number of correct answer within the {subset} subset."
     subset_list = list(ThirdsModality)
 
@@ -576,7 +576,7 @@ class ExtractCorrectByThird(ExtractTotalAnswersBase):
 class ExtractCorrectDiffBetweenThird(ExtractTotalAnswersBase):
     """Compute the difference of correct answers between two thirds."""
 
-    feature_name = AV("correct responses difference", "corr_diff")
+    measure_name = AV("correct responses difference", "corr_diff")
     data_type = "float64"
     validator = RangeValidator(-30, 30)
     description = (
@@ -616,7 +616,7 @@ class ExtractCorrectDiffBetweenThird(ExtractTotalAnswersBase):
 class ExtractTotalErrorPercentage(ExtractTotalAnswersBase):
     """Percentage Total of errors ExtractStep."""
 
-    feature_name = AV("percentage of errors", "err_per")
+    measure_name = AV("percentage of errors", "err_per")
     description = "The percentage of errors of the user "
 
     def get_function(self) -> Iterable[Dict[str, Any]]:
@@ -633,7 +633,7 @@ class ExtractTotalErrorPercentage(ExtractTotalAnswersBase):
 class ExtractTotalAnswerLen(ExtractTotalAnswersBase):
     """Total of answers ExtractStep."""
 
-    feature_name = AV("total number of responses", "tot")
+    measure_name = AV("total number of responses", "tot")
     description = "The total number of responses of the user "
 
     def get_function(self) -> Iterable[Dict[str, Any]]:
@@ -644,7 +644,7 @@ class ExtractTotalAnswerLen(ExtractTotalAnswersBase):
 class ExtractTotalValidAnswerLen(ExtractTotalAnswersBase):
     """Total of correct answers ExtractStep."""
 
-    feature_name = AV("number of correct responses", "corr")
+    measure_name = AV("number of correct responses", "corr")
     description = "The number of correct responses of the user "
 
     def get_function(self) -> Iterable[Dict[str, Any]]:
@@ -663,7 +663,7 @@ class ExtractMaxStreaksBase(
     ExtractCPSSteps,
     metaclass=ABCMeta,
 ):
-    """A feature extraction processing step."""
+    """A measure extraction processing step."""
 
     data_set_ids = "streak-data"
     data_type = "int64"
@@ -671,7 +671,7 @@ class ExtractMaxStreaksBase(
 
     @abstractmethod
     def apply_streak(self, data: pd.DataFrame) -> int:
-        """Get the feature value definition."""
+        """Get the measure value definition."""
         raise NotImplementedError
 
     def get_function(self) -> Iterable[Dict[str, Any]]:
@@ -680,9 +680,9 @@ class ExtractMaxStreaksBase(
 
 
 class ExtractMaxStreaksCorrectAnswers(ExtractMaxStreaksBase):
-    """A feature extraction processing step."""
+    """A measure extraction processing step."""
 
-    feature_name = AV("maximum streak of correct responses", "stk_corr")
+    measure_name = AV("maximum streak of correct responses", "stk_corr")
     description = "The maximum streak of correct responses of the user "
 
     def apply_streak(self, data):
@@ -691,9 +691,9 @@ class ExtractMaxStreaksCorrectAnswers(ExtractMaxStreaksBase):
 
 
 class ExtractMaxStreaksIncorrectAnswers(ExtractMaxStreaksBase):
-    """A feature extraction processing step."""
+    """A measure extraction processing step."""
 
-    feature_name = AV("maximum streak of incorrect responses", "stk_incorr")
+    measure_name = AV("maximum streak of incorrect responses", "stk_incorr")
     description = "The maximum streak of incorrect responses of the user "
 
     def apply_streak(self, data):
@@ -708,7 +708,7 @@ class ExtractPressures(
 
     data_set_ids = "screen"
     column_id = "pressure"
-    feature_name = AV("pressure", "press")
+    measure_name = AV("pressure", "press")
     data_type = "float64"
     description = "The {aggregation} pressure exerted on the screen "
     aggregations = EXTENDED_AGGREGATIONS
@@ -722,7 +722,7 @@ class ExtractReactionTimesBase(
     """An extraction processing step mix in for reaction time."""
 
     data_set_ids = "keys-analysis"
-    feature_name = AV_REACTION_TIME
+    measure_name = AV_REACTION_TIME
     unit = "s"
     data_type = "float64"
     description = "The {aggregation} reaction time for {subset} of the user "
@@ -800,7 +800,7 @@ class ExtractReactionTimeFiveLast(ExtractSubsetReactionTimesBase):
 
 
 class ExtractReactionThirdFactory(ExtractReactionTimesBase):
-    """Extract reaction time  related features."""
+    """Extract reaction time  related measures."""
 
     subset_list = list(ThirdsModality)
     aggregation: List[Tuple[str, str]] = [
@@ -847,7 +847,7 @@ class ExtractDifferencesReactionTimesBase(ExtractReactionTimesBase):
 
     aggregation = DEFAULT_AGGREGATIONS
     data_set_ids = "keys-analysis"
-    feature_name = AV("reaction time difference", "rt_diff")
+    measure_name = AV("reaction time difference", "rt_diff")
     unit = "s"
     data_type = "float64"
     validator = RangeValidator(-10, 10)
@@ -859,7 +859,7 @@ class ExtractDifferencesReactionTimesBase(ExtractReactionTimesBase):
 
 
 class ExtractReactionTimeDifferencesLastFirst(ExtractDifferencesReactionTimesBase):
-    """Extract reaction time difference related features."""
+    """Extract reaction time difference related measures."""
 
     def get_function(self) -> Iterable[Dict[str, Any]]:
         """Get iterable of transform function."""
@@ -891,7 +891,7 @@ class ExtractReactionTimeDifferencesLastFirst(ExtractDifferencesReactionTimesBas
 
 
 class ExtractReactionTimeDifferencesThirdDiff(ExtractDifferencesReactionTimesBase):
-    """Extract reaction time difference related features."""
+    """Extract reaction time difference related measures."""
 
     third_list: List[ThirdsPairModality] = list(ThirdsPairModality)
 
@@ -935,10 +935,10 @@ class ExtractReactionTimeDifferencesThirdDiff(ExtractDifferencesReactionTimesBas
 
 
 class ExtractNBacks(SequenceModeKeyModalityDefinitionMixIn, ExtractCPSSteps):
-    """Extract multiple strike pattern features."""
+    """Extract multiple strike pattern measures."""
 
     data_set_ids = "n-backs"
-    feature_name = AV(
+    measure_name = AV(
         "reaction time difference over {n_back}-backs occurrences",
         "{n_back}back",
     )
@@ -986,7 +986,7 @@ class ExtractFatigabilityMixin(SequenceModeKeyModalityDefinitionMixIn, ExtractCP
     validator: Optional[Callable[[Any], None]] = None
 
     data_set_ids = "keys-analysis"
-    feature_name = AV("fatigability", "fat")
+    measure_name = AV("fatigability", "fat")
     data_type = "float64"
     description = (
         "The {feat} of the linear regression on correct"
@@ -1042,7 +1042,7 @@ class SummarizeCorrectResponses(AggregateModalities):
     Parameters
     ----------
     sequence
-        The CPS sequence for which to aggregate the features.
+        The CPS sequence for which to aggregate the measures.
     """
 
     def __init__(self, sequence: CPSSequence):
@@ -1050,10 +1050,10 @@ class SummarizeCorrectResponses(AggregateModalities):
         self.sequence = sequence
 
     def get_definition(self, **kwargs) -> ValueDefinition:
-        """Get the feature value definition."""
-        return FeatureValueDefinition(
+        """Get the measure value definition."""
+        return MeasureValueDefinition(
             task_name=TASK_NAME,
-            feature_name=AV("correct responses", "corr"),
+            measure_name=AV("correct responses", "corr"),
             unit=None,
             description=f"Total number of correct responses for symbol-to-"
             f"digit with{self.sequence.av} irrespective of the used key set",
@@ -1074,10 +1074,10 @@ class SummarizeKeySetOneTwoCorrectResponses(SummarizeCorrectResponses):
     """Summarize correct responses of key set one and two."""
 
     def get_definition(self, **kwargs) -> ValueDefinition:
-        """Get the feature value definition."""
-        return FeatureValueDefinition(
+        """Get the measure value definition."""
+        return MeasureValueDefinition(
             task_name=TASK_NAME,
-            feature_name=AV("correct responses", "corr"),
+            measure_name=AV("correct responses", "corr"),
             description=f"Total number of correct responses for symbol-to-digit with"
             f" {self.sequence.av} and key set one or two.",
             unit="int64",
@@ -1105,10 +1105,10 @@ class SummarizeResponseTimes(AggregateModalities):
         self.mode = mode
 
     def get_definition(self, **kwargs) -> ValueDefinition:
-        """Get the feature value definition."""
-        return FeatureValueDefinition(
+        """Get the measure value definition."""
+        return MeasureValueDefinition(
             task_name=TASK_NAME,
-            feature_name=AV_REACTION_TIME,
+            measure_name=AV_REACTION_TIME,
             unit="s",
             description=f"The average reaction time for {self.mode} test "
             "irrespective of sequence.",
@@ -1142,7 +1142,7 @@ class SummarizeKeySetOneTwoReactionTimeExtraModality(AggregateModalities):
         super().__init__()
 
     def get_definition(self, **kwargs) -> ValueDefinition:
-        """Get the feature value definition."""
+        """Get the measure value definition."""
         modalities = [
             CPSMode.SYMBOL_TO_DIGIT.av,
             self.sequence.av,
@@ -1151,9 +1151,9 @@ class SummarizeKeySetOneTwoReactionTimeExtraModality(AggregateModalities):
         if self.extra_modality is not None:
             modalities.append(self.extra_modality)
 
-        return FeatureValueDefinition(
+        return MeasureValueDefinition(
             task_name=TASK_NAME,
-            feature_name=AV_REACTION_TIME,
+            measure_name=AV_REACTION_TIME,
             unit="s",
             description=f"Reaction time {self.aggregation} for symbol-to-digit"
             f" with {self.sequence.av} and key set one or two "
@@ -1191,10 +1191,10 @@ class SummarizeKeySetOneTwoReactionTimeDiff(AggregateModalities):
         super().__init__()
 
     def get_definition(self, **kwargs) -> ValueDefinition:
-        """Get the feature value definition."""
-        return FeatureValueDefinition(
+        """Get the measure value definition."""
+        return MeasureValueDefinition(
             task_name=TASK_NAME,
-            feature_name=AV("reaction time difference", "rt_diff"),
+            measure_name=AV("reaction time difference", "rt_diff"),
             unit="s",
             description=f"Reaction time difference {self.aggregation} for "
             f"symbol-to-digit with {self.sequence.av} and key set one or two "
@@ -1218,14 +1218,14 @@ class SummarizeKeySetOneTwoReactionTimeDiff(AggregateModalities):
         ]
 
 
-class AggregateFixedSubstitutionTime(AggregateFeatures):
+class AggregateFixedSubstitutionTime(AggregateMeasures):
     """Extract the substitution time for the fixed keys."""
 
-    feature_ids = [DTD_RT_MEAN, STD_KEY_FIXED1_RT_MEAN, STD_KEY_FIXED2_RT_MEAN]
+    measure_ids = [DTD_RT_MEAN, STD_KEY_FIXED1_RT_MEAN, STD_KEY_FIXED2_RT_MEAN]
     fail_if_missing = False
     aggregation_method = _compute_substitution_time
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("substitution time", "substitution_time"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("substitution time", "substitution_time"),
         description="The substitution time for fixed keys is "
         "defined as the difference between the symbol to digit "
         "reaction time (the time required to associate a symbol "
@@ -1238,14 +1238,14 @@ class AggregateFixedSubstitutionTime(AggregateFeatures):
     )
 
 
-class AggregateRandomSubstitutionTime(AggregateFeatures):
+class AggregateRandomSubstitutionTime(AggregateMeasures):
     """Extract the substitution time for the random keys."""
 
-    feature_ids = [DTD_RT_MEAN, STD_KEY_RANDOM_RT_MEAN]
+    measure_ids = [DTD_RT_MEAN, STD_KEY_RANDOM_RT_MEAN]
     fail_if_missing = False
     aggregation_method = _compute_substitution_time
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("substitution time", "substitution_time"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("substitution time", "substitution_time"),
         description="The substitution time for random keys is "
         "defined as the difference between the symbol to digit "
         "reaction time (the time required to associate a symbol "
@@ -1258,8 +1258,8 @@ class AggregateRandomSubstitutionTime(AggregateFeatures):
     )
 
 
-class ExtractCPSFeatures(ProcessingStepGroup):
-    """Extract all features for a given mode, sequence and key set.
+class ExtractCPSMeasures(ProcessingStepGroup):
+    """Extract all measures for a given mode, sequence and key set.
 
     Parameters
     ----------
@@ -1267,7 +1267,7 @@ class ExtractCPSFeatures(ProcessingStepGroup):
         The desired mode to compute the transformation
         (``digit-to-symbol``, ``digit-to-digit``).
     key_set
-        The specific key set filter on which you desire to extract features.
+        The specific key set filter on which you desire to extract measures.
     sequence
         The sequence type
     """
@@ -1326,8 +1326,8 @@ class ExtractCPSFeatures(ProcessingStepGroup):
         )
 
 
-class ExtractCPSFeaturesDTD(ProcessingStepGroup):
-    """Extract all features for DTD mode, sequence and key set.
+class ExtractCPSMeasuresDTD(ProcessingStepGroup):
+    """Extract all measures for DTD mode, sequence and key set.
 
     Parameters
     ----------
@@ -1355,13 +1355,13 @@ class ExtractCPSFeaturesDTD(ProcessingStepGroup):
         )
 
 
-class ExtractCPSFeaturesSTD(ProcessingStepGroup):
-    """Extract all features for STD mode, sequence and key set.
+class ExtractCPSMeasuresSTD(ProcessingStepGroup):
+    """Extract all measures for STD mode, sequence and key set.
 
     Parameters
     ----------
     key_set
-        The specific key set filter on which you desire to extract features.
+        The specific key set filter on which you desire to extract measures.
     sequence
         The sequence type
     """
@@ -1390,8 +1390,8 @@ class ExtractCPSFeaturesSTD(ProcessingStepGroup):
         )
 
 
-class SummarizeFeatures(ProcessingStepGroup):
-    """A processing step group containing all the feature aggregation steps."""
+class SummarizeMeasures(ProcessingStepGroup):
+    """A processing step group containing all the measure aggregation steps."""
 
     def __init__(self):
         steps = [
@@ -1433,7 +1433,7 @@ class SummarizeFeatures(ProcessingStepGroup):
 
 
 class CPSProcessingStepGroup(ProcessingStepGroup):
-    """A group of all cps processing steps for features extraction."""
+    """A group of all cps processing steps for measures extraction."""
 
     def __init__(self):
         steps = [
@@ -1442,21 +1442,21 @@ class CPSProcessingStepGroup(ProcessingStepGroup):
             TransformConfusion(),
             TransformNBacks(),
             *(
-                ExtractCPSFeatures(CPSMode.SYMBOL_TO_DIGIT, sequence, key_set)
+                ExtractCPSMeasures(CPSMode.SYMBOL_TO_DIGIT, sequence, key_set)
                 for sequence in CPSSequence
                 for key_set in CPSKeySet
             ),
             *(
-                ExtractCPSFeatures(CPSMode.DIGIT_TO_DIGIT, sequence)
+                ExtractCPSMeasures(CPSMode.DIGIT_TO_DIGIT, sequence)
                 for sequence in CPSSequence
             ),
-            *(ExtractCPSFeaturesDTD(sequence) for sequence in CPSSequence),
+            *(ExtractCPSMeasuresDTD(sequence) for sequence in CPSSequence),
             *(
-                ExtractCPSFeaturesSTD(sequence, key_set)
+                ExtractCPSMeasuresSTD(sequence, key_set)
                 for sequence in CPSSequence
                 for key_set in CPSKeySet
             ),
-            SummarizeFeatures(),
+            SummarizeMeasures(),
             AggregateFixedSubstitutionTime(),
             AggregateRandomSubstitutionTime(),
         ]

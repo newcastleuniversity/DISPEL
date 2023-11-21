@@ -9,7 +9,7 @@ from tests.providers.ads.conftest import RESULTS_PATH_CPS, RESULTS_PATH_CPS_NEW_
 
 @pytest.mark.parametrize("level,expected", read_results(RESULTS_PATH_CPS))
 def test_cps_process(example_reading_processed_cps, level, expected):
-    """Unit test to ensure the CPS features are well computed."""
+    """Unit test to ensure the CPS measures are well computed."""
     assert_level_values(example_reading_processed_cps, level, expected)
 
 
@@ -22,6 +22,6 @@ def test_ads_cps_new_format(example_reading_processed_cps_new_format, level, exp
 def tests_cps_flag(example_reading_processed_cps_new_format):
     """Test the cps flag."""
     lvl = example_reading_processed_cps_new_format.get_level("digit_to_digit")
-    inv = lvl.feature_set.get("cps-dtd_rand_dig1-rt-mean").get_flags()
+    inv = lvl.measure_set.get("cps-dtd_rand_dig1-rt-mean").get_flags()
     assert len(inv) == 1
     assert inv[0] == CPS_FLAG_NEDP

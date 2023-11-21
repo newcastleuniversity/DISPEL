@@ -1,6 +1,6 @@
 """Pronation Supination assessment related functionality.
 
-This module contains functionality to extract features for the
+This module contains functionality to extract measures for the
 *Pronation Supination* assessment (PS).
 """
 from typing import Any, Callable, List, Tuple, Union
@@ -8,8 +8,8 @@ from typing import Any, Callable, List, Tuple, Union
 import numpy as np
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import DEFAULT_COLUMNS, RawDataValueDefinition
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
@@ -257,7 +257,7 @@ class TransformAmplitudePeakToPeak(TransformStep):
 
 
 class AggregateMotion(AggregateRawDataSetColumn):
-    """An Aggregation of motion features."""
+    """An Aggregation of motion measures."""
 
     def get_data_frames(self, level: Level) -> List[pd.DataFrame]:
         """Get the raw data from all data sets in question.
@@ -290,8 +290,8 @@ class AggregateMotion(AggregateRawDataSetColumn):
     def __init__(self, data_set_id: str, column_id: str, movement: Movement, **kwargs):
         self.movement = movement
         description = f"The {{aggregation}} of {column_id} for {movement}."
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV(
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV(
                 f"{movement.variable} {column_id.replace('_', ' ')}", f"{column_id}"
             ),
             data_type="float64",
@@ -306,8 +306,8 @@ class AggregateAmplitude(AggregateRawDataSetColumn):
     data_set_ids = "ps_event_peak_peak"
     column_id = "abs_rotation"
     aggregations = PS_AGGREGATION
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("amplitude", "amp"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("amplitude", "amp"),
         description="The {aggregation} amplitude of rotation of an"
         "entire pronation supination cycle.",
         unit="deg",
@@ -321,8 +321,8 @@ class AggregateDuration(AggregateRawDataSetColumn):
     data_set_ids = "ps_event_peak_peak"
     column_id = "delta_t"
     aggregations = [("mean", "mean")]
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("duration", "dur"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("duration", "dur"),
         description="The {aggregation} duration of an"
         "entire pronation supination cycle.",
         unit="s",
@@ -335,8 +335,8 @@ class ExtractNEvent(ExtractStep):
 
     data_set_ids = "ps_event"
     description = "The number of events that are a pronation or a supination."
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("event count", "ec"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("event count", "ec"),
         data_type="int16",
         validator=GREATER_THAN_ZERO,
         description=description,
@@ -356,8 +356,8 @@ class ExtractAvgMovementPowerFromTimeSeries(ExtractStep):
     description = (
         "The average power of the signal in the defined 0 - 4 Hz frequency band."
     )
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("movement power mean", "ts_mvmt_power-mean"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("movement power mean", "ts_mvmt_power-mean"),
         data_type="float",
         description=description,
         task_name=TASK_NAME,
@@ -386,8 +386,8 @@ class ExtractAmplitudeDecrementSimple(ExtractStep):
         "The simple decrement of amplitude defined as the difference in "
         "median amplitude between the first and last 25% of the task."
     )
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("amplitude simple decrement", "amp_simple_dec"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("amplitude simple decrement", "amp_simple_dec"),
         data_type="float",
         description=description,
         task_name=TASK_NAME,
@@ -408,8 +408,8 @@ class ExtractSpeedDecrementSimple(ExtractStep):
         "The simple decrement of speed defined as the difference in "
         "median speed between the first and last 25% of the task."
     )
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("speed simple decrement", "speed_simple_dec"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("speed simple decrement", "speed_simple_dec"),
         data_type="float",
         description=description,
         task_name=TASK_NAME,
@@ -423,7 +423,7 @@ class ExtractSpeedDecrementSimple(ExtractStep):
 
 
 COL_TO_AGG: List[str] = ["abs_rotation", "abs_rotation_speed"]
-r"""Columns of the event data set that we want to aggregate as features over
+r"""Columns of the event data set that we want to aggregate as measures over
 the different events."""
 
 
@@ -522,7 +522,7 @@ class AggregatePerHandAndMotionGroup(ProcessingStepGroup):
 
 
 class PerHandEventExtractionGroup(ProcessingStepGroup):
-    """Pronation Supination per hand feature extraction group."""
+    """Pronation Supination per hand measure extraction group."""
 
     steps = [
         ProcessingStepGroup(
@@ -539,8 +539,8 @@ class PerHandEventExtractionGroup(ProcessingStepGroup):
     ]
 
 
-class EventFeatureExtractionGroup(ProcessingStepGroup):
-    """Pronation Supination event-based feature extraction group."""
+class EventMeasureExtractionGroup(ProcessingStepGroup):
+    """Pronation Supination event-based measure extraction group."""
 
     steps = [
         TransformRotationSpeed("ps_event", storage_error="overwrite"),
@@ -562,7 +562,7 @@ class BDHPronationSupinationSteps(ProcessingStepGroup):
         PreprocessingPSGroup(),
         MovementPowerGroup(),
         EventDetectionAndFiltering(),
-        EventFeatureExtractionGroup(),
+        EventMeasureExtractionGroup(),
     ]
     kwargs = {"task_name": TASK_NAME}
 

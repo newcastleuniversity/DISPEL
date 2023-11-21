@@ -222,7 +222,7 @@ class UprightPortraitModeFlagger(PhoneOrientationFlagger):
 
 
 class UpperLimbOrientationFlagger(ProcessingStepGroup):
-    """A group of pinch processing steps for features by level id.
+    """A group of pinch processing steps for measures by level id.
 
     The pitch_freedom and yaw_freedom range were defined using Gravity values
     and limited range when positioning the phone in portrait mode. The

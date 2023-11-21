@@ -8,7 +8,7 @@ from typing import List, Optional, Tuple
 
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinitionPrototype
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
 from dispel.processing.core import ProcessingStep
@@ -479,8 +479,8 @@ class LeeStepCountWithoutBout(ExtractStep):
 
     def __init__(self, **kwargs):
         data_set_ids = "lee"
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step count", "sc"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step count", "sc"),
             data_type="int16",
             validator=GREATER_THAN_ZERO,
             description="The number of steps detected with lee algorithm.",
@@ -498,8 +498,8 @@ class LeeStepPowerWithoutBout(ExtractStep):
 
     def __init__(self, **kwargs):
         data_set_ids = ["vertical_acceleration", "lee"]
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step power", "sp"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step power", "sp"),
             data_type="int16",
             validator=GREATER_THAN_ZERO,
             description="The integral of the centered acceleration magnitude "
@@ -518,8 +518,8 @@ class LeeStepDurWithoutBout(AggregateRawDataSetColumn):
     """Extract step duration without walking bout."""
 
     def __init__(self, **kwargs):
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step duration", "step_dur"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step duration", "step_dur"),
             data_type="float64",
             unit="s",
             validator=GREATER_THAN_ZERO,
@@ -594,8 +594,8 @@ class LeeHipRotationWithoutBout(ExtractHipRotationWithoutBouts):
         super().__init__(data_set_id=data_set_id, **kwargs)
 
 
-class LeeFeaturesGroup(ProcessingStepGroup):
-    """Extract Lee features based on Lee Steps and a bout strategy."""
+class LeeMeasuresGroup(ProcessingStepGroup):
+    """Extract Lee measures based on Lee Steps and a bout strategy."""
 
     def __init__(self, bout_strategy: BoutStrategyModality, **kwargs):
         steps: List[ProcessingStep] = [
@@ -607,8 +607,8 @@ class LeeFeaturesGroup(ProcessingStepGroup):
         super().__init__(steps, **kwargs)
 
 
-class LeeFeaturesWithoutBoutGroup(ProcessingStepGroup):
-    """Extract Lee features based on Lee Steps and a bout strategy."""
+class LeeMeasuresWithoutBoutGroup(ProcessingStepGroup):
+    """Extract Lee measures based on Lee Steps and a bout strategy."""
 
     def __init__(self, **kwargs):
         steps: List[ProcessingStep] = [

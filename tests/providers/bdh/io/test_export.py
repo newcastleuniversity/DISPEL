@@ -19,19 +19,19 @@ def test_incomplete_record_processing():
         process_and_export(data)
 
 
-def test_features(example_json_cps):
-    """Test exporting BDH reading features."""
+def test_measures(example_json_cps):
+    """Test exporting BDH reading measures."""
     output = process_and_export(load_json(EXAMPLE_PATH_CPS))
     df = pd.DataFrame(output)
     assert df.columns.tolist() == [
         "evaluation_uuid",
-        "feature_id",
-        "feature_name",
-        "feature_value",
-        "feature_unit",
-        "feature_type",
-        "feature_min",
-        "feature_max",
+        "measure_id",
+        "measure_name",
+        "measure_value",
+        "measure_unit",
+        "measure_type",
+        "measure_min",
+        "measure_max",
         "flag_ids",
         "flag_reasons",
         "evaluation_code",
@@ -75,7 +75,7 @@ def test_features(example_json_cps):
 
     reading = parse_bdh_reading(load_json(EXAMPLE_PATH_CPS))
     auto_process(reading)
-    assert len(df) == len(reading.get_merged_feature_set())
+    assert len(df) == len(reading.get_merged_measure_set())
 
 
 def test_flags_export(example_json_draw_orientation_invalid):

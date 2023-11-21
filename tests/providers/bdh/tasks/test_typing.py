@@ -8,7 +8,7 @@ from tests.processing.helper import assert_level_values
 
 
 @pytest.mark.parametrize(
-    "level,expected_features",
+    "level,expected_measures",
     [
         (
             "typing",
@@ -151,13 +151,13 @@ from tests.processing.helper import assert_level_values
         )
     ],
 )
-def test_process_typing(example_reading_processed_typing, level, expected_features):
+def test_process_typing(example_reading_processed_typing, level, expected_measures):
     """Test: bal.processing.process_typing."""
-    assert_level_values(example_reading_processed_typing, level, expected_features)
+    assert_level_values(example_reading_processed_typing, level, expected_measures)
 
 
 @pytest.mark.parametrize(
-    "level,expected_features",
+    "level,expected_measures",
     [
         (
             "typing",
@@ -315,16 +315,16 @@ def test_process_typing(example_reading_processed_typing, level, expected_featur
     ],
 )
 def test_process_timestamp_error(
-    example_reading_processed_typing_bug_timestamp, level, expected_features
+    example_reading_processed_typing_bug_timestamp, level, expected_measures
 ):
     """Test: bal.processing.process_typing."""
     assert_level_values(
-        example_reading_processed_typing_bug_timestamp, level, expected_features
+        example_reading_processed_typing_bug_timestamp, level, expected_measures
     )
 
 
 @pytest.mark.parametrize(
-    "level,expected_features",
+    "level,expected_measures",
     [
         (
             "typing",
@@ -442,16 +442,16 @@ def test_process_timestamp_error(
     ],
 )
 def test_missing_imus(
-    example_reading_processed_typing_bug_missing_imu, level, expected_features
+    example_reading_processed_typing_bug_missing_imu, level, expected_measures
 ):
     """Test typing processing without imus data."""
     assert_level_values(
-        example_reading_processed_typing_bug_missing_imu, level, expected_features
+        example_reading_processed_typing_bug_missing_imu, level, expected_measures
     )
 
 
 @pytest.mark.parametrize(
-    "level,expected_features",
+    "level,expected_measures",
     [
         (
             "typing",
@@ -462,11 +462,11 @@ def test_missing_imus(
     ],
 )
 def test_process_autocomplete(
-    example_reading_processed_typing_autocomplete, level, expected_features
+    example_reading_processed_typing_autocomplete, level, expected_measures
 ):
     """Test typing processing with several autocompletions."""
     assert_level_values(
-        example_reading_processed_typing_autocomplete, level, expected_features
+        example_reading_processed_typing_autocomplete, level, expected_measures
     )
 
 

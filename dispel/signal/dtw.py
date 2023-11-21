@@ -69,7 +69,7 @@ def get_dtw_distance(user: pd.DataFrame, reference: pd.DataFrame) -> pd.Series:
     as a potential similar point (i.e. ``attributions == [(m0, u0),(m1, u1),(m1, u2),
     (m1, u3), (m2, u1), (m2, u2), (m2, u2), (m2, u3), (m2,u4),...]`` with mi the ith
     model point index and uj the jth user point index). Then, we isolate the minimum
-    distance between each model point and attributed user points. Those features are in
+    distance between each model point and attributed user points. Those measures are in
     fact equivalent to those obtained with the variant Fréchet similarity measure
     algorithm with a back propagation. This implementation is around 30 times faster
     than the mentioned Fréchet algorithm.
@@ -91,7 +91,7 @@ def get_dtw_distance(user: pd.DataFrame, reference: pd.DataFrame) -> pd.Series:
     """
     coupling_measure, min_matches = get_minimal_matches(user, reference)
 
-    # Create the pandas data frame with all features.
+    # Create the pandas data frame with all measures.
     dtw_dict = {
         "dtw_coupling_measure": coupling_measure,
         "dtw_mean_distance": np.mean(min_matches["min_distance"]),

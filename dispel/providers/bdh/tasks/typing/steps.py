@@ -7,8 +7,8 @@ from typing import List, Optional
 import pandas as pd
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.flags import FlagSeverity, FlagType
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import DEFAULT_COLUMNS, RawDataValueDefinition
 from dispel.data.values import AbbreviatedValue as AV
 from dispel.processing.assertions import AssertEvaluationFinished
@@ -31,7 +31,7 @@ from dispel.providers.bdh.tasks.typing.const import *
 from dispel.providers.bdh.tasks.typing.keyboard import *
 from dispel.providers.generic.preprocessing import Detrend
 from dispel.providers.generic.sensor import Resample, SetTimestampIndex
-from dispel.providers.generic.tremor import TremorFeatures
+from dispel.providers.generic.tremor import TremorMeasures
 from dispel.providers.registry import process_factory
 
 # Define constants
@@ -49,13 +49,13 @@ class TransformReactionTime(TransformStep):
 
 
 class AggregateReactionTime(AggregateRawDataSetColumn):
-    """An aggregation step for the reaction time features."""
+    """An aggregation step for the reaction time measures."""
 
     data_set_ids = TransformReactionTime.new_data_set_id
     column_id = DEF_REACTION_TIME.id.id
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("reaction time", "rt"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("reaction time", "rt"),
         description="The {aggregation} time spent between the appearance of a word and "
         "the moment the user releases the first key for each word.",
         unit="s",
@@ -64,13 +64,13 @@ class AggregateReactionTime(AggregateRawDataSetColumn):
 
 
 class AggregateReactionTimeCorrectLetter(AggregateRawDataSetColumn):
-    """An aggregation step for reaction time first correct letter features."""
+    """An aggregation step for reaction time first correct letter measures."""
 
     data_set_ids = TransformReactionTime.new_data_set_id
     column_id = DEF_REACTION_TIME_FC.id.id
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("reaction time first correct", "rt_fc"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("reaction time first correct", "rt_fc"),
         description="The {aggregation} time spent between the appearance of a word and "
         "the moment the user releases the first correct letter key for "
         "each word.",
@@ -107,8 +107,8 @@ class ExtractReactionTimeSlope(ExtractStep):
         super().__init__(
             ["reaction_time_per_word"],
             transform_function=lambda x: compute_rt_slope(x, col),
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=AV(name, abv),
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=AV(name, abv),
                 description=f"{description}. The slope is computed as the discrete "
                 "derivatives of the reaction time with respect to x: the "
                 "appearance of the word.",
@@ -126,8 +126,8 @@ class ExtractPatientScore(ExtractStep):
 
     data_set_ids = "word"
     transform_function = total_words_typed
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("number of correct words", "n_correct_words"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("number of correct words", "n_correct_words"),
         description="The total number of words successfully typed.",
         data_type="int",
     )
@@ -152,13 +152,13 @@ class TransformWordDuration(TransformStep):
 
 
 class AggregateWordDuration(AggregateRawDataSetColumn):
-    """An aggregation step for Word duration features."""
+    """An aggregation step for Word duration measures."""
 
     data_set_ids = TransformWordDuration.new_data_set_id
     column_id = DEF_WORD_DURATION.id.id
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("word duration", "word_duration"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("word duration", "word_duration"),
         description="The {aggregation} time spent to write a word.",
         unit="s",
         data_type="float",
@@ -203,10 +203,10 @@ class TransformWordDurationPerDifficulty(TransformStep):
             }
         )
         groups = res[res["success"]].groupby(by=["difficulty_level"])
-        dict_features = {}
+        dict_measures = {}
         for agg, agg_func in STR_TO_CALLABLE.items():
-            dict_features[agg] = groups.agg(agg_func)["word_duration"]
-        return pd.DataFrame(dict_features)
+            dict_measures[agg] = groups.agg(agg_func)["word_duration"]
+        return pd.DataFrame(dict_measures)
 
     new_data_set_id = "word_duration_per_difficulty"
     definitions = [
@@ -246,8 +246,8 @@ class ExtractWordDurationPerDifficulty(ExtractMultipleStep):
         super().__init__(
             TransformWordDurationPerDifficulty.new_data_set_id,
             transform_functions=functions,
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=AV(
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=AV(
                     "word duration {difficulty} {agg}",
                     "word_duration-{difficulty}-{agg}",
                 ),
@@ -285,8 +285,8 @@ class AggregateWordDurationLevelSlope(AggregateRawDataSetColumn):
     data_set_ids = TransformWordDurationLevelDifference.new_data_set_id
     column_id = DEF_WORD_DUR_DIFF.id.id
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("word duration slope", "word_duration_slope"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("word duration slope", "word_duration_slope"),
         description="The {aggregation} of the word duration slope. The slope is "
         "computed by differencing the word duration mean per difficulty "
         "level w.r.t difficulty level.",
@@ -311,8 +311,8 @@ class ExtractTimeToFinishLastThreeWords(ExtractStep):
         super().__init__(
             ["word_duration", "word"],
             transform_function=partial(extract_last_three, agg=agg),
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=AV(
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=AV(
                     f"last three word duration {agg}", f"word_duration-last_three-{agg}"
                 ),
                 unit="s",
@@ -373,8 +373,8 @@ class ExtractAutocomplete(ExtractStep):
     """Extract the number of autocompletions."""
 
     data_set_ids = TransformDetectKeyAutocompletion.new_data_set_id
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("number of autocompletions", "n_autocompletion"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("number of autocompletions", "n_autocompletion"),
         description="The total number of autocompletions.",
         data_type="int",
     )
@@ -395,7 +395,7 @@ class FlagAutoComplete(FlagReadingStep):
     def flag_autocomplete(self, reading: Reading, **kwargs) -> bool:
         """Indicate if there was no autocompletion during the evaluation."""
         return (
-            reading.get_merged_feature_set().get_raw_value("tt-n_autocompletion") == 0
+            reading.get_merged_measure_set().get_raw_value("tt-n_autocompletion") == 0
         )
 
 
@@ -433,13 +433,13 @@ class TransformReactionDurationCorrectSubmissions(TransformStep):
 
 
 class AggregateReactionDuration(AggregateRawDataSetColumn):
-    """An aggregation step for reaction duration feature."""
+    """An aggregation step for reaction duration measure."""
 
     data_set_ids = TransformReactionDurationCorrectSubmissions.new_data_set_id
     column_id = DEF_REACTION_DURATION.id.id
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("reaction duration", "reaction_duration"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("reaction duration", "reaction_duration"),
         description="The {aggregation} reaction duration for a correct submission.",
         unit="s",
         data_type="float",
@@ -465,13 +465,13 @@ class TransformCorrectingDurationCorrectSubmissions(TransformStep):
 
 
 class AggregateCorrectingDuration(AggregateRawDataSetColumn):
-    """An extraction processing step for correcting duration features."""
+    """An extraction processing step for correcting duration measures."""
 
     data_set_ids = TransformCorrectingDurationCorrectSubmissions.new_data_set_id
     column_id = DEF_CORRECTING_CORRECT_DURATION.id.id
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("correcting duration", "correcting_duration"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("correcting duration", "correcting_duration"),
         description="The {aggregation} correcting duration for a correct submission.",
         unit="s",
         data_type="float",
@@ -497,13 +497,13 @@ class TransformReactingTimeCorrectSubmissions(TransformStep):
 
 
 class AggregateReactingTime(AggregateRawDataSetColumn):
-    """An aggregation processing step for reacting time features."""
+    """An aggregation processing step for reacting time measures."""
 
     data_set_ids = TransformReactingTimeCorrectSubmissions.new_data_set_id
     column_id = DEF_REACTING_TIME_CORRECT.id.id
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("reacting time", "reacting_time"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("reacting time", "reacting_time"),
         description="The {aggregation} reacting time for a correct word.",
         unit="s",
         data_type="float",
@@ -513,7 +513,7 @@ class AggregateReactingTime(AggregateRawDataSetColumn):
 class TransformCorrectSubmissionAndTime(TransformStep):
     """A data set to deal with correct (consecutive) words with(out) errors.
 
-    This transform step aims to create a data set appropriate to compute feature
+    This transform step aims to create a data set appropriate to compute measure
     related to successfully written words with(out) error, and also a streak of words
     with(out) error(s).
 
@@ -574,8 +574,8 @@ class ExtractWordTypedWithOrWoError(ExtractStep):
         super().__init__(
             data_set_ids=TransformCorrectSubmissionAndTime.new_data_set_id,
             transform_function=lambda x: count_words_typed(x, error_free),
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=AV(
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=AV(
                     f"words typed {with_or_wo} error", f"words_typed_{with_or_wo}_error"
                 ),
                 description=f"Number of correct words typed {with_or_wo} error.",
@@ -612,8 +612,8 @@ class ExtractWordTypedWithOrWoErrorInRow(ExtractStep):
         super().__init__(
             data_set_ids=TransformCorrectSubmissionAndTimeInRow.new_data_set_id,
             transform_function=lambda x: count_words_typed_in_row(x, error_free),
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=AV(
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=AV(
                     f"consecutive words typed {with_or_wo} error",
                     f"consecutive_words_typed_{with_or_wo}_error",
                 ),
@@ -628,8 +628,8 @@ class ExtractIncorrectWords(ExtractStep):
 
     data_set_ids = "word"
     transform_function = count_incorrect_words
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("number of Incorrect words", "n_incorrect_words"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("number of Incorrect words", "n_incorrect_words"),
         description="Number of Incorrect words.",
         data_type="int",
     )
@@ -670,14 +670,14 @@ class TransformSimilarityRatioGroup(TransformStep):
     definitions = [DEF_SIMILARITY_RATIO]
 
 
-class AggregateSimilarityRatioFeatures(AggregateRawDataSetColumn):
-    """Aggregate similarity ratio features."""
+class AggregateSimilarityRatioMeasures(AggregateRawDataSetColumn):
+    """Aggregate similarity ratio measures."""
 
     data_set_ids = TransformSimilarityRatioGroup.new_data_set_id
     column_id = DEF_SIMILARITY_RATIO.id.id
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("similarity ratio", "sim_ratio"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("similarity ratio", "sim_ratio"),
         description="The {aggregation} similarity ratio between word being typed and "
         "word on screen.",
         data_type="float",
@@ -695,8 +695,8 @@ class ExtractCountKeyPressed(ExtractStep):
         """Count the number of keys pressed."""
         return count_key_pressed(key_typed["key"])
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("keys pressed", "keys_pressed"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("keys pressed", "keys_pressed"),
         description="Number of keys pressed.",
         data_type="int",
     )
@@ -716,13 +716,13 @@ class TransformLettersTypedPerWordRatio(TransformStep):
 
 
 class AggregateLettersTypedPerWordRatio(AggregateRawDataSetColumn):
-    """Aggregate features related to the ratio of letters typed."""
+    """Aggregate measures related to the ratio of letters typed."""
 
     data_set_ids = TransformLettersTypedPerWordRatio.new_data_set_id
     column_id = DEF_LETTER_TYPED_OVER_LEN.id.id
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("letters typed over length", "ratio_letters_typed_len"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("letters typed over length", "ratio_letters_typed_len"),
         description="The {aggregation} of the ratio of letters typed over the "
         "respective length of the word for completed word only.",
         data_type="float",
@@ -741,8 +741,8 @@ class ExtractCountCorrectLetters(ExtractStep):
         return (is_alphabet_letter & is_correct).sum()
 
     data_set_ids = TransformSubmissionState.new_data_set_id
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("correct letters", "correct_letters"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("correct letters", "correct_letters"),
         description="Number of correct letters.",
         data_type="int",
     )
@@ -849,25 +849,25 @@ class TransformLetterInterval(TransformStep):
 
 
 class AggregateLettersIntervals(AggregateRawDataSetColumn):
-    """Extract letter intervals related features.
+    """Extract letter intervals related measures.
 
     Parameters
     ----------
     category
-        The category on which one wants to extract features. If not provided the
-        features will be extracted based on the data set computed on every word.
+        The category on which one wants to extract measures. If not provided the
+        measures will be extracted based on the data set computed on every word.
     """
 
     def __init__(self, category: Optional[WordState] = None, **kwargs):
         data_set_id = "letter_intervals"
-        feature_name = "letter intervals"
-        feature_abbr = "letter_intervals"
+        measure_name = "letter intervals"
+        measure_abbr = "letter_intervals"
         description = "The {aggregation} time interval between two letters"
         if category:
             category_name = category.name.lower()
             data_set_id = f"{data_set_id}_{category_name}"
-            feature_name = f"{feature_name} {category_name}"
-            feature_abbr = f"{feature_abbr}_{category_name}"
+            measure_name = f"{measure_name} {category_name}"
+            measure_abbr = f"{measure_abbr}_{category_name}"
             description += f"for {category_name} words only"
 
         description += "."
@@ -875,8 +875,8 @@ class AggregateLettersIntervals(AggregateRawDataSetColumn):
             data_set_id,
             "letter_intervals",
             aggregations=DEFAULT_AGGREGATIONS,
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=AV(feature_name, feature_abbr),
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=AV(measure_name, measure_abbr),
                 unit="s",
                 description=description,
                 data_type="float",
@@ -891,8 +891,8 @@ class TransformTop10Interval(TransformStep):
     Parameters
     ----------
     category
-        The category on which one wants to extract features. If not provided
-        the features will be extracted based on the data set computed on every
+        The category on which one wants to extract measures. If not provided
+        the measures will be extracted based on the data set computed on every
         letter intervals.
     """
 
@@ -923,22 +923,22 @@ class TransformTop10Interval(TransformStep):
         )
 
 
-class AggregateTop10IntervalDefaultFeatures(AggregateRawDataSetColumn):
-    """Extract features related to the top ten percent letters intervals.
+class AggregateTop10IntervalDefaultMeasures(AggregateRawDataSetColumn):
+    """Extract measures related to the top ten percent letters intervals.
 
     Parameters
     ----------
     category
-        The category on which one wants to extract features. If not provided
-        the features will be extracted based on the data set computed on every
+        The category on which one wants to extract measures. If not provided
+        the measures will be extracted based on the data set computed on every
         letter intervals.
 
     """
 
     def __init__(self, category: Optional[KeyState] = None, **kwargs):
         data_set_id = "top_10_letter_intervals"
-        feature_name_str = "top 10 letter intervals"
-        feature_abbr = "top_10_letter_intervals"
+        measure_name_str = "top 10 letter intervals"
+        measure_abbr = "top_10_letter_intervals"
         description = (
             "The {aggregation} of the top 10 percent time "
             "interval between two letters"
@@ -946,19 +946,19 @@ class AggregateTop10IntervalDefaultFeatures(AggregateRawDataSetColumn):
         if category:
             category_name = category.name.lower()
             data_set_id = f"{data_set_id}_{category_name}"
-            feature_name_str = f"{feature_name_str} {category_name}"
-            feature_abbr = f"{feature_abbr}_{category_name}"
+            measure_name_str = f"{measure_name_str} {category_name}"
+            measure_abbr = f"{measure_abbr}_{category_name}"
             description += f"for {category_name} letters only"
         description += "."
-        feature_name = AV(feature_name_str, feature_abbr)
+        measure_name = AV(measure_name_str, measure_abbr)
         transform_functions = DEFAULT_AGGREGATIONS_IQR
 
         super().__init__(
             data_set_id,
             column_id="letter_intervals",
             aggregations=transform_functions,
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=feature_name, description=description, data_type="float"
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=measure_name, description=description, data_type="float"
             ),
             **kwargs,
         )
@@ -992,8 +992,8 @@ class AggregateMaxDeviation(AggregateRawDataSetColumn):
     data_set_ids = ["max_deviation_letter_interval"]
     column_id = "max_deviation_letter_interval"
     aggregations = DEFAULT_AGGREGATIONS_IQR
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV(
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV(
             "letter intervals maximum deviation ", "letter_interval_max_dev"
         ),
         description="The {aggregation} of the maximum deviation of "
@@ -1044,7 +1044,7 @@ class TransformIntervalCorrectLettersUntilMistake(TransformStep):
 
 
 class AggregateIntervalCorrectLetters(AggregateRawDataSetColumn):
-    """Interval between correct letters until a mistake - features.
+    """Interval between correct letters until a mistake - measures.
 
     Parameters
     ----------
@@ -1067,13 +1067,13 @@ class AggregateIntervalCorrectLetters(AggregateRawDataSetColumn):
             data_set_id = f"derived_{data_set_id}"
             description += "after differentiation"
         description += ". Correct letters are considered until the user make a mistake."
-        feature_name = AV(name, abbr)
+        measure_name = AV(name, abbr)
         super().__init__(
             data_set_id,
             data_set_id,
             aggregations=DEFAULT_AGGREGATIONS,
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=feature_name,
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=measure_name,
                 description=description,
                 data_type="float",
                 unit="s",
@@ -1093,8 +1093,8 @@ class ExtractRatioWordsLetters(ExtractStep):
         """Compute ratio of correct words by number of letters typed."""
         return word["success"].sum() / key_is_letter["key_is_letter"].sum()
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("ratio correct words letters", "ratio_correct_words_letters"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("ratio correct words letters", "ratio_correct_words_letters"),
         description="The number of correctly typed words divided by the total number "
         "of letters.",
         data_type="float",
@@ -1111,8 +1111,8 @@ class ExtractTypingSpeedSlope(ExtractStep):
 
     data_set_ids = ["word", "submission_state"]
     transform_function = compute_typing_speed_slope
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("typing speed slope", "typing_speed_slope"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("typing speed slope", "typing_speed_slope"),
         description="Typing speed slope.",
         data_type="float",
     )
@@ -1163,17 +1163,17 @@ class TypingPreprocessingIMUGroup(ProcessingStepGroup):
         super().__init__(steps, level_filter=level_filter, **kwargs)
 
 
-class TypingTremorFeaturesGroup(ProcessingStepGroup):
-    """A group of typing processing steps for tremor features."""
+class TypingTremorMeasuresGroup(ProcessingStepGroup):
+    """A group of typing processing steps for tremor measures."""
 
     steps = [
-        TremorFeatures(
+        TremorMeasures(
             sensor=SensorModality.ACCELEROMETER,
             data_set_id="accelerometer_ts_resampled_detrend",
             add_norm=False,
             level_filter=NotEmptyDataSetFilter("accelerometer"),
         ),
-        TremorFeatures(
+        TremorMeasures(
             sensor=SensorModality.GYROSCOPE,
             data_set_id="gyroscope_ts_resampled_detrend",
             add_norm=False,
@@ -1302,7 +1302,7 @@ class CountLettersGroup(ProcessingStepGroup):
         # Total number of letters
         TransformSimilarityRatio(),
         TransformSimilarityRatioGroup(),
-        AggregateSimilarityRatioFeatures(),
+        AggregateSimilarityRatioMeasures(),
         TransformLettersTypedPerWordRatio(),
         AggregateLettersTypedPerWordRatio(),
         ExtractCountCorrectLetters(),
@@ -1324,8 +1324,8 @@ class TimeBetweenLettersGroup(ProcessingStepGroup):
         # Keep top 10 intervals
         TransformTop10Interval(),
         TransformTop10Interval(KeyState.CORRECT),
-        AggregateTop10IntervalDefaultFeatures(),
-        AggregateTop10IntervalDefaultFeatures(KeyState.CORRECT),
+        AggregateTop10IntervalDefaultMeasures(),
+        AggregateTop10IntervalDefaultMeasures(KeyState.CORRECT),
         TransformMaxDeviation(),
         AggregateMaxDeviation(),
         # Speed for correct letters until mistake
@@ -1368,7 +1368,7 @@ class BDHTypingSteps(ProcessingStepGroup):
         TimeBetweenLettersGroup(),
         RatioAndSlopeGroup(),
         FlagAutoCompleteGroup(),
-        TypingTremorFeaturesGroup(),
+        TypingTremorMeasuresGroup(),
     ]
     kwargs = {"task_name": TASK_NAME}
 

@@ -4,7 +4,7 @@ import pytest
 
 from dispel.data.core import Reading
 from dispel.data.epochs import EpochDefinition
-from dispel.data.features import FeatureValueDefinition, FeatureValueDefinitionPrototype
+from dispel.data.measures import MeasureValueDefinition, MeasureValueDefinitionPrototype
 from dispel.data.raw import RawDataValueDefinition
 from dispel.data.values import AbbreviatedValue as AV
 from dispel.processing.core import (
@@ -21,14 +21,14 @@ from dispel.processing.epochs import (
     LevelEpochProcessingStepMixIn,
 )
 from dispel.processing.extract import (
-    AggregateFeatures,
+    AggregateMeasures,
     ExtractStep,
-    FeatureDefinitionMixin,
+    MeasureDefinitionMixin,
 )
 from dispel.processing.trace import (
     DataSetTrace,
     EpochTrace,
-    FeatureTrace,
+    MeasureTrace,
     OriginTrace,
     StepGroupTrace,
     StepTrace,
@@ -64,9 +64,9 @@ class _TestTransformStep(TransformStep):
 
 class _TestExtractStep(ExtractStep):
     data_set_ids = ["input_dataset1", "input_dataset2"]
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         task_name=AV("test", "t"),
-        feature_name=AV("feature {transform_name}", "feat-{transform_id}"),
+        measure_name=AV("measure {transform_name}", "feat-{transform_id}"),
         description="Description with {processing_placeholder} {transform_id}",
     )
 
@@ -260,8 +260,8 @@ def test_inspect_extract_step():
     assert isinstance(step_trace, StepTrace)
     assert isinstance(input1_trace, DataSetTrace)
     assert isinstance(input2_trace, DataSetTrace)
-    assert isinstance(f1_trace, FeatureTrace)
-    assert isinstance(f2_trace, FeatureTrace)
+    assert isinstance(f1_trace, MeasureTrace)
+    assert isinstance(f2_trace, MeasureTrace)
     assert step_trace.step is step
     assert graph.has_edge(origin, step_trace)
     assert graph.has_edge(input1_trace, step_trace)
@@ -274,9 +274,9 @@ def test_inspect_extract_step():
     assert graph.has_edge(input2_trace, f2_trace)
 
     # test network content
-    assert f1_trace.feature.id == "t-feat-1"
-    assert f2_trace.feature.id == "t-feat-2"
-    assert f1_trace.feature.description == "Description with injection_test 1"
+    assert f1_trace.measure.id == "t-feat-1"
+    assert f2_trace.measure.id == "t-feat-2"
+    assert f1_trace.measure.description == "Description with injection_test 1"
 
 
 def assert_input_output_relation(
@@ -293,11 +293,11 @@ def assert_input_output_relation(
     assert edata[0]["step"] == step
 
 
-def test_inspect_aggregate_features_step():
-    """Test steps aggregating features."""
+def test_inspect_aggregate_measures_step():
+    """Test steps aggregating measures."""
     step1 = _TestExtractStep()
-    step2 = AggregateFeatures(
-        FeatureValueDefinition(AV("test", "t"), AV("feature", "feat")),
+    step2 = AggregateMeasures(
+        MeasureValueDefinition(AV("test", "t"), AV("measure", "feat")),
         ["t-feat-1", "t-feat-2"],
         lambda x: 0,
     )
@@ -321,9 +321,9 @@ def test_inspect_aggregate_features_step():
     # partial graph layout check for second step
     assert isinstance(step1_trace, StepTrace)
     assert isinstance(step2_trace, StepTrace)
-    assert isinstance(feat1_trace, FeatureTrace)
-    assert isinstance(feat2_trace, FeatureTrace)
-    assert isinstance(feat_trace, FeatureTrace)
+    assert isinstance(feat1_trace, MeasureTrace)
+    assert isinstance(feat2_trace, MeasureTrace)
+    assert isinstance(feat_trace, MeasureTrace)
     assert graph.has_edge(step1_trace, step2_trace)
     assert graph.has_edge(feat1_trace, feat_trace)
     assert graph.has_edge(feat2_trace, feat_trace)
@@ -334,20 +334,20 @@ def test_inspect_aggregate_features_step():
     # check graph content
     assert step1_trace.step is step1
     assert step2_trace.step is step2
-    assert feat_trace.feature.id == "t-feat"
+    assert feat_trace.measure.id == "t-feat"
     assert_input_output_relation(graph, feat1_trace, feat_trace, step2)
     assert_edge_relation(graph, feat1_trace, step2_trace, TraceRelation.INPUT)
     assert_edge_relation(graph, step2_trace, feat_trace, TraceRelation.OUTPUT)
 
 
-def test_inspect_feature_definition_mixin_step():
-    """Test steps defining new features."""
+def test_inspect_measure_definition_mixin_step():
+    """Test steps defining new measures."""
 
-    class _TestStep(ProcessingStep, FeatureDefinitionMixin):
+    class _TestStep(ProcessingStep, MeasureDefinitionMixin):
         def process_reading(self, reading: Reading, **kwargs) -> ProcessResultType:
             pass
 
-        definition = FeatureValueDefinition(AV("test", "t"), AV("feature", "feat"))
+        definition = MeasureValueDefinition(AV("test", "t"), AV("measure", "feat"))
 
     graph = inspect(step := _TestStep())
 
@@ -356,12 +356,12 @@ def test_inspect_feature_definition_mixin_step():
     # test graph layout
     _, step_trace, feat_trace, *_ = graph.nodes()
     assert isinstance(step_trace, StepTrace)
-    assert isinstance(feat_trace, FeatureTrace)
+    assert isinstance(feat_trace, MeasureTrace)
     assert graph.has_edge(step_trace, feat_trace)
 
     # test graph content
     assert step_trace.step is step
-    assert feat_trace.feature.id == "t-feat"
+    assert feat_trace.measure.id == "t-feat"
     assert_edge_relation(graph, step_trace, feat_trace, TraceRelation.OUTPUT)
 
 
@@ -494,8 +494,8 @@ def test_inspect_create_level_epoch_step_from_epochs():
         assert_input_output_relation(graph, source, ep2_trace, step2)
 
 
-def test_inspect_extract_features_from_epochs():
-    """Test steps extracting features from level epochs."""
+def test_inspect_extract_measures_from_epochs():
+    """Test steps extracting measures from level epochs."""
 
     class _TestStepCreateEpoch(CreateLevelEpochStep):
         data_set_ids = "ds1"
@@ -508,7 +508,7 @@ def test_inspect_extract_features_from_epochs():
     class _TestStep(LevelEpochExtractStep):
         data_set_ids = "ds1"
         epoch_filter = LevelEpochIdFilter(_TestStepCreateEpoch.definition.id)
-        definition = FeatureValueDefinition(AV("task", "t"), AV("feature", "f"))
+        definition = MeasureValueDefinition(AV("task", "t"), AV("measure", "f"))
 
         @transformation
         def _func(self, data):
@@ -524,18 +524,18 @@ def test_inspect_extract_features_from_epochs():
     assert_graph_shape(graph, 6, 10)
 
     # test graph layout
-    _, step1_trace, ds1_trace, ep1_trace, step2_trace, feature_trace, *_ = graph.nodes()
+    _, step1_trace, ds1_trace, ep1_trace, step2_trace, measure_trace, *_ = graph.nodes()
     assert isinstance(step1_trace, StepTrace)
     assert isinstance(ds1_trace, DataSetTrace)
     assert isinstance(ep1_trace, EpochTrace)
     assert isinstance(step2_trace, StepTrace)
-    assert isinstance(feature_trace, FeatureTrace)
+    assert isinstance(measure_trace, MeasureTrace)
 
-    assert graph.has_edge(ep1_trace, feature_trace)
+    assert graph.has_edge(ep1_trace, measure_trace)
     assert graph.has_edge(ep1_trace, step2_trace)
-    assert graph.has_edge(ds1_trace, feature_trace)
+    assert graph.has_edge(ds1_trace, measure_trace)
 
-    assert_input_output_relation(graph, ep1_trace, feature_trace, step2)
+    assert_input_output_relation(graph, ep1_trace, measure_trace, step2)
 
 
 class _TestParamTransformStep(TransformStep):
@@ -550,9 +550,9 @@ class _TestParamExtractStep(ExtractStep):
 def ancestor_inspect_example() -> nx.MultiDiGraph:
     """Create an example used to test graph dependencies."""
     columns = [RawDataValueDefinition("c1", "column1")]
-    feat_def1 = FeatureValueDefinition(AV("test", "t"), AV("feat-1", "f1"))
-    feat_def2 = FeatureValueDefinition(AV("test", "t"), AV("feat-2", "f2"))
-    feat_def3 = FeatureValueDefinition(AV("test", "t"), AV("feat-3", "f3"))
+    feat_def1 = MeasureValueDefinition(AV("test", "t"), AV("feat-1", "f1"))
+    feat_def2 = MeasureValueDefinition(AV("test", "t"), AV("feat-2", "f2"))
+    feat_def3 = MeasureValueDefinition(AV("test", "t"), AV("feat-3", "f3"))
     steps = CoreProcessingStepGroup(
         [
             TransformStep("input1", lambda _: None, "output1", columns),
@@ -571,7 +571,7 @@ def test_get_ancestors(ancestor_inspect_example):
     assert ancestor_inspect_example.number_of_nodes() == 15
     assert ancestor_inspect_example.number_of_edges() == 31
 
-    ft1, ft2, ft3, *_ = get_traces(ancestor_inspect_example, FeatureTrace)
+    ft1, ft2, ft3, *_ = get_traces(ancestor_inspect_example, MeasureTrace)
 
     assert isinstance(ft1.step, _TestParamExtractStep)
     assert isinstance(ft2.step, ExtractStep)
@@ -584,13 +584,13 @@ def test_get_ancestors(ancestor_inspect_example):
 
 
 def test_get_ancestor_source_graph(ancestor_inspect_example):
-    """Test getting source ancestors for a feature trace."""
-    ft1, *_ = get_traces(ancestor_inspect_example, FeatureTrace)
+    """Test getting source ancestors for a measure trace."""
+    ft1, *_ = get_traces(ancestor_inspect_example, MeasureTrace)
 
     ft1_graph = get_ancestor_source_graph(ancestor_inspect_example, ft1)
     assert ft1_graph.number_of_nodes() == 4
     assert ft1_graph.number_of_edges() == 3
-    assert all(isinstance(n, (DataSetTrace, FeatureTrace)) for n in ft1_graph.nodes)
+    assert all(isinstance(n, (DataSetTrace, MeasureTrace)) for n in ft1_graph.nodes)
     assert ft1 in ft1_graph.nodes
 
 
@@ -601,20 +601,20 @@ def test_get_ancestor_source_graph_cycle():
         TransformStep("input", lambda _: None, "output", definition),
         TransformStep("output", lambda _: None, "input", definition),
         ExtractStep(
-            "output", lambda _: None, FeatureValueDefinition(AV("t", "t"), AV("f", "f"))
+            "output", lambda _: None, MeasureValueDefinition(AV("t", "t"), AV("f", "f"))
         ),
     ]
 
     graph = inspect(steps)
-    feature_trace, *_ = get_traces(graph, FeatureTrace)
-    ancestor_graph = get_ancestor_source_graph(graph, feature_trace)
+    measure_trace, *_ = get_traces(graph, MeasureTrace)
+    ancestor_graph = get_ancestor_source_graph(graph, measure_trace)
 
     assert ancestor_graph.number_of_nodes() == 3
 
 
 def test_get_edge_parameters(ancestor_inspect_example):
     """Test getting parameters defined in edge steps."""
-    ft1, _, ft2, *_ = get_traces(ancestor_inspect_example, FeatureTrace)
+    ft1, _, ft2, *_ = get_traces(ancestor_inspect_example, MeasureTrace)
 
     ft1_graph = get_ancestor_source_graph(ancestor_inspect_example, ft1)
     param1 = get_edge_parameters(ft1_graph)

@@ -8,9 +8,9 @@ import pytest
 
 from dispel.data.core import Evaluation, Reading
 from dispel.data.epochs import EpochDefinition
-from dispel.data.features import FeatureSet, FeatureValue
 from dispel.data.flags import Flag, FlagSeverity, FlagType
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureSet, MeasureValue
 from dispel.data.raw import (
     RawDataSet,
     RawDataSetDefinition,
@@ -169,24 +169,24 @@ def test_processing_step_group_yield():
         def process_reading(self, reading: Reading, **kwargs) -> ProcessResultType:
             yield data_set
 
-    feature = FeatureValue(ValueDefinition("foo", "bar"), 5)
+    measure = MeasureValue(ValueDefinition("foo", "bar"), 5)
 
-    class _StepFeatureValue(ProcessingStep):
+    class _StepMeasureValue(ProcessingStep):
         def process_reading(self, reading: Reading, **kwargs) -> ProcessResultType:
-            yield feature
+            yield measure
 
-    feature_set = FeatureSet([feature])
+    measure_set = MeasureSet([measure])
 
-    class _StepFeatureSet(ProcessingStep):
+    class _StepMeasureSet(ProcessingStep):
         def process_reading(self, reading: Reading, **kwargs) -> ProcessResultType:
-            yield feature_set
+            yield measure_set
 
     group = ProcessingStepGroup(
-        [_StepExtract(), _StepFeatureValue(), _StepFeatureSet()]
+        [_StepExtract(), _StepMeasureValue(), _StepMeasureSet()]
     )
     res = list(group.process(None))
 
-    assert res == [data_set, feature, feature_set]
+    assert res == [data_set, measure, measure_set]
 
 
 @pytest.mark.filterwarnings("ignore:.*was not decorated.*")

@@ -10,9 +10,9 @@ from scipy.signal import medfilt
 from scipy.stats import iqr as scipy_iqr
 
 from dispel.data.core import EntityType, Reading
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.flags import FlagSeverity, FlagType
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import ACCELEROMETER_COLUMNS, RawDataValueDefinition
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
@@ -59,7 +59,7 @@ from dispel.providers.generic.tasks.sbt_utt.sbt_func import (
     sway_jerk,
     sway_total_excursion,
 )
-from dispel.providers.generic.tremor import TremorFeatures
+from dispel.providers.generic.tremor import TremorMeasures
 from dispel.signal.accelerometer import (
     AP_ML_COLUMN_MAPPINGS,
     transform_ap_ml_acceleration,
@@ -67,8 +67,8 @@ from dispel.signal.accelerometer import (
 from dispel.signal.core import derive_time_data_frame, euclidean_norm
 
 
-class SBTTremorFeaturesGroup(ProcessingStepGroup):
-    """Tremor feature for the SBT from accelerometer."""
+class SBTTremorMeasuresGroup(ProcessingStepGroup):
+    """Tremor measure for the SBT from accelerometer."""
 
     def __init__(self, data_set_id, **kwargs):
         new_column_names = {
@@ -78,7 +78,7 @@ class SBTTremorFeaturesGroup(ProcessingStepGroup):
         }
         steps = [
             RenameColumns(data_set_id, **new_column_names),
-            TremorFeatures(
+            TremorMeasures(
                 sensor=SensorModality.ACCELEROMETER,
                 data_set_id=f"{data_set_id}_renamed",
                 add_norm=False,
@@ -235,8 +235,8 @@ class ExtractValidSegmentCoverage(ExtractStep):
     """
 
     data_set_ids = "flagged_motion"
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("coverage valid data", "coverage_valid"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("coverage valid data", "coverage_valid"),
         data_type="float64",
         unit="%",
         validator=GREATER_THAN_ZERO,
@@ -303,21 +303,21 @@ class ExtractSwayTotalExcursion(SBTBoutExtractStep):
     ----------
     data_set_ids
         The data set ids that will be used to extract Sway Total Excursion
-        features.
+        measures.
     """
 
     def __init__(self, data_set_ids: List[str], **kwargs):
         description = (
             "The Sway Total Excursion (a.k.a. TOTEX) computed with the eq.8 "
-            "of Prieto (1996) algorithm. This feature quantifies the total "
+            "of Prieto (1996) algorithm. This measure quantifies the total "
             "amount of acceleration increments in the "
             "Anterior/Posterior-Medio/Lateral plane of the movement."
             "It is computed with the bout strategy {bout_strategy_repr}. See"
             "also https://doi.org/10.1109/10.532130."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("sway total excursion", "totex"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("sway total excursion", "totex"),
             data_type="float64",
             unit="mG",
             validator=GREATER_THAN_ZERO,
@@ -338,7 +338,7 @@ class ExtractSwayJerk(SBTBoutExtractStep):
     It is a complementary measure to the sway areas, as it covers also the
     amount of sway occurred within a given geometric area. It takes special
     relevance when algorithms to remove outliers are applied and the timeseries
-    span used for different features is different. In other words, a normalised
+    span used for different measures is different. In other words, a normalised
     version of the sway total excursion. See an example of
     concomitant use with sway total excursion in Mancini(2012)
 
@@ -346,7 +346,7 @@ class ExtractSwayJerk(SBTBoutExtractStep):
     ----------
     data_set_ids
         The data set ids that will be used to extract Sway Jerk
-        features.
+        measures.
     """
 
     def __init__(self, data_set_ids: List[str], **kwargs):
@@ -358,8 +358,8 @@ class ExtractSwayJerk(SBTBoutExtractStep):
             " also https://doi.org/10.1186/1743-0003-9-59."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("sway jerk", "jerk"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("sway jerk", "jerk"),
             data_type="float64",
             unit="mG/s",
             validator=GREATER_THAN_ZERO,
@@ -382,7 +382,7 @@ class ExtractCircleArea(SBTBoutExtractStep):
     ----------
     data_set_ids
         The data set ids that will be considered to extract Circle Area
-        features.
+        measures.
     """
 
     def __init__(self, data_set_ids: List[str], **kwargs):
@@ -393,8 +393,8 @@ class ExtractCircleArea(SBTBoutExtractStep):
             "https://doi.org/10.1109/10.532130."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("circle area", "ca"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("circle area", "ca"),
             data_type="float64",
             unit="microG^2",
             validator=GREATER_THAN_ZERO,
@@ -417,7 +417,7 @@ class ExtractEllipseArea(SBTBoutExtractStep):
     ----------
     data_set_ids
         The data set ids that will be considered to extract Ellipse Area
-        features.
+        measures.
     """
 
     def __init__(self, data_set_ids: List[str], **kwargs):
@@ -428,8 +428,8 @@ class ExtractEllipseArea(SBTBoutExtractStep):
             "https://doi.org/10.1016/j.gaitpost.2013.09.001."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("ellipse area", "ea"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("ellipse area", "ea"),
             data_type="float64",
             unit="microG^2",
             validator=GREATER_THAN_ZERO,
@@ -442,8 +442,8 @@ class ExtractEllipseArea(SBTBoutExtractStep):
         super().__init__(data_set_ids, _compute_ellipse_area, definition, **kwargs)
 
 
-class ExtractSpatioTemporalFeaturesBatch(ProcessingStepGroup):
-    """Extract postural adjustment features given a bout strategy."""
+class ExtractSpatioTemporalMeasuresBatch(ProcessingStepGroup):
+    """Extract postural adjustment measures given a bout strategy."""
 
     def __init__(self, bout_strategy: SBTBoutStrategyModality, **kwargs):
         data_set_id = ["martinez_accelerations"]
@@ -496,7 +496,7 @@ class TremorAndAxesGroup(ProcessingStepGroup):
     """A ProcessingStepGroup concatenating TremorAndAxesGroup steps."""
 
     steps = [
-        SBTTremorFeaturesGroup("acc_ts_rotated_resampled_detrend"),
+        SBTTremorMeasuresGroup("acc_ts_rotated_resampled_detrend"),
         TransformAxisNames("acc_ts_rotated_resampled_detrend_svgf_bhpf"),
         TransformJerkNorm(),
     ]
@@ -513,11 +513,11 @@ class DetectExcessiveMotionGroup(ProcessingStepGroup):
     ]
 
 
-class ExtractSpatioTemporalFeaturesGroup(ProcessingStepGroup):
-    """A ProcessingStepGroup concatenating ExtractSpatioTemporalFeaturesBatch steps."""
+class ExtractSpatioTemporalMeasuresGroup(ProcessingStepGroup):
+    """A ProcessingStepGroup concatenating ExtractSpatioTemporalMeasuresBatch steps."""
 
     steps = [
-        ExtractSpatioTemporalFeaturesBatch(
+        ExtractSpatioTemporalMeasuresBatch(
             bout_strategy=bout_strategy,
             modalities=[bout_strategy.av],
             bout_strategy_repr=bout_strategy.av,
@@ -542,7 +542,7 @@ class BehaviouralFlagsGroup(ProcessingStepGroup):
 
 
 class SBTProcessingSteps(ProcessingStepGroup):
-    """All processing steps to extract SBT features."""
+    """All processing steps to extract SBT measures."""
 
     steps = [
         TechnicalFlagsGroup(),
@@ -550,7 +550,7 @@ class SBTProcessingSteps(ProcessingStepGroup):
         PreProcessingStepsGroup(),
         TremorAndAxesGroup(),
         DetectExcessiveMotionGroup(),
-        ExtractSpatioTemporalFeaturesGroup(),
+        ExtractSpatioTemporalMeasuresGroup(),
         BehaviouralFlagsGroup(),
     ]
 

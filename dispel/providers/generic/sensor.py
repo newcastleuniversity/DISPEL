@@ -6,8 +6,8 @@ import numpy as np
 import pandas as pd
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import (
     ACCELEROMETER_COLUMNS,
     DEFAULT_COLUMNS,
@@ -316,8 +316,8 @@ class ExtractAverageSignalEnergy(NotEmptyDataSetAssertionMixin, ExtractStep):
         super().__init__(
             data_set_id,
             _average_signal,
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=AV(f"average {sensor} energy", f"{sensor.abbr}_sig_ene"),
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=AV(f"average {sensor} energy", f"{sensor.abbr}_sig_ene"),
                 data_type="float64",
                 description=f"The average {sensor} energy of the "
                 f'{"".join(columns)} columns of the signal.',
@@ -327,8 +327,8 @@ class ExtractAverageSignalEnergy(NotEmptyDataSetAssertionMixin, ExtractStep):
         )
 
 
-class ExtractPowerSpectrumFeatures(NotEmptyDataSetAssertionMixin, ExtractMultipleStep):
-    r"""A feature extraction processing step for power spectrum features.
+class ExtractPowerSpectrumMeasures(NotEmptyDataSetAssertionMixin, ExtractMultipleStep):
+    r"""A measure extraction processing step for power spectrum measures.
 
     Parameters
     ----------
@@ -337,7 +337,7 @@ class ExtractPowerSpectrumFeatures(NotEmptyDataSetAssertionMixin, ExtractMultipl
     data_set_id
         The data set id on which the extraction is to be performed.
     columns
-        The columns onto which the power spectrum features are to be extracted.
+        The columns onto which the power spectrum measures are to be extracted.
     lower_bound
         The lower bound of frequencies below which the signal is filtered.
     upper_bound
@@ -405,7 +405,7 @@ class ExtractPowerSpectrumFeatures(NotEmptyDataSetAssertionMixin, ExtractMultipl
                 func=lambda x: atomic_function["func"](x[axis]),
                 description=atomic_function["description"].format(axis=axis),
                 unit=atomic_function["unit"],
-                feature_name=AV(
+                measure_name=AV(
                     f'{sensor} power spectrum {atomic_function["name"]} {axis}'
                     f" axis",
                     f'{sensor.abbr}_ps_{atomic_function["name"].abbr}_{axis}',
@@ -421,7 +421,7 @@ class ExtractPowerSpectrumFeatures(NotEmptyDataSetAssertionMixin, ExtractMultipl
         super().__init__(
             data_set_id,
             functions,
-            definition=FeatureValueDefinitionPrototype(data_type="float64"),
+            definition=MeasureValueDefinitionPrototype(data_type="float64"),
             level_filter=level_filter,
         )
 

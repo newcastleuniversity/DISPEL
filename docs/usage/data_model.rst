@@ -35,7 +35,7 @@ logical structure for data capture, these sub-tasks are structured in so
 called *levels*. From a data analysis perspective a level is a logical unit of
 analysis. For example, the *DRAW* task asks the subject to draw four different
 shapes twice with both their left and right hand. Each attempt to draw a
-shape with one hand is considered a level as one would derive features for
+shape with one hand is considered a level as one would derive measures for
 analyses for each and everyone of them.
 
 
@@ -83,7 +83,7 @@ Relationships
 ~~~~~~~~~~~~~
 
 The following diagram illustrated the class relationships between ``Reading``\
-, ``Level``\ , ``RawDataSet``\ , ``LevelEpoch`` and ``FeatureSet``.
+, ``Level``\ , ``RawDataSet``\ , ``LevelEpoch`` and ``MeasureSet``.
 
 .. mermaid::
 
@@ -104,20 +104,20 @@ The following diagram illustrated the class relationships between ``Reading``\
        class Level{
            +id: LevelId
            -_raw_data_sets: Dict[str, RawDataSet]
-           -_feature_set: FeatureSet
+           -_measure_set: MeasureSet
            +get_raw_data_set(id_: str): RawDataSet
            +epochs: List[LevelEpoch]
-           +get_feature_set(): FeatureSet
-           +get_feature(id_: str): FeatureValue
+           +get_measure_set(): MeasureSet
+           +get_measure(id_: str): MeasureValue
        }
        Level "1" --> "1" LevelId
        Level "1" --> "0..*" LevelEpoch
        class RawDataSet
-       class FeatureSet
+       class MeasureSet
        Reading "1" --> "1..*" Level
        Level "1" --> "0..*" RawDataSet
-       Reading "1" --> "0..1" FeatureSet
-       Level "1" --> "0..1" FeatureSet
+       Reading "1" --> "0..1" MeasureSet
+       Level "1" --> "0..1" MeasureSet
 
 
 
@@ -147,8 +147,8 @@ LevelEpoch
 ----------
 
 :class:`~dispel.data.levels.LevelEpoch` allow to describe specific time periods
-in levels with features. They can be used to both process and extract data
-and features for those specific epochs in time.
+in levels with measures. They can be used to both process and extract data
+and measures for those specific epochs in time.
 
 RawDataSet
 ----------
@@ -223,7 +223,7 @@ of subjects performing tests not according to their respective protocol.
 
 Flags are supported for :class:`~dispel.data.core.Reading`\ s,
 :class:`~dispel.data.levels.Level`\ s, :class:`~dispel.data.raw.RawDataSet`\ s and
-:class:`~dispel.data.features.FeatureValue`\ s.
+:class:`~dispel.data.measures.MeasureValue`\ s.
 
 :meth:`~dispel.data.flags.FlagMixIn.is_valid` indicates if a
 particular entity is valid and

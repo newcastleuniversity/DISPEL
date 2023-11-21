@@ -3,7 +3,7 @@
 import pandas as pd
 import pytest
 
-from dispel.data.collections import FeatureCollection
+from dispel.data.collections import MeasureCollection
 from dispel.stats.reliability import (
     icc_parallel_form,
     icc_power,
@@ -19,7 +19,7 @@ EXAMPLE_PATH = resource_path("reliability-example.csv", "stats")
 @pytest.fixture
 def data():
     """Get a fixture to the example data set."""
-    return FeatureCollection.from_csv(EXAMPLE_PATH)
+    return MeasureCollection.from_csv(EXAMPLE_PATH)
 
 
 @pytest.fixture
@@ -61,13 +61,13 @@ def test_icc_power():
     assert result == 0.98
 
 
-def test_icc_features_set_test_retest(data):
-    """Test of the function icc_features_set."""
-    feature_iccs = icc_set_test_retest(data, session_min=2)
-    assert len(feature_iccs.iccs.keys()) == 2
-    assert feature_iccs.iccs["feat_02"].value == pytest.approx(0.979591836)
-    assert feature_iccs.iccs["feat_02"].sample_size == 2
-    assert feature_iccs.iccs["feat_02"].power == pytest.approx(0.63)
+def test_icc_measures_set_test_retest(data):
+    """Test of the function icc_measures_set."""
+    measure_iccs = icc_set_test_retest(data, session_min=2)
+    assert len(measure_iccs.iccs.keys()) == 2
+    assert measure_iccs.iccs["feat_02"].value == pytest.approx(0.979591836)
+    assert measure_iccs.iccs["feat_02"].sample_size == 2
+    assert measure_iccs.iccs["feat_02"].power == pytest.approx(0.63)
 
 
 def test_icc_parallel_form():

@@ -3,7 +3,7 @@ from datetime import datetime
 from json import loads
 from typing import List
 
-from dispel.data.collections import FeatureSet
+from dispel.data.collections import MeasureSet
 from dispel.data.core import Reading, ReadingSchema
 from dispel.data.epochs import Epoch
 from dispel.data.raw import (
@@ -15,8 +15,8 @@ from dispel.data.values import ValueDefinition
 from dispel.providers.bdh.io import (
     parse_bdh_reading,
     parse_epoch,
-    parse_feature_definition,
-    parse_features,
+    parse_measure_definition,
+    parse_measures,
     parse_raw_data_set_definition,
     parse_raw_data_source,
     parse_raw_data_value_definition,
@@ -76,15 +76,15 @@ def test_parse_epoch_without_interruptions():
     assert isinstance(res.end, datetime)
 
 
-def test_parse_feature_value_definition():
-    """Testing :func:`dispel.providers.bdh.io.parse_feature_definition`."""
+def test_parse_measure_value_definition():
+    """Testing :func:`dispel.providers.bdh.io.parse_measure_definition`."""
     example_json = """{
         "unit": "count",
         "description": "The number of all responses"
     }
     """
     example = loads(example_json)
-    res = parse_feature_definition("f1", example)
+    res = parse_measure_definition("f1", example)
 
     assert isinstance(res, ValueDefinition)
     assert res.id == "f1"
@@ -176,21 +176,21 @@ def test_parse_raw_data_set_definition():
         assert isinstance(definition, RawDataValueDefinition)
 
 
-def test_parse_features():
-    """Testing :func:`dispel.providers.bdh.io.parse_features`."""
+def test_parse_measures():
+    """Testing :func:`dispel.providers.bdh.io.parse_measures`."""
     example_json = """{
-        "featureA": 55,
-        "featureB": "text"
+        "measureA": 55,
+        "measureB": "text"
     }
     """
     example = loads(example_json)
     definitions = [
-        ValueDefinition("featureA", "Feature A"),
-        ValueDefinition("featureB", "Feature B"),
+        ValueDefinition("measureA", "Measure A"),
+        ValueDefinition("measureB", "Measure B"),
     ]
-    res = parse_features(example, definitions)
+    res = parse_measures(example, definitions)
 
-    assert isinstance(res, FeatureSet)
+    assert isinstance(res, MeasureSet)
     assert len(res) == 2
 
 

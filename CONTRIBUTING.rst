@@ -26,7 +26,7 @@ Ready to contribute? Here's how to set up `dispel` for local development.
 
 3. Create a branch for local development::
 
-    $ git checkout -b name-of-your-bugfix-or-feature
+    $ git checkout -b name-of-your-bugfix-or-measure
 
    Now you can make your changes locally.
 
@@ -46,7 +46,7 @@ Ready to contribute? Here's how to set up `dispel` for local development.
 
     $ git add .
     $ git commit -m "Your detailed description of your changes."
-    $ git push origin name-of-your-bugfix-or-feature
+    $ git push origin name-of-your-bugfix-or-measure
 
 6. Submit a pull request through the GitLab website.
 

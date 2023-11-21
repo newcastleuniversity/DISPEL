@@ -13,8 +13,8 @@ import pywt
 from scipy import integrate
 from scipy.signal import find_peaks
 
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.levels import Context, Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import DEFAULT_COLUMNS, RawDataValueDefinition
 from dispel.data.validators import BETWEEN_MINUS_ONE_AND_ONE, GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
@@ -74,7 +74,7 @@ SENSOR_HEIGHT_RATIO = 0.53
 r"""Height of the sensor relative to subject height."""
 
 DEFAULT_SUBJECT_HEIGHT = 1.7
-r"""A default height that we will use to compute spatial features until we
+r"""A default height that we will use to compute spatial measures until we
 have access to the correct height."""
 
 DEFAULT_SENSOR_HEIGHT = SENSOR_HEIGHT_RATIO * DEFAULT_SUBJECT_HEIGHT
@@ -415,7 +415,7 @@ GAIT_SPEED_DEF = RawDataValueDefinition(
     precision=3,
 )
 
-CWT_FEATURES_DESC_MAPPING = {
+CWT_MEASURES_DESC_MAPPING = {
     str(STEPS_DEF.id): STEPS_DEF.description,
     str(STRIDE_DUR_DEF.id): STRIDE_DUR_DEF.description,
     str(STRIDE_DUR_ASYM_DEF.id): STRIDE_DUR_ASYM_DEF.description,
@@ -444,10 +444,10 @@ CWT_FEATURES_DESC_MAPPING = {
     str(STRIDE_LEN_ASYM_LN_DEF.id): STRIDE_LEN_ASYM_LN_DEF.description,
     str(GAIT_SPEED_DEF.id): GAIT_SPEED_DEF.description,
 }
-r"""Mapping features to description to help fill the description of cwt
-features when aggregating columns."""
+r"""Mapping measures to description to help fill the description of cwt
+measures when aggregating columns."""
 
-CWT_FEATURES_PRECISION_MAPPING = {
+CWT_MEASURES_PRECISION_MAPPING = {
     str(STEPS_DEF.id): STEPS_DEF.precision,
     str(STRIDE_DUR_DEF.id): STRIDE_DUR_DEF.precision,
     str(STRIDE_DUR_ASYM_DEF.id): STRIDE_DUR_ASYM_DEF.precision,
@@ -476,10 +476,10 @@ CWT_FEATURES_PRECISION_MAPPING = {
     str(STRIDE_LEN_ASYM_LN_DEF.id): STRIDE_LEN_ASYM_LN_DEF.precision,
     str(GAIT_SPEED_DEF.id): GAIT_SPEED_DEF.precision,
 }
-r"""Mapping features to precision to map the precision of cwt
-features when aggregating columns."""
+r"""Mapping measures to precision to map the precision of cwt
+measures when aggregating columns."""
 
-CWT_FEATURES_DEF = [
+CWT_MEASURES_DEF = [
     STEPS_DEF,
     STRIDE_DUR_DEF,
     STRIDE_DUR_ASYM_DEF,
@@ -970,7 +970,7 @@ def compute_stride_duration(data: pd.DataFrame) -> pd.DataFrame:
 
     Stride duration is defined as the time elapsed between the first contact
     of two consecutive footsteps of the same foot.
-    The asymmetry is defined as the difference of the feature between the right
+    The asymmetry is defined as the difference of the measure between the right
     and left foot. It is given as an absolute difference as we don't know
     which foot is which.
 
@@ -1006,7 +1006,7 @@ def compute_step_duration_and_cadence(data: pd.DataFrame) -> pd.DataFrame:
 
     Step duration is the time elapsed between two consecutive footsteps. More
     specifically between two consecutive initial contact events.
-    The asymmetry is defined as the difference of the feature
+    The asymmetry is defined as the difference of the measure
     between the right and left foot. It is given as an absolute difference as
     we don't know which foot is which.
     Cadence is defined as the instantaneous number of steps per minutes.
@@ -1048,7 +1048,7 @@ def compute_stance(data: pd.DataFrame) -> pd.DataFrame:
     ends when the same foot leaves the ground. The stance phase makes up
     approximately 60% of the gait cycle. It can also be seen as the time
     elapsed between the final contact and initial contact.
-    The asymmetry is defined as the difference of the feature
+    The asymmetry is defined as the difference of the measure
     between the right and left foot. It is given as an absolute difference as
     we don't know which foot is which.
 
@@ -1332,11 +1332,11 @@ def compute_gait_speed(data: pd.DataFrame) -> pd.DataFrame:
     return data
 
 
-def _cwt_feature_extraction(
+def _cwt_measure_extraction(
     data: pd.DataFrame, height_changes_com: pd.DataFrame, sensor_height: float
 ) -> pd.DataFrame:
     """
-    Compute several temporal and spatial features for each gait cycle.
+    Compute several temporal and spatial measures for each gait cycle.
 
     Parameters
     ----------
@@ -1352,21 +1352,21 @@ def _cwt_feature_extraction(
     Returns
     -------
     pandas.DataFrame
-        The optimized gait steps data frame with temporal and spatial features
+        The optimized gait steps data frame with temporal and spatial measures
         computed for each gait cycle.
     """
 
-    def _compute_cwt_features(
+    def _compute_cwt_measures(
         data: pd.DataFrame, height_changes_com: pd.Series
     ) -> pd.DataFrame:
-        """Compute all the cwt features."""
+        """Compute all the cwt measures."""
         # work on a copy of the dataframe
         res = data.copy()
 
         # steps
         res["steps"] = len(res)
 
-        # gait cycle duration features
+        # gait cycle duration measures
         res = compute_stride_duration(res)
 
         # step time and cadence
@@ -1402,25 +1402,25 @@ def _cwt_feature_extraction(
         return res
 
     if "bout_id" not in data.columns:
-        features = _compute_cwt_features(data, height_changes_com["height_com"])
-        return features.set_index("FC", drop=False)
+        measures = _compute_cwt_measures(data, height_changes_com["height_com"])
+        return measures.set_index("FC", drop=False)
 
-    list_df_features = []
+    list_df_measures = []
 
     for bout_id in data.bout_id.unique():
         # Filter on bout
         bout_data = data[data.bout_id == bout_id]
 
-        bout_data = _compute_cwt_features(
+        bout_data = _compute_cwt_measures(
             bout_data, height_changes_com.loc[data.bout_id == bout_id, "height_com"]
         )
 
-        # append to the list of df_features
-        list_df_features.append(bout_data)
-    if len(list_df_features) > 0:
-        return pd.concat(list_df_features).set_index("FC", drop=False)
+        # append to the list of df_measures
+        list_df_measures.append(bout_data)
+    if len(list_df_measures) > 0:
+        return pd.concat(list_df_measures).set_index("FC", drop=False)
     column_names = ["IC", "FC", "FC_opp_foot", "Gait_Cycle", "bout_id"]
-    column_names += list(CWT_FEATURES_DESC_MAPPING)
+    column_names += list(CWT_MEASURES_DESC_MAPPING)
     return pd.DataFrame(columns=column_names)
 
 
@@ -1448,8 +1448,8 @@ def get_sensor_height(context: Context) -> float:
     return DEFAULT_SENSOR_HEIGHT
 
 
-class CWTFeatureTransformation(TransformStep):
-    """Compute temporal and spatial features for each gait cycle.
+class CWTMeasureTransformation(TransformStep):
+    """Compute temporal and spatial measures for each gait cycle.
 
     It expects two data set ids, first: The data set id of the gaitpy step
     dataset after optimization, with step annotated with IC, FC, FC_opp_foot
@@ -1463,21 +1463,21 @@ class CWTFeatureTransformation(TransformStep):
         FC_OPP_FOOT_DEF,
         GAIT_CYCLE_DEF,
         DEF_BOUT_ID,
-    ] + CWT_FEATURES_DEF
+    ] + CWT_MEASURES_DEF
 
     @transformation
-    def extract_features(
+    def extract_measures(
         self, data: pd.DataFrame, height_changes_com: pd.DataFrame, level: Level
     ):
-        """Extract cwt features."""
+        """Extract cwt measures."""
         sensor_height = get_sensor_height(level.context)
-        return _cwt_feature_extraction(
+        return _cwt_measure_extraction(
             data, height_changes_com, sensor_height=sensor_height
         )
 
 
-class CWTFeatureWithoutBoutTransformation(TransformStep):
-    """Compute temporal and spatial features for each gait cycle.
+class CWTMeasureWithoutBoutTransformation(TransformStep):
+    """Compute temporal and spatial measures for each gait cycle.
 
     It expects two data set ids, first: The data set id of the gaitpy step
     dataset after optimization, with step annotated with IC, FC, FC_opp_foot
@@ -1485,34 +1485,34 @@ class CWTFeatureWithoutBoutTransformation(TransformStep):
     center of mass.
     """
 
-    definitions = [IC_DEF, FC_DEF, FC_OPP_FOOT_DEF, GAIT_CYCLE_DEF] + CWT_FEATURES_DEF
+    definitions = [IC_DEF, FC_DEF, FC_OPP_FOOT_DEF, GAIT_CYCLE_DEF] + CWT_MEASURES_DEF
 
     @transformation
-    def extract_features(
+    def extract_measures(
         self, data: pd.DataFrame, height_changes_com: pd.DataFrame, level: Level
     ):
-        """Extract cwt features."""
+        """Extract cwt measures."""
         sensor_height = get_sensor_height(level.context)
-        return _cwt_feature_extraction(
+        return _cwt_measure_extraction(
             data, height_changes_com, sensor_height=sensor_height
         )
 
 
-class AggregateCWTFeature(GaitBoutAggregateStep):
-    """An Aggregation of cwt features on walking bouts."""
+class AggregateCWTMeasure(GaitBoutAggregateStep):
+    """An Aggregation of cwt measures on walking bouts."""
 
     def __init__(self, data_set_id: str, column_id: str, **kwargs):
         # type: ignore
         description = (
             f"The {{aggregation}} of {column_id} "
             "with the bout strategy {bout_strategy_repr}. "
-            f"{CWT_FEATURES_DESC_MAPPING[column_id]} ."
+            f"{CWT_MEASURES_DESC_MAPPING[column_id]} ."
         )
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV(column_id.replace("_", " "), column_id),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV(column_id.replace("_", " "), column_id),
             data_type="float64",
             description=description,
-            precision=CWT_FEATURES_PRECISION_MAPPING[column_id],
+            precision=CWT_MEASURES_PRECISION_MAPPING[column_id],
         )
 
         super().__init__(
@@ -1524,19 +1524,19 @@ class AggregateCWTFeature(GaitBoutAggregateStep):
         )
 
 
-class AggregateCWTFeatureWithoutBout(AggregateRawDataSetColumn):
-    """An Aggregation of cwt features not on walking bouts."""
+class AggregateCWTMeasureWithoutBout(AggregateRawDataSetColumn):
+    """An Aggregation of cwt measures not on walking bouts."""
 
     def __init__(self, data_set_id: str, column_id: str, **kwargs):
         description = (
             f"The {{aggregation}} of {column_id}."
-            f"{CWT_FEATURES_DESC_MAPPING[column_id]} ."
+            f"{CWT_MEASURES_DESC_MAPPING[column_id]} ."
         )
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV(column_id.replace("_", " "), column_id),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV(column_id.replace("_", " "), column_id),
             data_type="float64",
             description=description,
-            precision=CWT_FEATURES_PRECISION_MAPPING[column_id],
+            precision=CWT_MEASURES_PRECISION_MAPPING[column_id],
         )
 
         super().__init__(
@@ -1548,8 +1548,8 @@ class GaitPyCountSteps(GaitBoutExtractStep):
     """Extract the total number of steps counted with gaitpy."""
 
     def __init__(self, data_set_id, **kwargs):
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step count", "sc"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step count", "sc"),
             data_type="int16",
             validator=GREATER_THAN_ZERO,
             description="The number of steps detected with gaitpy algorithm "
@@ -1577,8 +1577,8 @@ class GaitPyPowerBoutDivStepsWithoutBout(ExtractStep):
 
     def __init__(self, **kwargs):
         data_set_ids = ["vertical_acceleration", "gaitpy"]
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step power", "sp"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step power", "sp"),
             data_type="int16",
             validator=GREATER_THAN_ZERO,
             description="The integral of the centered acceleration magnitude "
@@ -1597,13 +1597,13 @@ class GaitPyStepCountWithoutBout(ExtractStep):
     """Extract step count with GaitPy dataset without walking bouts."""
 
     def __init__(self, **kwargs):
-        data_set_ids = "cwt_features"
+        data_set_ids = "cwt_measures"
         description = (
             "The number of steps detected with gaitpy"
             " algorithm not using walking bouts."
         )
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("step count", "sc"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("step count", "sc"),
             data_type="int16",
             validator=GREATER_THAN_ZERO,
             description=description,
@@ -1616,11 +1616,11 @@ class GaitPyStepCountWithoutBout(ExtractStep):
         )
 
 
-class AggregateAllCWTFeatures(ProcessingStepGroup):
-    """A group of gait processing steps for cwt features on walking bouts."""
+class AggregateAllCWTMeasures(ProcessingStepGroup):
+    """A group of gait processing steps for cwt measures on walking bouts."""
 
     def __init__(self, data_set_id: str, **kwargs):
-        feature_ids = [
+        measure_ids = [
             "stride_dur",
             "stride_dur_asym",
             "step_dur",
@@ -1649,17 +1649,17 @@ class AggregateAllCWTFeatures(ProcessingStepGroup):
             "step_len_asym_ln",
         ]
         steps = [
-            AggregateCWTFeature(data_set_id, feature_id, **kwargs)
-            for feature_id in feature_ids
+            AggregateCWTMeasure(data_set_id, measure_id, **kwargs)
+            for measure_id in measure_ids
         ]
         super().__init__(steps=steps, **kwargs)
 
 
-class AggregateAllCWTFeaturesWithoutBout(ProcessingStepGroup):
-    """Group of gait processing steps for cwt features not on walking bout."""
+class AggregateAllCWTMeasuresWithoutBout(ProcessingStepGroup):
+    """Group of gait processing steps for cwt measures not on walking bout."""
 
     def __init__(self, data_set_id: str, **kwargs):
-        feature_ids = [
+        measure_ids = [
             "stride_dur",
             "stride_dur_asym",
             "step_dur",
@@ -1688,19 +1688,19 @@ class AggregateAllCWTFeaturesWithoutBout(ProcessingStepGroup):
             "step_len_asym_ln",
         ]
         steps = [
-            AggregateCWTFeatureWithoutBout(data_set_id, feature_id, **kwargs)
-            for feature_id in feature_ids
+            AggregateCWTMeasureWithoutBout(data_set_id, measure_id, **kwargs)
+            for measure_id in measure_ids
         ]
         super().__init__(steps=steps, **kwargs)
 
 
-class GaitPyFeatures(ProcessingStepGroup):
-    """Extract Del Din features based on GaitPy Steps and a bout strategy."""
+class GaitPyMeasures(ProcessingStepGroup):
+    """Extract Del Din measures based on GaitPy Steps and a bout strategy."""
 
     def __init__(self, bout_strategy: BoutStrategyModality, **kwargs):
-        data_set_id = "cwt_features_with_walking_bouts"
+        data_set_id = "cwt_measures_with_walking_bouts"
         steps: List[ProcessingStep] = [
-            AggregateAllCWTFeatures(
+            AggregateAllCWTMeasures(
                 data_set_id=data_set_id, bout_strategy=bout_strategy.bout_cls
             ),
             GaitPyCountSteps(
@@ -1714,13 +1714,13 @@ class GaitPyFeatures(ProcessingStepGroup):
         super().__init__(steps, **kwargs)
 
 
-class GaitPyFeaturesWithoutBout(ProcessingStepGroup):
-    """Extract Del Din features based on GaitPy Steps and a bout strategy."""
+class GaitPyMeasuresWithoutBout(ProcessingStepGroup):
+    """Extract Del Din measures based on GaitPy Steps and a bout strategy."""
 
     def __init__(self, **kwargs):
-        data_set_id = "cwt_features"
+        data_set_id = "cwt_measures"
         steps: List[ProcessingStep] = [
-            AggregateAllCWTFeaturesWithoutBout(data_set_id=data_set_id),
+            AggregateAllCWTMeasuresWithoutBout(data_set_id=data_set_id),
             GaitPyStepCountWithoutBout(),
             GaitPyStepPowerWithoutBout(),
             GaitPyStepIntensityWithoutBout(),
@@ -1736,8 +1736,8 @@ class GaitPyStepPowerWithoutBout(AggregateRawDataSetColumn):
     data_set_ids = "gaitpy_optimized_step_vigor"
     column_id = "step_power"
     aggregations = DEFAULT_AGGREGATIONS_Q95
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("step power", "sp"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("step power", "sp"),
         data_type="float64",
         unit="m^2/s^3",
         validator=GREATER_THAN_ZERO,
@@ -1764,8 +1764,8 @@ class GaitPyStepIntensityWithoutBout(AggregateRawDataSetColumn):
     data_set_ids = "gaitpy_optimized_step_vigor"
     column_id = "step_intensity"
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("step intensity", "si"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("step intensity", "si"),
         data_type="float64",
         unit="m/s^2",
         validator=GREATER_THAN_ZERO,
@@ -1792,8 +1792,8 @@ class GaitPyStepRegularityWithoutBout(AggregateRawDataSetColumn):
     data_set_ids = "gaitpy_optimized_gait_regularity"
     column_id = "step_regularity"
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("step regularity", "step_regularity"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("step regularity", "step_regularity"),
         data_type="float64",
         unit="s",
         validator=BETWEEN_MINUS_ONE_AND_ONE,
@@ -1807,8 +1807,8 @@ class GaitPyStrideRegularityWithoutBout(AggregateRawDataSetColumn):
     data_set_ids = "gaitpy_optimized_gait_regularity"
     column_id = "stride_regularity"
     aggregations = DEFAULT_AGGREGATIONS
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("stride regularity", "stride_regularity"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("stride regularity", "stride_regularity"),
         data_type="float64",
         unit="s",
         validator=BETWEEN_MINUS_ONE_AND_ONE,

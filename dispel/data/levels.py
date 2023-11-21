@@ -7,8 +7,8 @@ import pandas as pd
 from packaging import version
 
 from dispel.data.epochs import Epoch, EpochDefinition
-from dispel.data.features import FeatureSet, FeatureValue
 from dispel.data.flags import Flag
+from dispel.data.measures import MeasureSet, MeasureValue
 from dispel.data.raw import RawDataSet
 from dispel.data.values import DefinitionId, ValueSet
 
@@ -77,18 +77,18 @@ class RawDataSetAlreadyExists(Exception):
         )
 
 
-class LevelEpochFeatureValue(FeatureValue):
-    """A feature value for a specific epoch.
+class LevelEpochMeasureValue(MeasureValue):
+    """A measure value for a specific epoch.
 
     Parameters
     ----------
     epoch
-        The epoch for which the feature value was extracted.
+        The epoch for which the measure value was extracted.
 
     Attributes
     ----------
     epoch
-        The epoch for which the feature value was extracted.
+        The epoch for which the measure value was extracted.
     """
 
     def __init__(self, epoch: "LevelEpoch", *args, **kwargs):
@@ -99,7 +99,7 @@ class LevelEpochFeatureValue(FeatureValue):
         return hash((self.definition, self.value, self.epoch))
 
     def to_dict(self, stringify: bool = False) -> Dict[str, Optional[Any]]:
-        """Get a dictionary representation of feature information.
+        """Get a dictionary representation of measure information.
 
         Parameters
         ----------
@@ -110,7 +110,7 @@ class LevelEpochFeatureValue(FeatureValue):
         Returns
         -------
         Dict[str, Optional[Any]]
-            A dictionary summarizing feature value and epoch information.
+            A dictionary summarizing measure value and epoch information.
         """
         res = super().to_dict(stringify=stringify)
 
@@ -128,14 +128,14 @@ class LevelEpochFeatureValue(FeatureValue):
         return res
 
 
-class LevelEpoch(Epoch, FeatureSet):
-    """Level specific epoch with features.
+class LevelEpoch(Epoch, MeasureSet):
+    """Level specific epoch with measures.
 
-    This data model allows to store features that are specific to a given time point
+    This data model allows to store measures that are specific to a given time point
     during an evaluation.
     """
 
-    VALUE_CLS = LevelEpochFeatureValue
+    VALUE_CLS = LevelEpochMeasureValue
 
 
 class Level(Epoch):
@@ -147,8 +147,8 @@ class Level(Epoch):
     ----------
     context
         Contextual information about the level
-    feature_set
-        A :class:'~dispel.data.features.FeatureSet' of a given Level
+    measure_set
+        A :class:'~dispel.data.measures.MeasureSet' of a given Level
 
     Parameters
     ----------
@@ -162,10 +162,10 @@ class Level(Epoch):
         Contextual information about the level
     raw_data_sets
         An iterable of :class:'~dispel.data.raw.RawDataSet' of a given Level
-    feature_set
-        A :class:'~dispel.data.features.FeatureSet' of a given Level
+    measure_set
+        A :class:'~dispel.data.measures.MeasureSet' of a given Level
     epochs
-        An iterable of :class:`~dispel.data.features.EpochFeatureSet` to be added to the
+        An iterable of :class:`~dispel.data.measures.EpochMeasureSet` to be added to the
         level.
     """
 
@@ -176,7 +176,7 @@ class Level(Epoch):
         end: Any,
         context: Optional[Context] = None,
         raw_data_sets: Optional[Iterable[RawDataSet]] = None,
-        feature_set: Optional[FeatureSet] = None,
+        measure_set: Optional[MeasureSet] = None,
         epochs: Optional[Iterable[LevelEpoch]] = None,
     ):
         if not isinstance(id_, LevelId):
@@ -186,7 +186,7 @@ class Level(Epoch):
         super().__init__(start=start, end=end, definition=definition)
 
         self.context = context or Context()
-        self.feature_set = feature_set or FeatureSet()
+        self.measure_set = measure_set or MeasureSet()
 
         # create dictionary of raw data sets
         self._raw_data_sets: Dict[str, RawDataSet] = {}
@@ -270,7 +270,7 @@ class Level(Epoch):
 
     @property
     def epochs(self) -> List[LevelEpoch]:
-        """Get all epoch feature sets."""
+        """Get all epoch measure sets."""
         return self._epochs["epoch"].tolist()
 
     @singledispatchmethod
@@ -278,13 +278,13 @@ class Level(Epoch):
         """Set a value inside a level."""
         raise TypeError(f"Unsupported set type: {type(value)}")
 
-    @set.register(FeatureSet)
-    def _set_feature_set(self, value: FeatureSet):
-        self.feature_set += value
+    @set.register(MeasureSet)
+    def _set_measure_set(self, value: MeasureSet):
+        self.measure_set += value
 
-    @set.register(FeatureValue)
-    def _set_feature_value(self, value: FeatureValue):
-        self.feature_set.set(value)
+    @set.register(MeasureValue)
+    def _set_measure_value(self, value: MeasureValue):
+        self.measure_set.set(value)
 
     @set.register(RawDataSet)
     def _set_raw_data_set(

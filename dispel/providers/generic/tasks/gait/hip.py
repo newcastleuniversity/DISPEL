@@ -1,10 +1,10 @@
-"""A module specific to features related to hip rotation."""
+"""A module specific to measures related to hip rotation."""
 from typing import List, Optional
 
 import numpy as np
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinitionPrototype
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import RawDataValueDefinition
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
@@ -187,7 +187,7 @@ class SignHipRotation(TransformStep):
 
 
 class AggHipRotation(GaitBoutAggregateStep):
-    """Extract Hip Rotation related features.
+    """Extract Hip Rotation related measures.
 
     Parameters
     ----------
@@ -211,8 +211,8 @@ class AggHipRotation(GaitBoutAggregateStep):
             "bout strategy {bout_strategy_repr}."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV(_name, _id),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV(_name, _id),
             data_type="float64",
             unit="rad",
             description=description,
@@ -228,7 +228,7 @@ class AggHipRotation(GaitBoutAggregateStep):
 
 
 class AggHipRotationWithoutBout(AggregateRawDataSetColumn):
-    """Extract Hip Rotation related features.
+    """Extract Hip Rotation related measures.
 
     Parameters
     ----------
@@ -252,8 +252,8 @@ class AggHipRotationWithoutBout(AggregateRawDataSetColumn):
             "walking bouts."
         )
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV(_name, _id),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV(_name, _id),
             data_type="float64",
             unit="rad",
             description=description,
@@ -307,7 +307,7 @@ class HipRotationGroup(CoreProcessingStepGroup):
 
 
 class ExtractHipRotation(CoreProcessingStepGroup):
-    """Group processing steps for Hip Rotation features.
+    """Group processing steps for Hip Rotation measures.
 
     Parameters
     ----------
@@ -331,7 +331,7 @@ class ExtractHipRotation(CoreProcessingStepGroup):
 
 
 class ExtractHipRotationWithoutBouts(CoreProcessingStepGroup):
-    """Group processing steps for Hip Rotation features without walking bouts.
+    """Group processing steps for Hip Rotation measures without walking bouts.
 
     Parameters
     ----------

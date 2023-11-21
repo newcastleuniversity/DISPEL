@@ -6,8 +6,8 @@ from typing import Any, Dict, Iterable, List, Optional
 import pandas as pd
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureValueDefinitionPrototype
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import (
     RawDataSet,
     RawDataSetDefinition,
@@ -136,12 +136,12 @@ class SurveyQuestion:
     label: str
     """An abbreviated form of the question presented to the user.
 
-    This is used as part of the feature name."""
+    This is used as part of the measure name."""
 
     abbr: str
     """The abbreviation of the question.
 
-    This is used as the part of the feature name"""
+    This is used as the part of the measure name"""
 
     full: str
     """The full description of the question posed to the user."""
@@ -168,12 +168,12 @@ class ExtractSurveyResponse(ExtractStep):
         super().__init__(
             RAW_DATA_SET_DEFINITION.id,
             _get_last_response,
-            FeatureValueDefinitionPrototype(
-                feature_name=AV("response", "res"),
+            MeasureValueDefinitionPrototype(
+                measure_name=AV("response", "res"),
                 description="The final response to the question " f'"{question.full}".',
                 data_type="int",
                 # TODO: Fix the hashing crashing networkx including the validator lead
-                #  to unstable hashing of the feature validator=SetValidator(
+                #  to unstable hashing of the measure validator=SetValidator(
                 #  question.responses)
             ),
             level_filter=SURVEY_RESPONSES_LEVEL_ID,
@@ -181,7 +181,7 @@ class ExtractSurveyResponse(ExtractStep):
 
 
 class ExtractSurveyResponseTimesSummary(ExtractMultipleStep):
-    """Extract features on response times to questions."""
+    """Extract measures on response times to questions."""
 
     def __init__(self, question: SurveyQuestion):
         self.question = question
@@ -196,7 +196,7 @@ class ExtractSurveyResponseTimesSummary(ExtractMultipleStep):
         functions = [
             {
                 "func": _aggregate_response_time_factory(agg),
-                "feature_name": AV("response time", "rt"),
+                "measure_name": AV("response time", "rt"),
                 "aggregation": AV(agg_label, agg),
                 "description": f"The {agg_label} response time for question "
                 f'"{question.full}".',
@@ -214,14 +214,14 @@ class ExtractSurveyResponseTimesSummary(ExtractMultipleStep):
         functions.append(
             {
                 "func": _total_time,
-                "feature_name": AV("time until response", "tur"),
+                "measure_name": AV("time until response", "tur"),
                 "description": f"The total time between first presenting "
                 f'the question "{question.full}" until the final '
                 f"response.",
             }
         )
 
-        definition = FeatureValueDefinitionPrototype(
+        definition = MeasureValueDefinitionPrototype(
             unit="s",
         )
 
@@ -234,7 +234,7 @@ class ExtractSurveyResponseTimesSummary(ExtractMultipleStep):
 
 
 class ExtractSurveyResponseSummary(ExtractMultipleStep):
-    """Extract features on response changes."""
+    """Extract measures on response changes."""
 
     def __init__(self, question: SurveyQuestion):
         self.question = question
@@ -249,7 +249,7 @@ class ExtractSurveyResponseSummary(ExtractMultipleStep):
         functions = [
             {
                 "func": _aggregate_response_factory(agg),
-                "feature_name": AV("response change", "rc"),
+                "measure_name": AV("response change", "rc"),
                 "aggregation": AV(agg_label, agg),
                 "description": f"The {agg_label} response change for the "
                 f'question "{question.full}".',
@@ -265,7 +265,7 @@ class ExtractSurveyResponseSummary(ExtractMultipleStep):
         functions.append(
             {
                 "func": _total_responses,
-                "feature_name": AV("response count", "count"),
+                "measure_name": AV("response count", "count"),
                 "description": "The number of responses that were given to "
                 f'the question "{question.full}".',
                 "data_type": "int",
@@ -275,13 +275,13 @@ class ExtractSurveyResponseSummary(ExtractMultipleStep):
         super().__init__(
             RAW_DATA_SET_DEFINITION.id,
             functions,
-            FeatureValueDefinitionPrototype(),
+            MeasureValueDefinitionPrototype(),
             level_filter=SURVEY_RESPONSES_LEVEL_ID,
         )
 
 
-class ExtractSurveyResponseFeatures(ProcessingStepGroup):
-    """Extract features for individual questions."""
+class ExtractSurveyResponseMeasures(ProcessingStepGroup):
+    """Extract measures for individual questions."""
 
     def __init__(self, question: SurveyQuestion):
         self.question = question

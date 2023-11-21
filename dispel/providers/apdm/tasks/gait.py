@@ -55,14 +55,14 @@ class ConvertAccelerometersUnits(ProcessingStepGroup):
 
 
 class TwoMinuteWalkTestProcessingSteps(ProcessingStepGroup):
-    """Steps to extract 2MWT features from a reading."""
+    """Steps to extract 2MWT measures from a reading."""
 
     steps = [
         # first check technical flags
         TechnicalFlags(),
         # convert to right units
         ConvertAccelerometersUnits(),
-        # run the core steps to extract intermediate raw datasets and features
+        # run the core steps to extract intermediate raw datasets and measures
         GaitCoreSteps(),
         # preprocess flags
         FlagPreprocessing(),

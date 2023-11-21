@@ -329,19 +329,19 @@ def test_read_ads_new_format(example_reading_pinch_new_format):
 
 
 @pytest.mark.xfail
-def test_export_features_from_data():
-    """Testing JSON export of features from data."""
+def test_export_measures_from_data():
+    """Testing JSON export of measures from data."""
     with open(CPS_EXAMPLE_PATH, encoding="utf-8") as fs:
         data = json.load(fs)
-    list_export = export_features(data)  # noqa: F821
+    list_export = export_measures(data)  # noqa: F821
 
     required_fields = {
-        "feature_id",
-        "feature_name",
-        "feature_unit",
-        "feature_type",
+        "measure_id",
+        "measure_name",
+        "measure_unit",
+        "measure_type",
         "evaluation_uuid",
-        "feature_value",
+        "measure_value",
         "flag_ids",
         "flag_reasons",
     }
@@ -352,10 +352,10 @@ def test_export_features_from_data():
 
 
 @pytest.mark.xfail
-def test_export_features_from_path():
-    """Testing JSON export of features from path."""
+def test_export_measures_from_path():
+    """Testing JSON export of measures from path."""
     # FIXME: fix test case
-    list_export = export_features(CPS_EXAMPLE_PATH)  # noqa: F821
+    list_export = export_measures(CPS_EXAMPLE_PATH)  # noqa: F821
 
     assert isinstance(list_export, list)
     assert len(list_export) != 0

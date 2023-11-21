@@ -6,7 +6,7 @@ A module containing the functionality to process the *U-turn* test (UTT).
 import pandas as pd
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureValueDefinitionPrototype
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import ACCELEROMETER_COLUMNS, DEFAULT_COLUMNS, GRAVITY_COLUMNS
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue as AV
@@ -25,7 +25,7 @@ from dispel.processing.transform import Apply
 from dispel.providers.generic.activity.placement import ClassifyPlacement
 from dispel.providers.generic.activity.turning import (
     ElGoharyTurnDetection,
-    ExtractTurnFeatures,
+    ExtractTurnMeasures,
     RefineUTurns,
     TransformAbsTurnSpeed,
     TurnModality,
@@ -51,7 +51,7 @@ from dispel.providers.generic.tasks.gait.core import (
 from dispel.providers.generic.tasks.gait.lee import (
     LEE_MOD,
     LeeDetectStepsWithoutBout,
-    LeeFeaturesWithoutBoutGroup,
+    LeeMeasuresWithoutBoutGroup,
 )
 from dispel.signal.core import signal_duration
 from dispel.signal.filter import butterworth_low_pass_filter
@@ -64,7 +64,7 @@ r"""The maximum duration of a computable U-Turn Test."""
 LEVEL_FILTER = (
     LevelIdFilter("utt") & LastLevelFilter() & DurationFilter(MAX_UTT_DURATION_SECONDS)
 )
-r"""Define the filter to use to compute UTT features."""
+r"""Define the filter to use to compute UTT measures."""
 
 
 class ExtractWalkingSpeed(ExtractStep):
@@ -82,8 +82,8 @@ class ExtractWalkingSpeed(ExtractStep):
         def _walking_speed(steps: pd.DataFrame, data: pd.DataFrame) -> float:
             return step_count(steps) / signal_duration(data)
 
-        definition = FeatureValueDefinitionPrototype(
-            feature_name=AV("walking speed", "ws"),
+        definition = MeasureValueDefinitionPrototype(
+            measure_name=AV("walking speed", "ws"),
             data_type="float64",
             unit="step/s",
             validator=GREATER_THAN_ZERO,
@@ -118,12 +118,12 @@ class AssertUTTDurationLess5Min(ProcessingStep):
             )
 
 
-# turn speed features
-class ExtractTurnForModalitiesFeatures(ProcessingStepGroup):
+# turn speed measures
+class ExtractTurnForModalitiesMeasures(ProcessingStepGroup):
     """Processing steps to extract turns for modalities."""
 
     steps = [
-        ExtractTurnFeatures(
+        ExtractTurnMeasures(
             turns_data_set_id="gyroscope_ts_rotated_resampled_butterworth_low_"
             "pass_filter_x_turns_u_refined",
             turn_modality=turn_modality,
@@ -279,11 +279,11 @@ class LeeStepProcessing(ProcessingStepGroup):
         AverageRollingVerticalAcceleration(
             data_set_id="acc_ts_rotated_resampled_detrend", change_sign=True
         ),
-        # Lee Step Detection Features
+        # Lee Step Detection Measures
         # Without walking bouts Detection and Step Count
         LeeDetectStepsWithoutBout(),
         TransformStepDurationWithoutBout(data_set_ids="lee"),
-        LeeFeaturesWithoutBoutGroup(modalities=[LEE_MOD, NO_BOUT_MODALITY]),
+        LeeMeasuresWithoutBoutGroup(modalities=[LEE_MOD, NO_BOUT_MODALITY]),
     ]
 
 
@@ -294,7 +294,7 @@ class UTTProcessingSteps(ProcessingStepGroup):
     steps = [
         TurnPreprocessing(),
         TurnProcessing(),
-        ExtractTurnForModalitiesFeatures(),
+        ExtractTurnForModalitiesMeasures(),
         LeeStepProcessing(),
         ExtractWalkingSpeed(
             step_detection_data_set="lee",

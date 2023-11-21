@@ -2,7 +2,7 @@
 
 import pytest
 
-from dispel.data.features import FeatureSet
+from dispel.data.measures import MeasureSet
 from dispel.providers import auto_process
 from dispel.providers.ads.data import ADSReading
 from dispel.providers.ads.io import read_ads
@@ -21,6 +21,6 @@ def test_auto_process(example_reading):
     assert isinstance(res, ADSReading)
 
     level_id = res.level_ids[0]
-    fs = res.get_level(level_id).feature_set
-    assert isinstance(fs, FeatureSet)
-    assert len(fs) > 0
+    ms = res.get_level(level_id).measure_set
+    assert isinstance(ms, MeasureSet)
+    assert len(ms) > 0

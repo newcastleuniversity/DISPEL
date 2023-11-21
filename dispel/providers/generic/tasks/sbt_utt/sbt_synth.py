@@ -23,10 +23,10 @@ from dispel.providers.generic.flags.le_flags import (
 from dispel.providers.generic.tasks.sbt_utt.sbt import (
     BehaviouralFlagsGroup,
     DetectExcessiveMotionGroup,
-    ExtractSpatioTemporalFeaturesGroup,
+    ExtractSpatioTemporalMeasuresGroup,
     FormattingGroup,
     PreProcessingStepsGroup,
-    SBTTremorFeaturesGroup,
+    SBTTremorMeasuresGroup,
     TechnicalFlagsGroup,
     TransformAxisNames,
     TransformJerkNorm,
@@ -50,7 +50,7 @@ class PreMartinezSteps(ProcessingStepGroup):
         TechnicalFlagsGroup(),
         FormattingGroup(),
         PreProcessingStepsGroup(),
-        SBTTremorFeaturesGroup("acc_ts_rotated_resampled_detrend"),
+        SBTTremorMeasuresGroup("acc_ts_rotated_resampled_detrend"),
         TransformAxisNames("acc_ts_rotated_resampled_detrend_svgf_bhpf"),
     ]
 
@@ -61,7 +61,7 @@ class PostMartinezSteps(ProcessingStepGroup):
     steps = [
         TransformJerkNorm(),
         DetectExcessiveMotionGroup(),
-        ExtractSpatioTemporalFeaturesGroup(),
+        ExtractSpatioTemporalMeasuresGroup(),
         BehaviouralFlagsGroup(),
     ]
 
@@ -351,7 +351,7 @@ class CreateSyntheticPlacementBouts(CreateSyntheticPlacement):
 
 
 class SBTSyntheticComplexProcessing(ProcessingStepGroup):
-    """All processing steps to extract SBT features."""
+    """All processing steps to extract SBT measures."""
 
     pre_steps: List[ProcessingStep] = [
         TechnicalFlagsGroup(),
@@ -359,7 +359,7 @@ class SBTSyntheticComplexProcessing(ProcessingStepGroup):
         PreProcessingStepsGroup(),
         TremorAndAxesGroup(),
         DetectExcessiveMotionGroup(),
-        ExtractSpatioTemporalFeaturesGroup(),
+        ExtractSpatioTemporalMeasuresGroup(),
         PlacementClassificationGroup(),
     ]
 

@@ -23,14 +23,14 @@ import pandas as pd
 from deprecated import deprecated
 
 from dispel.data.core import EntityType, Reading
-from dispel.data.features import (
-    FeatureId,
-    FeatureSet,
-    FeatureValue,
-    FeatureValueDefinition,
-)
 from dispel.data.flags import Flag, FlagSeverity, FlagType, WrappedResult
 from dispel.data.levels import Level
+from dispel.data.measures import (
+    MeasureId,
+    MeasureSet,
+    MeasureValue,
+    MeasureValueDefinition,
+)
 from dispel.data.values import AbbreviatedValue as AV
 from dispel.data.values import (
     DefinitionId,
@@ -56,8 +56,8 @@ from dispel.processing.transform import TransformStepChainMixIn
 from dispel.stats.core import iqr, npcv, percentile_95, variation, variation_increase
 
 
-class FeatureDefinitionMixin:
-    """A mixin class for processing steps producing feature values.
+class MeasureDefinitionMixin:
+    """A mixin class for processing steps producing measure values.
 
     Parameters
     ----------
@@ -67,7 +67,7 @@ class FeatureDefinitionMixin:
         :meth:`get_definition` to provide the definition.
     """
 
-    #: The specification of the feature definition
+    #: The specification of the measure definition
     definition: Optional[Union[ValueDefinition, ValueDefinitionPrototype]] = None
 
     def __init__(self, *args, **kwargs):
@@ -77,12 +77,12 @@ class FeatureDefinitionMixin:
         super().__init__(*args, **kwargs)
 
     def get_definition(self, **kwargs) -> ValueDefinition:
-        """Get the feature definition.
+        """Get the measure definition.
 
         Parameters
         ----------
         kwargs
-            Optional parameters that will be passed along to the creation of feature
+            Optional parameters that will be passed along to the creation of measure
             definitions from prototypes. See
             :meth:`~dispel.data.values.ValueDefinitionPrototype.create_definition`
 
@@ -100,8 +100,8 @@ class FeatureDefinitionMixin:
             definition = cast(ValueDefinition, definition.create_definition(**kwargs))
         return definition
 
-    def get_value(self, value: Any, **kwargs) -> FeatureValue:
-        """Get a feature value based on the definition.
+    def get_value(self, value: Any, **kwargs) -> MeasureValue:
+        """Get a measure value based on the definition.
 
         Parameters
         ----------
@@ -112,20 +112,20 @@ class FeatureDefinitionMixin:
 
         Returns
         -------
-        FeatureValue
+        MeasureValue
             The ``value`` wrapped with the definition from :meth:`get_definition`.
         """
-        return FeatureValue(self.get_definition(**kwargs), value)
+        return MeasureValue(self.get_definition(**kwargs), value)
 
 
 class ExtractStep(
-    FeatureDefinitionMixin, TransformStepChainMixIn, MutateDataSetProcessingStepBase
+    MeasureDefinitionMixin, TransformStepChainMixIn, MutateDataSetProcessingStepBase
 ):
-    r"""A feature extraction processing step.
+    r"""A measure extraction processing step.
 
-    This class provides a convenient way to extract a feature from one or more data sets
+    This class provides a convenient way to extract a measure from one or more data sets
     by specifying their id, their level_ids or level filter, a transformation function
-    and a feature value definition.
+    and a measure value definition.
 
     Parameters
     ----------
@@ -137,13 +137,13 @@ class ExtractStep(
         :class:`~dispel.processing.data_set.MutateDataSetProcessingStepBase`.
     definition
         An optional value definition or prototype. See
-        :class:`FeatureDefinitionMixin`.
+        :class:`MeasureDefinitionMixin`.
     level_filter
         An optional filter to limit the levels being processed. See
         :class:`~dispel.processing.level.LevelProcessingStep`.
     yield_if_nan
-        If ``True``, yield null values as feature values. Otherwise, processing
-        will not return a feature value in case of a null result for the extraction.
+        If ``True``, yield null values as measure values. Otherwise, processing
+        will not return a measure value in case of a null result for the extraction.
 
     Examples
     --------
@@ -173,7 +173,7 @@ class ExtractStep(
     ...     def _max(self, data: pd.DataFrame) -> float:
     ...         return data.max(axis=0)
 
-    Often one wants to extract multiple features from one data set. This can be achieved
+    Often one wants to extract multiple measures from one data set. This can be achieved
     by using prototypes and optional named arguments with ``@transformation``:
 
     >>> import pandas as pd
@@ -226,9 +226,9 @@ class ExtractStep(
             Any result returned by the extraction step. If res is a
             :class:`~dispel.data.flags.WrappedResult`, the flag contained
             in the object will be automatically added to the
-            :class:`~dispel.data.features.FeatureValue`, hence the flagged wrapped
+            :class:`~dispel.data.measures.MeasureValue`, hence the flagged wrapped
             results will always translate into flagged
-            :class:`~dispel.data.features.FeatureValue`.
+            :class:`~dispel.data.measures.MeasureValue`.
         level
             The current level
         reading
@@ -248,13 +248,13 @@ class ExtractStep(
         except TypeError:
             pass
         if is_wrapped := isinstance(res, WrappedResult):
-            feature_value = res.feature_value
+            measure_value = res.measure_value
         else:
-            feature_value = res
+            measure_value = res
 
-        if not (is_nan := math.isnan(feature_value)) or (is_nan and self.yield_if_nan):
-            value = self.get_value(feature_value, **kwargs)
-            # If result is wrapped, add the flag to the feature value
+        if not (is_nan := math.isnan(measure_value)) or (is_nan and self.yield_if_nan):
+            value = self.get_value(measure_value, **kwargs)
+            # If result is wrapped, add the flag to the measure value
             if is_wrapped:
                 value.add_flags(res, ignore_duplicates=True)
 
@@ -268,10 +268,10 @@ class ExtractStep(
 
 @deprecated(reason="Use ExtractStep and @transformation decorator")
 class ExtractMultipleStep(ExtractStep):
-    r"""A feature extraction processing step for multiple features.
+    r"""A measure extraction processing step for multiple measures.
 
     This processing step allows to produce multiple
-    :class:`~dispel.data.features.FeatureValue`\ s by providing a list of functions and a
+    :class:`~dispel.data.measures.MeasureValue`\ s by providing a list of functions and a
     :class:`~dispel.data.values.ValueDefinitionPrototype` to create the
     :class:`~dispel.data.values.ValueDefinition`\ s from.
 
@@ -283,25 +283,25 @@ class ExtractMultipleStep(ExtractStep):
     transform_functions
         An optional list of dictionaries containing at least the processing function
         under the key ``func``, which consumes the specified data sets though
-        ``data_set_ids`` as positional arguments and returns a feature value passed to
-        :class:`~dispel.data.features.FeatureValue`. Additional keywords will be passed to
+        ``data_set_ids`` as positional arguments and returns a measure value passed to
+        :class:`~dispel.data.measures.MeasureValue`. Additional keywords will be passed to
         :meth:`~dispel.data.values.ValueDefinitionPrototype.create_definition`. If no
         functions are provided, the :data:`transform_functions` class variable will be
         used.
     definition
         A :class:`~dispel.data.values.ValueDefinitionPrototype` that is used to create the
-        :class:`~dispel.data.features.FeatureValueDefinition`\ s for the transformation
+        :class:`~dispel.data.measures.MeasureValueDefinition`\ s for the transformation
         functions provided in ``transform_functions``.
     level_filter
         An optional filter to limit the levels being processed. See
         :class:`~dispel.processing.level.LevelProcessingStep`.
     yield_if_nan
-        If ``True``, yield null values as feature values. Otherwise, processing will not
-        return a feature value in case of a null result for the extraction.
+        If ``True``, yield null values as measure values. Otherwise, processing will not
+        return a measure value in case of a null result for the extraction.
 
     Examples
     --------
-    To ease the generation of multiple similar features the :class:`ExtractMultipleStep`
+    To ease the generation of multiple similar measures the :class:`ExtractMultipleStep`
     provides a convenient way to do so. Assume you want to create both the mean and
     median of a data set this can be achieved as follows:
 
@@ -315,13 +315,13 @@ class ExtractMultipleStep(ExtractStep):
     ...         {'func': np.median, 'method': 'median'}
     ...     ],
     ...     ValueDefinitionPrototype(
-    ...         id_='feature-{method}',
-    ...         name='{method} feature',
+    ...         id_='measure-{method}',
+    ...         name='{method} measure',
     ...         unit='s'
     ...     )
     ... )
 
-    This extraction step will result in two feature values, one for the mean and one
+    This extraction step will result in two measure values, one for the mean and one
     with the median.
     """
 
@@ -444,7 +444,7 @@ class AggregateRawDataSetColumn(ExtractStep):
     r"""An extraction step that allows to summarise a column of a dataset.
 
     This processing step encapsulates the class :class:`ExtractMultipleStep` and allows
-    to produce multiple :class:`~dispel.data.features.FeatureValue`\ s derived on the same
+    to produce multiple :class:`~dispel.data.measures.MeasureValue`\ s derived on the same
     column of a dataset.
 
     Parameters
@@ -456,7 +456,7 @@ class AggregateRawDataSetColumn(ExtractStep):
     aggregations
         Either a list of tuples (func, label) where ``func`` consumes the data sets
         specified through ``data_set_id`` at the column ``column_id`` and returns a
-        single value passed to :class:`~dispel.data.features.FeatureValue`. The ``label``
+        single value passed to :class:`~dispel.data.measures.MeasureValue`. The ``label``
         element of the tuple will be passed as ``aggregation`` keyword to
         :meth:`~dispel.data.values.ValueDefinitionPrototype.create_definition`.
         The label can be either a string or an
@@ -472,7 +472,7 @@ class AggregateRawDataSetColumn(ExtractStep):
         having to pass a callable.
     definition
         A :class:`~dispel.data.values.ValueDefinitionPrototype` that is used to create the
-        :class:`~dispel.data.features.FeatureValueDefinition`\ s for the aggregation
+        :class:`~dispel.data.measures.MeasureValueDefinition`\ s for the aggregation
         functions provided in ``aggregations``.
     level_filter
         An optional :class:`~dispel.processing.level.LevelFilter` to determine the levels
@@ -483,7 +483,7 @@ class AggregateRawDataSetColumn(ExtractStep):
 
     Examples
     --------
-    To ease the generation of multiple similar features for the same column of a
+    To ease the generation of multiple similar measures for the same column of a
     dataset, the :class:`AggregateRawDataSetColumn` provides a convenient way to do so.
     Assume you want to create both the median and standard deviation of a specific
     column of a data set, this can be achieved as follows:
@@ -498,20 +498,20 @@ class AggregateRawDataSetColumn(ExtractStep):
     ...         ('std', 'standard deviation')
     ...     ],
     ...     definition=ValueDefinitionPrototype(
-    ...         id_='feature-{method}',
-    ...         name='{method} feature',
+    ...         id_='measure-{method}',
+    ...         name='{method} measure',
     ...         unit='s'
     ...     )
     ... )
 
-    This extraction step will result in two feature values, one for the medianand one
+    This extraction step will result in two measure values, one for the medianand one
     with the standard deviation of the column ``'column-name'`` of the data set
     identified by ``'data-set-id'``.
 
-    This extraction step will result in three feature values, one for the median, one
+    This extraction step will result in three measure values, one for the median, one
     for the standard deviation and one for the variation increase of the column
     ``'column-name'`` of the data set identified by ``'data-set-id'``. The median and
-    variation increase features will have associated COI references as provided.
+    variation increase measures will have associated COI references as provided.
     """
 
     column_id: str
@@ -583,26 +583,26 @@ class AggregateRawDataSetColumn(ExtractStep):
         return definition
 
 
-class AggregateFeatures(FeatureDefinitionMixin, ProcessingStep):
-    """Aggregate multiple features into a single one.
+class AggregateMeasures(MeasureDefinitionMixin, ProcessingStep):
+    """Aggregate multiple measures into a single one.
 
     Parameters
     ----------
     definition
-        The feature definition
-    feature_ids
-        A list of feature ids to be considered for aggregation
+        The measure definition
+    measure_ids
+        A list of measure ids to be considered for aggregation
     aggregation_method
-        The method used to aggregate the feature values, np.mean by default.
+        The method used to aggregate the measure values, np.mean by default.
     fail_if_missing
-        If ``True`` and any of the ``feature_ids`` is not present the
+        If ``True`` and any of the ``measure_ids`` is not present the
         processing fails.
     yield_if_nan
-        If ``True``, yield null values as feature values. Otherwise, processing will not
-        return a feature value in case of a null result for the aggregation.
+        If ``True``, yield null values as measure values. Otherwise, processing will not
+        return a measure value in case of a null result for the aggregation.
     """
 
-    feature_ids: List[DefinitionIdType] = []
+    measure_ids: List[DefinitionIdType] = []
 
     aggregation_method = None
 
@@ -612,15 +612,15 @@ class AggregateFeatures(FeatureDefinitionMixin, ProcessingStep):
 
     def __init__(
         self,
-        definition: Optional[FeatureValueDefinition] = None,
-        feature_ids: Optional[List[DefinitionIdType]] = None,
+        definition: Optional[MeasureValueDefinition] = None,
+        measure_ids: Optional[List[DefinitionIdType]] = None,
         aggregation_method: Optional[Callable[[List[Any]], Any]] = None,
         fail_if_missing: Optional[bool] = None,
         yield_if_nan: Optional[bool] = None,
     ):
         super().__init__(definition=definition)
 
-        self.feature_ids = feature_ids or self.feature_ids
+        self.measure_ids = measure_ids or self.measure_ids
         self.aggregation_method = aggregation_method or self.aggregation_method
         self.fail_if_missing = fail_if_missing or self.fail_if_missing
         self.yield_if_nan = yield_if_nan or self.yield_if_nan
@@ -632,53 +632,53 @@ class AggregateFeatures(FeatureDefinitionMixin, ProcessingStep):
             return ErrorHandling.RAISE
         return ErrorHandling.IGNORE
 
-    def get_feature_ids(self, **kwargs) -> List[DefinitionIdType]:
-        """Get the feature ids considered for aggregation."""
+    def get_measure_ids(self, **kwargs) -> List[DefinitionIdType]:
+        """Get the measure ids considered for aggregation."""
         # pylint: disable=unused-argument
-        return self.feature_ids
+        return self.measure_ids
 
     @staticmethod
-    def get_feature_set(reading: Reading) -> FeatureSet:
-        """Get the feature set used for getting feature values for ids."""
-        return reading.get_merged_feature_set()
+    def get_measure_set(reading: Reading) -> MeasureSet:
+        """Get the measure set used for getting measure values for ids."""
+        return reading.get_merged_measure_set()
 
-    def get_features(self, reading: Reading, **kwargs) -> List[FeatureValue]:
-        """Get the features for aggregation."""
-        feature_ids = self.get_feature_ids(**kwargs)
+    def get_measures(self, reading: Reading, **kwargs) -> List[MeasureValue]:
+        """Get the measures for aggregation."""
+        measure_ids = self.get_measure_ids(**kwargs)
         assert isinstance(
-            feature_ids, (list, set, tuple)
-        ), "feature_ids needs to be a list, set or tuple of feature ids"
+            measure_ids, (list, set, tuple)
+        ), "measure_ids needs to be a list, set or tuple of measure ids"
 
-        feature_set = self.get_feature_set(reading)
+        measure_set = self.get_measure_set(reading)
 
         if self.fail_if_missing:
-            assert set(feature_ids).issubset(feature_set.ids()), (
-                "Not all specified features are present",
+            assert set(measure_ids).issubset(measure_set.ids()), (
+                "Not all specified measures are present",
                 self.error_handler,
             )
 
         return [
-            cast(FeatureValue, feature)
-            for feature in feature_set.values()
-            if feature.id in feature_ids
+            cast(MeasureValue, measure)
+            for measure in measure_set.values()
+            if measure.id in measure_ids
         ]
 
-    def get_feature_values(self, reading: Reading, **kwargs) -> List[Any]:
-        """Get the feature values for aggregation."""
-        return list(map(lambda f: f.value, self.get_features(reading, **kwargs)))
+    def get_measure_values(self, reading: Reading, **kwargs) -> List[Any]:
+        """Get the measure values for aggregation."""
+        return list(map(lambda f: f.value, self.get_measures(reading, **kwargs)))
 
     def aggregate(self, values: List[Any]) -> Any:
-        """Aggregate feature values."""
+        """Aggregate measure values."""
         return (self.aggregation_method or np.mean)(values)
 
     def process_reading(self, reading: Reading, **kwargs) -> ProcessResultType:
         """See :meth:`~dispel.processing.core.ProcessingStep.process`."""
         try:
-            res = self.aggregate(self.get_feature_values(reading, **kwargs))
+            res = self.aggregate(self.get_measure_values(reading, **kwargs))
             if not pd.isnull(res) or self.yield_if_nan:
                 yield ProcessingResult(
                     step=self,
-                    sources=self.get_features(reading, **kwargs),
+                    sources=self.get_measures(reading, **kwargs),
                     result=self.get_value(res, **kwargs),
                 )
         except AssertionError as exception_message:
@@ -687,11 +687,11 @@ class AggregateFeatures(FeatureDefinitionMixin, ProcessingStep):
             )
 
 
-class AggregateModalities(AggregateFeatures):
-    """Aggregate feature values from different modalities.
+class AggregateModalities(AggregateMeasures):
+    """Aggregate measure values from different modalities.
 
-    This is a convenience step to address the common pattern of aggregating a feature
-    from different modalities of the same root feature. The feature ids are derived from
+    This is a convenience step to address the common pattern of aggregating a measure
+    from different modalities of the same root measure. The measure ids are derived from
     the provided ``definition`` and the ``modalities``.
     """
 
@@ -702,17 +702,17 @@ class AggregateModalities(AggregateFeatures):
         """Get a list of modalities to be aggregated."""
         return self.modalities
 
-    def get_feature_ids(self, **kwargs) -> List[DefinitionIdType]:
-        """Get feature ids based on modalities and base feature definition."""
+    def get_measure_ids(self, **kwargs) -> List[DefinitionIdType]:
+        """Get measure ids based on modalities and base measure definition."""
         definition = self.get_definition(**kwargs)
         assert isinstance(
-            definition, FeatureValueDefinition
-        ), "Definition must be a FeatureValueDefinition"
+            definition, MeasureValueDefinition
+        ), "Definition must be a MeasureValueDefinition"
 
         return [
-            FeatureId(
+            MeasureId(
                 definition.task_name,
-                definition.feature_name,
+                definition.measure_name,
                 modality,
                 definition.aggregation,
             )
@@ -720,13 +720,13 @@ class AggregateModalities(AggregateFeatures):
         ]
 
 
-class FeatureFlagStep(FlagStepMixin, ProcessingStep):
-    r"""A class for feature flag.
+class MeasureFlagStep(FlagStepMixin, ProcessingStep):
+    r"""A class for measure flag.
 
     Parameters
     ----------
-    feature_ids
-        The identifier(s) of the feature(s) that are to be flagged.
+    measure_ids
+        The identifier(s) of the measure(s) that are to be flagged.
     task_name
         An optional abbreviated name value of the task used for the flag. See
         :class:`~dispel.processing.flags.FlagStepMixin`.
@@ -748,21 +748,21 @@ class FeatureFlagStep(FlagStepMixin, ProcessingStep):
         :class:`~dispel.processing.flags.FlagStepMixin`.
     flagging_function
         An optional flagging function to be applied to a
-        :class:`~dispel.data.features.FeatureValue`'s raw value.
+        :class:`~dispel.data.measures.MeasureValue`'s raw value.
         See :class:`~dispel.processing.flags.FlagStepMixin`.
     target_ids
-        An optional id(s) of the target features to be flagged. If the user doesn't
-        specify the targets then the targets will automatically be the used features.
+        An optional id(s) of the target measures to be flagged. If the user doesn't
+        specify the targets then the targets will automatically be the used measures.
 
     Examples
     --------
-    Assuming you want to flag the step count feature value, you can create the
+    Assuming you want to flag the step count measure value, you can create the
     following flag step:
 
     >>> from dispel.data.values import AbbreviatedValue as AV
-    >>> from dispel.processing.extract import FeatureFlagStep
-    >>> step = FeatureFlagStep(
-    ...     feature_ids='6mwt-step_count',
+    >>> from dispel.processing.extract import MeasureFlagStep
+    >>> step = MeasureFlagStep(
+    ...     measure_ids='6mwt-step_count',
     ...     task_name=AV('Six-minute walk test', '6mwt'),
     ...     flag_name=AV('step count threshold', 'sct'),
     ...     flag_type='behavioral',
@@ -771,17 +771,17 @@ class FeatureFlagStep(FlagStepMixin, ProcessingStep):
     ...     flagging_function=lambda value: value < 1000,
     ... )
 
-    The flagging function will be called with the feature value corresponding to
-    provided feature id. If the function has named parameters matching ``level`` or
+    The flagging function will be called with the measure value corresponding to
+    provided measure id. If the function has named parameters matching ``level`` or
     ``reading``, the respective level and reading will be passed to the flag
     function.
 
     Another common scenario is to define a class that can be reused.
 
     >>> from dispel.data.flags import FlagType
-    >>> from dispel.processing.extract import FeatureFlagStep
-    >>> class StepCountThreshold(FeatureFlagStep):
-    ...     feature_ids = '6mwt-step_count'
+    >>> from dispel.processing.extract import MeasureFlagStep
+    >>> class StepCountThreshold(MeasureFlagStep):
+    ...     measure_ids = '6mwt-step_count'
     ...     task_name = AV('Six-minute walk test', '6mwt')
     ...     flag_name = AV('step count threshold', 'sct')
     ...     flag_type = FlagType.BEHAVIORAL
@@ -794,10 +794,10 @@ class FeatureFlagStep(FlagStepMixin, ProcessingStep):
     ``@flag`` decorator, one can also use multiple flags for the same class
     as follows:
 
-    >>> from dispel.processing.extract import FeatureFlagStep
+    >>> from dispel.processing.extract import MeasureFlagStep
     >>> from dispel.processing.flags import flag
-    >>> class StepCountThreshold(FeatureFlagStep):
-    ...     feature_ids = '6mwt-step_count'
+    >>> class StepCountThreshold(MeasureFlagStep):
+    ...     measure_ids = '6mwt-step_count'
     ...     task_name = AV('Six-minute walk test', '6mwt')
     ...     flag_name = AV('step count threshold', 'sct')
     ...     flag_type = 'behavioral'
@@ -817,13 +817,13 @@ class FeatureFlagStep(FlagStepMixin, ProcessingStep):
     format the flag ``reason``.
     """
 
-    feature_ids: DefinitionIdType
+    measure_ids: DefinitionIdType
 
     target_ids: Optional[Union[Iterable[str], str]] = None
 
     def __init__(
         self,
-        feature_ids: Optional[DefinitionIdType] = None,
+        measure_ids: Optional[DefinitionIdType] = None,
         task_name: Optional[Union[AV, str]] = None,
         flag_name: Optional[Union[AV, str]] = None,
         flag_type: Optional[Union[FlagType, str]] = None,
@@ -833,8 +833,8 @@ class FeatureFlagStep(FlagStepMixin, ProcessingStep):
         flagging_function: Optional[Callable[..., bool]] = None,
         target_ids: Optional[Union[Iterable[str], str]] = None,
     ):
-        if feature_ids:
-            self.feature_ids = feature_ids
+        if measure_ids:
+            self.measure_ids = measure_ids
 
         if target_ids:
             self.target_ids = target_ids
@@ -849,12 +849,12 @@ class FeatureFlagStep(FlagStepMixin, ProcessingStep):
             flagging_function=flagging_function,
         )
 
-    def get_feature_ids(self) -> Iterable[DefinitionIdType]:
-        """Get the feature ids to be flagged."""
-        if isinstance(self.feature_ids, (str, DefinitionId)):
-            return [self.feature_ids]
+    def get_measure_ids(self) -> Iterable[DefinitionIdType]:
+        """Get the measure ids to be flagged."""
+        if isinstance(self.measure_ids, (str, DefinitionId)):
+            return [self.measure_ids]
 
-        return self.feature_ids
+        return self.measure_ids
 
     def get_target_ids(self) -> Iterable[DefinitionIdType]:
         """Get the ids of the target data sets to be flagged.
@@ -865,19 +865,19 @@ class FeatureFlagStep(FlagStepMixin, ProcessingStep):
             The identifiers of the target data sets.
         """
         if self.target_ids is None:
-            return self.get_feature_ids()
+            return self.get_measure_ids()
         if isinstance(self.target_ids, (str, DefinitionId)):
             return [self.target_ids]
         return self.target_ids
 
-    def get_features(self, reading: Reading) -> Iterable[Any]:
-        """Get the feature value classes used for flag."""
-        feature_set = reading.get_merged_feature_set()
-        return [feature_set[feature_id] for feature_id in self.get_feature_ids()]
+    def get_measures(self, reading: Reading) -> Iterable[Any]:
+        """Get the measure value classes used for flag."""
+        measure_set = reading.get_merged_measure_set()
+        return [measure_set[measure_id] for measure_id in self.get_measure_ids()]
 
-    def get_feature_values(self, reading) -> Iterable[Any]:
-        """Get the feature raw values used for flag."""
-        return [feature.value for feature in self.get_features(reading)]
+    def get_measure_values(self, reading) -> Iterable[Any]:
+        """Get the measure raw values used for flag."""
+        return [measure.value for measure in self.get_measures(reading)]
 
     def process_reading(self, reading: Reading, **kwargs) -> ProcessResultType:
         """Process the provided reading.
@@ -894,8 +894,8 @@ class FeatureFlagStep(FlagStepMixin, ProcessingStep):
         ProcessResultType
             The results from processing readings.
         """
-        for flag in self.flag_feature_values(
-            self.get_feature_values(reading), reading, **kwargs
+        for flag in self.flag_measure_values(
+            self.get_measure_values(reading), reading, **kwargs
         ):
             yield ProcessingControlResult.from_flag(
                 flag=flag,
@@ -906,22 +906,22 @@ class FeatureFlagStep(FlagStepMixin, ProcessingStep):
     def get_flag_targets(
         self, reading: Reading, level: Optional[Level] = None, **kwargs
     ) -> Iterable[EntityType]:
-        """Get flag targets for features."""
-        feature_set = reading.get_merged_feature_set()
+        """Get flag targets for measures."""
+        measure_set = reading.get_merged_measure_set()
         return [
-            cast(FeatureValue, feature_set[feature_id])
-            for feature_id in self.get_target_ids()
+            cast(MeasureValue, measure_set[measure_id])
+            for measure_id in self.get_target_ids()
         ]
 
-    def flag_feature_values(
-        self, feature_values: Iterable[Any], reading: Reading, **kwargs
+    def flag_measure_values(
+        self, measure_values: Iterable[Any], reading: Reading, **kwargs
     ) -> Generator[Flag, None, None]:
-        """Flag the provided feature value."""
+        """Flag the provided measure value."""
         for func, func_kwargs in self.get_flagging_functions():
             new_kwargs = kwargs.copy()
             if "reading" in inspect.getfullargspec(func).args:
                 new_kwargs["reading"] = reading
 
-            if not func(*feature_values, **new_kwargs):
+            if not func(*measure_values, **new_kwargs):
                 (merged_kwargs := kwargs.copy()).update(func_kwargs)
                 yield self.get_flag(**merged_kwargs)

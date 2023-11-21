@@ -194,7 +194,7 @@ def test_binary_operations_flag(left, right, func, expected):
     """Test flag inheritance for binary operation of WrappedResult."""
     left.add_flag(Flag("test-behavioral-deviation-id", reason="test"))
     res = func(left, right)
-    assert res.feature_value == expected
+    assert res.measure_value == expected
     assert isinstance(res, WrappedResult)
     assert {"test-behavioral-deviation-id"} <= res.flag_ids
 
@@ -210,5 +210,5 @@ def test_unary_operations_flag(obj, func, expected):
     obj.add_flag(Flag("test-behavioral-deviation-id", reason="test"))
     res = func(obj)
     assert isinstance(res, WrappedResult)
-    assert res.feature_value == expected
+    assert res.measure_value == expected
     assert {"test-behavioral-deviation-id"} <= res.flag_ids

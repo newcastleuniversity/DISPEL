@@ -4,7 +4,7 @@ from typing import List
 
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinitionPrototype
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.validators import RangeValidator
 from dispel.data.values import AbbreviatedValue as AV
 from dispel.processing import ProcessingStep
@@ -14,7 +14,7 @@ from dispel.providers.generic.surveys import (
     RAW_DATA_SET_DEFINITION,
     SURVEY_RESPONSES_LEVEL_ID,
     ConcatenateSurveyLevels,
-    ExtractSurveyResponseFeatures,
+    ExtractSurveyResponseMeasures,
     SurveyQuestion,
 )
 from dispel.providers.registry import process_factory
@@ -37,7 +37,7 @@ class ExtractMsis29Scale(ExtractStep):
         super().__init__(
             RAW_DATA_SET_DEFINITION.id,
             _summary,
-            FeatureValueDefinitionPrototype(**self.definition_kwargs, data_type="int"),
+            MeasureValueDefinitionPrototype(**self.definition_kwargs, data_type="int"),
             level_filter=SURVEY_RESPONSES_LEVEL_ID,
         )
 
@@ -168,7 +168,7 @@ MSIS29_STEPS_SCORES: List[ProcessingStep] = [
     ExtractMsis29Scale(
         list(map(str, questions)),
         {
-            "feature_name": AV(name, f"ans_{abbr}"),
+            "measure_name": AV(name, f"ans_{abbr}"),
             "description": description,
             "validator": RangeValidator(len(questions), len(questions) * 4),
         },
@@ -177,7 +177,7 @@ MSIS29_STEPS_SCORES: List[ProcessingStep] = [
 ]
 
 MSIS29_STEPS_ANSWERS: List[ProcessingStep] = [
-    ExtractSurveyResponseFeatures(question) for question in QUESTIONS_MSIS_29
+    ExtractSurveyResponseMeasures(question) for question in QUESTIONS_MSIS_29
 ]
 
 MSIS29_STEPS: List[ProcessingStep] = [

@@ -1,6 +1,6 @@
 """Six-Minute Walk test related functionality.
 
-This module contains functionality to extract features for the *Six-minute
+This module contains functionality to extract measures for the *Six-minute
 Walk* test (6MWT).
 """
 from typing import Any, Callable, List, cast
@@ -9,8 +9,8 @@ import numpy as np
 import pandas as pd
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureValue, FeatureValueDefinitionPrototype
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValue, MeasureValueDefinitionPrototype
 from dispel.data.raw import (
     ACCELEROMETER_COLUMNS,
     DEFAULT_COLUMNS,
@@ -24,7 +24,7 @@ from dispel.processing.core import ProcessingStep, ProcessResultType
 from dispel.processing.data_set import transformation
 from dispel.processing.extract import (
     ExtractMultipleStep,
-    FeatureDefinitionMixin,
+    MeasureDefinitionMixin,
     agg_column,
 )
 from dispel.processing.level import (
@@ -76,13 +76,13 @@ from dispel.providers.generic.tasks.gait.core import (
 )
 from dispel.providers.generic.tasks.gait.del_din import (
     STEP_LENGTH_HEIGHT_RATIO,
-    CWTFeatureTransformation,
-    CWTFeatureWithoutBoutTransformation,
+    CWTMeasureTransformation,
+    CWTMeasureWithoutBoutTransformation,
     FormatAccelerationGaitPy,
     GaitPyDetectSteps,
     GaitPyDetectStepsWithoutBout,
-    GaitPyFeatures,
-    GaitPyFeaturesWithoutBout,
+    GaitPyMeasures,
+    GaitPyMeasuresWithoutBout,
     HeightChangeCOM,
     OptimizeGaitpyStepDataset,
     OptimizeGaitpyStepDatasetWithoutWalkingBout,
@@ -92,11 +92,11 @@ from dispel.providers.generic.tasks.gait.lee import (
     LEE_MOD,
     LeeDetectSteps,
     LeeDetectStepsWithoutBout,
-    LeeFeaturesGroup,
-    LeeFeaturesWithoutBoutGroup,
+    LeeMeasuresGroup,
+    LeeMeasuresWithoutBoutGroup,
     LeeTransformHipRotation,
 )
-from dispel.providers.generic.tremor import TremorFeatures
+from dispel.providers.generic.tremor import TremorMeasures
 from dispel.signal.core import euclidean_norm
 from dispel.signal.filter import butterworth_low_pass_filter
 
@@ -130,11 +130,11 @@ class ComputeDistanceAndSpeed(TransformStep):
         return pd.DataFrame(dict(distance=distance, speed=speed))
 
 
-class ComputeDistanceInertial(LevelProcessingStep, FeatureDefinitionMixin):
+class ComputeDistanceInertial(LevelProcessingStep, MeasureDefinitionMixin):
     """Compute distance from step count and step length."""
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV(
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV(
             "distance walked from step count and height-based step length",
             "distance_walked_sc_hbsl",
         ),
@@ -148,9 +148,9 @@ class ComputeDistanceInertial(LevelProcessingStep, FeatureDefinitionMixin):
         self, level: Level, reading: Reading, **kwargs
     ) -> ProcessResultType:
         """Process level to extract the distance walk."""
-        feature = cast(
-            FeatureValue,
-            level.feature_set.get(
+        measure = cast(
+            MeasureValue,
+            level.measure_set.get(
                 ExtractStepCount.definition.create_definition(
                     modalities=[AV("gaitpy", "gp"), NO_BOUT_MODALITY],
                     bout_strategy_repr=NO_BOUT_MODALITY.abbr,
@@ -160,27 +160,27 @@ class ComputeDistanceInertial(LevelProcessingStep, FeatureDefinitionMixin):
             ),
         )
         height = get_subject_height(level.context)
-        result = feature.value * height * STEP_LENGTH_HEIGHT_RATIO
+        result = measure.value * height * STEP_LENGTH_HEIGHT_RATIO
 
         yield LevelProcessingResult(
             step=self,
-            sources=[level, feature],
+            sources=[level, measure],
             level=level,
             result=self.get_value(result, **kwargs),
         )
 
 
-class SixMinuteWalkTestFeatures(ExtractMultipleStep):
+class SixMinuteWalkTestMeasures(ExtractMultipleStep):
     """A group of Gait extraction steps."""
 
     data_set_ids = "distance_and_speed"
-    definition = FeatureValueDefinitionPrototype(
+    definition = MeasureValueDefinitionPrototype(
         data_type="float64", validator=GREATER_THAN_ZERO
     )
     transform_functions = [
         {
             "func": agg_column("distance", np.sum),
-            "feature_name": AV("total distance walked", "distance_walked"),
+            "measure_name": AV("total distance walked", "distance_walked"),
             "unit": "m",
             "description": "The total distance walked during six minutes. "
             "The distance is measured based on GPS "
@@ -189,7 +189,7 @@ class SixMinuteWalkTestFeatures(ExtractMultipleStep):
         },
         {
             "func": agg_column("speed", cast(Callable[[Any], float], np.mean)),
-            "feature_name": AV(
+            "measure_name": AV(
                 "walking speed (excluding stops)", "walking_speed_non_stop"
             ),
             "unit": "m/s",
@@ -202,8 +202,8 @@ class SixMinuteWalkTestFeatures(ExtractMultipleStep):
     ]
 
 
-class GaitTremorFeatures(ProcessingStepGroup):
-    """A group of gait steps for tremor features."""
+class GaitTremorMeasures(ProcessingStepGroup):
+    """A group of gait steps for tremor measures."""
 
     new_column_names = {
         "userAccelerationX": "x",
@@ -212,12 +212,12 @@ class GaitTremorFeatures(ProcessingStepGroup):
     }
     steps = [
         RenameColumns("acc_ts_rotated_resampled_detrend", **new_column_names),
-        TremorFeatures(
+        TremorMeasures(
             sensor=SensorModality.ACCELEROMETER,
             data_set_id="acc_ts_rotated_resampled_detrend_renamed",
             add_norm=False,
         ),
-        TremorFeatures(
+        TremorMeasures(
             sensor=SensorModality.GYROSCOPE,
             data_set_id="gyroscope_ts_rotated_resampled",
             add_norm=False,
@@ -264,11 +264,11 @@ class BehavioralInvalidations(ProcessingStepGroup):
 
 
 class StepsGPS(ProcessingStepGroup):
-    """Steps to process features from GPS signals."""
+    """Steps to process measures from GPS signals."""
 
     steps = [
         ComputeDistanceAndSpeed(),
-        SixMinuteWalkTestFeatures(),
+        SixMinuteWalkTestMeasures(),
     ]
 
     level_filter = LastLevelFilter()
@@ -296,18 +296,18 @@ class GaitPreprocessingSteps(ProcessingStepGroup):
 
 
 class TremorSteps(ProcessingStepGroup):
-    """Steps to extract tremor-based features."""
+    """Steps to extract tremor-based measures."""
 
     steps = [
-        # Low Pass Gyroscope and Extracting Tremor Features
+        # Low Pass Gyroscope and Extracting Tremor Measures
         Apply(
             "gyroscope_ts_rotated_resampled",
             butterworth_low_pass_filter,
             dict(order=5, cutoff=1.5, zero_phase=True),
             ["x"],
         ),
-        # Extract Tremor Features
-        GaitTremorFeatures(),
+        # Extract Tremor Measures
+        GaitTremorMeasures(),
     ]
 
 
@@ -451,41 +451,41 @@ class GaitPySteps(ProcessingStepGroup):
                 "gaitpy_with_walking_bouts_optimized",
             ],
         ),
-        # Compute the GaitPy features for each gait cycle
-        CWTFeatureWithoutBoutTransformation(
+        # Compute the GaitPy measures for each gait cycle
+        CWTMeasureWithoutBoutTransformation(
             data_set_ids=["gaitpy_optimized", "height_change_com"],
-            new_data_set_id="cwt_features",
+            new_data_set_id="cwt_measures",
         ),
-        # Compute the GaitPy features for each gait cycle
-        CWTFeatureTransformation(
+        # Compute the GaitPy measures for each gait cycle
+        CWTMeasureTransformation(
             data_set_ids=[
                 "gaitpy_with_walking_bouts_optimized",
                 "height_change_com_with_walking_bouts",
             ],
-            new_data_set_id="cwt_features_with_walking_bouts",
+            new_data_set_id="cwt_measures_with_walking_bouts",
         ),
     ]
 
 
-class LeeFeatureSteps(ProcessingStepGroup):
-    """Lee et al. feature extraction steps."""
+class LeeMeasureSteps(ProcessingStepGroup):
+    """Lee et al. measure extraction steps."""
 
     steps: List[ProcessingStep] = [
-        LeeFeaturesGroup(
+        LeeMeasuresGroup(
             bout_strategy=bout_strategy,
             modalities=[LEE_MOD, bout_strategy.av],
             bout_strategy_repr=bout_strategy.av,
         )
         for bout_strategy in BoutStrategyModality
     ]
-    steps.append(LeeFeaturesWithoutBoutGroup(modalities=[LEE_MOD, NO_BOUT_MODALITY]))
+    steps.append(LeeMeasuresWithoutBoutGroup(modalities=[LEE_MOD, NO_BOUT_MODALITY]))
 
 
-class GaitPyFeatureSteps(ProcessingStepGroup):
-    """GaitPy feature extraction steps."""
+class GaitPyMeasureSteps(ProcessingStepGroup):
+    """GaitPy measure extraction steps."""
 
     steps: List[ProcessingStep] = [
-        GaitPyFeatures(
+        GaitPyMeasures(
             bout_strategy=bout_strategy,
             modalities=[AV("gaitpy", "gp"), bout_strategy.av],
             bout_strategy_repr=bout_strategy.av,
@@ -493,7 +493,7 @@ class GaitPyFeatureSteps(ProcessingStepGroup):
         for bout_strategy in BoutStrategyModality
     ]
     steps.append(
-        GaitPyFeaturesWithoutBout(
+        GaitPyMeasuresWithoutBout(
             modalities=[AV("gaitpy", "gp"), NO_BOUT_MODALITY],
         )
     )
@@ -506,12 +506,12 @@ class StepsDistanceInertial(ProcessingStepGroup):
 
 
 class GaitCoreSteps(ProcessingStepGroup):
-    """Core steps to process gait features."""
+    """Core steps to process gait measures."""
 
     steps = [
         # Preprocessing Steps and Transforms
         GaitPreprocessingSteps(),
-        # Compute Tremor Features
+        # Compute Tremor Measures
         TremorSteps(),
         # Detect Bout Steps
         WalkingBoutDynamicsDetectionSteps(),
@@ -523,8 +523,8 @@ class GaitCoreSteps(ProcessingStepGroup):
         MergeDynamicsPlacementTurn(),
         # GaitPy transformation
         GaitPySteps(),
-        # GaitPy Features computation
-        GaitPyFeatureSteps(),
+        # GaitPy Measures computation
+        GaitPyMeasureSteps(),
         # Distance steps inertial
         StepsDistanceInertial(),
     ]
@@ -540,7 +540,7 @@ class GaitSteps(ProcessingStepGroup):
         AssertEvaluationFinished(),
         # Flags
         TechnicalFlags(),
-        # GPS features
+        # GPS measures
         StepsGPS(),
         # core steps
         GaitCoreSteps(),
@@ -555,12 +555,12 @@ class GaitSteps(ProcessingStepGroup):
 
 
 class GaitStepsInclLee(ProcessingStepGroup):
-    """Gait processing steps including Lee features."""
+    """Gait processing steps including Lee measures."""
 
     steps = [
         GaitSteps(),
         LeeDetectionAndTransformSteps(),
-        LeeFeatureSteps(),
+        LeeMeasureSteps(),
     ]
     level_filter = LastLevelFilter()
     kwargs = {"task_name": TASK_NAME}

@@ -5,6 +5,6 @@ from dispel.providers.registry import get_processing_function
 
 
 def auto_process(reading: Reading, **kwargs) -> DataTrace:
-    """Process features automatically for readings."""
+    """Process measures automatically for readings."""
     code = str(reading.evaluation.id)
     return get_processing_function(code, type(reading))(reading, **kwargs)

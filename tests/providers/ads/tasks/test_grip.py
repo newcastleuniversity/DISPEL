@@ -775,7 +775,7 @@ def example_reading_processed_draw_new_format(example_reading_grip_new_format):
     ],
 )
 def test_grip_process(processed_grip_reading_ads, level_id, expected):
-    """Unit test to ensure the GRIP features are well computed."""
+    """Unit test to ensure the GRIP measures are well computed."""
     assert_level_values(processed_grip_reading_ads, level_id, expected)
 
 
@@ -800,7 +800,7 @@ def test_grip_process(processed_grip_reading_ads, level_id, expected):
 def test_grip_process_new_format(
     example_reading_processed_sbt_utt_new_format, level_id, expected
 ):
-    """Unit test to ensure the GRIP features are well computed."""
+    """Unit test to ensure the GRIP measures are well computed."""
     # FIXME: replace with actual GRIP and not SBT-UTT test case...
     assert_level_values(
         example_reading_processed_sbt_utt_new_format, level_id, expected
@@ -808,7 +808,7 @@ def test_grip_process_new_format(
 
 
 def test_grip_overshoot_process(processed_grip_reading_ads):
-    """Unit test to ensure GRIP overshoot features are well computed."""
+    """Unit test to ensure GRIP overshoot measures are well computed."""
     res = processed_grip_reading_ads
     expected_values = [
         0.3000001907348633,

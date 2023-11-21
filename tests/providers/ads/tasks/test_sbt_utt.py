@@ -4,8 +4,8 @@ from copy import deepcopy
 import pytest
 
 from dispel.data.core import Reading
-from dispel.data.features import FeatureSet
 from dispel.data.flags import Flag
+from dispel.data.measures import MeasureSet
 from dispel.processing import process
 from dispel.providers.ads.tasks.sbt_utt import process_sbt_utt
 from dispel.providers.generic.activity.orientation import (
@@ -62,8 +62,8 @@ def test_sbt_process_synth_ellipse_area_excursion(example_reading_sbt_utt):
     expected_totex = 9.68845 * 1e3
     expected_ea = 1 * 2 * np.pi * 1e6
 
-    actual_totex = reading.get_level("sbt").feature_set.get("sbt-full-totex").value
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
+    actual_totex = reading.get_level("sbt").measure_set.get("sbt-full-totex").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
 
     assert pytest.approx(expected_totex, 0.1) == actual_totex
     assert pytest.approx(expected_ea, 0.1) == actual_ea
@@ -87,8 +87,8 @@ def test_sbt_process_synth_ellipse_rotated(example_reading_sbt_utt):
     expected_totex = 9.68845 * 1e3
     expected_ea = 1 * 2 * np.pi * 1e6
 
-    actual_totex = reading.get_level("sbt").feature_set.get("sbt-full-totex").value
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
+    actual_totex = reading.get_level("sbt").measure_set.get("sbt-full-totex").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
 
     assert pytest.approx(expected_totex, 0.1) == actual_totex
     assert pytest.approx(expected_ea, 0.1) == actual_ea
@@ -112,8 +112,8 @@ def test_sbt_process_synth_ellipse_doubled(example_reading_sbt_utt):
     expected_totex = 9.68845 * 2 * 1e3
     expected_ea = (1 * 2) * (2 * 2) * np.pi * 1e6
 
-    actual_totex = reading.get_level("sbt").feature_set.get("sbt-full-totex").value
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
+    actual_totex = reading.get_level("sbt").measure_set.get("sbt-full-totex").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
 
     assert pytest.approx(expected_totex, 0.1) == actual_totex
     assert pytest.approx(expected_ea, 0.1) == actual_ea
@@ -137,8 +137,8 @@ def test_sbt_process_synth_ellipse_doubled_rot(example_reading_sbt_utt):
     expected_totex = 9.68845 * 2 * 1e3
     expected_ea = (1 * 2) * (2 * 2) * np.pi * 1e6
 
-    actual_totex = reading.get_level("sbt").feature_set.get("sbt-full-totex").value
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
+    actual_totex = reading.get_level("sbt").measure_set.get("sbt-full-totex").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
 
     assert pytest.approx(expected_totex, 0.1) == actual_totex
     assert pytest.approx(expected_ea, 0.1) == actual_ea
@@ -164,10 +164,10 @@ def test_sbt_process_synth_ellipse_same_axes(example_reading_sbt_utt):
     expected_totex = 2 * np.pi * 1 * 1e3
     expected_jerk = expected_totex / 30
 
-    actual_ca = reading.get_level("sbt").feature_set.get("sbt-full-ca").value
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
-    actual_totex = reading.get_level("sbt").feature_set.get("sbt-full-totex").value
-    actual_jerk = reading.get_level("sbt").feature_set.get("sbt-full-jerk").value
+    actual_ca = reading.get_level("sbt").measure_set.get("sbt-full-ca").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
+    actual_totex = reading.get_level("sbt").measure_set.get("sbt-full-totex").value
+    actual_jerk = reading.get_level("sbt").measure_set.get("sbt-full-jerk").value
 
     assert pytest.approx(expected_ca, 0.1) == actual_ca
     assert pytest.approx(expected_ea, 0.1) == actual_ea
@@ -193,8 +193,8 @@ def test_sbt_process_synth_ellipse_stretched(example_reading_sbt_utt):
     expected_totex = 40.63927 * 1e3
     expected_ea = 1 * 10 * np.pi * 1e6
 
-    actual_totex = reading.get_level("sbt").feature_set.get("sbt-full-totex").value
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
+    actual_totex = reading.get_level("sbt").measure_set.get("sbt-full-totex").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
 
     assert pytest.approx(expected_totex, 0.1) == actual_totex
     assert pytest.approx(expected_ea, 0.1) == actual_ea
@@ -217,7 +217,7 @@ def test_sbt_process_synth_ellipse_outliers(example_reading_sbt_utt):
 
     expected_ea = 1 * 2 * np.pi * 1e6
 
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
 
     assert pytest.approx(expected_ea, 0.1) == actual_ea
 
@@ -239,7 +239,7 @@ def test_sbt_process_synth_ellipse_outliers_doubled(example_reading_sbt_utt):
 
     expected_ea = (1 * 2) * (2 * 2) * np.pi * 1e6
 
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
 
     assert pytest.approx(expected_ea, 0.1) == actual_ea
 
@@ -262,7 +262,7 @@ def test_sbt_process_synth_ellipse_downsampled(example_reading_sbt_utt):
 
     expected_ea = 1 * 2 * np.pi * 1e6
 
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
 
     assert pytest.approx(expected_ea, 0.1) == actual_ea
 
@@ -285,17 +285,17 @@ def test_sbt_process_synth_ellipse_upsampled(example_reading_sbt_utt):
 
     expected_ea = 1 * 2 * np.pi * 1e6
 
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
 
     assert pytest.approx(expected_ea, 0.1) == actual_ea
 
 
-def test_sbt_process_first_less_after5s_features(example_reading_sbt_utt):
-    """Ensure that the features computed are always smaller in first 5 seconds.
+def test_sbt_process_first_less_after5s_measures(example_reading_sbt_utt):
+    """Ensure that the measures computed are always smaller in first 5 seconds.
 
     To make sure that the SBT BoutModalities are correctly computed, we want to ensure
     that the after5s value is always bigger than the value of the first5s. This is
-    applicable to the spatio-temporal features, as the amplitude on the synthetic
+    applicable to the spatio-temporal measures, as the amplitude on the synthetic
     ellipse is always the same (inc. same axes, for this synthetic dataset) and
     generated chronologically (i.e., temporally, there will be less path and area in the
     first 5 seconds). The jerk is difficult to asser (i.e., there is less acceleration,
@@ -311,17 +311,17 @@ def test_sbt_process_first_less_after5s_features(example_reading_sbt_utt):
     )
     process(reading, steps_sbt_synthetic_ellipse_same_axes)
 
-    actual_ea_full = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
-    actual_totex_full = reading.get_level("sbt").feature_set.get("sbt-full-totex").value
+    actual_ea_full = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
+    actual_totex_full = reading.get_level("sbt").measure_set.get("sbt-full-totex").value
 
-    actual_ea_first5s = reading.get_level("sbt").feature_set.get("sbt-first5s-ea").value
+    actual_ea_first5s = reading.get_level("sbt").measure_set.get("sbt-first5s-ea").value
     actual_totex_first5s = (
-        reading.get_level("sbt").feature_set.get("sbt-first5s-totex").value
+        reading.get_level("sbt").measure_set.get("sbt-first5s-totex").value
     )
 
-    actual_ea_after5s = reading.get_level("sbt").feature_set.get("sbt-after5s-ea").value
+    actual_ea_after5s = reading.get_level("sbt").measure_set.get("sbt-after5s-ea").value
     actual_totex_after5s = (
-        reading.get_level("sbt").feature_set.get("sbt-after5s-totex").value
+        reading.get_level("sbt").measure_set.get("sbt-after5s-totex").value
     )
 
     assert actual_ea_full > actual_ea_after5s > actual_ea_first5s
@@ -339,9 +339,9 @@ def test_sbtutt_process_segment_sway_fix(example_reading_sbt_utt_motion_fixed):
     reading = deepcopy(example_reading_sbt_utt_motion_fixed)
     process_sbt_utt(reading)
 
-    sway_original = reading.get_level("sbt").feature_set.get_raw_value("sbt-sway")
+    sway_original = reading.get_level("sbt").measure_set.get_raw_value("sbt-sway")
 
-    sway_fixed = reading.get_level("sbt").feature_set.get_raw_value(
+    sway_fixed = reading.get_level("sbt").measure_set.get_raw_value(
         "sbt-sway_fixed_normalised"
     )
 
@@ -527,32 +527,32 @@ def test_process_utt(example_reading_processed_sbt_utt):
     """Test end-to-end processing of U-turn test."""
     assert isinstance(example_reading_processed_sbt_utt, Reading)
 
-    feature_set = example_reading_processed_sbt_utt.get_level("utt").feature_set
-    assert isinstance(feature_set, FeatureSet)
+    measure_set = example_reading_processed_sbt_utt.get_level("utt").measure_set
+    assert isinstance(measure_set, MeasureSet)
 
     expected = read_results(EXAMPLE_UTT_PROCESS_PATH, True)
 
-    assert_dict_values(feature_set, expected, 1e-5)
+    assert_dict_values(measure_set, expected, 1e-5)
 
-    for feature_id in expected:
-        definition = feature_set.get_definition(feature_id)
+    for measure_id in expected:
+        definition = measure_set.get_definition(measure_id)
 
-        if ("_ts_" in feature_id) or ("_turn_speed_" in feature_id):
+        if ("_ts_" in measure_id) or ("_turn_speed_" in measure_id):
             assert definition.unit == "rad/s"
-        elif "dur" in feature_id:
+        elif "dur" in measure_id:
             assert definition.unit == "s"
-        elif feature_id == "utt-walking_speed":
+        elif measure_id == "utt-walking_speed":
             assert definition.unit == "step/s"
 
 
 def test_sbtutt_process(example_reading_processed_sbt_utt):
-    """Unit test to ensure the SBT-UTT features are well computed."""
+    """Unit test to ensure the SBT-UTT measures are well computed."""
     expected = read_results(EXAMPLE_SBTUTT_PATH, True)
     assert_level_values(example_reading_processed_sbt_utt, "sbt", expected)
 
 
 def test_sbtutt_process_upsampling(example_reading_sbt_utt_up_sample2):
-    """Unit test to ensure the SBT-UTT features are well computed.
+    """Unit test to ensure the SBT-UTT measures are well computed.
 
     This test ensures treatments can run even when the user has not turned.
     """
@@ -567,9 +567,9 @@ def test_sbtutt_process_upsampling(example_reading_sbt_utt_up_sample2):
 def test_sbtutt_process_segment_feat_no_motion(
     example_reading_sbt_utt_segmentation_no_motion,
 ):
-    """Ensure features are ok after segmentation.
+    """Ensure measures are ok after segmentation.
 
-    This test ensures feature values are the same even in a sample where there is no
+    This test ensures measure values are the same even in a sample where there is no
     excessive motion to segment. The dummy sample added contains no invalid segment.
     """
     reading = deepcopy(example_reading_sbt_utt_segmentation_no_motion)
@@ -583,9 +583,9 @@ def test_sbtutt_process_segment_feat_no_motion(
 def test_sbtutt_process_segment_feat_invalid(
     example_reading_sbt_utt_segmentation_flagged,
 ):
-    """Ensure features are ok when an flag is present.
+    """Ensure measures are ok when an flag is present.
 
-    This test ensures feature values are the same even in a sample where there is an
+    This test ensures measure values are the same even in a sample where there is an
     excessive motion to segment which has a too wide coverage. The dummy sample added
     contains too long invalid segment.
     """
@@ -598,9 +598,9 @@ def test_sbtutt_process_segment_feat_invalid(
 
 
 def test_sbtutt_process_segment_feat_fix(example_reading_sbt_utt_motion_fixed):
-    """Ensure features are ok after segmentation when excessive motion.
+    """Ensure measures are ok after segmentation when excessive motion.
 
-    This test ensures feature values are the same even in a sample where there are two
+    This test ensures measure values are the same even in a sample where there are two
     excessive motions to segment. The dummy sample added contains two invalid segment.
     """
     reading = deepcopy(example_reading_sbt_utt_motion_fixed)
@@ -611,7 +611,7 @@ def test_sbtutt_process_segment_feat_fix(example_reading_sbt_utt_motion_fixed):
     assert_level_values(reading, "sbt", expected)
 
 
-def test_sbt_synth_circle_spatiotemporalfeatures(example_reading_sbt_utt):
+def test_sbt_synth_circle_spatiotemporalmeasures(example_reading_sbt_utt):
     """Ensure that the area and perimeter of a radius 1 circle is correct.
 
     To test the validity of the circle area and total excursion, we compute the area and
@@ -631,10 +631,10 @@ def test_sbt_synth_circle_spatiotemporalfeatures(example_reading_sbt_utt):
     expected_totex = 2 * np.pi * 1 * 1e3
     expected_jerk = expected_totex / 30
 
-    actual_ca = reading.get_level("sbt").feature_set.get("sbt-full-ca").value
-    actual_ea = reading.get_level("sbt").feature_set.get("sbt-full-ea").value
-    actual_totex = reading.get_level("sbt").feature_set.get("sbt-full-totex").value
-    actual_jerk = reading.get_level("sbt").feature_set.get("sbt-full-jerk").value
+    actual_ca = reading.get_level("sbt").measure_set.get("sbt-full-ca").value
+    actual_ea = reading.get_level("sbt").measure_set.get("sbt-full-ea").value
+    actual_totex = reading.get_level("sbt").measure_set.get("sbt-full-totex").value
+    actual_jerk = reading.get_level("sbt").measure_set.get("sbt-full-jerk").value
 
     assert pytest.approx(expected_ca, 0.1) == actual_ca
     assert pytest.approx(expected_ea, 0.1) == actual_ea
@@ -643,7 +643,7 @@ def test_sbt_synth_circle_spatiotemporalfeatures(example_reading_sbt_utt):
 
 
 def test_sbtutt_process_utt_upsample(example_reading_sbt_utt_up_sample):
-    """Unit test to ensure the SBT-UTT features are well computed.
+    """Unit test to ensure the SBT-UTT measures are well computed.
 
     This test ensures treatments can run even when the user has not turned.
     """  # noqa: DAR101

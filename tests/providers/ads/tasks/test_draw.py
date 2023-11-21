@@ -17,7 +17,7 @@ from dispel.providers.generic.tasks.draw.steps import (
     get_speed_accuracy,
     get_user_duration,
 )
-from tests.processing.helper import assert_feature_value, assert_level_values
+from tests.processing.helper import assert_level_values, assert_measure_value
 
 
 @pytest.mark.parametrize(
@@ -98,7 +98,7 @@ def test_not_continuous_draw_process(
 
 
 def test_get_user_duration(example_data_draw_sccr_screen):
-    """Test the good computation of the user duration feature."""
+    """Test the good computation of the user duration measure."""
     user_duration = get_user_duration(
         example_data_draw_sccr_screen.set_index("tsTouch")
     )
@@ -106,7 +106,7 @@ def test_get_user_duration(example_data_draw_sccr_screen):
 
 
 def test_get_speed_accuracy(paths_drawing_sccr_data, dtw_raw_data):
-    """Test the good computation of the speed accuracy feature."""
+    """Test the good computation of the speed accuracy measure."""
     speed_accuracy = get_speed_accuracy(
         paths_drawing_sccr_data.set_index("tsTouch"),
         dtw_raw_data["dtw_data"]["dtw_mean_distance"],
@@ -714,7 +714,7 @@ def test_get_speed_accuracy(paths_drawing_sccr_data, dtw_raw_data):
     ],
 )
 def test_draw_process(example_reading_processed_draw, level, expected):
-    """Unit test to ensure the drawing features are well computed."""
+    """Unit test to ensure the drawing measures are well computed."""
     assert_level_values(example_reading_processed_draw, level, expected)
 
 
@@ -1320,7 +1320,7 @@ def test_draw_process(example_reading_processed_draw, level, expected):
 def test_draw_process_new_format(
     example_reading_processed_draw_new_format, level, expected
 ):
-    """Unit test to ensure the features are well computed on new format."""
+    """Unit test to ensure the measures are well computed on new format."""
     assert_level_values(example_reading_processed_draw_new_format, level, expected)
 
 
@@ -1338,25 +1338,25 @@ def test_draw_process_new_format_wo_end_zone_are_invalid(
             assert len(level.get_flags()) == 0
 
 
-def test_draw_process_summary_features(example_reading_processed_draw):
-    """Test computing summary features."""
-    fs = example_reading_processed_draw.feature_set
-    assert_feature_value(fs, "draw-right-sim-mean", 6.162360142536366)
-    assert_feature_value(fs, "draw-left-sim-mean", 6.904851328371154)
-    assert_feature_value(fs, "draw-sim-mean", 6.533605735453761)
-    assert_feature_value(fs, "draw-dur_acc-mean", 5.888455548511744e-05)
-    assert_feature_value(fs, "draw-smooth-mean", -2.223039246494186)
-    assert_feature_value(fs, "draw-user_dur-mean", 2912.875)
-    assert_feature_value(fs, "draw-cross_per_sec-mean", 2.657783190303219)
-    assert_feature_value(fs, "draw-cross-mean", 10.25)
-    assert_feature_value(fs, "draw-corner-mean", -0.9198598857182514)
-    assert_feature_value(fs, "draw-axes_over-mean", 3.6695091841475875)
+def test_draw_process_summary_measures(example_reading_processed_draw):
+    """Test computing summary measures."""
+    ms = example_reading_processed_draw.measure_set
+    assert_measure_value(ms, "draw-right-sim-mean", 6.162360142536366)
+    assert_measure_value(ms, "draw-left-sim-mean", 6.904851328371154)
+    assert_measure_value(ms, "draw-sim-mean", 6.533605735453761)
+    assert_measure_value(ms, "draw-dur_acc-mean", 5.888455548511744e-05)
+    assert_measure_value(ms, "draw-smooth-mean", -2.223039246494186)
+    assert_measure_value(ms, "draw-user_dur-mean", 2912.875)
+    assert_measure_value(ms, "draw-cross_per_sec-mean", 2.657783190303219)
+    assert_measure_value(ms, "draw-cross-mean", 10.25)
+    assert_measure_value(ms, "draw-corner-mean", -0.9198598857182514)
+    assert_measure_value(ms, "draw-axes_over-mean", 3.6695091841475875)
 
 
 def test_draw_process_summary_ratio_flag(
     example_reading_processed_draw_distance_ratio,
 ):
-    """Test computing summary features with only invalid ratio."""
+    """Test computing summary measures with only invalid ratio."""
     inval_spi = example_reading_processed_draw_distance_ratio.get_level(
         "spiral-right"
     ).get_flags()

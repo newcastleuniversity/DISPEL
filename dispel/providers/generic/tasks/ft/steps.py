@@ -1,6 +1,6 @@
 """Finger tapping assessment related functionality.
 
-This module contains functionality to extract features for the
+This module contains functionality to extract measures for the
 *Finger tapping* assessment.
 """
 # pylint: disable=cell-var-from-loop
@@ -8,7 +8,7 @@ from typing import List, Optional
 
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinition, FeatureValueDefinitionPrototype
+from dispel.data.measures import MeasureValueDefinition, MeasureValueDefinitionPrototype
 from dispel.data.raw import RawDataValueDefinition
 from dispel.data.validators import GREATER_THAN_ZERO
 from dispel.data.values import AbbreviatedValue
@@ -75,8 +75,8 @@ class ExtractValidTaps(ExtractStep):
 
     data_set_ids = "valid_enriched_tap_events_ts"
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("valid tap events", "valtap"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("valid tap events", "valtap"),
         data_type="int16",
         validator=GREATER_THAN_ZERO,
         description="The number of valid tap events on {target} target.",
@@ -100,8 +100,8 @@ class ExtractTotalTaps(ExtractStep):
 
     data_set_ids = "enriched_tap_events_ts"
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("total tap events", "total_tap"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("total tap events", "total_tap"),
         data_type="int16",
         validator=GREATER_THAN_ZERO,
         description="The total number of tap events.",
@@ -119,8 +119,8 @@ class AggregateDoubleTaps(ExtractStep):
 
     data_set_ids = "valid_enriched_tap_events_ts"
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("double tap percentage", "double_tap_percentage"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("double tap percentage", "double_tap_percentage"),
         data_type="int16",
         description="The percentage of time spent double tapping",
         task_name=TASK_NAME,
@@ -169,7 +169,7 @@ class TransformTapIntervalDistribution(TransformStep):
 
 
 class AggregateTapInterval(AggregateRawDataSetColumn):
-    """An extraction processing step to extract valid tap interval features."""
+    """An extraction processing step to extract valid tap interval measures."""
 
     def __init__(self, valid_taps=True, **kwargs):
         self.valid_taps = valid_taps
@@ -178,8 +178,8 @@ class AggregateTapInterval(AggregateRawDataSetColumn):
             f"{is_valid_prefix}tap_interval_distribution",
             "interval_with_previous_tap",
             aggregations=DEFAULT_AGGREGATIONS_IQR,
-            definition=FeatureValueDefinitionPrototype(
-                feature_name=AbbreviatedValue(
+            definition=MeasureValueDefinitionPrototype(
+                measure_name=AbbreviatedValue(
                     "tap interval", f"{is_valid_prefix}tap_inter"
                 ),
                 description="The {aggregation}"
@@ -194,9 +194,9 @@ class AggregateTapInterval(AggregateRawDataSetColumn):
 class AggregateTaps(AggregateModalities):
     """Compute the patient score for the FT test."""
 
-    definition = FeatureValueDefinition(
+    definition = MeasureValueDefinition(
         task_name=TASK_NAME,
-        feature_name=AV("valid tap events", "valtap"),
+        measure_name=AV("valid tap events", "valtap"),
         description="The total number of valid tap events during the test",
     )
     modalities = [[hand.av] for hand in AllHandsModalities]
@@ -214,8 +214,8 @@ class PreprocessingStepGroup(ProcessingStepGroup):
 
 
 # pylint: disable=no-member
-class FeatureExtractionStepGroup(ProcessingStepGroup):
-    """Generic feature extraction steps for finger tapping."""
+class MeasureExtractionStepGroup(ProcessingStepGroup):
+    """Generic measure extraction steps for finger tapping."""
 
     steps = [
         *[
@@ -248,8 +248,8 @@ class FeatureExtractionStepGroup(ProcessingStepGroup):
     ]
 
 
-class FeatureAggregationStepGroup(ProcessingStepGroup):
-    """Generic feature aggregation step group for finger tapping."""
+class MeasureAggregationStepGroup(ProcessingStepGroup):
+    """Generic measure aggregation step group for finger tapping."""
 
     steps = [
         # Compute finger tapping patient score from the two levels
@@ -258,12 +258,12 @@ class FeatureAggregationStepGroup(ProcessingStepGroup):
 
 
 class GenericFingerTappingSteps(ProcessingStepGroup):
-    """Generic feature aggregation step group for finger tapping."""
+    """Generic measure aggregation step group for finger tapping."""
 
     steps: List[ProcessingStep] = [
         PreprocessingStepGroup(),
-        FeatureExtractionStepGroup(),
-        FeatureAggregationStepGroup(),
+        MeasureExtractionStepGroup(),
+        MeasureAggregationStepGroup(),
         GenericFlagsStepGroup(),
     ]
     kwargs = {"task_name": TASK_NAME}

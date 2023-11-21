@@ -12,7 +12,7 @@ of sensor-derived measures (SDMs) from wearables or smartphones data.
 
    installation
    usage
-   features
+   measures
    api/modules
    contributing
 

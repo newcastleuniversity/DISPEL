@@ -6,7 +6,7 @@ from dispel.processing import ProcessingStep
 from dispel.processing.level import ProcessingStepGroup
 from dispel.providers.generic.surveys import (
     ConcatenateSurveyLevels,
-    ExtractSurveyResponseFeatures,
+    ExtractSurveyResponseMeasures,
     SurveyQuestion,
 )
 from dispel.providers.registry import process_factory
@@ -29,7 +29,7 @@ QUESTIONS_MOOD = [
 MOOD_STEPS: List[ProcessingStep] = [
     ConcatenateSurveyLevels("idMoodscale"),
     ProcessingStepGroup(
-        [ExtractSurveyResponseFeatures(question) for question in QUESTIONS_MOOD],
+        [ExtractSurveyResponseMeasures(question) for question in QUESTIONS_MOOD],
         task_name=MOOD_TASK_NAME,
     ),
 ]

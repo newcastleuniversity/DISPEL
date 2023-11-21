@@ -128,7 +128,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910840000,
           "start_time": 1643910833000,
           "t_score": -0.8132587233518789,
@@ -223,7 +223,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910846000,
           "start_time": 1643910842000,
           "t_score": -0.08433936994398446,
@@ -354,7 +354,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910856000,
           "start_time": 1643910847000,
           "t_score": 0.4608826395878842,
@@ -449,7 +449,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910861000,
           "start_time": 1643910858000,
           "t_score": -0.8012148570632193,
@@ -544,7 +544,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910866000,
           "start_time": 1643910863000,
           "t_score": -0.12825639558453072,
@@ -639,7 +639,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910872000,
           "start_time": 1643910868000,
           "t_score": 0.3448963477101356,
@@ -734,7 +734,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910878000,
           "start_time": 1643910874000,
           "t_score": 1.0057676718634645,
@@ -829,7 +829,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910884000,
           "start_time": 1643910880000,
           "t_score": -0.16774215555998756,
@@ -924,7 +924,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910889000,
           "start_time": 1643910885000,
           "t_score": -1.3640526864591762,
@@ -1019,7 +1019,7 @@
             "timestamp": []
           }
         },
-        "mobile_computed_features": {
+        "mobile_computed_measures": {
           "end_time": 1643910902000,
           "start_time": 1643910890000,
           "t_score": -1.0336049654039434,
@@ -1031,10 +1031,10 @@
         }
       }
     ],
-    "mobile_computed_features": {
+    "mobile_computed_measures": {
       "cat_version": "1.6"
     },
-    "features": { }
+    "measures": { }
   },
   "header": {
     "acquisition_provenance": {
@@ -1222,13 +1222,13 @@
         }
       }
     },
-    "mobile_computed_features": {
-      "activity_features": {
+    "mobile_computed_measures": {
+      "activity_measures": {
         "cat_version": {
           "description": "Version of CAT module"
         }
       },
-      "level_features": {
+      "level_measures": {
         "end_time": {
           "description": "End time of the subset",
           "unit": "ms"
@@ -1256,7 +1256,7 @@
     },
     "data_quality_warnings": [],
     "activity_start_local_datetime": "2022-02-03T18:53:52.793000+01:00",
-    "features": {
+    "measures": {
       "bal_version": "v0.3.0"
     },
     "data_replay_information": { }

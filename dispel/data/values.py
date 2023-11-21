@@ -37,7 +37,7 @@ class AbbreviatedValue:
     Cognitive Processing Speed test (CPS)
 
     While this seems like a lot of overhead, it comes in handy when describing value
-    definitions or higher-level abstractions, such as feature definitions.
+    definitions or higher-level abstractions, such as measure definitions.
 
     Parameters
     ----------
@@ -127,7 +127,7 @@ class AbbreviatedValue:
 
 
 class DefinitionId:
-    """The definition of a feature id.
+    """The definition of a measure id.
 
     This class provides the basic functionality around ids used to reference columns and
     definitions. Other structured ids inherit from this class.
@@ -216,7 +216,7 @@ class ValueDefinition:
 
         # Verify that the validator is Callable
         if validator and not callable(validator):
-            raise TypeError(f"The {id_} feature validator is not Callable.")
+            raise TypeError(f"The {id_} measure validator is not Callable.")
 
         self.validator = validator
         self.precision = precision
@@ -292,8 +292,8 @@ class ValueDefinition:
 class ValueDefinitionPrototype:
     """The prototype of a :class:`ValueDefinition`.
 
-    Feature processing often leads to various related features. To ease the creation of
-    such, the :class:`ValueDefinitionPrototype` allows to specify prototypic features
+    Measure processing often leads to various related measures. To ease the creation of
+    such, the :class:`ValueDefinitionPrototype` allows to specify prototypic measures
     that can be used to derive actual definitions.
 
     Parameters
@@ -303,27 +303,27 @@ class ValueDefinitionPrototype:
         :meth:`create_definition`. By default, the class used is
         :class:ValueDefinition`.
     kwargs
-        All named parameters passed to the constructor will be passed to the feature
+        All named parameters passed to the constructor will be passed to the measure
         definition class constructor. The parameter ``cls`` is reserved to pass a
-        different feature definition class. Placeholders to be filled upon creation are
+        different measure definition class. Placeholders to be filled upon creation are
         specified with curly brackets, i.e., ``a {placeholder} value`` is populated when
         calling ``prototype.create_definition(placeholder='special')``.
 
     Examples
     --------
-    Assuming we want to create a feature for different time windows one can create the
+    Assuming we want to create a measure for different time windows one can create the
     following prototype:
 
     >>> from dispel.data.values import ValueDefinitionPrototype
     >>> prototype = ValueDefinitionPrototype(
-    ...     id_='feature-{lower}-{upper}',
-    ...     name='feature from {lower} to {upper}',
+    ...     id_='measure-{lower}-{upper}',
+    ...     name='measure from {lower} to {upper}',
     ...     unit='s'
     ... )
     >>> prototype.create_definition(lower=5, upper=6)
-    <ValueDefinition: feature-5-6 (feature from 5 to 6, s)>
+    <ValueDefinition: measure-5-6 (measure from 5 to 6, s)>
     >>> prototype.create_definition(lower=1, upper=5)
-    <ValueDefinition: feature-1-5 (feature from 1 to 5, s)>
+    <ValueDefinition: measure-1-5 (measure from 1 to 5, s)>
     """
 
     def __init__(self, **kwargs):
@@ -338,7 +338,7 @@ class ValueDefinitionPrototype:
         ----------
         values
             The arguments and placeholders to be populated. All named arguments will be
-            used to both provide additional named arguments to the feature definition
+            used to both provide additional named arguments to the measure definition
             class specified with ``cls`` during construction upon creation (the class is
             inspected for named parameters) and placeholders provided during
             construction of the prototype.
@@ -802,7 +802,7 @@ class ValueSet:
 class AVEnum(Enum):
     """A base class for abbreviated value enumerations.
 
-    When extracting features from tasks they are often done for specific modalities.
+    When extracting measures from tasks they are often done for specific modalities.
     This base class allows to do this in a convenient fashion to address modalities both
     from a processing and representation form. The enumeration is ordered.
 
@@ -831,8 +831,8 @@ class AVEnum(Enum):
         1
 
     In order to conventiently pass the constants to modalities of
-    :class:`~dispel.data.features.FeatureValueDefinition` and
-    :class:`~dispel.data.features.FeatureValueDefinitionPrototype` a property is exposed
+    :class:`~dispel.data.measures.MeasureValueDefinition` and
+    :class:`~dispel.data.measures.MeasureValueDefinitionPrototype` a property is exposed
     that contains the :class:`~dispel.data.values.AbbreviatedValue`:
 
     .. doctest:: enum

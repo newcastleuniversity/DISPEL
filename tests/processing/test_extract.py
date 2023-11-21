@@ -5,12 +5,12 @@ from typing import Any
 import numpy as np
 import pytest
 
-from dispel.data.collections import FeatureSet
+from dispel.data.collections import MeasureSet
 from dispel.data.core import Evaluation, Reading
 from dispel.data.epochs import EpochDefinition
-from dispel.data.features import FeatureValue, FeatureValueDefinition
 from dispel.data.flags import Flag, FlagSeverity, FlagType, WrappedResult
 from dispel.data.levels import Level
+from dispel.data.measures import MeasureValue, MeasureValueDefinition
 from dispel.data.validators import RangeValidator
 from dispel.data.values import ValueDefinition, ValueDefinitionPrototype
 from dispel.processing import process
@@ -23,11 +23,11 @@ from dispel.processing.data_set import transformation
 from dispel.processing.data_trace import DataTrace
 from dispel.processing.extract import (
     BASIC_AGGREGATIONS,
-    AggregateFeatures,
+    AggregateMeasures,
     AggregateRawDataSetColumn,
     ExtractMultipleStep,
     ExtractStep,
-    FeatureFlagStep,
+    MeasureFlagStep,
 )
 from dispel.processing.flags import flag
 from dispel.processing.transform import TransformStep
@@ -47,7 +47,7 @@ def _assert_extract_results(step, reading):
     assert str(output.level.id) == "level_1"
 
     value = output.result
-    assert isinstance(value, FeatureValue)
+    assert isinstance(value, MeasureValue)
     assert value.value == 3
 
     assert isinstance(value.definition, ValueDefinition)
@@ -55,7 +55,7 @@ def _assert_extract_results(step, reading):
 
 
 def test_extract_step_single_data_set(reading_example):
-    """Test extracting features from data sets."""
+    """Test extracting measures from data sets."""
     reading = deepcopy(reading_example)
     _assert_extract_results(EXTRACT_STEP, reading)
 
@@ -111,8 +111,8 @@ def test_extract_step_transform_function_decorator_w_args(reading_example):
     _assert_extract_results(step, reading)
 
 
-def test_extract_step_feature_definition_prototype(reading_example):
-    """Test extracting features using prototype definition."""
+def test_extract_step_measure_definition_prototype(reading_example):
+    """Test extracting measures using prototype definition."""
     reading = deepcopy(reading_example)
     step = ExtractStep(
         "data-set-1",
@@ -132,14 +132,14 @@ def test_extract_step_feature_definition_prototype(reading_example):
 
     assert isinstance(output.level, Level)
     assert str(output.level.id) == "level_1"
-    assert isinstance(output.result, FeatureValue)
+    assert isinstance(output.result, MeasureValue)
     assert output.result.id == "example"
     assert output.result.definition.name == "example"
     assert output.result.definition.unit == "count"
 
 
 def test_extract_multiple_step(reading_example):
-    """Test extracting multiple features based on prototype."""
+    """Test extracting multiple measures based on prototype."""
     reading = deepcopy(reading_example)
     step = ExtractMultipleStep(
         "data-set-1",
@@ -164,12 +164,12 @@ def test_extract_multiple_step(reading_example):
     assert isinstance(std_output_2.level, Level)
     assert str(std_output_2.level.id) == "level_1"
 
-    assert isinstance(mean_output_1.result, FeatureValue)
+    assert isinstance(mean_output_1.result, MeasureValue)
     assert mean_output_1.result.value == 1
     assert mean_output_1.result.id == "f-mean"
     assert mean_output_1.result.definition.name == "mean"
 
-    assert isinstance(std_output_2.result, FeatureValue)
+    assert isinstance(std_output_2.result, MeasureValue)
     assert std_output_2.result.value == 0
     assert std_output_2.result.id == "f-stddev"
     assert std_output_2.result.definition.name == "stddev"
@@ -210,28 +210,28 @@ def test_extract_multiple_step(reading_example):
     assert isinstance(std_output_2.level, Level)
     assert str(std_output_2.level.id) == "level_1"
 
-    assert isinstance(mean_output_1.result, FeatureValue)
+    assert isinstance(mean_output_1.result, MeasureValue)
     assert mean_output_1.result.value == 11
     assert mean_output_1.result.id == "f-mean"
     assert mean_output_1.result.definition.name == "mean"
 
-    assert isinstance(std_output_2.result, FeatureValue)
+    assert isinstance(std_output_2.result, MeasureValue)
     assert std_output_2.result.value == 5
     assert std_output_2.result.id == "f-stddev"
     assert std_output_2.result.definition.name == "stddev"
 
 
 def test_process_extract_step(reading_example):
-    """Test processing an extract step that returns a FeatureValue."""
+    """Test processing an extract step that returns a MeasureValue."""
     reading = deepcopy(reading_example)
     dtg = process(reading, EXTRACT_STEP)
     assert isinstance(dtg, DataTrace)
 
     res = dtg.get_reading()
-    assert isinstance(res.get_level("level_1").feature_set, FeatureSet)
+    assert isinstance(res.get_level("level_1").measure_set, MeasureSet)
 
-    feature = res.get_level("level_1").feature_set.get("len")
-    assert feature.value == 3
+    measure = res.get_level("level_1").measure_set.get("len")
+    assert measure.value == 3
 
 
 def test_aggregate_raw_data_set_column(reading_example):
@@ -257,12 +257,12 @@ def test_aggregate_raw_data_set_column(reading_example):
     assert isinstance(std_output_2.level, Level)
     assert str(std_output_2.level.id) == "level_1"
 
-    assert isinstance(mean_output_1.result, FeatureValue)
+    assert isinstance(mean_output_1.result, MeasureValue)
     assert mean_output_1.result.value == 1
     assert mean_output_1.result.id == "f-id"
     assert mean_output_1.result.definition.name == "name"
 
-    assert isinstance(std_output_2.result, FeatureValue)
+    assert isinstance(std_output_2.result, MeasureValue)
     assert std_output_2.result.value == 0
     assert std_output_2.result.id == "f-id"
     assert std_output_2.result.definition.name == "name"
@@ -280,75 +280,75 @@ def test_aggregate_raw_data_set_column_yield_if_nan(reading_example):
     )
 
     process(reading, step)
-    fs = reading.get_merged_feature_set()
+    ms = reading.get_merged_measure_set()
 
-    assert fs.empty
+    assert ms.empty
 
 
 @pytest.fixture
 def reading_example_agg():
-    """Get fixture for a reading with features to aggregate."""
-    reading_fs = FeatureSet()
-    reading_fs.set(FeatureValue(ValueDefinition("id1", "name1"), 1))
-    reading_fs.set(FeatureValue(ValueDefinition("id2", "name2"), 2))
+    """Get fixture for a reading with measures to aggregate."""
+    reading_ms = MeasureSet()
+    reading_ms.set(MeasureValue(ValueDefinition("id1", "name1"), 1))
+    reading_ms.set(MeasureValue(ValueDefinition("id2", "name2"), 2))
 
-    level_fs = FeatureSet()
-    level_fs.set(FeatureValue(ValueDefinition("id3", "name3"), 3))
-    level_fs.set(FeatureValue(ValueDefinition("id4", "name4"), 4))
-    level_fs.set(FeatureValue(ValueDefinition("id6", "name6"), np.NaN))
+    level_ms = MeasureSet()
+    level_ms.set(MeasureValue(ValueDefinition("id3", "name3"), 3))
+    level_ms.set(MeasureValue(ValueDefinition("id4", "name4"), 4))
+    level_ms.set(MeasureValue(ValueDefinition("id6", "name6"), np.NaN))
 
     return Reading(
         Evaluation(
             uuid="test", start="now", end="now", definition=EpochDefinition(id_="test")
         ),
-        feature_set=reading_fs,
-        levels=[Level(id_="level", start="now", end="now", feature_set=level_fs)],
+        measure_set=reading_ms,
+        levels=[Level(id_="level", start="now", end="now", measure_set=level_ms)],
     )
 
 
-def test_aggregate_features_constructor(reading_example_agg):
-    """Test aggregating features via constructor."""
+def test_aggregate_measures_constructor(reading_example_agg):
+    """Test aggregating measures via constructor."""
     reading = deepcopy(reading_example_agg)
-    definition = FeatureValueDefinition("example", "name")
-    step = AggregateFeatures(definition, ["id1", "id3", "id5"])
+    definition = MeasureValueDefinition("example", "name")
+    step = AggregateMeasures(definition, ["id1", "id3", "id5"])
     process(reading, step)
-    fs = reading.get_merged_feature_set()
-    assert "example-name" in fs
-    assert fs.get_raw_value("example-name") == 2
+    ms = reading.get_merged_measure_set()
+    assert "example-name" in ms
+    assert ms.get_raw_value("example-name") == 2
 
 
-def test_aggregate_features_specify_agg_method(reading_example_agg):
-    """Test aggregating features with a non-default agg-method."""
+def test_aggregate_measures_specify_agg_method(reading_example_agg):
+    """Test aggregating measures with a non-default agg-method."""
     reading = deepcopy(reading_example_agg)
-    definition = FeatureValueDefinition("example", "name")
-    step = AggregateFeatures(definition, ["id2", "id4"], sum)
+    definition = MeasureValueDefinition("example", "name")
+    step = AggregateMeasures(definition, ["id2", "id4"], sum)
     process(reading, step)
-    fs = reading.get_merged_feature_set()
-    assert "example-name" in fs
-    assert fs.get_raw_value("example-name") == 6
+    ms = reading.get_merged_measure_set()
+    assert "example-name" in ms
+    assert ms.get_raw_value("example-name") == 6
 
 
-def test_aggregate_features_class_variables(reading_example_agg):
-    """Test aggregating features with a non-default agg-method."""
+def test_aggregate_measures_class_variables(reading_example_agg):
+    """Test aggregating measures with a non-default agg-method."""
     reading = deepcopy(reading_example_agg)
 
-    class _Test(AggregateFeatures):
+    class _Test(AggregateMeasures):
         aggregation_method = max
-        definition = FeatureValueDefinition("example", "another")
-        feature_ids = ["id1", "id2", "id3"]
+        definition = MeasureValueDefinition("example", "another")
+        measure_ids = ["id1", "id2", "id3"]
 
     step = _Test()
     process(reading, step)
-    fs = reading.get_merged_feature_set()
-    assert "example-another" in fs
-    assert fs.get_raw_value("example-another") == 3
+    ms = reading.get_merged_measure_set()
+    assert "example-another" in ms
+    assert ms.get_raw_value("example-another") == 3
 
 
-def test_aggregate_features_missing_feature(reading_example_agg):
-    """Test aggregating features fail with missing feature."""
+def test_aggregate_measures_missing_measure(reading_example_agg):
+    """Test aggregating measures fail with missing measure."""
     with pytest.raises(InvalidDataError):
-        step = AggregateFeatures(
-            FeatureValueDefinition("example", "name"),
+        step = AggregateMeasures(
+            MeasureValueDefinition("example", "name"),
             ["id1", "id5"],
             fail_if_missing=True,
         )
@@ -356,28 +356,28 @@ def test_aggregate_features_missing_feature(reading_example_agg):
 
     with pytest.raises(InvalidDataError):
 
-        class _Test(AggregateFeatures):
-            definition = FeatureValueDefinition("example", "name")
-            feature_ids = ["id1", "id5"]
+        class _Test(AggregateMeasures):
+            definition = MeasureValueDefinition("example", "name")
+            measure_ids = ["id1", "id5"]
             fail_if_missing = True
 
         process(reading_example_agg, _Test())
 
 
 @pytest.mark.parametrize("yield_if_nan", [True, False])
-def test_aggregate_features_yield_if_nan(reading_example_agg, yield_if_nan):
+def test_aggregate_measures_yield_if_nan(reading_example_agg, yield_if_nan):
     """Test that yielding of NaN values is controlled correctly."""
     reading = deepcopy(reading_example_agg)
-    step = AggregateFeatures(
-        definition=FeatureValueDefinition("example", "nan"),
-        feature_ids=["id6"],
+    step = AggregateMeasures(
+        definition=MeasureValueDefinition("example", "nan"),
+        measure_ids=["id6"],
         yield_if_nan=yield_if_nan,
     )
 
     process(reading, step)
-    fs = reading.get_merged_feature_set()
+    ms = reading.get_merged_measure_set()
 
-    assert ("example-nan" in fs) == yield_if_nan
+    assert ("example-nan" in ms) == yield_if_nan
 
 
 def test_processing_result_integration_extraction(reading_example):
@@ -393,15 +393,15 @@ def test_processing_result_integration_extraction(reading_example):
 
     level = reading.get_level("level_1")
 
-    feature_set = level.feature_set
-    assert len(feature_set) == 1
+    measure_set = level.measure_set
+    assert len(measure_set) == 1
 
-    feature = feature_set.get("len")
-    parents = set(data_trace.parents(feature))
+    measure = measure_set.get("len")
+    parents = set(data_trace.parents(measure))
     expected_parents = {level.get_raw_data_set("data-set-1")}
 
     assert parents == expected_parents
-    assert data_trace.is_leaf(feature)
+    assert data_trace.is_leaf(measure)
 
 
 def test_extract_step_set_previous_used_in_data_set_ids():
@@ -415,40 +415,40 @@ def test_extract_step_set_previous_used_in_data_set_ids():
     assert step2.get_data_set_ids() == ["example"]
 
 
-def test_feature_flag(reading_example):
-    """Test feature flag."""
+def test_measure_flag(reading_example):
+    """Test measure flag."""
     reading = deepcopy(reading_example)
-    reading.set(FeatureValue(ValueDefinition("feat", "feat"), 6))
+    reading.set(MeasureValue(ValueDefinition("feat", "feat"), 6))
 
-    class _FeatureValueFlagger(FeatureFlagStep):
+    class _MeasureValueFlagger(MeasureFlagStep):
         task_name = "task"
         flag_name = "name"
         flag_type = FlagType.TECHNICAL
         flag_severity = FlagSeverity.INVALIDATION
         reason = "reason{number}"
-        feature_ids = "feat"
+        measure_ids = "feat"
 
         @flag(number=1)
-        def _inv1(self, feature_value: Any) -> bool:
-            return feature_value > 5
+        def _inv1(self, measure_value: Any) -> bool:
+            return measure_value > 5
 
         @flag(number=2)
-        def _inv2(self, feature_value: Any) -> bool:
-            return feature_value <= 5
+        def _inv2(self, measure_value: Any) -> bool:
+            return measure_value <= 5
 
         @flag(number=3)
-        def _inv3(self, feature_value: Any, reading: Reading) -> bool:
+        def _inv3(self, measure_value: Any, reading: Reading) -> bool:
             assert isinstance(reading, Reading)
-            return feature_value <= 5
+            return measure_value <= 5
 
-    process(reading, _FeatureValueFlagger())
+    process(reading, _MeasureValueFlagger())
 
-    feature_value = reading.get_merged_feature_set().get("feat")
+    measure_value = reading.get_merged_measure_set().get("feat")
     expected = [
         Flag("task-technical-invalidation-name", "reason2"),
         Flag("task-technical-invalidation-name", "reason3"),
     ]
-    assert feature_value.get_flags() == expected
+    assert measure_value.get_flags() == expected
 
 
 def test_wr_unfolding(reading_example):
@@ -468,7 +468,7 @@ def test_wr_unfolding(reading_example):
     step = _ExtractStep(level_filter="level_1")
 
     output = next(step.process(reading))
-    feature_value = output.result
-    assert isinstance(feature_value, FeatureValue)
-    assert not feature_value.is_valid
-    assert feature_value.value == 32.0
+    measure_value = output.result
+    assert isinstance(measure_value, MeasureValue)
+    assert not measure_value.is_valid
+    assert measure_value.value == 32.0

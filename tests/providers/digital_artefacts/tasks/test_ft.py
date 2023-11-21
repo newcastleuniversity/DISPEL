@@ -75,6 +75,6 @@ def processed_ft(ft_reading_da):
         ),
     ],
 )
-def test_da_ft_features(processed_ft, level, expected):
-    """Test feature values for Digital Artefact - Finger Tapping Assessment."""
+def test_da_ft_measures(processed_ft, level, expected):
+    """Test measure values for Digital Artefact - Finger Tapping Assessment."""
     assert_level_values(processed_ft, level, expected)

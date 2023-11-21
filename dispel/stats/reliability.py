@@ -87,7 +87,7 @@ import pandas as pd
 from scipy import stats
 from scipy.stats import f as density
 
-from dispel.data.collections import FeatureCollection
+from dispel.data.collections import MeasureCollection
 
 
 class StringEnum(Enum):
@@ -172,13 +172,13 @@ class ICCResultSetStudy(str, Enum):
 
 @dataclass
 class ICCResultSet:
-    """Class ensemble of ICC scores for multiple features."""
+    """Class ensemble of ICC scores for multiple measures."""
 
     #: Sort of study concerned either control or patient
     study: ICCResultSetStudy
-    #: The null hypothesis reference for feature ICC scores
+    #: The null hypothesis reference for measure ICC scores
     p0_icc: float
-    #: The ICC scores for each feature associated by their feature_id
+    #: The ICC scores for each measure associated by their measure_id
     iccs: Dict[str, ICCResult] = field(default_factory=dict)
 
     def to_data_frame(self) -> pd.DataFrame:
@@ -187,7 +187,7 @@ class ICCResultSet:
             dict(
                 study=str(self.study),
                 p0_icc=self.p0_icc,
-                feature_id=key,
+                measure_id=key,
                 icc_model=str(value.model),
                 icc_description=str(value.desc),
                 icc_unit=str(value.unit),
@@ -821,18 +821,18 @@ def icc_test_retest(
 
 
 def icc_parallel_form(form1: pd.DataFrame, form2: pd.DataFrame) -> ICCResult:
-    """Compute the icc score from parallel form features.
+    """Compute the icc score from parallel form measures.
 
-    This score allows the comparison of to features of same nature and definition but
+    This score allows the comparison of to measures of same nature and definition but
     obtained in different condition (example : CPS mean RT on predefinedKey1 compared to
     predefinedKey2)
 
     Parameters
     ----------
     form1: pandas.DataFrame
-        A data frame containing the M feature form 1 values for all users
+        A data frame containing the M measure form 1 values for all users
     form2: pandas.DataFrame
-        A data frame containing the M' feature form 2 values for all users
+        A data frame containing the M' measure form 2 values for all users
 
     Returns
     -------
@@ -861,7 +861,7 @@ def ensure_session_standards(
     ----------
     data
         A data frame with subjects as rows, sessions as columns, and cells containing
-        the feature values.
+        the measure values.
     session_min
         The minimum number of required sessions for each subject to be considered in the
         analysis.
@@ -884,20 +884,20 @@ def ensure_session_standards(
 
 
 def icc_test_retest_session_safe(
-    feature_collection: FeatureCollection,
-    feature_id: str,
+    measure_collection: MeasureCollection,
+    measure_id: str,
     study: ICCResultSetStudy = ICCResultSetStudy.STUDY_CONTROL,
     session_min: int = 8,
     null_ratio: float = 0.1,
 ) -> ICCResult:
-    """Compute the ICC test retest score for one feature.
+    """Compute the ICC test retest score for one measure.
 
     Parameters
     ----------
-    feature_collection
-        A collection of features.
-    feature_id
-        The feature id to be used for the computation of the ICC scores
+    measure_collection
+        A collection of measures.
+    measure_id
+        The measure id to be used for the computation of the ICC scores
     study
         Type of the study used to determine the :math:`p_0^{icc}`. `0` is used for
         control studies and `0.6` for clinical ones.
@@ -909,12 +909,12 @@ def icc_test_retest_session_safe(
     Returns
     -------
     ICCResult
-        The ICC score results for the provided feature.
+        The ICC score results for the provided measure.
 
     """
     p0_icc = 0.0 if study == ICCResultSetStudy.STUDY_CONTROL else 0.6
 
-    data = feature_collection.get_feature_values_by_trials(feature_id=feature_id)
+    data = measure_collection.get_measure_values_by_trials(measure_id=measure_id)
     data = ensure_session_standards(data, session_min, null_ratio)
 
     res = icc_test_retest(data, study)
@@ -924,13 +924,13 @@ def icc_test_retest_session_safe(
 
 
 def icc_set_test_retest(
-    feature_collection: FeatureCollection,
+    measure_collection: MeasureCollection,
     study: ICCResultSetStudy = ICCResultSetStudy.STUDY_CONTROL,
     session_min: int = 8,
     null_ratio: float = 0.1,
     errors: Literal["raise", "ignore"] = "raise",
 ) -> ICCResultSet:
-    """Compute the ICC test retest score for all features.
+    """Compute the ICC test retest score for all measures.
 
     It takes into consideration the study type, which could be either "control" or
     "clinical". It also ensures sessions have sufficient support. See
@@ -938,8 +938,8 @@ def icc_set_test_retest(
 
     Parameters
     ----------
-    feature_collection
-        A collection of features
+    measure_collection
+        A collection of measures
     study
         Type of the study used to determine the :math:`p_0^{icc}`. `0` is used for
         control studies and `0.6` for clinical ones.
@@ -950,12 +950,12 @@ def icc_set_test_retest(
     errors
         How to handle errors occurring during the computation of ICC scores.
         - If 'raise', then errors will be risen.
-        - If 'ignore', then the feature will be skipped.
+        - If 'ignore', then the measure will be skipped.
 
     Returns
     -------
     ICCResultSet
-        A set of feature ICC
+        A set of measure ICC
 
     Raises
     ------
@@ -964,15 +964,15 @@ def icc_set_test_retest(
         occurred in :func:`icc_test_retest_session_safe`.
     """
     p0_icc = 0.0 if study == ICCResultSetStudy.STUDY_CONTROL else 0.6
-    features_icc = ICCResultSet(study, p0_icc)
+    measures_icc = ICCResultSet(study, p0_icc)
 
-    for feature_id in feature_collection.feature_ids:
+    for measure_id in measure_collection.measure_ids:
         try:
-            features_icc.iccs[feature_id] = icc_test_retest_session_safe(
-                feature_collection, feature_id, study, session_min, null_ratio
+            measures_icc.iccs[measure_id] = icc_test_retest_session_safe(
+                measure_collection, measure_id, study, session_min, null_ratio
             )
         except ValueError:
             if errors == "raise":
                 raise
 
-    return features_icc
+    return measures_icc

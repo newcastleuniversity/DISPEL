@@ -58,38 +58,38 @@ PLACEMENT_DEFINITIONS: List[RawDataValueDefinition] = [
 ]
 
 
-def placement_classification_one_window(window_features: pd.Series) -> str:
-    """Classify placement for a window of feature data.
+def placement_classification_one_window(window_measures: pd.Series) -> str:
+    """Classify placement for a window of measure data.
 
     Parameters
     ----------
-    window_features
-        A pd.Series containing the feature for a specific time
+    window_measures
+        A pd.Series containing the measure for a specific time
 
     Returns
     -------
     str
         The label of the predicted class
     """
-    if abs(window_features.loc["mean_gravityX"]) > THRES_BELT_MIN_ABS_MEAN_GRAVITY_X_1:
+    if abs(window_measures.loc["mean_gravityX"]) > THRES_BELT_MIN_ABS_MEAN_GRAVITY_X_1:
         # if phone placed roughly landscape -> belt
         res = "belt"
     elif (
-        abs(window_features.loc["mean_gravityY"]) > THRES_PANT_MIN_ABS_MEAN_GRAVITY_Y_1
+        abs(window_measures.loc["mean_gravityY"]) > THRES_PANT_MIN_ABS_MEAN_GRAVITY_Y_1
     ):
         # if phone placed landscape -> pants
         res = "pants"
     elif (
-        abs(window_features.loc["mean_gravityZ"]) > THRES_TABL_MIN_ABS_MEAN_GRAVITY_Z_1
-    ) & (window_features.loc["std_norm"] < THRES_TABL_MAX_STD_ACC_NORM_1):
+        abs(window_measures.loc["mean_gravityZ"]) > THRES_TABL_MIN_ABS_MEAN_GRAVITY_Z_1
+    ) & (window_measures.loc["std_norm"] < THRES_TABL_MAX_STD_ACC_NORM_1):
         # if phone placed face up/down and not moving -> table
         res = "table"
     elif (
-        abs(window_features.loc["mean_gravityZ"]) > THRES_TABL_MIN_ABS_MEAN_GRAVITY_Z_2
+        abs(window_measures.loc["mean_gravityZ"]) > THRES_TABL_MIN_ABS_MEAN_GRAVITY_Z_2
     ):
         # if phone placed precisely face up/down -> table
         res = "table"
-    elif window_features.loc["mean_gravityZ"] < THRES_HAND_MAX_MEAN_GRAVITY_Z_1:
+    elif window_measures.loc["mean_gravityZ"] < THRES_HAND_MAX_MEAN_GRAVITY_Z_1:
         # if phone placed face up with a tilt -> handheld
         res = "handheld"
     else:
@@ -103,7 +103,7 @@ def placement_classification(
     rolling_window_size: str = ROLLING_WINDOW_SIZE,
     rolling_step_size: str = ROLLING_STEP_SIZE,
 ) -> pd.DataFrame:
-    """Extract features and predict labels given the gravity and norm data.
+    """Extract measures and predict labels given the gravity and norm data.
 
     Parameters
     ----------
@@ -119,13 +119,13 @@ def placement_classification(
     Returns
     -------
     pandas.DataFrame
-        A dataframe containing the extracted features and label per window
+        A dataframe containing the extracted measures and label per window
 
     """
     if "ts" in data.columns:
         data = data.set_index("ts")
 
-    # extract placement features
+    # extract placement measures
     mean = (
         data.loc[:, ["gravityX", "gravityY", "gravityZ"]]
         .rolling(window=rolling_window_size, center=True)
@@ -136,29 +136,29 @@ def placement_classification(
     mean.columns = "mean_" + mean.columns
     std.columns = "std_" + std.columns
 
-    features = pd.concat([mean, std], axis=1)
+    measures = pd.concat([mean, std], axis=1)
     # downsampling here to introduce step size in the sliding window
     # The sliding window computes a moving mean and moving standard deviation
-    # for each sample. We need to have a single feature value for each step
+    # for each sample. We need to have a single measure value for each step
     # in the overlapping sliding window process so we take the first.
-    features = features.resample(rolling_step_size).first()
-    predictions = features.apply(placement_classification_one_window, axis=1)
+    measures = measures.resample(rolling_step_size).first()
+    predictions = measures.apply(placement_classification_one_window, axis=1)
 
-    features_predictions = features.copy()
-    features_predictions["placement"] = predictions
+    measures_predictions = measures.copy()
+    measures_predictions["placement"] = predictions
 
-    return features_predictions
+    return measures_predictions
 
 
 def merge_adjacent_annotations_rolling(
-    features_predictions: pd.DataFrame, rolling_step_size: str = ROLLING_STEP_SIZE
+    measures_predictions: pd.DataFrame, rolling_step_size: str = ROLLING_STEP_SIZE
 ) -> pd.DataFrame:
     """Merge adjacent annotations into segments of continuous labels.
 
     Parameters
     ----------
-    features_predictions
-        A pd.DataFrame containing the features and predicted class
+    measures_predictions
+        A pd.DataFrame containing the measures and predicted class
     rolling_step_size
         A str indicating the size of the sliding window
 
@@ -167,7 +167,7 @@ def merge_adjacent_annotations_rolling(
     pandas.DataFrame
         contains start time, end time and label of each continuous segment
     """
-    annotations = features_predictions[["placement"]].copy()
+    annotations = measures_predictions[["placement"]].copy()
     annotations["start_time"] = annotations.index
     # add the end times as the start times plus rolling step size
     annotations["end_time"] = annotations.index + pd.Timedelta(rolling_step_size)

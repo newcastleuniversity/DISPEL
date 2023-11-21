@@ -101,7 +101,7 @@ def sway_jerk(comp1: pd.Series, comp2: pd.Series) -> float:
     It is a complementary measure to the sway areas, as it covers also the
     amount of sway occurred within a given geometric area. It takes special
     relevance when algorithms to remove outliers are applied and the
-    timeseries span used for different features is different. In other
+    timeseries span used for different measures is different. In other
     words, a normalised version of the sway total excursion. See an example
     of concomitant use with sway total excursion in Mancini(2012),
     https://doi.org/10.1186/1743-0003-9-59

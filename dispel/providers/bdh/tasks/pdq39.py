@@ -4,7 +4,7 @@ from typing import List
 
 import pandas as pd
 
-from dispel.data.features import FeatureValueDefinitionPrototype
+from dispel.data.measures import MeasureValueDefinitionPrototype
 from dispel.data.raw import RawDataValueDefinition
 from dispel.data.validators import RangeValidator
 from dispel.data.values import AbbreviatedValue as AV
@@ -122,8 +122,8 @@ class ExtractDomainScore(ExtractStep):
             f"for all the questions of the domain {self.domain}."
         )
 
-        return FeatureValueDefinitionPrototype(
-            feature_name=AV(f"{self.domain} score", f"{self.domain}_score"),
+        return MeasureValueDefinitionPrototype(
+            measure_name=AV(f"{self.domain} score", f"{self.domain}_score"),
             data_type="float",
             validator=RangeValidator(lower_bound=0, upper_bound=100),
             description=description,
@@ -140,8 +140,8 @@ class ExtractTotalScore(ExtractStep):
 
     data_set_ids = "domain_scores"
 
-    definition = FeatureValueDefinitionPrototype(
-        feature_name=AV("Total PDQ-39 score", "total_score"),
+    definition = MeasureValueDefinitionPrototype(
+        measure_name=AV("Total PDQ-39 score", "total_score"),
         data_type="float",
         validator=RangeValidator(lower_bound=0, upper_bound=100),
         description="The total PDQ-39 score is the mean of the eight domains "

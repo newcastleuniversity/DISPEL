@@ -12,7 +12,7 @@ from tests.providers.bdh.conftest import (
 
 @pytest.mark.parametrize("level,expected", read_results(RESULTS_PATH_CPS))
 def test_cps_process_bdh(example_reading_processed_cps, level, expected):
-    """Unit test to ensure the CPS features are well computed."""
+    """Unit test to ensure the CPS measures are well computed."""
     assert_level_values(example_reading_processed_cps, level, expected)
 
 
@@ -20,7 +20,7 @@ def test_cps_process_bdh(example_reading_processed_cps, level, expected):
 def test_cps_table_4_process_bdh(
     example_reading_processed_cps_table_type4, level, expected
 ):
-    """Unit test to ensure the CPS features are well computed."""
+    """Unit test to ensure the CPS measures are well computed."""
     assert_level_values(example_reading_processed_cps_table_type4, level, expected)
 
 
