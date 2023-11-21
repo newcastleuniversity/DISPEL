@@ -1,3 +1,13 @@
+## [1.0.5](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.4...v1.0.5) (2023-11-21)
+
+
+### Bug Fixes
+
+* **features:** simplify feature to measure. ([c125c56](https://github.com/newcastleuniversity/DISPEL/commit/c125c5640488f8e44f6956944dc12dc99cdac0c4))
+* **README:** Update authors list ([ba96bc7](https://github.com/newcastleuniversity/DISPEL/commit/ba96bc71c8a2c6bb21991a654c676c3554699b19))
+* **README:** Update link and logo on README.md ([8649141](https://github.com/newcastleuniversity/DISPEL/commit/864914138df40e36d28e98ac95006523f489a56a))
+* **README:** update readme to use .md ([01cad0a](https://github.com/newcastleuniversity/DISPEL/commit/01cad0aa9ee38e5eb60a494718fe1fbeda76bfee))
+
 ## [1.0.4](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.3...v1.0.4) (2023-11-16)
 
 
