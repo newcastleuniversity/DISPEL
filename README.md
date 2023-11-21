@@ -33,7 +33,7 @@ for how to install and get started with `DISPEL`.
 DISPEL is a community-driven project with several skillful engineers and researchers contributing to it.
 
 DISPEL is currently maintained by [Alf Scotland](https://github.com/alf-scotland), [Angelos Karatsidis](https://github.com/akaratsidis),  with major contributions of talented individuals in various forms and means.
-A non-exhaustive list needs to mention: Ali Neishabouri, Clément Dulong, Oussama Tchita, Loïc Carment, Angéline Plaud, Kevin Bouaou.
+A non-exhaustive list needs to mention: Gautier Cosne, Adrien Juraver, Joaquin Penalver de Andres, Ali Neishabouri, Clément Dulong, Oussama Tchita, Loïc Carment, Angéline Plaud, Kevin Bouaou.
 
 ## License
 
