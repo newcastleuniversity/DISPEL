@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.bdh.tasks.typing.const &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/bdh/tasks/typing/const';</script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.bdh.tasks.typing.const</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Modalities and constants used in typing module.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">RawDataValueDefinition</span>
+
+<span class="n">STR_TO_CALLABLE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;mean&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+    <span class="s2">&quot;median&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">median</span><span class="p">,</span>
+    <span class="s2">&quot;std&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">std</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">N_LEVELS</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;A fixed unreachable number of difficulty level in typing.&quot;&quot;&quot;</span>
+
+<span class="n">DEF_AUTOCOMPLETE_KEY</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;autocomplete_per_key&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;autocomplete per key&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A boolean indicating if the key typed is an autocompletion&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_AUTOCOMPLETE_WORD</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;autocomplete_per_word&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;autocomplete per word&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A bool indicating if a word was typed using autocompletion&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_SUBMISSION_STATE</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;submission_state&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;submission state&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The submission state at the time of the key pressed. Available states &quot;</span>
+    <span class="s2">&quot;are the following: ``Correct``, ``Incorrect``, and ``Correcting``. The state is &quot;</span>
+    <span class="s2">&quot;``Correct`` if the textbox is empty or if it forms a subpart of the word displayed&quot;</span>
+    <span class="s2">&quot; on the screen. The state is incorrect whenever the user types a key (that is not &quot;</span>
+    <span class="s2">&quot;backspace), leading to a textbox that does not form a subpart of the word &quot;</span>
+    <span class="s2">&quot;displayed on the screen. Finally, the state is identified as correcting whenever &quot;</span>
+    <span class="s2">&quot;the user corrects its mistake by typing backspace; it can be seen as an &quot;</span>
+    <span class="s2">&quot;intermediate state between an incorrect and a correct state.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_SUCCESS</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A boolean indicating if the word was writtensuccessfully.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_DISPLAYED_WORD</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;displayed word&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The word displayed on the screen. This is the word the user has to &quot;</span>
+    <span class="s2">&quot;type.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">DEF_INCORRECT_STATE_DURATION</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;incorrect state duration&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The time spent in incorrect states.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">DEF_DISPLAYED_INPUT</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;displayed_input&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;displayed input&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The textbox input, this corresponds to the letters that have been &quot;</span>
+    <span class="s2">&quot;typed and appear in the small textbox.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_STATE_DUR</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Duration of a given state.&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_KEY</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;key&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;key&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The key that has been typed.&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span>
+<span class="p">)</span>
+
+<span class="n">DEF_T_BETWEEN_STATE</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;t_between_states&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Time between states.&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Time elapsed between two states.&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_REACTION_TIME</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;reaction_time&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;reaction time&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The interval between the appearance of a word and the moment the user &quot;</span>
+    <span class="s2">&quot;releases the first key.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_REACTION_TIME_FC</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;reaction_time_first_correct&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;reaction time first correct&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The interval between the appearance of a word and the moment the user &quot;</span>
+    <span class="s2">&quot;releases the first correct letter key.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_KEY_INTERVALS</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;key_intervals&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;key intervals&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The time intervals between key pressed.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_WORD_DURATION</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;word_duration&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;word duration&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The time elapsed between the appearance and disappearance of a word.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_DIFFICULTY_LEVEL</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;difficulty_level&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;difficulty level&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The difficulty level is an integer starting at zero that increments &quot;</span>
+    <span class="s2">&quot;by one every time a user successfully writes three words. These three words does &quot;</span>
+    <span class="s2">&quot;not have to be in a row.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_MEAN_WORD_DURATION</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mean word duration&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span>
+<span class="p">)</span>
+
+<span class="n">DEF_MEAN_MEDIAN_WORD_DURATION</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;median&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;median word duration&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_STD_WORD_DURATION</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;std&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;standard deviation of word duration&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">DEF_WORD_DUR_DIFF</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;difference&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;difference&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The difference of the word duration per difficulty level. It is the &quot;</span>
+    <span class="s2">&quot;derivative of the mean word duration w.r.t the difficulty level.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_REACTION_DURATION</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;reaction duration for correct words&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The reaction duration for a correct word.&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">DEF_CORRECTING_DURATION</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;correcting state duration&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The time spent in correcting states.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_CORRECTING_CORRECT_DURATION</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;correcting state duration for correct words.&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The time spent in correcting states for acorrect word.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_COUNT_CONSEC_STATES</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;count consecutive equal states&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;number of consecutive submission with the same correct_submission &quot;</span>
+    <span class="s2">&quot;state.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_IS_ERROR_FREE</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;is_error_free&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;is error free&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A boolean indicating if the word displayed on screen has been typed &quot;</span>
+    <span class="s2">&quot;without error.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_REACTING_TIME</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;t_between_states&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;reacting time&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The reacting time is the time elapsed between an incorrect state and &quot;</span>
+    <span class="s2">&quot;a correcting state in other words, the time to react to a mistake.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_REACTING_TIME_CORRECT</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;reacting_time&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;reacting time correct&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The reacting time for correct words.&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">DEF_IS_ERROR_FREE</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;is_error_free&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;is error free&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A boolean indicating if the word displayed on screen has been typed &quot;</span>
+    <span class="s2">&quot;without error.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_APPEARANCE_TS</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;appearance timestamp&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Timestamp corresponding to the appearance of the word.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_SIMILARITY_RATIO</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;similarity_ratio&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;similarity ratio&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Similarity ratio between the word being typed and the word on screen. &quot;</span>
+    <span class="s2">&quot;It is computed with the sequence matcher from difflib.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_LETTER_TYPED_OVER_LEN</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;letters_typed_over_length&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;letters typed over length&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The number of letters typed divided by the length of the word for &quot;</span>
+    <span class="s2">&quot;each completed word.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_IS_LETTER</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;key_is_letter&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;key pressed is letter&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Boolean indicating if a key pressed is a letter.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_MAX_DEVIATION_LETTER_INTERVAL</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;max_deviation_letter_interval&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;maximum deviation letter interval&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The maximum deviation of the letter interval for each word. The &quot;</span>
+    <span class="s2">&quot;deviation is computed as the squared error between the current interval and the &quot;</span>
+    <span class="s2">&quot;mean of these intervals within a word.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_WORD_ID</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;word_id&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;word id&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The id of the word that is being typed.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">DEF_TS_OUT</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;timestamp_out&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;timestamp out&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The timestamp when a key has been released.&quot;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;datetime64[ns]&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="WordState">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.WordState">[docs]</a>
+<span class="k">class</span> <span class="nc">WordState</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generic state for a word.&quot;&quot;&quot;</span>
+
+    <span class="n">INIT</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">CORRECT</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">INCORRECT</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+
+<div class="viewcode-block" id="KeyState">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.KeyState">[docs]</a>
+<span class="k">class</span> <span class="nc">KeyState</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generic state for a key.&quot;&quot;&quot;</span>
+
+    <span class="n">INIT</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">CORRECT</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">INCORRECT</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">CORRECTING</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

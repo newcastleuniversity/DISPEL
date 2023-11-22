@@ -1,0 +1,1305 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.generic.activity.turning module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.generic.activity.turning';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.generic.flags package" href="dispel.providers.generic.flags.html" />
+    <link rel="prev" title="dispel.providers.generic.activity.placement module" href="dispel.providers.generic.activity.placement.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.generic.activity.html" class="nav-link">dispel.providers.generic.activity package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.generic.activity.turning">
+<span id="dispel-providers-generic-activity-turning-module"></span><h1>dispel.providers.generic.activity.turning module<a class="headerlink" href="#module-dispel.providers.generic.activity.turning" title="Link to this heading">#</a></h1>
+<p>A module to detect and process turns during tests.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">AggregateAbsTurnSpeed</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#AggregateAbsTurnSpeed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn" title="dispel.providers.generic.activity.turning.TurnModalityMixIn"><code class="xref py py-class docutils literal notranslate"><span class="pre">TurnModalityMixIn</span></code></a>, <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn" title="dispel.processing.extract.AggregateRawDataSetColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn</span></code></a></p>
+<p>Aggregate absolute turn speed based on modality.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed.aggregations">
+<span class="sig-name descname"><span class="pre">aggregations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AggregationsDefinitionType</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('mean',</span> <span class="pre">'mean'),</span> <span class="pre">('std',</span> <span class="pre">'standard</span> <span class="pre">deviation'),</span> <span class="pre">('median',</span> <span class="pre">'median'),</span> <span class="pre">('min',</span> <span class="pre">'minimum'),</span> <span class="pre">('max',</span> <span class="pre">'maximum')]</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed.aggregations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.AggregateTurnDuration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">AggregateTurnDuration</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#AggregateTurnDuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.AggregateTurnDuration" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn" title="dispel.providers.generic.activity.turning.TurnModalityMixIn"><code class="xref py py-class docutils literal notranslate"><span class="pre">TurnModalityMixIn</span></code></a>, <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn" title="dispel.processing.extract.AggregateRawDataSetColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn</span></code></a></p>
+<p>Aggregate turn duration based on modality.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.AggregateTurnDuration.aggregations">
+<span class="sig-name descname"><span class="pre">aggregations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AggregationsDefinitionType</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('mean',</span> <span class="pre">'mean'),</span> <span class="pre">('std',</span> <span class="pre">'standard</span> <span class="pre">deviation'),</span> <span class="pre">('median',</span> <span class="pre">'median'),</span> <span class="pre">('min',</span> <span class="pre">'minimum'),</span> <span class="pre">('max',</span> <span class="pre">'maximum')]</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.AggregateTurnDuration.aggregations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.AggregateTurnDuration.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.AggregateTurnDuration.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.AggregateTurnSpeedProperties">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">AggregateTurnSpeedProperties</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#AggregateTurnSpeedProperties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.AggregateTurnSpeedProperties" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn" title="dispel.providers.generic.activity.turning.TurnModalityMixIn"><code class="xref py py-class docutils literal notranslate"><span class="pre">TurnModalityMixIn</span></code></a>, <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn" title="dispel.processing.extract.AggregateRawDataSetColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn</span></code></a></p>
+<p>Aggregate properties based on modality.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.AggregateTurnSpeedProperties.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">turn_modality</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#AggregateTurnSpeedProperties.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.AggregateTurnSpeedProperties.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.ElGoharyTurnDetection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">ElGoharyTurnDetection</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#ElGoharyTurnDetection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.ElGoharyTurnDetection" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>El Gohary et al. turn detection processing step.</p>
+<p>This processing step is to apply the <a class="reference internal" href="#dispel.providers.generic.activity.turning.el_gohary_detect_turns" title="dispel.providers.generic.activity.turning.el_gohary_detect_turns"><code class="xref py py-func docutils literal notranslate"><span class="pre">el_gohary_detect_turns()</span></code></a> to
+an angular velocity time series that has undergone the described filtering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> – The column name of the series contained in raw data set.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.ElGoharyTurnDetection.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#ElGoharyTurnDetection.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.ElGoharyTurnDetection.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.ElGoharyTurnDetection.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">start</span> <span class="pre">(The</span> <span class="pre">start</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">end</span> <span class="pre">(The</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">duration</span> <span class="pre">(The</span> <span class="pre">duration</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn,</span> <span class="pre">s)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">angle</span> <span class="pre">(The</span> <span class="pre">angle</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn,</span> <span class="pre">rad)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">turn_cls</span> <span class="pre">(The</span> <span class="pre">Turn</span> <span class="pre">class)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.ElGoharyTurnDetection.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.ElGoharyTurnDetection.get_new_data_set_id">
+<span class="sig-name descname"><span class="pre">get_new_data_set_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#ElGoharyTurnDetection.get_new_data_set_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.ElGoharyTurnDetection.get_new_data_set_id" title="Link to this definition">#</a></dt>
+<dd><p>Get the id of the new data set to be created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.ExtractNumberOfTurns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">ExtractNumberOfTurns</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#ExtractNumberOfTurns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.ExtractNumberOfTurns" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn" title="dispel.providers.generic.activity.turning.TurnModalityMixIn"><code class="xref py py-class docutils literal notranslate"><span class="pre">TurnModalityMixIn</span></code></a>, <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>Extract the number of turns during the utt test.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.ExtractNumberOfTurns.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.ExtractNumberOfTurns.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.ExtractNumberOfTurns.transform_function">
+<span class="sig-name descname"><span class="pre">transform_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dispel.providers.generic.activity.turning.ExtractNumberOfTurns.transform_function" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of items in a container.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.ExtractTurnMeasures">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">ExtractTurnMeasures</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#ExtractTurnMeasures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.ExtractTurnMeasures" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Extract Turn Measures based on Turn Selection Modality.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.ExtractTurnMeasures.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">turns_data_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turn_modality</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#ExtractTurnMeasures.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.ExtractTurnMeasures.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineTurns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">RefineTurns</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#RefineTurns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineTurns" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>El Gohary et al. turn detection processing step.</p>
+<p>This processing step is to apply the <a class="reference internal" href="#dispel.providers.generic.activity.turning.el_gohary_detect_turns" title="dispel.providers.generic.activity.turning.el_gohary_detect_turns"><code class="xref py py-func docutils literal notranslate"><span class="pre">el_gohary_detect_turns()</span></code></a> to
+a angular velocity time series that has undergone the described filtering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> – The column name of the series contained in raw data set.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineTurns.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#RefineTurns.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineTurns.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineTurns.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">start</span> <span class="pre">(The</span> <span class="pre">start</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">end</span> <span class="pre">(The</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">duration</span> <span class="pre">(The</span> <span class="pre">duration</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn,</span> <span class="pre">s)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">angle</span> <span class="pre">(The</span> <span class="pre">angle</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn,</span> <span class="pre">rad)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">turn_cls</span> <span class="pre">(The</span> <span class="pre">Turn</span> <span class="pre">class)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineTurns.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineTurns.get_new_data_set_id">
+<span class="sig-name descname"><span class="pre">get_new_data_set_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#RefineTurns.get_new_data_set_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineTurns.get_new_data_set_id" title="Link to this definition">#</a></dt>
+<dd><p>Get new data set id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineTurns.th_time">
+<span class="sig-name descname"><span class="pre">th_time</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Timedelta('0</span> <span class="pre">days</span> <span class="pre">00:00:00.300000')</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineTurns.th_time" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineUTurns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">RefineUTurns</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#RefineUTurns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineUTurns" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Refine Turns based on assumption of 180 degrees.</p>
+<p>This processing step is to consecutive turns occuring soon after another
+and merge them if they are smaller than a threshold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> – The column name of the series contained in raw data set.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineUTurns.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#RefineUTurns.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineUTurns.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineUTurns.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">start</span> <span class="pre">(The</span> <span class="pre">start</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">end</span> <span class="pre">(The</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">duration</span> <span class="pre">(The</span> <span class="pre">duration</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn,</span> <span class="pre">s)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">angle</span> <span class="pre">(The</span> <span class="pre">angle</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">turn,</span> <span class="pre">rad)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">turn_cls</span> <span class="pre">(The</span> <span class="pre">Turn</span> <span class="pre">class)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineUTurns.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineUTurns.get_new_data_set_id">
+<span class="sig-name descname"><span class="pre">get_new_data_set_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#RefineUTurns.get_new_data_set_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineUTurns.get_new_data_set_id" title="Link to this definition">#</a></dt>
+<dd><p>Get new data set id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineUTurns.th_curr">
+<span class="sig-name descname"><span class="pre">th_curr</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.9670597283903604</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_curr" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineUTurns.th_last">
+<span class="sig-name descname"><span class="pre">th_last</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.9670597283903604</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_last" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineUTurns.th_min">
+<span class="sig-name descname"><span class="pre">th_min</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.5707963267948966</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_min" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineUTurns.th_sum">
+<span class="sig-name descname"><span class="pre">th_sum</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4.71238898038469</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_sum" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.RefineUTurns.th_time">
+<span class="sig-name descname"><span class="pre">th_time</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Timedelta('0</span> <span class="pre">days</span> <span class="pre">00:00:03')</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_time" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TransformAbsTurnSpeed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">TransformAbsTurnSpeed</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#TransformAbsTurnSpeed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.TransformAbsTurnSpeed" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Get absolute turns speed.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TransformAbsTurnSpeed.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">abs_turn_speed</span> <span class="pre">(The</span> <span class="pre">absolute</span> <span class="pre">value</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">average</span> <span class="pre">turn</span> <span class="pre">speed)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.TransformAbsTurnSpeed.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TransformAbsTurnSpeed.new_data_set_id">
+<span class="sig-name descname"><span class="pre">new_data_set_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'abs_turn_speed'</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.TransformAbsTurnSpeed.new_data_set_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">Turn</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#Turn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class to encapsulate turns and turn related gyroscope data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – The start date time of the turn.</p></li>
+<li><p><strong>end</strong> – The end date time of the turn.</p></li>
+<li><p><strong>data</strong> – The angular velocity time series of the turn. The data set should
+ensure to be at least of the duration of time provided with
+<code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code>. It should be in rad/s and sampling has to be
+at a constant frequency.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn.start">
+<span class="sig-name descname"><span class="pre">start</span></span><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn.start" title="Link to this definition">#</a></dt>
+<dd><p>The start date time of the turn.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn.end">
+<span class="sig-name descname"><span class="pre">end</span></span><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn.end" title="Link to this definition">#</a></dt>
+<dd><p>The end date time of the turn.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#Turn.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><em>datetime</em></a>) – </p></li>
+<li><p><strong>end</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><em>datetime</em></a>) – </p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn.angle">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn.angle" title="Link to this definition">#</a></dt>
+<dd><p>Get the angle of the turn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The angle of the turn in rad/s.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn.data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><span class="pre">Series</span></a></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn.data" title="Link to this definition">#</a></dt>
+<dd><p>Get the angular velocity data associated with the turn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Angular velocity series between <a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn.start" title="dispel.providers.generic.activity.turning.Turn.start"><code class="xref py py-data docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn.end" title="dispel.providers.generic.activity.turning.Turn.end"><code class="xref py py-data docutils literal notranslate"><span class="pre">end</span></code></a> of
+the turn.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Series</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn.direction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn.direction" title="Link to this definition">#</a></dt>
+<dd><p>Get the direction of the turn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The direction of the turn. If the turning direction is positive
+<code class="docutils literal notranslate"><span class="pre">1</span></code> is returned. Otherwise <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn.duration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn.duration" title="Link to this definition">#</a></dt>
+<dd><p>Get the duration of the turn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The duration of the turn in seconds.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn.expand">
+<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#Turn.expand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn.expand" title="Link to this definition">#</a></dt>
+<dd><p>Expand the <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> of the turn to the given threshold.</p>
+<p>This expands the turn until start and end are below the provided
+threshold of turn speed. The expansion relies on the data provided
+during the construction of the turn and should not be confused with
+what is available via <a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn.data" title="dispel.providers.generic.activity.turning.Turn.data"><code class="xref py py-data docutils literal notranslate"><span class="pre">data</span></code></a>, which is always limited to the
+boundaries specified with <a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn.start" title="dispel.providers.generic.activity.turning.Turn.start"><code class="xref py py-data docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn.end" title="dispel.providers.generic.activity.turning.Turn.end"><code class="xref py py-data docutils literal notranslate"><span class="pre">end</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>threshold</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – The threshold until which to expand the turn.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new turn with expanded start and end time stamps based on
+associated data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn" title="dispel.providers.generic.activity.turning.Turn">Turn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.Turn.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#Turn.merge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.Turn.merge" title="Link to this definition">#</a></dt>
+<dd><p>Merge this turn with another one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – The other turn to merge this one with.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The new merged turn. The new turn uses the earlier start and later
+end of both, respectively. The data will be based on this turn.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn" title="dispel.providers.generic.activity.turning.Turn">Turn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TurnModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">TurnModality</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#TurnModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.TurnModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>An enumeration for turn modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TurnModality.ALL">
+<span class="sig-name descname"><span class="pre">ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.TurnModality.ALL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TurnModality.FIRST_FIVE">
+<span class="sig-name descname"><span class="pre">FIRST_FIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.TurnModality.FIRST_FIVE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TurnModality.FIRST_FOUR">
+<span class="sig-name descname"><span class="pre">FIRST_FOUR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.TurnModality.FIRST_FOUR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TurnModality.TWO_THREE_FOUR">
+<span class="sig-name descname"><span class="pre">TWO_THREE_FOUR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.TurnModality.TWO_THREE_FOUR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TurnModalityMixIn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">TurnModalityMixIn</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#TurnModalityMixIn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin" title="dispel.processing.extract.MeasureDefinitionMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureDefinitionMixin</span></code></a>, <a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin" title="dispel.processing.data_set.DataSetProcessingStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin</span></code></a></p>
+<p>A modality to filter on subsets of turns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>turn_modality</strong> – A TurnModality object denoting the turns to be used.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TurnModalityMixIn.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">turn_modality</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#TurnModalityMixIn.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>turn_modality</strong> (<a class="reference internal" href="#dispel.providers.generic.activity.turning.TurnModality" title="dispel.providers.generic.activity.turning.TurnModality"><em>TurnModality</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TurnModalityMixIn.get_data_frames">
+<span class="sig-name descname"><span class="pre">get_data_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#TurnModalityMixIn.get_data_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn.get_data_frames" title="Link to this definition">#</a></dt>
+<dd><p>Get data frames.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a>[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.TurnModalityMixIn.get_definition">
+<span class="sig-name descname"><span class="pre">get_definition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#TurnModalityMixIn.get_definition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn.get_definition" title="Link to this definition">#</a></dt>
+<dd><p>Get definition.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.WithinTurnSpeed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">WithinTurnSpeed</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#WithinTurnSpeed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.WithinTurnSpeed" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Compute within-turn properties of the turn speed.</p>
+<p>This processing step is to compute sensor-derived aggregated properties
+of the angular velocity signal within each turn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> – The column name of the series contained in raw data set.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.WithinTurnSpeed.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#WithinTurnSpeed.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.WithinTurnSpeed.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.WithinTurnSpeed.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">mean</span> <span class="pre">(mean</span> <span class="pre">of</span> <span class="pre">turn</span> <span class="pre">speed</span> <span class="pre">across</span> <span class="pre">a</span> <span class="pre">turn,</span> <span class="pre">rad/s)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">q95</span> <span class="pre">(95th</span> <span class="pre">centile</span> <span class="pre">of</span> <span class="pre">turn</span> <span class="pre">speed</span> <span class="pre">across</span> <span class="pre">a</span> <span class="pre">turn,</span> <span class="pre">rad/s)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.activity.turning.WithinTurnSpeed.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.WithinTurnSpeed.get_new_data_set_id">
+<span class="sig-name descname"><span class="pre">get_new_data_set_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#WithinTurnSpeed.get_new_data_set_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.WithinTurnSpeed.get_new_data_set_id" title="Link to this definition">#</a></dt>
+<dd><p>Get new data set id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.el_gohary_detect_turns">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">el_gohary_detect_turns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#el_gohary_detect_turns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.el_gohary_detect_turns" title="Link to this definition">#</a></dt>
+<dd><p>Detect turns based on the El Gohary et al. algorithm <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> .</p>
+<p>This method performs the detection after aligning and filtering the
+gyroscope time series (see El Gohary et al. algorithm 1, row 4).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A pandas series of angular velocity used to search for turns.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of detected turns.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn" title="dispel.providers.generic.activity.turning.Turn">Turn</a>]</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>El-Gohary, Mahmoud, et al. “Continuous monitoring of turning in
+patients with movement disability.” Sensors 14.1 (2014): 356-369.
+<a class="reference external" href="https://doi.org/10.3390/s140100356">https://doi.org/10.3390/s140100356</a></p>
+</aside>
+</aside>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.merge_turns">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">merge_turns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">turns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Timedelta('0</span> <span class="pre">days</span> <span class="pre">00:00:00')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_curr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_last</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_sum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#merge_turns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.merge_turns" title="Link to this definition">#</a></dt>
+<dd><p>Merge turns that add up to approximately u-turns.</p>
+<p>This function takes a list of turns and merges each of them with its
+preceding turn if that ended less than a time threshold ago and the
+consecutive turns are below a set of thresholds in size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>turns</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn" title="dispel.providers.generic.activity.turning.Turn"><em>Turn</em></a><em>]</em>) – A list of Turn objects to be potentially merged.</p></li>
+<li><p><strong>th_time</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Timedelta</em></a>) – A pandas.Timedelta containing the maximum time distance between turns
+that should be used for merging.</p></li>
+<li><p><strong>th_curr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – A float indicating the maximum value of the current turn to be
+considered for merging</p></li>
+<li><p><strong>th_last</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – A float indicating the maximum value of the last turn to be
+considered for merging</p></li>
+<li><p><strong>th_sum</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – A float indicating the maximum value of the sum of current and
+previous turn to be considered for merging</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of merged turns.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn" title="dispel.providers.generic.activity.turning.Turn">Turn</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.refine_turns">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">refine_turns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turns_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Timedelta('0</span> <span class="pre">days</span> <span class="pre">00:00:00')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_curr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_last</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_sum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#refine_turns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.refine_turns" title="Link to this definition">#</a></dt>
+<dd><p>Refine turns from El-Gohary output.</p>
+<p>This function refines turns by merging consecutive turns with time distance
+(defined as the period between the end of a turn and the start of the next)
+less than a specified threshold as well as a set of thresholds constraining
+the size of refined merged angles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A pandas series of angular velocity used to search for turns.</p></li>
+<li><p><strong>turns_df</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pd.DataFrame containing the turns to be refined.</p></li>
+<li><p><strong>th_time</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Timedelta</em></a>) – A pandas.Timedelta containing the maximum time distance between turns
+that should be used for merging.</p></li>
+<li><p><strong>th_curr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – A float indicating the maximum value of the current turn to be
+considered for merging (in radians)</p></li>
+<li><p><strong>th_last</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – A float indicating the maximum value of the last turn to be
+considered for merging (in radians)</p></li>
+<li><p><strong>th_sum</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – A float indicating the maximum value of the sum of current and
+previous turn to be considered for merging (in radians)</p></li>
+<li><p><strong>th_min</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – A float indicating the minimum value of the angles to be kept in the
+data (in radians)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of refined turns.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn" title="dispel.providers.generic.activity.turning.Turn">Turn</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.activity.turning.remove_turns_below_thres">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.activity.turning.</span></span><span class="sig-name descname"><span class="pre">remove_turns_below_thres</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">turns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/activity/turning.html#remove_turns_below_thres"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.activity.turning.remove_turns_below_thres" title="Link to this definition">#</a></dt>
+<dd><p>Remove turns that are below a given threshold.</p>
+<p>This function receives a list of turns and removes the ones that are lower
+than a given threshold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>turns</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn" title="dispel.providers.generic.activity.turning.Turn"><em>Turn</em></a><em>]</em>) – A list of Turn objects to be potentially merged.</p></li>
+<li><p><strong>th_min</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – Minimum angle in radians</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of merged turns.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#dispel.providers.generic.activity.turning.Turn" title="dispel.providers.generic.activity.turning.Turn">Turn</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.generic.activity.placement.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.generic.activity.placement module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.generic.flags.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.generic.flags package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed"><code class="docutils literal notranslate"><span class="pre">AggregateAbsTurnSpeed</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateAbsTurnSpeed.aggregations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed.definition"><code class="docutils literal notranslate"><span class="pre">AggregateAbsTurnSpeed.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.AggregateTurnDuration"><code class="docutils literal notranslate"><span class="pre">AggregateTurnDuration</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.AggregateTurnDuration.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateTurnDuration.aggregations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.AggregateTurnDuration.definition"><code class="docutils literal notranslate"><span class="pre">AggregateTurnDuration.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.AggregateTurnSpeedProperties"><code class="docutils literal notranslate"><span class="pre">AggregateTurnSpeedProperties</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.AggregateTurnSpeedProperties.__init__"><code class="docutils literal notranslate"><span class="pre">AggregateTurnSpeedProperties.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.ElGoharyTurnDetection"><code class="docutils literal notranslate"><span class="pre">ElGoharyTurnDetection</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.ElGoharyTurnDetection.__init__"><code class="docutils literal notranslate"><span class="pre">ElGoharyTurnDetection.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.ElGoharyTurnDetection.definitions"><code class="docutils literal notranslate"><span class="pre">ElGoharyTurnDetection.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.ElGoharyTurnDetection.get_new_data_set_id"><code class="docutils literal notranslate"><span class="pre">ElGoharyTurnDetection.get_new_data_set_id()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.ExtractNumberOfTurns"><code class="docutils literal notranslate"><span class="pre">ExtractNumberOfTurns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.ExtractNumberOfTurns.definition"><code class="docutils literal notranslate"><span class="pre">ExtractNumberOfTurns.definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.ExtractNumberOfTurns.transform_function"><code class="docutils literal notranslate"><span class="pre">ExtractNumberOfTurns.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.ExtractTurnMeasures"><code class="docutils literal notranslate"><span class="pre">ExtractTurnMeasures</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.ExtractTurnMeasures.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractTurnMeasures.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineTurns"><code class="docutils literal notranslate"><span class="pre">RefineTurns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineTurns.__init__"><code class="docutils literal notranslate"><span class="pre">RefineTurns.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineTurns.definitions"><code class="docutils literal notranslate"><span class="pre">RefineTurns.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineTurns.get_new_data_set_id"><code class="docutils literal notranslate"><span class="pre">RefineTurns.get_new_data_set_id()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineTurns.th_time"><code class="docutils literal notranslate"><span class="pre">RefineTurns.th_time</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineUTurns"><code class="docutils literal notranslate"><span class="pre">RefineUTurns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineUTurns.__init__"><code class="docutils literal notranslate"><span class="pre">RefineUTurns.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineUTurns.definitions"><code class="docutils literal notranslate"><span class="pre">RefineUTurns.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineUTurns.get_new_data_set_id"><code class="docutils literal notranslate"><span class="pre">RefineUTurns.get_new_data_set_id()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_curr"><code class="docutils literal notranslate"><span class="pre">RefineUTurns.th_curr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_last"><code class="docutils literal notranslate"><span class="pre">RefineUTurns.th_last</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_min"><code class="docutils literal notranslate"><span class="pre">RefineUTurns.th_min</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_sum"><code class="docutils literal notranslate"><span class="pre">RefineUTurns.th_sum</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.RefineUTurns.th_time"><code class="docutils literal notranslate"><span class="pre">RefineUTurns.th_time</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TransformAbsTurnSpeed"><code class="docutils literal notranslate"><span class="pre">TransformAbsTurnSpeed</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TransformAbsTurnSpeed.definitions"><code class="docutils literal notranslate"><span class="pre">TransformAbsTurnSpeed.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TransformAbsTurnSpeed.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformAbsTurnSpeed.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn"><code class="docutils literal notranslate"><span class="pre">Turn</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn.start"><code class="docutils literal notranslate"><span class="pre">Turn.start</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn.end"><code class="docutils literal notranslate"><span class="pre">Turn.end</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn.__init__"><code class="docutils literal notranslate"><span class="pre">Turn.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn.angle"><code class="docutils literal notranslate"><span class="pre">Turn.angle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn.data"><code class="docutils literal notranslate"><span class="pre">Turn.data</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn.direction"><code class="docutils literal notranslate"><span class="pre">Turn.direction</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn.duration"><code class="docutils literal notranslate"><span class="pre">Turn.duration</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn.expand"><code class="docutils literal notranslate"><span class="pre">Turn.expand()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.Turn.merge"><code class="docutils literal notranslate"><span class="pre">Turn.merge()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TurnModality"><code class="docutils literal notranslate"><span class="pre">TurnModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TurnModality.ALL"><code class="docutils literal notranslate"><span class="pre">TurnModality.ALL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TurnModality.FIRST_FIVE"><code class="docutils literal notranslate"><span class="pre">TurnModality.FIRST_FIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TurnModality.FIRST_FOUR"><code class="docutils literal notranslate"><span class="pre">TurnModality.FIRST_FOUR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TurnModality.TWO_THREE_FOUR"><code class="docutils literal notranslate"><span class="pre">TurnModality.TWO_THREE_FOUR</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn"><code class="docutils literal notranslate"><span class="pre">TurnModalityMixIn</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn.__init__"><code class="docutils literal notranslate"><span class="pre">TurnModalityMixIn.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn.get_data_frames"><code class="docutils literal notranslate"><span class="pre">TurnModalityMixIn.get_data_frames()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.TurnModalityMixIn.get_definition"><code class="docutils literal notranslate"><span class="pre">TurnModalityMixIn.get_definition()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.WithinTurnSpeed"><code class="docutils literal notranslate"><span class="pre">WithinTurnSpeed</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.WithinTurnSpeed.__init__"><code class="docutils literal notranslate"><span class="pre">WithinTurnSpeed.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.WithinTurnSpeed.definitions"><code class="docutils literal notranslate"><span class="pre">WithinTurnSpeed.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.WithinTurnSpeed.get_new_data_set_id"><code class="docutils literal notranslate"><span class="pre">WithinTurnSpeed.get_new_data_set_id()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.el_gohary_detect_turns"><code class="docutils literal notranslate"><span class="pre">el_gohary_detect_turns()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.merge_turns"><code class="docutils literal notranslate"><span class="pre">merge_turns()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.refine_turns"><code class="docutils literal notranslate"><span class="pre">refine_turns()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.activity.turning.remove_turns_below_thres"><code class="docutils literal notranslate"><span class="pre">remove_turns_below_thres()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.generic.activity.turning.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

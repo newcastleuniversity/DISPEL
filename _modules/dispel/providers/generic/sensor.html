@@ -1,0 +1,1335 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.sensor &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/sensor';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.sensor</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Generic functionality for signal processing steps.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span>
+    <span class="n">DEFAULT_COLUMNS</span><span class="p">,</span>
+    <span class="n">GRAVITY_COLUMNS</span><span class="p">,</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.assertions</span> <span class="kn">import</span> <span class="n">NotEmptyDataSetAssertionMixin</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">transformation</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="n">ExtractMultipleStep</span><span class="p">,</span> <span class="n">ExtractStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">LevelFilterType</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.modalities</span> <span class="kn">import</span> <span class="n">SensorModality</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">Apply</span><span class="p">,</span> <span class="n">TransformStep</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.bdh.data</span> <span class="kn">import</span> <span class="n">BDHReading</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.accelerometer</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">GRAVITY_CONSTANT</span><span class="p">,</span>
+    <span class="n">apply_rotation_matrices</span><span class="p">,</span>
+    <span class="n">compute_rotation_matrices_quaternion</span><span class="p">,</span>
+    <span class="n">remove_gravity_component</span><span class="p">,</span>
+    <span class="n">remove_gravity_component_ori</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">amplitude</span><span class="p">,</span>
+    <span class="n">discretize_sampling_frequency</span><span class="p">,</span>
+    <span class="n">energy</span><span class="p">,</span>
+    <span class="n">entropy</span><span class="p">,</span>
+    <span class="n">euclidean_norm</span><span class="p">,</span>
+    <span class="n">peak</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.sensor</span> <span class="kn">import</span> <span class="n">SENSOR_UNIT</span><span class="p">,</span> <span class="n">find_zero_crossings</span>
+
+<span class="c1"># Define expected sampling frequencies</span>
+<span class="n">FREQ_20HZ</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">FREQ_50HZ</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">FREQ_60HZ</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">FREQ_100HZ</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># SensorLog can sample at 100Hz</span>
+<span class="n">FREQ_128HZ</span> <span class="o">=</span> <span class="mi">128</span>  <span class="c1"># APDM files are sampled at 128Hz</span>
+
+<span class="n">VALID_FREQ_LIST</span> <span class="o">=</span> <span class="p">[</span><span class="n">FREQ_20HZ</span><span class="p">,</span> <span class="n">FREQ_50HZ</span><span class="p">,</span> <span class="n">FREQ_100HZ</span><span class="p">,</span> <span class="n">FREQ_128HZ</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="RenameColumns">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.RenameColumns">[docs]</a>
+<span class="k">class</span> <span class="nc">RenameColumns</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Rename and select columns of a raw data set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id of the time series to be renamed.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`~dispel.processing.level.LevelFilter` to determine</span>
+<span class="sd">        the levels to be transformed. If no filter is provided, all levels</span>
+<span class="sd">        will be transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`~dispel.processing.level.LevelFilter` for convenience.</span>
+<span class="sd">    kwargs</span>
+<span class="sd">        All arguments passed into this class will serve as a renaming mapping</span>
+<span class="sd">        for the raw data set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RenameColumns.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.RenameColumns.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_transform_function</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+            <span class="n">data_</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data_</span><span class="p">[</span><span class="n">kwargs</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">_transform_function</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_renamed&quot;</span><span class="p">,</span>
+            <span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">values</span><span class="p">()],</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SetTimestampIndex">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.SetTimestampIndex">[docs]</a>
+<span class="k">class</span> <span class="nc">SetTimestampIndex</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Create a new time series based on a date time or time delta column.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id of the time series to be transformed.</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns to consider in the new raw data set.</span>
+<span class="sd">    time_stamp_column</span>
+<span class="sd">        The time series column name to use as index.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`dispel.processing.level.LevelFilter` to determine the</span>
+<span class="sd">        levels to be transformed. If no filter is provided, all levels will be</span>
+<span class="sd">        transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`~dispel.processing.level.LevelFilter` for convenience.</span>
+<span class="sd">    duplicates</span>
+<span class="sd">        The strategy used to handle duplicates.</span>
+<span class="sd">        Has to be one of ``ignore``, ``raise``, ``first``, ``last``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SetTimestampIndex.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.SetTimestampIndex.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">time_stamp_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ts&quot;</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">duplicates</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_transform_function</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">rm_duplicate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">rm_duplicate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">time_stamp_column</span><span class="p">)[</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">time_stamp_column</span><span class="p">)[</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="o">~</span><span class="n">res</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="n">duplicates</span><span class="p">)]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">_transform_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">duplicates</span><span class="p">),</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_ts&quot;</span><span class="p">,</span>
+            <span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">],</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Trim">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.Trim">[docs]</a>
+<span class="k">class</span> <span class="nc">Trim</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Trim a sensor signal at the beginning and/or end.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    trim_left</span>
+<span class="sd">        The amount of data to trim from the left side of the sensor readings.</span>
+<span class="sd">    trim_right</span>
+<span class="sd">        The amount of data to trim from the right side of the sensor readings.</span>
+<span class="sd">    ts_column</span>
+<span class="sd">        The column id to be used in the provided raw data set through</span>
+<span class="sd">        ``data_set_ids``. If no column is provided, the data set is expected</span>
+<span class="sd">        to have a time-based index that is used to trim the data set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">trim_left</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">trim_right</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ts_column</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Trim.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.Trim.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">left</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;trim_left&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trim_left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">right</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;trim_right&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trim_right</span> <span class="o">=</span> <span class="n">right</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">column</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;ts_column&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ts_column</span> <span class="o">=</span> <span class="n">column</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_trim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">ts_col</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ts_column</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ts_column</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim_left</span> <span class="o">&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">ts_col</span> <span class="o">&gt;</span> <span class="n">ts_col</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim_left</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim_right</span> <span class="o">&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">ts_col</span> <span class="o">&lt;</span> <span class="n">ts_col</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim_right</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="Resample">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.Resample">[docs]</a>
+<span class="k">class</span> <span class="nc">Resample</span><span class="p">(</span><span class="n">NotEmptyDataSetAssertionMixin</span><span class="p">,</span> <span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Resample a time-based raw data set to a specific sampling frequency.</span>
+
+<span class="sd">    The resampling creates a new raw data set which is accessible via the</span>
+<span class="sd">    data set comprised of the original one concatenated with ``_resampled``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set to be resampled. This has to be a data set that uses a</span>
+<span class="sd">        time-based index. You might first have to apply the</span>
+<span class="sd">        :class:`SetTimestampIndex` processing step before you can apply</span>
+<span class="sd">        this step.</span>
+<span class="sd">    aggregations</span>
+<span class="sd">        A list of resampling methods to be applied in order. Each can be any</span>
+<span class="sd">         method that is also accepted by :meth:`pandas.DataFrame.agg`.</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns to be considered during the resampling.</span>
+<span class="sd">    freq</span>
+<span class="sd">        The frequency to resample to. See also</span>
+<span class="sd">        :meth:`pandas.DataFrame.resample` for details. If freq is not provided</span>
+<span class="sd">        the frequency is estimated automatically taking the median frequency.</span>
+<span class="sd">    max_frequency_distance</span>
+<span class="sd">        An optional integer specifying the maximum accepted</span>
+<span class="sd">        distance between the expected frequency and the estimated frequency</span>
+<span class="sd">        above which we raise an error.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`dispel.processing.level.LevelFilter` to determine the</span>
+<span class="sd">        levels to be transformed. If no filter is provided, all levels will be</span>
+<span class="sd">        transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`~dispel.processing.level.LevelFilter` for convenience.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Resample.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.Resample.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">aggregations</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">freq</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_frequency_distance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_resample</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">sampling_frequency</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+            <span class="c1"># Check if a sampling frequency is provided</span>
+            <span class="c1"># If not, we discretized the sampling frequency</span>
+            <span class="k">if</span> <span class="n">sampling_frequency</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">discretize_args</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="n">VALID_FREQ_LIST</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">max_frequency_distance</span><span class="p">:</span>
+                    <span class="n">discretize_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">max_frequency_distance</span><span class="p">)</span>
+                <span class="n">sampling_frequency</span> <span class="o">=</span> <span class="n">discretize_sampling_frequency</span><span class="p">(</span><span class="o">*</span><span class="n">discretize_args</span><span class="p">)</span>
+            <span class="c1"># Convert the float sampling frequency to a Timedelta format</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sampling_frequency</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">sampling_frequency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">sampling_frequency</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+            <span class="n">resample_obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">sampling_frequency</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">aggregations</span><span class="p">:</span>
+                <span class="n">resample_obj</span> <span class="o">=</span> <span class="n">resample_obj</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">resample_obj</span>
+
+        <span class="k">def</span> <span class="nf">_definition_factory</span><span class="p">(</span><span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RawDataValueDefinition</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+                <span class="n">column</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2"> resampled with </span><span class="si">{</span><span class="n">aggregations</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">partial</span><span class="p">(</span><span class="n">_resample</span><span class="p">,</span> <span class="n">sampling_frequency</span><span class="o">=</span><span class="n">freq</span><span class="p">),</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_resampled&quot;</span><span class="p">,</span>
+            <span class="p">[</span><span class="n">_definition_factory</span><span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">],</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Upsample">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.Upsample">[docs]</a>
+<span class="k">class</span> <span class="nc">Upsample</span><span class="p">(</span><span class="n">Apply</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Upsample a time-based raw data set to a specific sampling frequency.</span>
+
+<span class="sd">    The upsampling creates a new raw data set which is an upsampled version</span>
+<span class="sd">    of the original data set identified by data_set_id. The upsampled data</span>
+<span class="sd">    set is accessible via the new_data_set_id which is a concatenation of the</span>
+<span class="sd">    original data_set_id and a suffix ``_upsampled``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    interpolation_method</span>
+<span class="sd">        Interpolation technique to use to fill NaN values. It should be a</span>
+<span class="sd">         method that is also accepted by :meth:`pandas.DataFrame.interpolate`.</span>
+<span class="sd">    freq</span>
+<span class="sd">        The frequency to upsample to. See also</span>
+<span class="sd">        :meth:`pandas.DataFrame.resample` for details.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Upsample.get_new_data_set_id">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.Upsample.get_new_data_set_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_new_data_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Overwrite new_data_set_id.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_data_set_ids</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">_upsampled&quot;</span>  <span class="c1"># type: ignore</span></div>
+
+
+<div class="viewcode-block" id="Upsample.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.Upsample.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interpolation_method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">freq</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_upsample</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">sampling_frequency</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Upsample a dataframe to a given sampling frequency.&quot;&quot;&quot;</span>
+            <span class="c1"># Convert the float sampling frequency to a Timedelta format</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sampling_frequency</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">sampling_frequency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">sampling_frequency</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+            <span class="n">resample_obj</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">sampling_frequency</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">resample_obj</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">interpolation_method</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">_upsample</span><span class="p">,</span> <span class="n">method_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;sampling_frequency&quot;</span><span class="p">:</span> <span class="n">freq</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractAverageSignalEnergy">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.ExtractAverageSignalEnergy">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractAverageSignalEnergy</span><span class="p">(</span><span class="n">NotEmptyDataSetAssertionMixin</span><span class="p">,</span> <span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;An average signal energy extraction step.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sensor</span>
+<span class="sd">        The type of sensor on which the extraction is to be performed.</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id on which the extraction is to be performed.</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns onto which the signal energy is to be computed.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`~dispel.processing.level.LevelFilter` to determine the</span>
+<span class="sd">        levels to be transformed. If no filter is provided, all levels will be</span>
+<span class="sd">        transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`~dispel.processing.level.LevelFilter` for convenience.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractAverageSignalEnergy.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.ExtractAverageSignalEnergy.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">sensor</span><span class="p">:</span> <span class="n">SensorModality</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_average_signal</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">columns</span><span class="p">],</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">_average_signal</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;average </span><span class="si">{</span><span class="n">sensor</span><span class="si">}</span><span class="s2"> energy&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sensor</span><span class="o">.</span><span class="n">abbr</span><span class="si">}</span><span class="s2">_sig_ene&quot;</span><span class="p">),</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;The average </span><span class="si">{</span><span class="n">sensor</span><span class="si">}</span><span class="s2"> energy of the &quot;</span>
+                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span><span class="si">}</span><span class="s1"> columns of the signal.&#39;</span><span class="p">,</span>
+                <span class="n">unit</span><span class="o">=</span><span class="n">SENSOR_UNIT</span><span class="p">[</span><span class="n">sensor</span><span class="o">.</span><span class="n">abbr</span><span class="p">],</span>
+            <span class="p">),</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractPowerSpectrumMeasures">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.ExtractPowerSpectrumMeasures">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractPowerSpectrumMeasures</span><span class="p">(</span><span class="n">NotEmptyDataSetAssertionMixin</span><span class="p">,</span> <span class="n">ExtractMultipleStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A measure extraction processing step for power spectrum measures.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sensor</span>
+<span class="sd">        The type of sensor on which the extraction is to be performed.</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id on which the extraction is to be performed.</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns onto which the power spectrum measures are to be extracted.</span>
+<span class="sd">    lower_bound</span>
+<span class="sd">        The lower bound of frequencies below which the signal is filtered.</span>
+<span class="sd">    upper_bound</span>
+<span class="sd">        The higher bound of frequencies above which the signal is filtered.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`~dispel.processing.level.LevelFilter` to determine the</span>
+<span class="sd">        levels to be transformed. If no filter is provided, all levels will be</span>
+<span class="sd">        transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`~dispel.processing.level.LevelFilter` for convenience.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractPowerSpectrumMeasures.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.ExtractPowerSpectrumMeasures.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">sensor</span><span class="p">:</span> <span class="n">SensorModality</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">lower_bound</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">upper_bound</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">unit</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">atomic_functions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">partial</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span> <span class="n">lowcut</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">,</span> <span class="n">highcut</span><span class="o">=</span><span class="n">upper_bound</span><span class="p">),</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="s2">&quot;ene&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The power spectrum energy summed between the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;frequencies (</span><span class="si">{</span><span class="n">lower_bound</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">upper_bound</span><span class="si">}</span><span class="s2">) &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;of the </span><span class="se">{{</span><span class="s2">axis</span><span class="se">}}</span><span class="s2"> axis for the </span><span class="si">{</span><span class="n">sensor</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;signal.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span>
+                <span class="s2">&quot;outcome_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;99ef9a8d-a925-4eb0-9e80-be58cd4a9ac9&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">peak</span><span class="p">,</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;peak&quot;</span><span class="p">,</span> <span class="s2">&quot;peak&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;The frequency at which the power spectrum of &quot;</span>
+                <span class="s2">&quot;the </span><span class="si">{axis}</span><span class="s2"> axis reaches its maximum value for &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;the </span><span class="si">{</span><span class="n">sensor</span><span class="si">}</span><span class="s2"> signal.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;Hz&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;outcome_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;87512c93-3a5b-4c9e-9575-fd9ed19649ca&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">entropy</span><span class="p">,</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;entropy&quot;</span><span class="p">,</span> <span class="s2">&quot;ent&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The power spectrum entropy of the </span><span class="si">{axis}</span><span class="s2"> axis &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;for the </span><span class="si">{</span><span class="n">sensor</span><span class="si">}</span><span class="s2"> signal.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span>
+                <span class="s2">&quot;outcome_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;6726bb5a-8084-49f5-a53e-6a28a8f27695&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">amplitude</span><span class="p">,</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;amplitude&quot;</span><span class="p">,</span> <span class="s2">&quot;amp&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The power spectrum amplitude (i.e. the maximum&quot;</span>
+                <span class="s2">&quot; value) of the </span><span class="si">{axis}</span><span class="s2"> axis for the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sensor</span><span class="si">}</span><span class="s2"> signal.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span>
+                <span class="s2">&quot;outcome_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;bde2c1f9-abf7-41e7-91f8-e0ddddf34a5c&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">]</span>
+
+        <span class="k">def</span> <span class="nf">_function_factory</span><span class="p">(</span><span class="n">atomic_function</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+                <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">atomic_function</span><span class="p">[</span><span class="s2">&quot;func&quot;</span><span class="p">](</span><span class="n">x</span><span class="p">[</span><span class="n">axis</span><span class="p">]),</span>
+                <span class="n">description</span><span class="o">=</span><span class="n">atomic_function</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">),</span>
+                <span class="n">unit</span><span class="o">=</span><span class="n">atomic_function</span><span class="p">[</span><span class="s2">&quot;unit&quot;</span><span class="p">],</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sensor</span><span class="si">}</span><span class="s1"> power spectrum </span><span class="si">{</span><span class="n">atomic_function</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s1">&#39;</span>
+                    <span class="sa">f</span><span class="s2">&quot; axis&quot;</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sensor</span><span class="o">.</span><span class="n">abbr</span><span class="si">}</span><span class="s1">_ps_</span><span class="si">{</span><span class="n">atomic_function</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abbr</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+
+        <span class="n">functions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">_function_factory</span><span class="p">(</span><span class="n">atomic_function</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">atomic_function</span> <span class="ow">in</span> <span class="n">atomic_functions</span>
+            <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">columns</span>
+        <span class="p">]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">functions</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span><span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">),</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ComputeGravityRotationMatrices">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.ComputeGravityRotationMatrices">[docs]</a>
+<span class="k">class</span> <span class="nc">ComputeGravityRotationMatrices</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute a series of rotation matrices to align sensors to gravity.</span>
+
+<span class="sd">    This transformation step creates a series of rotation matrices based on the</span>
+<span class="sd">    gravity information contained in the accelerometer sensor. This allows to</span>
+<span class="sd">    rotate other sensors on a desired orientation related to gravity. This is</span>
+<span class="sd">    in particular of interest if we want to measure physical interactions with</span>
+<span class="sd">    devices around the plane perpendicular to gravity.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    target_gravity</span>
+<span class="sd">        The target gravity vector, e.g. ``(-1, 0, 0)`` to create rotation</span>
+<span class="sd">        matrices that rotate the x-axis of a device onto gravity.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`~dispel.processing.level.LevelFilter` to determine the</span>
+<span class="sd">        levels to be transformed. If no filter is provided, all levels will be</span>
+<span class="sd">        transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`~dispel.processing.level.LevelFilter` for convenience.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ComputeGravityRotationMatrices.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.ComputeGravityRotationMatrices.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_gravity</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_transform_function</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">compute_rotation_matrices_quaternion</span><span class="p">(</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">GRAVITY_COLUMNS</span><span class="p">],</span> <span class="n">target_gravity</span>
+            <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">_transform_function</span><span class="p">,</span>
+            <span class="s2">&quot;gravity_rotation_matrices&quot;</span><span class="p">,</span>
+            <span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;rotation_matrix&quot;</span><span class="p">,</span> <span class="s2">&quot;Rotation Matrix&quot;</span><span class="p">)],</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RotateSensorWithGravityRotationMatrices">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.RotateSensorWithGravityRotationMatrices">[docs]</a>
+<span class="k">class</span> <span class="nc">RotateSensorWithGravityRotationMatrices</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Apply a series of rotation matrices to a sensor.</span>
+
+<span class="sd">    This is a complementary step to :class:`ComputeGravityRotationMatrices` and</span>
+<span class="sd">    applies the rotation matrices to the specified sensor.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The id of the sensor data set to be rotated.</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns of the sensor data set to be considered in the rotation.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`~dispel.processing.level.LevelFilter` to determine the</span>
+<span class="sd">        levels to be transformed. If no filter is provided, all levels will be</span>
+<span class="sd">        transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`~dispel.processing.level.LevelFilter` for convenience.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Assuming you want to rotate the gyroscope vector onto gravity you can</span>
+<span class="sd">    achieve this by chaining the following steps:</span>
+
+<span class="sd">    .. doctest:: processing</span>
+
+<span class="sd">        &gt;&gt;&gt; from dispel.data.raw import DEFAULT_COLUMNS</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.processing import process</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.providers.generic.sensor import (</span>
+<span class="sd">        ...     ComputeGravityRotationMatrices,</span>
+<span class="sd">        ...     RotateSensorWithGravityRotationMatrices</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &gt;&gt;&gt; cols = DEFAULT_COLUMNS</span>
+<span class="sd">        &gt;&gt;&gt; steps = [</span>
+<span class="sd">        ...     ComputeGravityRotationMatrices(&#39;accelerometer&#39;, (-1, 0, 0)),</span>
+<span class="sd">        ...     RotateSensorWithGravityRotationMatrices(&#39;gyroscope&#39;, cols)</span>
+<span class="sd">        ... ]</span>
+<span class="sd">        &gt;&gt;&gt; _ = process(reading, steps)  # doctest: +SKIP</span>
+
+<span class="sd">    The results of the roation are available in the raw data set with the id</span>
+<span class="sd">    ``&lt;data_set_id&gt;_rotated``:</span>
+
+<span class="sd">    .. doctest:: processing</span>
+<span class="sd">        :options: +NORMALIZE_WHITESPACE</span>
+
+<span class="sd">        &gt;&gt;&gt; level = reading.get_level(level_id)  # doctest: +SKIP</span>
+<span class="sd">        &gt;&gt;&gt; level.get_raw_data_set(&#39;gyroscope&#39;).data.head()  # doctest: +SKIP</span>
+<span class="sd">                  x         y         z                      ts</span>
+<span class="sd">        0  0.035728 -0.021515  0.014879 2020-05-04 17:31:38.574</span>
+<span class="sd">        1 -0.012046  0.005010 -0.009029 2020-05-04 17:31:38.625</span>
+<span class="sd">        2  0.006779  0.000761 -0.003253 2020-05-04 17:31:38.680</span>
+<span class="sd">        3  0.032636 -0.020272 -0.021915 2020-05-04 17:31:38.729</span>
+<span class="sd">        4  0.007495 -0.014061  0.012886 2020-05-04 17:31:38.779</span>
+<span class="sd">        &gt;&gt;&gt; level.get_raw_data_set(</span>
+<span class="sd">        ...     &#39;gyroscope_rotated&#39;</span>
+<span class="sd">        ... ).data.head()  # doctest: +SKIP</span>
+<span class="sd">                  x         y         z</span>
+<span class="sd">        0 -0.002309 -0.042509 -0.012182</span>
+<span class="sd">        1 -0.003754  0.014983  0.003624</span>
+<span class="sd">        2 -0.002237 -0.002116 -0.006901</span>
+<span class="sd">        3 -0.030461 -0.021654 -0.023656</span>
+<span class="sd">        4  0.001203 -0.019580  0.005924</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RotateSensorWithGravityRotationMatrices.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.RotateSensorWithGravityRotationMatrices.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_transform_function</span><span class="p">(</span>
+            <span class="n">sensor_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">matrices</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">apply_rotation_matrices</span><span class="p">(</span>
+                <span class="n">matrices</span><span class="p">[</span><span class="s2">&quot;rotation_matrix&quot;</span><span class="p">],</span> <span class="n">sensor_df</span><span class="p">[</span><span class="n">columns</span><span class="p">]</span>
+            <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_definition_factory</span><span class="p">(</span><span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RawDataValueDefinition</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2"> rotated&quot;</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">data_set_id</span><span class="p">,</span> <span class="s2">&quot;gravity_rotation_matrices&quot;</span><span class="p">],</span>
+            <span class="n">_transform_function</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_rotated&quot;</span><span class="p">,</span>
+            <span class="p">[</span><span class="n">_definition_factory</span><span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">],</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformUserAcceleration">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.TransformUserAcceleration">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformUserAcceleration</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Format accelerometer data to ADS format if not already the case.</span>
+
+<span class="sd">    Prior to formatting, linear acceleration and gravity are decoupled</span>
+<span class="sd">    from acceleration.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`dispel.processing.level.LevelFilter` to determine the</span>
+<span class="sd">        levels to be transformed. If no filter is provided, all levels will be</span>
+<span class="sd">        transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`~dispel.processing.level.LevelFilter` for convenience.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;accelerometer&quot;</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;acc&quot;</span>
+
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;userAcceleration</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;Linear Acceleration along the </span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2"> axis.&quot;</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="s2">&quot;XYZ&quot;</span>
+        <span class="p">]</span>
+        <span class="o">+</span> <span class="p">[</span>
+            <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;gravity</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;gravity component along the </span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2"> axis.&quot;</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="s2">&quot;XYZ&quot;</span>
+        <span class="p">]</span>
+        <span class="o">+</span> <span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="s2">&quot;time index&quot;</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="TransformUserAcceleration.add_gravity">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.TransformUserAcceleration.add_gravity">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">add_gravity</span><span class="p">(</span>
+        <span class="n">accelerometer</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">gravity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Format gravity data to ADS format.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">gravity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]</span>
+            <span class="n">raw_acc</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="s2">&quot;raw_accelerometer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">accelerometer</span> <span class="o">=</span> <span class="n">raw_acc</span>
+            <span class="k">if</span> <span class="n">level</span><span class="o">.</span><span class="n">has_raw_data_set</span><span class="p">(</span><span class="s2">&quot;attitude&quot;</span><span class="p">):</span>
+                <span class="n">ori</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="s2">&quot;attitude&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+                <span class="n">ori_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]</span>
+                <span class="n">lin_accelerometer</span><span class="p">,</span> <span class="n">gravity</span> <span class="o">=</span> <span class="n">remove_gravity_component_ori</span><span class="p">(</span>
+                    <span class="n">accelerometer</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">ori</span><span class="p">[</span><span class="n">ori_cols</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+                <span class="p">)</span>
+                <span class="n">lin_accelerometer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lin_accelerometer</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+                <span class="n">gravity</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">gravity</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lin_accelerometer</span><span class="p">,</span> <span class="n">gravity</span> <span class="o">=</span> <span class="n">remove_gravity_component</span><span class="p">(</span>
+                    <span class="n">accelerometer</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
+                <span class="p">)</span>
+
+            <span class="n">res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;userAccelerationX&quot;</span><span class="p">:</span> <span class="n">lin_accelerometer</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;userAccelerationY&quot;</span><span class="p">:</span> <span class="n">lin_accelerometer</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;userAccelerationZ&quot;</span><span class="p">:</span> <span class="n">lin_accelerometer</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">],</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+            <span class="n">res</span><span class="p">[</span><span class="s2">&quot;gravityX&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gravity</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+            <span class="n">res</span><span class="p">[</span><span class="s2">&quot;gravityY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gravity</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+            <span class="n">res</span><span class="p">[</span><span class="s2">&quot;gravityZ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gravity</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span>
+            <span class="n">res</span><span class="p">[</span><span class="s2">&quot;ts&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accelerometer</span><span class="p">[</span><span class="s2">&quot;ts&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Merging on the timestamps vs. on the indexes</span>
+            <span class="n">acc_renamed</span> <span class="o">=</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                <span class="n">mapper</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="s2">&quot;userAccelerationX&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="s2">&quot;userAccelerationY&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="s2">&quot;userAccelerationZ&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">gravity_renamed</span> <span class="o">=</span> <span class="n">gravity</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                <span class="n">mapper</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="s2">&quot;gravityX&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="s2">&quot;gravityY&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="s2">&quot;gravityZ&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">)</span>
+            <span class="n">merged</span> <span class="o">=</span> <span class="n">acc_renamed</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">gravity_renamed</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+            <span class="n">merged</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)</span>
+            <span class="n">merged_sorted</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+            <span class="n">merged_sorted_interpolated</span> <span class="o">=</span> <span class="n">merged_sorted</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+                <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">limit_direction</span><span class="o">=</span><span class="s2">&quot;both&quot;</span>
+            <span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">merged_sorted_interpolated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">acc_renamed</span><span class="o">.</span><span class="n">ts</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_reformat</span><span class="p">(</span><span class="n">accelerometer</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">target_cols</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sensor</span><span class="si">}{</span><span class="n">axis</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;userAcceleration&quot;</span><span class="p">,</span> <span class="s2">&quot;gravity&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="s2">&quot;XYZ&quot;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">target_cols</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">accelerometer</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">TransformUserAcceleration</span><span class="o">.</span><span class="n">add_gravity</span><span class="p">(</span>
+                    <span class="n">accelerometer</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="s2">&quot;gravity&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="c1"># Happens in BDH pinch</span>
+                <span class="k">return</span> <span class="n">TransformUserAcceleration</span><span class="o">.</span><span class="n">add_gravity</span><span class="p">(</span><span class="n">accelerometer</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">accelerometer</span></div>
+
+
+
+<div class="viewcode-block" id="TransformGyroscope">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.TransformGyroscope">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformGyroscope</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Format gyroscope data to ADS format if not already the case.</span>
+
+<span class="sd">    On ADS format, the gyroscope is synchronized with the accelerometer. Here</span>
+<span class="sd">    we make sure gyroscope is synchronized with the acc data set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`dispel.processing.level.LevelFilter` to determine the</span>
+<span class="sd">        levels to be transformed. If no filter is provided, all levels will be</span>
+<span class="sd">        transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`~dispel.processing.level.LevelFilter` for convenience.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;acc&quot;</span><span class="p">,</span> <span class="s2">&quot;gyroscope&quot;</span><span class="p">]</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;gyroscope&quot;</span>
+
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="n">axis</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Rotation speed along the </span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2"> axis.&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="s2">&quot;xyz&quot;</span>
+    <span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="s2">&quot;time index&quot;</span><span class="p">)]</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_synchronize_gyroscope</span><span class="p">(</span>
+        <span class="n">accelerometer</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">gyroscope</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="n">BDHReading</span><span class="p">):</span>
+            <span class="c1"># Merging on the timestamps vs. on the indexes</span>
+            <span class="n">acc_renamed</span> <span class="o">=</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                <span class="n">mapper</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="s2">&quot;userAccelerationX&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="s2">&quot;userAccelerationY&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="s2">&quot;userAccelerationZ&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge_asof</span><span class="p">(</span><span class="n">acc_renamed</span><span class="p">,</span> <span class="n">gyroscope</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)[</span>
+                <span class="p">[</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]</span>
+            <span class="p">]</span>
+        <span class="k">return</span> <span class="n">gyroscope</span></div>
+
+
+
+<div class="viewcode-block" id="EuclideanNorm">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.EuclideanNorm">[docs]</a>
+<span class="k">class</span> <span class="nc">EuclideanNorm</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute euclidean norm of the specified columns of a raw data set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id of the data set on which the method is to be applied</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns to be considered during the method application.</span>
+<span class="sd">    drop_nan</span>
+<span class="sd">        ```True`` if NaN values are to be dropped after transformation.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`dispel.processing.level.LevelFilter` to determine the</span>
+<span class="sd">        levels to be transformed. If no filter is provided, all levels will be</span>
+<span class="sd">        transformed. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">        :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them</span>
+<span class="sd">        to a :class:`dispel.processing.level.LevelIdFilter` for convenience.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EuclideanNorm.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.EuclideanNorm.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">drop_nan</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span> <span class="ow">or</span> <span class="n">DEFAULT_COLUMNS</span>
+
+        <span class="k">def</span> <span class="nf">_transform_function</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">euclidean_norm</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">columns</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">drop_nan</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">res</span>
+
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;norm&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;euclidean_norm computed on </span><span class="si">{</span><span class="n">columns</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">_transform_function</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_euclidean_norm&quot;</span><span class="p">,</span>
+            <span class="p">[</span><span class="n">definition</span><span class="p">],</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AddGravityAndScale">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.AddGravityAndScale">[docs]</a>
+<span class="k">class</span> <span class="nc">AddGravityAndScale</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add gravity to userAcceleration and scale to m/s^2.</span>
+
+<span class="sd">    The step expects a unique data set id for `data_set_ids` pointing to a</span>
+<span class="sd">    data frame containing both acceleration and gravity with a</span>
+<span class="sd">    :class:`pandas.DatetimeIndex` index.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;acceleration_</span><span class="si">{</span><span class="n">ax</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;acceleration_</span><span class="si">{</span><span class="n">ax</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">DEFAULT_COLUMNS</span>
+    <span class="p">]</span>
+
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">acc</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">DEFAULT_COLUMNS</span><span class="p">):</span>
+            <span class="n">acc</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;acceleration_</span><span class="si">{</span><span class="n">ax</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">ACCELEROMETER_COLUMNS</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="n">GRAVITY_COLUMNS</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">acc</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">*</span> <span class="n">GRAVITY_CONSTANT</span>
+
+<div class="viewcode-block" id="AddGravityAndScale.get_new_data_set_id">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.AddGravityAndScale.get_new_data_set_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_new_data_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Overwrite new_data_set_id.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_ids</span><span class="si">}</span><span class="s2">_g&quot;</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformFindZeroCrossings">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.TransformFindZeroCrossings">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformFindZeroCrossings</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find zero crossings in the signal.</span>
+
+<span class="sd">    To find the zeros, the function identifies the sign change in the signal by</span>
+<span class="sd">    differentiating `data &gt; 0`.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    column</span>
+<span class="sd">        The column to be used to find the zero crossings in the data set</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    column</span>
+<span class="sd">        See :data:FindZeroCrossings.column`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">column</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="n">definitions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;zero_crossings&quot;</span><span class="p">,</span> <span class="s2">&quot;Zero-crossings of the signal.&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="TransformFindZeroCrossings.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.sensor.html#dispel.providers.generic.sensor.TransformFindZeroCrossings.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">column</span> <span class="o">=</span> <span class="n">column</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">column</span></div>
+
+
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_find_zero_crossings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">find_zero_crossings</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">column</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

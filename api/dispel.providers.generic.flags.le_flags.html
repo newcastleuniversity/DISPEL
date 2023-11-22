@@ -1,0 +1,1327 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.generic.flags.le_flags module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.generic.flags.le_flags';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.generic.flags.ue_flags module" href="dispel.providers.generic.flags.ue_flags.html" />
+    <link rel="prev" title="dispel.providers.generic.flags.generic module" href="dispel.providers.generic.flags.generic.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.generic.flags.html" class="nav-link">dispel.providers.generic.flags package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.generic.flags.le_flags">
+<span id="dispel-providers-generic-flags-le-flags-module"></span><h1>dispel.providers.generic.flags.le_flags module<a class="headerlink" href="#module-dispel.providers.generic.flags.le_flags" title="Link to this heading">#</a></h1>
+<p>A module to store the lower extremity (le) related flags.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.END_POSTURAL_ADJUSTMENT">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">END_POSTURAL_ADJUSTMENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.END_POSTURAL_ADJUSTMENT" title="Link to this definition">#</a></dt>
+<dd><p>Time of end of postural adjustment in seconds.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">ExcessiveMotionFlagger</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#ExcessiveMotionFlagger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep" title="dispel.processing.level.FlagLevelStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagLevelStep</span></code></a></p>
+<p>Flag minimum length of valid recording without excessive motion.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.acceptance_threshold">
+<span class="sig-name descname"><span class="pre">acceptance_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.acceptance_threshold" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.flag_severity">
+<span class="sig-name descname"><span class="pre">flag_severity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><span class="pre">FlagSeverity</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.flag_severity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.flag_type">
+<span class="sig-name descname"><span class="pre">flag_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><span class="pre">FlagType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.flag_type" title="Link to this definition">#</a></dt>
+<dd><p>The type of the flag</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.start_time" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.ExcessiveTurns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">ExcessiveTurns</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#ExcessiveTurns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.ExcessiveTurns" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep" title="dispel.processing.level.FlagLevelStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagLevelStep</span></code></a></p>
+<p>Flag record with at least a pre-specified number of turns per minute.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.ExcessiveTurns.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acceptance_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#ExcessiveTurns.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.ExcessiveTurns.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>acceptance_threshold</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.ExcessiveTurns.flag_severity">
+<span class="sig-name descname"><span class="pre">flag_severity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><span class="pre">FlagSeverity</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.ExcessiveTurns.flag_severity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.ExcessiveTurns.flag_type">
+<span class="sig-name descname"><span class="pre">flag_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><span class="pre">FlagType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.ExcessiveTurns.flag_type" title="Link to this definition">#</a></dt>
+<dd><p>The type of the flag</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">FlagAdjustmentNonBeltSBT</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#FlagAdjustmentNonBeltSBT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected" title="dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonBeltPostAdjustmentDetected</span></code></a></p>
+<p>Flag SBT records with non-belt post-adjustment period.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT.acceptance_threshold">
+<span class="sig-name descname"><span class="pre">acceptance_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT.acceptance_threshold" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT.placements">
+<span class="sig-name descname"><span class="pre">placements</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT.placements" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagNonBeltSBT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">FlagNonBeltSBT</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#FlagNonBeltSBT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagNonBeltSBT" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected" title="dispel.providers.generic.flags.le_flags.NonBeltDetected"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonBeltDetected</span></code></a></p>
+<p>Flag SBT records with non-belt period greater than threshold.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagNonBeltSBT.acceptance_threshold">
+<span class="sig-name descname"><span class="pre">acceptance_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagNonBeltSBT.acceptance_threshold" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagNonBeltSBT.placements">
+<span class="sig-name descname"><span class="pre">placements</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagNonBeltSBT.placements" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">FlagPostAdjustExcessiveMotion</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#FlagPostAdjustExcessiveMotion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger" title="dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExcessiveMotionFlagger</span></code></a></p>
+<p>Flag minimum length of valid recording without excessive motion.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#FlagPostAdjustExcessiveMotion.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.flag_name">
+<span class="sig-name descname"><span class="pre">flag_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AV</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Excessive</span> <span class="pre">Motion</span> <span class="pre">Detected</span> <span class="pre">during</span> <span class="pre">Stabilisation</span> <span class="pre">(excessive_motion)</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.flag_name" title="Link to this definition">#</a></dt>
+<dd><p>The name of the flag</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.reason">
+<span class="sig-name descname"><span class="pre">reason</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{excessive_motion_portion}%</span> <span class="pre">excessive</span> <span class="pre">motion</span> <span class="pre">portion</span> <span class="pre">detected</span> <span class="pre">(exceeds</span> <span class="pre">{acceptance_threshold}%</span> <span class="pre">accepted)'</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.reason" title="Link to this definition">#</a></dt>
+<dd><p>The detailed reason of the flag</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">FlagStabilisationExcessiveMotion</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#FlagStabilisationExcessiveMotion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger" title="dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExcessiveMotionFlagger</span></code></a></p>
+<p>Flag minimum length of valid recording without excessive motion.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#FlagStabilisationExcessiveMotion.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.flag_name">
+<span class="sig-name descname"><span class="pre">flag_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AV</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Excessive</span> <span class="pre">Motion</span> <span class="pre">Detected</span> <span class="pre">Post-adjustment</span> <span class="pre">(excessive_post_adjustment_motion)</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.flag_name" title="Link to this definition">#</a></dt>
+<dd><p>The name of the flag</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.reason">
+<span class="sig-name descname"><span class="pre">reason</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{excessive_motion_portion:.1f}%</span> <span class="pre">excessive</span> <span class="pre">motion</span> <span class="pre">post-adjustment</span> <span class="pre">portion</span> <span class="pre">detected</span> <span class="pre">(exceeds</span> <span class="pre">{acceptance_threshold}%</span> <span class="pre">accepted)'</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.reason" title="Link to this definition">#</a></dt>
+<dd><p>The detailed reason of the flag</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">LargeTurnsPerMinute</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#LargeTurnsPerMinute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>Extract rate of large turns used in rectilinear walking bout detection.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.data_set_ids">
+<span class="sig-name descname"><span class="pre">data_set_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['gyroscope_ts_rotated_resampled_butterworth_low_pass_filter_x_turns',</span> <span class="pre">'accelerometer']</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>An iterable of data sets to be being processed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.large_turns_per_min">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">large_turns_per_min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">turns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#LargeTurnsPerMinute.large_turns_per_min"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.large_turns_per_min" title="Link to this definition">#</a></dt>
+<dd><p>Compute number of large turns per minute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>turns</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>acc</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.MAX_FRACTION_EXCESSIVE_MOTION">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">MAX_FRACTION_EXCESSIVE_MOTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.MAX_FRACTION_EXCESSIVE_MOTION" title="Link to this definition">#</a></dt>
+<dd><p>The maximum fraction of excessive motion over the total duration of
+the assessment.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.MAX_GAIT_PERC_NOT_IN_BELT">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">MAX_GAIT_PERC_NOT_IN_BELT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.MAX_GAIT_PERC_NOT_IN_BELT" title="Link to this definition">#</a></dt>
+<dd><p>Maximum percentage allowed not in belt for Gait.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.MAX_PERC_NOT_MOVING">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">MAX_PERC_NOT_MOVING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.MAX_PERC_NOT_MOVING" title="Link to this definition">#</a></dt>
+<dd><p>Maximum percentage of level duration allowed not moving.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.MAX_PERC_NOT_RECTILINEAR_BELT_WALK">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">MAX_PERC_NOT_RECTILINEAR_BELT_WALK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.MAX_PERC_NOT_RECTILINEAR_BELT_WALK" title="Link to this definition">#</a></dt>
+<dd><p>Maximum percentage of level duration allowed not rectilinear on-belt walking.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.MAX_SBT_PERC_NOT_IN_BELT">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">MAX_SBT_PERC_NOT_IN_BELT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.MAX_SBT_PERC_NOT_IN_BELT" title="Link to this definition">#</a></dt>
+<dd><p>Maximum percentage allowed not in belt for SBT assessment.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.MAX_TURNS_PER_MIN">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">MAX_TURNS_PER_MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.MAX_TURNS_PER_MIN" title="Link to this definition">#</a></dt>
+<dd><p>Maximum number of turns per minute allowed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NoMovementDetected">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">NoMovementDetected</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NoMovementDetected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NoMovementDetected" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep" title="dispel.processing.level.FlagLevelStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagLevelStep</span></code></a></p>
+<p>Flag record with at least a pre-specified percentage of non-movement.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NoMovementDetected.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acceptance_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NoMovementDetected.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NoMovementDetected.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>acceptance_threshold</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NoMovementDetected.flag_severity">
+<span class="sig-name descname"><span class="pre">flag_severity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><span class="pre">FlagSeverity</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NoMovementDetected.flag_severity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NoMovementDetected.flag_type">
+<span class="sig-name descname"><span class="pre">flag_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><span class="pre">FlagType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NoMovementDetected.flag_type" title="Link to this definition">#</a></dt>
+<dd><p>The type of the flag</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NoTurnsDetected">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">NoTurnsDetected</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NoTurnsDetected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep" title="dispel.processing.level.FlagLevelStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagLevelStep</span></code></a></p>
+<p>Flag record with no turns present.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NoTurnsDetected.flag_name">
+<span class="sig-name descname"><span class="pre">flag_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AV</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">No</span> <span class="pre">turns</span> <span class="pre">detected.</span> <span class="pre">(no_turns_detected)</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected.flag_name" title="Link to this definition">#</a></dt>
+<dd><p>The name of the flag</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NoTurnsDetected.flag_severity">
+<span class="sig-name descname"><span class="pre">flag_severity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><span class="pre">FlagSeverity</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected.flag_severity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NoTurnsDetected.flag_type">
+<span class="sig-name descname"><span class="pre">flag_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><span class="pre">FlagType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected.flag_type" title="Link to this definition">#</a></dt>
+<dd><p>The type of the flag</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NoTurnsDetected.reason">
+<span class="sig-name descname"><span class="pre">reason</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'At</span> <span class="pre">least</span> <span class="pre">1</span> <span class="pre">turn</span> <span class="pre">should</span> <span class="pre">be</span> <span class="pre">detected.'</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected.reason" title="Link to this definition">#</a></dt>
+<dd><p>The detailed reason of the flag</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltDetected">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">NonBeltDetected</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NonBeltDetected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep" title="dispel.processing.level.FlagLevelStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagLevelStep</span></code></a></p>
+<p>Flag record with non-belt period greater than threshold.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltDetected.flag_name">
+<span class="sig-name descname"><span class="pre">flag_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AV</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{non_belt_portion}%</span> <span class="pre">was</span> <span class="pre">detected</span> <span class="pre">at</span> <span class="pre">{placements}</span> <span class="pre">(more</span> <span class="pre">than</span> <span class="pre">the{acceptance_threshold}%</span> <span class="pre">accepted)</span> <span class="pre">(non_belt_greater_than_{acceptance_threshold}_perc)</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected.flag_name" title="Link to this definition">#</a></dt>
+<dd><p>The name of the flag</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltDetected.flag_severity">
+<span class="sig-name descname"><span class="pre">flag_severity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><span class="pre">FlagSeverity</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected.flag_severity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltDetected.flag_type">
+<span class="sig-name descname"><span class="pre">flag_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><span class="pre">FlagType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected.flag_type" title="Link to this definition">#</a></dt>
+<dd><p>The type of the flag</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltDetected.reason">
+<span class="sig-name descname"><span class="pre">reason</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{non_belt_portion}%</span> <span class="pre">non-belt</span> <span class="pre">portion</span> <span class="pre">detected</span> <span class="pre">at</span> <span class="pre">{placements}</span> <span class="pre">(exceeds</span> <span class="pre">{acceptance_threshold}%</span> <span class="pre">accepted)'</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected.reason" title="Link to this definition">#</a></dt>
+<dd><p>The detailed reason of the flag</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltDetected6MWT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">NonBeltDetected6MWT</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NonBeltDetected6MWT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected6MWT" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected" title="dispel.providers.generic.flags.le_flags.NonBeltDetected"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonBeltDetected</span></code></a></p>
+<p>Flag gait record with non-belt period greater than threshold.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltDetected6MWT.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acceptance_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NonBeltDetected6MWT.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected6MWT.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>acceptance_threshold</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">NonBeltDetectedUTT</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NonBeltDetectedUTT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected" title="dispel.providers.generic.flags.le_flags.NonBeltDetected"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonBeltDetected</span></code></a></p>
+<p>Flag gait record with non-belt period greater than threshold.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acceptance_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NonBeltDetectedUTT.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>acceptance_threshold</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">NonBeltPostAdjustmentDetected</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NonBeltPostAdjustmentDetected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep" title="dispel.processing.level.FlagLevelStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagLevelStep</span></code></a></p>
+<p>Flag record with non-belt period greater than threshold.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.flag_name">
+<span class="sig-name descname"><span class="pre">flag_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AV</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{non_belt_portion}%</span> <span class="pre">(more</span> <span class="pre">than</span> <span class="pre">the</span> <span class="pre">{acceptance_threshold}%</span> <span class="pre">accepted)</span> <span class="pre">was</span> <span class="pre">detected</span> <span class="pre">post-adjustment</span> <span class="pre">at</span> <span class="pre">{placements}</span> <span class="pre">(non_belt_post_adjustment_greater_than_{acceptance_threshold}_perc)</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.flag_name" title="Link to this definition">#</a></dt>
+<dd><p>The name of the flag</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.flag_severity">
+<span class="sig-name descname"><span class="pre">flag_severity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><span class="pre">FlagSeverity</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.flag_severity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.flag_type">
+<span class="sig-name descname"><span class="pre">flag_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><span class="pre">FlagType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.flag_type" title="Link to this definition">#</a></dt>
+<dd><p>The type of the flag</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.reason">
+<span class="sig-name descname"><span class="pre">reason</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{non_belt_portion}%</span> <span class="pre">non-belt</span> <span class="pre">post-adjustment</span> <span class="pre">portion</span> <span class="pre">detected</span> <span class="pre">at</span> <span class="pre">{placements}</span> <span class="pre">(exceeds</span> <span class="pre">{acceptance_threshold}%</span> <span class="pre">accepted)'</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.reason" title="Link to this definition">#</a></dt>
+<dd><p>The detailed reason of the flag</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">NotEnoughRectilinearWalkingOnBeltDetected</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NotEnoughRectilinearWalkingOnBeltDetected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep" title="dispel.processing.level.FlagLevelStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagLevelStep</span></code></a></p>
+<p>Flag record containing less than a % of rectilinear walking on belt.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acceptance_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#NotEnoughRectilinearWalkingOnBeltDetected.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>acceptance_threshold</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.flag_severity">
+<span class="sig-name descname"><span class="pre">flag_severity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><span class="pre">FlagSeverity</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.flag_severity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.flag_type">
+<span class="sig-name descname"><span class="pre">flag_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><span class="pre">FlagType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.flag_type" title="Link to this definition">#</a></dt>
+<dd><p>The type of the flag</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PercentageNotMoving">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">PercentageNotMoving</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#PercentageNotMoving"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PercentageNotMoving" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>Extract percentage of recording where no walking is detected..</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PercentageNotMoving.data_set_ids">
+<span class="sig-name descname"><span class="pre">data_set_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['movement_bouts']</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PercentageNotMoving.data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>An iterable of data sets to be being processed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PercentageNotMoving.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PercentageNotMoving.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PercentageNotMoving.no_movement_period">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">no_movement_period</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_walking</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#PercentageNotMoving.no_movement_period"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PercentageNotMoving.no_movement_period" title="Link to this definition">#</a></dt>
+<dd><p>Compute percentage of non moving portion of the signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df_walking</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PercentageNotWalking">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">PercentageNotWalking</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#PercentageNotWalking"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PercentageNotWalking" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>Extract percentage of recording where no walking is detected..</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PercentageNotWalking.data_set_ids">
+<span class="sig-name descname"><span class="pre">data_set_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['walking_placement_no_turn_bouts']</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PercentageNotWalking.data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>An iterable of data sets to be being processed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PercentageNotWalking.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PercentageNotWalking.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PercentageNotWalking.no_walking_period">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">no_walking_period</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_walking</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#PercentageNotWalking.no_walking_period"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PercentageNotWalking.no_walking_period" title="Link to this definition">#</a></dt>
+<dd><p>Compute percentage of non walking portion of the signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df_walking</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PlacementClassificationGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">PlacementClassificationGroup</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#PlacementClassificationGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PlacementClassificationGroup" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>A ProcessingStepGroup concatenating PlacementClassificationGroup steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.PlacementClassificationGroup.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.sensor.Resample</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.sensor.EuclideanNorm</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.activity.placement.ClassifyPlacement</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.PlacementClassificationGroup.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.START_TIME_ASSESSMENT">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">START_TIME_ASSESSMENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.START_TIME_ASSESSMENT" title="Link to this definition">#</a></dt>
+<dd><p>Time of start of the assessment in seconds.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.TruncateFirst5Turns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">TruncateFirst5Turns</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#TruncateFirst5Turns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.TruncateFirst5Turns" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Truncate UTT placement_bouts to keep only the first 5 turns.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.TruncateFirst5Turns.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">start_time</span> <span class="pre">(start</span> <span class="pre">time)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">end_time</span> <span class="pre">(end</span> <span class="pre">time)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">duration</span> <span class="pre">(duration)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">placement</span> <span class="pre">(detected</span> <span class="pre">placement)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.TruncateFirst5Turns.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.TruncateFirst5Turns.get_new_data_set_id">
+<span class="sig-name descname"><span class="pre">get_new_data_set_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#TruncateFirst5Turns.get_new_data_set_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.TruncateFirst5Turns.get_new_data_set_id" title="Link to this definition">#</a></dt>
+<dd><p>Suffix new_data_set_id with current data_set_id &amp; first_5_turns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.perc_excessive_motion">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">perc_excessive_motion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_set_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'flagged_motion'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thrs_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#perc_excessive_motion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.perc_excessive_motion" title="Link to this definition">#</a></dt>
+<dd><p>Return excessive motion percentage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>data_set_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p></li>
+<li><p><strong>thrs_start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.perc_non_belt">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">perc_non_belt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_set_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'placement_bouts'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#perc_non_belt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.perc_non_belt" title="Link to this definition">#</a></dt>
+<dd><p>Return non belt percentage and placements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>data_set_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p></li>
+<li><p><strong>start_time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.percentage_off_bouts">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">percentage_off_bouts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#percentage_off_bouts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.percentage_off_bouts" title="Link to this definition">#</a></dt>
+<dd><p>Compute percentage of non-moving portion of the signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.truncate_first_5_turns">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">truncate_first_5_turns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turns</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#truncate_first_5_turns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.truncate_first_5_turns" title="Link to this definition">#</a></dt>
+<dd><p>Truncate the data frame to keep first 5 turns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>turns</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.truncate_placement">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">truncate_placement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_placement</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_start</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#truncate_placement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.truncate_placement" title="Link to this definition">#</a></dt>
+<dd><p>Truncate <cite>placement_bouts</cite> before threshold_start.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df_placement</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>threshold_start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.flags.le_flags.truncate_signal">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.flags.le_flags.</span></span><span class="sig-name descname"><span class="pre">truncate_signal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thrs_start</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/flags/le_flags.html#truncate_signal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.flags.le_flags.truncate_signal" title="Link to this definition">#</a></dt>
+<dd><p>Truncate <cite>signal</cite> before threshold_start.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signal</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>thrs_start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.generic.flags.generic.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.generic.flags.generic module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.generic.flags.ue_flags.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.generic.flags.ue_flags module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.END_POSTURAL_ADJUSTMENT"><code class="docutils literal notranslate"><span class="pre">END_POSTURAL_ADJUSTMENT</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger"><code class="docutils literal notranslate"><span class="pre">ExcessiveMotionFlagger</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.acceptance_threshold"><code class="docutils literal notranslate"><span class="pre">ExcessiveMotionFlagger.acceptance_threshold</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.flag_severity"><code class="docutils literal notranslate"><span class="pre">ExcessiveMotionFlagger.flag_severity</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.flag_type"><code class="docutils literal notranslate"><span class="pre">ExcessiveMotionFlagger.flag_type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger.start_time"><code class="docutils literal notranslate"><span class="pre">ExcessiveMotionFlagger.start_time</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.ExcessiveTurns"><code class="docutils literal notranslate"><span class="pre">ExcessiveTurns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.ExcessiveTurns.__init__"><code class="docutils literal notranslate"><span class="pre">ExcessiveTurns.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.ExcessiveTurns.flag_severity"><code class="docutils literal notranslate"><span class="pre">ExcessiveTurns.flag_severity</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.ExcessiveTurns.flag_type"><code class="docutils literal notranslate"><span class="pre">ExcessiveTurns.flag_type</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT"><code class="docutils literal notranslate"><span class="pre">FlagAdjustmentNonBeltSBT</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT.acceptance_threshold"><code class="docutils literal notranslate"><span class="pre">FlagAdjustmentNonBeltSBT.acceptance_threshold</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT.placements"><code class="docutils literal notranslate"><span class="pre">FlagAdjustmentNonBeltSBT.placements</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagNonBeltSBT"><code class="docutils literal notranslate"><span class="pre">FlagNonBeltSBT</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagNonBeltSBT.acceptance_threshold"><code class="docutils literal notranslate"><span class="pre">FlagNonBeltSBT.acceptance_threshold</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagNonBeltSBT.placements"><code class="docutils literal notranslate"><span class="pre">FlagNonBeltSBT.placements</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion"><code class="docutils literal notranslate"><span class="pre">FlagPostAdjustExcessiveMotion</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.__init__"><code class="docutils literal notranslate"><span class="pre">FlagPostAdjustExcessiveMotion.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.flag_name"><code class="docutils literal notranslate"><span class="pre">FlagPostAdjustExcessiveMotion.flag_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.reason"><code class="docutils literal notranslate"><span class="pre">FlagPostAdjustExcessiveMotion.reason</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion"><code class="docutils literal notranslate"><span class="pre">FlagStabilisationExcessiveMotion</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.__init__"><code class="docutils literal notranslate"><span class="pre">FlagStabilisationExcessiveMotion.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.flag_name"><code class="docutils literal notranslate"><span class="pre">FlagStabilisationExcessiveMotion.flag_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.reason"><code class="docutils literal notranslate"><span class="pre">FlagStabilisationExcessiveMotion.reason</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute"><code class="docutils literal notranslate"><span class="pre">LargeTurnsPerMinute</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.data_set_ids"><code class="docutils literal notranslate"><span class="pre">LargeTurnsPerMinute.data_set_ids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.definition"><code class="docutils literal notranslate"><span class="pre">LargeTurnsPerMinute.definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.large_turns_per_min"><code class="docutils literal notranslate"><span class="pre">LargeTurnsPerMinute.large_turns_per_min()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.MAX_FRACTION_EXCESSIVE_MOTION"><code class="docutils literal notranslate"><span class="pre">MAX_FRACTION_EXCESSIVE_MOTION</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.MAX_GAIT_PERC_NOT_IN_BELT"><code class="docutils literal notranslate"><span class="pre">MAX_GAIT_PERC_NOT_IN_BELT</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.MAX_PERC_NOT_MOVING"><code class="docutils literal notranslate"><span class="pre">MAX_PERC_NOT_MOVING</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.MAX_PERC_NOT_RECTILINEAR_BELT_WALK"><code class="docutils literal notranslate"><span class="pre">MAX_PERC_NOT_RECTILINEAR_BELT_WALK</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.MAX_SBT_PERC_NOT_IN_BELT"><code class="docutils literal notranslate"><span class="pre">MAX_SBT_PERC_NOT_IN_BELT</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.MAX_TURNS_PER_MIN"><code class="docutils literal notranslate"><span class="pre">MAX_TURNS_PER_MIN</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NoMovementDetected"><code class="docutils literal notranslate"><span class="pre">NoMovementDetected</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NoMovementDetected.__init__"><code class="docutils literal notranslate"><span class="pre">NoMovementDetected.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NoMovementDetected.flag_severity"><code class="docutils literal notranslate"><span class="pre">NoMovementDetected.flag_severity</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NoMovementDetected.flag_type"><code class="docutils literal notranslate"><span class="pre">NoMovementDetected.flag_type</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected"><code class="docutils literal notranslate"><span class="pre">NoTurnsDetected</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected.flag_name"><code class="docutils literal notranslate"><span class="pre">NoTurnsDetected.flag_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected.flag_severity"><code class="docutils literal notranslate"><span class="pre">NoTurnsDetected.flag_severity</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected.flag_type"><code class="docutils literal notranslate"><span class="pre">NoTurnsDetected.flag_type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NoTurnsDetected.reason"><code class="docutils literal notranslate"><span class="pre">NoTurnsDetected.reason</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected"><code class="docutils literal notranslate"><span class="pre">NonBeltDetected</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected.flag_name"><code class="docutils literal notranslate"><span class="pre">NonBeltDetected.flag_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected.flag_severity"><code class="docutils literal notranslate"><span class="pre">NonBeltDetected.flag_severity</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected.flag_type"><code class="docutils literal notranslate"><span class="pre">NonBeltDetected.flag_type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected.reason"><code class="docutils literal notranslate"><span class="pre">NonBeltDetected.reason</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected6MWT"><code class="docutils literal notranslate"><span class="pre">NonBeltDetected6MWT</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltDetected6MWT.__init__"><code class="docutils literal notranslate"><span class="pre">NonBeltDetected6MWT.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT"><code class="docutils literal notranslate"><span class="pre">NonBeltDetectedUTT</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT.__init__"><code class="docutils literal notranslate"><span class="pre">NonBeltDetectedUTT.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected"><code class="docutils literal notranslate"><span class="pre">NonBeltPostAdjustmentDetected</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.flag_name"><code class="docutils literal notranslate"><span class="pre">NonBeltPostAdjustmentDetected.flag_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.flag_severity"><code class="docutils literal notranslate"><span class="pre">NonBeltPostAdjustmentDetected.flag_severity</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.flag_type"><code class="docutils literal notranslate"><span class="pre">NonBeltPostAdjustmentDetected.flag_type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected.reason"><code class="docutils literal notranslate"><span class="pre">NonBeltPostAdjustmentDetected.reason</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected"><code class="docutils literal notranslate"><span class="pre">NotEnoughRectilinearWalkingOnBeltDetected</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.__init__"><code class="docutils literal notranslate"><span class="pre">NotEnoughRectilinearWalkingOnBeltDetected.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.flag_severity"><code class="docutils literal notranslate"><span class="pre">NotEnoughRectilinearWalkingOnBeltDetected.flag_severity</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.flag_type"><code class="docutils literal notranslate"><span class="pre">NotEnoughRectilinearWalkingOnBeltDetected.flag_type</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PercentageNotMoving"><code class="docutils literal notranslate"><span class="pre">PercentageNotMoving</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PercentageNotMoving.data_set_ids"><code class="docutils literal notranslate"><span class="pre">PercentageNotMoving.data_set_ids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PercentageNotMoving.definition"><code class="docutils literal notranslate"><span class="pre">PercentageNotMoving.definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PercentageNotMoving.no_movement_period"><code class="docutils literal notranslate"><span class="pre">PercentageNotMoving.no_movement_period()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PercentageNotWalking"><code class="docutils literal notranslate"><span class="pre">PercentageNotWalking</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PercentageNotWalking.data_set_ids"><code class="docutils literal notranslate"><span class="pre">PercentageNotWalking.data_set_ids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PercentageNotWalking.definition"><code class="docutils literal notranslate"><span class="pre">PercentageNotWalking.definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PercentageNotWalking.no_walking_period"><code class="docutils literal notranslate"><span class="pre">PercentageNotWalking.no_walking_period()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PlacementClassificationGroup"><code class="docutils literal notranslate"><span class="pre">PlacementClassificationGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.PlacementClassificationGroup.steps"><code class="docutils literal notranslate"><span class="pre">PlacementClassificationGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.START_TIME_ASSESSMENT"><code class="docutils literal notranslate"><span class="pre">START_TIME_ASSESSMENT</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.TruncateFirst5Turns"><code class="docutils literal notranslate"><span class="pre">TruncateFirst5Turns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.TruncateFirst5Turns.definitions"><code class="docutils literal notranslate"><span class="pre">TruncateFirst5Turns.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.TruncateFirst5Turns.get_new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TruncateFirst5Turns.get_new_data_set_id()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.perc_excessive_motion"><code class="docutils literal notranslate"><span class="pre">perc_excessive_motion()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.perc_non_belt"><code class="docutils literal notranslate"><span class="pre">perc_non_belt()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.percentage_off_bouts"><code class="docutils literal notranslate"><span class="pre">percentage_off_bouts()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.truncate_first_5_turns"><code class="docutils literal notranslate"><span class="pre">truncate_first_5_turns()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.truncate_placement"><code class="docutils literal notranslate"><span class="pre">truncate_placement()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.flags.le_flags.truncate_signal"><code class="docutils literal notranslate"><span class="pre">truncate_signal()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.generic.flags.le_flags.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

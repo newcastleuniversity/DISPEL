@@ -1,0 +1,1228 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.generic.tasks.draw.shapes module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.generic.tasks.draw.shapes';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.generic.tasks.draw.steps module" href="dispel.providers.generic.tasks.draw.steps.html" />
+    <link rel="prev" title="dispel.providers.generic.tasks.draw.modalities module" href="dispel.providers.generic.tasks.draw.modalities.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.generic.tasks.draw.html" class="nav-link">dispel.providers.generic.tasks.draw package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.generic.tasks.draw.shapes">
+<span id="dispel-providers-generic-tasks-draw-shapes-module"></span><h1>dispel.providers.generic.tasks.draw.shapes module<a class="headerlink" href="#module-dispel.providers.generic.tasks.draw.shapes" title="Link to this heading">#</a></h1>
+<p>A module dedicated to format user and reference trajectories.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.AREA_RADIUS">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">AREA_RADIUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">40</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.AREA_RADIUS" title="Link to this definition">#</a></dt>
+<dd><p>The radius of a circle centered in the first reference point of a drawing
+shape that  define the valid starting area.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.CTR">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">CTR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(319,</span> <span class="pre">639)</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.CTR" title="Link to this definition">#</a></dt>
+<dd><p>Corner definitions, i.e. CTL for Corner Top Left, …</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.HALF_SCREEN_X">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">HALF_SCREEN_X</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">187.5</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.HALF_SCREEN_X" title="Link to this definition">#</a></dt>
+<dd><p>Define the half of the x axis of the screen.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.HALF_SCREEN_Y">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">HALF_SCREEN_Y</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">406</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.HALF_SCREEN_Y" title="Link to this definition">#</a></dt>
+<dd><p>Define the half of the y axis of the screen.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.SHAPE_BOUNDARIES">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">SHAPE_BOUNDARIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((56,</span> <span class="pre">319),</span> <span class="pre">(123,</span> <span class="pre">639))</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.SHAPE_BOUNDARIES" title="Link to this definition">#</a></dt>
+<dd><p>Define boundaries of a square-like shape in order to detect if a user point
+is inside or outside the shape in the screen x and y axes coordinates.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.SHAPE_SIZE">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">SHAPE_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'ADS':</span> <span class="pre">{'infinity':</span> <span class="pre">1000,</span> <span class="pre">'spiral':</span> <span class="pre">779,</span> <span class="pre">'square_clock':</span> <span class="pre">1038,</span> <span class="pre">'square_counter_clock':</span> <span class="pre">1038},</span> <span class="pre">'BDH':</span> <span class="pre">{'infinity':</span> <span class="pre">641,</span> <span class="pre">'spiral':</span> <span class="pre">607,</span> <span class="pre">'square_clock':</span> <span class="pre">124,</span> <span class="pre">'square_counter_clock':</span> <span class="pre">124}}</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.SHAPE_SIZE" title="Link to this definition">#</a></dt>
+<dd><p>Define the number of points of the reference shape.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.bottom_left">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">bottom_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#bottom_left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.bottom_left" title="Link to this definition">#</a></dt>
+<dd><p>Return the bottom left part of a square-like shape (user/reference).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame containing at least a trajectory
+(x and y coordinates) of a square-like shape.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bottom left part of the square-like shape given as input.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.bottom_right">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">bottom_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#bottom_right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.bottom_right" title="Link to this definition">#</a></dt>
+<dd><p>Return the bottom right part of a square-like shape (user/reference).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame containing at least a trajectory
+(x and y coordinates) of a square-like shape.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bottom right part of the square-like shape given as input.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.check_is_in_area">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">check_is_in_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_ref</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#check_is_in_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.check_is_in_area" title="Link to this definition">#</a></dt>
+<dd><p>Return if the user points are within a specific area.</p>
+<p>The area is considered as the circle of 40 pts radius with x_ref and y_ref
+as its center.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ser</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A pandas series corresponding to a user point.</p></li>
+<li><p><strong>x_ref</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – The x coordinate of the reference trajectory to be considered as the
+center of the area.</p></li>
+<li><p><strong>y_ref</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – The y coordinate of the reference trajectory to be considered as the
+center of the area.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Whether the point is in the starting area or not.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.extract_distance_axis_sc">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">extract_distance_axis_sc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#extract_distance_axis_sc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.extract_distance_axis_sc" title="Link to this definition">#</a></dt>
+<dd><p>Extract the distance between draws and reference perpendicular axes.</p>
+<p>This function is specific to the <cite>square_clock</cite> shapes.</p>
+<p>This distance is defined as follow: the distance between a user trajectory
+and an encountered perpendicular axis corresponding to a 90° trajectory
+change of the square-like shape. If the user overshoots
+(goes outside the square) the 90° trajectory change, the distance will be
+the perpendicular projection of the most distant user point to the axis and
+the axis itself. If the user never overshoot (stay within the square) the
+axis, the considered distance will be the perpendicular projection of the
+closest user point of the axis and the axis itself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame composed of at least the user trajectory to
+consider.</p></li>
+<li><p><strong>ref</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame composed of at least the reference trajectory to
+consider.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple composed of the extracted aforementioned distances (for the 3
+axes).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.extract_distance_axis_scc">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">extract_distance_axis_scc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#extract_distance_axis_scc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.extract_distance_axis_scc" title="Link to this definition">#</a></dt>
+<dd><p>Extract the distance between draws and reference perpendicular axes.</p>
+<p>This function is specific to the <cite>square_counter_clock</cite> shapes.</p>
+<p>This distance is defined as follow: the distance between a user trajectory
+and an encountered perpendicular axis corresponding to a 90° trajectory
+change of the square-like shape. If the user overshoots
+(goes outside the square) the 90° trajectory change, the distance will be
+the perpendicular projection of the most distant user point to the axis and
+the axis itself. If the user never overshoot (stay within the square) the
+axis, the considered distance will be the perpendicular projection of the
+closest user point of the axis and the axis itself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame composed of at least the user trajectory to
+consider.</p></li>
+<li><p><strong>ref</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame composed of at least the reference trajectory to
+consider.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple composed of the extracted aforementioned distances (for the 3
+axes).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.flag_valid_area">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">flag_valid_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#flag_valid_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.flag_valid_area" title="Link to this definition">#</a></dt>
+<dd><p>Add a series named <cite>isValidArea</cite> to determine if a point is valid.</p>
+<p>e.g. if a point or a Series of point belongs to a draw which has triggered
+the starting area condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame with user trajectory, touch actions
+and timestamps of touch events.</p></li>
+<li><p><strong>reference</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The reference trajectory corresponding to the current shape.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The same pandas data frame given as input plus a pandas Series
+<cite>isValidArea</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If no <cite>down</cite> touch action is detected.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.generate_infinity">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">generate_infinity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#generate_infinity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.generate_infinity" title="Link to this definition">#</a></dt>
+<dd><p>Generate the ‘infinity’ level (shape).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)"><em>ndarray</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.generate_model_coordinates">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">generate_model_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#generate_model_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.generate_model_coordinates" title="Link to this definition">#</a></dt>
+<dd><p>Generate the model coordinates for a given level name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level_name</strong> – The name of the desired level.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The 2 dimension numpy array corresponding to the desired level (shape).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)">numpy.ndarray</a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If the given level name is unrecognized.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.generate_spiral">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">generate_spiral</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#generate_spiral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.generate_spiral" title="Link to this definition">#</a></dt>
+<dd><p>Generate the ‘spiral’ level (shape).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)"><em>ndarray</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.generate_square_clock">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">generate_square_clock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#generate_square_clock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.generate_square_clock" title="Link to this definition">#</a></dt>
+<dd><p>Generate the ‘squareClock’ level (shape).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)"><em>ndarray</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.generate_square_counter_clock">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">generate_square_counter_clock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#generate_square_counter_clock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.generate_square_counter_clock" title="Link to this definition">#</a></dt>
+<dd><p>Generate the ‘squareCounterClock’ level (shape).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)"><em>ndarray</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.get_max_dist_corner">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">get_max_dist_corner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrib</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corner</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#get_max_dist_corner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.get_max_dist_corner" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve the Fréchet distance within a corner zone.</p>
+<p>The Fréchet distance is the maximum of the minimum distance between the
+user and the reference trajectories based on the dynamic time warping
+attributions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The user trajectory user for computing the DTW attributions.</p></li>
+<li><p><strong>attrib</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The related dynamic time warping attributions for the considered
+reference trajectory with the user trajectory of interest.</p></li>
+<li><p><strong>ref</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The reference trajectory</p></li>
+<li><p><strong>corner</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em>]</em>) – The corner zone of the reference trajectory to consider.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum of the minimum distances from DTW attributions within the
+considered corner zone.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.get_proper_level_to_model">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">get_proper_level_to_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#get_proper_level_to_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.get_proper_level_to_model" title="Link to this definition">#</a></dt>
+<dd><p>Extract the correct camel type key to explore the ‘screen’ data set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The desired level id to consider.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The corresponding level id in Camel type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.12)"><strong>KeyError</strong></a> – If the given identifier doesn’t match any level.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.get_reference_path">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">get_reference_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#get_reference_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.get_reference_path" title="Link to this definition">#</a></dt>
+<dd><p>Extract the reference trajectory x and y coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The desired level on which you want to compute model path.</p></li>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – The height in <cite>pts</cite> corresponding to the screen of the user’s
+smartphone.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas data frame composed of the reference trajectory x and y
+coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.get_segment_deceleration">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">get_segment_deceleration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#get_segment_deceleration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.get_segment_deceleration" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve the segment of the deceleration profile of a given shape.</p>
+<p>The aim of that is to compute intentional tremors for square-like shapes.
+Segments on which to compute intentional tremors have been determined by
+capturing the velocity profile of each shape against 50 Healthy Control
+Participants evaluations. For each shape, the segment
+is defined as model points where the mean velocity is comprised between 50%
+and 20% of the maximum of the velocity profile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – The level id on which to retrieve proper the deceleration profile of
+the shape.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The list of model path indexes to consider to build the signal to study
+intentional tremors.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#range" title="(in Python v3.12)">range</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.12)"><strong>KeyError</strong></a> – If passed level_id is not in segments.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.get_user_path">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">get_user_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#get_user_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.get_user_path" title="Link to this definition">#</a></dt>
+<dd><p>Extract user path coordinates, timestamps and touch actions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame corresponding to the ‘screen’ raw data set.</p></li>
+<li><p><strong>reference</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The reference trajectory corresponding to the current shape.</p></li>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – The height in <cite>pts</cite> corresponding to the screen of the user’s
+smartphone.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas data frame composed of user path coordinates, timestamps,
+touch actions and the valid or non valid flag.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.get_valid_path">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">get_valid_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#get_valid_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.get_valid_path" title="Link to this definition">#</a></dt>
+<dd><p>Keep only the valid trajectory of the user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The pandas data frame obtained via a
+<a class="reference internal" href="dispel.providers.generic.tasks.draw.touch.html#dispel.providers.generic.tasks.draw.touch.DrawShape" title="dispel.providers.generic.tasks.draw.touch.DrawShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">DrawShape</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The pandas data frame given in input but composed of only the valid
+user trajectory.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.get_valid_up_sampled_path">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">get_valid_up_sampled_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#get_valid_up_sampled_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.get_valid_up_sampled_path" title="Link to this definition">#</a></dt>
+<dd><p>Extract an up sampled user trajectory.</p>
+<p>It starts by filtering and keeping only the valid trajectory, then remove
+x and y potential duplicates (needed for the interpolation), and then apply
+the interpolation. It only returns a pandas data frame composed of x and y
+up sampled user coordinates, namely <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The pandas data frame obtained via a
+<a class="reference internal" href="dispel.providers.generic.tasks.draw.touch.html#dispel.providers.generic.tasks.draw.touch.DrawShape" title="dispel.providers.generic.tasks.draw.touch.DrawShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">DrawShape</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas data frame composed of valid up sampled user coordinates
+<code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.remove_overshoots">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">remove_overshoots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#remove_overshoots"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.remove_overshoots" title="Link to this definition">#</a></dt>
+<dd><p>Format data to remove overshoots from user trajectory.</p>
+<p>Set the first user point as the closest point from the head of the
+reference trajectory and set the last user point as the closest point from
+the tail of the reference trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame corresponding to the user data coming from an
+aggregated valid touch of a
+<a class="reference internal" href="dispel.providers.generic.tasks.draw.touch.html#dispel.providers.generic.tasks.draw.touch.DrawShape" title="dispel.providers.generic.tasks.draw.touch.DrawShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">DrawShape</span></code></a>.</p></li>
+<li><p><strong>reference</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame corresponding to the reference trajectory coming
+from a <a class="reference internal" href="dispel.providers.generic.tasks.draw.touch.html#dispel.providers.generic.tasks.draw.touch.DrawShape" title="dispel.providers.generic.tasks.draw.touch.DrawShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">DrawShape</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The user data without overshoots (head and tail).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.remove_reference_head">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">remove_reference_head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#remove_reference_head"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.remove_reference_head" title="Link to this definition">#</a></dt>
+<dd><p>Remove the reference head if the first user point doesn’t match.</p>
+<p>The function removes the reference head when the reference point that is
+the closest to the first user point is different from the first reference
+point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame containing the user trajectory
+(with or without overshoot).</p></li>
+<li><p><strong>reference</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame containing the reference trajectory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The reference trajectory without the head if needed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.sc_corners_max_dist">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">sc_corners_max_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrib</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#sc_corners_max_dist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.sc_corners_max_dist" title="Link to this definition">#</a></dt>
+<dd><p>Compute maximum distance per corner zones.</p>
+<p>For square clock shapes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame composed of at least the user trajectory used for
+computing DTW attributions.</p></li>
+<li><p><strong>ref</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>attrib</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>ref</dt><dd><p>A pandas data frame composed of at least the reference trajectory.</p>
+</dd>
+<dt>attrib</dt><dd><p>The related dynamic time warping attributions for the considered
+reference trajectory with the user trajectory of interest.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple composed of the extracted aforementioned distances (for the 3
+related corners).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>ref</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>attrib</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.scc_corners_max_dist">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">scc_corners_max_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrib</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#scc_corners_max_dist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.scc_corners_max_dist" title="Link to this definition">#</a></dt>
+<dd><p>Compute maximum distance per corner zones.</p>
+<p>For square counter clock shapes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame composed of at least the user trajectory used for
+computing DTW attributions.</p></li>
+<li><p><strong>ref</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame composed of at least the reference trajectory.</p></li>
+<li><p><strong>attrib</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The related dynamic time warping attributions for the considered
+reference trajectory with the user trajectory of interest.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple composed of the extracted aforementioned distances (for the 3
+related corners).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.top_left">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">top_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#top_left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.top_left" title="Link to this definition">#</a></dt>
+<dd><p>Return the top left part of a square-like shape (user/reference).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame containing at least a trajectory
+(x and y coordinates) of a square-like shape.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The top left part of the square-like shape given as input.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.top_right">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">top_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#top_right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.top_right" title="Link to this definition">#</a></dt>
+<dd><p>Return the top right part of a square-like shape (user/reference).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame containing at least a trajectory
+(x and y coordinates) of a square-like shape.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The top right part of the square-like shape given as input.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.draw.shapes.up_sample_user_path">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.draw.shapes.</span></span><span class="sig-name descname"><span class="pre">up_sample_user_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">up_sampling_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/draw/shapes.html#up_sample_user_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.draw.shapes.up_sample_user_path" title="Link to this definition">#</a></dt>
+<dd><p>Compute an up-sampled Bezier curve for a given user trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A pandas data frame composed of the valid user trajectory and no
+duplicates.</p></li>
+<li><p><strong>up_sampling_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – The up sampling factor you want to apply.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas data frame composed of x and y up sampled user coordinates,
+namely <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.generic.tasks.draw.modalities.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.generic.tasks.draw.modalities module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.generic.tasks.draw.steps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.generic.tasks.draw.steps module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.AREA_RADIUS"><code class="docutils literal notranslate"><span class="pre">AREA_RADIUS</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.CTR"><code class="docutils literal notranslate"><span class="pre">CTR</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.HALF_SCREEN_X"><code class="docutils literal notranslate"><span class="pre">HALF_SCREEN_X</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.HALF_SCREEN_Y"><code class="docutils literal notranslate"><span class="pre">HALF_SCREEN_Y</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.SHAPE_BOUNDARIES"><code class="docutils literal notranslate"><span class="pre">SHAPE_BOUNDARIES</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.SHAPE_SIZE"><code class="docutils literal notranslate"><span class="pre">SHAPE_SIZE</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.bottom_left"><code class="docutils literal notranslate"><span class="pre">bottom_left()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.bottom_right"><code class="docutils literal notranslate"><span class="pre">bottom_right()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.check_is_in_area"><code class="docutils literal notranslate"><span class="pre">check_is_in_area()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.extract_distance_axis_sc"><code class="docutils literal notranslate"><span class="pre">extract_distance_axis_sc()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.extract_distance_axis_scc"><code class="docutils literal notranslate"><span class="pre">extract_distance_axis_scc()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.flag_valid_area"><code class="docutils literal notranslate"><span class="pre">flag_valid_area()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.generate_infinity"><code class="docutils literal notranslate"><span class="pre">generate_infinity()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.generate_model_coordinates"><code class="docutils literal notranslate"><span class="pre">generate_model_coordinates()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.generate_spiral"><code class="docutils literal notranslate"><span class="pre">generate_spiral()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.generate_square_clock"><code class="docutils literal notranslate"><span class="pre">generate_square_clock()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.generate_square_counter_clock"><code class="docutils literal notranslate"><span class="pre">generate_square_counter_clock()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.get_max_dist_corner"><code class="docutils literal notranslate"><span class="pre">get_max_dist_corner()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.get_proper_level_to_model"><code class="docutils literal notranslate"><span class="pre">get_proper_level_to_model()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.get_reference_path"><code class="docutils literal notranslate"><span class="pre">get_reference_path()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.get_segment_deceleration"><code class="docutils literal notranslate"><span class="pre">get_segment_deceleration()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.get_user_path"><code class="docutils literal notranslate"><span class="pre">get_user_path()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.get_valid_path"><code class="docutils literal notranslate"><span class="pre">get_valid_path()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.get_valid_up_sampled_path"><code class="docutils literal notranslate"><span class="pre">get_valid_up_sampled_path()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.remove_overshoots"><code class="docutils literal notranslate"><span class="pre">remove_overshoots()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.remove_reference_head"><code class="docutils literal notranslate"><span class="pre">remove_reference_head()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.sc_corners_max_dist"><code class="docutils literal notranslate"><span class="pre">sc_corners_max_dist()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.scc_corners_max_dist"><code class="docutils literal notranslate"><span class="pre">scc_corners_max_dist()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.top_left"><code class="docutils literal notranslate"><span class="pre">top_left()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.top_right"><code class="docutils literal notranslate"><span class="pre">top_right()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.draw.shapes.up_sample_user_path"><code class="docutils literal notranslate"><span class="pre">up_sample_user_path()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.generic.tasks.draw.shapes.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1232 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.generic.tasks.cps.modalities module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.generic.tasks.cps.modalities';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.generic.tasks.cps.steps module" href="dispel.providers.generic.tasks.cps.steps.html" />
+    <link rel="prev" title="dispel.providers.generic.tasks.cps package" href="dispel.providers.generic.tasks.cps.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.generic.tasks.cps.html" class="nav-link">dispel.providers.generic.tasks.cps package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.generic.tasks.cps.modalities">
+<span id="dispel-providers-generic-tasks-cps-modalities-module"></span><h1>dispel.providers.generic.tasks.cps.modalities module<a class="headerlink" href="#module-dispel.providers.generic.tasks.cps.modalities" title="Link to this heading">#</a></h1>
+<p>A module containing functionality to process/filter specific modalities.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSKeySet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">CPSKeySet</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#CPSKeySet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the key set modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSKeySet.KEY1">
+<span class="sig-name descname"><span class="pre">KEY1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet.KEY1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSKeySet.KEY2">
+<span class="sig-name descname"><span class="pre">KEY2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet.KEY2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSKeySet.KEY3">
+<span class="sig-name descname"><span class="pre">KEY3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet.KEY3" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSKeySet.RANDOM">
+<span class="sig-name descname"><span class="pre">RANDOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet.RANDOM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSLevel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">CPSLevel</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#CPSLevel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSLevel" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>An enum for CPS levels.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSLevel.DIGIT_TO_DIGIT">
+<span class="sig-name descname"><span class="pre">DIGIT_TO_DIGIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'digit_to_digit'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSLevel.DIGIT_TO_DIGIT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSLevel.SYMBOL_TO_DIGIT">
+<span class="sig-name descname"><span class="pre">SYMBOL_TO_DIGIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'symbol_to_digit'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSLevel.SYMBOL_TO_DIGIT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">CPSModalityFilter</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#CPSModalityFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilter</span></code></a></p>
+<p>Filter over levels, sequences, and key sets.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#CPSModalityFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.CPSMode" title="dispel.providers.generic.tasks.cps.modalities.CPSMode"><em>CPSMode</em></a>) – </p></li>
+<li><p><strong>sequence</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.CPSSequence" title="dispel.providers.generic.tasks.cps.modalities.CPSSequence"><em>CPSSequence</em></a>) – </p></li>
+<li><p><strong>key_set</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet" title="dispel.providers.generic.tasks.cps.modalities.CPSKeySet"><em>CPSKeySet</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#CPSModalityFilter.filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.filter" title="Link to this definition">#</a></dt>
+<dd><p>Filter for levels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>levels</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.12)"><em>Set</em></a>[<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.key_set_context_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">key_set_context_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.key_set_context_id" title="Link to this definition">#</a></dt>
+<dd><p>Return the proper key set context id.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.level_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">level_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.CPSLevel" title="dispel.providers.generic.tasks.cps.modalities.CPSLevel"><span class="pre">CPSLevel</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.level_id" title="Link to this definition">#</a></dt>
+<dd><p>Return the proper level id.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.repr">
+<span class="sig-name descname"><span class="pre">repr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#CPSModalityFilter.repr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.repr" title="Link to this definition">#</a></dt>
+<dd><p>Get representation of the filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.sequence_context_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sequence_context_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.sequence_context_id" title="Link to this definition">#</a></dt>
+<dd><p>Return the proper sequence context id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">CPSMode</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#CPSMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSMode" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the level modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSMode.DIGIT_TO_DIGIT">
+<span class="sig-name descname"><span class="pre">DIGIT_TO_DIGIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSMode.DIGIT_TO_DIGIT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSMode.SYMBOL_TO_DIGIT">
+<span class="sig-name descname"><span class="pre">SYMBOL_TO_DIGIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSMode.SYMBOL_TO_DIGIT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSSequence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">CPSSequence</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#CPSSequence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSSequence" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the sequence type.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSSequence.PRE_DEFINED">
+<span class="sig-name descname"><span class="pre">PRE_DEFINED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSSequence.PRE_DEFINED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.CPSSequence.RANDOM">
+<span class="sig-name descname"><span class="pre">RANDOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.CPSSequence.RANDOM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">DigitConfusionPairModality</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#DigitConfusionPairModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.PairModalityBase" title="dispel.providers.generic.tasks.cps.modalities.PairModalityBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PairModalityBase</span></code></a></p>
+<p>Enumerated digit confusions modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality.DIGIT_6_9">
+<span class="sig-name descname"><span class="pre">DIGIT_6_9</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality.DIGIT_6_9" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality.DIGIT_9_6">
+<span class="sig-name descname"><span class="pre">DIGIT_9_6</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality.DIGIT_9_6" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">DigitEnum</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#DigitEnum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant of the digits for the d2d phase.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_1">
+<span class="sig-name descname"><span class="pre">DIGIT_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_2">
+<span class="sig-name descname"><span class="pre">DIGIT_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_3">
+<span class="sig-name descname"><span class="pre">DIGIT_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_3" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_4">
+<span class="sig-name descname"><span class="pre">DIGIT_4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_4" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_5">
+<span class="sig-name descname"><span class="pre">DIGIT_5</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_5" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_6">
+<span class="sig-name descname"><span class="pre">DIGIT_6</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_6" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_7">
+<span class="sig-name descname"><span class="pre">DIGIT_7</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_7" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_8">
+<span class="sig-name descname"><span class="pre">DIGIT_8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_8" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_9">
+<span class="sig-name descname"><span class="pre">DIGIT_9</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_9" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.INTERACT_DURATION_VALIDATOR">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">INTERACT_DURATION_VALIDATOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RangeValidator:</span> <span class="pre">[0,</span> <span class="pre">10]&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.INTERACT_DURATION_VALIDATOR" title="Link to this definition">#</a></dt>
+<dd><p>The maximum time for the user to interact during an attempt of an upper task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.NBACKS">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">NBACKS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">range(1,</span> <span class="pre">4)</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.NBACKS" title="Link to this definition">#</a></dt>
+<dd><p>range of n-backs studied</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.PairModalityBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">PairModalityBase</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#PairModalityBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.PairModalityBase" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated pair modalities base.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.PairModalityBase.from_pair">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_pair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#PairModalityBase.from_pair"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.PairModalityBase.from_pair" title="Link to this definition">#</a></dt>
+<dd><p>Extract PairModality for a given pair of keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> (<a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><em>AVEnum</em></a>) – </p></li>
+<li><p><strong>right</strong> (<a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><em>AVEnum</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.PairModalityBase" title="dispel.providers.generic.tasks.cps.modalities.PairModalityBase"><em>PairModalityBase</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.RegressionMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">RegressionMode</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#RegressionMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the linear regression measures.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.RegressionMode.ALL_RESPONSES">
+<span class="sig-name descname"><span class="pre">ALL_RESPONSES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.ALL_RESPONSES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.RegressionMode.ONE_ANS_REM">
+<span class="sig-name descname"><span class="pre">ONE_ANS_REM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.ONE_ANS_REM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.RegressionMode.THREE_ANS_REM">
+<span class="sig-name descname"><span class="pre">THREE_ANS_REM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.THREE_ANS_REM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.RegressionMode.TWO_ANS_REM">
+<span class="sig-name descname"><span class="pre">TWO_ANS_REM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.TWO_ANS_REM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.RegressionMode.to_drop">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_drop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.to_drop" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of data points to be dropped in the regression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ResponsesModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">ResponsesModality</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#ResponsesModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ResponsesModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the specific selection modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ResponsesModality.CORRECT">
+<span class="sig-name descname"><span class="pre">CORRECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ResponsesModality.CORRECT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ResponsesModality.FIVE_FIRST">
+<span class="sig-name descname"><span class="pre">FIVE_FIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ResponsesModality.FIVE_FIRST" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ResponsesModality.FIVE_LAST">
+<span class="sig-name descname"><span class="pre">FIVE_LAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ResponsesModality.FIVE_LAST" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">SymbolConfusionPairModality</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#SymbolConfusionPairModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.PairModalityBase" title="dispel.providers.generic.tasks.cps.modalities.PairModalityBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PairModalityBase</span></code></a></p>
+<p>Enumerated symbol  confusions modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_2_7">
+<span class="sig-name descname"><span class="pre">SYMBOL_2_7</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_2_7" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_3_8">
+<span class="sig-name descname"><span class="pre">SYMBOL_3_8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_3_8" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_4_6">
+<span class="sig-name descname"><span class="pre">SYMBOL_4_6</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_4_6" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_6_4">
+<span class="sig-name descname"><span class="pre">SYMBOL_6_4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_6_4" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_7_2">
+<span class="sig-name descname"><span class="pre">SYMBOL_7_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_7_2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_8_3">
+<span class="sig-name descname"><span class="pre">SYMBOL_8_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_8_3" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">SymbolEnum</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#SymbolEnum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing symbol modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_1">
+<span class="sig-name descname"><span class="pre">SYMBOL_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_2">
+<span class="sig-name descname"><span class="pre">SYMBOL_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_3">
+<span class="sig-name descname"><span class="pre">SYMBOL_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_3" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_4">
+<span class="sig-name descname"><span class="pre">SYMBOL_4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_4" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_5">
+<span class="sig-name descname"><span class="pre">SYMBOL_5</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_5" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_6">
+<span class="sig-name descname"><span class="pre">SYMBOL_6</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_6" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_7">
+<span class="sig-name descname"><span class="pre">SYMBOL_7</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_7" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_8">
+<span class="sig-name descname"><span class="pre">SYMBOL_8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_8" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_9">
+<span class="sig-name descname"><span class="pre">SYMBOL_9</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_9" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymmetryModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">SymmetryModality</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#SymmetryModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the coupling modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymmetryModality.PAIRED">
+<span class="sig-name descname"><span class="pre">PAIRED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.PAIRED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymmetryModality.UNIQUE">
+<span class="sig-name descname"><span class="pre">UNIQUE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.UNIQUE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymmetryModality.get_pair_modality">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_pair_modality</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#SymmetryModality.get_pair_modality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.get_pair_modality" title="Link to this definition">#</a></dt>
+<dd><p>Get pair values from modality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.CPSMode" title="dispel.providers.generic.tasks.cps.modalities.CPSMode"><em>CPSMode</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a>[<a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum" title="dispel.providers.generic.tasks.cps.modalities.SymbolEnum"><em>SymbolEnum</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.SymmetryModality.get_unique_modality">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_unique_modality</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#SymmetryModality.get_unique_modality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.get_unique_modality" title="Link to this definition">#</a></dt>
+<dd><p>Get Unique values from modality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.CPSMode" title="dispel.providers.generic.tasks.cps.modalities.CPSMode"><em>CPSMode</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a>[<a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum" title="dispel.providers.generic.tasks.cps.modalities.SymbolEnum"><em>SymbolEnum</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.TOTAL_RESPONSES_VALIDATOR">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">TOTAL_RESPONSES_VALIDATOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RangeValidator:</span> <span class="pre">[0,</span> <span class="pre">120]&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.TOTAL_RESPONSES_VALIDATOR" title="Link to this definition">#</a></dt>
+<dd><p>Range validator for maximum total responses</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">ThirdsModality</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#ThirdsModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the specific set third modalities.</p>
+<p>The Konectom symbol-to-digit cognitive processing speed test is decomposed
+into three sets (first, second, third). The sets are computed based on the
+total duration of the level obtained from the context. The length of a set
+is defined as the total_duration / 3.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsModality.FIRST_THIRD">
+<span class="sig-name descname"><span class="pre">FIRST_THIRD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.FIRST_THIRD" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsModality.SECOND_LAST_THIRD">
+<span class="sig-name descname"><span class="pre">SECOND_LAST_THIRD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.SECOND_LAST_THIRD" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsModality.SECOND_THIRD">
+<span class="sig-name descname"><span class="pre">SECOND_THIRD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.SECOND_THIRD" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsModality.THIRD_THIRD">
+<span class="sig-name descname"><span class="pre">THIRD_THIRD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.THIRD_THIRD" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsModality.get_lower_upper">
+<span class="sig-name descname"><span class="pre">get_lower_upper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#ThirdsModality.get_lower_upper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.get_lower_upper" title="Link to this definition">#</a></dt>
+<dd><p>Get third boundaries from data set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.cps.modalities.</span></span><span class="sig-name descname"><span class="pre">ThirdsPairModality</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/cps/modalities.html#ThirdsPairModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.generic.tasks.cps.modalities.PairModalityBase" title="dispel.providers.generic.tasks.cps.modalities.PairModalityBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">PairModalityBase</span></code></a></p>
+<p>Enumerated comparisons between the different parts of the data set.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality.THIRD_2_1">
+<span class="sig-name descname"><span class="pre">THIRD_2_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality.THIRD_2_1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality.THIRD_3_1">
+<span class="sig-name descname"><span class="pre">THIRD_3_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality.THIRD_3_1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality.THIRD_3_2">
+<span class="sig-name descname"><span class="pre">THIRD_3_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality.THIRD_3_2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.generic.tasks.cps.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.generic.tasks.cps package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.generic.tasks.cps.steps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.generic.tasks.cps.steps module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet"><code class="docutils literal notranslate"><span class="pre">CPSKeySet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet.KEY1"><code class="docutils literal notranslate"><span class="pre">CPSKeySet.KEY1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet.KEY2"><code class="docutils literal notranslate"><span class="pre">CPSKeySet.KEY2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet.KEY3"><code class="docutils literal notranslate"><span class="pre">CPSKeySet.KEY3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSKeySet.RANDOM"><code class="docutils literal notranslate"><span class="pre">CPSKeySet.RANDOM</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSLevel"><code class="docutils literal notranslate"><span class="pre">CPSLevel</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSLevel.DIGIT_TO_DIGIT"><code class="docutils literal notranslate"><span class="pre">CPSLevel.DIGIT_TO_DIGIT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSLevel.SYMBOL_TO_DIGIT"><code class="docutils literal notranslate"><span class="pre">CPSLevel.SYMBOL_TO_DIGIT</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter"><code class="docutils literal notranslate"><span class="pre">CPSModalityFilter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.__init__"><code class="docutils literal notranslate"><span class="pre">CPSModalityFilter.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.filter"><code class="docutils literal notranslate"><span class="pre">CPSModalityFilter.filter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.key_set_context_id"><code class="docutils literal notranslate"><span class="pre">CPSModalityFilter.key_set_context_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.level_id"><code class="docutils literal notranslate"><span class="pre">CPSModalityFilter.level_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.repr"><code class="docutils literal notranslate"><span class="pre">CPSModalityFilter.repr()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.sequence_context_id"><code class="docutils literal notranslate"><span class="pre">CPSModalityFilter.sequence_context_id</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSMode"><code class="docutils literal notranslate"><span class="pre">CPSMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSMode.DIGIT_TO_DIGIT"><code class="docutils literal notranslate"><span class="pre">CPSMode.DIGIT_TO_DIGIT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSMode.SYMBOL_TO_DIGIT"><code class="docutils literal notranslate"><span class="pre">CPSMode.SYMBOL_TO_DIGIT</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSSequence"><code class="docutils literal notranslate"><span class="pre">CPSSequence</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSSequence.PRE_DEFINED"><code class="docutils literal notranslate"><span class="pre">CPSSequence.PRE_DEFINED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.CPSSequence.RANDOM"><code class="docutils literal notranslate"><span class="pre">CPSSequence.RANDOM</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality"><code class="docutils literal notranslate"><span class="pre">DigitConfusionPairModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality.DIGIT_6_9"><code class="docutils literal notranslate"><span class="pre">DigitConfusionPairModality.DIGIT_6_9</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality.DIGIT_9_6"><code class="docutils literal notranslate"><span class="pre">DigitConfusionPairModality.DIGIT_9_6</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum"><code class="docutils literal notranslate"><span class="pre">DigitEnum</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_1"><code class="docutils literal notranslate"><span class="pre">DigitEnum.DIGIT_1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_2"><code class="docutils literal notranslate"><span class="pre">DigitEnum.DIGIT_2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_3"><code class="docutils literal notranslate"><span class="pre">DigitEnum.DIGIT_3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_4"><code class="docutils literal notranslate"><span class="pre">DigitEnum.DIGIT_4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_5"><code class="docutils literal notranslate"><span class="pre">DigitEnum.DIGIT_5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_6"><code class="docutils literal notranslate"><span class="pre">DigitEnum.DIGIT_6</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_7"><code class="docutils literal notranslate"><span class="pre">DigitEnum.DIGIT_7</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_8"><code class="docutils literal notranslate"><span class="pre">DigitEnum.DIGIT_8</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.DigitEnum.DIGIT_9"><code class="docutils literal notranslate"><span class="pre">DigitEnum.DIGIT_9</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.INTERACT_DURATION_VALIDATOR"><code class="docutils literal notranslate"><span class="pre">INTERACT_DURATION_VALIDATOR</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.NBACKS"><code class="docutils literal notranslate"><span class="pre">NBACKS</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.PairModalityBase"><code class="docutils literal notranslate"><span class="pre">PairModalityBase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.PairModalityBase.from_pair"><code class="docutils literal notranslate"><span class="pre">PairModalityBase.from_pair()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode"><code class="docutils literal notranslate"><span class="pre">RegressionMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.ALL_RESPONSES"><code class="docutils literal notranslate"><span class="pre">RegressionMode.ALL_RESPONSES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.ONE_ANS_REM"><code class="docutils literal notranslate"><span class="pre">RegressionMode.ONE_ANS_REM</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.THREE_ANS_REM"><code class="docutils literal notranslate"><span class="pre">RegressionMode.THREE_ANS_REM</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.TWO_ANS_REM"><code class="docutils literal notranslate"><span class="pre">RegressionMode.TWO_ANS_REM</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.RegressionMode.to_drop"><code class="docutils literal notranslate"><span class="pre">RegressionMode.to_drop</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ResponsesModality"><code class="docutils literal notranslate"><span class="pre">ResponsesModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ResponsesModality.CORRECT"><code class="docutils literal notranslate"><span class="pre">ResponsesModality.CORRECT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ResponsesModality.FIVE_FIRST"><code class="docutils literal notranslate"><span class="pre">ResponsesModality.FIVE_FIRST</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ResponsesModality.FIVE_LAST"><code class="docutils literal notranslate"><span class="pre">ResponsesModality.FIVE_LAST</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality"><code class="docutils literal notranslate"><span class="pre">SymbolConfusionPairModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_2_7"><code class="docutils literal notranslate"><span class="pre">SymbolConfusionPairModality.SYMBOL_2_7</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_3_8"><code class="docutils literal notranslate"><span class="pre">SymbolConfusionPairModality.SYMBOL_3_8</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_4_6"><code class="docutils literal notranslate"><span class="pre">SymbolConfusionPairModality.SYMBOL_4_6</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_6_4"><code class="docutils literal notranslate"><span class="pre">SymbolConfusionPairModality.SYMBOL_6_4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_7_2"><code class="docutils literal notranslate"><span class="pre">SymbolConfusionPairModality.SYMBOL_7_2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality.SYMBOL_8_3"><code class="docutils literal notranslate"><span class="pre">SymbolConfusionPairModality.SYMBOL_8_3</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum"><code class="docutils literal notranslate"><span class="pre">SymbolEnum</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_1"><code class="docutils literal notranslate"><span class="pre">SymbolEnum.SYMBOL_1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_2"><code class="docutils literal notranslate"><span class="pre">SymbolEnum.SYMBOL_2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_3"><code class="docutils literal notranslate"><span class="pre">SymbolEnum.SYMBOL_3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_4"><code class="docutils literal notranslate"><span class="pre">SymbolEnum.SYMBOL_4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_5"><code class="docutils literal notranslate"><span class="pre">SymbolEnum.SYMBOL_5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_6"><code class="docutils literal notranslate"><span class="pre">SymbolEnum.SYMBOL_6</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_7"><code class="docutils literal notranslate"><span class="pre">SymbolEnum.SYMBOL_7</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_8"><code class="docutils literal notranslate"><span class="pre">SymbolEnum.SYMBOL_8</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymbolEnum.SYMBOL_9"><code class="docutils literal notranslate"><span class="pre">SymbolEnum.SYMBOL_9</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality"><code class="docutils literal notranslate"><span class="pre">SymmetryModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.PAIRED"><code class="docutils literal notranslate"><span class="pre">SymmetryModality.PAIRED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.UNIQUE"><code class="docutils literal notranslate"><span class="pre">SymmetryModality.UNIQUE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.get_pair_modality"><code class="docutils literal notranslate"><span class="pre">SymmetryModality.get_pair_modality()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.get_unique_modality"><code class="docutils literal notranslate"><span class="pre">SymmetryModality.get_unique_modality()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.TOTAL_RESPONSES_VALIDATOR"><code class="docutils literal notranslate"><span class="pre">TOTAL_RESPONSES_VALIDATOR</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality"><code class="docutils literal notranslate"><span class="pre">ThirdsModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.FIRST_THIRD"><code class="docutils literal notranslate"><span class="pre">ThirdsModality.FIRST_THIRD</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.SECOND_LAST_THIRD"><code class="docutils literal notranslate"><span class="pre">ThirdsModality.SECOND_LAST_THIRD</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.SECOND_THIRD"><code class="docutils literal notranslate"><span class="pre">ThirdsModality.SECOND_THIRD</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.THIRD_THIRD"><code class="docutils literal notranslate"><span class="pre">ThirdsModality.THIRD_THIRD</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.get_lower_upper"><code class="docutils literal notranslate"><span class="pre">ThirdsModality.get_lower_upper()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality"><code class="docutils literal notranslate"><span class="pre">ThirdsPairModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality.THIRD_2_1"><code class="docutils literal notranslate"><span class="pre">ThirdsPairModality.THIRD_2_1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality.THIRD_3_1"><code class="docutils literal notranslate"><span class="pre">ThirdsPairModality.THIRD_3_1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality.THIRD_3_2"><code class="docutils literal notranslate"><span class="pre">ThirdsPairModality.THIRD_3_2</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.generic.tasks.cps.modalities.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

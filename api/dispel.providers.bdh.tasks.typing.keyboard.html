@@ -1,0 +1,1211 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.bdh.tasks.typing.keyboard module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.bdh.tasks.typing.keyboard';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.bdh.tasks.typing.steps module" href="dispel.providers.bdh.tasks.typing.steps.html" />
+    <link rel="prev" title="dispel.providers.bdh.tasks.typing.const module" href="dispel.providers.bdh.tasks.typing.const.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.bdh.tasks.typing.html" class="nav-link">dispel.providers.bdh.tasks.typing package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.bdh.tasks.typing.keyboard">
+<span id="dispel-providers-bdh-tasks-typing-keyboard-module"></span><h1>dispel.providers.bdh.tasks.typing.keyboard module<a class="headerlink" href="#module-dispel.providers.bdh.tasks.typing.keyboard" title="Link to this heading">#</a></h1>
+<p>Keyboard functions to extract relevant properties for Typing.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.apply_similarity_ratio">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">apply_similarity_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submission_state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#apply_similarity_ratio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.apply_similarity_ratio" title="Link to this definition">#</a></dt>
+<dd><p>Apply similarity ratio.</p>
+<p>The similarity ratio is computed between the word being typed
+<code class="docutils literal notranslate"><span class="pre">displayed_input</span></code> and the word on screen <code class="docutils literal notranslate"><span class="pre">displayed_word</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>submission_state</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A data frame that contains the user state after each keystroke.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>Similarity ratio between the displayed input and</em></p></li>
+<li><p><em>displayed_word.</em></p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.compute_rt_slope">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">compute_rt_slope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_reaction_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#compute_rt_slope"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.compute_rt_slope" title="Link to this definition">#</a></dt>
+<dd><p>Compute the mean of the reaction time slope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df_reaction_time</strong> (<em>pd.DataFrame</em>) – The reaction time dataframe (first letter and first correct letter)</p></li>
+<li><p><strong>col</strong> (<em>String</em>) – The column to be used : reaction_time or reaction_time_first_correct</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A float which is the mean slope of the reaction time (first letter</dt><dd><p>or first correct letter)</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.compute_typing_speed_slope">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">compute_typing_speed_slope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">submission_state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#compute_typing_speed_slope"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.compute_typing_speed_slope" title="Link to this definition">#</a></dt>
+<dd><p>Compute the slope of the typing speed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>word</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>submission_state</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.count_incorrect_words">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">count_incorrect_words</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#count_incorrect_words"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.count_incorrect_words" title="Link to this definition">#</a></dt>
+<dd><p>Count the number of incorrect words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>pd.DataFrame</em>) – A data frame of the words.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of incorrect words.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.count_key_pressed">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">count_key_pressed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_pressed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alphabet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#count_key_pressed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.count_key_pressed" title="Link to this definition">#</a></dt>
+<dd><p>Count the number of keys pressed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_pressed</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A pd.Series indicating the key pressed during the test.</p></li>
+<li><p><strong>alphabet</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – An optional argument indicating if the count should be done on alphabet
+letters only.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of keys pressed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.count_words_typed_in_row">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">count_words_typed_in_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_free</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#count_words_typed_in_row"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.count_words_typed_in_row" title="Link to this definition">#</a></dt>
+<dd><p>Count the successfully typed words with(out) error in a row.</p>
+<p>The parameter <code class="docutils literal notranslate"><span class="pre">error_free</span></code> indicates if we look at consecutive words that has
+been successfully typed and: without error (True) or with error (False).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – Dataframe containing typing data</p></li>
+<li><p><strong>error_free</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – If True, only count words typed with no error</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of words typed in a row</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.detect_key_autocompletion">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">detect_key_autocompletion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submission_state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#detect_key_autocompletion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.detect_key_autocompletion" title="Link to this definition">#</a></dt>
+<dd><p>Detect the autocompletion at the key level.</p>
+<p>Create a data frame that contains all the typed keys
+the autocompletion status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>submission_state</strong> (<em>pd.DataFrame</em>) – A data frame that contains the user state after each keystroke.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An new dataset with the displayed word, all the key typed and
+autocompletion information.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.detect_word_autocompletion">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">detect_word_autocompletion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys_with_autocompletion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#detect_word_autocompletion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.detect_word_autocompletion" title="Link to this definition">#</a></dt>
+<dd><p>Detect the autocompletion for all the words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys_with_autocompletion</strong> (<em>pd.DataFrame</em>) – A data frame that .</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The word dataset without the autocompleted words</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.filter_intervals">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">filter_intervals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">differentiate</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#filter_intervals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.filter_intervals" title="Link to this definition">#</a></dt>
+<dd><p>Compute letter intervals prior a mistake within a word.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>differentiate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.find_consec_element_and_count">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">find_consec_element_and_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#find_consec_element_and_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.find_consec_element_and_count" title="Link to this definition">#</a></dt>
+<dd><p>Find consecutive elements and count them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>pd.DataFrame</em>) – Data frame to compute measure related to successfully written words
+with(out) error, and also a streak of words with(out) error(s).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame with three columns: the count, the submission state and if
+the sequence was free of error</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.get_correct_correcting_duration">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">get_correct_correcting_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">correcting_duration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#get_correct_correcting_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.get_correct_correcting_duration" title="Link to this definition">#</a></dt>
+<dd><p>Return correcting duration for correct words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>correcting_duration</strong> (<em>pd.DataFrame</em>) – Data frame containing correcting durations.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame that contains correcting duration for correct
+words.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.get_correct_reacting_time">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">get_correct_reacting_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reacting_times</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#get_correct_reacting_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.get_correct_reacting_time" title="Link to this definition">#</a></dt>
+<dd><p>Return reacting times for correct words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reacting_times</strong> (<em>pd.DataFrame</em>) – Data frame containing correction differences.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame that contains reacting duration for correct words.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.get_correct_reaction_duration">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">get_correct_reaction_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reaction_duration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#get_correct_reaction_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.get_correct_reaction_duration" title="Link to this definition">#</a></dt>
+<dd><p>Return reaction durations for correct words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reaction_duration</strong> (<em>pd.DataFrame</em>) – Data frame containing reacting durations.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame that contains reaction duration for correct
+words.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.get_correcting_duration">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">get_correcting_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state_durations</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#get_correcting_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.get_correcting_duration" title="Link to this definition">#</a></dt>
+<dd><p>Compute correcting duration.</p>
+<p>The Correcting Duration is the time elapsed in a correcting state
+for a correct submission, in other words, the time spent correcting
+a mistake.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state_durations</strong> (<em>pd.DataFrame</em>) – Data frame containing submission states and duration.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame that contains correcting duration.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.get_reacting_times">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">get_reacting_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state_durations</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#get_reacting_times"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.get_reacting_times" title="Link to this definition">#</a></dt>
+<dd><p>Return reacting times.</p>
+<p>The reacting time is the time elapsed between an incorrect state
+and a correcting state for a correct submission, in other words,
+the time to react to a mistake.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state_durations</strong> (<em>pd.DataFrame</em>) – Data frame containing submission states and duration.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame containing reacting times.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.get_reaction_duration">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">get_reaction_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state_durations</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#get_reaction_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.get_reaction_duration" title="Link to this definition">#</a></dt>
+<dd><p>Compute the reaction duration.</p>
+<p>The reaction duration is the time elapsed in an incorrect state
+for a correct submission.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state_durations</strong> (<em>pd.DataFrame</em>) – Data frame containing submission states and duration.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame that contains reaction duration.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.get_state_durations">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">get_state_durations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submission_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_intervals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#get_state_durations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.get_state_durations" title="Link to this definition">#</a></dt>
+<dd><p>Return submission state duration.</p>
+<p>To compute the state duration, we group by displayed word and
+by submission state. Indeed, we want to compute statistics
+per word on the time spent in a given state or between states.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>submission_state</strong> (<em>pd.DataFrame</em>) – Data frame containing the submission state each time a user
+types a key.</p></li>
+<li><p><strong>key_intervals</strong> (<em>pd.DataFrame</em>) – Time intervals between samples</p></li>
+<li><p><strong>word</strong> (<em>pd.DataFrame</em>) – A data frame listing all the words displayed on screen during
+the test with the following columns: <code class="docutils literal notranslate"><span class="pre">words</span></code>,
+<code class="docutils literal notranslate"><span class="pre">appearance_timestamp</span></code> and <code class="docutils literal notranslate"><span class="pre">disappearance_timestamp</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame that contains duration of each correcting state.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.get_submission_state">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">get_submission_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_typed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#get_submission_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.get_submission_state" title="Link to this definition">#</a></dt>
+<dd><p>Compute the submission state.</p>
+<p>Create a data frame that contains the state at each time a user types a
+key. Available states are the following: <code class="docutils literal notranslate"><span class="pre">Correct</span></code>, <code class="docutils literal notranslate"><span class="pre">Incorrect</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Correcting</span></code>. The state is <code class="docutils literal notranslate"><span class="pre">Correct</span></code> if the textbox is empty or if
+it forms a subpart of the word displayed on the screen. The state is
+incorrect whenever the user types a key (that is not backspace), leading
+to a textbox that does not form a subpart of the word displayed on the
+screen. Finally, the state is identified as correcting whenever the user
+corrects its mistake by typing backspace; it can be seen as an
+intermediate state between an incorrect and a correct state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>word</strong> (<em>pd.DataFrame</em>) – A data frame listing all the words displayed on screen during the
+test with the following columns: <code class="docutils literal notranslate"><span class="pre">words</span></code>, <code class="docutils literal notranslate"><span class="pre">appearance_timestamp</span></code>
+and <code class="docutils literal notranslate"><span class="pre">disappearance_timestamp</span></code>.</p></li>
+<li><p><strong>key_typed</strong> (<em>pd.DataFrame</em>) – The dataframe with the list of key pressed by the user,
+it should contain the columns: <code class="docutils literal notranslate"><span class="pre">timestamp_out</span></code> and <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame that contains the user state after each keystroke.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.interval_until_mistake">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">interval_until_mistake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submission_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_is_letter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">differentiate</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#interval_until_mistake"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.interval_until_mistake" title="Link to this definition">#</a></dt>
+<dd><p>Compute letter intervals prior a mistake for each word.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>submission_state</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>key_is_letter</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>differentiate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.keep_top_ten">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">keep_top_ten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#keep_top_ten"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.keep_top_ten" title="Link to this definition">#</a></dt>
+<dd><p>Keep top 10% intervals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A dataframe of letter intervals with the column <cite>letter_intervals</cite>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>The top 10 percent letter intervals.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.letter_interval">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">letter_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_is_letter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_intervals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#letter_interval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.letter_interval" title="Link to this definition">#</a></dt>
+<dd><p>Compute the interval between two consecutive letters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_is_letter</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A boolean series indicating if a key is a letter.</p></li>
+<li><p><strong>key_intervals</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A series of float indicating the time between two consecutive keys.</p></li>
+<li><p><strong>extra_mask</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a><em> | </em><em>None</em>) – An optional series of boolean that will be used as an extra mask
+to filter intervals.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The first element of the tuple is the time between each consecutive
+letter keys. The second element is the mask that has been used to
+filter the <cite>key_intervals</cite> to find the letters of interests.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[pd.Series, pd.Series]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.max_letter_interval_dev">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">max_letter_interval_dev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#max_letter_interval_dev"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.max_letter_interval_dev" title="Link to this definition">#</a></dt>
+<dd><p>Compute the maximum letter interval deviation from the mean.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.ratio_key_pressed">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">ratio_key_pressed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submission_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#ratio_key_pressed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.ratio_key_pressed" title="Link to this definition">#</a></dt>
+<dd><p>Group by word and count the letters typed for completed words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>submission_state</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A data frame that contains the user state after each keystroke.</p></li>
+<li><p><strong>word</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A data frame listing all the words displayed on screen during the
+test with the following columns: <code class="docutils literal notranslate"><span class="pre">words</span></code>, <code class="docutils literal notranslate"><span class="pre">appearance_timestamp</span></code>
+and <code class="docutils literal notranslate"><span class="pre">disappearance_timestamp</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame with a column <code class="docutils literal notranslate"><span class="pre">letters_typed_over_length</span></code>
+containing the following ratio: number of letters typed divided
+by the length of the word (for completed words).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.similarity_ratio">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">similarity_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#similarity_ratio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.similarity_ratio" title="Link to this definition">#</a></dt>
+<dd><p>Compute the similarity ratio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a><em> | </em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.time_intervals">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">time_intervals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_column</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#time_intervals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.time_intervals" title="Link to this definition">#</a></dt>
+<dd><p>Find time intervals between consecutive element of a data frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – Any data frame with a timestamp index.</p></li>
+<li><p><strong>interval_column</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – When specified, indicates that the interval should be computed with
+values from a column and not the index.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Time intervals between samples.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.Series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.total_autocomplete">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">total_autocomplete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys_with_autocompletion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#total_autocomplete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.total_autocomplete" title="Link to this definition">#</a></dt>
+<dd><p>Get the total number of autocompletions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys_with_autocompletion</strong> (<em>pd.DataFrame</em>) – A dataframe indicating whether a key was autocompleted or not.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of autocompletions performed by the user.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.total_words_typed">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">total_words_typed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#total_words_typed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.total_words_typed" title="Link to this definition">#</a></dt>
+<dd><p>Find total number of words typed.</p>
+<p>The total number of words typed successfully is the number of True values
+in the columns <code class="docutils literal notranslate"><span class="pre">success</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>pd.DataFrame</em>) – A data frame containing the word information with the column
+<code class="docutils literal notranslate"><span class="pre">success</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of words successfully typed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.transform_reaction_time">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">transform_reaction_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_typed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#transform_reaction_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.transform_reaction_time" title="Link to this definition">#</a></dt>
+<dd><p>Compute the reaction time and the first correct letter reaction time.</p>
+<p>The reaction time is the time elapsed between the appearance of a word
+and the time the user typed a letter. The first correct letter reaction
+time follows the same definition but measures the time elapsed until a
+correct letter is typed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>word</strong> (<em>pd.DataFrame</em>) – A data frame listing all the words displayed on screen during the
+test with the following columns: <code class="docutils literal notranslate"><span class="pre">words</span></code>, <code class="docutils literal notranslate"><span class="pre">appearance_timestamp</span></code>
+and <code class="docutils literal notranslate"><span class="pre">disappearance_timestamp</span></code>.</p></li>
+<li><p><strong>key_typed</strong> (<em>pd.DataFrame</em>) – The dataframe with the list of key pressed by the user,
+it should contain the columns: <code class="docutils literal notranslate"><span class="pre">timestamp_out</span></code> and <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame with two columns: the reaction time and the
+reaction time to the first correct letter.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.bdh.tasks.typing.keyboard.word_duration">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.bdh.tasks.typing.keyboard.</span></span><span class="sig-name descname"><span class="pre">word_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/bdh/tasks/typing/keyboard.html#word_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.bdh.tasks.typing.keyboard.word_duration" title="Link to this definition">#</a></dt>
+<dd><p>Compute the time spent per word.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>pd.DataFrame</em>) – A data frame containing the word information with the column
+<code class="docutils literal notranslate"><span class="pre">success</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame containing the time spent per word.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.Series</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.bdh.tasks.typing.const.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.bdh.tasks.typing.const module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.bdh.tasks.typing.steps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.bdh.tasks.typing.steps module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.apply_similarity_ratio"><code class="docutils literal notranslate"><span class="pre">apply_similarity_ratio()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.compute_rt_slope"><code class="docutils literal notranslate"><span class="pre">compute_rt_slope()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.compute_typing_speed_slope"><code class="docutils literal notranslate"><span class="pre">compute_typing_speed_slope()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.count_incorrect_words"><code class="docutils literal notranslate"><span class="pre">count_incorrect_words()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.count_key_pressed"><code class="docutils literal notranslate"><span class="pre">count_key_pressed()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.count_words_typed_in_row"><code class="docutils literal notranslate"><span class="pre">count_words_typed_in_row()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.detect_key_autocompletion"><code class="docutils literal notranslate"><span class="pre">detect_key_autocompletion()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.detect_word_autocompletion"><code class="docutils literal notranslate"><span class="pre">detect_word_autocompletion()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.filter_intervals"><code class="docutils literal notranslate"><span class="pre">filter_intervals()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.find_consec_element_and_count"><code class="docutils literal notranslate"><span class="pre">find_consec_element_and_count()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.get_correct_correcting_duration"><code class="docutils literal notranslate"><span class="pre">get_correct_correcting_duration()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.get_correct_reacting_time"><code class="docutils literal notranslate"><span class="pre">get_correct_reacting_time()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.get_correct_reaction_duration"><code class="docutils literal notranslate"><span class="pre">get_correct_reaction_duration()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.get_correcting_duration"><code class="docutils literal notranslate"><span class="pre">get_correcting_duration()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.get_reacting_times"><code class="docutils literal notranslate"><span class="pre">get_reacting_times()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.get_reaction_duration"><code class="docutils literal notranslate"><span class="pre">get_reaction_duration()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.get_state_durations"><code class="docutils literal notranslate"><span class="pre">get_state_durations()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.get_submission_state"><code class="docutils literal notranslate"><span class="pre">get_submission_state()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.interval_until_mistake"><code class="docutils literal notranslate"><span class="pre">interval_until_mistake()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.keep_top_ten"><code class="docutils literal notranslate"><span class="pre">keep_top_ten()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.letter_interval"><code class="docutils literal notranslate"><span class="pre">letter_interval()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.max_letter_interval_dev"><code class="docutils literal notranslate"><span class="pre">max_letter_interval_dev()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.ratio_key_pressed"><code class="docutils literal notranslate"><span class="pre">ratio_key_pressed()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.similarity_ratio"><code class="docutils literal notranslate"><span class="pre">similarity_ratio()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.time_intervals"><code class="docutils literal notranslate"><span class="pre">time_intervals()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.total_autocomplete"><code class="docutils literal notranslate"><span class="pre">total_autocomplete()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.total_words_typed"><code class="docutils literal notranslate"><span class="pre">total_words_typed()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.transform_reaction_time"><code class="docutils literal notranslate"><span class="pre">transform_reaction_time()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.bdh.tasks.typing.keyboard.word_duration"><code class="docutils literal notranslate"><span class="pre">word_duration()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.bdh.tasks.typing.keyboard.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

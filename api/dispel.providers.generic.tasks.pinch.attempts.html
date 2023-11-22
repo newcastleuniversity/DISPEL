@@ -1,0 +1,1352 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.generic.tasks.pinch.attempts module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.generic.tasks.pinch.attempts';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.generic.tasks.pinch.modalities module" href="dispel.providers.generic.tasks.pinch.modalities.html" />
+    <link rel="prev" title="dispel.providers.generic.tasks.pinch package" href="dispel.providers.generic.tasks.pinch.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.generic.tasks.pinch.html" class="nav-link">dispel.providers.generic.tasks.pinch package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.generic.tasks.pinch.attempts">
+<span id="dispel-providers-generic-tasks-pinch-attempts-module"></span><h1>dispel.providers.generic.tasks.pinch.attempts module<a class="headerlink" href="#module-dispel.providers.generic.tasks.pinch.attempts" title="Link to this heading">#</a></h1>
+<p>A module dedicated to format user pinch into attempts.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">PinchAttempt</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchAttempt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.providers.generic.touch.html#dispel.providers.generic.touch.Gesture" title="dispel.providers.generic.touch.Gesture"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gesture</span></code></a></p>
+<p>A pinching gesture.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.TOUCH_CLS">
+<span class="sig-name descname"><span class="pre">TOUCH_CLS</span></span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.TOUCH_CLS" title="Link to this definition">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="dispel.providers.generic.tasks.pinch.attempts.PinchTouch"><code class="xref py py-class docutils literal notranslate"><span class="pre">PinchTouch</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">touches</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_valid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_successful</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_finger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom_finger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinch_begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinch_end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>touches</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference internal" href="dispel.providers.generic.touch.html#dispel.providers.generic.touch.Touch" title="dispel.providers.generic.touch.Touch"><em>Touch</em></a><em>]</em>) – </p></li>
+<li><p><strong>is_valid</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
+<li><p><strong>is_successful</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
+<li><p><strong>top_finger</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="dispel.providers.generic.tasks.pinch.attempts.PinchTouch"><em>PinchTouch</em></a>) – </p></li>
+<li><p><strong>bottom_finger</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="dispel.providers.generic.tasks.pinch.attempts.PinchTouch"><em>PinchTouch</em></a>) – </p></li>
+<li><p><strong>pinch_begin</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><em>datetime</em></a>) – </p></li>
+<li><p><strong>pinch_end</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><em>datetime</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.add_is_valid_pinch">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_is_valid_pinch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_coords</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchAttempt.add_is_valid_pinch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.add_is_valid_pinch" title="Link to this definition">#</a></dt>
+<dd><p>Add is valid pinch variable to the given touches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="dispel.providers.generic.tasks.pinch.attempts.PinchTouch"><em>PinchTouch</em></a>) – The first pinch touch.</p></li>
+<li><p><strong>second</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="dispel.providers.generic.tasks.pinch.attempts.PinchTouch"><em>PinchTouch</em></a>) – The second pinch touch.</p></li>
+<li><p><strong>target_radius</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – The radius of the pinch target.</p></li>
+<li><p><strong>target_coords</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a><em>]</em>) – The coordinates of the pinch target.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The modified given pinch touches.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="dispel.providers.generic.tasks.pinch.attempts.PinchTouch">PinchTouch</a>, <a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="dispel.providers.generic.tasks.pinch.attempts.PinchTouch">PinchTouch</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.bottom_finger">
+<span class="sig-name descname"><span class="pre">bottom_finger</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="dispel.providers.generic.tasks.pinch.attempts.PinchTouch"><span class="pre">PinchTouch</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.bottom_finger" title="Link to this definition">#</a></dt>
+<dd><p>The bottom finger touch interaction</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.double_touch_asynchrony">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">double_touch_asynchrony</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.12)"><span class="pre">timedelta</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.double_touch_asynchrony" title="Link to this definition">#</a></dt>
+<dd><p>Get the double touch asynchrony of the pinch attempt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The time difference between the first and second finger touching
+the screen for a pinch attempt.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.12)">datetime.timedelta</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.first_push_bottom_fingers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">first_push_bottom_fingers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.first_push_bottom_fingers" title="Link to this definition">#</a></dt>
+<dd><p>Get the first pressure measurement of the bottom finger.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The first pressure reading from the bottom finger that was
+non-zero.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.first_push_top_fingers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">first_push_top_fingers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.first_push_top_fingers" title="Link to this definition">#</a></dt>
+<dd><p>Get the first pressure measurement of the top finger.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The first pressure reading from the top finger that was non-zero.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.from_data_frame">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_data_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchAttempt.from_data_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.from_data_frame" title="Link to this definition">#</a></dt>
+<dd><p>Create PinchAttempt from a data frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A data frame containing touch events.</p></li>
+<li><p><strong>kwargs</strong> – Additional key word arguments passed to
+<a class="reference internal" href="dispel.providers.generic.touch.html#dispel.providers.generic.touch.Gesture.gesture_factory" title="dispel.providers.generic.touch.Gesture.gesture_factory"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gesture_factory()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A sequence of PinchAttempt based on the provided <code class="docutils literal notranslate"><span class="pre">data</span></code>. The data
+frame is split according to the <code class="docutils literal notranslate"><span class="pre">touchPathId</span></code> into separate touch
+interactions. Consecutively overlapping touches are combined as
+PinchAttempt.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt" title="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt">PinchAttempt</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.gesture_factory">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gesture_factory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">touches</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchAttempt.gesture_factory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.gesture_factory" title="Link to this definition">#</a></dt>
+<dd><p>Get a pinch attempt gesture from touches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>touches</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference internal" href="dispel.providers.generic.touch.html#dispel.providers.generic.touch.Touch" title="dispel.providers.generic.touch.Touch"><em>Touch</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="dispel.providers.generic.touch.html#dispel.providers.generic.touch.Gesture" title="dispel.providers.generic.touch.Gesture"><em>Gesture</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.is_successful">
+<span class="sig-name descname"><span class="pre">is_successful</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.is_successful" title="Link to this definition">#</a></dt>
+<dd><p>Is successful if the gesture led to the burst of the target</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.is_valid" title="Link to this definition">#</a></dt>
+<dd><p>Is valid if it is comprised of two touch interactions</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.pinch_begin">
+<span class="sig-name descname"><span class="pre">pinch_begin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><span class="pre">datetime</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.pinch_begin" title="Link to this definition">#</a></dt>
+<dd><p>The time stamp when the pinching started</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.pinch_end">
+<span class="sig-name descname"><span class="pre">pinch_end</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><span class="pre">datetime</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.pinch_end" title="Link to this definition">#</a></dt>
+<dd><p>The time stamp when the pinching ended</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.pinching_duration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pinching_duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.12)"><span class="pre">timedelta</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.pinching_duration" title="Link to this definition">#</a></dt>
+<dd><p>Get the duration of the pinching.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns the duration of the pinching if the gesture is considered
+a valid pinch based on <code class="docutils literal notranslate"><span class="pre">pinch_begin</span></code> and <code class="docutils literal notranslate"><span class="pre">pinch_end</span></code>. If the
+pinch is not valid according to the app (<code class="docutils literal notranslate"><span class="pre">isValidPinch</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">screen</span></code> data set is <code class="docutils literal notranslate"><span class="pre">false</span></code>) it returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.12)">datetime.timedelta</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.top_finger">
+<span class="sig-name descname"><span class="pre">top_finger</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="dispel.providers.generic.tasks.pinch.attempts.PinchTouch"><span class="pre">PinchTouch</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.top_finger" title="Link to this definition">#</a></dt>
+<dd><p>The top finger touch interaction</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">PinchTarget</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTarget"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A pinch target class.</p>
+<p>This encapsulates pinch targets for each level e.g. <cite>‘right-small’</cite>,
+<cite>‘right-small-01’</cite> etc.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.id" title="Link to this definition">#</a></dt>
+<dd><p>The pinch target identifier e.g. <cite>‘right-small-01’</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.parent_id">
+<span class="sig-name descname"><span class="pre">parent_id</span></span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.parent_id" title="Link to this definition">#</a></dt>
+<dd><p>The pinch target parent identifier e.g. <cite>‘right-small’</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.hand">
+<span class="sig-name descname"><span class="pre">hand</span></span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.hand" title="Link to this definition">#</a></dt>
+<dd><p>The hand used for the pinch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality">HandModality</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.size">
+<span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.size" title="Link to this definition">#</a></dt>
+<dd><p>The target bubble size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.BubbleSizeModality" title="dispel.providers.generic.tasks.pinch.modalities.BubbleSizeModality">BubbleSizeModality</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.radius">
+<span class="sig-name descname"><span class="pre">radius</span></span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.radius" title="Link to this definition">#</a></dt>
+<dd><p>The radius of the pinch target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.coordinates">
+<span class="sig-name descname"><span class="pre">coordinates</span></span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.coordinates" title="Link to this definition">#</a></dt>
+<dd><p>The coordinates of the pinch target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.appearance">
+<span class="sig-name descname"><span class="pre">appearance</span></span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.appearance" title="Link to this definition">#</a></dt>
+<dd><p>The timestamp at which the target initially appeared.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Timestamp</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.attempts">
+<span class="sig-name descname"><span class="pre">attempts</span></span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.attempts" title="Link to this definition">#</a></dt>
+<dd><p>A list of the pinch attempts for the current target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt" title="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt">PinchAttempt</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTarget.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.contact_coordinates_bottom_fingers">
+<span class="sig-name descname"><span class="pre">contact_coordinates_bottom_fingers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outcome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">AttemptOutcomeModality.ALL</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTarget.contact_coordinates_bottom_fingers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.contact_coordinates_bottom_fingers" title="Link to this definition">#</a></dt>
+<dd><p>Get the attempts contact coordinates for bottom fingers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>outcome</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality" title="dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality"><em>AttemptOutcomeModality</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.contact_coordinates_top_fingers">
+<span class="sig-name descname"><span class="pre">contact_coordinates_top_fingers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outcome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">AttemptOutcomeModality.ALL</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTarget.contact_coordinates_top_fingers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.contact_coordinates_top_fingers" title="Link to this definition">#</a></dt>
+<dd><p>Get the attempts contact coordinates for top fingers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>outcome</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality" title="dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality"><em>AttemptOutcomeModality</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.contact_distances">
+<span class="sig-name descname"><span class="pre">contact_distances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">AttemptOutcomeModality.ALL</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTarget.contact_distances"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.contact_distances" title="Link to this definition">#</a></dt>
+<dd><p>Get contact distances for fingers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>finger</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.FingerModality" title="dispel.providers.generic.tasks.pinch.modalities.FingerModality"><em>FingerModality</em></a>) – </p></li>
+<li><p><strong>outcome</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality" title="dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality"><em>AttemptOutcomeModality</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.first_attempt">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">first_attempt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt" title="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt"><span class="pre">PinchAttempt</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.first_attempt" title="Link to this definition">#</a></dt>
+<dd><p>Get the first pinch attempt.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.first_pushes">
+<span class="sig-name descname"><span class="pre">first_pushes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">AttemptOutcomeModality.ALL</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTarget.first_pushes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.first_pushes" title="Link to this definition">#</a></dt>
+<dd><p>Get the first pushes of a pinch target’s fingers attempts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>finger</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.FingerModality" title="dispel.providers.generic.tasks.pinch.modalities.FingerModality"><em>FingerModality</em></a>) – </p></li>
+<li><p><strong>outcome</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality" title="dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality"><em>AttemptOutcomeModality</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.from_level">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTarget.from_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.from_level" title="Link to this definition">#</a></dt>
+<dd><p>Initialize pinch target from level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level from which the pinch target is to be initialized.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The pinch target.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="dispel.providers.generic.tasks.pinch.attempts.PinchTarget">PinchTarget</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If the PinchTarget id doesn’t start with a <cite>hand-size</cite> format</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.get_attempts_from">
+<span class="sig-name descname"><span class="pre">get_attempts_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modality</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTarget.get_attempts_from"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.get_attempts_from" title="Link to this definition">#</a></dt>
+<dd><p>Get the list of attempts from success pinche modality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>modality</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality" title="dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality"><em>AttemptOutcomeModality</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a>[<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt" title="dispel.providers.generic.tasks.pinch.attempts.PinchAttempt"><em>PinchAttempt</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.get_contact_distance">
+<span class="sig-name descname"><span class="pre">get_contact_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finger_coordinates</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTarget.get_contact_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.get_contact_distance" title="Link to this definition">#</a></dt>
+<dd><p>Get contact distance given contact coordinates.</p>
+<p>The contact distance is the euclidean distance between the finger
+coordinates and the surface of the pinch target i.e. the distance
+between the finger coordinates and the target center coordinates
+minus the radius of the target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>finger_coordinates</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a><em>]</em>) – The coordinates of the finger.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The contact distance for the given finger coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.has_attempts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_attempts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.has_attempts" title="Link to this definition">#</a></dt>
+<dd><p>Get whether the pinch target has attempts.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.reaction_time">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reaction_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><span class="pre">Timedelta</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.reaction_time" title="Link to this definition">#</a></dt>
+<dd><p>Get the user reaction time.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTarget.total_duration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">total_duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.12)"><span class="pre">timedelta</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.total_duration" title="Link to this definition">#</a></dt>
+<dd><p>Get the total duration of the pinch attempts.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTouch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">PinchTouch</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTouch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.providers.generic.touch.html#dispel.providers.generic.touch.Touch" title="dispel.providers.generic.touch.Touch"><code class="xref py py-class docutils literal notranslate"><span class="pre">Touch</span></code></a></p>
+<p>A pinch touch interaction.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTouch.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pointer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">UnknownPointer(index=0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dataclasses.InitVar</em><em>[</em><em>DataFrame</em><em>]</em>) – </p></li>
+<li><p><strong>pointer</strong> (<a class="reference internal" href="dispel.providers.generic.touch.html#dispel.providers.generic.touch.Pointer" title="dispel.providers.generic.touch.Pointer"><em>Pointer</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTouch.is_successful">
+<span class="sig-name descname"><span class="pre">is_successful</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.is_successful" title="Link to this definition">#</a></dt>
+<dd><p>Is successful if the gesture of the touch led to the burst of the target</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTouch.is_valid_pinch_exists">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_valid_pinch_exists</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.is_valid_pinch_exists" title="Link to this definition">#</a></dt>
+<dd><p>Check whether is valid pinch variable exists in touch data frame.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTouch.pinch_begin">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pinch_begin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><span class="pre">datetime</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.pinch_begin" title="Link to this definition">#</a></dt>
+<dd><p>Get the start of the pinching.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The time stamp when the pinching started.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)">datetime.datetime</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTouch.pinch_end">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pinch_end</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><span class="pre">datetime</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.pinch_end" title="Link to this definition">#</a></dt>
+<dd><p>Get the start of the pinching.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The time stamp when the pinching started.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)">datetime.datetime</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTouch.set_is_valid_pinch">
+<span class="sig-name descname"><span class="pre">set_is_valid_pinch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_valid_pinch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#PinchTouch.set_is_valid_pinch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.set_is_valid_pinch" title="Link to this definition">#</a></dt>
+<dd><p>Set is valid pinch variable inside touch data frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>is_valid_pinch</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A pandas series containing isValidPinch boolean values and time
+stamps as indexes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.PinchTouch.valid_pinch_timestamps">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">valid_pinch_timestamps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><span class="pre">Series</span></a></em><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.valid_pinch_timestamps" title="Link to this definition">#</a></dt>
+<dd><p>Get the valid pinching time stamps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The timestamps of the valid pinching moments.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Series</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.12)"><strong>KeyError</strong></a> – If <cite>isValid Pinch</cite> is missing from the touch data frame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.double_touch_asynchrony">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">double_touch_asynchrony</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attempt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#double_touch_asynchrony"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.double_touch_asynchrony" title="Link to this definition">#</a></dt>
+<dd><p>Compute the pinching attempts’ double touch asynchrony.</p>
+<p>The double touch asynchrony i.e. time difference between the first and
+second finger touching the screen for all pinch attempts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="dispel.providers.generic.tasks.pinch.attempts.PinchTarget"><em>PinchTarget</em></a>) – A pinch target object.</p></li>
+<li><p><strong>attempt</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.AttemptSelectionModality" title="dispel.providers.generic.tasks.pinch.modalities.AttemptSelectionModality"><em>AttemptSelectionModality</em></a>) – Pinching attempt selection modality.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list regrouping the computed double touch asynchrony in ms.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.dwell_time">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">dwell_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attempt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#dwell_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.dwell_time" title="Link to this definition">#</a></dt>
+<dd><p>Compute the pinching attempts’ dwell times.</p>
+<p>The dwell time i.e. time spent between the first screen touching and the
+initiation of the movement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="dispel.providers.generic.tasks.pinch.attempts.PinchTarget"><em>PinchTarget</em></a>) – A pinch target object.</p></li>
+<li><p><strong>attempt</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.AttemptSelectionModality" title="dispel.providers.generic.tasks.pinch.modalities.AttemptSelectionModality"><em>AttemptSelectionModality</em></a>) – Pinching attempt selection modality.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list regrouping the computed dwell times in ms.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.number_successful_pinches">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">number_successful_pinches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#number_successful_pinches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.number_successful_pinches" title="Link to this definition">#</a></dt>
+<dd><p>Return number of successful pinches.</p>
+<p>A pinch is defined as a potential pinch with at least one touch event
+marked with ledToSuccess.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="dispel.providers.generic.tasks.pinch.attempts.PinchTarget"><em>PinchTarget</em></a>) – A pinch target object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of successful pinches</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.pinching_duration">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">pinching_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">AttemptOutcomeModality.ALL</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#pinching_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.pinching_duration" title="Link to this definition">#</a></dt>
+<dd><p>Compute the pinching duration.</p>
+<p>The pinching duration i.e. the duration spent actually deforming the
+bubble.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="dispel.providers.generic.tasks.pinch.attempts.PinchTarget"><em>PinchTarget</em></a>) – A pinch target object.</p></li>
+<li><p><strong>modality</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality" title="dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality"><em>AttemptOutcomeModality</em></a>) – Pinching attempt success modality.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list regrouping the computed pinching durations in s.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.reaction_time">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">reaction_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#reaction_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.reaction_time" title="Link to this definition">#</a></dt>
+<dd><p>Compute the reaction time.</p>
+<p>The reaction time of the user between the bubble appearance and the first
+touch event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="dispel.providers.generic.tasks.pinch.attempts.PinchTarget"><em>PinchTarget</em></a>) – A pinch target object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The user reaction time in ms.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.success_duration">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">success_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">AttemptOutcomeModality.ALL</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#success_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.success_duration" title="Link to this definition">#</a></dt>
+<dd><p>Compute the success duration.</p>
+<p>The success duration i.e. the duration spent before succeeding at
+pinching a bubble.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="dispel.providers.generic.tasks.pinch.attempts.PinchTarget"><em>PinchTarget</em></a>) – A pinch target object.</p></li>
+<li><p><strong>modality</strong> (<a class="reference internal" href="dispel.providers.generic.tasks.pinch.modalities.html#dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality" title="dispel.providers.generic.tasks.pinch.modalities.AttemptOutcomeModality"><em>AttemptOutcomeModality</em></a>) – Pinching attempt success modality.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list regrouping the computed success durations in s.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.total_duration">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">total_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#total_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.total_duration" title="Link to this definition">#</a></dt>
+<dd><p>Compute the total duration of the pinch attempts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="dispel.providers.generic.tasks.pinch.attempts.PinchTarget"><em>PinchTarget</em></a>) – A pinch target object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The computed total duration in s.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.pinch.attempts.total_number_pinches">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.pinch.attempts.</span></span><span class="sig-name descname"><span class="pre">total_number_pinches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/pinch/attempts.html#total_number_pinches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.pinch.attempts.total_number_pinches" title="Link to this definition">#</a></dt>
+<dd><p>Return total number of pinches.</p>
+<p>A pinch is defined as a potential pinch with at least one touch event
+marked with isValidPinch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget" title="dispel.providers.generic.tasks.pinch.attempts.PinchTarget"><em>PinchTarget</em></a>) – A pinch target object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The total number of pinches.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.generic.tasks.pinch.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.generic.tasks.pinch package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.generic.tasks.pinch.modalities.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.generic.tasks.pinch.modalities module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt"><code class="docutils literal notranslate"><span class="pre">PinchAttempt</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.TOUCH_CLS"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.TOUCH_CLS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.__init__"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.add_is_valid_pinch"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.add_is_valid_pinch()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.bottom_finger"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.bottom_finger</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.double_touch_asynchrony"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.double_touch_asynchrony</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.first_push_bottom_fingers"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.first_push_bottom_fingers</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.first_push_top_fingers"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.first_push_top_fingers</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.from_data_frame"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.from_data_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.gesture_factory"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.gesture_factory()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.is_successful"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.is_successful</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.is_valid"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.is_valid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.pinch_begin"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.pinch_begin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.pinch_end"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.pinch_end</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.pinching_duration"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.pinching_duration</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchAttempt.top_finger"><code class="docutils literal notranslate"><span class="pre">PinchAttempt.top_finger</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget"><code class="docutils literal notranslate"><span class="pre">PinchTarget</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.id"><code class="docutils literal notranslate"><span class="pre">PinchTarget.id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.parent_id"><code class="docutils literal notranslate"><span class="pre">PinchTarget.parent_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.hand"><code class="docutils literal notranslate"><span class="pre">PinchTarget.hand</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.size"><code class="docutils literal notranslate"><span class="pre">PinchTarget.size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.radius"><code class="docutils literal notranslate"><span class="pre">PinchTarget.radius</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.coordinates"><code class="docutils literal notranslate"><span class="pre">PinchTarget.coordinates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.appearance"><code class="docutils literal notranslate"><span class="pre">PinchTarget.appearance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.attempts"><code class="docutils literal notranslate"><span class="pre">PinchTarget.attempts</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.__init__"><code class="docutils literal notranslate"><span class="pre">PinchTarget.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.contact_coordinates_bottom_fingers"><code class="docutils literal notranslate"><span class="pre">PinchTarget.contact_coordinates_bottom_fingers()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.contact_coordinates_top_fingers"><code class="docutils literal notranslate"><span class="pre">PinchTarget.contact_coordinates_top_fingers()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.contact_distances"><code class="docutils literal notranslate"><span class="pre">PinchTarget.contact_distances()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.first_attempt"><code class="docutils literal notranslate"><span class="pre">PinchTarget.first_attempt</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.first_pushes"><code class="docutils literal notranslate"><span class="pre">PinchTarget.first_pushes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.from_level"><code class="docutils literal notranslate"><span class="pre">PinchTarget.from_level()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.get_attempts_from"><code class="docutils literal notranslate"><span class="pre">PinchTarget.get_attempts_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.get_contact_distance"><code class="docutils literal notranslate"><span class="pre">PinchTarget.get_contact_distance()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.has_attempts"><code class="docutils literal notranslate"><span class="pre">PinchTarget.has_attempts</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.reaction_time"><code class="docutils literal notranslate"><span class="pre">PinchTarget.reaction_time</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTarget.total_duration"><code class="docutils literal notranslate"><span class="pre">PinchTarget.total_duration</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch"><code class="docutils literal notranslate"><span class="pre">PinchTouch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.__init__"><code class="docutils literal notranslate"><span class="pre">PinchTouch.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.is_successful"><code class="docutils literal notranslate"><span class="pre">PinchTouch.is_successful</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.is_valid_pinch_exists"><code class="docutils literal notranslate"><span class="pre">PinchTouch.is_valid_pinch_exists</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.pinch_begin"><code class="docutils literal notranslate"><span class="pre">PinchTouch.pinch_begin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.pinch_end"><code class="docutils literal notranslate"><span class="pre">PinchTouch.pinch_end</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.set_is_valid_pinch"><code class="docutils literal notranslate"><span class="pre">PinchTouch.set_is_valid_pinch()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.PinchTouch.valid_pinch_timestamps"><code class="docutils literal notranslate"><span class="pre">PinchTouch.valid_pinch_timestamps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.double_touch_asynchrony"><code class="docutils literal notranslate"><span class="pre">double_touch_asynchrony()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.dwell_time"><code class="docutils literal notranslate"><span class="pre">dwell_time()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.number_successful_pinches"><code class="docutils literal notranslate"><span class="pre">number_successful_pinches()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.pinching_duration"><code class="docutils literal notranslate"><span class="pre">pinching_duration()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.reaction_time"><code class="docutils literal notranslate"><span class="pre">reaction_time()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.success_duration"><code class="docutils literal notranslate"><span class="pre">success_duration()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.total_duration"><code class="docutils literal notranslate"><span class="pre">total_duration()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.pinch.attempts.total_number_pinches"><code class="docutils literal notranslate"><span class="pre">total_number_pinches()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.generic.tasks.pinch.attempts.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

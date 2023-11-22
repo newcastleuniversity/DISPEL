@@ -1,0 +1,909 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Measure processing &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage/measure_processing';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Statistical analyses" href="statistical_analyses.html" />
+    <link rel="prev" title="Data model" href="data_model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_model.html">Data model</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Measure processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical_analyses.html">Statistical analyses</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../usage.html" class="nav-link">Usage</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Measure processing</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="measure-processing">
+<span id="id1"></span><h1>Measure processing<a class="headerlink" href="#measure-processing" title="Link to this heading">#</a></h1>
+<p>The library provides a basic framework to extract measures from raw data
+captured in <a class="reference internal" href="../api/dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><code class="xref py py-class docutils literal notranslate"><span class="pre">dispel.data.core.Reading</span></code></a>s. All functionality can be found
+under the <a class="reference internal" href="../api/dispel.processing.html#module-dispel.processing" title="dispel.processing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dispel.processing</span></code></a> module. This section provides a brief
+introduction on using the framework.</p>
+<p>For a comprehensive list of measures that are produced please see
+<a class="reference internal" href="../measures.html#measures"><span class="std std-ref">here</span></a>.</p>
+<section id="measure-definitions">
+<h2>Measure definitions<a class="headerlink" href="#measure-definitions" title="Link to this heading">#</a></h2>
+<p>In order to standardize how measures are represented the library comes with a
+few base classes that handle the definition of measures.</p>
+<p>The following example shows how to create a basic measure definition</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">RangeValidator</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">ValueDefinition</span>
+
+<span class="n">definition</span> <span class="o">=</span> <span class="n">ValueDefinition</span><span class="p">(</span>
+    <span class="n">id_</span><span class="o">=</span><span class="s1">&#39;reaction-time&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Reaction time&#39;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;The time it takes the subject to respond to the stimulus&#39;</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span>
+    <span class="n">validator</span><span class="o">=</span><span class="n">RangeValidator</span><span class="p">(</span><span class="n">lower_bound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Later on this definition is used to tie both definition and values together
+using the <a class="reference internal" href="../api/dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureValue</span></code></a>.</p>
+<p>A common use case is to have a group of related measures, e.g. the same metric
+aggregated using different descriptive statistics. The library offers a
+prototype definition</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="o">-</span><span class="n">prototype</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">RangeValidator</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">ValueDefinitionPrototype</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">prototype</span> <span class="o">=</span> <span class="n">ValueDefinitionPrototype</span><span class="p">(</span>
+<span class="o">...</span>     <span class="n">id_</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{method}</span><span class="s1">-reaction-time&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{method}</span><span class="s1"> reaction time&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;The </span><span class="si">{method}</span><span class="s1"> time it takes the subject to respond &#39;</span>
+<span class="o">...</span>                 <span class="s1">&#39;to all stimuli&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">validator</span><span class="o">=</span><span class="n">RangeValidator</span><span class="p">(</span><span class="n">lower_bound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">...</span> <span class="p">)</span>
+
+<span class="n">Given</span> <span class="n">this</span> <span class="n">prototype</span> <span class="n">one</span> <span class="n">can</span> <span class="n">quickly</span> <span class="n">create</span> <span class="n">definitions</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">ValueDefinitionPrototype</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">prototype</span> <span class="o">=</span> <span class="n">ValueDefinitionPrototype</span><span class="p">(</span>
+<span class="o">...</span>     <span class="n">id_</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{method}</span><span class="s1">-reaction-time&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{method}</span><span class="s1"> reaction time&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;The </span><span class="si">{method}</span><span class="s1"> time it takes the subject to respond &#39;</span>
+<span class="o">...</span>                 <span class="s1">&#39;to all stimuli&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">validator</span><span class="o">=</span><span class="n">RangeValidator</span><span class="p">(</span><span class="n">lower_bound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">...</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Given this prototype one can quickly create definitions</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="o">-</span><span class="n">prototype</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">prototype</span><span class="o">.</span><span class="n">create_definition</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ValueDefinition</span><span class="p">:</span> <span class="n">median</span><span class="o">-</span><span class="n">reaction</span><span class="o">-</span><span class="n">time</span> <span class="p">(</span><span class="n">median</span> <span class="n">reaction</span> <span class="n">time</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The prototypes can consume as many placeholders as needed and use python’s
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.format" title="(in Python v3.12)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method to create the actual definition.</p>
+<p>The measure’s <code class="docutils literal notranslate"><span class="pre">id</span></code> is represented using the
+<a class="reference internal" href="../api/dispel.data.values.html#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefinitionId</span></code></a> class. This allows to standardize
+measure ids. In the above examples the definition creates simply an instance
+of <a class="reference internal" href="../api/dispel.data.values.html#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefinitionId</span></code></a> by using
+<a class="reference internal" href="../api/dispel.data.values.html#dispel.data.values.DefinitionId.from_str" title="dispel.data.values.DefinitionId.from_str"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_str()</span></code></a>. One can provide their own
+standard or use one of the more complex ones like
+<a class="reference internal" href="../api/dispel.data.measures.html#dispel.data.measures.MeasureId" title="dispel.data.measures.MeasureId"><code class="xref py py-class docutils literal notranslate"><span class="pre">dispel.data.measures.MeasureId</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureId</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span><span class="p">,</span> <span class="n">ValueDefinition</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">measure_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;reaction time&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">definition</span> <span class="o">=</span> <span class="n">ValueDefinition</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">id_</span><span class="o">=</span><span class="n">MeasureId</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">task_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;tst&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">measure_name</span><span class="o">=</span><span class="n">measure_name</span>
+<span class="gp">... </span>    <span class="p">),</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="n">measure_name</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">definition</span>
+<span class="go">&lt;ValueDefinition: tst-rt (reaction time)&gt;</span>
+</pre></div>
+</div>
+<p>Since this is a common use case the library provides two additional classes
+<a class="reference internal" href="../api/dispel.data.measures.html#dispel.data.measures.MeasureValueDefinition" title="dispel.data.measures.MeasureValueDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureValueDefinition</span></code></a> and
+<a class="reference internal" href="../api/dispel.data.measures.html#dispel.data.measures.MeasureValueDefinitionPrototype" title="dispel.data.measures.MeasureValueDefinitionPrototype"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureValueDefinitionPrototype</span></code></a>. These two
+classes allow to structure the definitions into tasks, modalities/variants of
+the task, measure name, aggregation method, and running ids:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinition</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinition</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">task_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s1">&#39;Cognitive Processing Speed test&#39;</span><span class="p">,</span> <span class="s1">&#39;CPS&#39;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s1">&#39;correct responses&#39;</span><span class="p">,</span> <span class="s1">&#39;cr&#39;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">modalities</span><span class="o">=</span><span class="p">[</span>
+<span class="gp">... </span>        <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;digit-to-digit&#39;</span><span class="p">,</span> <span class="s1">&#39;dtd&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;predefined key 1&#39;</span><span class="p">,</span> <span class="s1">&#39;key1&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="p">],</span>
+<span class="gp">... </span>    <span class="n">aggregation</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s1">&#39;standard deviation&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">definition</span>
+<span class="go">&lt;MeasureValueDefinition: cps-dtd_key1-cr-std (CPS digit-to-digit ...&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="measure-extraction">
+<span id="id2"></span><h2>Measure extraction<a class="headerlink" href="#measure-extraction" title="Link to this heading">#</a></h2>
+<p>Measure extraction methods are organized in modules per test, e.g. the
+<em>Cognitive Processing Speed</em> (CPS) test measures extraction is available in
+the <a class="reference internal" href="../api/dispel.providers.generic.tasks.cps.steps.html#module-dispel.providers.generic.tasks.cps.steps" title="dispel.providers.generic.tasks.cps.steps"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dispel.providers.generic.tasks.cps.steps</span></code></a>. See also
+<a class="reference internal" href="../contributing.html#contribute-new-test-module"><span class="std std-ref">here</span></a> for details on how to contribute new
+processing modules for tests.</p>
+<p>Measure extraction is typically comprised of two generic tasks: (1)
+<em>transforming</em> raw signals (e.g. computing the magnitude of a signal); and (2)
+<em>extracting</em> a measure (e.g. the maximum magnitude value of the signal). To
+ensure re-usability of some generic building blocks the library provides a
+framework around handling these steps.</p>
+<p>The basic class <a class="reference internal" href="../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStep</span></code></a> represents one
+step that consumes a <a class="reference internal" href="../api/dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reading</span></code></a> and
+yields a <a class="reference internal" href="../api/dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingResult</span></code></a> that wraps one of
+<a class="reference internal" href="../api/dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawDataSet</span></code></a>, <a class="reference internal" href="../api/dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureValue</span></code></a>,
+or <a class="reference internal" href="../api/dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a>.</p>
+<p>Measure extractions can be defined by
+providing a list of <a class="reference internal" href="../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStep</span></code></a>s to the
+function <a class="reference internal" href="../api/dispel.processing.html#dispel.processing.process" title="dispel.processing.process"><code class="xref py py-func docutils literal notranslate"><span class="pre">process()</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValue</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="p">(</span><span class="n">RawDataSetSource</span><span class="p">,</span> <span class="n">RawDataValueDefinition</span><span class="p">,</span>
+                          <span class="n">RawDataSetDefinition</span><span class="p">,</span> <span class="n">RawDataSet</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">ValueDefinition</span>
+
+<span class="kn">from</span> <span class="nn">dispel.processing</span> <span class="kn">import</span> <span class="n">ErrorHandling</span><span class="p">,</span> <span class="n">ProcessingStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">RawDataSetProcessingResult</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">LevelProcessingResult</span>
+<span class="kn">from</span> <span class="nn">dispel.signal</span> <span class="kn">import</span> <span class="n">euclidean_norm</span>
+
+<span class="k">class</span> <span class="nc">EuclideanNorm</span><span class="p">(</span><span class="n">ProcessingStep</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">,</span> <span class="n">level_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span> <span class="o">=</span> <span class="n">data_set_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level_id</span> <span class="o">=</span> <span class="n">level_id</span>
+
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">):</span>
+        <span class="nb">input</span> <span class="o">=</span> <span class="n">reading</span><span class="o">.</span><span class="n">get_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">level_id</span><span class="p">)</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span>
+        <span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">euclidean_norm</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">RawDataSetProcessingResult</span><span class="p">(</span>
+            <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">sources</span><span class="o">=</span><span class="nb">input</span><span class="p">,</span>
+            <span class="n">level</span><span class="o">=</span><span class="n">reading</span><span class="o">.</span><span class="n">get_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">level_id</span><span class="p">),</span>
+            <span class="n">result</span><span class="o">=</span><span class="n">RawDataSet</span><span class="p">(</span>
+                <span class="n">RawDataSetDefinition</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span><span class="si">}</span><span class="s1">-euclidean-norm&#39;</span><span class="p">,</span>
+                    <span class="n">RawDataSetSource</span><span class="p">(</span><span class="s1">&#39;konectom&#39;</span><span class="p">),</span>
+                    <span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s1">&#39;mag&#39;</span><span class="p">,</span> <span class="s1">&#39;magnitude&#39;</span><span class="p">)],</span>
+                    <span class="kc">True</span>  <span class="c1"># is computed!</span>
+                <span class="p">),</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;mag&#39;</span><span class="p">))</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">MaxValue</span><span class="p">(</span><span class="n">ProcessingStep</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">,</span> <span class="n">level_id</span><span class="p">,</span> <span class="n">measure_value_definition</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span> <span class="o">=</span> <span class="n">data_set_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level_id</span> <span class="o">=</span> <span class="n">level_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measure_value_definition</span> <span class="o">=</span> <span class="n">measure_value_definition</span>
+
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">input</span> <span class="o">=</span> <span class="n">reading</span><span class="o">.</span><span class="n">get_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">level_id</span><span class="p">)</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span>
+        <span class="p">)</span>
+        <span class="k">yield</span> <span class="n">LevelProcessingResult</span><span class="p">(</span>
+            <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">sources</span><span class="o">=</span><span class="nb">input</span><span class="p">,</span>
+            <span class="n">level</span><span class="o">=</span><span class="n">reading</span><span class="o">.</span><span class="n">get_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">level_id</span><span class="p">),</span>
+            <span class="n">result</span><span class="o">=</span><span class="n">MeasureValue</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">measure_value_definition</span><span class="p">,</span>
+                <span class="nb">input</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+<span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">EuclideanNorm</span><span class="p">(</span><span class="s1">&#39;accelerometer_ts&#39;</span><span class="p">,</span> <span class="n">level_id</span><span class="p">),</span>
+    <span class="n">MaxValue</span><span class="p">(</span>
+        <span class="s1">&#39;accelerometer_ts-euclidean-norm&#39;</span><span class="p">,</span>
+        <span class="n">level_id</span><span class="p">,</span>
+        <span class="n">ValueDefinition</span><span class="p">(</span>
+            <span class="s1">&#39;max-acc&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Maximum magnitude of acceleration&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;m/s^2&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>The actual processing is done by calling <a class="reference internal" href="../api/dispel.processing.html#dispel.processing.process" title="dispel.processing.process"><code class="xref py py-func docutils literal notranslate"><span class="pre">process()</span></code></a>
+on a reading. The following example assumes you have a
+<a class="reference internal" href="../api/dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reading</span></code></a> in the variable <code class="docutils literal notranslate"><span class="pre">reading</span></code>. For details on
+reading data sets see <a class="reference internal" href="data_model.html#reading-data-sets"><span class="std std-ref">here</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing</span> <span class="kn">import</span> <span class="n">process</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span>
+<span class="go">&lt;DataTrace of &lt;Reading: 2 levels (0 flags)&gt;: (11 entities, 2 ...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reading</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">get_reading</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reading</span><span class="o">.</span><span class="n">get_measure_set</span><span class="p">(</span><span class="n">level_id</span><span class="p">)</span><span class="o">.</span><span class="n">get_raw_value</span><span class="p">(</span><span class="s1">&#39;max-acc&#39;</span><span class="p">)</span>
+<span class="go">0.012348961</span>
+</pre></div>
+</div>
+<p>The results will then be available in the <code class="docutils literal notranslate"><span class="pre">measure_set</span></code> attribute of the
+returned <a class="reference internal" href="../api/dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reading</span></code></a> or from the attribute of
+the <a class="reference internal" href="../api/dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a> available with
+<a class="reference internal" href="../api/dispel.data.core.html#dispel.data.core.Reading.get_level" title="dispel.data.core.Reading.get_level"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_level()</span></code></a>.</p>
+<section id="transformation-extraction">
+<h3>Transformation &amp; Extraction<a class="headerlink" href="#transformation-extraction" title="Link to this heading">#</a></h3>
+<p>Since the two examples above represent two common scenarios of consuming one
+or more raw data sets to transform and consuming one or more raw data sets to
+extract one or more measures the following convenience classes exist:
+<a class="reference internal" href="../api/dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a>,
+<a class="reference internal" href="../api/dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a>, and
+<a class="reference internal" href="../api/dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep" title="dispel.processing.extract.ExtractMultipleStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractMultipleStep</span></code></a>. This simplifies the
+definition of the above examples as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="n">ExtractStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">TransformStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transform_step</span> <span class="o">=</span> <span class="n">TransformStep</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s1">&#39;accelerometer_ts&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">euclidean_norm</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;accelerometer-euclidean-norm&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s1">&#39;mag&#39;</span><span class="p">,</span> <span class="s1">&#39;magnitude&#39;</span><span class="p">)]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract_step</span> <span class="o">=</span> <span class="n">ExtractStep</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s1">&#39;accelerometer-euclidean-norm&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+<span class="gp">... </span>    <span class="n">ValueDefinition</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="s1">&#39;max-acc&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;Maximum magnitude of acceleration&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;m/s^2&#39;</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">transform_step</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">extract_step</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span><span class="o">.</span><span class="n">get_reading</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>One can also use supplementary information on top of the automatically passed
+data frame inside the transformation functions. This functionality can be used
+by passing either <code class="docutils literal notranslate"><span class="pre">level</span></code> and/or <code class="docutils literal notranslate"><span class="pre">reading</span></code> as parameters of the
+transformation function and they will be automatically provided.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="n">ExtractStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">TransformStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">reaction_time</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="p">(</span>
+<span class="gp">... </span>        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">level</span><span class="o">.</span><span class="n">start</span>
+<span class="gp">... </span>    <span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract_step</span> <span class="o">=</span> <span class="n">ExtractStep</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s1">&#39;accelerometer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">reaction_time</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">ValueDefinition</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="s1">&#39;rt&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;Reaction time&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;s&#39;</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">extract_step</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span><span class="o">.</span><span class="n">get_reading</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Often transform and extract steps are defined as classes to ensure steps can
+be reused:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">transformation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyExtractStep</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s1">&#39;accelerometer&#39;</span>
+<span class="gp">... </span>    <span class="n">definition</span> <span class="o">=</span> <span class="n">ValueDefinition</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="s1">&#39;rt&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;Reaction time&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;s&#39;</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="nd">@transformation</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">reaction_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="p">(</span>
+<span class="gp">... </span>            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">level</span><span class="o">.</span><span class="n">start</span>
+<span class="gp">... </span>        <span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">MyExtractStep</span><span class="p">()]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span><span class="o">.</span><span class="n">get_reading</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The above example shows some additional concepts that allow specify arguments,
+such as the data set ids, via class variables. Furthermore, class routines
+can be decorated with <code class="docutils literal notranslate"><span class="pre">&#64;transformation</span></code> to specify the transformation
+applied to the data sets. Further details and more advanced use cases can be
+found in the documentation of <a class="reference internal" href="../api/dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a>
+and <a class="reference internal" href="../api/dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a>.</p>
+</section>
+<section id="grouping">
+<h3>Grouping<a class="headerlink" href="#grouping" title="Link to this heading">#</a></h3>
+<p>Another common scenario is to extract measures for a specific task and
+sub-task. <a class="reference internal" href="../api/dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a> allows to pass a
+<a class="reference internal" href="../api/dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueDefinitionPrototype</span></code></a> instead of the
+concrete definition. The helper class
+<a class="reference internal" href="../api/dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a> can be used to provide
+additional arguments to the prototype:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">ProcessingStepGroup</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">ProcessingStepGroup</span><span class="p">([</span>
+<span class="gp">... </span>        <span class="n">transform_step</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">ExtractStep</span><span class="p">(</span>
+<span class="gp">... </span>            <span class="s1">&#39;accelerometer-euclidean-norm&#39;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+<span class="gp">... </span>            <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+<span class="gp">... </span>                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s1">&#39;measure 1&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">),</span>
+<span class="gp">... </span>                <span class="n">description</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{task_name}</span><span class="s1"> measure 1 description&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span>
+<span class="gp">... </span>            <span class="p">)</span>
+<span class="gp">... </span>        <span class="p">)],</span>
+<span class="gp">... </span>        <span class="n">task_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s1">&#39;U-turn test&#39;</span><span class="p">,</span> <span class="s1">&#39;UTT&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span><span class="o">.</span><span class="n">get_reading</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This is achieved by passing all named parameters from <code class="docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code>
+to the <code class="docutils literal notranslate"><span class="pre">process</span></code> function of each step.</p>
+</section>
+<section id="filtering">
+<h3>Filtering<a class="headerlink" href="#filtering" title="Link to this heading">#</a></h3>
+<p>Often one wants to process specific levels of a reading. Each level-based
+processing step allows to specify a
+<a class="reference internal" href="../api/dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilter</span></code></a> that allows to determine which
+level will be considered during processing.</p>
+<p>The supported processing step classes are</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStep" title="dispel.processing.level.LevelProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/dispel.processing.transform.html#dispel.processing.transform.ConcatenateLevels" title="dispel.processing.transform.ConcatenateLevels"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConcatenateLevels</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p></li>
+<li><p>any other processing step inheriting from
+<a class="reference internal" href="../api/dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin" title="dispel.processing.level.LevelFilterProcessingStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin</span></code></a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
+<p>Some processing might be contingent on the context used.
+<a class="reference internal" href="../api/dispel.processing.core.html#dispel.processing.core.Parameter" title="dispel.processing.core.Parameter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a> allows to specify configurable
+values that can be used to configure behavior of processing steps and linked
+to extracted measures. This is important to keep lineage of any dimension
+affecting the measure.</p>
+<p>Parameters automatically create a unique id based on their location of
+specification and the provided name. To link a parameter to a processing
+step it has to be either defined directly in the processing step or assigned
+to an attribute. <a class="reference internal" href="../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.get_parameters" title="dispel.processing.core.ProcessingStep.get_parameters"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dispel.processing.core.ProcessingStep.get_parameters()</span></code></a>
+automatically determines all parameters of a step through inspection.</p>
+<p>Assuming we had a module called <code class="docutils literal notranslate"><span class="pre">example.module</span></code> that defines a parameter on
+a module level and on a processing step level. The typical pattern of usage
+would be as following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># example.module</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Reading</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">GREATER_THAN_ZERO</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="n">Parameter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">transformation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">TransformStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PARAM_A</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">id_</span><span class="o">=</span><span class="s1">&#39;param_a&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">default_value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;A description explaining the influence of the param.&#39;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">param_a</span><span class="p">,</span> <span class="n">param_b</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyTransformStep</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">param_a</span> <span class="o">=</span> <span class="n">PARAM_A</span>
+<span class="gp">... </span>    <span class="n">param_b</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;param_b&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nd">@transformation</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="n">transform</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above specification will lead to two parameters called
+<code class="docutils literal notranslate"><span class="pre">example.module.param_a</span></code> and <code class="docutils literal notranslate"><span class="pre">example.module.MyTransformStep.param_b</span></code>.
+The values can be modified by either using their id or reference, e.g.,
+<code class="docutils literal notranslate"><span class="pre">PARAM_A.value</span> <span class="pre">=</span> <span class="pre">5</span></code> or <code class="docutils literal notranslate"><span class="pre">Parameter.set_value('example.module.param_a',</span> <span class="pre">5)</span></code>.</p>
+</section>
+<section id="data-trace-graph">
+<h2>Data trace graph<a class="headerlink" href="#data-trace-graph" title="Link to this heading">#</a></h2>
+<p>The data trace constitutes a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">DAG</a> like
+representation of the main data entities of each evaluation i.e.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../api/dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reading</span></code></a>,</p></li>
+<li><p><a class="reference internal" href="../api/dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a>,</p></li>
+<li><p><a class="reference internal" href="../api/dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelEpoch</span></code></a>.</p></li>
+<li><p><a class="reference internal" href="../api/dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawDataSet</span></code></a>,</p></li>
+<li><p><a class="reference internal" href="../api/dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureValue</span></code></a>.</p></li>
+</ul>
+</div></blockquote>
+<p>The links between entities are the processing steps that were applied on
+the source and led to the target entity.</p>
+<p>The goal of the data trace graph is to keep tabs on transformation and
+extraction steps in order to trace which raw data has led to the creation
+on which measure.</p>
+<p>Every entity is wrapped in a <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code>
+class that links both parent and child nodes related to it. All nodes are
+then stored in the <a class="reference internal" href="../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace" title="dispel.processing.data_trace.DataTrace"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataTrace</span></code></a> class.</p>
+<p>In order to populate the data trace graph one can use the
+<a class="reference internal" href="../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.populate" title="dispel.processing.data_trace.DataTrace.populate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">populate()</span></code></a> dispatch method.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="data_model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Data model</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="statistical_analyses.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Statistical analyses</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measure-definitions">Measure definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measure-extraction">Measure extraction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-extraction">Transformation &amp; Extraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">Filtering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-trace-graph">Data trace graph</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/usage/measure_processing.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

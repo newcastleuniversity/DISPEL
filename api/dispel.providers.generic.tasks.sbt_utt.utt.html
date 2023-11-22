@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.generic.tasks.sbt_utt.utt module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.generic.tasks.sbt_utt.utt';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.generic.tasks.mood module" href="dispel.providers.generic.tasks.mood.html" />
+    <link rel="prev" title="dispel.providers.generic.tasks.sbt_utt.sbt_synth module" href="dispel.providers.generic.tasks.sbt_utt.sbt_synth.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.generic.tasks.sbt_utt.html" class="nav-link">dispel.providers.generic.tasks.sbt_utt package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.generic.tasks.sbt_utt.utt">
+<span id="dispel-providers-generic-tasks-sbt-utt-utt-module"></span><h1>dispel.providers.generic.tasks.sbt_utt.utt module<a class="headerlink" href="#module-dispel.providers.generic.tasks.sbt_utt.utt" title="Link to this heading">#</a></h1>
+<p>U-turn Test module.</p>
+<p>A module containing the functionality to process the <em>U-turn</em> test (UTT).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.AssertUTTDurationLess5Min">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">AssertUTTDurationLess5Min</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#AssertUTTDurationLess5Min"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.AssertUTTDurationLess5Min" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStep</span></code></a></p>
+<p>Assertion UTT duration is less than five minutes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.AssertUTTDurationLess5Min.process_reading">
+<span class="sig-name descname"><span class="pre">process_reading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#AssertUTTDurationLess5Min.process_reading"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.AssertUTTDurationLess5Min.process_reading" title="Link to this definition">#</a></dt>
+<dd><p>Ensure UTT duration is less than five minutes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.BehavioralDeviations">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">BehavioralDeviations</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#BehavioralDeviations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralDeviations" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Behavioral flags processing steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.BehavioralDeviations.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.tasks.sbt_utt.utt.PlacementClassification</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.flags.le_flags.TruncateFirst5Turns</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.flags.le_flags.NoTurnsDetected</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralDeviations.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.BehavioralInvalidations">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">BehavioralInvalidations</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#BehavioralInvalidations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralInvalidations" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Behavioral invalidation processing steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.BehavioralInvalidations.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralInvalidations.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.ExtractTurnForModalitiesMeasures">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">ExtractTurnForModalitiesMeasures</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#ExtractTurnForModalitiesMeasures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.ExtractTurnForModalitiesMeasures" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Processing steps to extract turns for modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.ExtractTurnForModalitiesMeasures.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.activity.turning.ExtractTurnMeasures</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.activity.turning.ExtractTurnMeasures</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.activity.turning.ExtractTurnMeasures</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.activity.turning.ExtractTurnMeasures</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.ExtractTurnForModalitiesMeasures.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.ExtractWalkingSpeed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">ExtractWalkingSpeed</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#ExtractWalkingSpeed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.ExtractWalkingSpeed" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>Extract the UTT walking speed in step per seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>step_detection_data_set</strong> – The identifier of the step detection output data set.</p></li>
+<li><p><strong>accelerometer_data_set</strong> – The identifier of the accelerometer norm input data set.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.ExtractWalkingSpeed.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_detection_data_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accelerometer_data_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#ExtractWalkingSpeed.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.ExtractWalkingSpeed.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>step_detection_data_set</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p></li>
+<li><p><strong>accelerometer_data_set</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.LEVEL_FILTER">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">LEVEL_FILTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LevelFilter:</span> <span class="pre">((level</span> <span class="pre">id</span> <span class="pre">in</span> <span class="pre">[utt]</span> <span class="pre">and</span> <span class="pre">last</span> <span class="pre">level)</span> <span class="pre">and</span> <span class="pre">Level</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">duration</span> <span class="pre">&lt;</span> <span class="pre">300</span> <span class="pre">seconds.)&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.LEVEL_FILTER" title="Link to this definition">#</a></dt>
+<dd><p>Define the filter to use to compute UTT measures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>levels</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.12)"><em>Set</em></a>[<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.LeeStepProcessing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">LeeStepProcessing</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#LeeStepProcessing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.LeeStepProcessing" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Lee-specific processing steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.LeeStepProcessing.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.tasks.gait.core.AverageRollingVerticalAcceleration</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.gait.lee.LeeDetectStepsWithoutBout</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.gait.core.TransformStepDurationWithoutBout</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.gait.lee.LeeMeasuresWithoutBoutGroup</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.LeeStepProcessing.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.MAX_UTT_DURATION_SECONDS">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">MAX_UTT_DURATION_SECONDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">300</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.MAX_UTT_DURATION_SECONDS" title="Link to this definition">#</a></dt>
+<dd><p>The maximum duration of a computable U-Turn Test.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.PlacementClassification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">PlacementClassification</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#PlacementClassification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.PlacementClassification" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Placement classification processing steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.PlacementClassification.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.sensor.Resample</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.sensor.EuclideanNorm</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.activity.placement.ClassifyPlacement</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.PlacementClassification.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.TechnicalFlags">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">TechnicalFlags</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#TechnicalFlags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.TechnicalFlags" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Processing steps for technical flags.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.TechnicalFlags.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.flags.generic.FrequencyLowerThanGaitThres</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.flags.generic.MaxTimeIncrement</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.TechnicalFlags.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.TurnPreprocessing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">TurnPreprocessing</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#TurnPreprocessing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.TurnPreprocessing" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Turn pre-processing steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.TurnPreprocessing.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.preprocessing.PreprocessingSteps</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.preprocessing.PreprocessingSteps</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.transform.Apply</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.TurnPreprocessing.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.TurnProcessing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">TurnProcessing</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#TurnProcessing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.TurnProcessing" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Turn processing steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.TurnProcessing.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.activity.turning.ElGoharyTurnDetection</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.activity.turning.RefineUTurns</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.activity.turning.TransformAbsTurnSpeed</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.transform.Apply</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.sensor.EuclideanNorm</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.activity.turning.WithinTurnSpeed</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.activity.turning.WithinTurnSpeed</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.TurnProcessing.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.sbt_utt.utt.</span></span><span class="sig-name descname"><span class="pre">UTTProcessingSteps</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/sbt_utt/utt.html#UTTProcessingSteps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>UTT processing steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps.kwargs">
+<span class="sig-name descname"><span class="pre">kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'task_name':</span> <span class="pre">U-turn</span> <span class="pre">test</span> <span class="pre">(UTT)}</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps.kwargs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps.level_filter">
+<span class="sig-name descname"><span class="pre">level_filter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><span class="pre">LevelFilter</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LevelFilter:</span> <span class="pre">((level</span> <span class="pre">id</span> <span class="pre">in</span> <span class="pre">[utt]</span> <span class="pre">and</span> <span class="pre">last</span> <span class="pre">level)</span> <span class="pre">and</span> <span class="pre">Level</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">duration</span> <span class="pre">&lt;</span> <span class="pre">300</span> <span class="pre">seconds.)&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps.level_filter" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>levels</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.12)"><em>Set</em></a>[<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.tasks.sbt_utt.utt.TurnPreprocessing</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.sbt_utt.utt.TurnProcessing</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.sbt_utt.utt.ExtractTurnForModalitiesMeasures</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.sbt_utt.utt.LeeStepProcessing</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.sbt_utt.utt.ExtractWalkingSpeed</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.sbt_utt.utt.BehavioralDeviations</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.sbt_utt.utt.BehavioralInvalidations</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.generic.tasks.sbt_utt.sbt_synth.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.generic.tasks.sbt_utt.sbt_synth module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.generic.tasks.mood.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.generic.tasks.mood module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.AssertUTTDurationLess5Min"><code class="docutils literal notranslate"><span class="pre">AssertUTTDurationLess5Min</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.AssertUTTDurationLess5Min.process_reading"><code class="docutils literal notranslate"><span class="pre">AssertUTTDurationLess5Min.process_reading()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralDeviations"><code class="docutils literal notranslate"><span class="pre">BehavioralDeviations</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralDeviations.steps"><code class="docutils literal notranslate"><span class="pre">BehavioralDeviations.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralInvalidations"><code class="docutils literal notranslate"><span class="pre">BehavioralInvalidations</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralInvalidations.steps"><code class="docutils literal notranslate"><span class="pre">BehavioralInvalidations.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.ExtractTurnForModalitiesMeasures"><code class="docutils literal notranslate"><span class="pre">ExtractTurnForModalitiesMeasures</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.ExtractTurnForModalitiesMeasures.steps"><code class="docutils literal notranslate"><span class="pre">ExtractTurnForModalitiesMeasures.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.ExtractWalkingSpeed"><code class="docutils literal notranslate"><span class="pre">ExtractWalkingSpeed</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.ExtractWalkingSpeed.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractWalkingSpeed.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.LEVEL_FILTER"><code class="docutils literal notranslate"><span class="pre">LEVEL_FILTER</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.LeeStepProcessing"><code class="docutils literal notranslate"><span class="pre">LeeStepProcessing</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.LeeStepProcessing.steps"><code class="docutils literal notranslate"><span class="pre">LeeStepProcessing.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.MAX_UTT_DURATION_SECONDS"><code class="docutils literal notranslate"><span class="pre">MAX_UTT_DURATION_SECONDS</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.PlacementClassification"><code class="docutils literal notranslate"><span class="pre">PlacementClassification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.PlacementClassification.steps"><code class="docutils literal notranslate"><span class="pre">PlacementClassification.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.TechnicalFlags"><code class="docutils literal notranslate"><span class="pre">TechnicalFlags</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.TechnicalFlags.steps"><code class="docutils literal notranslate"><span class="pre">TechnicalFlags.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.TurnPreprocessing"><code class="docutils literal notranslate"><span class="pre">TurnPreprocessing</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.TurnPreprocessing.steps"><code class="docutils literal notranslate"><span class="pre">TurnPreprocessing.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.TurnProcessing"><code class="docutils literal notranslate"><span class="pre">TurnProcessing</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.TurnProcessing.steps"><code class="docutils literal notranslate"><span class="pre">TurnProcessing.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps"><code class="docutils literal notranslate"><span class="pre">UTTProcessingSteps</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps.kwargs"><code class="docutils literal notranslate"><span class="pre">UTTProcessingSteps.kwargs</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps.level_filter"><code class="docutils literal notranslate"><span class="pre">UTTProcessingSteps.level_filter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps.steps"><code class="docutils literal notranslate"><span class="pre">UTTProcessingSteps.steps</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.generic.tasks.sbt_utt.utt.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

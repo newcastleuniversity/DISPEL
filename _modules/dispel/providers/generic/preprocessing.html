@@ -1,0 +1,800 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.preprocessing &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/preprocessing';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.preprocessing</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Core functionalities to preprocess signal data.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">DEFAULT_COLUMNS</span><span class="p">,</span> <span class="n">GRAVITY_COLUMNS</span>
+<span class="kn">from</span> <span class="nn">dispel.processing</span> <span class="kn">import</span> <span class="n">ProcessingStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DefaultLevelFilter</span><span class="p">,</span>
+    <span class="n">LevelFilter</span><span class="p">,</span>
+    <span class="n">LevelFilterType</span><span class="p">,</span>
+    <span class="n">LevelIdFilter</span><span class="p">,</span>
+    <span class="n">ProcessingStepGroup</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.modalities</span> <span class="kn">import</span> <span class="n">LimbModality</span><span class="p">,</span> <span class="n">SensorModality</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">Apply</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.sensor</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ComputeGravityRotationMatrices</span><span class="p">,</span>
+    <span class="n">Resample</span><span class="p">,</span>
+    <span class="n">RotateSensorWithGravityRotationMatrices</span><span class="p">,</span>
+    <span class="n">SetTimestampIndex</span><span class="p">,</span>
+    <span class="n">TransformGyroscope</span><span class="p">,</span>
+    <span class="n">TransformUserAcceleration</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.filter</span> <span class="kn">import</span> <span class="n">butterworth_high_pass_filter</span><span class="p">,</span> <span class="n">savgol_filter</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.sensor</span> <span class="kn">import</span> <span class="n">check_amplitude</span><span class="p">,</span> <span class="n">detrend_signal</span>
+
+
+<div class="viewcode-block" id="FilterSensorNoise">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.FilterSensorNoise">[docs]</a>
+<span class="k">class</span> <span class="nc">FilterSensorNoise</span><span class="p">(</span><span class="n">Apply</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Apply a filter that will remove any sensor noise into a given dataset.</span>
+
+<span class="sd">    This filter is a Savitzky-Golay one.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id on which the transformation is to be performed (&#39;accelerometer&#39;,</span>
+<span class="sd">        &#39;gyroscope&#39;).</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns onto which the filtering step has to be applied.</span>
+<span class="sd">    kwargs</span>
+<span class="sd">        Additional arguments that are passed to the</span>
+<span class="sd">        :meth:`~dispel.processing.core.ProcessingStep.process` function of each step. This</span>
+<span class="sd">        allows to provide additional values, such as placeholder values in value</span>
+<span class="sd">        definitions to the actual processing function.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The Savitzky-Golay is tuned as in [Martinez et. al. 2012]_ to remove sensor noise</span>
+<span class="sd">    and to smooth the signal. The windows size is thus set up to 41 points and the</span>
+<span class="sd">    filter is of order-3.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FilterSensorNoise.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.FilterSensorNoise.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span> <span class="ow">or</span> <span class="n">DEFAULT_COLUMNS</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">savgol_filter</span><span class="p">,</span>
+            <span class="n">method_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">41</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_svgf&quot;</span><span class="p">,</span>
+            <span class="n">drop_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FilterPhysiologicalNoise">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.FilterPhysiologicalNoise">[docs]</a>
+<span class="k">class</span> <span class="nc">FilterPhysiologicalNoise</span><span class="p">(</span><span class="n">Apply</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Apply a filter that will remove any physiological noise into a dataset.</span>
+
+<span class="sd">    This filter is a butterworth high-pass one.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id on which the transformation is to be performed (&#39;accelerometer&#39;,</span>
+<span class="sd">        &#39;gyroscope&#39;).</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns onto which the filtering step has to be applied.</span>
+<span class="sd">    sampling_frequency</span>
+<span class="sd">        Optional the initial sampling frequency.</span>
+<span class="sd">    kwargs</span>
+<span class="sd">        Additional arguments that are passed to the</span>
+<span class="sd">        :meth:`~dispel.processing.core.ProcessingStep.process` function of each step. This</span>
+<span class="sd">        allows to provide additional values, such as placeholder values in value</span>
+<span class="sd">        definitions to the actual processing function.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The Butterwoth highpass filter is tuned as in [Martinez et. al. 2012]_ to remove</span>
+<span class="sd">    physiological noise. The cut-off of is of 0.2HZ which is the standard breath</span>
+<span class="sd">    frequency.</span>
+
+<span class="sd">    .. [Martinez et. al. 2012] MARTINEZ-MENDEZ, Rigoberto, SEKINE,</span>
+<span class="sd">           Masaki, et TAMURA, Toshiyo.</span>
+<span class="sd">           Postural sway parameters using a triaxial accelerometer: comparing elderly</span>
+<span class="sd">           and young healthy adults. Computer methods in biomechanics and biomedical</span>
+<span class="sd">           engineering, 2012, vol. 15, no 9, p. 899-910.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FilterPhysiologicalNoise.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.FilterPhysiologicalNoise.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">sampling_frequency</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span> <span class="ow">or</span> <span class="n">DEFAULT_COLUMNS</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">butterworth_high_pass_filter</span><span class="p">,</span>
+            <span class="n">method_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">sampling_frequency</span><span class="p">,</span> <span class="n">zero_phase</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_bhpf&quot;</span><span class="p">,</span>
+            <span class="n">drop_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Detrend">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.Detrend">[docs]</a>
+<span class="k">class</span> <span class="nc">Detrend</span><span class="p">(</span><span class="n">Apply</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A detrending preprocessing step according a given data set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id on which the transformation is to be performed (&#39;accelerometer&#39;,</span>
+<span class="sd">        &#39;gyroscope&#39;).</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns onto which the detrending steps have to be applied.</span>
+<span class="sd">    kwargs</span>
+<span class="sd">        Additional arguments that are passed to the</span>
+<span class="sd">        :meth:`~dispel.processing.core.ProcessingStep.process` function of each step. This</span>
+<span class="sd">        allows to provide additional values, such as placeholder values in value</span>
+<span class="sd">        definitions to the actual processing function.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Detrend.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.Detrend.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span> <span class="ow">or</span> <span class="n">DEFAULT_COLUMNS</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">detrend_signal</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_detrend&quot;</span><span class="p">,</span>
+            <span class="n">drop_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AmplitudeRangeFilter">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.AmplitudeRangeFilter">[docs]</a>
+<span class="k">class</span> <span class="nc">AmplitudeRangeFilter</span><span class="p">(</span><span class="n">LevelFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Filter aberrant signal amplitude.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id on which the transformation is to be performed (&#39;accelerometer&#39;,</span>
+<span class="sd">        &#39;gyroscope&#39;).</span>
+<span class="sd">    max_amplitude</span>
+<span class="sd">        A float which is the maximum expected amplitude values.</span>
+<span class="sd">    min_amplitude</span>
+<span class="sd">        A float which is the minimum expected amplitude values.</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns onto which the detrending steps have to be applied.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AmplitudeRangeFilter.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.AmplitudeRangeFilter.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">max_amplitude</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">min_amplitude</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span> <span class="o">=</span> <span class="n">data_set_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_amplitude</span> <span class="o">=</span> <span class="n">max_amplitude</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_amplitude</span> <span class="o">=</span> <span class="n">min_amplitude</span></div>
+
+
+<div class="viewcode-block" id="AmplitudeRangeFilter.repr">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.AmplitudeRangeFilter.repr">[docs]</a>
+    <span class="k">def</span> <span class="nf">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get representation of the filter.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;only </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2"> signal with acceptable amplitude&gt;&quot;</span></div>
+
+
+<div class="viewcode-block" id="AmplitudeRangeFilter.filter">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.AmplitudeRangeFilter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter levels with acceptable signal amplitude.&quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="nf">_amplitude_filter</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">level</span><span class="o">.</span><span class="n">has_raw_data_set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span><span class="p">):</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+                <span class="k">return</span> <span class="n">check_amplitude</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_amplitude</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_amplitude</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">_amplitude_filter</span><span class="p">,</span> <span class="n">levels</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RotateFrame">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.RotateFrame">[docs]</a>
+<span class="k">class</span> <span class="nc">RotateFrame</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A changing referential preprocessing step according a given data set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id on which the transformation is to be performed.</span>
+<span class="sd">    gravity_data_set_id</span>
+<span class="sd">        The dataset id containing the gravity components.</span>
+<span class="sd">    frame</span>
+<span class="sd">        The new desired frame.</span>
+<span class="sd">    columns</span>
+<span class="sd">        The columns onto which the resampling steps have to be applied.</span>
+<span class="sd">    kwargs</span>
+<span class="sd">        Additional arguments that are passed to the</span>
+<span class="sd">        :meth:`~dispel.processing.core.ProcessingStep.process` function of each step.</span>
+<span class="sd">        This allows to provide additional values, such as placeholder values in value</span>
+<span class="sd">        definitions to the actual processing function.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RotateFrame.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.RotateFrame.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">gravity_data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">frame</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span> <span class="ow">or</span> <span class="n">DEFAULT_COLUMNS</span>
+
+        <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">ComputeGravityRotationMatrices</span><span class="p">(</span>
+                <span class="n">gravity_data_set_id</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">storage_error</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span>
+            <span class="p">),</span>
+            <span class="n">RotateSensorWithGravityRotationMatrices</span><span class="p">(</span>
+                <span class="n">data_set_id</span><span class="p">,</span>
+                <span class="n">columns</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">steps</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PreprocessingSteps">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.PreprocessingSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">PreprocessingSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A changing referential preprocessing step according a given data set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id on which the transformation is to be performed.</span>
+<span class="sd">    limb</span>
+<span class="sd">        The modality regarding if the exercise is upper or lower limb.</span>
+<span class="sd">    sensor</span>
+<span class="sd">        The modality regarding the type of sensor either accelerometer or gyroscope.</span>
+<span class="sd">    resample_freq</span>
+<span class="sd">        Optionally, the frequency to which resample the data during the resample step.</span>
+<span class="sd">    columns</span>
+<span class="sd">        Optionally, the columns on which the preprocessing steps need to be applied.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`~dispel.processing.level.LevelFilter` to determine the levels</span>
+<span class="sd">        to be transformed. If no filter is provided, all levels will be transformed. The</span>
+<span class="sd">        ``level_filter`` also accepts :class:`str`, :class:`~dispel.data.core.LevelId`\ s</span>
+<span class="sd">        and lists of either and passes them to a</span>
+<span class="sd">        :class:`~dispel.processing.level.LevelIdFilter` for convenience.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="PreprocessingSteps.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.preprocessing.html#dispel.providers.generic.preprocessing.PreprocessingSteps.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">limb</span><span class="p">:</span> <span class="n">LimbModality</span><span class="p">,</span>
+        <span class="n">sensor</span><span class="p">:</span> <span class="n">SensorModality</span><span class="p">,</span>
+        <span class="n">resample_freq</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">LevelFilterType</span> <span class="o">=</span> <span class="n">DefaultLevelFilter</span><span class="p">(),</span>
+    <span class="p">):</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span> <span class="ow">or</span> <span class="n">DEFAULT_COLUMNS</span>
+        <span class="n">extra_columns</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level_filter</span><span class="p">,</span> <span class="n">LevelFilter</span><span class="p">):</span>
+            <span class="n">level_filter</span> <span class="o">=</span> <span class="n">LevelIdFilter</span><span class="p">(</span><span class="n">level_filter</span><span class="p">)</span>
+
+        <span class="c1"># Need to be computed even if only gyroscope signals are preprocessed to make</span>
+        <span class="c1"># sure `acc` data set is available to compute gravity rotation matrices</span>
+        <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">TransformUserAcceleration</span><span class="p">(</span><span class="n">storage_error</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">),</span>
+            <span class="n">TransformGyroscope</span><span class="p">(</span><span class="n">storage_error</span><span class="o">=</span><span class="s2">&quot;overwrite&quot;</span><span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">sensor</span> <span class="o">==</span> <span class="n">SensorModality</span><span class="o">.</span><span class="n">ACCELEROMETER</span><span class="p">:</span>
+            <span class="n">data_set_id</span> <span class="o">=</span> <span class="s2">&quot;acc&quot;</span>
+            <span class="n">extra_columns</span> <span class="o">=</span> <span class="n">GRAVITY_COLUMNS</span>
+
+        <span class="n">steps</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="n">SetTimestampIndex</span><span class="p">(</span>
+                <span class="n">data_set_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">extra_columns</span><span class="p">)),</span> <span class="n">duplicates</span><span class="o">=</span><span class="s2">&quot;first&quot;</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">limb</span> <span class="o">==</span> <span class="n">LimbModality</span><span class="o">.</span><span class="n">LOWER_LIMB</span><span class="p">:</span>
+            <span class="n">steps</span> <span class="o">+=</span> <span class="p">[</span>
+                <span class="n">RotateFrame</span><span class="p">(</span>
+                    <span class="n">data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_ts&quot;</span><span class="p">,</span>
+                    <span class="n">gravity_data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts&quot;</span><span class="p">,</span>
+                    <span class="n">frame</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">Resample</span><span class="p">(</span>
+                    <span class="n">data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_ts_rotated&quot;</span><span class="p">,</span>
+                    <span class="n">freq</span><span class="o">=</span><span class="n">resample_freq</span><span class="p">,</span>
+                    <span class="n">aggregations</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;ffill&quot;</span><span class="p">],</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">Detrend</span><span class="p">(</span>
+                    <span class="n">data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_ts_rotated_resampled&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span>
+                <span class="p">),</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">steps</span> <span class="o">+=</span> <span class="p">[</span>
+                <span class="n">Resample</span><span class="p">(</span>
+                    <span class="n">data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_ts&quot;</span><span class="p">,</span>
+                    <span class="n">freq</span><span class="o">=</span><span class="n">resample_freq</span><span class="p">,</span>
+                    <span class="n">aggregations</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;ffill&quot;</span><span class="p">],</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">Detrend</span><span class="p">(</span><span class="n">data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_ts_resampled&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">),</span>
+            <span class="p">]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

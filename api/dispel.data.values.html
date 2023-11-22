@@ -1,0 +1,1352 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.data.values module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.data.values';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.io package" href="dispel.io.html" />
+    <link rel="prev" title="dispel.data.validators module" href="dispel.data.validators.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.data.html" class="nav-link">dispel.data package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.data....</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.data.values">
+<span id="dispel-data-values-module"></span><h1>dispel.data.values module<a class="headerlink" href="#module-dispel.data.values" title="Link to this heading">#</a></h1>
+<p>A module to handle values and their definitions.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.data.values.AVEnum">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.data.values.</span></span><span class="sig-name descname"><span class="pre">AVEnum</span></span><a class="reference internal" href="../_modules/dispel/data/values.html#AVEnum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.AVEnum" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>A base class for abbreviated value enumerations.</p>
+<p>When extracting measures from tasks they are often done for specific modalities.
+This base class allows to do this in a convenient fashion to address modalities both
+from a processing and representation form. The enumeration is ordered.</p>
+<p class="rubric">Examples</p>
+<p>Assuming you have a task that has two modalities, e.g. the <em>Cognitive Processing
+Speed</em> test has two forms: <em>symbol-to-digit</em> and <em>digit-to-digit</em>. The respective
+modalities class would look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enum</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AVEnum</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">CPSTypeModality</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="o">...</span>     <span class="n">SYMBOL_TO_DIGIT</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;symbol-to-digit&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">DIGIT_TO_DIGIT</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;digit-to-digit&#39;</span><span class="p">,</span> <span class="s1">&#39;dtd&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span>
+<span class="o">&lt;</span><span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="p">:</span> <span class="n">symbol</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">digit</span> <span class="p">(</span><span class="n">std</span><span class="p">)</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The constants can be used directly in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> as well as can be
+converted to an integer representation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enum</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="p">)</span>
+<span class="mi">1</span>
+</pre></div>
+</div>
+<p>In order to conventiently pass the constants to modalities of
+<a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValueDefinition" title="dispel.data.measures.MeasureValueDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureValueDefinition</span></code></a> and
+<a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValueDefinitionPrototype" title="dispel.data.measures.MeasureValueDefinitionPrototype"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureValueDefinitionPrototype</span></code></a> a property is exposed
+that contains the <a class="reference internal" href="#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbbreviatedValue</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enum</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="o">.</span><span class="n">av</span>
+<span class="n">symbol</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">digit</span> <span class="p">(</span><span class="n">std</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>as well as for convenience the abbreviated value too:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enum</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="o">.</span><span class="n">abbr</span>
+<span class="s1">&#39;std&#39;</span>
+</pre></div>
+</div>
+<p>Since the enumeration is odered, one can also perform comparisons between them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enum</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">DIGIT_TO_DIGIT</span> <span class="o">&lt;</span> <span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span>
+<span class="kc">False</span>
+</pre></div>
+</div>
+<p>The member can also be retrieved from the abbreviation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enum</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">from_abbr</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="p">:</span> <span class="n">symbol</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">digit</span> <span class="p">(</span><span class="n">std</span><span class="p">)</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>As well as from the variable name (case-insensitive):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enum</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">from_variable</span><span class="p">(</span><span class="s1">&#39;symbol_to_digit&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">CPSTypeModality</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="p">:</span> <span class="n">symbol</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">digit</span> <span class="p">(</span><span class="n">std</span><span class="p">)</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.AVEnum.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abbr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#AVEnum.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.AVEnum.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.data.values.AVEnum.abbr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">abbr</span></span><a class="headerlink" href="#dispel.data.values.AVEnum.abbr" title="Link to this definition">#</a></dt>
+<dd><p>Get the abbreviated value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.AVEnum.from_abbr">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_abbr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#AVEnum.from_abbr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.AVEnum.from_abbr" title="Link to this definition">#</a></dt>
+<dd><p>Get the corresponding member from the abbreviated value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.AVEnum.from_variable">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#AVEnum.from_variable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.AVEnum.from_variable" title="Link to this definition">#</a></dt>
+<dd><p>Get the corresponding member from the variable name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.data.values.AVEnum.variable">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">variable</span></span><a class="headerlink" href="#dispel.data.values.AVEnum.variable" title="Link to this definition">#</a></dt>
+<dd><p>Get the modality variable name.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.data.values.AbbreviatedValue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.data.values.</span></span><span class="sig-name descname"><span class="pre">AbbreviatedValue</span></span><a class="reference internal" href="../_modules/dispel/data/values.html#AbbreviatedValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.AbbreviatedValue" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>An abbreviated value.</p>
+<p class="rubric">Examples</p>
+<p>This class allows to consistently handle abbreviated terms. Assuming you have a name
+of an assessment, e.g. <cite>Cognitive Processing Speed</cite> test and the respective
+abbreviation would be <cite>CPS</cite>, then you can create an abbreviated value like this:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;Cognitive Processing Speed test&#39;</span><span class="p">,</span> <span class="s1">&#39;CPS&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span>
+<span class="go">Cognitive Processing Speed test (CPS)</span>
+</pre></div>
+</div>
+<p>While this seems like a lot of overhead, it comes in handy when describing value
+definitions or higher-level abstractions, such as measure definitions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The full description of the value</p></li>
+<li><p><strong>abbr</strong> – The abbreviated form of the value</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.data.values.AbbreviatedValue.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#dispel.data.values.AbbreviatedValue.value" title="Link to this definition">#</a></dt>
+<dd><p>The full description of the value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.AbbreviatedValue.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abbr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#AbbreviatedValue.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.AbbreviatedValue.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p></li>
+<li><p><strong>abbr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.data.values.AbbreviatedValue.abbr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">abbr</span></span><a class="headerlink" href="#dispel.data.values.AbbreviatedValue.abbr" title="Link to this definition">#</a></dt>
+<dd><p>Get the abbreviated form of the value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.AbbreviatedValue.format">
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#AbbreviatedValue.format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.AbbreviatedValue.format" title="Link to this definition">#</a></dt>
+<dd><p>Format an abbreviated value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.AbbreviatedValue.wrap">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#AbbreviatedValue.wrap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.AbbreviatedValue.wrap" title="Link to this definition">#</a></dt>
+<dd><p>Wrap a value into an abbreviated value.</p>
+<p>This is a small helper class to conveniently wrap values into an abbreviated
+value, if they are not already one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to be wrapped</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The passed <code class="docutils literal notranslate"><span class="pre">value</span></code> if it is an instance of <a class="reference internal" href="#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbbreviatedValue</span></code></a>. If a
+string is passed, then the string is passed as <code class="docutils literal notranslate"><span class="pre">value</span></code> argument to the
+constructor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue">AbbreviatedValue</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If the passed value is neither a string nor an instance of
+    <a class="reference internal" href="#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbbreviatedValue</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.data.values.DefinitionId">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.data.values.</span></span><span class="sig-name descname"><span class="pre">DefinitionId</span></span><a class="reference internal" href="../_modules/dispel/data/values.html#DefinitionId"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.DefinitionId" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The definition of a measure id.</p>
+<p>This class provides the basic functionality around ids used to reference columns and
+definitions. Other structured ids inherit from this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The identifier of the definition.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.DefinitionId.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#DefinitionId.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.DefinitionId.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id_</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.DefinitionId.from_str">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#DefinitionId.from_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.DefinitionId.from_str" title="Link to this definition">#</a></dt>
+<dd><p>Create a class instance from string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><em>DefinitionId</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.data.values.DefinitionId.id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#dispel.data.values.DefinitionId.id" title="Link to this definition">#</a></dt>
+<dd><p>Get the identifier.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.data.values.Value">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.data.values.</span></span><span class="sig-name descname"><span class="pre">Value</span></span><a class="reference internal" href="../_modules/dispel/data/values.html#Value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.Value" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A value with definition and actual value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>definition</strong> – The definition of the value.</p></li>
+<li><p><strong>value</strong> – The actual value. If <cite>definition.precision</cite> is set, then the value will be
+rounded to the number of significant digits. The pre-rounded value is stored in
+<cite>raw_value</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.Value.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#Value.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.Value.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>definition</strong> (<a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><em>ValueDefinition</em></a>) – </p></li>
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.data.values.Value.id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><span class="pre">DefinitionId</span></a></em><a class="headerlink" href="#dispel.data.values.Value.id" title="Link to this definition">#</a></dt>
+<dd><p>Get the identifier from the definition of the value.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.data.values.ValueDefinition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.data.values.</span></span><span class="sig-name descname"><span class="pre">ValueDefinition</span></span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueDefinition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueDefinition" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The definition of a value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The identifier of the value definition</p></li>
+<li><p><strong>name</strong> – The human-readable name of the values</p></li>
+<li><p><strong>unit</strong> – The unit of the value</p></li>
+<li><p><strong>description</strong> – A more elaborate description of the values and how they were produced</p></li>
+<li><p><strong>data_type</strong> – The numpy data type of the value in question</p></li>
+<li><p><strong>validator</strong> – A function that ensures values comply with the definition. The module
+<a class="reference internal" href="dispel.data.validators.html#module-dispel.data.validators" title="dispel.data.validators"><code class="xref py py-mod docutils literal notranslate"><span class="pre">validators</span></code></a> contains validators for common scenarios that can be
+used here.</p></li>
+<li><p><strong>precision</strong> – The number of significance for the values expected under definition. If set, the
+value will be rounded to the set number of digits.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueDefinition.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueDefinition.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueDefinition.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_</strong> (<a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><em>DefinitionId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p></li>
+<li><p><strong>unit</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>data_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>validator</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em><em>, </em><em>None</em><em>] </em><em>| </em><em>None</em>) – </p></li>
+<li><p><strong>precision</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueDefinition.derive">
+<span class="sig-name descname"><span class="pre">derive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueDefinition.derive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueDefinition.derive" title="Link to this definition">#</a></dt>
+<dd><p>Derive a value definition with updated properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments to be set/updated in the derived definition.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new definition with updated parameters.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition">ValueDefinition</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If one of the provided arguments is not a parameter of the constructor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.data.values.ValueDefinitionPrototype">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.data.values.</span></span><span class="sig-name descname"><span class="pre">ValueDefinitionPrototype</span></span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueDefinitionPrototype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueDefinitionPrototype" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The prototype of a <a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueDefinition</span></code></a>.</p>
+<p>Measure processing often leads to various related measures. To ease the creation of
+such, the <a class="reference internal" href="#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueDefinitionPrototype</span></code></a> allows to specify prototypic measures
+that can be used to derive actual definitions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cls</strong> – The class to be used when creating concrete instances with
+<a class="reference internal" href="#dispel.data.values.ValueDefinitionPrototype.create_definition" title="dispel.data.values.ValueDefinitionPrototype.create_definition"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_definition()</span></code></a>. By default, the class used is
+:class:ValueDefinition`.</p></li>
+<li><p><strong>kwargs</strong> – All named parameters passed to the constructor will be passed to the measure
+definition class constructor. The parameter <code class="docutils literal notranslate"><span class="pre">cls</span></code> is reserved to pass a
+different measure definition class. Placeholders to be filled upon creation are
+specified with curly brackets, i.e., <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">{placeholder}</span> <span class="pre">value</span></code> is populated when
+calling <code class="docutils literal notranslate"><span class="pre">prototype.create_definition(placeholder='special')</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Assuming we want to create a measure for different time windows one can create the
+following prototype:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">ValueDefinitionPrototype</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prototype</span> <span class="o">=</span> <span class="n">ValueDefinitionPrototype</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">id_</span><span class="o">=</span><span class="s1">&#39;measure-</span><span class="si">{lower}</span><span class="s1">-</span><span class="si">{upper}</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;measure from </span><span class="si">{lower}</span><span class="s1"> to </span><span class="si">{upper}</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prototype</span><span class="o">.</span><span class="n">create_definition</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="go">&lt;ValueDefinition: measure-5-6 (measure from 5 to 6, s)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prototype</span><span class="o">.</span><span class="n">create_definition</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">&lt;ValueDefinition: measure-1-5 (measure from 1 to 5, s)&gt;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueDefinitionPrototype.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueDefinitionPrototype.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueDefinitionPrototype.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueDefinitionPrototype.create_definition">
+<span class="sig-name descname"><span class="pre">create_definition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueDefinitionPrototype.create_definition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueDefinitionPrototype.create_definition" title="Link to this definition">#</a></dt>
+<dd><p>Create a definition from this prototype.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>) – The arguments and placeholders to be populated. All named arguments will be
+used to both provide additional named arguments to the measure definition
+class specified with <code class="docutils literal notranslate"><span class="pre">cls</span></code> during construction upon creation (the class is
+inspected for named parameters) and placeholders provided during
+construction of the prototype.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value definition created from the value definition prototype.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition">ValueDefinition</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>An example is given above to populate placeholders. This is also possible with
+arguments required by the definition class:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">ValueDefinitionPrototype</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prototype</span> <span class="o">=</span> <span class="n">ValueDefinitionPrototype</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prototype</span><span class="o">.</span><span class="n">create_definition</span><span class="p">(</span><span class="n">id_</span><span class="o">=</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="go">&lt;ValueDefinition: foo (bar, s)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prototype</span><span class="o">.</span><span class="n">create_definition</span><span class="p">(</span><span class="n">id_</span><span class="o">=</span><span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;bam&#39;</span><span class="p">)</span>
+<span class="go">&lt;ValueDefinition: baz (bam, s)&gt;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If a placeholder is missing from kwargs.</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>values</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>) – </p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><em>ValueDefinition</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueDefinitionPrototype.create_definitions">
+<span class="sig-name descname"><span class="pre">create_definitions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueDefinitionPrototype.create_definitions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueDefinitionPrototype.create_definitions" title="Link to this definition">#</a></dt>
+<dd><p>Create multiple definitions.</p>
+<p>This method provides a convenient way to specify multiple definitions at the
+same time for an iterable of dictionaries that are passed to
+<a class="reference internal" href="#dispel.data.values.ValueDefinitionPrototype.create_definition" title="dispel.data.values.ValueDefinitionPrototype.create_definition"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_definition()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>items</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em><em>]</em>) – An iterable of dictionaries passed to <a class="reference internal" href="#dispel.data.values.ValueDefinitionPrototype.create_definition" title="dispel.data.values.ValueDefinitionPrototype.create_definition"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_definition()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of the created value definitions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition">ValueDefinition</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueDefinitionPrototype.derive">
+<span class="sig-name descname"><span class="pre">derive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueDefinitionPrototype.derive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueDefinitionPrototype.derive" title="Link to this definition">#</a></dt>
+<dd><p>Derive a prototype with updated properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments to be set/updated in the derived prototype.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new prototype with updated parameters.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype">ValueDefinitionPrototype</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.data.values.</span></span><span class="sig-name descname"><span class="pre">ValueSet</span></span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A collection of multiple values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> – The values of the value set. This can be a list of <a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value"><code class="xref py py-class docutils literal notranslate"><span class="pre">Value</span></code></a>s or a list
+of any value.</p></li>
+<li><p><strong>definitions</strong> – An optional list of definitions describing the passed values through the
+parameter <code class="docutils literal notranslate"><span class="pre">values</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The constructor passes both <code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">definitions</span></code> to
+<a class="reference internal" href="#dispel.data.values.ValueSet.set_values" title="dispel.data.values.ValueSet.set_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ValueSet.set_values()</span></code></a>. For details on how to specify values of the
+<a class="reference internal" href="#dispel.data.values.ValueSet" title="dispel.data.values.ValueSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueSet</span></code></a> please have a look there.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.VALUE_CLS">
+<span class="sig-name descname"><span class="pre">VALUE_CLS</span></span><a class="headerlink" href="#dispel.data.values.ValueSet.VALUE_CLS" title="Link to this definition">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value"><code class="xref py py-class docutils literal notranslate"><span class="pre">Value</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definitions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>None</em>) – </p></li>
+<li><p><strong>definitions</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><em>ValueDefinition</em></a><em>] </em><em>| </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.definitions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.definitions" title="Link to this definition">#</a></dt>
+<dd><p>Get all definitions of the set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An iterable of all value definitions from all values of the set.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Iterable[<a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition">ValueDefinition</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.empty">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">empty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#dispel.data.values.ValueSet.empty" title="Link to this definition">#</a></dt>
+<dd><p>Get whether the value set is empty.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.get" title="Link to this definition">#</a></dt>
+<dd><p>Get a value for an id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The id or definition for which to obtain the value.</p></li>
+<li><p><strong>id_</strong> (<a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><em>DefinitionId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><em>ValueDefinition</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The respective <a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value"><code class="xref py py-class docutils literal notranslate"><span class="pre">Value</span></code></a> matching the provided <code class="docutils literal notranslate"><span class="pre">id_</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value">Value</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.12)"><strong>KeyError</strong></a> – If the provided <code class="docutils literal notranslate"><span class="pre">id_</span></code> is not present in the set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.get_definition">
+<span class="sig-name descname"><span class="pre">get_definition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.get_definition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.get_definition" title="Link to this definition">#</a></dt>
+<dd><p>Get the definition of a value by its id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The id for which to obtain the definition</p></li>
+<li><p><strong>id_</strong> (<a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><em>DefinitionId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><em>ValueDefinition</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The definition belonging to the passed id.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition">ValueDefinition</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.get_raw_value">
+<span class="sig-name descname"><span class="pre">get_raw_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.get_raw_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.get_raw_value" title="Link to this definition">#</a></dt>
+<dd><p>Get the raw value for an id.</p>
+<p>This is a convenience method to not have to call <code class="docutils literal notranslate"><span class="pre">value_set.get(id).value</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The id or definition for which to retrieve the raw value.</p></li>
+<li><p><strong>id_</strong> (<a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><em>DefinitionId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><em>ValueDefinition</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The raw value of the <a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value"><code class="xref py py-class docutils literal notranslate"><span class="pre">Value</span></code></a> matching the passed id or definition.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.has_value">
+<span class="sig-name descname"><span class="pre">has_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.has_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.has_value" title="Link to this definition">#</a></dt>
+<dd><p>Test if the set has a specific value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The id or definition for which to lookup if a value is present</p></li>
+<li><p><strong>id_</strong> (<a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><em>DefinitionId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><em>ValueDefinition</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the value set contains a value for the provided <code class="docutils literal notranslate"><span class="pre">id_</span></code>.
+Otherwise, <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.12)"><strong>TypeError</strong></a> – If the id is neither a <code class="docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefinitionId</span></code></a> nor a
+    <a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueDefinition</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.ids">
+<span class="sig-name descname"><span class="pre">ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.ids" title="Link to this definition">#</a></dt>
+<dd><p>Get all ids of the set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An iterable of all definition ids from all values of the set.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Iterable[<a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId">DefinitionId</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.items" title="Link to this definition">#</a></dt>
+<dd><p>Get an items view of all values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.ItemsView" title="(in Python v3.12)"><em>ItemsView</em></a>[<a class="reference internal" href="#dispel.data.values.DefinitionId" title="dispel.data.values.DefinitionId"><em>DefinitionId</em></a>, <a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value"><em>Value</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.set" title="Link to this definition">#</a></dt>
+<dd><p>Set a value in the value set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>) – The value to be set. If the value is not an instance of <a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value"><code class="xref py py-class docutils literal notranslate"><span class="pre">Value</span></code></a> one
+needs to also provide a <code class="docutils literal notranslate"><span class="pre">definition</span></code>.</p></li>
+<li><p><strong>definition</strong> (<a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><em>ValueDefinition</em></a><em> | </em><em>None</em>) – An optional definition of the passed value should the value not be an
+instance of <a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value"><code class="xref py py-class docutils literal notranslate"><span class="pre">Value</span></code></a>.</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – By default values in the <a class="reference internal" href="#dispel.data.values.ValueSet" title="dispel.data.values.ValueSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueSet</span></code></a> are not overwritten. If you want
+to update an already set value you will need to set <code class="docutils literal notranslate"><span class="pre">overwrite</span> <span class="pre">=</span> <span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not a <a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value"><code class="xref py py-class docutils literal notranslate"><span class="pre">Value</span></code></a> and no definition is passed.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If <code class="docutils literal notranslate"><span class="pre">value</span></code>’s id is already present in the Value Set, and the <code class="docutils literal notranslate"><span class="pre">overwrite</span></code>
+    argument is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.set_values">
+<span class="sig-name descname"><span class="pre">set_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definitions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.set_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.set_values" title="Link to this definition">#</a></dt>
+<dd><p>Set multiple values in the value set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em>) – The values to be set. If the values are not an instance of <a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value"><code class="xref py py-class docutils literal notranslate"><span class="pre">Value</span></code></a>
+the optional parameter <code class="docutils literal notranslate"><span class="pre">definitions</span></code> needs to be provided with a list of
+<a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueDefinition</span></code></a> describing each value in <code class="docutils literal notranslate"><span class="pre">values</span></code>.</p></li>
+<li><p><strong>definitions</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><em>ValueDefinition</em></a><em>] </em><em>| </em><em>None</em>) – An optional list of definitions for values passed via <code class="docutils literal notranslate"><span class="pre">values</span></code>. Both
+<code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">definitions</span></code> need to be of equal length.</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – The overwrite-behavior. See <a class="reference internal" href="#dispel.data.values.ValueSet.set" title="dispel.data.values.ValueSet.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ValueSet.set()</span></code></a> for details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If <code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">definitions</span></code> are not of equal length.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.data.values.ValueSet.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/data/values.html#ValueSet.values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.data.values.ValueSet.values" title="Link to this definition">#</a></dt>
+<dd><p>Get all values of the set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An iterable of all values within the set.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Iterable[<a class="reference internal" href="#dispel.data.values.Value" title="dispel.data.values.Value">Value</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.data.validators.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.data.validators module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.io.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.io package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AVEnum"><code class="docutils literal notranslate"><span class="pre">AVEnum</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AVEnum.__init__"><code class="docutils literal notranslate"><span class="pre">AVEnum.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AVEnum.abbr"><code class="docutils literal notranslate"><span class="pre">AVEnum.abbr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AVEnum.from_abbr"><code class="docutils literal notranslate"><span class="pre">AVEnum.from_abbr()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AVEnum.from_variable"><code class="docutils literal notranslate"><span class="pre">AVEnum.from_variable()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AVEnum.variable"><code class="docutils literal notranslate"><span class="pre">AVEnum.variable</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AbbreviatedValue"><code class="docutils literal notranslate"><span class="pre">AbbreviatedValue</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AbbreviatedValue.value"><code class="docutils literal notranslate"><span class="pre">AbbreviatedValue.value</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AbbreviatedValue.__init__"><code class="docutils literal notranslate"><span class="pre">AbbreviatedValue.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AbbreviatedValue.abbr"><code class="docutils literal notranslate"><span class="pre">AbbreviatedValue.abbr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AbbreviatedValue.format"><code class="docutils literal notranslate"><span class="pre">AbbreviatedValue.format()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.AbbreviatedValue.wrap"><code class="docutils literal notranslate"><span class="pre">AbbreviatedValue.wrap()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.DefinitionId"><code class="docutils literal notranslate"><span class="pre">DefinitionId</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.DefinitionId.__init__"><code class="docutils literal notranslate"><span class="pre">DefinitionId.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.DefinitionId.from_str"><code class="docutils literal notranslate"><span class="pre">DefinitionId.from_str()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.DefinitionId.id"><code class="docutils literal notranslate"><span class="pre">DefinitionId.id</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.Value"><code class="docutils literal notranslate"><span class="pre">Value</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.Value.__init__"><code class="docutils literal notranslate"><span class="pre">Value.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.Value.id"><code class="docutils literal notranslate"><span class="pre">Value.id</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueDefinition"><code class="docutils literal notranslate"><span class="pre">ValueDefinition</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueDefinition.__init__"><code class="docutils literal notranslate"><span class="pre">ValueDefinition.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueDefinition.derive"><code class="docutils literal notranslate"><span class="pre">ValueDefinition.derive()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueDefinitionPrototype"><code class="docutils literal notranslate"><span class="pre">ValueDefinitionPrototype</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueDefinitionPrototype.__init__"><code class="docutils literal notranslate"><span class="pre">ValueDefinitionPrototype.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueDefinitionPrototype.create_definition"><code class="docutils literal notranslate"><span class="pre">ValueDefinitionPrototype.create_definition()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueDefinitionPrototype.create_definitions"><code class="docutils literal notranslate"><span class="pre">ValueDefinitionPrototype.create_definitions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueDefinitionPrototype.derive"><code class="docutils literal notranslate"><span class="pre">ValueDefinitionPrototype.derive()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet"><code class="docutils literal notranslate"><span class="pre">ValueSet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.VALUE_CLS"><code class="docutils literal notranslate"><span class="pre">ValueSet.VALUE_CLS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.__init__"><code class="docutils literal notranslate"><span class="pre">ValueSet.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.definitions"><code class="docutils literal notranslate"><span class="pre">ValueSet.definitions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.empty"><code class="docutils literal notranslate"><span class="pre">ValueSet.empty</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.get"><code class="docutils literal notranslate"><span class="pre">ValueSet.get()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.get_definition"><code class="docutils literal notranslate"><span class="pre">ValueSet.get_definition()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.get_raw_value"><code class="docutils literal notranslate"><span class="pre">ValueSet.get_raw_value()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.has_value"><code class="docutils literal notranslate"><span class="pre">ValueSet.has_value()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.ids"><code class="docutils literal notranslate"><span class="pre">ValueSet.ids()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.items"><code class="docutils literal notranslate"><span class="pre">ValueSet.items()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.set"><code class="docutils literal notranslate"><span class="pre">ValueSet.set()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.set_values"><code class="docutils literal notranslate"><span class="pre">ValueSet.set_values()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.data.values.ValueSet.values"><code class="docutils literal notranslate"><span class="pre">ValueSet.values()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.data.values.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

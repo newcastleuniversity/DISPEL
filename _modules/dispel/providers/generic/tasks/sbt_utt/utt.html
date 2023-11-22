@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.tasks.sbt_utt.utt &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/tasks/sbt_utt/utt';</script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.tasks.sbt_utt.utt</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;U-turn Test module.</span>
+
+<span class="sd">A module containing the functionality to process the *U-turn* test (UTT).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span> <span class="n">DEFAULT_COLUMNS</span><span class="p">,</span> <span class="n">GRAVITY_COLUMNS</span>
+<span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">GREATER_THAN_ZERO</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ErrorHandling</span><span class="p">,</span>
+    <span class="n">ProcessingControlResult</span><span class="p">,</span>
+    <span class="n">ProcessingStep</span><span class="p">,</span>
+    <span class="n">ProcessResultType</span><span class="p">,</span>
+    <span class="n">StopProcessingError</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="n">ExtractStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">LevelIdFilter</span><span class="p">,</span> <span class="n">ProcessingStepGroup</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level_filters</span> <span class="kn">import</span> <span class="n">DurationFilter</span><span class="p">,</span> <span class="n">LastLevelFilter</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.modalities</span> <span class="kn">import</span> <span class="n">LimbModality</span><span class="p">,</span> <span class="n">SensorModality</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">Apply</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.activity.placement</span> <span class="kn">import</span> <span class="n">ClassifyPlacement</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.activity.turning</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ElGoharyTurnDetection</span><span class="p">,</span>
+    <span class="n">ExtractTurnMeasures</span><span class="p">,</span>
+    <span class="n">RefineUTurns</span><span class="p">,</span>
+    <span class="n">TransformAbsTurnSpeed</span><span class="p">,</span>
+    <span class="n">TurnModality</span><span class="p">,</span>
+    <span class="n">WithinTurnSpeed</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.flags.generic</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FrequencyLowerThanGaitThres</span><span class="p">,</span>
+    <span class="n">MaxTimeIncrement</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.flags.le_flags</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">NonBeltDetectedUTT</span><span class="p">,</span>
+    <span class="n">NoTurnsDetected</span><span class="p">,</span>
+    <span class="n">TruncateFirst5Turns</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.preprocessing</span> <span class="kn">import</span> <span class="n">PreprocessingSteps</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.sensor</span> <span class="kn">import</span> <span class="n">FREQ_50HZ</span><span class="p">,</span> <span class="n">EuclideanNorm</span><span class="p">,</span> <span class="n">Resample</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.bout_strategy</span> <span class="kn">import</span> <span class="n">NO_BOUT_MODALITY</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AverageRollingVerticalAcceleration</span><span class="p">,</span>
+    <span class="n">TransformStepDurationWithoutBout</span><span class="p">,</span>
+    <span class="n">step_count</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.lee</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LEE_MOD</span><span class="p">,</span>
+    <span class="n">LeeDetectStepsWithoutBout</span><span class="p">,</span>
+    <span class="n">LeeMeasuresWithoutBoutGroup</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.core</span> <span class="kn">import</span> <span class="n">signal_duration</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.filter</span> <span class="kn">import</span> <span class="n">butterworth_low_pass_filter</span>
+
+<span class="n">TASK_NAME</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;U-turn test&quot;</span><span class="p">,</span> <span class="s2">&quot;UTT&quot;</span><span class="p">)</span>
+
+<span class="n">MAX_UTT_DURATION_SECONDS</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;The maximum duration of a computable U-Turn Test.&quot;&quot;&quot;</span>
+
+<span class="n">LEVEL_FILTER</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">LevelIdFilter</span><span class="p">(</span><span class="s2">&quot;utt&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">LastLevelFilter</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">DurationFilter</span><span class="p">(</span><span class="n">MAX_UTT_DURATION_SECONDS</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Define the filter to use to compute UTT measures.&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="ExtractWalkingSpeed">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.ExtractWalkingSpeed">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractWalkingSpeed</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the UTT walking speed in step per seconds.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    step_detection_data_set</span>
+<span class="sd">        The identifier of the step detection output data set.</span>
+<span class="sd">    accelerometer_data_set</span>
+<span class="sd">        The identifier of the accelerometer norm input data set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractWalkingSpeed.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.ExtractWalkingSpeed.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step_detection_data_set</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">accelerometer_data_set</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_walking_speed</span><span class="p">(</span><span class="n">steps</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">step_count</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span> <span class="o">/</span> <span class="n">signal_duration</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;walking speed&quot;</span><span class="p">,</span> <span class="s2">&quot;ws&quot;</span><span class="p">),</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;step/s&quot;</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">LEE_MOD</span><span class="p">],</span>
+            <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Mean walking speed measured using the &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">step_detection_data_set</span><span class="si">}</span><span class="s2"> step detection algorithm in terms of number &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;of steps per second.&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">step_detection_data_set</span><span class="p">,</span> <span class="n">accelerometer_data_set</span><span class="p">],</span>
+            <span class="n">_walking_speed</span><span class="p">,</span>
+            <span class="n">definition</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AssertUTTDurationLess5Min">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.AssertUTTDurationLess5Min">[docs]</a>
+<span class="k">class</span> <span class="nc">AssertUTTDurationLess5Min</span><span class="p">(</span><span class="n">ProcessingStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Assertion UTT duration is less than five minutes.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AssertUTTDurationLess5Min.process_reading">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.AssertUTTDurationLess5Min.process_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ensure UTT duration is less than five minutes.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;utt&quot;</span> <span class="ow">in</span> <span class="n">reading</span><span class="o">.</span><span class="n">level_ids</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span>
+            <span class="n">reading</span><span class="o">.</span><span class="n">get_level</span><span class="p">(</span><span class="s2">&quot;utt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">MAX_UTT_DURATION_SECONDS</span>
+        <span class="p">):</span>
+            <span class="k">yield</span> <span class="n">ProcessingControlResult</span><span class="p">(</span>
+                <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">error</span><span class="o">=</span><span class="n">StopProcessingError</span><span class="p">(</span>
+                    <span class="s2">&quot;The U-Turn test duration exceeds &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">MAX_UTT_DURATION_SECONDS</span><span class="si">}</span><span class="s2"> seconds.&quot;</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">error_handling</span><span class="o">=</span><span class="n">ErrorHandling</span><span class="o">.</span><span class="n">RAISE</span><span class="p">,</span>
+            <span class="p">)</span></div>
+</div>
+
+
+
+<span class="c1"># turn speed measures</span>
+<div class="viewcode-block" id="ExtractTurnForModalitiesMeasures">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.ExtractTurnForModalitiesMeasures">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractTurnForModalitiesMeasures</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Processing steps to extract turns for modalities.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ExtractTurnMeasures</span><span class="p">(</span>
+            <span class="n">turns_data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_&quot;</span>
+            <span class="s2">&quot;pass_filter_x_turns_u_refined&quot;</span><span class="p">,</span>
+            <span class="n">turn_modality</span><span class="o">=</span><span class="n">turn_modality</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">turn_modality</span> <span class="ow">in</span> <span class="n">TurnModality</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TechnicalFlags">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.TechnicalFlags">[docs]</a>
+<span class="k">class</span> <span class="nc">TechnicalFlags</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Processing steps for technical flags.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">FrequencyLowerThanGaitThres</span><span class="p">(</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="o">.</span><span class="n">abbr</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">MaxTimeIncrement</span><span class="p">(</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="o">.</span><span class="n">abbr</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="PlacementClassification">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.PlacementClassification">[docs]</a>
+<span class="k">class</span> <span class="nc">PlacementClassification</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Placement classification processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Resample</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts&quot;</span><span class="p">,</span>
+            <span class="n">freq</span><span class="o">=</span><span class="n">FREQ_50HZ</span><span class="p">,</span>
+            <span class="n">aggregations</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;ffill&quot;</span><span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span> <span class="o">+</span> <span class="n">GRAVITY_COLUMNS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">EuclideanNorm</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts_resampled&quot;</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="s2">&quot;utt&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="c1"># Format Accelerometer and detect walking bouts</span>
+        <span class="n">ClassifyPlacement</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="BehavioralDeviations">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralDeviations">[docs]</a>
+<span class="k">class</span> <span class="nc">BehavioralDeviations</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Behavioral flags processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">PlacementClassification</span><span class="p">(),</span>
+        <span class="n">TruncateFirst5Turns</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="s2">&quot;placement_bouts&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">NonBeltDetectedUTT</span><span class="p">(</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">NoTurnsDetected</span><span class="p">(</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="BehavioralInvalidations">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.BehavioralInvalidations">[docs]</a>
+<span class="k">class</span> <span class="nc">BehavioralInvalidations</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Behavioral invalidation processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">NonBeltDetectedUTT</span><span class="p">(</span>
+            <span class="n">acceptance_threshold</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TurnPreprocessing">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.TurnPreprocessing">[docs]</a>
+<span class="k">class</span> <span class="nc">TurnPreprocessing</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Turn pre-processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">PreprocessingSteps</span><span class="p">(</span>
+            <span class="s2">&quot;accelerometer&quot;</span><span class="p">,</span>
+            <span class="n">LimbModality</span><span class="o">.</span><span class="n">LOWER_LIMB</span><span class="p">,</span>
+            <span class="n">SensorModality</span><span class="o">.</span><span class="n">ACCELEROMETER</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">PreprocessingSteps</span><span class="p">(</span>
+            <span class="s2">&quot;gyroscope&quot;</span><span class="p">,</span>
+            <span class="n">LimbModality</span><span class="o">.</span><span class="n">LOWER_LIMB</span><span class="p">,</span>
+            <span class="n">SensorModality</span><span class="o">.</span><span class="n">GYROSCOPE</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">DEFAULT_COLUMNS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">Apply</span><span class="p">(</span>
+            <span class="s2">&quot;gyroscope_ts_rotated_resampled&quot;</span><span class="p">,</span>
+            <span class="n">butterworth_low_pass_filter</span><span class="p">,</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">zero_phase</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TurnProcessing">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.TurnProcessing">[docs]</a>
+<span class="k">class</span> <span class="nc">TurnProcessing</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Turn processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ElGoharyTurnDetection</span><span class="p">(</span>
+            <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter&quot;</span>
+        <span class="p">),</span>
+        <span class="n">RefineUTurns</span><span class="p">(</span>
+            <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter_x_turns&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">),</span>
+        <span class="n">TransformAbsTurnSpeed</span><span class="p">(</span>
+            <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter_x_turns&quot;</span>
+            <span class="s2">&quot;_u_refined&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Apply</span><span class="p">(</span>
+            <span class="s2">&quot;gyroscope_ts_rotated_resampled&quot;</span><span class="p">,</span>
+            <span class="n">butterworth_low_pass_filter</span><span class="p">,</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">zero_phase</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;xyz&quot;</span><span class="p">),</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass&quot;</span>
+            <span class="s2">&quot;_filter_5hz&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">EuclideanNorm</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low&quot;</span>
+            <span class="s2">&quot;_pass_filter_5hz&quot;</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">DEFAULT_COLUMNS</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="s2">&quot;utt&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">WithinTurnSpeed</span><span class="p">(</span>
+            <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter_5hz&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter&quot;</span>
+                <span class="s2">&quot;_x_turns_u_refined&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">),</span>
+        <span class="n">WithinTurnSpeed</span><span class="p">(</span>
+            <span class="s2">&quot;norm&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter_5hz_&quot;</span>
+                <span class="s2">&quot;euclidean_norm&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter&quot;</span>
+                <span class="s2">&quot;_x_turns_u_refined&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="LeeStepProcessing">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.LeeStepProcessing">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeStepProcessing</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lee-specific processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">AverageRollingVerticalAcceleration</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts_rotated_resampled_detrend&quot;</span><span class="p">,</span> <span class="n">change_sign</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">),</span>
+        <span class="c1"># Lee Step Detection Measures</span>
+        <span class="c1"># Without walking bouts Detection and Step Count</span>
+        <span class="n">LeeDetectStepsWithoutBout</span><span class="p">(),</span>
+        <span class="n">TransformStepDurationWithoutBout</span><span class="p">(</span><span class="n">data_set_ids</span><span class="o">=</span><span class="s2">&quot;lee&quot;</span><span class="p">),</span>
+        <span class="n">LeeMeasuresWithoutBoutGroup</span><span class="p">(</span><span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">LEE_MOD</span><span class="p">,</span> <span class="n">NO_BOUT_MODALITY</span><span class="p">]),</span>
+    <span class="p">]</span></div>
+
+
+
+<span class="c1">#: UTT processing steps</span>
+<div class="viewcode-block" id="UTTProcessingSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.utt.html#dispel.providers.generic.tasks.sbt_utt.utt.UTTProcessingSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">UTTProcessingSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;UTT processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">TurnPreprocessing</span><span class="p">(),</span>
+        <span class="n">TurnProcessing</span><span class="p">(),</span>
+        <span class="n">ExtractTurnForModalitiesMeasures</span><span class="p">(),</span>
+        <span class="n">LeeStepProcessing</span><span class="p">(),</span>
+        <span class="n">ExtractWalkingSpeed</span><span class="p">(</span>
+            <span class="n">step_detection_data_set</span><span class="o">=</span><span class="s2">&quot;lee&quot;</span><span class="p">,</span>
+            <span class="n">accelerometer_data_set</span><span class="o">=</span><span class="s2">&quot;vertical_acceleration&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">BehavioralDeviations</span><span class="p">(),</span>
+        <span class="n">BehavioralInvalidations</span><span class="p">(),</span>
+    <span class="p">]</span>
+
+    <span class="n">level_filter</span> <span class="o">=</span> <span class="n">LEVEL_FILTER</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;task_name&quot;</span><span class="p">:</span> <span class="n">TASK_NAME</span><span class="p">}</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

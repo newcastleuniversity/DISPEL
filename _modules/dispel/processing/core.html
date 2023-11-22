@@ -1,0 +1,1383 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.processing.core &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/processing/core';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../processing.html" class="nav-link">dispel.processing</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.proce...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.processing.core</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Core functionality to process :class:`~dispel.data.core.Reading`\ s.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">abc</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">Generator</span><span class="p">,</span>
+    <span class="n">Generic</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">TypeVar</span><span class="p">,</span>
+    <span class="n">Union</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">FlagSeverity</span><span class="p">,</span> <span class="n">FlagType</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span><span class="p">,</span> <span class="n">LevelEpoch</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureSet</span><span class="p">,</span> <span class="n">MeasureValue</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">RawDataSet</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.flags</span> <span class="kn">import</span> <span class="n">FlagStepMixin</span>
+
+<span class="n">SourcesType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">],</span> <span class="n">EntityType</span><span class="p">]</span>
+
+<span class="n">TargetsType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">],</span> <span class="n">EntityType</span><span class="p">]</span>
+
+<span class="n">ParameterType</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;ParameterType&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ProcessingError">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingError">[docs]</a>
+<span class="k">class</span> <span class="nc">ProcessingError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A base error class for errors that were caused during the processing.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    step</span>
+<span class="sd">        The processing step that raised the exception</span>
+<span class="sd">    message</span>
+<span class="sd">        The error message</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ProcessingError.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingError.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="n">step</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2"> at step: </span><span class="si">{</span><span class="n">step</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="StopProcessingError">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.StopProcessingError">[docs]</a>
+<span class="k">class</span> <span class="nc">StopProcessingError</span><span class="p">(</span><span class="n">ProcessingError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An error that halts the processing of a reading.&quot;&quot;&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="FlagError">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.FlagError">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagError</span><span class="p">(</span><span class="n">ProcessingError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An error that flags the processing results from a reading.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FlagError.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.FlagError.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag</span> <span class="o">=</span> <span class="n">flag</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">reason</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="InvalidDataError">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.InvalidDataError">[docs]</a>
+<span class="k">class</span> <span class="nc">InvalidDataError</span><span class="p">(</span><span class="n">ProcessingError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An error that flags the processing input.&quot;&quot;&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="ProcessingResultBase">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingResultBase">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">ProcessingResultBase</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The processing result base of a processing step.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: The processing step associated with the processing</span>
+    <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span>
+
+<div class="viewcode-block" id="ProcessingResultBase.get_kwargs">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingResultBase.get_kwargs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get key word arguments for the additional class attributes.</span>
+
+<span class="sd">        The additional arguments are passed to the setter function in</span>
+<span class="sd">        :class:`~dispel.data.core.Reading` while assigning processing results and creating</span>
+<span class="sd">        the data trace. It allows to handle the result to be set depending on the</span>
+<span class="sd">        arguments passed.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Dict[str, Any]</span>
+<span class="sd">            Returns a dictionary of attributes of the instance omitting the step.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;step&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">kwargs</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ProcessingResult">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingResult">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">ProcessingResult</span><span class="p">(</span><span class="n">ProcessingResultBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The processing result of a processing step.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: The sources used for the processing function</span>
+    <span class="n">sources</span><span class="p">:</span> <span class="n">SourcesType</span>
+
+    <span class="c1">#: The result of the processing function</span>
+    <span class="n">result</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Level</span><span class="p">,</span> <span class="n">MeasureValue</span><span class="p">,</span> <span class="n">MeasureSet</span><span class="p">,</span> <span class="n">LevelEpoch</span><span class="p">,</span> <span class="n">RawDataSet</span><span class="p">]</span>
+
+<div class="viewcode-block" id="ProcessingResult.get_kwargs">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingResult.get_kwargs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get key word arguments for the additional class attributes.</span>
+
+<span class="sd">        The additional arguments are passed to the setter function in</span>
+<span class="sd">        :class:`~dispel.data.core.Reading` while assigning processing results and creating</span>
+<span class="sd">        the data trace. It allows to handle the result to be set depending on the</span>
+<span class="sd">        arguments passed.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Dict[str, Any]</span>
+<span class="sd">            Returns a dictionary of attributes of the instance omitting the step,</span>
+<span class="sd">            sources, and result.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_kwargs</span><span class="p">()</span>
+        <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;sources&quot;</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">kwargs</span></div>
+
+
+<div class="viewcode-block" id="ProcessingResult.get_sources">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingResult.get_sources">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">SourcesType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the sources of the processing result.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sources</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sources</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">sources</span><span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ErrorHandling">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ErrorHandling">[docs]</a>
+<span class="k">class</span> <span class="nc">ErrorHandling</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Different ways of dealing with an exception.&quot;&quot;&quot;</span>
+
+    <span class="n">RAISE</span> <span class="o">=</span> <span class="s2">&quot;raise&quot;</span>
+    <span class="n">IGNORE</span> <span class="o">=</span> <span class="s2">&quot;ignore&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">should_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return ``True`` if the handling is to overwrite.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">RAISE</span>
+
+    <span class="k">def</span> <span class="fm">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">RAISE</span>
+
+<div class="viewcode-block" id="ErrorHandling.from_bool">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ErrorHandling.from_bool">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_bool</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">stop_processing</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ErrorHandling&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the error handling class from a stop_processing boolean.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">stop_processing</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ErrorHandling</span><span class="o">.</span><span class="n">RAISE</span>
+        <span class="k">return</span> <span class="n">ErrorHandling</span><span class="o">.</span><span class="n">IGNORE</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ProcessingControlResult">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingControlResult">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">ProcessingControlResult</span><span class="p">(</span><span class="n">ProcessingResultBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The processing result of a processing error.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: The captured processing error</span>
+    <span class="n">error</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ProcessingError</span><span class="p">,</span> <span class="n">StopProcessingError</span><span class="p">,</span> <span class="n">FlagError</span><span class="p">,</span> <span class="n">InvalidDataError</span><span class="p">]</span>
+
+    <span class="c1">#: The type of handling for the captured error</span>
+    <span class="n">error_handling</span><span class="p">:</span> <span class="n">ErrorHandling</span>
+
+    <span class="c1">#: The flag targets (if the error is an flag error)</span>
+    <span class="n">targets</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TargetsType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">ProcessingError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Processing control result has to be an exception.&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ProcessingControlResult.get_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.get_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_targets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the targets of the flag.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">targets</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing flag targets.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">targets</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">targets</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="ProcessingControlResult.from_assertion_error">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.from_assertion_error">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_assertion_error</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">,</span>
+        <span class="n">error</span><span class="p">:</span> <span class="ne">AssertionError</span><span class="p">,</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Level</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize object from a caught assertion error.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        step</span>
+<span class="sd">            The processing step from where the assertion error has been caught.</span>
+<span class="sd">        error</span>
+<span class="sd">            The assertion error that has been caught.</span>
+<span class="sd">        level</span>
+<span class="sd">            The level corresponding to the</span>
+<span class="sd">            :class:`~dispel.processing.level.LevelProcessingControlResult`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ProcessingControlResult</span>
+<span class="sd">            The initialized processing control result object.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the level is passed.</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the caught exception does not contain a message ot if the message is</span>
+<span class="sd">            inconsistent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;No level should be passed for ``ProcessingControlResult`` &quot;</span>
+                <span class="s2">&quot;Initialization. If you would like to register the result in a level &quot;</span>
+                <span class="s2">&quot;use ``LevelProcessingControlResult`` class.&quot;</span>
+            <span class="p">)</span>
+        <span class="c1"># Retrieve error message</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">exception_message</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Assertion </span><span class="si">{</span><span class="n">error</span><span class="si">=}</span><span class="s2"> must contain a message.&quot;</span>
+            <span class="p">)</span> <span class="kn">from</span> <span class="nn">StopIteration</span>
+
+        <span class="c1"># Retrieve error message components</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">exception_message</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">error_handling</span> <span class="o">=</span> <span class="n">ErrorHandling</span><span class="o">.</span><span class="n">IGNORE</span>
+            <span class="n">returned_error</span> <span class="o">=</span> <span class="n">InvalidDataError</span><span class="p">(</span><span class="n">exception_message</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">exception_message</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">((</span><span class="n">args</span> <span class="o">:=</span> <span class="nb">list</span><span class="p">(</span><span class="n">exception_message</span><span class="p">)))</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;If the provided exception assertion message is an iterable. It &quot;</span>
+                    <span class="s2">&quot;ought to strictly contain two elements: a string error message &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;and an ``ErrorHandling`` action amongst </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">ErrorHandling</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+            <span class="n">returned_error</span> <span class="o">=</span> <span class="n">InvalidDataError</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">step</span><span class="p">)</span>
+            <span class="n">error_handling</span> <span class="o">=</span> <span class="n">ErrorHandling</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;The exception message accompanying the Assertion error must either &quot;</span>
+                <span class="s2">&quot;be a string message or an iterable containing  both a string message &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;and an ``ErrorHandling`` action amongst </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">ErrorHandling</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">returned_error</span><span class="p">,</span> <span class="n">error_handling</span><span class="o">=</span><span class="n">error_handling</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessingControlResult.from_flag">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.from_flag">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_flag</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">flag</span><span class="p">:</span> <span class="n">Flag</span><span class="p">,</span>
+        <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">,</span>
+        <span class="n">targets</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Level</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize processing control result from an flag.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flag</span>
+<span class="sd">            The flag from which the control processing result is to be created.</span>
+<span class="sd">        step</span>
+<span class="sd">            The associated processing step.</span>
+<span class="sd">        targets</span>
+<span class="sd">            The flag target entities.</span>
+<span class="sd">        level</span>
+<span class="sd">            The level corresponding to the</span>
+<span class="sd">            :class:`~dispel.processing.level.LevelProcessingControlResult`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ProcessingControlResult</span>
+<span class="sd">            The initialized processing control result object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">level</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Level must not be provided.&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span>
+            <span class="n">targets</span><span class="o">=</span><span class="n">targets</span><span class="p">,</span>
+            <span class="n">error</span><span class="o">=</span><span class="n">FlagError</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">step</span><span class="p">),</span>
+            <span class="n">error_handling</span><span class="o">=</span><span class="n">ErrorHandling</span><span class="o">.</span><span class="n">from_bool</span><span class="p">(</span><span class="n">flag</span><span class="o">.</span><span class="n">stop_processing</span><span class="p">),</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<span class="n">ProcessResultType</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">[</span>
+    <span class="n">Union</span><span class="p">[</span><span class="n">ProcessingResult</span><span class="p">,</span> <span class="n">ProcessingControlResult</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="Parameter">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.Parameter">[docs]</a>
+<span class="k">class</span> <span class="nc">Parameter</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">ParameterType</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A parameter defining aspects of processing.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    id_</span>
+<span class="sd">        The name of the parameter used to identify the configurable entity.</span>
+<span class="sd">    default_value</span>
+<span class="sd">        A default value to be used if the user does not specify otherwise.</span>
+<span class="sd">    validator</span>
+<span class="sd">        A callable that accepts values and raises an exception for any</span>
+<span class="sd">        unexpected value.</span>
+<span class="sd">    description</span>
+<span class="sd">        A description of the parameter explaining its usage and influence on</span>
+<span class="sd">        the affected processing steps.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_registry</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Parameter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="Parameter.__new__">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.Parameter.__new__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">id_</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a new Parameter object.&quot;&quot;&quot;</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+
+        <span class="c1"># inspect frame to obtain processing step defining parameter</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current_frame</span> <span class="o">:=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">())</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to inspect current frame&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">parent_frame</span> <span class="o">:=</span> <span class="n">current_frame</span><span class="o">.</span><span class="n">f_back</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to inspect parent frame&quot;</span><span class="p">)</span>
+        <span class="n">location_spec</span> <span class="o">=</span> <span class="n">parent_frame</span><span class="o">.</span><span class="n">f_globals</span><span class="p">[</span><span class="s2">&quot;__name__&quot;</span><span class="p">]</span>
+
+        <span class="c1"># check if we were defined inside a class</span>
+        <span class="k">if</span> <span class="s2">&quot;__qualname__&quot;</span> <span class="ow">in</span> <span class="n">parent_frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">:</span>
+            <span class="n">location_spec</span> <span class="o">+=</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">parent_frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">[</span><span class="s2">&quot;__qualname__&quot;</span><span class="p">]</span>
+
+        <span class="n">full_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">location_spec</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">id_</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">full_id</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_registry</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter already registered: </span><span class="si">{</span><span class="n">full_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="bp">cls</span><span class="o">.</span><span class="n">_registry</span><span class="p">[</span><span class="n">full_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_full_id</span> <span class="o">=</span> <span class="n">full_id</span>
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+
+<div class="viewcode-block" id="Parameter.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.Parameter.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">id_</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">default_value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParameterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">validator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_full_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_local_id</span> <span class="o">=</span> <span class="n">id_</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">default_value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">default_value</span> <span class="o">=</span> <span class="n">default_value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validator</span> <span class="o">=</span> <span class="n">validator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the ID of the parameter.</span>
+
+<span class="sd">        The id will be set automatically based on the context of the</span>
+<span class="sd">        creation of the parameter.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The ID of the parameter. It is comprised by the name of the frame</span>
+<span class="sd">            in which it was defined and the specified ``id_``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_full_id</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ParameterType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the value set for the parameter.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter was not set: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+
+    <span class="nd">@value</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">ParameterType</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the value for the parameter.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">validator</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">validator</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+
+<div class="viewcode-block" id="Parameter.has_parameter">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.Parameter.has_parameter">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">has_parameter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">full_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if a parameter was set.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">full_id</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_registry</span></div>
+
+
+<div class="viewcode-block" id="Parameter.set_value">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.Parameter.set_value">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_value</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">full_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the value of a parameter.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">cls</span><span class="o">.</span><span class="n">has_parameter</span><span class="p">(</span><span class="n">full_id</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown parameter: </span><span class="si">{</span><span class="n">full_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">_registry</span><span class="p">[</span><span class="n">full_id</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ProcessingStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep">[docs]</a>
+<span class="k">class</span> <span class="nc">ProcessingStep</span><span class="p">:</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A processing step in a processing sequence.</span>
+
+<span class="sd">    :class:`ProcessingStep` is the basic entity through which</span>
+<span class="sd">    :class:`~dispel.data.core.Reading`\ s are processed. The processing step&#39;s</span>
+<span class="sd">    :meth:`process_reading` function is called with the reading and additional arguments</span>
+<span class="sd">    passed to :func:`process`. Results from the process step are expected to be an</span>
+<span class="sd">    instance of :class:`ProcessingResult`. For a comprehensive description see</span>
+<span class="sd">    :ref:`measure-extraction`.</span>
+
+<span class="sd">    The method :meth:`flag_reading` can be overwritten to ensure that the reading</span>
+<span class="sd">    about to be processed is valid, and return</span>
+<span class="sd">    :class:`~dispel.data.flags.Flag`\ s if that is not the case.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    .. testsetup:: processing-step</span>
+
+<span class="sd">        &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">        &gt;&gt;&gt; import numpy as np</span>
+
+<span class="sd">        &gt;&gt;&gt; from dispel.data.core import Reading</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.data.levels import Level</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.data.raw import (RawDataSet, RawDataSetDefinition,</span>
+<span class="sd">        ...                           RawDataValueDefinition)</span>
+
+<span class="sd">        &gt;&gt;&gt; reading = Reading(</span>
+<span class="sd">        ...     evaluation=None,</span>
+<span class="sd">        ...     levels=[</span>
+<span class="sd">        ...     Level(id_=&#39;my-level&#39;, start=0, end=1, raw_data_sets=[</span>
+<span class="sd">        ...         RawDataSet(</span>
+<span class="sd">        ...             RawDataSetDefinition(&#39;my-data-set&#39;, None, [</span>
+<span class="sd">        ...                 RawDataValueDefinition(&#39;dummy&#39;, &#39;dummy&#39;)</span>
+<span class="sd">        ...             ]),</span>
+<span class="sd">        ...             pd.DataFrame({&#39;dummy&#39;: list(range(6))})</span>
+<span class="sd">        ...         )</span>
+<span class="sd">        ...     ])</span>
+<span class="sd">        ... ])</span>
+
+<span class="sd">    .. doctest:: processing-step</span>
+
+<span class="sd">        &gt;&gt;&gt; from dispel.data.measures import MeasureValue</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.data.values import ValueDefinition</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.processing import process</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.processing.core import ProcessingResult, ProcessingStep</span>
+<span class="sd">        &gt;&gt;&gt; class MyStep(ProcessingStep):</span>
+<span class="sd">        ...     def process_reading(self, reading, **kwargs):</span>
+<span class="sd">        ...         level = reading.get_level(&#39;my-level&#39;)</span>
+<span class="sd">        ...         raw_data_set = level.get_raw_data_set(&#39;my-data-set&#39;)</span>
+<span class="sd">        ...         data = raw_data_set.data</span>
+<span class="sd">        ...         yield ProcessingResult(</span>
+<span class="sd">        ...             step=self,</span>
+<span class="sd">        ...             sources=raw_data_set,</span>
+<span class="sd">        ...             result=MeasureValue(</span>
+<span class="sd">        ...                 ValueDefinition(&#39;my-measure-id&#39;,&#39;max value&#39;),</span>
+<span class="sd">        ...                 data.max().max()</span>
+<span class="sd">        ...             )</span>
+<span class="sd">        ...         )</span>
+<span class="sd">        &gt;&gt;&gt; _ = process(reading, MyStep())</span>
+<span class="sd">        &gt;&gt;&gt; reading.measure_set.get_raw_value(&#39;my-measure-id&#39;)</span>
+<span class="sd">        5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ProcessingStep.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="ProcessingStep.process">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.process">[docs]</a>
+    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check reading for validity and process it.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading to be processed</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional arguments passed by :func:`process`.</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        ProcessResultType</span>
+<span class="sd">            The results from processing readings.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">flag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag_reading</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">ProcessingControlResult</span><span class="o">.</span><span class="n">from_flag</span><span class="p">(</span>
+                <span class="n">flag</span><span class="o">=</span><span class="n">flag</span><span class="p">,</span>
+                <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">targets</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_reading_flag_targets</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assert_valid_reading</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">ProcessingControlResult</span><span class="o">.</span><span class="n">from_assertion_error</span><span class="p">(</span><span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_reading</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessingStep.assert_valid_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.assert_valid_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">assert_valid_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Assert that reading is valid.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="ProcessingStep.flag_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.flag_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">flag_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Flag</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag the provided reading.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading to be flagged.</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional arguments passed by :func:`~dispel.processing.process`.</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        Flag</span>
+<span class="sd">            The resulted flags.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="k">yield from</span> <span class="p">[]</span></div>
+
+
+<div class="viewcode-block" id="ProcessingStep.get_reading_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.get_reading_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_reading_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the reading flag targets.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading that is concerned with flagging.</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional keyword arguments eventually used for flag targets</span>
+<span class="sd">            extraction.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Iterable[EntityType]</span>
+<span class="sd">            An iterable of entities that are flagged.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">reading</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="ProcessingStep.process_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.process_reading">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided reading.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading to be processed</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional arguments passed by :func:`~dispel.processing.process`.</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        ProcessResultType</span>
+<span class="sd">            The results from processing readings.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">yield</span> <span class="bp">NotImplemented</span></div>
+
+
+<div class="viewcode-block" id="ProcessingStep.set_previous">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.set_previous">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_previous</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the previous step in a processing chain of this step.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">predecessor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;Changing predecessors can lead to side-effects. Previous predecessor &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;was </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">predecessor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="ne">UserWarning</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">step</span></div>
+
+
+<div class="viewcode-block" id="ProcessingStep.set_next">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.set_next">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_next</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the next step in a processing chain of this step.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">successor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;Changing successors can lead to side-effects. Previous successor was &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">successor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="ne">UserWarning</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="n">step</span></div>
+
+
+<div class="viewcode-block" id="ProcessingStep.chain">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.chain">[docs]</a>
+    <span class="k">def</span> <span class="nf">chain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">successor</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Chain this step with the successor step.&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">successor</span><span class="p">,</span> <span class="n">ProcessingStep</span><span class="p">),</span> <span class="s2">&quot;Can only chain processing steps&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">successor</span><span class="p">)</span>
+        <span class="n">successor</span><span class="o">.</span><span class="n">set_previous</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_ChainedProcesses</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">successor</span><span class="p">])</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;See :meth:`ProcessingStep.chain`.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ProcessingStep.get_parameters">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.ProcessingStep.get_parameters">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Parameter</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get all parameters defined by the processing step.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Tuple[str, Parameter]]</span>
+<span class="sd">            A list of tuples of parameter name and :class:`Parameter`</span>
+<span class="sd">            objects defined by the processing step.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Parameter</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="CoreProcessingStepGroup">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">CoreProcessingStepGroup</span><span class="p">(</span><span class="n">ProcessingStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A group of processing steps.</span>
+
+<span class="sd">    The :class:`CoreProcessingStepGroup` allows to provide additional named arguments to</span>
+<span class="sd">    the :meth:`~dispel.processing.process` function of the grouped</span>
+<span class="sd">    :class:`~dispel.processing.core.ProcessingStep`\ s. The primary use case for this is to</span>
+<span class="sd">    provide additional arguments to :class:`~dispel.processing.extract.ExtractStep` that</span>
+<span class="sd">    use :class:`~dispel.data.values.ValueDefinitionPrototype`\ s.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    steps</span>
+<span class="sd">        The processing steps of the group</span>
+<span class="sd">    kwargs</span>
+<span class="sd">        Additional arguments that are passed to the</span>
+<span class="sd">        :meth:`~dispel.processing.core.ProcessingStep.process` function of each step. This</span>
+<span class="sd">        allows to provide additional values, such as placeholder values in value</span>
+<span class="sd">        definitions to the actual processing function.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import ValueDefinitionPrototype</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.core import CoreProcessingStepGroup</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import ExtractStep</span>
+<span class="sd">    &gt;&gt;&gt; steps = [</span>
+<span class="sd">    ...     CoreProcessingStepGroup(</span>
+<span class="sd">    ...         [</span>
+<span class="sd">    ...             ExtractStep(</span>
+<span class="sd">    ...                 &#39;data-set&#39;,</span>
+<span class="sd">    ...                 lambda data_set: 5,</span>
+<span class="sd">    ...                 ValueDefinitionPrototype(</span>
+<span class="sd">    ...                     id_=&#39;x&#39;,</span>
+<span class="sd">    ...                     measure_name=&#39;{placeholder} x&#39;</span>
+<span class="sd">    ...                 )</span>
+<span class="sd">    ...             ),</span>
+<span class="sd">    ...         ],</span>
+<span class="sd">    ...         placeholder=&#39;A name&#39;</span>
+<span class="sd">    ...     ),</span>
+<span class="sd">    ...     ...</span>
+<span class="sd">    ... ]</span>
+
+<span class="sd">    The above extract step will result in a measure value with the name ``A name x``.</span>
+<span class="sd">    For further applications of :class:`CoreProcessingStepGroup` see also</span>
+<span class="sd">    :ref:`measure-extraction`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span>
+
+    <span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="CoreProcessingStepGroup.__new__">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.__new__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Instantiate a new ProcessingStepGroup.&quot;&quot;&quot;</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;steps&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">cls</span><span class="o">.</span><span class="n">steps</span><span class="p">:</span>
+            <span class="n">instance</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">steps</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">instance</span></div>
+
+
+<div class="viewcode-block" id="CoreProcessingStepGroup.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">steps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_steps</span><span class="p">(</span><span class="n">steps</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_steps</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_kwargs</span><span class="p">(</span><span class="o">**</span><span class="p">(</span><span class="n">kwargs</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_kwargs</span><span class="p">()))</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="CoreProcessingStepGroup.set_kwargs">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.set_kwargs">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the keyword arguments to be added to the processing.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span></div>
+
+
+<div class="viewcode-block" id="CoreProcessingStepGroup.get_kwargs">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.get_kwargs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get keyword arguments to be added to the processing.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span></div>
+
+
+<div class="viewcode-block" id="CoreProcessingStepGroup.set_steps">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.set_steps">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set processing steps part of the group.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        steps</span>
+<span class="sd">            The steps contained in the processing group.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="n">steps</span></div>
+
+
+<div class="viewcode-block" id="CoreProcessingStepGroup.get_steps">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.get_steps">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get processing steps within this group.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span></div>
+
+
+<div class="viewcode-block" id="CoreProcessingStepGroup.process_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.process_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;See :meth:`dispel.processing.core.ProcessingStep.process`.&quot;&quot;&quot;</span>
+        <span class="p">(</span><span class="n">updated_kwargs</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_kwargs</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_steps</span><span class="p">():</span>
+            <span class="k">yield from</span> <span class="n">step</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">updated_kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<span class="k">class</span> <span class="nc">_ChainedProcesses</span><span class="p">(</span><span class="n">CoreProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A technical class to chain process steps inside a group.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">chain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">successor</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a processing step to the steps.&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">steps</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_steps</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;No steps to chain in group&quot;</span>
+
+        <span class="n">last_step</span> <span class="o">=</span> <span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">last_step</span><span class="o">.</span><span class="n">set_next</span><span class="p">(</span><span class="n">successor</span><span class="p">)</span>
+        <span class="n">successor</span><span class="o">.</span><span class="n">set_previous</span><span class="p">(</span><span class="n">last_step</span><span class="p">)</span>
+
+        <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">successor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_steps</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+
+<div class="viewcode-block" id="FlagReadingStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.FlagReadingStep">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagReadingStep</span><span class="p">(</span><span class="n">FlagStepMixin</span><span class="p">,</span> <span class="n">ProcessingStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A reading flag class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    task_name</span>
+<span class="sd">        An optional abbreviated name value of the task used for the flag. See</span>
+<span class="sd">        :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flag_name</span>
+<span class="sd">        An optional abbreviated name value of the considered flag.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flag_type</span>
+<span class="sd">        An optional flag type.</span>
+<span class="sd">        See :class:`~dispel.data.flags.FlagType`.</span>
+<span class="sd">    reason</span>
+<span class="sd">        An optional string reason of the considered flag.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    stop_processing</span>
+<span class="sd">        An optional boolean that specifies whether the flag is stop_processing,</span>
+<span class="sd">        i.e., raises an error or not.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flagging_function</span>
+<span class="sd">        An optional flagging function applied to :class:`~dispel.data.core.Reading`.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Assuming you want to flag reading information such as whether the user has</span>
+<span class="sd">    finished the evaluation properly, you can create the following flag step:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import AbbreviatedValue as AV</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.core import FlagReadingStep</span>
+<span class="sd">    &gt;&gt;&gt; step = FlagReadingStep(</span>
+<span class="sd">    ...     task_name = AV(&#39;Pinch test&#39;, &#39;pinch&#39;),</span>
+<span class="sd">    ...     flag_name = AV(&#39;unfinished evaluation&#39;, &#39;ua&#39;),</span>
+<span class="sd">    ...     reason = &#39;The evaluation has not been finished by the user.&#39;,</span>
+<span class="sd">    ...     stop_processing=False,</span>
+<span class="sd">    ...     flag_type=FlagType.TECHNICAL,</span>
+<span class="sd">    ...     flag_severity=FlagSeverity.INVALIDATION,</span>
+<span class="sd">    ...     flagging_function=lambda reading: reading.evaluation.finished,</span>
+<span class="sd">    ... )</span>
+
+<span class="sd">    The flagging function will be called with the corresponding reading as argument.</span>
+
+<span class="sd">    Another common scenario is to define a class that can be reused.</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.flags import FlagType</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.core import FlagReadingStep</span>
+<span class="sd">    &gt;&gt;&gt; class UnfinishedEvaluation(FlagReadingStep):</span>
+<span class="sd">    ...     task_name = AV(&#39;Pinch test&#39;, &#39;pinch&#39;)</span>
+<span class="sd">    ...     flag_name = AV(&#39;unfinished evaluation&#39;, &#39;ua&#39;)</span>
+<span class="sd">    ...     flag_type = FlagType.BEHAVIORAL</span>
+<span class="sd">    ...     flag_severity = FlagSeverity.INVALIDATION</span>
+<span class="sd">    ...     reason = &#39;The evaluation has not been finished by the user.&#39;</span>
+<span class="sd">    ...     stop_processing = False</span>
+<span class="sd">    ...     flagging_function = lambda reading: reading.evaluation.finished</span>
+
+<span class="sd">    Another convenient way to provide the flagging function is to use the</span>
+<span class="sd">    ``@flag`` decorator:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.core import Reading</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.core import FlagReadingStep</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.flags import flag</span>
+<span class="sd">    &gt;&gt;&gt; class UnfinishedEvaluation(FlagReadingStep):</span>
+<span class="sd">    ...     task_name = AV(&#39;Pinch test&#39;, &#39;pinch&#39;)</span>
+<span class="sd">    ...     flag_name = AV(&#39;unfinished evaluation&#39;, &#39;ua&#39;)</span>
+<span class="sd">    ...     flag_type = &#39;behavioral&#39;</span>
+<span class="sd">    ...     flag_severity = FlagSeverity.INVALIDATION</span>
+<span class="sd">    ...     reason = &#39;The evaluation has not been finished by the user.&#39;</span>
+<span class="sd">    ...     stop_processing = False</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @flag</span>
+<span class="sd">    ...     def _unfinished_evaluation(self, reading: Reading) -&gt; bool:</span>
+<span class="sd">    ...         return reading.evaluation.finished</span>
+
+<span class="sd">    Note that the ``@flag`` decorator can take keyword arguments. These kwargs are</span>
+<span class="sd">    merged with any keyword arguments that come from processing step groups in order to</span>
+<span class="sd">    format the flag ``reason``. Also, one can use multiple flag decorators</span>
+<span class="sd">    in the same flag class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FlagReadingStep.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.FlagReadingStep.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">FlagType</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_severity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">FlagSeverity</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">reason</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stop_processing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">flagging_function</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">task_name</span><span class="p">,</span>
+            <span class="n">flag_name</span><span class="o">=</span><span class="n">flag_name</span><span class="p">,</span>
+            <span class="n">flag_type</span><span class="o">=</span><span class="n">flag_type</span><span class="p">,</span>
+            <span class="n">flag_severity</span><span class="o">=</span><span class="n">flag_severity</span><span class="p">,</span>
+            <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
+            <span class="n">stop_processing</span><span class="o">=</span><span class="n">stop_processing</span><span class="p">,</span>
+            <span class="n">flagging_function</span><span class="o">=</span><span class="n">flagging_function</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FlagReadingStep.process_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.FlagReadingStep.process_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided reading.&quot;&quot;&quot;</span>
+        <span class="k">yield from</span> <span class="p">[]</span></div>
+
+
+<div class="viewcode-block" id="FlagReadingStep.get_reading_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.FlagReadingStep.get_reading_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_reading_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get flag targets for reading flag.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flag_targets</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FlagReadingStep.get_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.FlagReadingStep.get_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Level</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get flag targets for reading flag.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">reading</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="FlagReadingStep.flag_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.core.html#dispel.processing.core.FlagReadingStep.flag_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">flag_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Flag</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag the provided reading.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">func_kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flagging_functions</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">func</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="p">(</span><span class="n">merged_kwargs</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">func_kwargs</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flag</span><span class="p">(</span><span class="o">**</span><span class="n">merged_kwargs</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

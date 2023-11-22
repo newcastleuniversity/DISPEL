@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.tasks.cps.modalities &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/tasks/cps/modalities';</script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.tasks.cps.modalities</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A module containing functionality to process/filter specific modalities.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">RangeValidator</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AVEnum</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">LevelFilter</span>
+
+<span class="c1">#: range of symbols/digits</span>
+<span class="n">_DIGIT_RANGE</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1">#: range of n-backs studied</span>
+<span class="n">NBACKS</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1">#: Range validator for maximum total responses</span>
+<span class="n">TOTAL_RESPONSES_VALIDATOR</span> <span class="o">=</span> <span class="n">RangeValidator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+
+<span class="c1">#: The maximum time for the user to interact during an attempt of an upper task</span>
+<span class="n">INTERACT_DURATION_VALIDATOR</span> <span class="o">=</span> <span class="n">RangeValidator</span><span class="p">(</span><span class="n">lower_bound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upper_bound</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="CPSMode">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.CPSMode">[docs]</a>
+<span class="k">class</span> <span class="nc">CPSMode</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant representing the level modalities.&quot;&quot;&quot;</span>
+
+    <span class="n">SYMBOL_TO_DIGIT</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;symbol-to-digit&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">)</span>
+    <span class="n">DIGIT_TO_DIGIT</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;digit-to-digit&quot;</span><span class="p">,</span> <span class="s2">&quot;dtd&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="CPSKeySet">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.CPSKeySet">[docs]</a>
+<span class="k">class</span> <span class="nc">CPSKeySet</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant representing the key set modalities.&quot;&quot;&quot;</span>
+
+    <span class="n">KEY1</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;predefined key set one&quot;</span><span class="p">,</span> <span class="s2">&quot;key1&quot;</span><span class="p">)</span>
+    <span class="n">KEY2</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;predefined key set two&quot;</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">)</span>
+    <span class="n">KEY3</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;predefined key set three&quot;</span><span class="p">,</span> <span class="s2">&quot;key3&quot;</span><span class="p">)</span>
+    <span class="n">RANDOM</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;random key set&quot;</span><span class="p">,</span> <span class="s2">&quot;keyr&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="CPSSequence">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.CPSSequence">[docs]</a>
+<span class="k">class</span> <span class="nc">CPSSequence</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant representing the sequence type.&quot;&quot;&quot;</span>
+
+    <span class="n">PRE_DEFINED</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;predefined sequence&quot;</span><span class="p">,</span> <span class="s2">&quot;pre&quot;</span><span class="p">)</span>
+    <span class="n">RANDOM</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;random sequence&quot;</span><span class="p">,</span> <span class="s2">&quot;rand&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ResponsesModality">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.ResponsesModality">[docs]</a>
+<span class="k">class</span> <span class="nc">ResponsesModality</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant representing the specific selection modalities.&quot;&quot;&quot;</span>
+
+    <span class="n">FIVE_FIRST</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;five first responses&quot;</span><span class="p">,</span> <span class="s2">&quot;f5&quot;</span><span class="p">)</span>
+    <span class="n">FIVE_LAST</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;five last responses&quot;</span><span class="p">,</span> <span class="s2">&quot;l5&quot;</span><span class="p">)</span>
+    <span class="n">CORRECT</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;correct responses only&quot;</span><span class="p">,</span> <span class="s2">&quot;corr&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SymbolEnum">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.SymbolEnum">[docs]</a>
+<span class="k">class</span> <span class="nc">SymbolEnum</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant representing symbol modalities.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;symbol </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;sym</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">SYMBOL_1</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">SYMBOL_2</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">SYMBOL_3</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">SYMBOL_4</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">SYMBOL_5</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">SYMBOL_6</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">SYMBOL_7</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">SYMBOL_8</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">SYMBOL_9</span> <span class="o">=</span> <span class="mi">9</span></div>
+
+
+
+<div class="viewcode-block" id="DigitEnum">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.DigitEnum">[docs]</a>
+<span class="k">class</span> <span class="nc">DigitEnum</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant of the digits for the d2d phase.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;digit </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;dig</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">DIGIT_1</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">DIGIT_2</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">DIGIT_3</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">DIGIT_4</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">DIGIT_5</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">DIGIT_6</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">DIGIT_7</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">DIGIT_8</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">DIGIT_9</span> <span class="o">=</span> <span class="mi">9</span></div>
+
+
+
+<div class="viewcode-block" id="ThirdsModality">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.ThirdsModality">[docs]</a>
+<span class="k">class</span> <span class="nc">ThirdsModality</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant representing the specific set third modalities.</span>
+
+<span class="sd">    The Konectom symbol-to-digit cognitive processing speed test is decomposed</span>
+<span class="sd">    into three sets (first, second, third). The sets are computed based on the</span>
+<span class="sd">    total duration of the level obtained from the context. The length of a set</span>
+<span class="sd">    is defined as the total_duration / 3.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ThirdsModality.get_lower_upper">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.ThirdsModality.get_lower_upper">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_lower_upper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get third boundaries from data set.&quot;&quot;&quot;</span>
+        <span class="n">third_duration</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+        <span class="n">n_third</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">ts_start</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;tsAnswer&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">n_third</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">ts_start</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">ts_start</span> <span class="o">+</span> <span class="n">third_duration</span>
+        <span class="k">elif</span> <span class="n">n_third</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">ts_start</span> <span class="o">+</span> <span class="n">third_duration</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">ts_start</span> <span class="o">+</span> <span class="p">(</span><span class="n">third_duration</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">n_third</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">ts_start</span> <span class="o">+</span> <span class="p">(</span><span class="n">third_duration</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">ts_start</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">duration</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">n_third</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">ts_start</span> <span class="o">+</span> <span class="n">third_duration</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">ts_start</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">duration</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;num_third has to be comprise in [1, 2, 3, 4]&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span></div>
+
+
+    <span class="n">FIRST_THIRD</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;1st third of keys&quot;</span><span class="p">,</span> <span class="s2">&quot;third1&quot;</span><span class="p">)</span>
+    <span class="n">SECOND_THIRD</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;2nd third of keys&quot;</span><span class="p">,</span> <span class="s2">&quot;third2&quot;</span><span class="p">)</span>
+    <span class="n">THIRD_THIRD</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;3rd third of keys&quot;</span><span class="p">,</span> <span class="s2">&quot;third3&quot;</span><span class="p">)</span>
+    <span class="n">SECOND_LAST_THIRD</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;2nd and 3rd third of keys&quot;</span><span class="p">,</span> <span class="s2">&quot;third2third3&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="PairModalityBase">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.PairModalityBase">[docs]</a>
+<span class="k">class</span> <span class="nc">PairModalityBase</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated pair modalities base.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">:</span> <span class="n">AVEnum</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="n">AVEnum</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">left</span><span class="o">.</span><span class="n">av</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">right</span><span class="o">.</span><span class="n">av</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">left</span><span class="o">.</span><span class="n">abbr</span><span class="si">}{</span><span class="n">right</span><span class="o">.</span><span class="n">abbr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PairModalityBase.from_pair">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.PairModalityBase.from_pair">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_pair</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">left</span><span class="p">:</span> <span class="n">AVEnum</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="n">AVEnum</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PairModalityBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract PairModality for a given pair of keys.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="bp">cls</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">member</span><span class="o">.</span><span class="n">left</span> <span class="o">==</span> <span class="n">left</span> <span class="ow">and</span> <span class="n">member</span><span class="o">.</span><span class="n">right</span> <span class="o">==</span> <span class="n">right</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">member</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Unknown pair: </span><span class="si">{symbol}</span><span class="s2"> ~ </span><span class="si">{other}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ThirdsPairModality">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.ThirdsPairModality">[docs]</a>
+<span class="k">class</span> <span class="nc">ThirdsPairModality</span><span class="p">(</span><span class="n">PairModalityBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated comparisons between the different parts of the data set.&quot;&quot;&quot;</span>
+
+    <span class="n">THIRD_2_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">ThirdsModality</span><span class="o">.</span><span class="n">SECOND_THIRD</span><span class="p">,</span> <span class="n">ThirdsModality</span><span class="o">.</span><span class="n">FIRST_THIRD</span><span class="p">)</span>
+    <span class="n">THIRD_3_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">ThirdsModality</span><span class="o">.</span><span class="n">THIRD_THIRD</span><span class="p">,</span> <span class="n">ThirdsModality</span><span class="o">.</span><span class="n">FIRST_THIRD</span><span class="p">)</span>
+    <span class="n">THIRD_3_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">ThirdsModality</span><span class="o">.</span><span class="n">THIRD_THIRD</span><span class="p">,</span> <span class="n">ThirdsModality</span><span class="o">.</span><span class="n">SECOND_THIRD</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SymbolConfusionPairModality">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.SymbolConfusionPairModality">[docs]</a>
+<span class="k">class</span> <span class="nc">SymbolConfusionPairModality</span><span class="p">(</span><span class="n">PairModalityBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated symbol  confusions modalities.&quot;&quot;&quot;</span>
+
+    <span class="n">SYMBOL_2_7</span> <span class="o">=</span> <span class="p">(</span><span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_2</span><span class="p">,</span> <span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_7</span><span class="p">)</span>
+    <span class="n">SYMBOL_7_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_7</span><span class="p">,</span> <span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_2</span><span class="p">)</span>
+    <span class="n">SYMBOL_4_6</span> <span class="o">=</span> <span class="p">(</span><span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_4</span><span class="p">,</span> <span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_6</span><span class="p">)</span>
+    <span class="n">SYMBOL_6_4</span> <span class="o">=</span> <span class="p">(</span><span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_6</span><span class="p">,</span> <span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_4</span><span class="p">)</span>
+    <span class="n">SYMBOL_3_8</span> <span class="o">=</span> <span class="p">(</span><span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_3</span><span class="p">,</span> <span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_8</span><span class="p">)</span>
+    <span class="n">SYMBOL_8_3</span> <span class="o">=</span> <span class="p">(</span><span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_8</span><span class="p">,</span> <span class="n">SymbolEnum</span><span class="o">.</span><span class="n">SYMBOL_3</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="DigitConfusionPairModality">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.DigitConfusionPairModality">[docs]</a>
+<span class="k">class</span> <span class="nc">DigitConfusionPairModality</span><span class="p">(</span><span class="n">PairModalityBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated digit confusions modalities.&quot;&quot;&quot;</span>
+
+    <span class="n">DIGIT_6_9</span> <span class="o">=</span> <span class="p">(</span><span class="n">DigitEnum</span><span class="o">.</span><span class="n">DIGIT_6</span><span class="p">,</span> <span class="n">DigitEnum</span><span class="o">.</span><span class="n">DIGIT_9</span><span class="p">)</span>
+    <span class="n">DIGIT_9_6</span> <span class="o">=</span> <span class="p">(</span><span class="n">DigitEnum</span><span class="o">.</span><span class="n">DIGIT_9</span><span class="p">,</span> <span class="n">DigitEnum</span><span class="o">.</span><span class="n">DIGIT_6</span><span class="p">)</span></div>
+
+
+
+<span class="n">PairType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span>
+    <span class="n">DigitConfusionPairModality</span><span class="p">,</span> <span class="n">SymbolConfusionPairModality</span><span class="p">,</span> <span class="n">ThirdsPairModality</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="SymmetryModality">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.SymmetryModality">[docs]</a>
+<span class="k">class</span> <span class="nc">SymmetryModality</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant representing the coupling modalities.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SymmetryModality.get_pair_modality">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.get_pair_modality">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_pair_modality</span><span class="p">(</span><span class="n">mode</span><span class="p">:</span> <span class="n">CPSMode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">SymbolEnum</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get pair values from modality.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="n">CPSMode</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">SymbolEnum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">SymbolEnum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span></div>
+
+
+<div class="viewcode-block" id="SymmetryModality.get_unique_modality">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.SymmetryModality.get_unique_modality">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_unique_modality</span><span class="p">(</span><span class="n">mode</span><span class="p">:</span> <span class="n">CPSMode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">SymbolEnum</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get Unique values from modality.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="n">CPSMode</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">SymbolEnum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">SymbolEnum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span></div>
+
+
+    <span class="n">PAIRED</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;paired keys&quot;</span><span class="p">,</span> <span class="s2">&quot;pair&quot;</span><span class="p">)</span>
+    <span class="n">UNIQUE</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;unique keys&quot;</span><span class="p">,</span> <span class="s2">&quot;unique&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="n">KeyType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">DigitEnum</span><span class="p">,</span> <span class="n">SymmetryModality</span><span class="p">,</span> <span class="n">PairType</span><span class="p">,</span> <span class="n">SymbolEnum</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="CPSLevel">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.CPSLevel">[docs]</a>
+<span class="k">class</span> <span class="nc">CPSLevel</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An enum for CPS levels.&quot;&quot;&quot;</span>
+
+    <span class="n">SYMBOL_TO_DIGIT</span> <span class="o">=</span> <span class="s2">&quot;symbol_to_digit&quot;</span>
+    <span class="n">DIGIT_TO_DIGIT</span> <span class="o">=</span> <span class="s2">&quot;digit_to_digit&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="CPSModalityFilter">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter">[docs]</a>
+<span class="k">class</span> <span class="nc">CPSModalityFilter</span><span class="p">(</span><span class="n">LevelFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter over levels, sequences, and key sets.&quot;&quot;&quot;</span>
+
+    <span class="n">_MODE_TO_LEVEL</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">CPSMode</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="p">:</span> <span class="n">CPSLevel</span><span class="o">.</span><span class="n">SYMBOL_TO_DIGIT</span><span class="p">,</span>
+        <span class="n">CPSMode</span><span class="o">.</span><span class="n">DIGIT_TO_DIGIT</span><span class="p">:</span> <span class="n">CPSLevel</span><span class="o">.</span><span class="n">DIGIT_TO_DIGIT</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">_KEY_SET_TO_CONTEXT</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">CPSKeySet</span><span class="o">.</span><span class="n">KEY1</span><span class="p">:</span> <span class="s2">&quot;predefinedKey1&quot;</span><span class="p">,</span>
+        <span class="n">CPSKeySet</span><span class="o">.</span><span class="n">KEY2</span><span class="p">:</span> <span class="s2">&quot;predefinedKey2&quot;</span><span class="p">,</span>
+        <span class="n">CPSKeySet</span><span class="o">.</span><span class="n">KEY3</span><span class="p">:</span> <span class="s2">&quot;predefinedKey3&quot;</span><span class="p">,</span>
+        <span class="n">CPSKeySet</span><span class="o">.</span><span class="n">RANDOM</span><span class="p">:</span> <span class="s2">&quot;randomKey&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">_SEQUENCE_TO_CONTEXT</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">CPSSequence</span><span class="o">.</span><span class="n">PRE_DEFINED</span><span class="p">:</span> <span class="s2">&quot;predefinedSequence&quot;</span><span class="p">,</span>
+        <span class="n">CPSSequence</span><span class="o">.</span><span class="n">RANDOM</span><span class="p">:</span> <span class="s2">&quot;randomSequence&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+<div class="viewcode-block" id="CPSModalityFilter.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="n">CPSMode</span><span class="p">,</span> <span class="n">sequence</span><span class="p">:</span> <span class="n">CPSSequence</span><span class="p">,</span> <span class="n">key_set</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CPSKeySet</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sequence</span> <span class="o">=</span> <span class="n">sequence</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key_set</span> <span class="o">=</span> <span class="n">key_set</span></div>
+
+
+<div class="viewcode-block" id="CPSModalityFilter.filter">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter for levels.&quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="nf">_filter</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="n">level</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">level_id</span>
+                <span class="ow">and</span> <span class="n">level</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">sequence_context_id</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+                <span class="ow">and</span> <span class="p">(</span>
+                    <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_set</span>
+                    <span class="ow">or</span> <span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">key_set_context_id</span> <span class="ow">in</span> <span class="n">level</span><span class="o">.</span><span class="n">context</span>
+                        <span class="ow">and</span> <span class="n">level</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">key_set_context_id</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">_filter</span><span class="p">,</span> <span class="n">levels</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="CPSModalityFilter.repr">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.CPSModalityFilter.repr">[docs]</a>
+    <span class="k">def</span> <span class="nf">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get representation of the filter.&quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="si">}</span><span class="s2"> with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sequence</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_set</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; using </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">key_set</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">level_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CPSLevel</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the proper level id.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_MODE_TO_LEVEL</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sequence_context_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the proper sequence context id.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SEQUENCE_TO_CONTEXT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">sequence</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">key_set_context_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the proper key set context id.&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_set</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;key set must be provided&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_KEY_SET_TO_CONTEXT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">key_set</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="RegressionMode">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.cps.modalities.html#dispel.providers.generic.tasks.cps.modalities.RegressionMode">[docs]</a>
+<span class="k">class</span> <span class="nc">RegressionMode</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant representing the linear regression measures.&quot;&quot;&quot;</span>
+
+    <span class="n">ALL_RESPONSES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;all keys&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">)</span>
+    <span class="n">ONE_ANS_REM</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;one answer removed&quot;</span><span class="p">,</span> <span class="s2">&quot;1rem&quot;</span><span class="p">)</span>
+    <span class="n">TWO_ANS_REM</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;two answers removed&quot;</span><span class="p">,</span> <span class="s2">&quot;2rem&quot;</span><span class="p">)</span>
+    <span class="n">THREE_ANS_REM</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;three answers removed&quot;</span><span class="p">,</span> <span class="s2">&quot;3rem&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">to_drop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of data points to be dropped in the regression.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

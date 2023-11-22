@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.tasks.gait.steps &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/tasks/gait/steps';</script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.tasks.gait.steps</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Six-Minute Walk test related functionality.</span>
+
+<span class="sd">This module contains functionality to extract measures for the *Six-minute</span>
+<span class="sd">Walk* test (6MWT).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValue</span><span class="p">,</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span>
+    <span class="n">DEFAULT_COLUMNS</span><span class="p">,</span>
+    <span class="n">GRAVITY_COLUMNS</span><span class="p">,</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">GREATER_THAN_ZERO</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.assertions</span> <span class="kn">import</span> <span class="n">AssertEvaluationFinished</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="n">ProcessingStep</span><span class="p">,</span> <span class="n">ProcessResultType</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">transformation</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ExtractMultipleStep</span><span class="p">,</span>
+    <span class="n">MeasureDefinitionMixin</span><span class="p">,</span>
+    <span class="n">agg_column</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LevelProcessingResult</span><span class="p">,</span>
+    <span class="n">LevelProcessingStep</span><span class="p">,</span>
+    <span class="n">ProcessingStepGroup</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level_filters</span> <span class="kn">import</span> <span class="n">LastLevelFilter</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.modalities</span> <span class="kn">import</span> <span class="n">LimbModality</span><span class="p">,</span> <span class="n">SensorModality</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">Apply</span><span class="p">,</span> <span class="n">TransformStep</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.activity.placement</span> <span class="kn">import</span> <span class="n">ClassifyPlacement</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.activity.turning</span> <span class="kn">import</span> <span class="n">ElGoharyTurnDetection</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.flags.generic</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FrequencyLowerThanGaitThres</span><span class="p">,</span>
+    <span class="n">MaxTimeIncrement</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.flags.le_flags</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ExcessiveTurns</span><span class="p">,</span>
+    <span class="n">LargeTurnsPerMinute</span><span class="p">,</span>
+    <span class="n">NoMovementDetected</span><span class="p">,</span>
+    <span class="n">NonBeltDetected6MWT</span><span class="p">,</span>
+    <span class="n">NotEnoughRectilinearWalkingOnBeltDetected</span><span class="p">,</span>
+    <span class="n">PercentageNotMoving</span><span class="p">,</span>
+    <span class="n">PercentageNotWalking</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.preprocessing</span> <span class="kn">import</span> <span class="n">Detrend</span><span class="p">,</span> <span class="n">PreprocessingSteps</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.sensor</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FREQ_50HZ</span><span class="p">,</span>
+    <span class="n">EuclideanNorm</span><span class="p">,</span>
+    <span class="n">RenameColumns</span><span class="p">,</span>
+    <span class="n">Resample</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.bout_strategy</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">NO_BOUT_MODALITY</span><span class="p">,</span>
+    <span class="n">BoutStrategyModality</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AverageRollingVerticalAcceleration</span><span class="p">,</span>
+    <span class="n">DetectBoutsBeltPlacementNoTurns</span><span class="p">,</span>
+    <span class="n">DetectBoutsHarmonic</span><span class="p">,</span>
+    <span class="n">DetectMovementBouts</span><span class="p">,</span>
+    <span class="n">ExtractStepCount</span><span class="p">,</span>
+    <span class="n">TransformGaitRegularity</span><span class="p">,</span>
+    <span class="n">TransformGaitRegularityWithoutBout</span><span class="p">,</span>
+    <span class="n">TransformStepDuration</span><span class="p">,</span>
+    <span class="n">TransformStepDurationWithoutBout</span><span class="p">,</span>
+    <span class="n">TransformStepVigor</span><span class="p">,</span>
+    <span class="n">TransformStepVigorWithoutBout</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.cwt</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">STEP_LENGTH_HEIGHT_RATIO</span><span class="p">,</span>
+    <span class="n">CWTDetectSteps</span><span class="p">,</span>
+    <span class="n">CWTDetectStepsWithoutBout</span><span class="p">,</span>
+    <span class="n">CWTMeasures</span><span class="p">,</span>
+    <span class="n">CWTMeasuresWithoutBout</span><span class="p">,</span>
+    <span class="n">CWTMeasureTransformation</span><span class="p">,</span>
+    <span class="n">CWTMeasureWithoutBoutTransformation</span><span class="p">,</span>
+    <span class="n">FormatAccelerationCWT</span><span class="p">,</span>
+    <span class="n">HeightChangeCOM</span><span class="p">,</span>
+    <span class="n">OptimizeCwtStepDataset</span><span class="p">,</span>
+    <span class="n">OptimizeCwtStepDatasetWithoutWalkingBout</span><span class="p">,</span>
+    <span class="n">get_subject_height</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.lee</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LEE_MOD</span><span class="p">,</span>
+    <span class="n">LeeDetectSteps</span><span class="p">,</span>
+    <span class="n">LeeDetectStepsWithoutBout</span><span class="p">,</span>
+    <span class="n">LeeMeasuresGroup</span><span class="p">,</span>
+    <span class="n">LeeMeasuresWithoutBoutGroup</span><span class="p">,</span>
+    <span class="n">LeeTransformHipRotation</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tremor</span> <span class="kn">import</span> <span class="n">TremorMeasures</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.core</span> <span class="kn">import</span> <span class="n">euclidean_norm</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.filter</span> <span class="kn">import</span> <span class="n">butterworth_low_pass_filter</span>
+
+<span class="n">TASK_NAME</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;Six-minute walk test&quot;</span><span class="p">,</span> <span class="s2">&quot;6MWT&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ComputeDistanceAndSpeed">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.ComputeDistanceAndSpeed">[docs]</a>
+<span class="k">class</span> <span class="nc">ComputeDistanceAndSpeed</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A raw data set transformation step to get user&#39;s distance and speed.</span>
+
+<span class="sd">    When calculating the speed, we have chosen to ignore stoppage time.For</span>
+<span class="sd">    more information, see the :class:`~dispel.processing.transform.TransformStep`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;gps&quot;</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;distance_and_speed&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="s2">&quot;calculated distance&quot;</span><span class="p">,</span> <span class="s2">&quot;float64&quot;</span><span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;speed&quot;</span><span class="p">,</span> <span class="s2">&quot;calculated speed&quot;</span><span class="p">,</span> <span class="s2">&quot;float64&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_distance_speed</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="c1"># Get rid of duplicated timestamps</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="n">data</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s2">&quot;last&quot;</span><span class="p">)]</span>
+        <span class="n">displacement</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">euclidean_norm</span><span class="p">(</span><span class="n">displacement</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">speed</span> <span class="o">=</span> <span class="n">distance</span> <span class="o">/</span> <span class="n">data</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">distance</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="n">speed</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="ComputeDistanceInertial">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.ComputeDistanceInertial">[docs]</a>
+<span class="k">class</span> <span class="nc">ComputeDistanceInertial</span><span class="p">(</span><span class="n">LevelProcessingStep</span><span class="p">,</span> <span class="n">MeasureDefinitionMixin</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute distance from step count and step length.&quot;&quot;&quot;</span>
+
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span>
+            <span class="s2">&quot;distance walked from step count and height-based step length&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;distance_walked_sc_hbsl&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The distance walked from step count and height-based &quot;</span>
+        <span class="s2">&quot;step len in meters.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="ComputeDistanceInertial.process_level">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.ComputeDistanceInertial.process_level">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_level</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process level to extract the distance walk.&quot;&quot;&quot;</span>
+        <span class="n">measure</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span>
+            <span class="n">MeasureValue</span><span class="p">,</span>
+            <span class="n">level</span><span class="o">.</span><span class="n">measure_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="n">ExtractStepCount</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">create_definition</span><span class="p">(</span>
+                    <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;cwt&quot;</span><span class="p">,</span> <span class="s2">&quot;gp&quot;</span><span class="p">),</span> <span class="n">NO_BOUT_MODALITY</span><span class="p">],</span>
+                    <span class="n">bout_strategy_repr</span><span class="o">=</span><span class="n">NO_BOUT_MODALITY</span><span class="o">.</span><span class="n">abbr</span><span class="p">,</span>
+                    <span class="n">step_detector</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
+                    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">id</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="n">get_subject_height</span><span class="p">(</span><span class="n">level</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">value</span> <span class="o">*</span> <span class="n">height</span> <span class="o">*</span> <span class="n">STEP_LENGTH_HEIGHT_RATIO</span>
+
+        <span class="k">yield</span> <span class="n">LevelProcessingResult</span><span class="p">(</span>
+            <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="n">level</span><span class="p">,</span> <span class="n">measure</span><span class="p">],</span>
+            <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+            <span class="n">result</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SixMinuteWalkTestMeasures">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.SixMinuteWalkTestMeasures">[docs]</a>
+<span class="k">class</span> <span class="nc">SixMinuteWalkTestMeasures</span><span class="p">(</span><span class="n">ExtractMultipleStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A group of Gait extraction steps.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;distance_and_speed&quot;</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span> <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span>
+    <span class="p">)</span>
+    <span class="n">transform_functions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">agg_column</span><span class="p">(</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">),</span>
+            <span class="s2">&quot;measure_name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;total distance walked&quot;</span><span class="p">,</span> <span class="s2">&quot;distance_walked&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The total distance walked during six minutes. &quot;</span>
+            <span class="s2">&quot;The distance is measured based on GPS &quot;</span>
+            <span class="s2">&quot;positions taken each second and derived to &quot;</span>
+            <span class="s2">&quot;result in total distance.&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">agg_column</span><span class="p">(</span><span class="s2">&quot;speed&quot;</span><span class="p">,</span> <span class="n">cast</span><span class="p">(</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)),</span>
+            <span class="s2">&quot;measure_name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span>
+                <span class="s2">&quot;walking speed (excluding stops)&quot;</span><span class="p">,</span> <span class="s2">&quot;walking_speed_non_stop&quot;</span>
+            <span class="p">),</span>
+            <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;m/s&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Mean walking speed measured using GPS &quot;</span>
+            <span class="s2">&quot;positions measured each second excluding &quot;</span>
+            <span class="s2">&quot;periods where between two measurements the &quot;</span>
+            <span class="s2">&quot;displacement was smaller than one meter.&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;aggregation&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="GaitTremorMeasures">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.GaitTremorMeasures">[docs]</a>
+<span class="k">class</span> <span class="nc">GaitTremorMeasures</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A group of gait steps for tremor measures.&quot;&quot;&quot;</span>
+
+    <span class="n">new_column_names</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;userAccelerationX&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;userAccelerationY&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;userAccelerationZ&quot;</span><span class="p">:</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RenameColumns</span><span class="p">(</span><span class="s2">&quot;acc_ts_rotated_resampled_detrend&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">new_column_names</span><span class="p">),</span>
+        <span class="n">TremorMeasures</span><span class="p">(</span>
+            <span class="n">sensor</span><span class="o">=</span><span class="n">SensorModality</span><span class="o">.</span><span class="n">ACCELEROMETER</span><span class="p">,</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts_rotated_resampled_detrend_renamed&quot;</span><span class="p">,</span>
+            <span class="n">add_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">TremorMeasures</span><span class="p">(</span>
+            <span class="n">sensor</span><span class="o">=</span><span class="n">SensorModality</span><span class="o">.</span><span class="n">GYROSCOPE</span><span class="p">,</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_rotated_resampled&quot;</span><span class="p">,</span>
+            <span class="n">add_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TechnicalFlags">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.TechnicalFlags">[docs]</a>
+<span class="k">class</span> <span class="nc">TechnicalFlags</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Technical flag steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">FrequencyLowerThanGaitThres</span><span class="p">(),</span> <span class="n">MaxTimeIncrement</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="FlagPreprocessing">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.FlagPreprocessing">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagPreprocessing</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Preprocessing required for flags.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">PercentageNotWalking</span><span class="p">(),</span>
+        <span class="n">PercentageNotMoving</span><span class="p">(),</span>
+        <span class="n">LargeTurnsPerMinute</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="BehavioralDeviations">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.BehavioralDeviations">[docs]</a>
+<span class="k">class</span> <span class="nc">BehavioralDeviations</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Behavioral deviation steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">NonBeltDetected6MWT</span><span class="p">(),</span>
+        <span class="n">NoMovementDetected</span><span class="p">(),</span>
+        <span class="n">ExcessiveTurns</span><span class="p">(),</span>
+        <span class="n">NotEnoughRectilinearWalkingOnBeltDetected</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="BehavioralInvalidations">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.BehavioralInvalidations">[docs]</a>
+<span class="k">class</span> <span class="nc">BehavioralInvalidations</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Behavioral invalidation steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">NonBeltDetected6MWT</span><span class="p">(</span><span class="n">acceptance_threshold</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
+        <span class="n">NoMovementDetected</span><span class="p">(</span><span class="n">acceptance_threshold</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
+        <span class="n">ExcessiveTurns</span><span class="p">(</span><span class="n">acceptance_threshold</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+        <span class="n">NotEnoughRectilinearWalkingOnBeltDetected</span><span class="p">(</span><span class="n">acceptance_threshold</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="StepsGPS">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.StepsGPS">[docs]</a>
+<span class="k">class</span> <span class="nc">StepsGPS</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Steps to process measures from GPS signals.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ComputeDistanceAndSpeed</span><span class="p">(),</span>
+        <span class="n">SixMinuteWalkTestMeasures</span><span class="p">(),</span>
+    <span class="p">]</span>
+
+    <span class="n">level_filter</span> <span class="o">=</span> <span class="n">LastLevelFilter</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="GaitPreprocessingSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.GaitPreprocessingSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">GaitPreprocessingSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Steps to pre-process gait activities.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">PreprocessingSteps</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;accelerometer&quot;</span><span class="p">,</span>
+            <span class="n">limb</span><span class="o">=</span><span class="n">LimbModality</span><span class="o">.</span><span class="n">LOWER_LIMB</span><span class="p">,</span>
+            <span class="n">sensor</span><span class="o">=</span><span class="n">SensorModality</span><span class="o">.</span><span class="n">ACCELEROMETER</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span>
+            <span class="n">resample_freq</span><span class="o">=</span><span class="n">FREQ_50HZ</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">PreprocessingSteps</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope&quot;</span><span class="p">,</span>
+            <span class="n">limb</span><span class="o">=</span><span class="n">LimbModality</span><span class="o">.</span><span class="n">LOWER_LIMB</span><span class="p">,</span>
+            <span class="n">sensor</span><span class="o">=</span><span class="n">SensorModality</span><span class="o">.</span><span class="n">GYROSCOPE</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">DEFAULT_COLUMNS</span><span class="p">,</span>
+            <span class="n">resample_freq</span><span class="o">=</span><span class="n">FREQ_50HZ</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TremorSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.TremorSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">TremorSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Steps to extract tremor-based measures.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Low Pass Gyroscope and Extracting Tremor Measures</span>
+        <span class="n">Apply</span><span class="p">(</span>
+            <span class="s2">&quot;gyroscope_ts_rotated_resampled&quot;</span><span class="p">,</span>
+            <span class="n">butterworth_low_pass_filter</span><span class="p">,</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">zero_phase</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span>
+        <span class="p">),</span>
+        <span class="c1"># Extract Tremor Measures</span>
+        <span class="n">GaitTremorMeasures</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="WalkingBoutDetectionSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.WalkingBoutDetectionSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">WalkingBoutDetectionSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Steps to detect walking bouts.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Format Accelerometer and detect walking bouts</span>
+        <span class="n">AverageRollingVerticalAcceleration</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts_rotated_resampled_detrend&quot;</span><span class="p">,</span> <span class="n">change_sign</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">),</span>
+        <span class="c1"># Detect Walking Bouts</span>
+        <span class="n">DetectBoutsHarmonic</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="WalkingBoutDynamicsDetectionSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.WalkingBoutDynamicsDetectionSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">WalkingBoutDynamicsDetectionSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Steps to detect dynamic walking bouts.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Format Accelerometer and detect walking bouts</span>
+        <span class="n">AverageRollingVerticalAcceleration</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts_rotated_resampled_detrend&quot;</span><span class="p">,</span> <span class="n">change_sign</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">),</span>
+        <span class="c1"># Detect Walking Bouts</span>
+        <span class="n">DetectMovementBouts</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="PlacementClassificationSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.PlacementClassificationSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">PlacementClassificationSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Steps to classify device placement.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Resample</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts&quot;</span><span class="p">,</span>
+            <span class="n">freq</span><span class="o">=</span><span class="n">FREQ_50HZ</span><span class="p">,</span>
+            <span class="n">aggregations</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;ffill&quot;</span><span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span> <span class="o">+</span> <span class="n">GRAVITY_COLUMNS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">EuclideanNorm</span><span class="p">(</span><span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts_resampled&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span><span class="p">),</span>
+        <span class="c1"># Format Accelerometer and detect walking bouts</span>
+        <span class="n">ClassifyPlacement</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TurnDetectionSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.TurnDetectionSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">TurnDetectionSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Steps to detect turns.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ElGoharyTurnDetection</span><span class="p">(</span>
+            <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter&quot;</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="MergeDynamicsPlacementTurn">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.MergeDynamicsPlacementTurn">[docs]</a>
+<span class="k">class</span> <span class="nc">MergeDynamicsPlacementTurn</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Detect walking bouts filtered for placement and no turns.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">DetectBoutsBeltPlacementNoTurns</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="LeeDetectionAndTransformSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.LeeDetectionAndTransformSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeDetectionAndTransformSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lee et al. step detection processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Lee Step detection</span>
+        <span class="n">LeeDetectSteps</span><span class="p">(</span><span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;movement_bouts&quot;</span><span class="p">,</span> <span class="s2">&quot;vertical_acceleration&quot;</span><span class="p">]),</span>
+        <span class="n">LeeDetectStepsWithoutBout</span><span class="p">(),</span>
+        <span class="c1"># Transform Step TimeF</span>
+        <span class="n">TransformStepDuration</span><span class="p">(</span><span class="n">data_set_ids</span><span class="o">=</span><span class="s2">&quot;lee_with_walking_bouts&quot;</span><span class="p">),</span>
+        <span class="n">TransformStepDurationWithoutBout</span><span class="p">(</span><span class="n">data_set_ids</span><span class="o">=</span><span class="s2">&quot;lee&quot;</span><span class="p">),</span>
+        <span class="c1"># Transform Hip Rotation</span>
+        <span class="n">LeeTransformHipRotation</span><span class="p">(</span><span class="n">on_walking_bouts</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">LeeTransformHipRotation</span><span class="p">(</span><span class="n">on_walking_bouts</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="CWTSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.CWTSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">CWTSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;CWT transformation steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Format Acceleration to run CWT Step Detection</span>
+        <span class="n">FormatAccelerationCWT</span><span class="p">(),</span>
+        <span class="c1"># Detect Steps using CWT Wavelet Transform</span>
+        <span class="n">CWTDetectStepsWithoutBout</span><span class="p">(</span><span class="n">data_set_ids</span><span class="o">=</span><span class="s2">&quot;acc_ts_g_rotated_resampled_detrend&quot;</span><span class="p">),</span>
+        <span class="n">CWTDetectSteps</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;walking_placement_no_turn_bouts&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;acc_ts_g_rotated_resampled_detrend&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">),</span>
+        <span class="c1"># Apply Physiological constraints</span>
+        <span class="n">OptimizeCwtStepDatasetWithoutWalkingBout</span><span class="p">(</span><span class="s2">&quot;cwt&quot;</span><span class="p">),</span>
+        <span class="n">OptimizeCwtStepDataset</span><span class="p">(</span><span class="s2">&quot;cwt_with_walking_bouts&quot;</span><span class="p">),</span>
+        <span class="n">HeightChangeCOM</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;cwt_with_walking_bouts_optimized&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;acc_ts_g_rotated_resampled_detrend&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="s2">&quot;height_change_com_with_walking_bouts&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">HeightChangeCOM</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cwt_optimized&quot;</span><span class="p">,</span> <span class="s2">&quot;acc_ts_g_rotated_resampled_detrend&quot;</span><span class="p">],</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="s2">&quot;height_change_com&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="c1"># add euclidean norm of accelerometer combined with gyro</span>
+        <span class="n">EuclideanNorm</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts_g_rotated_resampled&quot;</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;acceleration_</span><span class="si">{</span><span class="n">ax</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">DEFAULT_COLUMNS</span><span class="p">],</span>
+        <span class="p">),</span>
+        <span class="n">Detrend</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts_g_rotated_resampled_euclidean_norm&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;norm&quot;</span><span class="p">]</span>
+        <span class="p">),</span>
+        <span class="c1"># compute step power without bout</span>
+        <span class="n">TransformStepVigorWithoutBout</span><span class="p">(</span>
+            <span class="s2">&quot;norm&quot;</span><span class="p">,</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;acc_ts_g_rotated_resampled_euclidean_norm&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;cwt_optimized&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">),</span>
+        <span class="c1"># compute step power with bout information</span>
+        <span class="n">TransformStepVigor</span><span class="p">(</span>
+            <span class="s2">&quot;norm&quot;</span><span class="p">,</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;acc_ts_g_rotated_resampled_euclidean_norm&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;cwt_with_walking_bouts_optimized&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">),</span>
+        <span class="n">TransformGaitRegularityWithoutBout</span><span class="p">(</span>
+            <span class="s2">&quot;norm&quot;</span><span class="p">,</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;acc_ts_g_rotated_resampled_euclidean_norm_detrend&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;cwt_optimized&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">),</span>
+        <span class="n">TransformGaitRegularity</span><span class="p">(</span>
+            <span class="s2">&quot;norm&quot;</span><span class="p">,</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;acc_ts_g_rotated_resampled_euclidean_norm_detrend&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;cwt_with_walking_bouts_optimized&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">),</span>
+        <span class="c1"># Compute the CWT measures for each gait cycle</span>
+        <span class="n">CWTMeasureWithoutBoutTransformation</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cwt_optimized&quot;</span><span class="p">,</span> <span class="s2">&quot;height_change_com&quot;</span><span class="p">],</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="s2">&quot;cwt_measures&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="c1"># Compute the CWT measures for each gait cycle</span>
+        <span class="n">CWTMeasureTransformation</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;cwt_with_walking_bouts_optimized&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;height_change_com_with_walking_bouts&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="s2">&quot;cwt_measures_with_walking_bouts&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="LeeMeasureSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.LeeMeasureSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeMeasureSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lee et al. measure extraction steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">LeeMeasuresGroup</span><span class="p">(</span>
+            <span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="p">,</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">LEE_MOD</span><span class="p">,</span> <span class="n">bout_strategy</span><span class="o">.</span><span class="n">av</span><span class="p">],</span>
+            <span class="n">bout_strategy_repr</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">av</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">bout_strategy</span> <span class="ow">in</span> <span class="n">BoutStrategyModality</span>
+    <span class="p">]</span>
+    <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LeeMeasuresWithoutBoutGroup</span><span class="p">(</span><span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">LEE_MOD</span><span class="p">,</span> <span class="n">NO_BOUT_MODALITY</span><span class="p">]))</span></div>
+
+
+
+<div class="viewcode-block" id="CWTMeasureSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.CWTMeasureSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">CWTMeasureSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;CWT measure extraction steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">CWTMeasures</span><span class="p">(</span>
+            <span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="p">,</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;cwt&quot;</span><span class="p">,</span> <span class="s2">&quot;gp&quot;</span><span class="p">),</span> <span class="n">bout_strategy</span><span class="o">.</span><span class="n">av</span><span class="p">],</span>
+            <span class="n">bout_strategy_repr</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">av</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">bout_strategy</span> <span class="ow">in</span> <span class="n">BoutStrategyModality</span>
+    <span class="p">]</span>
+    <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">CWTMeasuresWithoutBout</span><span class="p">(</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;cwt&quot;</span><span class="p">,</span> <span class="s2">&quot;gp&quot;</span><span class="p">),</span> <span class="n">NO_BOUT_MODALITY</span><span class="p">],</span>
+        <span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="StepsDistanceInertial">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.StepsDistanceInertial">[docs]</a>
+<span class="k">class</span> <span class="nc">StepsDistanceInertial</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Distance inertial processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">ComputeDistanceInertial</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="GaitCoreSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.GaitCoreSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">GaitCoreSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Core steps to process gait measures.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Preprocessing Steps and Transforms</span>
+        <span class="n">GaitPreprocessingSteps</span><span class="p">(),</span>
+        <span class="c1"># Compute Tremor Measures</span>
+        <span class="n">TremorSteps</span><span class="p">(),</span>
+        <span class="c1"># Detect Bout Steps</span>
+        <span class="n">WalkingBoutDynamicsDetectionSteps</span><span class="p">(),</span>
+        <span class="c1"># Detect Placement Steps</span>
+        <span class="n">PlacementClassificationSteps</span><span class="p">(),</span>
+        <span class="c1"># Detect turns</span>
+        <span class="n">TurnDetectionSteps</span><span class="p">(),</span>
+        <span class="c1"># Merge walking dynamics bouts, placement bout and turn bouts.</span>
+        <span class="n">MergeDynamicsPlacementTurn</span><span class="p">(),</span>
+        <span class="c1"># CWT transformation</span>
+        <span class="n">CWTSteps</span><span class="p">(),</span>
+        <span class="c1"># CWT Measures computation</span>
+        <span class="n">CWTMeasureSteps</span><span class="p">(),</span>
+        <span class="c1"># Distance steps inertial</span>
+        <span class="n">StepsDistanceInertial</span><span class="p">(),</span>
+    <span class="p">]</span>
+
+    <span class="n">level_filter</span> <span class="o">=</span> <span class="n">LastLevelFilter</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="GaitSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.GaitSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">GaitSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gait processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Sanity Check</span>
+        <span class="n">AssertEvaluationFinished</span><span class="p">(),</span>
+        <span class="c1"># Flags</span>
+        <span class="n">TechnicalFlags</span><span class="p">(),</span>
+        <span class="c1"># GPS measures</span>
+        <span class="n">StepsGPS</span><span class="p">(),</span>
+        <span class="c1"># core steps</span>
+        <span class="n">GaitCoreSteps</span><span class="p">(),</span>
+        <span class="c1"># preprocess flags</span>
+        <span class="n">FlagPreprocessing</span><span class="p">(),</span>
+        <span class="c1"># behavioral deviations (strict thresholds)</span>
+        <span class="n">BehavioralDeviations</span><span class="p">(),</span>
+        <span class="c1"># behavioral invalidations (tolerant thresholds)</span>
+        <span class="n">BehavioralInvalidations</span><span class="p">(),</span>
+    <span class="p">]</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;task_name&quot;</span><span class="p">:</span> <span class="n">TASK_NAME</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="GaitStepsInclLee">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.steps.html#dispel.providers.generic.tasks.gait.steps.GaitStepsInclLee">[docs]</a>
+<span class="k">class</span> <span class="nc">GaitStepsInclLee</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gait processing steps including Lee measures.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">GaitSteps</span><span class="p">(),</span>
+        <span class="n">LeeDetectionAndTransformSteps</span><span class="p">(),</span>
+        <span class="n">LeeMeasureSteps</span><span class="p">(),</span>
+    <span class="p">]</span>
+    <span class="n">level_filter</span> <span class="o">=</span> <span class="n">LastLevelFilter</span><span class="p">()</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;task_name&quot;</span><span class="p">:</span> <span class="n">TASK_NAME</span><span class="p">}</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

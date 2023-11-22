@@ -1,0 +1,1248 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.processing package &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.processing';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.processing.assertions module" href="dispel.processing.assertions.html" />
+    <link rel="prev" title="dispel.io.utils module" href="dispel.io.utils.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">dispel.processing package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.html" class="nav-link">dispel package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.proce...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.processing">
+<span id="dispel-processing-package"></span><h1>dispel.processing package<a class="headerlink" href="#module-dispel.processing" title="Link to this heading">#</a></h1>
+<p>Processing functionality.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.processing.process">
+<span class="sig-prename descclassname"><span class="pre">dispel.processing.</span></span><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing.html#process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.process" title="Link to this definition">#</a></dt>
+<dd><p>Perform processing steps on a reading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – The reading to be processed.</p></li>
+<li><p><strong>steps</strong> (<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><em>ProcessingStep</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><em>ProcessingStep</em></a><em>]</em>) – An iterable of <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStep</span></code></a>s to be applied to
+the <code class="docutils literal notranslate"><span class="pre">reading</span></code> or a single processing step to be applied.</p></li>
+<li><p><strong>kwargs</strong> – Additional named arguments are passed to the
+<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.process" title="dispel.processing.core.ProcessingStep.process"><code class="xref py py-meth docutils literal notranslate"><span class="pre">process()</span></code></a> function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The data trace corresponding to the provided reading after applying the
+processing steps.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace" title="dispel.processing.data_trace.DataTrace">DataTrace</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.AssertEvaluationFinished"><code class="docutils literal notranslate"><span class="pre">AssertEvaluationFinished</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.AssertEvaluationFinished.process_reading"><code class="docutils literal notranslate"><span class="pre">AssertEvaluationFinished.process_reading()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.AssertRawDataSetPresent"><code class="docutils literal notranslate"><span class="pre">AssertRawDataSetPresent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.AssertRawDataSetPresent.__init__"><code class="docutils literal notranslate"><span class="pre">AssertRawDataSetPresent.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.AssertRawDataSetPresent.__new__"><code class="docutils literal notranslate"><span class="pre">AssertRawDataSetPresent.__new__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.AssertRawDataSetPresent.process_level"><code class="docutils literal notranslate"><span class="pre">AssertRawDataSetPresent.process_level()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.NotEmptyDataSetAssertionMixin"><code class="docutils literal notranslate"><span class="pre">NotEmptyDataSetAssertionMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.NotEmptyDataSetAssertionMixin.assert_valid_data_sets"><code class="docutils literal notranslate"><span class="pre">NotEmptyDataSetAssertionMixin.assert_valid_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.NotEmptyDataSetAssertionMixin.assertion_message"><code class="docutils literal notranslate"><span class="pre">NotEmptyDataSetAssertionMixin.assertion_message</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html#dispel.processing.assertions.NotEmptyDataSetAssertionMixin.empty_data_set_handling"><code class="docutils literal notranslate"><span class="pre">NotEmptyDataSetAssertionMixin.empty_data_set_handling</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.__init__"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.__new__"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup.__new__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.get_kwargs"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup.get_kwargs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.get_steps"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup.get_steps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.kwargs"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup.kwargs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.process_reading"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup.process_reading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.set_kwargs"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup.set_kwargs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.set_steps"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup.set_steps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup.steps"><code class="docutils literal notranslate"><span class="pre">CoreProcessingStepGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ErrorHandling"><code class="docutils literal notranslate"><span class="pre">ErrorHandling</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ErrorHandling.IGNORE"><code class="docutils literal notranslate"><span class="pre">ErrorHandling.IGNORE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ErrorHandling.RAISE"><code class="docutils literal notranslate"><span class="pre">ErrorHandling.RAISE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ErrorHandling.from_bool"><code class="docutils literal notranslate"><span class="pre">ErrorHandling.from_bool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ErrorHandling.should_raise"><code class="docutils literal notranslate"><span class="pre">ErrorHandling.should_raise</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.FlagError"><code class="docutils literal notranslate"><span class="pre">FlagError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.FlagError.__init__"><code class="docutils literal notranslate"><span class="pre">FlagError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.FlagReadingStep"><code class="docutils literal notranslate"><span class="pre">FlagReadingStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.FlagReadingStep.__init__"><code class="docutils literal notranslate"><span class="pre">FlagReadingStep.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.FlagReadingStep.flag_reading"><code class="docutils literal notranslate"><span class="pre">FlagReadingStep.flag_reading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.FlagReadingStep.get_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagReadingStep.get_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.FlagReadingStep.get_reading_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagReadingStep.get_reading_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.FlagReadingStep.process_reading"><code class="docutils literal notranslate"><span class="pre">FlagReadingStep.process_reading()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.InvalidDataError"><code class="docutils literal notranslate"><span class="pre">InvalidDataError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.Parameter"><code class="docutils literal notranslate"><span class="pre">Parameter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.Parameter.__init__"><code class="docutils literal notranslate"><span class="pre">Parameter.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.Parameter.__new__"><code class="docutils literal notranslate"><span class="pre">Parameter.__new__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.Parameter.has_parameter"><code class="docutils literal notranslate"><span class="pre">Parameter.has_parameter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.Parameter.id"><code class="docutils literal notranslate"><span class="pre">Parameter.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.Parameter.set_value"><code class="docutils literal notranslate"><span class="pre">Parameter.set_value()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.Parameter.value"><code class="docutils literal notranslate"><span class="pre">Parameter.value</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult"><code class="docutils literal notranslate"><span class="pre">ProcessingControlResult</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.__init__"><code class="docutils literal notranslate"><span class="pre">ProcessingControlResult.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.error"><code class="docutils literal notranslate"><span class="pre">ProcessingControlResult.error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.error_handling"><code class="docutils literal notranslate"><span class="pre">ProcessingControlResult.error_handling</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.from_assertion_error"><code class="docutils literal notranslate"><span class="pre">ProcessingControlResult.from_assertion_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.from_flag"><code class="docutils literal notranslate"><span class="pre">ProcessingControlResult.from_flag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.get_targets"><code class="docutils literal notranslate"><span class="pre">ProcessingControlResult.get_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult.targets"><code class="docutils literal notranslate"><span class="pre">ProcessingControlResult.targets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingError"><code class="docutils literal notranslate"><span class="pre">ProcessingError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingError.__init__"><code class="docutils literal notranslate"><span class="pre">ProcessingError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult"><code class="docutils literal notranslate"><span class="pre">ProcessingResult</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult.__init__"><code class="docutils literal notranslate"><span class="pre">ProcessingResult.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult.get_kwargs"><code class="docutils literal notranslate"><span class="pre">ProcessingResult.get_kwargs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult.get_sources"><code class="docutils literal notranslate"><span class="pre">ProcessingResult.get_sources()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult.result"><code class="docutils literal notranslate"><span class="pre">ProcessingResult.result</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult.sources"><code class="docutils literal notranslate"><span class="pre">ProcessingResult.sources</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResultBase"><code class="docutils literal notranslate"><span class="pre">ProcessingResultBase</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResultBase.__init__"><code class="docutils literal notranslate"><span class="pre">ProcessingResultBase.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResultBase.get_kwargs"><code class="docutils literal notranslate"><span class="pre">ProcessingResultBase.get_kwargs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResultBase.step"><code class="docutils literal notranslate"><span class="pre">ProcessingResultBase.step</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep"><code class="docutils literal notranslate"><span class="pre">ProcessingStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.__init__"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.assert_valid_reading"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.assert_valid_reading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.chain"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.chain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.flag_reading"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.flag_reading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.get_parameters"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.get_parameters()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.get_reading_flag_targets"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.get_reading_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.process"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.process()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.process_reading"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.process_reading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.set_next"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.set_next()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.set_previous"><code class="docutils literal notranslate"><span class="pre">ProcessingStep.set_previous()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.StopProcessingError"><code class="docutils literal notranslate"><span class="pre">StopProcessingError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.__init__"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.assert_valid_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.assert_valid_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.flag_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.flag_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.process_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.process_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.process_level"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.process_level()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.__init__"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.assert_valid_level"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.assert_valid_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.data_set_ids"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.get_data_frames"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.get_data_frames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.get_data_set_ids"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.get_data_set_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.get_raw_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.get_raw_data_sets()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.assert_valid_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.assert_valid_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.flag_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.flag_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_frames"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.get_data_frames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_set_ids"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.get_data_set_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_sets_flag_targets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.get_data_sets_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.get_raw_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.get_raw_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.process_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.process_data_sets()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.__init__"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.flag_data_sets"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.flag_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.get_data_sets_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.get_data_sets_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.get_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.get_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.get_target_ids"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.get_target_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.process_data_sets"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.process_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.target_ids"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.target_ids</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.__init__"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_function"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.get_transform_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_functions"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.get_transform_functions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.process_data_sets"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.process_data_sets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.transform_function"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.transform_function</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.wrap_result"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.wrap_result()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.RawDataSetProcessingResult"><code class="docutils literal notranslate"><span class="pre">RawDataSetProcessingResult</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.RawDataSetProcessingResult.__init__"><code class="docutils literal notranslate"><span class="pre">RawDataSetProcessingResult.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.RawDataSetProcessingResult.concatenate"><code class="docutils literal notranslate"><span class="pre">RawDataSetProcessingResult.concatenate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.RawDataSetProcessingResult.overwrite"><code class="docutils literal notranslate"><span class="pre">RawDataSetProcessingResult.overwrite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.StorageError"><code class="docutils literal notranslate"><span class="pre">StorageError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.StorageError.CONCATENATE"><code class="docutils literal notranslate"><span class="pre">StorageError.CONCATENATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.StorageError.IGNORE"><code class="docutils literal notranslate"><span class="pre">StorageError.IGNORE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.StorageError.OVERWRITE"><code class="docutils literal notranslate"><span class="pre">StorageError.OVERWRITE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.StorageError.RAISE"><code class="docutils literal notranslate"><span class="pre">StorageError.RAISE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.StorageError.concatenate"><code class="docutils literal notranslate"><span class="pre">StorageError.concatenate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.StorageError.overwrite"><code class="docutils literal notranslate"><span class="pre">StorageError.overwrite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.decorated_processing_function"><code class="docutils literal notranslate"><span class="pre">decorated_processing_function()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_set.html#dispel.processing.data_set.transformation"><code class="docutils literal notranslate"><span class="pre">transformation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace"><code class="docutils literal notranslate"><span class="pre">DataTrace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.__init__"><code class="docutils literal notranslate"><span class="pre">DataTrace.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.add_trace"><code class="docutils literal notranslate"><span class="pre">DataTrace.add_trace()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.check_data_set_usage"><code class="docutils literal notranslate"><span class="pre">DataTrace.check_data_set_usage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.children"><code class="docutils literal notranslate"><span class="pre">DataTrace.children()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.entity_count"><code class="docutils literal notranslate"><span class="pre">DataTrace.entity_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.from_reading"><code class="docutils literal notranslate"><span class="pre">DataTrace.from_reading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.get_flags"><code class="docutils literal notranslate"><span class="pre">DataTrace.get_flags()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.get_measure_flags"><code class="docutils literal notranslate"><span class="pre">DataTrace.get_measure_flags()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.get_reading"><code class="docutils literal notranslate"><span class="pre">DataTrace.get_reading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.has_node"><code class="docutils literal notranslate"><span class="pre">DataTrace.has_node()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.is_leaf"><code class="docutils literal notranslate"><span class="pre">DataTrace.is_leaf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.leaf_count"><code class="docutils literal notranslate"><span class="pre">DataTrace.leaf_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.leaves"><code class="docutils literal notranslate"><span class="pre">DataTrace.leaves()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.nodes"><code class="docutils literal notranslate"><span class="pre">DataTrace.nodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.parents"><code class="docutils literal notranslate"><span class="pre">DataTrace.parents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.populate"><code class="docutils literal notranslate"><span class="pre">DataTrace.populate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.processing_step_count"><code class="docutils literal notranslate"><span class="pre">DataTrace.processing_step_count</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.EdgeNotFound"><code class="docutils literal notranslate"><span class="pre">EdgeNotFound</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.EdgeNotFound.__init__"><code class="docutils literal notranslate"><span class="pre">EdgeNotFound.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.GraphNoCycle"><code class="docutils literal notranslate"><span class="pre">GraphNoCycle</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.GraphNoCycle.__init__"><code class="docutils literal notranslate"><span class="pre">GraphNoCycle.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.MissingSourceNode"><code class="docutils literal notranslate"><span class="pre">MissingSourceNode</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.MissingSourceNode.__init__"><code class="docutils literal notranslate"><span class="pre">MissingSourceNode.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.NodeHasMultipleParents"><code class="docutils literal notranslate"><span class="pre">NodeHasMultipleParents</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.NodeHasMultipleParents.__init__"><code class="docutils literal notranslate"><span class="pre">NodeHasMultipleParents.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.NodeNotFound"><code class="docutils literal notranslate"><span class="pre">NodeNotFound</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html#dispel.processing.data_trace.NodeNotFound.__init__"><code class="docutils literal notranslate"><span class="pre">NodeNotFound.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep"><code class="docutils literal notranslate"><span class="pre">CreateLevelEpochStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.epoch_data_set_id"><code class="docutils literal notranslate"><span class="pre">CreateLevelEpochStep.epoch_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.get_epoch_data_set"><code class="docutils literal notranslate"><span class="pre">CreateLevelEpochStep.get_epoch_data_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.get_epoch_data_set_id"><code class="docutils literal notranslate"><span class="pre">CreateLevelEpochStep.get_epoch_data_set_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.storage_error"><code class="docutils literal notranslate"><span class="pre">CreateLevelEpochStep.storage_error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.transform_data_frame_to_epochs"><code class="docutils literal notranslate"><span class="pre">CreateLevelEpochStep.transform_data_frame_to_epochs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.transform_row_to_epoch"><code class="docutils literal notranslate"><span class="pre">CreateLevelEpochStep.transform_row_to_epoch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.wrap_result"><code class="docutils literal notranslate"><span class="pre">CreateLevelEpochStep.wrap_result()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.DefaultLevelEpochFilter"><code class="docutils literal notranslate"><span class="pre">DefaultLevelEpochFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.DefaultLevelEpochFilter.filter"><code class="docutils literal notranslate"><span class="pre">DefaultLevelEpochFilter.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochDefinitionMixIn"><code class="docutils literal notranslate"><span class="pre">LevelEpochDefinitionMixIn</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochDefinitionMixIn.definition"><code class="docutils literal notranslate"><span class="pre">LevelEpochDefinitionMixIn.definition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochDefinitionMixIn.__init__"><code class="docutils literal notranslate"><span class="pre">LevelEpochDefinitionMixIn.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#id0"><code class="docutils literal notranslate"><span class="pre">LevelEpochDefinitionMixIn.definition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochDefinitionMixIn.get_definition"><code class="docutils literal notranslate"><span class="pre">LevelEpochDefinitionMixIn.get_definition()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochExtractStep"><code class="docutils literal notranslate"><span class="pre">LevelEpochExtractStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochExtractStep.get_value"><code class="docutils literal notranslate"><span class="pre">LevelEpochExtractStep.get_value()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochExtractStep.wrap_result"><code class="docutils literal notranslate"><span class="pre">LevelEpochExtractStep.wrap_result()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochFilter"><code class="docutils literal notranslate"><span class="pre">LevelEpochFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochFilter.filter"><code class="docutils literal notranslate"><span class="pre">LevelEpochFilter.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochIdFilter"><code class="docutils literal notranslate"><span class="pre">LevelEpochIdFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochIdFilter.__init__"><code class="docutils literal notranslate"><span class="pre">LevelEpochIdFilter.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochIdFilter.filter"><code class="docutils literal notranslate"><span class="pre">LevelEpochIdFilter.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingResult"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingResult</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingResult.__init__"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingResult.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingResult.epoch"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingResult.epoch</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingStepMixIn</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.__init__"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingStepMixIn.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.epoch_filter"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingStepMixIn.epoch_filter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.get_epoch_data_set_view"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingStepMixIn.get_epoch_data_set_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.get_epoch_data_set_views"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingStepMixIn.get_epoch_data_set_views()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.get_epoch_filter"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingStepMixIn.get_epoch_filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.get_epochs"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingStepMixIn.get_epochs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.process_data_sets"><code class="docutils literal notranslate"><span class="pre">LevelEpochProcessingStepMixIn.process_data_sets()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AGGREGATION_CENTER_BASED"><code class="docutils literal notranslate"><span class="pre">AGGREGATION_CENTER_BASED</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AGGREGATION_REGISTRY"><code class="docutils literal notranslate"><span class="pre">AGGREGATION_REGISTRY</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.__init__"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.aggregate"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.aggregate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.aggregation_method"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.aggregation_method</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.error_handler"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.error_handler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.fail_if_missing"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.fail_if_missing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.get_measure_ids"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.get_measure_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.get_measure_set"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.get_measure_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.get_measure_values"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.get_measure_values()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.get_measures"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.get_measures()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.measure_ids"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.measure_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.process_reading"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.process_reading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.yield_if_nan"><code class="docutils literal notranslate"><span class="pre">AggregateMeasures.yield_if_nan</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateModalities"><code class="docutils literal notranslate"><span class="pre">AggregateModalities</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateModalities.get_measure_ids"><code class="docutils literal notranslate"><span class="pre">AggregateModalities.get_measure_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateModalities.get_modalities"><code class="docutils literal notranslate"><span class="pre">AggregateModalities.get_modalities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateModalities.modalities"><code class="docutils literal notranslate"><span class="pre">AggregateModalities.modalities</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn"><code class="docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.__init__"><code class="docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_agg_func_and_kwargs"><code class="docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn.get_agg_func_and_kwargs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn.get_aggregations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_column_id"><code class="docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn.get_column_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_definition"><code class="docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn.get_definition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_transform_functions"><code class="docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn.get_transform_functions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.BASIC_AGGREGATIONS"><code class="docutils literal notranslate"><span class="pre">BASIC_AGGREGATIONS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.DEFAULT_AGGREGATIONS"><code class="docutils literal notranslate"><span class="pre">DEFAULT_AGGREGATIONS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.DEFAULT_AGGREGATIONS_CV"><code class="docutils literal notranslate"><span class="pre">DEFAULT_AGGREGATIONS_CV</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.DEFAULT_AGGREGATIONS_IQR"><code class="docutils literal notranslate"><span class="pre">DEFAULT_AGGREGATIONS_IQR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.DEFAULT_AGGREGATIONS_Q95"><code class="docutils literal notranslate"><span class="pre">DEFAULT_AGGREGATIONS_Q95</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.EXTENDED_AGGREGATIONS"><code class="docutils literal notranslate"><span class="pre">EXTENDED_AGGREGATIONS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep"><code class="docutils literal notranslate"><span class="pre">ExtractMultipleStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractMultipleStep.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep.__new__"><code class="docutils literal notranslate"><span class="pre">ExtractMultipleStep.__new__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep.get_transform_functions"><code class="docutils literal notranslate"><span class="pre">ExtractMultipleStep.get_transform_functions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep.transform_functions"><code class="docutils literal notranslate"><span class="pre">ExtractMultipleStep.transform_functions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep"><code class="docutils literal notranslate"><span class="pre">ExtractStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractStep.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep.wrap_result"><code class="docutils literal notranslate"><span class="pre">ExtractStep.wrap_result()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep.yield_if_nan"><code class="docutils literal notranslate"><span class="pre">ExtractStep.yield_if_nan</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin"><code class="docutils literal notranslate"><span class="pre">MeasureDefinitionMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin.__init__"><code class="docutils literal notranslate"><span class="pre">MeasureDefinitionMixin.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin.definition"><code class="docutils literal notranslate"><span class="pre">MeasureDefinitionMixin.definition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin.get_definition"><code class="docutils literal notranslate"><span class="pre">MeasureDefinitionMixin.get_definition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin.get_value"><code class="docutils literal notranslate"><span class="pre">MeasureDefinitionMixin.get_value()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.__init__"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.flag_measure_values"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.flag_measure_values()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_flag_targets"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.get_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_measure_ids"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.get_measure_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_measure_values"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.get_measure_values()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_measures"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.get_measures()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_target_ids"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.get_target_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.measure_ids"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.measure_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.process_reading"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.process_reading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.target_ids"><code class="docutils literal notranslate"><span class="pre">MeasureFlagStep.target_ids</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.agg_column"><code class="docutils literal notranslate"><span class="pre">agg_column()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.__init__"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.flag_name"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.flag_name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.flag_severity"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.flag_severity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.flag_type"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.flag_type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.flagging_function"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.flagging_function</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.get_flag"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.get_flag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.get_flag_name"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.get_flag_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.get_flag_severity"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.get_flag_severity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.get_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.get_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.get_flag_type"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.get_flag_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.get_flagging_function"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.get_flagging_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.get_flagging_functions"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.get_flagging_functions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.get_reason"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.get_reason()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.reason"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.reason</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.set_flag_kwargs"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.set_flag_kwargs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin.stop_processing"><code class="docutils literal notranslate"><span class="pre">FlagStepMixin.stop_processing</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.flag"><code class="docutils literal notranslate"><span class="pre">flag()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.DefaultLevelFilter"><code class="docutils literal notranslate"><span class="pre">DefaultLevelFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.DefaultLevelFilter.filter"><code class="docutils literal notranslate"><span class="pre">DefaultLevelFilter.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.DefaultLevelFilter.repr"><code class="docutils literal notranslate"><span class="pre">DefaultLevelFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep.__init__"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep.flag_level"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.flag_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep.get_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.get_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep.get_level_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.get_level_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.FlagLevelStep.process_level"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.process_level()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter"><code class="docutils literal notranslate"><span class="pre">LevelFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter.filter"><code class="docutils literal notranslate"><span class="pre">LevelFilter.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter.repr"><code class="docutils literal notranslate"><span class="pre">LevelFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin.__init__"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin.get_level_filter"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.get_level_filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin.inject_level_filter_from_step"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.inject_level_filter_from_step()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin.level_filter"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.level_filter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin.set_level_filter"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.set_level_filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelIdFilter"><code class="docutils literal notranslate"><span class="pre">LevelIdFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelIdFilter.__init__"><code class="docutils literal notranslate"><span class="pre">LevelIdFilter.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelIdFilter.filter"><code class="docutils literal notranslate"><span class="pre">LevelIdFilter.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelIdFilter.repr"><code class="docutils literal notranslate"><span class="pre">LevelIdFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingControlResult"><code class="docutils literal notranslate"><span class="pre">LevelProcessingControlResult</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingControlResult.__init__"><code class="docutils literal notranslate"><span class="pre">LevelProcessingControlResult.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingControlResult.from_assertion_error"><code class="docutils literal notranslate"><span class="pre">LevelProcessingControlResult.from_assertion_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingControlResult.from_flag"><code class="docutils literal notranslate"><span class="pre">LevelProcessingControlResult.from_flag()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingResult"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResult</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingResult.__init__"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResult.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingResultBase"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResultBase</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingResultBase.__init__"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResultBase.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingResultBase.level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResultBase.level</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep.assert_valid_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep.assert_valid_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep.flag_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep.flag_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep.process_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep.process_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep.process_reading"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep.process_reading()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol.assert_valid_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol.assert_valid_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol.flag_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol.flag_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol.get_level_flag_targets"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol.get_level_flag_targets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol.process_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol.process_level()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup"><code class="docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup.inject_level_filter_from_step"><code class="docutils literal notranslate"><span class="pre">ProcessingStepGroup.inject_level_filter_from_step()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup.set_steps"><code class="docutils literal notranslate"><span class="pre">ProcessingStepGroup.set_steps()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.AbsentDataSetFilter"><code class="docutils literal notranslate"><span class="pre">AbsentDataSetFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.AbsentDataSetFilter.__init__"><code class="docutils literal notranslate"><span class="pre">AbsentDataSetFilter.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.AbsentDataSetFilter.filter"><code class="docutils literal notranslate"><span class="pre">AbsentDataSetFilter.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.AbsentDataSetFilter.repr"><code class="docutils literal notranslate"><span class="pre">AbsentDataSetFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.DurationFilter"><code class="docutils literal notranslate"><span class="pre">DurationFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.DurationFilter.__init__"><code class="docutils literal notranslate"><span class="pre">DurationFilter.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.DurationFilter.filter"><code class="docutils literal notranslate"><span class="pre">DurationFilter.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.DurationFilter.repr"><code class="docutils literal notranslate"><span class="pre">DurationFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.LastLevelFilter"><code class="docutils literal notranslate"><span class="pre">LastLevelFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.LastLevelFilter.filter"><code class="docutils literal notranslate"><span class="pre">LastLevelFilter.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.LastLevelFilter.repr"><code class="docutils literal notranslate"><span class="pre">LastLevelFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.NotEmptyDataSetFilter"><code class="docutils literal notranslate"><span class="pre">NotEmptyDataSetFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.NotEmptyDataSetFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NotEmptyDataSetFilter.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.NotEmptyDataSetFilter.filter"><code class="docutils literal notranslate"><span class="pre">NotEmptyDataSetFilter.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.NotEmptyDataSetFilter.repr"><code class="docutils literal notranslate"><span class="pre">NotEmptyDataSetFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.NotEmptyDatasetFilter"><code class="docutils literal notranslate"><span class="pre">NotEmptyDatasetFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.NotEmptyDatasetFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NotEmptyDatasetFilter.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.NotEmptyDatasetFilter.filter"><code class="docutils literal notranslate"><span class="pre">NotEmptyDatasetFilter.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html#dispel.processing.level_filters.NotEmptyDatasetFilter.repr"><code class="docutils literal notranslate"><span class="pre">NotEmptyDatasetFilter.repr()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality"><code class="docutils literal notranslate"><span class="pre">HandModality</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality.LEFT"><code class="docutils literal notranslate"><span class="pre">HandModality.LEFT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality.RIGHT"><code class="docutils literal notranslate"><span class="pre">HandModality.RIGHT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModalityFilter"><code class="docutils literal notranslate"><span class="pre">HandModalityFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModalityFilter.__init__"><code class="docutils literal notranslate"><span class="pre">HandModalityFilter.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModalityFilter.filter"><code class="docutils literal notranslate"><span class="pre">HandModalityFilter.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModalityFilter.repr"><code class="docutils literal notranslate"><span class="pre">HandModalityFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.LimbModality"><code class="docutils literal notranslate"><span class="pre">LimbModality</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.LimbModality.LOWER_LIMB"><code class="docutils literal notranslate"><span class="pre">LimbModality.LOWER_LIMB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.LimbModality.UPPER_LIMB"><code class="docutils literal notranslate"><span class="pre">LimbModality.UPPER_LIMB</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.SensorModality"><code class="docutils literal notranslate"><span class="pre">SensorModality</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.SensorModality.ACCELEROMETER"><code class="docutils literal notranslate"><span class="pre">SensorModality.ACCELEROMETER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.SensorModality.GYROSCOPE"><code class="docutils literal notranslate"><span class="pre">SensorModality.GYROSCOPE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.SensorModality.INTENTIONAL"><code class="docutils literal notranslate"><span class="pre">SensorModality.INTENTIONAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.SensorModality.unit"><code class="docutils literal notranslate"><span class="pre">SensorModality.unit()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.DataSetTrace"><code class="docutils literal notranslate"><span class="pre">DataSetTrace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.DataSetTrace.data_set_id"><code class="docutils literal notranslate"><span class="pre">DataSetTrace.data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.DataSetTrace.definition"><code class="docutils literal notranslate"><span class="pre">DataSetTrace.definition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.DataSetTrace.__init__"><code class="docutils literal notranslate"><span class="pre">DataSetTrace.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#id0"><code class="docutils literal notranslate"><span class="pre">DataSetTrace.data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#id1"><code class="docutils literal notranslate"><span class="pre">DataSetTrace.definition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.DataSetTrace.trace_type"><code class="docutils literal notranslate"><span class="pre">DataSetTrace.trace_type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.EpochTrace"><code class="docutils literal notranslate"><span class="pre">EpochTrace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.EpochTrace.epoch"><code class="docutils literal notranslate"><span class="pre">EpochTrace.epoch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.EpochTrace.__init__"><code class="docutils literal notranslate"><span class="pre">EpochTrace.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#id2"><code class="docutils literal notranslate"><span class="pre">EpochTrace.epoch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.EpochTrace.trace_type"><code class="docutils literal notranslate"><span class="pre">EpochTrace.trace_type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.MeasureTrace"><code class="docutils literal notranslate"><span class="pre">MeasureTrace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.MeasureTrace.measure"><code class="docutils literal notranslate"><span class="pre">MeasureTrace.measure</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.MeasureTrace.__init__"><code class="docutils literal notranslate"><span class="pre">MeasureTrace.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#id3"><code class="docutils literal notranslate"><span class="pre">MeasureTrace.measure</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.MeasureTrace.step"><code class="docutils literal notranslate"><span class="pre">MeasureTrace.step</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.MeasureTrace.trace_type"><code class="docutils literal notranslate"><span class="pre">MeasureTrace.trace_type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.OriginTrace"><code class="docutils literal notranslate"><span class="pre">OriginTrace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.OriginTrace.__init__"><code class="docutils literal notranslate"><span class="pre">OriginTrace.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.OriginTrace.trace_type"><code class="docutils literal notranslate"><span class="pre">OriginTrace.trace_type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.StepGroupTrace"><code class="docutils literal notranslate"><span class="pre">StepGroupTrace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.StepGroupTrace.__init__"><code class="docutils literal notranslate"><span class="pre">StepGroupTrace.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.StepGroupTrace.trace_type"><code class="docutils literal notranslate"><span class="pre">StepGroupTrace.trace_type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.StepTrace"><code class="docutils literal notranslate"><span class="pre">StepTrace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.StepTrace.step"><code class="docutils literal notranslate"><span class="pre">StepTrace.step</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.StepTrace.__init__"><code class="docutils literal notranslate"><span class="pre">StepTrace.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#id4"><code class="docutils literal notranslate"><span class="pre">StepTrace.step</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.StepTrace.trace_type"><code class="docutils literal notranslate"><span class="pre">StepTrace.trace_type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.Trace"><code class="docutils literal notranslate"><span class="pre">Trace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.Trace.trace_type"><code class="docutils literal notranslate"><span class="pre">Trace.trace_type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.Trace.__init__"><code class="docutils literal notranslate"><span class="pre">Trace.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#id5"><code class="docutils literal notranslate"><span class="pre">Trace.trace_type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceRelation"><code class="docutils literal notranslate"><span class="pre">TraceRelation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceRelation.GROUP"><code class="docutils literal notranslate"><span class="pre">TraceRelation.GROUP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceRelation.INPUT"><code class="docutils literal notranslate"><span class="pre">TraceRelation.INPUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceRelation.OUTPUT"><code class="docutils literal notranslate"><span class="pre">TraceRelation.OUTPUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceRelation.SEQUENCE"><code class="docutils literal notranslate"><span class="pre">TraceRelation.SEQUENCE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceType"><code class="docutils literal notranslate"><span class="pre">TraceType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceType.DATA_SET"><code class="docutils literal notranslate"><span class="pre">TraceType.DATA_SET</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceType.EPOCH"><code class="docutils literal notranslate"><span class="pre">TraceType.EPOCH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceType.MEASURE"><code class="docutils literal notranslate"><span class="pre">TraceType.MEASURE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceType.ORIGIN"><code class="docutils literal notranslate"><span class="pre">TraceType.ORIGIN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceType.STEP_GENERIC"><code class="docutils literal notranslate"><span class="pre">TraceType.STEP_GENERIC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.TraceType.STEP_GROUP"><code class="docutils literal notranslate"><span class="pre">TraceType.STEP_GROUP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.collect_measure_value_definitions"><code class="docutils literal notranslate"><span class="pre">collect_measure_value_definitions()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.get_ancestor_source_graph"><code class="docutils literal notranslate"><span class="pre">get_ancestor_source_graph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.get_ancestors"><code class="docutils literal notranslate"><span class="pre">get_ancestors()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.get_edge_parameters"><code class="docutils literal notranslate"><span class="pre">get_edge_parameters()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.get_traces"><code class="docutils literal notranslate"><span class="pre">get_traces()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.trace.html#dispel.processing.trace.inspect"><code class="docutils literal notranslate"><span class="pre">inspect()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.Add"><code class="docutils literal notranslate"><span class="pre">Add</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.Add.__init__"><code class="docutils literal notranslate"><span class="pre">Add.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.Apply"><code class="docutils literal notranslate"><span class="pre">Apply</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.Apply.__init__"><code class="docutils literal notranslate"><span class="pre">Apply.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.ConcatenateLevels"><code class="docutils literal notranslate"><span class="pre">ConcatenateLevels</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.ConcatenateLevels.__init__"><code class="docutils literal notranslate"><span class="pre">ConcatenateLevels.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.ConcatenateLevels.get_levels"><code class="docutils literal notranslate"><span class="pre">ConcatenateLevels.get_levels()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.ConcatenateLevels.process_reading"><code class="docutils literal notranslate"><span class="pre">ConcatenateLevels.process_reading()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.SuffixBasedNewDataSetIdMixin"><code class="docutils literal notranslate"><span class="pre">SuffixBasedNewDataSetIdMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.SuffixBasedNewDataSetIdMixin.__init__"><code class="docutils literal notranslate"><span class="pre">SuffixBasedNewDataSetIdMixin.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.SuffixBasedNewDataSetIdMixin.get_new_data_set_id"><code class="docutils literal notranslate"><span class="pre">SuffixBasedNewDataSetIdMixin.get_new_data_set_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.SuffixBasedNewDataSetIdMixin.get_suffix"><code class="docutils literal notranslate"><span class="pre">SuffixBasedNewDataSetIdMixin.get_suffix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.SuffixBasedNewDataSetIdMixin.suffix"><code class="docutils literal notranslate"><span class="pre">SuffixBasedNewDataSetIdMixin.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep"><code class="docutils literal notranslate"><span class="pre">TransformStep</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep.__init__"><code class="docutils literal notranslate"><span class="pre">TransformStep.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep.definitions"><code class="docutils literal notranslate"><span class="pre">TransformStep.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep.get_definitions"><code class="docutils literal notranslate"><span class="pre">TransformStep.get_definitions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep.get_new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformStep.get_new_data_set_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep.get_raw_data_set_definition"><code class="docutils literal notranslate"><span class="pre">TransformStep.get_raw_data_set_definition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformStep.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep.process_level"><code class="docutils literal notranslate"><span class="pre">TransformStep.process_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep.storage_error"><code class="docutils literal notranslate"><span class="pre">TransformStep.storage_error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep.wrap_result"><code class="docutils literal notranslate"><span class="pre">TransformStep.wrap_result()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStepChainMixIn"><code class="docutils literal notranslate"><span class="pre">TransformStepChainMixIn</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStepChainMixIn.get_data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformStepChainMixIn.get_data_set_ids()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.utils.html#dispel.processing.utils.TaskMixin"><code class="docutils literal notranslate"><span class="pre">TaskMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html#dispel.processing.utils.TaskMixin.get_task_name"><code class="docutils literal notranslate"><span class="pre">TaskMixin.get_task_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html#dispel.processing.utils.TaskMixin.task_name"><code class="docutils literal notranslate"><span class="pre">TaskMixin.task_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.processing.utils.html#dispel.processing.utils.parallel_explode"><code class="docutils literal notranslate"><span class="pre">parallel_explode()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.io.utils.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.io.utils module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.processing.assertions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.processing.assertions module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.process"><code class="docutils literal notranslate"><span class="pre">process()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.processing.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

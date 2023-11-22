@@ -1,0 +1,1438 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.processing.level module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.processing.level';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.processing.level_filters module" href="dispel.processing.level_filters.html" />
+    <link rel="prev" title="dispel.processing.flags module" href="dispel.processing.flags.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.processing.html" class="nav-link">dispel.processing package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.proce...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.processing.level">
+<span id="dispel-processing-level-module"></span><h1>dispel.processing.level module<a class="headerlink" href="#module-dispel.processing.level" title="Link to this heading">#</a></h1>
+<p>Level processing functionalities.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.DefaultLevelFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">DefaultLevelFilter</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#DefaultLevelFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.DefaultLevelFilter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilter</span></code></a></p>
+<p>A default level filter that considers all levels.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.DefaultLevelFilter.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#DefaultLevelFilter.filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.DefaultLevelFilter.filter" title="Link to this definition">#</a></dt>
+<dd><p>Filter method returns a set of levels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>levels</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.12)"><em>Set</em></a>[<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.DefaultLevelFilter.repr">
+<span class="sig-name descname"><span class="pre">repr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#DefaultLevelFilter.repr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.DefaultLevelFilter.repr" title="Link to this definition">#</a></dt>
+<dd><p>Get representation of the filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.FlagLevelStep">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">FlagLevelStep</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#FlagLevelStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.FlagLevelStep" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>, <a class="reference internal" href="#dispel.processing.level.LevelProcessingStep" title="dispel.processing.level.LevelProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a></p>
+<p>A level flag class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level_filter</strong> (<a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>dispel.processing.level.LevelFilter</em></a>) – An optional filter to limit the levels being processed. See
+<a class="reference internal" href="#dispel.processing.level.LevelProcessingStep" title="dispel.processing.level.LevelProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a>.</p></li>
+<li><p><strong>task_name</strong> (<a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>dispel.data.values.AbbreviatedValue</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional abbreviated name value of the task used for the flag. See
+<a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>.</p></li>
+<li><p><strong>flag_name</strong> (<a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>dispel.data.values.AbbreviatedValue</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional abbreviated name value of the considered flag.
+See <a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>.</p></li>
+<li><p><strong>flag_type</strong> (<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><em>dispel.data.flags.FlagType</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional flag type.
+See <a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagType</span></code></a>.</p></li>
+<li><p><strong>flag_severity</strong> (<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><em>dispel.data.flags.FlagSeverity</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional flag severity.
+See <a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagSeverity</span></code></a>.</p></li>
+<li><p><strong>reason</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional string reason of the considered flag.
+See <a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>.</p></li>
+<li><p><strong>stop_processing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – An optional boolean that specifies whether the flag is stop_processing,
+i.e., raises an error or not. See
+<a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>.</p></li>
+<li><p><strong>flagging_function</strong> (<em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>] </em><em>| </em><em>None</em>) – An optional flagging function to be applied to <code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code>.
+See <a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Assuming you want to flag the time frame duration of a given level, you can use
+the following flag step:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">FlagLevelStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">step</span> <span class="o">=</span> <span class="n">FlagLevelStep</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s1">&#39;utt&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;U-Turn test&#39;</span><span class="p">,</span> <span class="s1">&#39;utt&#39;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;u-turn duration&#39;</span><span class="p">,</span> <span class="s1">&#39;utt_dur&#39;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="s1">&#39;technical&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;The U-Turn test duration exceeds 5 minutes.&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">stop_processing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">flagging_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">level</span><span class="p">:</span>                 <span class="n">level</span><span class="o">.</span><span class="n">effective_time_frame</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">60</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The flagging function will be called with the level <code class="docutils literal notranslate"><span class="pre">'utt'</span></code> as specified in the
+<code class="docutils literal notranslate"><span class="pre">level_filter</span></code> argument. If the function has a named parameter matching
+<code class="docutils literal notranslate"><span class="pre">reading</span></code>, the reading will be passed to the flagging function.</p>
+<p>Another common scenario is to define a class that can be reused.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">FlagType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">FlagLevelStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UTTDuration</span><span class="p">(</span><span class="n">FlagLevelStep</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">task_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;U-Turn test&#39;</span><span class="p">,</span> <span class="s1">&#39;utt&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;u-turn duration&#39;</span><span class="p">,</span> <span class="s1">&#39;utt_dur&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">TECHNICAL</span>
+<span class="gp">... </span>    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+<span class="gp">... </span>    <span class="n">reason</span> <span class="o">=</span> <span class="s1">&#39;The U-Turn test duration exceeds 5 minutes.&#39;</span>
+<span class="gp">... </span>    <span class="n">stop_processing</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">... </span>    <span class="n">flagging_function</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">level</span><span class="p">:</span>                 <span class="n">level</span><span class="o">.</span><span class="n">effective_time_frame</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">60</span>
+</pre></div>
+</div>
+<p>Another convenient way to provide the flagging function is to use the
+<code class="docutils literal notranslate"><span class="pre">&#64;flag</span></code> decorator, one can also use multiple flags for the same class
+as follows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span>  <span class="n">Reading</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.flags</span> <span class="kn">import</span> <span class="n">flag</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">FlagLevelStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UTTDuration</span><span class="p">(</span><span class="n">FlagLevelStep</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">task_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;U-Turn test&#39;</span><span class="p">,</span> <span class="s1">&#39;utt&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;u-turn duration&#39;</span><span class="p">,</span> <span class="s1">&#39;utt_dur&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">flag_type</span> <span class="o">=</span> <span class="s1">&#39;technical&#39;</span>
+<span class="gp">... </span>    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+<span class="gp">... </span>    <span class="n">reason</span> <span class="o">=</span> <span class="s1">&#39;The U-Turn test duration exceeds </span><span class="si">{duration}</span><span class="s1"> minutes.&#39;</span>
+<span class="gp">... </span>    <span class="n">stop_processing</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="nd">@flag</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">_duration_5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">duration</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">duration</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="n">duration</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="nd">@flag</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">_duration_4</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">evaluation_start</span> <span class="o">=</span> <span class="n">reading</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">start</span>
+<span class="gp">... </span>        <span class="n">level_start</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">start</span>
+<span class="gp">... </span>        <span class="k">assert</span> <span class="n">evaluation_start</span> <span class="o">&lt;=</span> <span class="n">level_start</span>
+<span class="gp">...</span>
+<span class="gp">... </span>        <span class="n">duration</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">duration</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="n">duration</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">60</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">&#64;flag</span></code> decorator can take keyword arguments. These kwargs are
+merged with any keyword arguments that come from processing step groups in order to
+format the flag <code class="docutils literal notranslate"><span class="pre">reason</span></code>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.FlagLevelStep.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_severity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_processing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flagging_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#FlagLevelStep.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.FlagLevelStep.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level_filter</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em>] </em><em>| </em><a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>LevelFilter</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>task_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>AbbreviatedValue</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>flag_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>AbbreviatedValue</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>flag_type</strong> (<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><em>FlagType</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>flag_severity</strong> (<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><em>FlagSeverity</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>reason</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>AbbreviatedValue</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>stop_processing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
+<li><p><strong>flagging_function</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>] </em><em>| </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.FlagLevelStep.flag_level">
+<span class="sig-name descname"><span class="pre">flag_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#FlagLevelStep.flag_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.FlagLevelStep.flag_level" title="Link to this definition">#</a></dt>
+<dd><p>Flag the provided level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.Flag" title="dispel.data.flags.Flag"><em>Flag</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.FlagLevelStep.get_flag_targets">
+<span class="sig-name descname"><span class="pre">get_flag_targets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#FlagLevelStep.get_flag_targets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.FlagLevelStep.get_flag_targets" title="Link to this definition">#</a></dt>
+<dd><p>Get flag targets for level flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a>[<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a> | <a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a> | <a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a> | <a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a> | <a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.FlagLevelStep.get_level_flag_targets">
+<span class="sig-name descname"><span class="pre">get_level_flag_targets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#FlagLevelStep.get_level_flag_targets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.FlagLevelStep.get_level_flag_targets" title="Link to this definition">#</a></dt>
+<dd><p>Get flag targets for reading flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a>[<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a> | <a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a> | <a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a> | <a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a> | <a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.FlagLevelStep.process_level">
+<span class="sig-name descname"><span class="pre">process_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#FlagLevelStep.process_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.FlagLevelStep.process_level" title="Link to this definition">#</a></dt>
+<dd><p>Process the provided level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">LevelFilter</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelFilter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
+<p>A base class to filter levels during processing.</p>
+<p><a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilter</span></code></a> provide a central mechanism to differentiate processing steps
+in combination with <a class="reference internal" href="#dispel.processing.level.LevelProcessingStep" title="dispel.processing.level.LevelProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a> and
+<a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.ConcatenateLevels" title="dispel.processing.transform.ConcatenateLevels"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConcatenateLevels</span></code></a>. Each filter implementation
+must provide a <a class="reference internal" href="#dispel.processing.level.LevelFilter.filter" title="dispel.processing.level.LevelFilter.filter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter()</span></code></a> function that consumes a container of
+levels and returns a set of levels containing those that should be processed.
+Furthermore, the method <a class="reference internal" href="#dispel.processing.level.LevelFilter.repr" title="dispel.processing.level.LevelFilter.repr"><code class="xref py py-meth docutils literal notranslate"><span class="pre">repr()</span></code></a> provides a hook to create a
+readable representation of the filter.</p>
+<p>Filters can also be combined by using logical operators <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
+<p class="rubric">Examples</p>
+<p>Each level filter has to implement the methods <code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">repr</span></code>. Assuming we
+want to create a filter that inspects some variables in the context of each level,
+we can do the following:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Set</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">LevelFilter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyContextLevelFilter</span><span class="p">(</span><span class="n">LevelFilter</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span>
+<span class="gp">... </span>            <span class="k">lambda</span> <span class="n">level</span><span class="p">:</span> <span class="n">level</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">get_raw_value</span><span class="p">(</span>
+<span class="gp">... </span>                <span class="bp">self</span><span class="o">.</span><span class="n">variable</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">levels</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">variable</span><span class="si">}</span><span class="s1"> equals &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+</pre></div>
+</div>
+<p>Given this filter one can now process levels with a specific context value by
+creating a filter like <code class="docutils literal notranslate"><span class="pre">MyContextLevelFilter('usedHand',</span> <span class="pre">'right')</span></code>.</p>
+<p>Since <a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilter</span></code></a> can be used with logical operators one can create more
+complex filters by simply combining them as such:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">MyContextLevelFilter</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">MyContextLevelFilter</span><span class="p">(</span><span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="s1">&#39;bam&#39;</span><span class="p">)</span>
+<span class="go">&lt;LevelFilter: (foo equals &quot;bar&quot; and baz equals &quot;bam&quot;)&gt;</span>
+</pre></div>
+</div>
+<p>This filter will now only consider levels where the context variables <code class="docutils literal notranslate"><span class="pre">foo</span></code> equal
+<code class="docutils literal notranslate"><span class="pre">bar</span></code> and <code class="docutils literal notranslate"><span class="pre">baz</span></code> equals <code class="docutils literal notranslate"><span class="pre">bam</span></code>. This also works with or logic (<code class="docutils literal notranslate"><span class="pre">|</span></code>).</p>
+<p>One can also use the inverse logic by applying the <code class="docutils literal notranslate"><span class="pre">~</span></code> operator to a level filter
+in order to obtain its inverse.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelFilter.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelFilter.filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelFilter.filter" title="Link to this definition">#</a></dt>
+<dd><p>Filter level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>levels</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em>]</em>) – The levels to be inspected for filtering</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.12)"><strong>NotImplementedError</strong></a> – This method is not implemented since there is no unambiguous definition of
+    filters.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.12)"><em>Set</em></a>[<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelFilter.repr">
+<span class="sig-name descname"><span class="pre">repr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelFilter.repr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelFilter.repr" title="Link to this definition">#</a></dt>
+<dd><p>Get representation of the filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.12)"><strong>NotImplementedError</strong></a> – This method is not implemented since there is no unambiguous representation
+    of filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelFilterProcessingStepMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">LevelFilterProcessingStepMixin</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelFilterProcessingStepMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelFilterProcessingStepMixin" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A mixin class for all processing steps using level filters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level_filter</strong> (<a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>dispel.processing.level.LevelFilter</em></a>) – The filter to be used to select the levels to be processed.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelFilterProcessingStepMixin.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelFilterProcessingStepMixin.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelFilterProcessingStepMixin.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelFilterProcessingStepMixin.get_level_filter">
+<span class="sig-name descname"><span class="pre">get_level_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelFilterProcessingStepMixin.get_level_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelFilterProcessingStepMixin.get_level_filter" title="Link to this definition">#</a></dt>
+<dd><p>Get the level filter to sub-select levels to be processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>LevelFilter</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelFilterProcessingStepMixin.inject_level_filter_from_step">
+<span class="sig-name descname"><span class="pre">inject_level_filter_from_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelFilterProcessingStepMixin.inject_level_filter_from_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelFilterProcessingStepMixin.inject_level_filter_from_step" title="Link to this definition">#</a></dt>
+<dd><p>Inject the level filter from a step into the filter of this step.</p>
+<p>This function allows to have this processing step depend on the level
+filter of another step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step</strong> (<a class="reference internal" href="#dispel.processing.level.LevelFilterProcessingStepMixin" title="dispel.processing.level.LevelFilterProcessingStepMixin"><em>LevelFilterProcessingStepMixin</em></a>) – A level filter processing step of which the level filter is used
+in this step too.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelFilterProcessingStepMixin.level_filter">
+<span class="sig-name descname"><span class="pre">level_filter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><span class="pre">LevelFilter</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;DefaultLevelFilter:</span> <span class="pre">*&gt;</span></em><a class="headerlink" href="#dispel.processing.level.LevelFilterProcessingStepMixin.level_filter" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>levels</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.12)"><em>Set</em></a>[<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelFilterProcessingStepMixin.set_level_filter">
+<span class="sig-name descname"><span class="pre">set_level_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_filter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelFilterProcessingStepMixin.set_level_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelFilterProcessingStepMixin.set_level_filter" title="Link to this definition">#</a></dt>
+<dd><p>Set a level filter to sub-select levels to be processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level_filter</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em>] </em><em>| </em><a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>LevelFilter</em></a>) – The level filter to be used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelIdFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">LevelIdFilter</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelIdFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelIdFilter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilter</span></code></a></p>
+<p>A level filter based on level ids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level_ids</strong> – The level id(s) to be filtered for processing. The level id can be provided as
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">LevelId</span></code> or lists of either. Levels with
+the respective provided ids will be considered during processing.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelIdFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_ids</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelIdFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelIdFilter.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelIdFilter.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelIdFilter.filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelIdFilter.filter" title="Link to this definition">#</a></dt>
+<dd><p>Filter levels being part of a predefined level id set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>levels</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.12)"><em>Set</em></a>[<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelIdFilter.repr">
+<span class="sig-name descname"><span class="pre">repr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelIdFilter.repr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelIdFilter.repr" title="Link to this definition">#</a></dt>
+<dd><p>Get representation of the filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingControlResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">LevelProcessingControlResult</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingControlResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingControlResult" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingControlResult</span></code></a>, <a class="reference internal" href="#dispel.processing.level.LevelProcessingResultBase" title="dispel.processing.level.LevelProcessingResultBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingResultBase</span></code></a></p>
+<p>The processing result of an error in a level.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingControlResult.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_handling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dispel.processing.level.LevelProcessingControlResult.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>step</strong> (<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><em>ProcessingStep</em></a>) – </p></li>
+<li><p><strong>error</strong> (<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingError" title="dispel.processing.core.ProcessingError"><em>ProcessingError</em></a><em> | </em><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.StopProcessingError" title="dispel.processing.core.StopProcessingError"><em>StopProcessingError</em></a><em> | </em><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.FlagError" title="dispel.processing.core.FlagError"><em>FlagError</em></a><em> | </em><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.InvalidDataError" title="dispel.processing.core.InvalidDataError"><em>InvalidDataError</em></a>) – </p></li>
+<li><p><strong>error_handling</strong> (<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ErrorHandling" title="dispel.processing.core.ErrorHandling"><em>ErrorHandling</em></a>) – </p></li>
+<li><p><strong>targets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a><em>] </em><em>| </em><a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingControlResult.from_assertion_error">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_assertion_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingControlResult.from_assertion_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingControlResult.from_assertion_error" title="Link to this definition">#</a></dt>
+<dd><p>Initialize object from a caught assertion error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>step</strong> (<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><em>ProcessingStep</em></a>) – The processing step from where the assertion error has been caught.</p></li>
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#AssertionError" title="(in Python v3.12)"><em>AssertionError</em></a>) – The assertion error that has been caught.</p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><em>None</em>) – The level corresponding to the <a class="reference internal" href="#dispel.processing.level.LevelProcessingControlResult" title="dispel.processing.level.LevelProcessingControlResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingControlResult</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The initialized level processing control result object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.processing.level.LevelProcessingControlResult" title="dispel.processing.level.LevelProcessingControlResult">LevelProcessingControlResult</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingControlResult.from_flag">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_flag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingControlResult.from_flag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingControlResult.from_flag" title="Link to this definition">#</a></dt>
+<dd><p>Initialize processing control result from an flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.Flag" title="dispel.data.flags.Flag"><em>Flag</em></a>) – The flag from which the control processing result is to be created.</p></li>
+<li><p><strong>step</strong> (<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><em>ProcessingStep</em></a>) – The associated processing step.</p></li>
+<li><p><strong>targets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a><em>]</em>) – The flag target entities.</p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><em>None</em>) – The level corresponding to the <a class="reference internal" href="#dispel.processing.level.LevelProcessingControlResult" title="dispel.processing.level.LevelProcessingControlResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingControlResult</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The initialized level processing control result object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dispel.processing.level.LevelProcessingControlResult" title="dispel.processing.level.LevelProcessingControlResult">LevelProcessingControlResult</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">LevelProcessingResult</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingResult" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingResult</span></code></a>, <a class="reference internal" href="#dispel.processing.level.LevelProcessingResultBase" title="dispel.processing.level.LevelProcessingResultBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingResultBase</span></code></a></p>
+<p>The processing result of a level processing step.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingResult.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dispel.processing.level.LevelProcessingResult.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>step</strong> (<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><em>ProcessingStep</em></a>) – </p></li>
+<li><p><strong>sources</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a><em>] </em><em>| </em><a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a>) – </p></li>
+<li><p><strong>result</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureSet" title="dispel.data.measures.MeasureSet"><em>MeasureSet</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a><em> | </em><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingResultBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">LevelProcessingResultBase</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingResultBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingResultBase" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The processing result base of a level processing step.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingResultBase.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dispel.processing.level.LevelProcessingResultBase.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingResultBase.level">
+<span class="sig-name descname"><span class="pre">level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><span class="pre">Level</span></a></em><a class="headerlink" href="#dispel.processing.level.LevelProcessingResultBase.level" title="Link to this definition">#</a></dt>
+<dd><p>The level where the processing result is stored.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStep">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">LevelProcessingStep</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStep" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.processing.level.LevelProcessingStepProtocol" title="dispel.processing.level.LevelProcessingStepProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol</span></code></a>, <a class="reference internal" href="#dispel.processing.level.LevelFilterProcessingStepMixin" title="dispel.processing.level.LevelFilterProcessingStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin</span></code></a>, <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStep</span></code></a></p>
+<p>A level processing step is a processing step specific on levels.</p>
+<p>The level processing steps’ <a class="reference internal" href="#dispel.processing.level.LevelProcessingStepProtocol.process_level" title="dispel.processing.level.LevelProcessingStepProtocol.process_level"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol.process_level()</span></code></a> method
+is called with the level, reading and additional arguments passed to
+<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep.process" title="dispel.processing.core.ProcessingStep.process"><code class="xref py py-meth docutils literal notranslate"><span class="pre">process()</span></code></a>. Results from the process step
+are expected to be an instance of <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingResult</span></code></a>.</p>
+<p>The <a class="reference internal" href="#dispel.processing.level.LevelProcessingStep.process_level" title="dispel.processing.level.LevelProcessingStep.process_level"><code class="xref py py-meth docutils literal notranslate"><span class="pre">process_level()</span></code></a> is only called with levels that pass the provided
+<code class="docutils literal notranslate"><span class="pre">level_filter</span></code> (see <a class="reference internal" href="#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilter</span></code></a>). Each level will be processed if no
+level filter is provided. The <code class="docutils literal notranslate"><span class="pre">level_filter</span></code> also accepts <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">LevelId</span></code>s and lists of either and passes them to a
+<a class="reference internal" href="#dispel.processing.level.LevelIdFilter" title="dispel.processing.level.LevelIdFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelIdFilter</span></code></a> for convenience.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">processing</span><span class="o">-</span><span class="n">step</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValue</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">ValueDefinition</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dispel.processing</span> <span class="kn">import</span> <span class="n">process</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="p">(</span><span class="n">LevelProcessingStep</span><span class="p">,</span>
+<span class="o">...</span>                                   <span class="n">LevelProcessingResult</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">MyLevelStep</span><span class="p">(</span><span class="n">LevelProcessingStep</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">process_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="o">...</span>         <span class="n">raw_data_set</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="s1">&#39;my-data-set&#39;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="k">yield</span> <span class="n">LevelProcessingResult</span><span class="p">(</span>
+<span class="o">...</span>             <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="o">...</span>             <span class="n">sources</span><span class="o">=</span><span class="n">raw_data_set</span><span class="p">,</span>
+<span class="o">...</span>             <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+<span class="o">...</span>             <span class="n">result</span><span class="o">=</span><span class="n">MeasureValue</span><span class="p">(</span>
+<span class="o">...</span>                 <span class="n">ValueDefinition</span><span class="p">(</span><span class="s1">&#39;my-measure-id&#39;</span><span class="p">,</span> <span class="s1">&#39;max value&#39;</span><span class="p">),</span>
+<span class="o">...</span>                 <span class="n">raw_data_set</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="o">...</span>             <span class="p">)</span>
+<span class="o">...</span>         <span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">_</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="n">MyLevelStep</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reading</span><span class="o">.</span><span class="n">get_measure_set</span><span class="p">(</span><span class="s1">&#39;my-level&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_raw_value</span><span class="p">(</span><span class="s1">&#39;my-measure-id&#39;</span><span class="p">)</span>
+<span class="mi">5</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStep.assert_valid_level">
+<span class="sig-name descname"><span class="pre">assert_valid_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStep.assert_valid_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStep.assert_valid_level" title="Link to this definition">#</a></dt>
+<dd><p>Perform assertions that a given level can be processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStep.flag_level">
+<span class="sig-name descname"><span class="pre">flag_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStep.flag_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStep.flag_level" title="Link to this definition">#</a></dt>
+<dd><p>Flag the provided level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.Flag" title="dispel.data.flags.Flag"><em>Flag</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStep.process_level">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStep.process_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStep.process_level" title="Link to this definition">#</a></dt>
+<dd><p>Process the provided Level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level to be processed</p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – The reading to be processed</p></li>
+<li><p><strong>kwargs</strong> – Additional arguments passed by <a class="reference internal" href="#dispel.processing.level.LevelProcessingStep.process_level" title="dispel.processing.level.LevelProcessingStep.process_level"><code class="xref py py-meth docutils literal notranslate"><span class="pre">process_level()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ProcessResultType</em> – Results from processing the level.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStep.process_reading">
+<span class="sig-name descname"><span class="pre">process_reading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStep.process_reading"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStep.process_reading" title="Link to this definition">#</a></dt>
+<dd><p>Process all levels in reading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – <dl class="simple">
+<dt>The reading to be processed. Each level of the reading will be passed to the</dt><dd><p><code class="docutils literal notranslate"><span class="pre">level_filter</span></code> and if it returns <code class="docutils literal notranslate"><span class="pre">True</span></code> <a class="reference internal" href="#dispel.processing.level.LevelProcessingStep.process_level" title="dispel.processing.level.LevelProcessingStep.process_level"><code class="xref py py-meth docutils literal notranslate"><span class="pre">process_level()</span></code></a> is
+called.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>kwargs</strong> – Additional named arguments. This allows to provide additional values, such
+as placeholder values in value definitions to the actual processing
+function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ProcessResultType</em> – Passes through anything that is yielded from <a class="reference internal" href="#dispel.processing.level.LevelProcessingStep.process_level" title="dispel.processing.level.LevelProcessingStep.process_level"><code class="xref py py-meth docutils literal notranslate"><span class="pre">process_level()</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStepProtocol">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">LevelProcessingStepProtocol</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStepProtocol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStepProtocol" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Protocol for level processing steps.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStepProtocol.assert_valid_level">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">assert_valid_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStepProtocol.assert_valid_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStepProtocol.assert_valid_level" title="Link to this definition">#</a></dt>
+<dd><p>Perform assertions that a given level can be processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level to be tested for validity</p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – The parent reading of the level</p></li>
+<li><p><strong>kwargs</strong> – Additional keyword arguments passed to the processing function.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStepProtocol.flag_level">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flag_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStepProtocol.flag_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStepProtocol.flag_level" title="Link to this definition">#</a></dt>
+<dd><p>Flag the provided level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level to be flagged.</p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – The reading associated to the provided level.</p></li>
+<li><p><strong>kwargs</strong> – Additional arguments passed by <a class="reference internal" href="dispel.processing.html#dispel.processing.process" title="dispel.processing.process"><code class="xref py py-func docutils literal notranslate"><span class="pre">process()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Flag</em> – The resulted flags.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.Flag" title="dispel.data.flags.Flag"><em>Flag</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStepProtocol.get_level_flag_targets">
+<span class="sig-name descname"><span class="pre">get_level_flag_targets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStepProtocol.get_level_flag_targets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStepProtocol.get_level_flag_targets" title="Link to this definition">#</a></dt>
+<dd><p>Get the level flag targets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level to be flagged.</p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – The reading associated with the level flag.</p></li>
+<li><p><strong>kwargs</strong> – Additional keyword arguments eventually used for flag targets
+extraction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An iterable of entities that are flagged.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Iterable[EntityType]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.LevelProcessingStepProtocol.process_level">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#LevelProcessingStepProtocol.process_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.LevelProcessingStepProtocol.process_level" title="Link to this definition">#</a></dt>
+<dd><p>Process the provided Level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level to be processed</p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – The reading to be processed</p></li>
+<li><p><strong>kwargs</strong> – Additional arguments passed by <a class="reference internal" href="#dispel.processing.level.LevelProcessingStepProtocol.process_level" title="dispel.processing.level.LevelProcessingStepProtocol.process_level"><code class="xref py py-meth docutils literal notranslate"><span class="pre">process_level()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ProcessResultType</em> – Results from processing the level.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.level.ProcessingStepGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.level.</span></span><span class="sig-name descname"><span class="pre">ProcessingStepGroup</span></span><a class="reference internal" href="../_modules/dispel/processing/level.html#ProcessingStepGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.ProcessingStepGroup" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.processing.level.LevelFilterProcessingStepMixin" title="dispel.processing.level.LevelFilterProcessingStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin</span></code></a>, <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup" title="dispel.processing.core.CoreProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">CoreProcessingStepGroup</span></code></a></p>
+<p>A group of processing steps with an optional level filter.</p>
+<p>For examples see <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.CoreProcessingStepGroup" title="dispel.processing.core.CoreProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">dispel.processing.core.CoreProcessingStepGroup</span></code></a>. This class
+ensures that level filters are injected to the steps of this group.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.ProcessingStepGroup.inject_level_filter_from_step">
+<span class="sig-name descname"><span class="pre">inject_level_filter_from_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#ProcessingStepGroup.inject_level_filter_from_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.ProcessingStepGroup.inject_level_filter_from_step" title="Link to this definition">#</a></dt>
+<dd><p>Inject level filter into group and steps in group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step</strong> (<a class="reference internal" href="#dispel.processing.level.LevelFilterProcessingStepMixin" title="dispel.processing.level.LevelFilterProcessingStepMixin"><em>LevelFilterProcessingStepMixin</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.level.ProcessingStepGroup.set_steps">
+<span class="sig-name descname"><span class="pre">set_steps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/level.html#ProcessingStepGroup.set_steps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.level.ProcessingStepGroup.set_steps" title="Link to this definition">#</a></dt>
+<dd><p>Set processing steps part of the group.</p>
+<p>This method ensures that steps added to the group inherit the level filter of
+the group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>steps</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><em>ProcessingStep</em></a><em>]</em>) – The steps contained in the processing group.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.processing.flags.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.processing.flags module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.processing.level_filters.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.processing.level_filters module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.DefaultLevelFilter"><code class="docutils literal notranslate"><span class="pre">DefaultLevelFilter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.DefaultLevelFilter.filter"><code class="docutils literal notranslate"><span class="pre">DefaultLevelFilter.filter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.DefaultLevelFilter.repr"><code class="docutils literal notranslate"><span class="pre">DefaultLevelFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.FlagLevelStep"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.FlagLevelStep.__init__"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.FlagLevelStep.flag_level"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.flag_level()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.FlagLevelStep.get_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.get_flag_targets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.FlagLevelStep.get_level_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.get_level_flag_targets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.FlagLevelStep.process_level"><code class="docutils literal notranslate"><span class="pre">FlagLevelStep.process_level()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelFilter"><code class="docutils literal notranslate"><span class="pre">LevelFilter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelFilter.filter"><code class="docutils literal notranslate"><span class="pre">LevelFilter.filter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelFilter.repr"><code class="docutils literal notranslate"><span class="pre">LevelFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelFilterProcessingStepMixin"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelFilterProcessingStepMixin.__init__"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelFilterProcessingStepMixin.get_level_filter"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.get_level_filter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelFilterProcessingStepMixin.inject_level_filter_from_step"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.inject_level_filter_from_step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelFilterProcessingStepMixin.level_filter"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.level_filter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelFilterProcessingStepMixin.set_level_filter"><code class="docutils literal notranslate"><span class="pre">LevelFilterProcessingStepMixin.set_level_filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelIdFilter"><code class="docutils literal notranslate"><span class="pre">LevelIdFilter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelIdFilter.__init__"><code class="docutils literal notranslate"><span class="pre">LevelIdFilter.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelIdFilter.filter"><code class="docutils literal notranslate"><span class="pre">LevelIdFilter.filter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelIdFilter.repr"><code class="docutils literal notranslate"><span class="pre">LevelIdFilter.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingControlResult"><code class="docutils literal notranslate"><span class="pre">LevelProcessingControlResult</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingControlResult.__init__"><code class="docutils literal notranslate"><span class="pre">LevelProcessingControlResult.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingControlResult.from_assertion_error"><code class="docutils literal notranslate"><span class="pre">LevelProcessingControlResult.from_assertion_error()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingControlResult.from_flag"><code class="docutils literal notranslate"><span class="pre">LevelProcessingControlResult.from_flag()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingResult"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResult</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingResult.__init__"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResult.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingResultBase"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResultBase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingResultBase.__init__"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResultBase.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingResultBase.level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingResultBase.level</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStep"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStep.assert_valid_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep.assert_valid_level()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStep.flag_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep.flag_level()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStep.process_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep.process_level()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStep.process_reading"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStep.process_reading()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStepProtocol"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStepProtocol.assert_valid_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol.assert_valid_level()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStepProtocol.flag_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol.flag_level()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStepProtocol.get_level_flag_targets"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol.get_level_flag_targets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.LevelProcessingStepProtocol.process_level"><code class="docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol.process_level()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.ProcessingStepGroup"><code class="docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.ProcessingStepGroup.inject_level_filter_from_step"><code class="docutils literal notranslate"><span class="pre">ProcessingStepGroup.inject_level_filter_from_step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.level.ProcessingStepGroup.set_steps"><code class="docutils literal notranslate"><span class="pre">ProcessingStepGroup.set_steps()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.processing.level.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

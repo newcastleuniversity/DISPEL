@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Statistical analyses &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage/statistical_analyses';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Measures" href="../measures.html" />
+    <link rel="prev" title="Measure processing" href="measure_processing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_model.html">Data model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measure_processing.html">Measure processing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Statistical analyses</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../usage.html" class="nav-link">Usage</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Statistical analyses</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="statistical-analyses">
+<span id="id1"></span><h1>Statistical analyses<a class="headerlink" href="#statistical-analyses" title="Link to this heading">#</a></h1>
+<section id="measure-collection">
+<span id="id2"></span><h2>Measure collection<a class="headerlink" href="#measure-collection" title="Link to this heading">#</a></h2>
+<p>Measure collections can be used in order ease the handling of multiple
+readings and obtain a collection of measures wrapped in a class
+<a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection" title="dispel.data.collections.MeasureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureCollection</span></code></a>.</p>
+<p>In order to initialize a measure collection, one can use the following methods:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_reading" title="dispel.data.collections.MeasureCollection.from_reading"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_reading()</span></code></a> or
+<a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_readings" title="dispel.data.collections.MeasureCollection.from_readings"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_readings()</span></code></a> by
+directly feeding it one or multiple <a class="reference internal" href="../api/dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reading</span></code></a>s.</p></li>
+<li><p><a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_data_frame" title="dispel.data.collections.MeasureCollection.from_data_frame"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_data_frame()</span></code></a> by
+feeding it a pandas data frame containing a measure export.</p></li>
+<li><p><a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_csv" title="dispel.data.collections.MeasureCollection.from_csv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_csv()</span></code></a> by feeding it a
+csv file path to a measure export.</p></li>
+<li><p><a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_measure_set" title="dispel.data.collections.MeasureCollection.from_measure_set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_measure_set()</span></code></a> by
+feeding it a <a class="reference internal" href="../api/dispel.data.measures.html#dispel.data.measures.MeasureSet" title="dispel.data.measures.MeasureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureSet</span></code></a>, an
+<a class="reference internal" href="../api/dispel.data.core.html#dispel.data.core.Evaluation" title="dispel.data.core.Evaluation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evaluation</span></code></a> and a
+<a class="reference internal" href="../api/dispel.data.core.html#dispel.data.core.Session" title="dispel.data.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a>.</p></li>
+</ul>
+</div></blockquote>
+<p>Measure collections can also be extended using the method
+<a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.extend" title="dispel.data.collections.MeasureCollection.extend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extend()</span></code></a> or simply by the <cite>+</cite>
+operator.</p>
+<p>Measure collections can also be exported into a dictionary, a JSON file or a
+csv file using the following methods
+<a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.to_dict" title="dispel.data.collections.MeasureCollection.to_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_dict()</span></code></a>,
+<a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.to_json" title="dispel.data.collections.MeasureCollection.to_json"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_json()</span></code></a> and
+<a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.to_csv" title="dispel.data.collections.MeasureCollection.to_csv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_csv()</span></code></a>.</p>
+<p>Assuming you have a few readings</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">EXAMPLE_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="s1">&#39;raw-data-example-01.json&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;raw-data-example-02.json&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;raw-data-example-03.json&#39;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The can be read into the data model using the reading functionality</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.io.ads</span> <span class="kn">import</span> <span class="n">read_ads</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">readings</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">read_ads</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">EXAMPLE_PATHS</span>
+<span class="gp">... </span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Assuming the readings have not been processed one can use
+<a class="reference internal" href="../api/dispel.providers.html#dispel.providers.auto_process" title="dispel.providers.auto_process"><code class="xref py py-func docutils literal notranslate"><span class="pre">auto_process()</span></code></a> to do so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.providers</span> <span class="kn">import</span> <span class="n">auto_process</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">processed</span> <span class="o">=</span> <span class="p">[</span><span class="n">auto_process</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">get_reading</span><span class="p">()</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">readings</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">processed</span> <span class="o">=</span> <span class="p">[</span><span class="n">auto_process</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">get_reading</span><span class="p">()</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">readings</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.collections</span> <span class="kn">import</span> <span class="n">MeasureCollection</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">MeasureCollection</span><span class="o">.</span><span class="n">from_reading</span><span class="p">(</span><span class="n">processed</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">&lt;MeasureCollection: 1 subject, 1 evaluation&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">collection2</span> <span class="o">=</span> <span class="n">MeasureCollection</span><span class="o">.</span><span class="n">from_reading</span><span class="p">(</span><span class="n">processed</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">collection2</span>
+<span class="go">&lt;MeasureCollection: 1 subject, 1 evaluation&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">collection</span> <span class="o">=</span> <span class="n">MeasureCollection</span><span class="o">.</span><span class="n">from_readings</span><span class="p">(</span><span class="n">processed</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">collection</span>
+<span class="go">&lt;MeasureCollection: 3 subjects, 3 evaluations&gt;</span>
+</pre></div>
+</div>
+<p>The collection can also be turned into a dictionary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dict_export</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Or stored as JSON or CSV files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">collection</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">&#39;measure_export.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">collection</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;measure_export.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="reliability-analyses">
+<h2>Reliability analyses<a class="headerlink" href="#reliability-analyses" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../api/dispel.stats.reliability.html#module-dispel.stats.reliability" title="dispel.stats.reliability"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dispel.stats.reliability</span></code></a> module provides tools to perform measure
+reliability analysis.</p>
+<ol class="arabic simple">
+<li><p>Load the CSV export file containing the measures values into a
+<a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection" title="dispel.data.collections.MeasureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureCollection</span></code></a> using the class method
+<a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_data_frame" title="dispel.data.collections.MeasureCollection.from_data_frame"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_data_frame()</span></code></a>.</p></li>
+<li><p>Computing all the ICC test-retest score for all measures using the
+<a class="reference internal" href="../api/dispel.stats.reliability.html#dispel.stats.reliability.icc_set_test_retest" title="dispel.stats.reliability.icc_set_test_retest"><code class="xref py py-func docutils literal notranslate"><span class="pre">icc_set_test_retest()</span></code></a>. It creates
+a <a class="reference internal" href="../api/dispel.stats.reliability.html#dispel.stats.reliability.ICCResultSet" title="dispel.stats.reliability.ICCResultSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ICCResultSet</span></code></a> object, which contains
+<a class="reference internal" href="../api/dispel.stats.reliability.html#dispel.stats.reliability.ICCResult" title="dispel.stats.reliability.ICCResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">ICCResult</span></code></a> icc score for each measure.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.stats.reliability</span> <span class="kn">import</span> <span class="n">icc_set_test_retest</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.collections</span> <span class="kn">import</span> <span class="n">MeasureCollection</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">measure_collection</span> <span class="o">=</span> <span class="n">MeasureCollection</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="n">EXAMPLE_PATH</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">measure_iccs</span> <span class="o">=</span> <span class="n">icc_set_test_retest</span><span class="p">(</span><span class="n">measure_collection</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An <a class="reference internal" href="../api/dispel.stats.reliability.html#dispel.stats.reliability.ICCResult" title="dispel.stats.reliability.ICCResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">ICCResult</span></code></a> object is composed of all the
+information relative to the ICC test retest analyses which have been performed.
+The kind of reliability (Test retest), the model used (two way mixed, absolute
+agreement, average measurement), the ICC score value, the bounds
+(upper and lower), the p-value and the sample size and the power of the test.</p>
+</section>
+<section id="learning-analysis">
+<h2>Learning analysis<a class="headerlink" href="#learning-analysis" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../api/dispel.stats.learning.html#module-dispel.stats.learning" title="dispel.stats.learning"><code class="xref py py-mod docutils literal notranslate"><span class="pre">learning</span></code></a> module provides tools to perform measure
+learning analyses.
+A learning analysis is performed over multiple sessions performed by a subject
+related to a measure extracted from its corresponding task (i.e. CPS
+task for the measure <code class="docutils literal notranslate"><span class="pre">cps-std-rt-mean</span></code>).</p>
+<p>In order to extract the relevant parameters from a learning analysis (i.e.
+learning rate,…), one has to provide the required data wrapped in a
+<a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection" title="dispel.data.collections.MeasureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureCollection</span></code></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dispel.data.collections</span> <span class="kn">import</span> <span class="n">MeasureCollection</span>
+<span class="kn">import</span> <span class="nn">pkg_resources</span>
+
+<span class="n">EXAMPLE_PATH</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span>
+    <span class="s1">&#39;tests.stats&#39;</span><span class="p">,</span> <span class="s1">&#39;_resources/single-user-learning-example.csv&#39;</span>
+<span class="p">)</span>
+<span class="c1"># Extract a MeasureCollection from a .csv export.</span>
+<span class="n">collection</span> <span class="o">=</span> <span class="n">MeasureCollection</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="n">EXAMPLE_PATH</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="extract-learning-parameters">
+<h3>Extract learning parameters<a class="headerlink" href="#extract-learning-parameters" title="Link to this heading">#</a></h3>
+<p>When the measure collection is created, one can extract the learning
+parameters. This can be done by passing the measure collection to the
+<a class="reference internal" href="../api/dispel.stats.learning.html#dispel.stats.learning.extract_learning_for_one_subject" title="dispel.stats.learning.extract_learning_for_one_subject"><code class="xref py py-func docutils literal notranslate"><span class="pre">extract_learning_for_one_subject()</span></code></a> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.stats.learning</span> <span class="kn">import</span> <span class="n">extract_learning_for_one_subject</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">learning_result</span> <span class="o">=</span> <span class="n">extract_learning_for_one_subject</span><span class="p">(</span><span class="n">collection</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The function will then return a <a class="reference internal" href="../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult" title="dispel.stats.learning.LearningResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">LearningResult</span></code></a>
+class containing the whole learning analysis results.</p>
+<p>One can access the learning parameters with the method
+<a class="reference internal" href="../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult.get_parameters" title="dispel.stats.learning.LearningResult.get_parameters"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_parameters()</span></code></a> that outputs a
+pandas object (data frame or series) containing the following information:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">subject_id</span></code>: the subject identifier,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">measure_id</span></code>: the measure identifier,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optimal_performance</span></code>: the optimal performance of the subject for the
+measure in question,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slope_coefficient</span></code>: the slope coefficient of the learning curve of the
+subject for the measure in question,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>: the learning rate of the subject for the measure in
+question,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">warm_up</span></code>: the minimum number of sessions needed for the subject to
+attain <cite>90%</cite> of their optimal performance,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r2_score</span></code>: the R squared measure that represents the goodness of the
+fit of the learning model,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nb_outliers</span></code>: the number of rejected outliers during the fit of the
+learning model,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delay_mean</span></code>: the average delay between sessions in days,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delay_median</span></code>: the median delay between sessions in days,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delay_mean</span></code>: the maximum delay between sessions in days,</p></li>
+</ul>
+</div></blockquote>
+<p>One can also access the new data points without outliers with the method
+<a class="reference internal" href="../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult.get_new_data" title="dispel.stats.learning.LearningResult.get_new_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_new_data()</span></code></a>.</p>
+<p>Note that if one wants to extract learning parameters for all present subjects
+in the <a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection" title="dispel.data.collections.MeasureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureCollection</span></code></a>, it can be done by
+passing this <a class="reference internal" href="../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection" title="dispel.data.collections.MeasureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureCollection</span></code></a> and a
+<code class="docutils literal notranslate"><span class="pre">'measure_id'</span></code> to the
+<a class="reference internal" href="../api/dispel.stats.learning.html#dispel.stats.learning.extract_learning_for_all_subjects" title="dispel.stats.learning.extract_learning_for_all_subjects"><code class="xref py py-func docutils literal notranslate"><span class="pre">extract_learning_for_all_subjects()</span></code></a> function.
+This function will in the same way return a
+<a class="reference internal" href="../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult" title="dispel.stats.learning.LearningResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">LearningResult</span></code></a> class containing the same types
+of information as previously described.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.stats.learning</span> <span class="kn">import</span> <span class="n">extract_learning_for_all_subjects</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">learning_result</span> <span class="o">=</span> <span class="n">extract_learning_for_all_subjects</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">collection</span><span class="p">,</span> <span class="s1">&#39;CPS-dtd-rt-mean-01&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>One can then explore the learning parameters for all users as well as plot
+relevant results.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="measure_processing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Measure processing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../measures.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Measures</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measure-collection">Measure collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-analyses">Reliability analyses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-analysis">Learning analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-learning-parameters">Extract learning parameters</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/usage/statistical_analyses.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

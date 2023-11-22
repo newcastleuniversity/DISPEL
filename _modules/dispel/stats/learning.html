@@ -1,0 +1,1070 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.stats.learning &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/stats/learning';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.stats...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.stats.learning</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Inter-session Learning analysis.</span>
+
+<span class="sd">A module where functions are provided to compute and extract learning parameters from</span>
+<span class="sd">measure collections containing processed measures. The module provides class and</span>
+<span class="sd">functions to compute and extract parameters from fitted model by curve fit and compute</span>
+<span class="sd">relevant learning related measures.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">zscore</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.collections</span> <span class="kn">import</span> <span class="n">MeasureCollection</span>
+
+<span class="n">NumericType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="LearningCurve">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningCurve">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">LearningCurve</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class ensemble of learning curve parameters.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: The asymptote of the fitted learning curve.</span>
+    <span class="n">asymptote</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="c1">#: The slope of the fitted learning curve.</span>
+    <span class="n">slope</span><span class="p">:</span> <span class="nb">float</span>
+
+<div class="viewcode-block" id="LearningCurve.to_dict">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningCurve.to_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert learning curve information to dictionary format.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">optimal_performance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">asymptote</span><span class="p">,</span>
+            <span class="n">slope_coefficient</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">slope</span><span class="p">,</span>
+            <span class="n">learning_rate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LearningCurve.compute_learning">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningCurve.compute_learning">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">compute_learning</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">NumericType</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="n">NumericType</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">NumericType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NumericType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute learning curve function.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="o">/</span> <span class="n">x</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">NumericType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NumericType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the learning curve for a given input (trial number).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_learning</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">asymptote</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slope</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">learning_rate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the learning rate related to curve.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">slope</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">asymptote</span>
+
+<div class="viewcode-block" id="LearningCurve.fit">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningCurve.fit">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LearningCurve&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fit learning curve using :func:`scipy.optimize.curve_fit`.</span>
+
+<span class="sd">        See :meth:`dispel.stats.learning.LearningCurve.compute_learning`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x</span>
+<span class="sd">            The trial numbers associated with data points.</span>
+<span class="sd">        y</span>
+<span class="sd">            The measure data points.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LearningCurve</span>
+<span class="sd">            The fitted learning curve.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="p">(</span><span class="n">asymptote</span><span class="p">,</span> <span class="n">slope</span><span class="p">),</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">compute_learning</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">asymptote</span><span class="o">=</span><span class="n">asymptote</span><span class="p">,</span> <span class="n">slope</span><span class="o">=</span><span class="n">slope</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LearningCurve.get_warm_up">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningCurve.get_warm_up">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_warm_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the warm-up argmax for measure values and fitted parameters.</span>
+
+<span class="sd">        The ``warm_up`` here is actually the minimum number of trials the user has to</span>
+<span class="sd">        perform in order to reach 90% of the optimal performance (asymptote value) given</span>
+<span class="sd">        by the model.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data</span>
+<span class="sd">            A numpy array series containing ordered measure values.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            The argmax of the first occurrence of the measure values that reaches 90% of</span>
+<span class="sd">            the optimal performance given by the model.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If the given data is not a pandas series nor a numpy array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slope</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">threshold_90</span> <span class="o">=</span> <span class="mf">0.9</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">asymptote</span> <span class="o">-</span> <span class="p">(</span><span class="n">max_</span> <span class="o">:=</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span> <span class="o">+</span> <span class="n">max_</span>
+            <span class="n">argmax_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">data</span> <span class="o">&lt;</span> <span class="n">threshold_90</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">threshold_90</span> <span class="o">=</span> <span class="mf">0.9</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">asymptote</span> <span class="o">-</span> <span class="p">(</span><span class="n">min_</span> <span class="o">:=</span> <span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span> <span class="o">+</span> <span class="n">min_</span>
+            <span class="n">argmax_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">data</span> <span class="o">&gt;</span> <span class="n">threshold_90</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">argmax_index</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">argmax_index</span><span class="p">]</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unsupported data type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">. Only a ``pandas.Series`` or &quot;</span>
+            <span class="s2">&quot;``numpy.ndarray`` is allowed.&quot;</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LearningCurve.empty">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningCurve.empty">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return empty learning curve.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">asymptote</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">slope</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LearningModel">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningModel">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">LearningModel</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class ensemble of learning model.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: The fitted learning curve.</span>
+    <span class="n">curve</span><span class="p">:</span> <span class="n">LearningCurve</span>
+
+    <span class="c1">#: The data points without outliers</span>
+    <span class="n">new_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span>
+
+    <span class="c1"># Thr R squared score of the fitted learning model.</span>
+    <span class="n">r2_score</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+
+    <span class="c1">#: The number of outliers rejected during the model fitting.</span>
+    <span class="n">nb_outliers</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<div class="viewcode-block" id="LearningModel.to_dict">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningModel.to_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert learning model information to dictionary format.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">curve</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+            <span class="n">warm_up</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">curve</span><span class="o">.</span><span class="n">get_warm_up</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">new_data</span><span class="p">),</span>
+            <span class="n">r2_score</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">r2_score</span><span class="p">,</span>
+            <span class="n">nb_outliers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nb_outliers</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LearningModel.empty">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningModel.empty">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LearningModel&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return empty learning model.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">curve</span><span class="o">=</span><span class="n">LearningCurve</span><span class="o">.</span><span class="n">empty</span><span class="p">(),</span>
+            <span class="n">new_data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">),</span>
+            <span class="n">r2_score</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">nb_outliers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="DelayParameters">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.DelayParameters">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">DelayParameters</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class ensemble of delay parameters.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: The mean delay between sessions.</span>
+    <span class="n">mean</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+
+    <span class="c1">#: The median delay between sessions.</span>
+    <span class="n">median</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+
+    <span class="c1">#: The maximum delay between sessions.</span>
+    <span class="nb">max</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+
+<div class="viewcode-block" id="DelayParameters.to_dict">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.DelayParameters.to_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert learning parameters to dictionary format.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">delay_mean</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">delay_median</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">median</span><span class="p">,</span> <span class="n">delay_max</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DelayParameters.empty">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.DelayParameters.empty">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;DelayParameters&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return empty delay parameters.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">median</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LearningParameters">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningParameters">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">LearningParameters</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class ensemble of learning parameters.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: The subject&#39;s id</span>
+    <span class="n">subject_id</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="c1">#: The measure id</span>
+    <span class="n">measure_id</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="c1">#: The learning model</span>
+    <span class="n">model</span><span class="p">:</span> <span class="n">LearningModel</span>
+
+    <span class="c1">#: The delay parameters in days</span>
+    <span class="n">delay_parameters</span><span class="p">:</span> <span class="n">DelayParameters</span>
+
+<div class="viewcode-block" id="LearningParameters.to_dict">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningParameters.to_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert learning parameters to dictionary format.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">subject_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">subject_id</span><span class="p">,</span>
+            <span class="n">measure_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">measure_id</span><span class="p">,</span>
+            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">delay_parameters</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="compute_delay">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.compute_delay">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_delay</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DelayParameters</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract mean, median and maximum delay between consecutive sessions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas series containing timestamps.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    DelayParameters</span>
+<span class="sd">        A :class:`dispel.stats.learning.DelayParameters` with the values of the mean,</span>
+<span class="sd">        median and maximum delay between consecutive trials for a given measure and</span>
+<span class="sd">        subject in days.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">day_diff</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">/</span> <span class="mi">86_400</span>
+    <span class="n">delay_mean</span><span class="p">,</span> <span class="n">delay_median</span><span class="p">,</span> <span class="n">delay_max</span> <span class="o">=</span> <span class="n">day_diff</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;median&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">DelayParameters</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="n">delay_mean</span><span class="p">,</span> <span class="n">median</span><span class="o">=</span><span class="n">delay_median</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="n">delay_max</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="reject_outliers">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.reject_outliers">[docs]</a>
+<span class="k">def</span> <span class="nf">reject_outliers</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reject outliers with Z-score outside the tolerated bounds.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas series composed of measure values for only one measure and only one</span>
+<span class="sd">        user and trials numbers as index.</span>
+<span class="sd">    sigma</span>
+<span class="sd">        The standard deviation threshold above which the data points are to be</span>
+<span class="sd">        considered as outliers and therefore rejected.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.Series</span>
+<span class="sd">        The data without the detected outlier (if detected) with the same structure as</span>
+<span class="sd">        the entry.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Fit of the model by curve fit.</span>
+    <span class="n">baseline_curve</span> <span class="o">=</span> <span class="n">LearningCurve</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="c1"># Compute predictions and residuals of fitted model curve</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">baseline_curve</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">residuals</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">residuals</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Compute Z-scores of residuals</span>
+    <span class="n">zscores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">zscore</span><span class="p">(</span><span class="n">residuals</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">residuals</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">zscores</span> <span class="o">&gt;=</span> <span class="n">sigma</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">reject_outliers</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">zscores</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()),</span> <span class="n">sigma</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="compute_learning_model">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.compute_learning_model">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_learning_model</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.99</span><span class="p">,</span> <span class="n">reset_trials</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">LearningModel</span><span class="p">,</span> <span class="n">DelayParameters</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the learning model.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas series composed of measure values for only one measure and only one</span>
+<span class="sd">        user and trials numbers as index.</span>
+<span class="sd">    tolerance</span>
+<span class="sd">        The tolerance threshold above which the data points are to be considered</span>
+<span class="sd">        outliers and therefore rejected. Should be between ``0`` and ``1``.</span>
+<span class="sd">    reset_trials</span>
+<span class="sd">        ``True`` if the trial numbers are to be reset for the new data (without</span>
+<span class="sd">        outliers). ``False`` otherwise.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Tuple[LearningModel, DelayParameters]</span>
+<span class="sd">        The output contains the following information:</span>
+
+<span class="sd">            - The fitted learning model.</span>
+<span class="sd">            - The delay parameters.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the threshold tolerance is outside the legal bounds i.e. [0, 1].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">tolerance</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">tolerance</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unsupported tolerance threshold value: </span><span class="si">{</span><span class="n">tolerance</span><span class="si">}</span><span class="s2">. Must be between 0 &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;and 1.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">size</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">LearningModel</span><span class="o">.</span><span class="n">empty</span><span class="p">(),</span> <span class="n">DelayParameters</span><span class="o">.</span><span class="n">empty</span><span class="p">()</span>
+
+    <span class="c1"># Reject outliers</span>
+    <span class="n">trial_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">trial_data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">trial_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;trial&quot;</span><span class="p">)</span>
+    <span class="n">new_data</span> <span class="o">=</span> <span class="n">reject_outliers</span><span class="p">(</span><span class="n">trial_data</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">tolerance</span><span class="p">))</span>
+
+    <span class="c1"># Retrieve trial start dates and compute delay parameters</span>
+    <span class="n">all_start_dates</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;trial&quot;</span><span class="p">)</span>
+    <span class="n">start_dates</span> <span class="o">=</span> <span class="n">all_start_dates</span><span class="p">[</span><span class="n">all_start_dates</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">new_data</span><span class="o">.</span><span class="n">index</span><span class="p">)][</span>
+        <span class="s2">&quot;start_date&quot;</span>
+    <span class="p">]</span>
+    <span class="n">delay_parameters</span> <span class="o">=</span> <span class="n">compute_delay</span><span class="p">(</span><span class="n">start_dates</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">reset_trials</span><span class="p">:</span>
+        <span class="n">new_data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;trial&quot;</span><span class="p">)</span>
+
+    <span class="n">model_curve</span> <span class="o">=</span> <span class="n">LearningCurve</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">new_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">new_data</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">model_curve</span><span class="p">(</span><span class="n">new_data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">LearningModel</span><span class="p">(</span>
+        <span class="n">curve</span><span class="o">=</span><span class="n">model_curve</span><span class="p">,</span>
+        <span class="n">new_data</span><span class="o">=</span><span class="n">new_data</span><span class="p">,</span>
+        <span class="n">nb_outliers</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">trial_data</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_data</span><span class="p">),</span>
+        <span class="n">r2_score</span><span class="o">=</span><span class="n">r2_score</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">predictions</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span><span class="p">,</span> <span class="n">delay_parameters</span></div>
+
+
+
+<div class="viewcode-block" id="LearningResult">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult">[docs]</a>
+<span class="k">class</span> <span class="nc">LearningResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The learning results for one measure and one or multiple subjects.&quot;&quot;&quot;</span>
+
+    <span class="n">_COLUMNS</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;subject_id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;optimal_performance&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;slope_coefficient&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;warm_up&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;r2_score&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;nb_outliers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;delay_mean&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;delay_median&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;delay_max&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="LearningResult.__init__">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measure_id</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_COLUMNS</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_new_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_add_learning_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;LearningResult&quot;</span><span class="p">):</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">measure_id</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_id</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_id</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">measure_id</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Cannot append learning results for different measures.&quot;</span>
+                <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">measure_id</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">measure_id</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">other</span><span class="o">.</span><span class="n">_parameters</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_new_data</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_new_data</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">other</span><span class="o">.</span><span class="n">_new_data</span><span class="p">,</span>
+            <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">LearningResult</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">res</span> <span class="o">:=</span> <span class="n">LearningResult</span><span class="p">())</span><span class="o">.</span><span class="n">_add_learning_result</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">_add_learning_result</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">res</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Can only add LearningResults.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__iadd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">LearningResult</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_learning_result</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Can only add LearningResults.&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LearningResult.from_parameters">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult.from_parameters">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_parameters</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">learning_parameters</span><span class="p">:</span> <span class="n">LearningParameters</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize learning result from parameters.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        learning_parameters</span>
+<span class="sd">            The learning parameters for the measure and subject in question.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LearningResult</span>
+<span class="sd">            The learning result regrouping the given information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="p">(</span><span class="n">res</span> <span class="o">:=</span> <span class="bp">cls</span><span class="p">())</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">learning_parameters</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+
+<div class="viewcode-block" id="LearningResult.append">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult.append">[docs]</a>
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">learning_parameters</span><span class="p">:</span> <span class="n">LearningParameters</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Append new learning results for one subject to learning results.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        learning_parameters</span>
+<span class="sd">            The learning parameters for the measure and subject in question.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the learning parameters are for a different measure than the one</span>
+<span class="sd">            concerning the learning result.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measure_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_id</span> <span class="ow">or</span> <span class="n">learning_parameters</span><span class="o">.</span><span class="n">measure_id</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_id</span> <span class="o">!=</span> <span class="n">learning_parameters</span><span class="o">.</span><span class="n">measure_id</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot append learning results for different measures.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">learning_parameters</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_new_data</span><span class="p">[</span>
+            <span class="n">learning_parameters</span><span class="o">.</span><span class="n">subject_id</span>
+        <span class="p">]</span> <span class="o">=</span> <span class="n">learning_parameters</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">new_data</span></div>
+
+
+<div class="viewcode-block" id="LearningResult.get_parameters">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult.get_parameters">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">subject_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get learning results for one or all subjects.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        subject_id</span>
+<span class="sd">            The subject identifier for which the learning is to be retrieved. If</span>
+<span class="sd">            ``None`` is provided all learning results will be given.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Union[pandas.Series, pandas.DataFrame]</span>
+<span class="sd">            If a valid subject id is given, the output is a pandas series summarizing</span>
+<span class="sd">            learning results. If ``None`` is given the output will be a pandas data</span>
+<span class="sd">            frame summarizing all learning results.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the subject identifier is not found in the learning analysis results.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">subject_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">subject_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">ids</span> <span class="o">:=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">[</span><span class="s2">&quot;subject_id&quot;</span><span class="p">])):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The given subject id </span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s2"> is not found. Must be within the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;following values: </span><span class="si">{</span><span class="n">ids</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">[</span><span class="s2">&quot;subject_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">subject_id</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="LearningResult.get_new_data">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.LearningResult.get_new_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_new_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subject_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the new data points without outliers.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        subject_id</span>
+<span class="sd">            The identifier of the subject for which the new data is to be retrieved.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Series</span>
+<span class="sd">            A pandas series containing the new data points for the measure in question</span>
+<span class="sd">            (without outliers).</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the subject identifier is not found in the learning analysis results.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">subject_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_data</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Subject not found </span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s2">. Must be withing following values: &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_new_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_data</span><span class="p">[</span><span class="n">subject_id</span><span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="extract_learning_for_one_subject">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.extract_learning_for_one_subject">[docs]</a>
+<span class="k">def</span> <span class="nf">extract_learning_for_one_subject</span><span class="p">(</span>
+    <span class="n">measure_collection</span><span class="p">:</span> <span class="n">MeasureCollection</span><span class="p">,</span>
+    <span class="n">subject_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">measure_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.99</span><span class="p">,</span>
+    <span class="n">reset_trials</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LearningResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute learning for a unique subject and a unique measure.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    measure_collection</span>
+<span class="sd">        A measure collection containing any measures and any subjects.</span>
+<span class="sd">    subject_id</span>
+<span class="sd">        The identifier of the subject for which the delay is to be computed.</span>
+<span class="sd">    measure_id</span>
+<span class="sd">        The identifier of the measure for which the delay is to be computed.</span>
+<span class="sd">    tolerance</span>
+<span class="sd">        The tolerance threshold above which the data points are to be considered</span>
+<span class="sd">        outliers and therefore rejected. Should be between ``0`` and ``1``.</span>
+<span class="sd">    reset_trials</span>
+<span class="sd">        ``True`` if the trial numbers are to be reset for the new data (without</span>
+<span class="sd">        outliers). ``False`` otherwise.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    LearningResult</span>
+<span class="sd">        The learning result for one subject of the measure in question. See:</span>
+<span class="sd">        :class:`dispel.stats.learning.LearningResult`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Retrieve measure values</span>
+    <span class="n">measure_values</span> <span class="o">=</span> <span class="n">measure_collection</span><span class="o">.</span><span class="n">get_measure_values_over_time</span><span class="p">(</span>
+        <span class="n">subject_id</span><span class="o">=</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">measure_id</span><span class="o">=</span><span class="n">measure_id</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;start_date&quot;</span><span class="p">,</span> <span class="s2">&quot;trial&quot;</span><span class="p">]</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+    <span class="c1"># Compute learning model and delay parameters</span>
+    <span class="n">model</span><span class="p">,</span> <span class="n">delay_parameters</span> <span class="o">=</span> <span class="n">compute_learning_model</span><span class="p">(</span>
+        <span class="n">measure_values</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">,</span> <span class="n">reset_trials</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">LearningResult</span><span class="o">.</span><span class="n">from_parameters</span><span class="p">(</span>
+        <span class="n">LearningParameters</span><span class="p">(</span>
+            <span class="n">subject_id</span><span class="o">=</span><span class="n">subject_id</span><span class="p">,</span>
+            <span class="n">measure_id</span><span class="o">=</span><span class="n">measure_id</span><span class="p">,</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">delay_parameters</span><span class="o">=</span><span class="n">delay_parameters</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="extract_learning_for_all_subjects">
+<a class="viewcode-back" href="../../../api/dispel.stats.learning.html#dispel.stats.learning.extract_learning_for_all_subjects">[docs]</a>
+<span class="k">def</span> <span class="nf">extract_learning_for_all_subjects</span><span class="p">(</span>
+    <span class="n">measure_collection</span><span class="p">:</span> <span class="n">MeasureCollection</span><span class="p">,</span>
+    <span class="n">measure_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.99</span><span class="p">,</span>
+    <span class="n">reset_trials</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LearningResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute learning parameters for all subjects in a measure collection.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    measure_collection</span>
+<span class="sd">        A measure collection containing any measures and any subjects.</span>
+<span class="sd">    measure_id</span>
+<span class="sd">        The measure id on which the learning parameters are to be computed.</span>
+<span class="sd">    tolerance</span>
+<span class="sd">        The tolerance threshold above which the data points are to be considered</span>
+<span class="sd">        outliers and therefore rejected. Should be between ``0`` and ``1``.</span>
+<span class="sd">    reset_trials</span>
+<span class="sd">        ``True`` if the trial numbers are to be reset for the new data (without</span>
+<span class="sd">        outliers). ``False`` otherwise.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    LearningResult</span>
+<span class="sd">        The learning result for all subjects of the measure in question. See:</span>
+<span class="sd">        :class:`dispel.stats.learning.LearningResult`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">learning_results</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">extract_learning_for_one_subject</span><span class="p">(</span>
+            <span class="n">measure_collection</span><span class="p">,</span>
+            <span class="n">subject_id</span><span class="o">=</span><span class="n">subject_id</span><span class="p">,</span>
+            <span class="n">measure_id</span><span class="o">=</span><span class="n">measure_id</span><span class="p">,</span>
+            <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">,</span>
+            <span class="n">reset_trials</span><span class="o">=</span><span class="n">reset_trials</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">subject_id</span> <span class="ow">in</span> <span class="n">measure_collection</span><span class="o">.</span><span class="n">subject_ids</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">learning_results</span><span class="p">,</span> <span class="n">LearningResult</span><span class="p">())</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

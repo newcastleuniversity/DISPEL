@@ -1,0 +1,1083 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.flags.le_flags &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/flags/le_flags';</script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.flags.le_flags</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A module to store the lower extremity (le) related flags.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">deg2rad</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">FlagSeverity</span><span class="p">,</span> <span class="n">FlagType</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span> <span class="n">GRAVITY_COLUMNS</span>
+<span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">GREATER_THAN_ZERO</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">transformation</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="n">ExtractStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.flags</span> <span class="kn">import</span> <span class="n">flag</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">FlagLevelStep</span><span class="p">,</span> <span class="n">ProcessingStepGroup</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">TransformStep</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.activity.placement</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PLACEMENT_DEFINITIONS</span><span class="p">,</span>
+    <span class="n">ClassifyPlacement</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.sensor</span> <span class="kn">import</span> <span class="n">FREQ_50HZ</span><span class="p">,</span> <span class="n">EuclideanNorm</span><span class="p">,</span> <span class="n">Resample</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.core</span> <span class="kn">import</span> <span class="n">WALKING_BOUT_TURN_MAX_ANGLE</span>
+
+<span class="n">MAX_GAIT_PERC_NOT_IN_BELT</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="sd">&quot;&quot;&quot;Maximum percentage allowed not in belt for Gait.&quot;&quot;&quot;</span>
+
+<span class="n">MAX_SBT_PERC_NOT_IN_BELT</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="sd">&quot;&quot;&quot;Maximum percentage allowed not in belt for SBT assessment.&quot;&quot;&quot;</span>
+
+<span class="n">MAX_PERC_NOT_MOVING</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="sd">&quot;&quot;&quot;Maximum percentage of level duration allowed not moving.&quot;&quot;&quot;</span>
+
+<span class="n">MAX_PERC_NOT_RECTILINEAR_BELT_WALK</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="sd">&quot;&quot;&quot;Maximum percentage of level duration allowed not rectilinear on-belt walking.&quot;&quot;&quot;</span>
+
+<span class="n">MAX_TURNS_PER_MIN</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="sd">&quot;&quot;&quot;Maximum number of turns per minute allowed.&quot;&quot;&quot;</span>
+
+<span class="n">START_TIME_ASSESSMENT</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="sd">&quot;&quot;&quot;Time of start of the assessment in seconds.&quot;&quot;&quot;</span>
+
+<span class="n">END_POSTURAL_ADJUSTMENT</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="sd">&quot;&quot;&quot;Time of end of postural adjustment in seconds.&quot;&quot;&quot;</span>
+
+<span class="n">MAX_FRACTION_EXCESSIVE_MOTION</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="sd">&quot;&quot;&quot;The maximum fraction of excessive motion over the total duration of</span>
+<span class="sd">the assessment.&quot;&quot;&quot;</span>
+<span class="n">TASK_NAME_SBT</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;Static Balance Test&quot;</span><span class="p">,</span> <span class="s2">&quot;sbt&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="truncate_placement">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.truncate_placement">[docs]</a>
+<span class="k">def</span> <span class="nf">truncate_placement</span><span class="p">(</span>
+    <span class="n">df_placement</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">threshold_start</span><span class="p">:</span> <span class="nb">float</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Truncate `placement_bouts` before threshold_start.&quot;&quot;&quot;</span>
+    <span class="c1"># Detect start time</span>
+    <span class="n">time_zero</span> <span class="o">=</span> <span class="n">df_placement</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;start_time&quot;</span><span class="p">]</span>
+    <span class="c1"># Compute time of postural adjustment end from start</span>
+    <span class="n">end_posture_adjust</span> <span class="o">=</span> <span class="n">time_zero</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">threshold_start</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Find bout containing the threshold_start and posterior</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">df_placement</span><span class="p">[</span><span class="s2">&quot;end_time&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">end_posture_adjust</span>
+    <span class="c1"># Filter those bouts</span>
+    <span class="n">df_placement</span> <span class="o">=</span> <span class="n">df_placement</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Adjust first start_time and duration</span>
+    <span class="n">df_placement</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;start_time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">end_posture_adjust</span>
+    <span class="n">df_placement</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df_placement</span><span class="p">[</span><span class="s2">&quot;end_time&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_placement</span><span class="p">[</span><span class="s2">&quot;start_time&quot;</span><span class="p">]</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">df_placement</span></div>
+
+
+
+<div class="viewcode-block" id="PlacementClassificationGroup">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.PlacementClassificationGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">PlacementClassificationGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A ProcessingStepGroup concatenating PlacementClassificationGroup steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Resample</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts&quot;</span><span class="p">,</span>
+            <span class="n">freq</span><span class="o">=</span><span class="n">FREQ_50HZ</span><span class="p">,</span>
+            <span class="n">aggregations</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;ffill&quot;</span><span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span> <span class="o">+</span> <span class="n">GRAVITY_COLUMNS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">EuclideanNorm</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;acc_ts_resampled&quot;</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="c1"># Format Accelerometer and detect walking bouts</span>
+        <span class="n">ClassifyPlacement</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="perc_non_belt">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.perc_non_belt">[docs]</a>
+<span class="k">def</span> <span class="nf">perc_non_belt</span><span class="p">(</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;placement_bouts&quot;</span><span class="p">,</span> <span class="n">start_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return non belt percentage and placements.&quot;&quot;&quot;</span>
+    <span class="n">df_placement</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="n">data_set_id</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="n">df_placement</span> <span class="o">=</span> <span class="n">truncate_placement</span><span class="p">(</span><span class="n">df_placement</span><span class="p">,</span> <span class="n">start_time</span><span class="p">)</span>
+
+    <span class="n">belt_duration</span> <span class="o">=</span> <span class="n">df_placement</span><span class="p">[</span><span class="n">df_placement</span><span class="p">[</span><span class="s2">&quot;placement&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;belt&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">total_duration</span> <span class="o">=</span> <span class="n">df_placement</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">perc_not_belt</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">belt_duration</span> <span class="o">/</span> <span class="n">total_duration</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">perc_not_belt</span><span class="p">,</span> <span class="n">df_placement</span><span class="o">.</span><span class="n">placement</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="NonBeltDetected">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NonBeltDetected">[docs]</a>
+<span class="k">class</span> <span class="nc">NonBeltDetected</span><span class="p">(</span><span class="n">FlagLevelStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag record with non-belt period greater than threshold.&quot;&quot;&quot;</span>
+
+    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span>
+        <span class="s2">&quot;</span><span class="si">{non_belt_portion}</span><span class="s2">% was detected at </span><span class="si">{placements}</span><span class="s2"> (more than the&quot;</span>
+        <span class="s2">&quot;</span><span class="si">{acceptance_threshold}% a</span><span class="s2">ccepted)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;non_belt_greater_than_</span><span class="si">{acceptance_threshold}</span><span class="s2">_perc&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">BEHAVIORAL</span>
+    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+    <span class="n">reason</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;</span><span class="si">{non_belt_portion}</span><span class="s2">% non-belt portion detected at </span><span class="si">{placements}</span><span class="s2"> &quot;</span>
+        <span class="s2">&quot;(exceeds </span><span class="si">{acceptance_threshold}% a</span><span class="s2">ccepted)&quot;</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="NonBeltPostAdjustmentDetected">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NonBeltPostAdjustmentDetected">[docs]</a>
+<span class="k">class</span> <span class="nc">NonBeltPostAdjustmentDetected</span><span class="p">(</span><span class="n">FlagLevelStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag record with non-belt period greater than threshold.&quot;&quot;&quot;</span>
+
+    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span>
+        <span class="s2">&quot;</span><span class="si">{non_belt_portion}</span><span class="s2">% (more than the </span><span class="si">{acceptance_threshold}</span><span class="s2">% &quot;</span>
+        <span class="s2">&quot;accepted) was detected post-adjustment at </span><span class="si">{placements}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;non_belt_post_adjustment_greater_than_</span><span class="si">{acceptance_threshold}</span><span class="s2">_perc&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">BEHAVIORAL</span>
+    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">INVALIDATION</span>
+    <span class="n">reason</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;</span><span class="si">{non_belt_portion}</span><span class="s2">% non-belt post-adjustment portion detected&quot;</span>
+        <span class="s2">&quot; at </span><span class="si">{placements}</span><span class="s2"> (exceeds </span><span class="si">{acceptance_threshold}% a</span><span class="s2">ccepted)&quot;</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="NonBeltDetected6MWT">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NonBeltDetected6MWT">[docs]</a>
+<span class="k">class</span> <span class="nc">NonBeltDetected6MWT</span><span class="p">(</span><span class="n">NonBeltDetected</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag gait record with non-belt period greater than threshold.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="NonBeltDetected6MWT.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NonBeltDetected6MWT.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">MAX_GAIT_PERC_NOT_IN_BELT</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span> <span class="o">=</span> <span class="n">acceptance_threshold</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_off_belt_period</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">start_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">START_TIME_ASSESSMENT</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">_kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">non_belt_portion</span><span class="p">,</span> <span class="n">placements</span> <span class="o">=</span> <span class="n">perc_non_belt</span><span class="p">(</span>
+            <span class="n">level</span><span class="p">,</span> <span class="s2">&quot;placement_bouts&quot;</span><span class="p">,</span> <span class="n">start_time</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_flag_kwargs</span><span class="p">(</span>
+            <span class="n">acceptance_threshold</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span><span class="p">,</span>
+            <span class="n">non_belt_portion</span><span class="o">=</span><span class="n">non_belt_portion</span><span class="p">,</span>
+            <span class="n">placements</span><span class="o">=</span><span class="n">placements</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">non_belt_portion</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span></div>
+
+
+
+<div class="viewcode-block" id="NonBeltDetectedUTT">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT">[docs]</a>
+<span class="k">class</span> <span class="nc">NonBeltDetectedUTT</span><span class="p">(</span><span class="n">NonBeltDetected</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag gait record with non-belt period greater than threshold.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="NonBeltDetectedUTT.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NonBeltDetectedUTT.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">MAX_GAIT_PERC_NOT_IN_BELT</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span> <span class="o">=</span> <span class="n">acceptance_threshold</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_off_belt_period</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">start_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">START_TIME_ASSESSMENT</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">_kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">non_belt_portion</span><span class="p">,</span> <span class="n">placements</span> <span class="o">=</span> <span class="n">perc_non_belt</span><span class="p">(</span>
+            <span class="n">level</span><span class="p">,</span> <span class="s2">&quot;placement_bouts_first_5_turns&quot;</span><span class="p">,</span> <span class="n">start_time</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_flag_kwargs</span><span class="p">(</span>
+            <span class="n">acceptance_threshold</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span><span class="p">,</span>
+            <span class="n">non_belt_portion</span><span class="o">=</span><span class="n">non_belt_portion</span><span class="p">,</span>
+            <span class="n">placements</span><span class="o">=</span><span class="n">placements</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">non_belt_portion</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span></div>
+
+
+
+<div class="viewcode-block" id="FlagNonBeltSBT">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.FlagNonBeltSBT">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagNonBeltSBT</span><span class="p">(</span><span class="n">NonBeltDetected</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag SBT records with non-belt period greater than threshold.&quot;&quot;&quot;</span>
+
+    <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">MAX_SBT_PERC_NOT_IN_BELT</span>
+    <span class="n">placements</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_off_belt_period</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">acceptance_threshold</span><span class="p">,</span>
+        <span class="n">start_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">START_TIME_ASSESSMENT</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">_kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">non_belt_portion</span><span class="p">,</span> <span class="n">placements</span> <span class="o">=</span> <span class="n">perc_non_belt</span><span class="p">(</span>
+            <span class="n">level</span><span class="p">,</span> <span class="s2">&quot;placement_bouts&quot;</span><span class="p">,</span> <span class="n">start_time</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_flag_kwargs</span><span class="p">(</span>
+            <span class="n">acceptance_threshold</span><span class="o">=</span><span class="n">acceptance_threshold</span><span class="p">,</span>
+            <span class="n">non_belt_portion</span><span class="o">=</span><span class="n">non_belt_portion</span><span class="p">,</span>
+            <span class="n">placements</span><span class="o">=</span><span class="n">placements</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">non_belt_portion</span> <span class="o">&lt;=</span> <span class="n">acceptance_threshold</span></div>
+
+
+
+<div class="viewcode-block" id="FlagAdjustmentNonBeltSBT">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.FlagAdjustmentNonBeltSBT">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagAdjustmentNonBeltSBT</span><span class="p">(</span><span class="n">NonBeltPostAdjustmentDetected</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag SBT records with non-belt post-adjustment period.&quot;&quot;&quot;</span>
+
+    <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">MAX_SBT_PERC_NOT_IN_BELT</span>
+    <span class="n">placements</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_off_belt_period</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">acceptance_threshold</span><span class="p">,</span>
+        <span class="n">start_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">END_POSTURAL_ADJUSTMENT</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">_kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">non_belt_portion</span><span class="p">,</span> <span class="n">placements</span> <span class="o">=</span> <span class="n">perc_non_belt</span><span class="p">(</span>
+            <span class="n">level</span><span class="p">,</span> <span class="s2">&quot;placement_bouts&quot;</span><span class="p">,</span> <span class="n">start_time</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_flag_kwargs</span><span class="p">(</span>
+            <span class="n">acceptance_threshold</span><span class="o">=</span><span class="n">acceptance_threshold</span><span class="p">,</span>
+            <span class="n">non_belt_portion</span><span class="o">=</span><span class="n">non_belt_portion</span><span class="p">,</span>
+            <span class="n">placements</span><span class="o">=</span><span class="n">placements</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">non_belt_portion</span> <span class="o">&lt;=</span> <span class="n">acceptance_threshold</span></div>
+
+
+
+<div class="viewcode-block" id="LargeTurnsPerMinute">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute">[docs]</a>
+<span class="k">class</span> <span class="nc">LargeTurnsPerMinute</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract rate of large turns used in rectilinear walking bout detection.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter_x_turns&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;accelerometer&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;large_turns_per_min&quot;</span><span class="p">,</span> <span class="s2">&quot;large_turns_per_min&quot;</span><span class="p">),</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">,</span>
+        <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The number of large turns per minute.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="LargeTurnsPerMinute.large_turns_per_min">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.LargeTurnsPerMinute.large_turns_per_min">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">large_turns_per_min</span><span class="p">(</span><span class="n">turns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">acc</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute number of large turns per minute.&quot;&quot;&quot;</span>
+        <span class="c1"># number of large turns that affect rectilinear walking detection</span>
+        <span class="n">n_turns</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">turns</span><span class="p">[</span><span class="s2">&quot;angle&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">WALKING_BOUT_TURN_MAX_ANGLE</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="c1"># compute level duration from accelerometer data</span>
+        <span class="n">duration_seconds</span> <span class="o">=</span> <span class="p">(</span><span class="n">acc</span><span class="p">[</span><span class="s2">&quot;ts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">acc</span><span class="p">[</span><span class="s2">&quot;ts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+        <span class="n">duration_minutes</span> <span class="o">=</span> <span class="n">duration_seconds</span> <span class="o">/</span> <span class="mi">60</span>
+        <span class="c1"># return turns per minute</span>
+        <span class="k">return</span> <span class="n">n_turns</span> <span class="o">/</span> <span class="n">duration_minutes</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExcessiveTurns">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.ExcessiveTurns">[docs]</a>
+<span class="k">class</span> <span class="nc">ExcessiveTurns</span><span class="p">(</span><span class="n">FlagLevelStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag record with at least a pre-specified number of turns per minute.&quot;&quot;&quot;</span>
+
+    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">BEHAVIORAL</span>
+    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+
+<div class="viewcode-block" id="ExcessiveTurns.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.ExcessiveTurns.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">MAX_TURNS_PER_MIN</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;At least </span><span class="si">{</span><span class="n">acceptance_threshold</span><span class="si">}</span><span class="s2"> turns per minute detected&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;number_of_turns_per_min_greater_than_</span><span class="si">{</span><span class="n">acceptance_threshold</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reason</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;At least </span><span class="si">{</span><span class="n">acceptance_threshold</span><span class="si">}</span><span class="s2"> turns per minute detected.&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span> <span class="o">=</span> <span class="n">acceptance_threshold</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_turns_per_minute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">task_name</span> <span class="o">=</span> <span class="n">_kwargs</span><span class="p">[</span><span class="s2">&quot;task_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">measure_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">task_name</span><span class="si">}</span><span class="s2">-large_turns_per_min&quot;</span>
+        <span class="n">turns_per_minute</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">measure_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">measure_id</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">return</span> <span class="n">turns_per_minute</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span></div>
+
+
+
+<div class="viewcode-block" id="percentage_off_bouts">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.percentage_off_bouts">[docs]</a>
+<span class="k">def</span> <span class="nf">percentage_off_bouts</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute percentage of non-moving portion of the signal.&quot;&quot;&quot;</span>
+    <span class="n">movement_duration</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;detected_walking&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">total_duration</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">perc_off_bouts</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">movement_duration</span> <span class="o">/</span> <span class="n">total_duration</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">perc_off_bouts</span></div>
+
+
+
+<div class="viewcode-block" id="PercentageNotMoving">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.PercentageNotMoving">[docs]</a>
+<span class="k">class</span> <span class="nc">PercentageNotMoving</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract percentage of recording where no walking is detected..&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;movement_bouts&quot;</span><span class="p">]</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;perc_not_moving&quot;</span><span class="p">,</span> <span class="s2">&quot;perc_not_moving&quot;</span><span class="p">),</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">,</span>
+        <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The percentage of the signal with no movement detected.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="PercentageNotMoving.no_movement_period">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.PercentageNotMoving.no_movement_period">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">no_movement_period</span><span class="p">(</span><span class="n">df_walking</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute percentage of non moving portion of the signal.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">percentage_off_bouts</span><span class="p">(</span><span class="n">df_walking</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PercentageNotWalking">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.PercentageNotWalking">[docs]</a>
+<span class="k">class</span> <span class="nc">PercentageNotWalking</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract percentage of recording where no walking is detected..&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;walking_placement_no_turn_bouts&quot;</span><span class="p">]</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;perc_not_walking&quot;</span><span class="p">,</span> <span class="s2">&quot;perc_not_walking&quot;</span><span class="p">),</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">,</span>
+        <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The percentage of the signal with no walking detected.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="PercentageNotWalking.no_walking_period">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.PercentageNotWalking.no_walking_period">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">no_walking_period</span><span class="p">(</span><span class="n">df_walking</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute percentage of non walking portion of the signal.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">percentage_off_bouts</span><span class="p">(</span><span class="n">df_walking</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="NoMovementDetected">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NoMovementDetected">[docs]</a>
+<span class="k">class</span> <span class="nc">NoMovementDetected</span><span class="p">(</span><span class="n">FlagLevelStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag record with at least a pre-specified percentage of non-movement.&quot;&quot;&quot;</span>
+
+    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">BEHAVIORAL</span>
+    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+
+<div class="viewcode-block" id="NoMovementDetected.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NoMovementDetected.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">MAX_PERC_NOT_MOVING</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;At least </span><span class="si">{</span><span class="n">acceptance_threshold</span><span class="si">}</span><span class="s2">% non-movement period detected&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;non_movement_greater_than_</span><span class="si">{</span><span class="n">acceptance_threshold</span><span class="si">}</span><span class="s2">_perc&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reason</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;At least </span><span class="si">{</span><span class="n">acceptance_threshold</span><span class="si">}</span><span class="s2">% non-movement period detected.&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span> <span class="o">=</span> <span class="n">acceptance_threshold</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_no_movement_period</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">task_name</span> <span class="o">=</span> <span class="n">_kwargs</span><span class="p">[</span><span class="s2">&quot;task_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">measure_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">task_name</span><span class="si">}</span><span class="s2">-perc_not_moving&quot;</span>
+        <span class="n">perc_not_walking</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">measure_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">measure_id</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">return</span> <span class="n">perc_not_walking</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span></div>
+
+
+
+<div class="viewcode-block" id="NotEnoughRectilinearWalkingOnBeltDetected">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected">[docs]</a>
+<span class="k">class</span> <span class="nc">NotEnoughRectilinearWalkingOnBeltDetected</span><span class="p">(</span><span class="n">FlagLevelStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag record containing less than a % of rectilinear walking on belt.&quot;&quot;&quot;</span>
+
+    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">BEHAVIORAL</span>
+    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+
+<div class="viewcode-block" id="NotEnoughRectilinearWalkingOnBeltDetected.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NotEnoughRectilinearWalkingOnBeltDetected.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">MAX_PERC_NOT_RECTILINEAR_BELT_WALK</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">_kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;At least </span><span class="si">{</span><span class="n">acceptance_threshold</span><span class="si">}</span><span class="s2">% non-rectilinear belt walking detected&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;non_rectilinear_on_belt_walking_greater_than_</span><span class="si">{</span><span class="n">acceptance_threshold</span><span class="si">}</span><span class="s2">_perc&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reason</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;At least </span><span class="si">{</span><span class="n">acceptance_threshold</span><span class="si">}</span><span class="s2">% non-rectilinear on-belt period.&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span> <span class="o">=</span> <span class="n">acceptance_threshold</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_no_walking_period</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">task_name</span> <span class="o">=</span> <span class="n">_kwargs</span><span class="p">[</span><span class="s2">&quot;task_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">measure_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">task_name</span><span class="si">}</span><span class="s2">-perc_not_walking&quot;</span>
+        <span class="n">perc_not_walking</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">measure_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">measure_id</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">return</span> <span class="n">perc_not_walking</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">acceptance_threshold</span></div>
+
+
+
+<div class="viewcode-block" id="NoTurnsDetected">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.NoTurnsDetected">[docs]</a>
+<span class="k">class</span> <span class="nc">NoTurnsDetected</span><span class="p">(</span><span class="n">FlagLevelStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag record with no turns present.&quot;&quot;&quot;</span>
+
+    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;No turns detected.&quot;</span><span class="p">,</span> <span class="s2">&quot;no_turns_detected&quot;</span><span class="p">)</span>
+    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">BEHAVIORAL</span>
+    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+    <span class="n">reason</span> <span class="o">=</span> <span class="s2">&quot;At least 1 turn should be detected.&quot;</span>
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_check_n_turns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">turns</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span>
+            <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter&quot;</span>
+            <span class="s2">&quot;_x_turns_u_refined&quot;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">data</span>
+
+        <span class="k">return</span> <span class="n">turns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span></div>
+
+
+
+<div class="viewcode-block" id="truncate_first_5_turns">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.truncate_first_5_turns">[docs]</a>
+<span class="k">def</span> <span class="nf">truncate_first_5_turns</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">turns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Truncate the data frame to keep first 5 turns.&quot;&quot;&quot;</span>
+    <span class="c1"># handle corner case with no turns - return all data</span>
+    <span class="k">if</span> <span class="n">turns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+    <span class="c1"># ensure there is a fourth turn otherwise take the last detected turn</span>
+    <span class="n">last_index</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">turns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># find end time of fourth (or last) turn</span>
+    <span class="n">ts_ends</span> <span class="o">=</span> <span class="n">turns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">last_index</span><span class="p">][</span><span class="s2">&quot;end&quot;</span><span class="p">]</span>
+    <span class="c1"># find indexes where start time is before end time of 4th (last) turn</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;start_time&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">ts_ends</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+    <span class="c1"># filter respective bouts</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="c1"># replace end time of bout with end time of 4th (last) turn</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;end_time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ts_ends</span>
+    <span class="c1"># update duration</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;end_time&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;start_time&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+
+<div class="viewcode-block" id="TruncateFirst5Turns">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.TruncateFirst5Turns">[docs]</a>
+<span class="k">class</span> <span class="nc">TruncateFirst5Turns</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Truncate UTT placement_bouts to keep only the first 5 turns.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TruncateFirst5Turns.get_new_data_set_id">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.TruncateFirst5Turns.get_new_data_set_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_new_data_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Suffix new_data_set_id with current data_set_id &amp; first_5_turns.&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_set_ids</span> <span class="o">:=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_data_set_ids</span><span class="p">()))</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">data_set_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_first_5_turns&quot;</span></div>
+
+
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_truncate_first_5_turns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Truncate the data frame to keep first 5 turns.&quot;&quot;&quot;</span>
+        <span class="n">turns</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span>
+            <span class="s2">&quot;gyroscope_ts_rotated_resampled_butterworth_low_pass_filter&quot;</span>
+            <span class="s2">&quot;_x_turns_u_refined&quot;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">data</span>
+
+        <span class="k">return</span> <span class="n">truncate_first_5_turns</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">turns</span><span class="p">)</span>
+
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">PLACEMENT_DEFINITIONS</span></div>
+
+
+
+<div class="viewcode-block" id="truncate_signal">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.truncate_signal">[docs]</a>
+<span class="k">def</span> <span class="nf">truncate_signal</span><span class="p">(</span><span class="n">signal</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">thrs_start</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Truncate `signal` before threshold_start.&quot;&quot;&quot;</span>
+    <span class="c1"># Detect start time</span>
+    <span class="n">time_zero</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># Compute time of postural adjustment end from start</span>
+    <span class="n">end_posture_adjust</span> <span class="o">=</span> <span class="n">time_zero</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">thrs_start</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Find posterior to start_time</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">end_posture_adjust</span>
+    <span class="c1"># Preserve signal from start_time</span>
+    <span class="k">return</span> <span class="n">signal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span></div>
+
+
+
+<div class="viewcode-block" id="perc_excessive_motion">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.perc_excessive_motion">[docs]</a>
+<span class="k">def</span> <span class="nf">perc_excessive_motion</span><span class="p">(</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;flagged_motion&quot;</span><span class="p">,</span> <span class="n">thrs_start</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return excessive motion percentage.&quot;&quot;&quot;</span>
+    <span class="c1"># Select the target dataset to probe</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="n">data_set_id</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+    <span class="c1"># Truncate the signal to the corresponding start time (adjust/stabilise)</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">truncate_signal</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">thrs_start</span><span class="p">)</span>
+    <span class="c1"># Output the percentage of excessive motion period over total duration</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">flag</span><span class="p">[</span><span class="s2">&quot;flag&quot;</span><span class="p">]])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flag</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span></div>
+
+
+
+<div class="viewcode-block" id="ExcessiveMotionFlagger">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.ExcessiveMotionFlagger">[docs]</a>
+<span class="k">class</span> <span class="nc">ExcessiveMotionFlagger</span><span class="p">(</span><span class="n">FlagLevelStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag minimum length of valid recording without excessive motion.&quot;&quot;&quot;</span>
+
+    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">BEHAVIORAL</span>
+    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+    <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">MAX_FRACTION_EXCESSIVE_MOTION</span>
+    <span class="n">start_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">START_TIME_ASSESSMENT</span>
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_excessive_motion_detected</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">acceptance_threshold</span><span class="p">,</span>
+        <span class="n">start_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">start_time</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">excessive_motion_portion</span> <span class="o">=</span> <span class="n">perc_excessive_motion</span><span class="p">(</span>
+            <span class="n">level</span><span class="p">,</span> <span class="s2">&quot;flagged_motion&quot;</span><span class="p">,</span> <span class="n">start_time</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_flag_kwargs</span><span class="p">(</span>
+            <span class="n">acceptance_threshold</span><span class="o">=</span><span class="n">acceptance_threshold</span><span class="p">,</span>
+            <span class="n">excessive_motion_portion</span><span class="o">=</span><span class="n">excessive_motion_portion</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">excessive_motion_portion</span> <span class="o">&lt;=</span> <span class="n">acceptance_threshold</span></div>
+
+
+
+<div class="viewcode-block" id="FlagStabilisationExcessiveMotion">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagStabilisationExcessiveMotion</span><span class="p">(</span><span class="n">ExcessiveMotionFlagger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag minimum length of valid recording without excessive motion.&quot;&quot;&quot;</span>
+
+    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span>
+        <span class="s2">&quot;Excessive Motion Detected Post-adjustment&quot;</span><span class="p">,</span> <span class="s2">&quot;excessive_post_adjustment_motion&quot;</span>
+    <span class="p">)</span>
+    <span class="n">reason</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;</span><span class="si">{excessive_motion_portion:.1f}% e</span><span class="s2">xcessive motion post-adjustment portion &quot;</span>
+        <span class="s2">&quot;detected (exceeds </span><span class="si">{acceptance_threshold}% a</span><span class="s2">ccepted)&quot;</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="FlagStabilisationExcessiveMotion.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.FlagStabilisationExcessiveMotion.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">START_TIME_ASSESSMENT</span><span class="p">,)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FlagPostAdjustExcessiveMotion">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagPostAdjustExcessiveMotion</span><span class="p">(</span><span class="n">ExcessiveMotionFlagger</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag minimum length of valid recording without excessive motion.&quot;&quot;&quot;</span>
+
+    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;Excessive Motion Detected during Stabilisation&quot;</span><span class="p">,</span> <span class="s2">&quot;excessive_motion&quot;</span><span class="p">)</span>
+    <span class="n">reason</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;</span><span class="si">{excessive_motion_portion}% e</span><span class="s2">xcessive motion portion detected &quot;</span>
+        <span class="s2">&quot;(exceeds </span><span class="si">{acceptance_threshold}% a</span><span class="s2">ccepted)&quot;</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="FlagPostAdjustExcessiveMotion.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.flags.le_flags.html#dispel.providers.generic.flags.le_flags.FlagPostAdjustExcessiveMotion.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">END_POSTURAL_ADJUSTMENT</span><span class="p">,)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

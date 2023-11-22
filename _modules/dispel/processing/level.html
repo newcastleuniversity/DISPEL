@@ -1,0 +1,1331 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.processing.level &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/processing/level';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../processing.html" class="nav-link">dispel.processing</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.proce...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.processing.level</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Level processing functionalities.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">MethodType</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">FlagSeverity</span><span class="p">,</span> <span class="n">FlagType</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span><span class="p">,</span> <span class="n">LevelId</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CoreProcessingStepGroup</span><span class="p">,</span>
+    <span class="n">ProcessingControlResult</span><span class="p">,</span>
+    <span class="n">ProcessingResult</span><span class="p">,</span>
+    <span class="n">ProcessingStep</span><span class="p">,</span>
+    <span class="n">ProcessResultType</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.flags</span> <span class="kn">import</span> <span class="n">FlagStepMixin</span>
+
+<span class="n">MultipleLevelIdsType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">LevelId</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">LevelId</span><span class="p">]]</span>
+
+
+<div class="viewcode-block" id="LevelProcessingResultBase">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingResultBase">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">LevelProcessingResultBase</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The processing result base of a level processing step.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: The level where the processing result is stored.</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n">Level</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Check that level id is not None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;level value cannot be null.&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="LevelProcessingResult">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingResult">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">LevelProcessingResult</span><span class="p">(</span><span class="n">ProcessingResult</span><span class="p">,</span> <span class="n">LevelProcessingResultBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The processing result of a level processing step.&quot;&quot;&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="LevelProcessingControlResult">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingControlResult">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">LevelProcessingControlResult</span><span class="p">(</span><span class="n">ProcessingControlResult</span><span class="p">,</span> <span class="n">LevelProcessingResultBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The processing result of an error in a level.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LevelProcessingControlResult.from_assertion_error">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingControlResult.from_assertion_error">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_assertion_error</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">,</span>
+        <span class="n">error</span><span class="p">:</span> <span class="ne">AssertionError</span><span class="p">,</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Level</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize object from a caught assertion error.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        step</span>
+<span class="sd">            The processing step from where the assertion error has been caught.</span>
+<span class="sd">        error</span>
+<span class="sd">            The assertion error that has been caught.</span>
+<span class="sd">        level</span>
+<span class="sd">            The level corresponding to the :class:`LevelProcessingControlResult`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LevelProcessingControlResult</span>
+<span class="sd">            The initialized level processing control result object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Level cannot be null.&quot;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="n">ProcessingControlResult</span><span class="o">.</span><span class="n">from_assertion_error</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">step</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">step</span><span class="p">,</span>
+            <span class="n">targets</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span>
+            <span class="n">error</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">error</span><span class="p">,</span>
+            <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+            <span class="n">error_handling</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">error_handling</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LevelProcessingControlResult.from_flag">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingControlResult.from_flag">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_flag</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">flag</span><span class="p">:</span> <span class="n">Flag</span><span class="p">,</span>
+        <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;ProcessingStep&quot;</span><span class="p">,</span>
+        <span class="n">targets</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Level</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize processing control result from an flag.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flag</span>
+<span class="sd">            The flag from which the control processing result is to be created.</span>
+<span class="sd">        step</span>
+<span class="sd">            The associated processing step.</span>
+<span class="sd">        targets</span>
+<span class="sd">            The flag target entities.</span>
+<span class="sd">        level</span>
+<span class="sd">            The level corresponding to the :class:`LevelProcessingControlResult`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LevelProcessingControlResult</span>
+<span class="sd">            The initialized level processing control result object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">ProcessingControlResult</span><span class="o">.</span><span class="n">from_flag</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">Level</span><span class="p">),</span> <span class="s2">&quot;Level cannot be null.&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">step</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">step</span><span class="p">,</span>
+            <span class="n">targets</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">targets</span><span class="p">,</span>
+            <span class="n">error</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">error</span><span class="p">,</span>
+            <span class="n">error_handling</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">error_handling</span><span class="p">,</span>
+            <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<span class="k">def</span> <span class="nf">_intersection</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_union</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="LevelFilter">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelFilter">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelFilter</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A base class to filter levels during processing.</span>
+
+<span class="sd">    :class:`LevelFilter` provide a central mechanism to differentiate processing steps</span>
+<span class="sd">    in combination with :class:`LevelProcessingStep` and</span>
+<span class="sd">    :class:`~dispel.processing.transform.ConcatenateLevels`. Each filter implementation</span>
+<span class="sd">    must provide a :meth:`~LevelFilter.filter` function that consumes a container of</span>
+<span class="sd">    levels and returns a set of levels containing those that should be processed.</span>
+<span class="sd">    Furthermore, the method :meth:`~LevelFilter.repr` provides a hook to create a</span>
+<span class="sd">    readable representation of the filter.</span>
+
+<span class="sd">    Filters can also be combined by using logical operators ``&amp;`` and ``|``.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Each level filter has to implement the methods ``filter`` and ``repr``. Assuming we</span>
+<span class="sd">    want to create a filter that inspects some variables in the context of each level,</span>
+<span class="sd">    we can do the following:</span>
+
+<span class="sd">    &gt;&gt;&gt; from typing import Any, Iterable, Set</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.levels import Level</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.level import LevelFilter</span>
+<span class="sd">    &gt;&gt;&gt; class MyContextLevelFilter(LevelFilter):</span>
+<span class="sd">    ...     def __init__(self, variable: str, value: Any):</span>
+<span class="sd">    ...         self.variable = variable</span>
+<span class="sd">    ...         self.value = value</span>
+<span class="sd">    ...     def filter(self, levels: Iterable[Level]) -&gt; Set[Level]:</span>
+<span class="sd">    ...         return set(filter(</span>
+<span class="sd">    ...             lambda level: level.context.get_raw_value(</span>
+<span class="sd">    ...                 self.variable) == self.value, levels))</span>
+<span class="sd">    ...     def repr(self) -&gt; str:</span>
+<span class="sd">    ...         return f&#39;{self.variable} equals &quot;{self.value}&quot;&#39;</span>
+
+<span class="sd">    Given this filter one can now process levels with a specific context value by</span>
+<span class="sd">    creating a filter like ``MyContextLevelFilter(&#39;usedHand&#39;, &#39;right&#39;)``.</span>
+
+<span class="sd">    Since :class:`LevelFilter` can be used with logical operators one can create more</span>
+<span class="sd">    complex filters by simply combining them as such:</span>
+
+<span class="sd">    &gt;&gt;&gt; MyContextLevelFilter(&#39;foo&#39;, &#39;bar&#39;) &amp; MyContextLevelFilter(&#39;baz&#39;, &#39;bam&#39;)</span>
+<span class="sd">    &lt;LevelFilter: (foo equals &quot;bar&quot; and baz equals &quot;bam&quot;)&gt;</span>
+
+<span class="sd">    This filter will now only consider levels where the context variables ``foo`` equal</span>
+<span class="sd">    ``bar`` and ``baz`` equals ``bam``. This also works with or logic (``|``).</span>
+
+<span class="sd">    One can also use the inverse logic by applying the ``~`` operator to a level filter</span>
+<span class="sd">    in order to obtain its inverse.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter level.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">repr</span><span class="p">()</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+
+<div class="viewcode-block" id="LevelFilter.repr">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelFilter.repr">[docs]</a>
+    <span class="k">def</span> <span class="nf">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get representation of the filter.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        NotImplementedError</span>
+<span class="sd">            This method is not implemented since there is no unambiguous representation</span>
+<span class="sd">            of filters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+
+<div class="viewcode-block" id="LevelFilter.filter">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelFilter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter level.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        levels</span>
+<span class="sd">            The levels to be inspected for filtering</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        NotImplementedError</span>
+<span class="sd">            This method is not implemented since there is no unambiguous definition of</span>
+<span class="sd">            filters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_combined</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;LevelFilter&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Set</span><span class="p">,</span> <span class="n">Set</span><span class="p">],</span> <span class="n">Set</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LevelFilter&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">LevelFilter</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Can only combine LevelFilters. Got: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># avoid nesting default filter</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">DefaultLevelFilter</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">DefaultLevelFilter</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">other</span>
+
+        <span class="k">def</span> <span class="nf">_match</span><span class="p">(</span><span class="n">levels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">(</span><span class="n">levels</span><span class="p">),</span> <span class="n">other</span><span class="p">(</span><span class="n">levels</span><span class="p">))</span>
+
+        <span class="k">def</span> <span class="nf">_repr</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="n">op_name</span> <span class="o">=</span> <span class="p">{</span><span class="n">_intersection</span><span class="p">:</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="n">_union</span><span class="p">:</span> <span class="s2">&quot;or&quot;</span><span class="p">}</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">repr</span><span class="p">()</span><span class="si">}</span><span class="s2"> &quot;</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">op_name</span><span class="p">[</span><span class="n">func</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">repr</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span>
+            <span class="p">)</span>  <span class="c1"># pylint: disable=W0212</span>
+
+        <span class="n">instance</span> <span class="o">=</span> <span class="n">LevelFilter</span><span class="p">()</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s2">&quot;filter&quot;</span><span class="p">,</span> <span class="n">_match</span><span class="p">)</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s2">&quot;repr&quot;</span><span class="p">,</span> <span class="n">_repr</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">instance</span>
+
+    <span class="k">def</span> <span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;LevelFilter&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LevelFilter&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_combined</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">_intersection</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;LevelFilter&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LevelFilter&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_combined</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">_union</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__invert__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LevelFilter&quot;</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">_inverted_filter</span><span class="p">(</span><span class="n">levels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_repr</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Inverse of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">repr</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># pylint: disable=W0212</span>
+
+        <span class="n">instance</span> <span class="o">=</span> <span class="n">LevelFilter</span><span class="p">()</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s2">&quot;filter&quot;</span><span class="p">,</span> <span class="n">_inverted_filter</span><span class="p">)</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s2">&quot;repr&quot;</span><span class="p">,</span> <span class="n">_repr</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">instance</span></div>
+
+
+
+<span class="n">LevelFilterType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">MultipleLevelIdsType</span><span class="p">,</span> <span class="n">LevelFilter</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="LevelIdFilter">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelIdFilter">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelIdFilter</span><span class="p">(</span><span class="n">LevelFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A level filter based on level ids.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level_ids</span>
+<span class="sd">        The level id(s) to be filtered for processing. The level id can be provided as</span>
+<span class="sd">        :class:`str`, :class:`~dispel.data.core.LevelId` or lists of either. Levels with</span>
+<span class="sd">        the respective provided ids will be considered during processing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LevelIdFilter.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelIdFilter.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level_ids</span><span class="p">:</span> <span class="n">MultipleLevelIdsType</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level_ids</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">level_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">LevelId</span><span class="p">(</span><span class="n">level_ids</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level_ids</span><span class="p">,</span> <span class="n">LevelId</span><span class="p">):</span>
+            <span class="n">level_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">level_ids</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level_ids</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">level_id</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">level_id</span> <span class="ow">in</span> <span class="n">level_ids</span><span class="p">):</span>
+                <span class="n">level_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">LevelId</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">level_id</span><span class="p">))</span> <span class="k">for</span> <span class="n">level_id</span> <span class="ow">in</span> <span class="n">level_ids</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level_id</span><span class="p">,</span> <span class="n">LevelId</span><span class="p">)</span> <span class="k">for</span> <span class="n">level_id</span> <span class="ow">in</span> <span class="n">level_ids</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;The list of level_ids has to be filled only by </span><span class="si">{str}</span><span class="s2">s or {&quot;</span>
+                    <span class="s2">&quot;LevelId}s, never both.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">level_ids</span> <span class="o">=</span> <span class="n">level_ids</span></div>
+
+
+<div class="viewcode-block" id="LevelIdFilter.repr">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelIdFilter.repr">[docs]</a>
+    <span class="k">def</span> <span class="nf">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get representation of the filter.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;level id in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">level_ids</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="LevelIdFilter.filter">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelIdFilter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter levels being part of a predefined level id set.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">level_ids</span><span class="p">,</span> <span class="n">levels</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="DefaultLevelFilter">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.DefaultLevelFilter">[docs]</a>
+<span class="k">class</span> <span class="nc">DefaultLevelFilter</span><span class="p">(</span><span class="n">LevelFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A default level filter that considers all levels.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DefaultLevelFilter.repr">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.DefaultLevelFilter.repr">[docs]</a>
+    <span class="k">def</span> <span class="nf">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get representation of the filter.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;*&quot;</span></div>
+
+
+<div class="viewcode-block" id="DefaultLevelFilter.filter">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.DefaultLevelFilter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter method returns a set of levels.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LevelProcessingStepProtocol">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelProcessingStepProtocol</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Protocol for level processing steps.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LevelProcessingStepProtocol.assert_valid_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol.assert_valid_level">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">assert_valid_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform assertions that a given level can be processed.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level to be tested for validity</span>
+<span class="sd">        reading</span>
+<span class="sd">            The parent reading of the level</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional keyword arguments passed to the processing function.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="LevelProcessingStepProtocol.flag_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol.flag_level">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">flag_level</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Flag</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag the provided level.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level to be flagged.</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading associated to the provided level.</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional arguments passed by :func:`~dispel.processing.process`.</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        Flag</span>
+<span class="sd">            The resulted flags.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">yield</span> <span class="bp">NotImplemented</span></div>
+
+
+<div class="viewcode-block" id="LevelProcessingStepProtocol.get_level_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol.get_level_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_level_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the level flag targets.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level to be flagged.</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading associated with the level flag.</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional keyword arguments eventually used for flag targets</span>
+<span class="sd">            extraction.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Iterable[EntityType]</span>
+<span class="sd">            An iterable of entities that are flagged.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">level</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="LevelProcessingStepProtocol.process_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol.process_level">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">process_level</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided Level.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level to be processed</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading to be processed</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional arguments passed by :meth:`process_level`.</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        ProcessResultType</span>
+<span class="sd">            Results from processing the level.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">yield</span> <span class="bp">NotImplemented</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LevelFilterProcessingStepMixin">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelFilterProcessingStepMixin</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A mixin class for all processing steps using level filters.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        The filter to be used to select the levels to be processed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">level_filter</span><span class="p">:</span> <span class="n">LevelFilter</span> <span class="o">=</span> <span class="n">DefaultLevelFilter</span><span class="p">()</span>
+
+<div class="viewcode-block" id="LevelFilterProcessingStepMixin.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">level_filter</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;level_filter&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">level_filter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_level_filter</span><span class="p">(</span><span class="n">level_filter</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LevelFilterProcessingStepMixin.get_level_filter">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin.get_level_filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_level_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LevelFilter</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the level filter to sub-select levels to be processed.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">level_filter</span></div>
+
+
+<div class="viewcode-block" id="LevelFilterProcessingStepMixin.set_level_filter">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin.set_level_filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_level_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level_filter</span><span class="p">:</span> <span class="n">LevelFilterType</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a level filter to sub-select levels to be processed.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level_filter</span>
+<span class="sd">            The level filter to be used.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level_filter</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">LevelId</span><span class="p">)):</span>
+            <span class="n">level_filter</span> <span class="o">=</span> <span class="n">LevelIdFilter</span><span class="p">(</span><span class="n">level_filter</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">level_filter</span> <span class="o">=</span> <span class="n">level_filter</span></div>
+
+
+<div class="viewcode-block" id="LevelFilterProcessingStepMixin.inject_level_filter_from_step">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelFilterProcessingStepMixin.inject_level_filter_from_step">[docs]</a>
+    <span class="k">def</span> <span class="nf">inject_level_filter_from_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="s2">&quot;LevelFilterProcessingStepMixin&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Inject the level filter from a step into the filter of this step.</span>
+
+<span class="sd">        This function allows to have this processing step depend on the level</span>
+<span class="sd">        filter of another step.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        step</span>
+<span class="sd">            A level filter processing step of which the level filter is used</span>
+<span class="sd">            in this step too.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_func_cache_attr</span> <span class="o">=</span> <span class="s2">&quot;__original_get_level_filter&quot;</span>
+        <span class="n">_injected_step_attr</span> <span class="o">=</span> <span class="s2">&quot;__injected_step&quot;</span>
+
+        <span class="c1"># only cache the original function once to avoid cascading filters</span>
+        <span class="c1"># from multiple injections</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_func_cache_attr</span><span class="p">):</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_func_cache_attr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_level_filter</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">old_step</span> <span class="o">:=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_injected_step_attr</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">step</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Re-assigning step </span><span class="si">{</span><span class="bp">self</span><span class="si">}</span><span class="s2"> to a new </span><span class="si">{</span><span class="n">step</span><span class="si">}</span><span class="s2"> may lead to unintended &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;side-effects with </span><span class="si">{</span><span class="n">old_step</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+                    <span class="ne">UserWarning</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_get_level_filter</span><span class="p">(</span><span class="n">inner_self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LevelFilter</span><span class="p">:</span>
+            <span class="n">level_filter</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">inner_self</span><span class="p">,</span> <span class="n">_func_cache_attr</span><span class="p">)()</span>
+            <span class="k">return</span> <span class="n">level_filter</span> <span class="o">&amp;</span> <span class="n">step</span><span class="o">.</span><span class="n">get_level_filter</span><span class="p">()</span>
+
+        <span class="c1"># See https://github.com/python/mypy/issues/2427</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_injected_step_attr</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+        <span class="nb">setattr</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="s2">&quot;get_level_filter&quot;</span><span class="p">,</span>
+            <span class="n">MethodType</span><span class="p">(</span><span class="n">_get_level_filter</span><span class="p">,</span> <span class="bp">self</span><span class="p">),</span>  <span class="c1"># type: ignore</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LevelProcessingStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStep">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelProcessingStep</span><span class="p">(</span>
+    <span class="n">LevelProcessingStepProtocol</span><span class="p">,</span> <span class="n">LevelFilterProcessingStepMixin</span><span class="p">,</span> <span class="n">ProcessingStep</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A level processing step is a processing step specific on levels.</span>
+
+<span class="sd">    The level processing steps&#39; :meth:`LevelProcessingStepProtocol.process_level` method</span>
+<span class="sd">    is called with the level, reading and additional arguments passed to</span>
+<span class="sd">    :meth:`~dispel.processing.core.ProcessingStep.process`. Results from the process step</span>
+<span class="sd">    are expected to be an instance of :class:`~dispel.processing.core.ProcessingResult`.</span>
+
+<span class="sd">    The :meth:`process_level` is only called with levels that pass the provided</span>
+<span class="sd">    ``level_filter`` (see :class:`LevelFilter`). Each level will be processed if no</span>
+<span class="sd">    level filter is provided. The ``level_filter`` also accepts :class:`str`,</span>
+<span class="sd">    :class:`~dispel.data.core.LevelId`\ s and lists of either and passes them to a</span>
+<span class="sd">    :class:`LevelIdFilter` for convenience.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    .. testsetup:: processing-step</span>
+
+<span class="sd">        &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">        &gt;&gt;&gt; import numpy as np</span>
+
+<span class="sd">        &gt;&gt;&gt; from dispel.data.core import Reading</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.data.levels import Level</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.data.raw import (RawDataSet, RawDataSetDefinition,</span>
+<span class="sd">        ...                           RawDataValueDefinition)</span>
+
+<span class="sd">        &gt;&gt;&gt; reading = Reading(</span>
+<span class="sd">        ...     evaluation=None,</span>
+<span class="sd">        ...     levels=[</span>
+<span class="sd">        ...     Level(id_=&#39;my-level&#39;, start=0, end=1, raw_data_sets=[</span>
+<span class="sd">        ...         RawDataSet(</span>
+<span class="sd">        ...             RawDataSetDefinition(&#39;my-data-set&#39;, None, [</span>
+<span class="sd">        ...                 RawDataValueDefinition(&#39;dummy&#39;, &#39;dummy&#39;)</span>
+<span class="sd">        ...             ]),</span>
+<span class="sd">        ...             pd.DataFrame({&#39;dummy&#39;: list(range(6))})</span>
+<span class="sd">        ...         )</span>
+<span class="sd">        ...     ])</span>
+<span class="sd">        ... ])</span>
+
+<span class="sd">    .. doctest:: processing-step</span>
+
+<span class="sd">        &gt;&gt;&gt; from dispel.data.measures import MeasureValue</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.data.values import ValueDefinition</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.processing import process</span>
+<span class="sd">        &gt;&gt;&gt; from dispel.processing.level import (LevelProcessingStep,</span>
+<span class="sd">        ...                                   LevelProcessingResult)</span>
+<span class="sd">        &gt;&gt;&gt; class MyLevelStep(LevelProcessingStep):</span>
+<span class="sd">        ...     def process_level(self, level, reading, **kwargs):</span>
+<span class="sd">        ...         raw_data_set = level.get_raw_data_set(&#39;my-data-set&#39;)</span>
+<span class="sd">        ...         yield LevelProcessingResult(</span>
+<span class="sd">        ...             step=self,</span>
+<span class="sd">        ...             sources=raw_data_set,</span>
+<span class="sd">        ...             level=level,</span>
+<span class="sd">        ...             result=MeasureValue(</span>
+<span class="sd">        ...                 ValueDefinition(&#39;my-measure-id&#39;, &#39;max value&#39;),</span>
+<span class="sd">        ...                 raw_data_set.data.max().max()</span>
+<span class="sd">        ...             )</span>
+<span class="sd">        ...         )</span>
+<span class="sd">        &gt;&gt;&gt; _ = process(reading, MyLevelStep())</span>
+<span class="sd">        &gt;&gt;&gt; reading.get_measure_set(&#39;my-level&#39;).get_raw_value(&#39;my-measure-id&#39;)</span>
+<span class="sd">        5</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LevelProcessingStep.process_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStep.process_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process all levels in reading.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading to be processed. Each level of the reading will be passed to the</span>
+<span class="sd">             ``level_filter`` and if it returns ``True`` :meth:`process_level` is</span>
+<span class="sd">             called.</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional named arguments. This allows to provide additional values, such</span>
+<span class="sd">            as placeholder values in value definitions to the actual processing</span>
+<span class="sd">            function.</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        ProcessResultType</span>
+<span class="sd">            Passes through anything that is yielded from :meth:`process_level`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_level_filter</span><span class="p">()(</span><span class="n">reading</span><span class="o">.</span><span class="n">levels</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">flag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag_level</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">LevelProcessingControlResult</span><span class="o">.</span><span class="n">from_flag</span><span class="p">(</span>
+                    <span class="n">flag</span><span class="o">=</span><span class="n">flag</span><span class="p">,</span>
+                    <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                    <span class="n">targets</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_level_flag_targets</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+                    <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">assert_valid_level</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">LevelProcessingControlResult</span><span class="o">.</span><span class="n">from_assertion_error</span><span class="p">(</span>
+                    <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">exception</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_level</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LevelProcessingStep.flag_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStep.flag_level">[docs]</a>
+    <span class="k">def</span> <span class="nf">flag_level</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Flag</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag the provided level.&quot;&quot;&quot;</span>
+        <span class="k">yield from</span> <span class="p">[]</span></div>
+
+
+<div class="viewcode-block" id="LevelProcessingStep.assert_valid_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStep.assert_valid_level">[docs]</a>
+    <span class="k">def</span> <span class="nf">assert_valid_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform assertions that a given level can be processed.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="LevelProcessingStep.process_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.LevelProcessingStep.process_level">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">process_level</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided Level.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level to be processed</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading to be processed</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional arguments passed by :meth:`process_level`.</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        ProcessResultType</span>
+<span class="sd">            Results from processing the level.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">yield</span> <span class="bp">NotImplemented</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FlagLevelStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.FlagLevelStep">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagLevelStep</span><span class="p">(</span><span class="n">FlagStepMixin</span><span class="p">,</span> <span class="n">LevelProcessingStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A level flag class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional filter to limit the levels being processed. See</span>
+<span class="sd">        :class:`~dispel.processing.level.LevelProcessingStep`.</span>
+<span class="sd">    task_name</span>
+<span class="sd">        An optional abbreviated name value of the task used for the flag. See</span>
+<span class="sd">        :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flag_name</span>
+<span class="sd">        An optional abbreviated name value of the considered flag.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flag_type</span>
+<span class="sd">        An optional flag type.</span>
+<span class="sd">        See :class:`~dispel.data.flags.FlagType`.</span>
+<span class="sd">    flag_severity</span>
+<span class="sd">        An optional flag severity.</span>
+<span class="sd">        See :class:`~dispel.data.flags.FlagSeverity`.</span>
+<span class="sd">    reason</span>
+<span class="sd">        An optional string reason of the considered flag.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    stop_processing</span>
+<span class="sd">        An optional boolean that specifies whether the flag is stop_processing,</span>
+<span class="sd">        i.e., raises an error or not. See</span>
+<span class="sd">        :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flagging_function</span>
+<span class="sd">        An optional flagging function to be applied to :class:`~dispel.data.core.Level`.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Assuming you want to flag the time frame duration of a given level, you can use</span>
+<span class="sd">    the following flag step:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import AbbreviatedValue as AV</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.level import FlagLevelStep</span>
+<span class="sd">    &gt;&gt;&gt; step = FlagLevelStep(</span>
+<span class="sd">    ...     &#39;utt&#39;,</span>
+<span class="sd">    ...     AV(&#39;U-Turn test&#39;, &#39;utt&#39;),</span>
+<span class="sd">    ...     AV(&#39;u-turn duration&#39;, &#39;utt_dur&#39;),</span>
+<span class="sd">    ...     &#39;technical&#39;,</span>
+<span class="sd">    ...     &#39;The U-Turn test duration exceeds 5 minutes.&#39;,</span>
+<span class="sd">    ...     stop_processing=False,</span>
+<span class="sd">    ...     flagging_function=lambda level: \</span>
+<span class="sd">                level.effective_time_frame.duration.total_seconds() &lt; 5 * 60,</span>
+<span class="sd">    ... )</span>
+
+<span class="sd">    The flagging function will be called with the level ``&#39;utt&#39;`` as specified in the</span>
+<span class="sd">    ``level_filter`` argument. If the function has a named parameter matching</span>
+<span class="sd">    ``reading``, the reading will be passed to the flagging function.</span>
+
+<span class="sd">    Another common scenario is to define a class that can be reused.</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.flags import FlagType</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.level import FlagLevelStep</span>
+<span class="sd">    &gt;&gt;&gt; class UTTDuration(FlagLevelStep):</span>
+<span class="sd">    ...     task_name = AV(&#39;U-Turn test&#39;, &#39;utt&#39;)</span>
+<span class="sd">    ...     flag_name = AV(&#39;u-turn duration&#39;, &#39;utt_dur&#39;)</span>
+<span class="sd">    ...     flag_type = FlagType.TECHNICAL</span>
+<span class="sd">    ...     flag_severity = FlagSeverity.DEVIATION</span>
+<span class="sd">    ...     reason = &#39;The U-Turn test duration exceeds 5 minutes.&#39;</span>
+<span class="sd">    ...     stop_processing = False</span>
+<span class="sd">    ...     flagging_function = lambda level: \</span>
+<span class="sd">                level.effective_time_frame.duration.total_seconds() &lt; 5 * 60</span>
+
+<span class="sd">    Another convenient way to provide the flagging function is to use the</span>
+<span class="sd">    ``@flag`` decorator, one can also use multiple flags for the same class</span>
+<span class="sd">    as follows:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.levels import Level</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.core import  Reading</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.flags import flag</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.level import FlagLevelStep</span>
+<span class="sd">    &gt;&gt;&gt; class UTTDuration(FlagLevelStep):</span>
+<span class="sd">    ...     task_name = AV(&#39;U-Turn test&#39;, &#39;utt&#39;)</span>
+<span class="sd">    ...     flag_name = AV(&#39;u-turn duration&#39;, &#39;utt_dur&#39;)</span>
+<span class="sd">    ...     flag_type = &#39;technical&#39;</span>
+<span class="sd">    ...     flag_severity = FlagSeverity.DEVIATION</span>
+<span class="sd">    ...     reason = &#39;The U-Turn test duration exceeds {duration} minutes.&#39;</span>
+<span class="sd">    ...     stop_processing = False</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @flag(duration=5)</span>
+<span class="sd">    ...     def _duration_5(self, level: Level) -&gt; bool:</span>
+<span class="sd">    ...         duration = level.duration</span>
+<span class="sd">    ...         return duration.total_seconds() &lt; 5 * 60</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @flag(duration=4)</span>
+<span class="sd">    ...     def _duration_4(self, level: Level, reading: Reading) -&gt; bool:</span>
+<span class="sd">    ...         evaluation_start = reading.evaluation.start</span>
+<span class="sd">    ...         level_start = level.start</span>
+<span class="sd">    ...         assert evaluation_start &lt;= level_start</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...         duration = level.duration</span>
+<span class="sd">    ...         return duration.total_seconds() &lt; 4 * 60</span>
+
+<span class="sd">    Note that the ``@flag`` decorator can take keyword arguments. These kwargs are</span>
+<span class="sd">    merged with any keyword arguments that come from processing step groups in order to</span>
+<span class="sd">    format the flag ``reason``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FlagLevelStep.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.FlagLevelStep.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">FlagType</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_severity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">FlagSeverity</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">reason</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stop_processing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">flagging_function</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">task_name</span><span class="p">,</span>
+            <span class="n">flag_name</span><span class="o">=</span><span class="n">flag_name</span><span class="p">,</span>
+            <span class="n">flag_type</span><span class="o">=</span><span class="n">flag_type</span><span class="p">,</span>
+            <span class="n">flag_severity</span><span class="o">=</span><span class="n">flag_severity</span><span class="p">,</span>
+            <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
+            <span class="n">stop_processing</span><span class="o">=</span><span class="n">stop_processing</span><span class="p">,</span>
+            <span class="n">flagging_function</span><span class="o">=</span><span class="n">flagging_function</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FlagLevelStep.process_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.FlagLevelStep.process_level">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_level</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided level.&quot;&quot;&quot;</span>
+        <span class="k">yield from</span> <span class="p">[]</span></div>
+
+
+<div class="viewcode-block" id="FlagLevelStep.get_level_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.FlagLevelStep.get_level_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_level_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get flag targets for reading flag.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flag_targets</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FlagLevelStep.get_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.FlagLevelStep.get_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Level</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get flag targets for level flag.&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Level cannot be null.&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">level</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="FlagLevelStep.flag_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.FlagLevelStep.flag_level">[docs]</a>
+    <span class="k">def</span> <span class="nf">flag_level</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Flag</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag the provided level.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">func_kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flagging_functions</span><span class="p">():</span>
+            <span class="n">new_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s2">&quot;reading&quot;</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getfullargspec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">args</span><span class="p">:</span>
+                <span class="n">new_kwargs</span><span class="p">[</span><span class="s2">&quot;reading&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reading</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">func</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="o">**</span><span class="n">new_kwargs</span><span class="p">):</span>
+                <span class="p">(</span><span class="n">merged_kwargs</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">func_kwargs</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flag</span><span class="p">(</span><span class="o">**</span><span class="n">merged_kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ProcessingStepGroup">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">ProcessingStepGroup</span><span class="p">(</span><span class="n">LevelFilterProcessingStepMixin</span><span class="p">,</span> <span class="n">CoreProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A group of processing steps with an optional level filter.</span>
+
+<span class="sd">    For examples see :class:`dispel.processing.core.CoreProcessingStepGroup`. This class</span>
+<span class="sd">    ensures that level filters are injected to the steps of this group.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ProcessingStepGroup.set_steps">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup.set_steps">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set processing steps part of the group.</span>
+
+<span class="sd">        This method ensures that steps added to the group inherit the level filter of</span>
+<span class="sd">        the group.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        steps</span>
+<span class="sd">            The steps contained in the processing group.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">steps</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">LevelFilterProcessingStepMixin</span><span class="p">):</span>
+                <span class="n">step</span><span class="o">.</span><span class="n">inject_level_filter_from_step</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">set_steps</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessingStepGroup.inject_level_filter_from_step">
+<a class="viewcode-back" href="../../../api/dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup.inject_level_filter_from_step">[docs]</a>
+    <span class="k">def</span> <span class="nf">inject_level_filter_from_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">LevelFilterProcessingStepMixin</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Inject level filter into group and steps in group.&quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">inject_level_filter_from_step</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">group_step</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_steps</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">group_step</span><span class="p">,</span> <span class="n">LevelFilterProcessingStepMixin</span><span class="p">):</span>
+                <span class="n">group_step</span><span class="o">.</span><span class="n">inject_level_filter_from_step</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.mobilized.io &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/mobilized/io';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.mobilized.io</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Functionality to read Mobilize-D YAR files.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">MutableMapping</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy.io</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Evaluation</span><span class="p">,</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.epochs</span> <span class="kn">import</span> <span class="n">EpochDefinition</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Context</span><span class="p">,</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RawDataSet</span><span class="p">,</span>
+    <span class="n">RawDataSetDefinition</span><span class="p">,</span>
+    <span class="n">RawDataSetSource</span><span class="p">,</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">Value</span><span class="p">,</span> <span class="n">ValueDefinition</span>
+
+<span class="c1"># Define required CONSTANTS</span>
+<span class="n">RECORDING_CONTEXT_KEYS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;StartDateTime&quot;</span><span class="p">,</span> <span class="s2">&quot;TimeZone&quot;</span><span class="p">}</span>
+<span class="n">SET_META_INFO</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Fs&quot;</span><span class="p">,</span> <span class="s2">&quot;Presence&quot;</span><span class="p">}</span>
+<span class="n">SET_UNICOLUMN</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">,</span> <span class="s2">&quot;Bar&quot;</span><span class="p">}</span>
+<span class="n">SET_REMAINING_MEASURES</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Distance&quot;</span><span class="p">,</span> <span class="s2">&quot;NormalizedPressure&quot;</span><span class="p">}</span>
+<span class="n">SET_XYZ</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Acc&quot;</span><span class="p">,</span> <span class="s2">&quot;Gyr&quot;</span><span class="p">,</span> <span class="s2">&quot;Mag&quot;</span><span class="p">}</span>
+
+
+<span class="c1"># Functions to read and unwrap matlab yar files</span>
+<div class="viewcode-block" id="unwrap_mat">
+<a class="viewcode-back" href="../../../../api/dispel.providers.mobilized.io.html#dispel.providers.mobilized.io.unwrap_mat">[docs]</a>
+<span class="k">def</span> <span class="nf">unwrap_mat</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Unwrap array generated by scipy load mat.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">unwrap_mat</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="read_matlab_file">
+<a class="viewcode-back" href="../../../../api/dispel.providers.mobilized.io.html#dispel.providers.mobilized.io.read_matlab_file">[docs]</a>
+<span class="k">def</span> <span class="nf">read_matlab_file</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Format matlab file to a dictionary.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.mat&quot;</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Only .mat files are supported.&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="n">mat</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;__header__&quot;</span><span class="p">:</span> <span class="n">mat</span><span class="p">[</span><span class="s2">&quot;__header__&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;__version__&quot;</span><span class="p">:</span> <span class="n">mat</span><span class="p">[</span><span class="s2">&quot;__version__&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;__globals__&quot;</span><span class="p">:</span> <span class="n">mat</span><span class="p">[</span><span class="s2">&quot;__globals__&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">unwrap_mat</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]),</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+
+<span class="c1"># Function to create a Context from dictionary format</span>
+<div class="viewcode-block" id="flatten">
+<a class="viewcode-back" href="../../../../api/dispel.providers.mobilized.io.html#dispel.providers.mobilized.io.flatten">[docs]</a>
+<span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">parent_key</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s2">&quot;_&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flatten a dictionary.&quot;&quot;&quot;</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">new_key</span> <span class="o">=</span> <span class="n">parent_key</span> <span class="o">+</span> <span class="n">separator</span> <span class="o">+</span> <span class="n">key</span> <span class="k">if</span> <span class="n">parent_key</span> <span class="k">else</span> <span class="n">key</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">MutableMapping</span><span class="p">):</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">new_key</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="n">separator</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">new_key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">items</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_context">
+<a class="viewcode-back" href="../../../../api/dispel.providers.mobilized.io.html#dispel.providers.mobilized.io.parse_context">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_context</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Context</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse the context information available.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    context</span>
+<span class="sd">        A dictionary extracted from a mobilize-D .mat file</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Context</span>
+<span class="sd">        The context representation of the passed ``data``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">Value</span><span class="p">(</span><span class="n">ValueDefinition</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">item</span><span class="p">),</span> <span class="n">context</span><span class="p">[</span><span class="n">item</span><span class="p">])</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">context</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">Context</span><span class="p">(</span><span class="n">values</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="context_from_dict">
+<a class="viewcode-back" href="../../../../api/dispel.providers.mobilized.io.html#dispel.providers.mobilized.io.context_from_dict">[docs]</a>
+<span class="k">def</span> <span class="nf">context_from_dict</span><span class="p">(</span><span class="n">dictionary</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Context</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flatten and cast to dictionary.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">parse_context</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="df_from_source">
+<a class="viewcode-back" href="../../../../api/dispel.providers.mobilized.io.html#dispel.providers.mobilized.io.df_from_source">[docs]</a>
+<span class="k">def</span> <span class="nf">df_from_source</span><span class="p">(</span><span class="n">sub_dict</span><span class="p">,</span> <span class="n">sensor_location</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a dataframe from a nested dictionary and a sensor location.&quot;&quot;&quot;</span>
+    <span class="c1"># Define sensor with multiple columns</span>
+    <span class="n">set_sensors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">sub_dict</span><span class="p">[</span><span class="n">sensor_location</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">-</span> <span class="n">SET_META_INFO</span>
+    <span class="n">set_sensors_uni</span> <span class="o">=</span> <span class="n">set_sensors</span> <span class="o">&amp;</span> <span class="n">SET_UNICOLUMN</span>
+    <span class="n">set_sensors_xyz</span> <span class="o">=</span> <span class="n">set_sensors</span> <span class="o">&amp;</span> <span class="n">SET_XYZ</span>
+
+    <span class="n">data_to_cat</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="o">*</span><span class="p">[</span><span class="n">sub_dict</span><span class="p">[</span><span class="n">sensor_location</span><span class="p">][</span><span class="n">sensor_uni</span><span class="p">]</span> <span class="k">for</span> <span class="n">sensor_uni</span> <span class="ow">in</span> <span class="n">set_sensors_uni</span><span class="p">],</span>
+        <span class="o">*</span><span class="p">[</span><span class="n">sub_dict</span><span class="p">[</span><span class="n">sensor_location</span><span class="p">][</span><span class="n">sensor_xyz</span><span class="p">]</span> <span class="k">for</span> <span class="n">sensor_xyz</span> <span class="ow">in</span> <span class="n">set_sensors_xyz</span><span class="p">],</span>
+    <span class="p">]</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="o">*</span><span class="p">[</span><span class="n">sensor_uni</span> <span class="k">for</span> <span class="n">sensor_uni</span> <span class="ow">in</span> <span class="n">set_sensors_uni</span><span class="p">],</span>
+        <span class="o">*</span><span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sensor_xyz</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">for</span> <span class="n">sensor_xyz</span> <span class="ow">in</span> <span class="n">set_sensors_xyz</span>
+            <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]</span>
+        <span class="p">],</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">remaining_measures</span> <span class="ow">in</span> <span class="n">SET_REMAINING_MEASURES</span><span class="p">:</span>
+        <span class="n">incl_remaining</span> <span class="o">=</span> <span class="n">remaining_measures</span> <span class="ow">in</span> <span class="n">set_sensors</span>
+        <span class="k">if</span> <span class="n">incl_remaining</span><span class="p">:</span>
+            <span class="n">data_to_cat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sub_dict</span><span class="p">[</span><span class="n">sensor_location</span><span class="p">][</span><span class="n">remaining_measures</span><span class="p">])</span>
+            <span class="n">columns</span> <span class="o">+=</span> <span class="p">[</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">remaining_measures</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sub_dict</span><span class="p">[</span><span class="n">sensor_location</span><span class="p">][</span><span class="n">remaining_measures</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">]</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">data_to_cat</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+<div class="viewcode-block" id="pre_formatting_yar">
+<a class="viewcode-back" href="../../../../api/dispel.providers.mobilized.io.html#dispel.providers.mobilized.io.pre_formatting_yar">[docs]</a>
+<span class="k">def</span> <span class="nf">pre_formatting_yar</span><span class="p">(</span><span class="n">dict_mat</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pre-format a YAR files.&quot;&quot;&quot;</span>
+    <span class="c1"># Instantiate the data dictionary to use to create the reading</span>
+    <span class="n">data_t1</span> <span class="o">=</span> <span class="n">dict_mat</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;TimeMeasure1&quot;</span><span class="p">]</span>
+
+    <span class="c1"># Give a name to the source here we choose YAR</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;YAR&quot;</span>
+
+    <span class="k">return</span> <span class="n">source</span><span class="p">,</span> <span class="n">data_t1</span></div>
+
+
+
+<div class="viewcode-block" id="parse_mobilized_yar">
+<a class="viewcode-back" href="../../../../api/dispel.providers.mobilized.io.html#dispel.providers.mobilized.io.parse_mobilized_yar">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_mobilized_yar</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Reading</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a reading from mobilize-d .mat yar file.&quot;&quot;&quot;</span>
+    <span class="c1"># Read the .mat file</span>
+    <span class="n">dict_mat</span> <span class="o">=</span> <span class="n">read_matlab_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="c1"># Instantiate the reading start and end, they will be updated with recording min</span>
+    <span class="c1"># and max timestamps</span>
+    <span class="n">reading_start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">reading_end</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="c1"># Instantiate the data dictionary and source</span>
+    <span class="n">source</span><span class="p">,</span> <span class="n">data_t1</span> <span class="o">=</span> <span class="n">pre_formatting_yar</span><span class="p">(</span><span class="n">dict_mat</span><span class="p">)</span>
+
+    <span class="c1"># Instantiate an empty list of levels</span>
+    <span class="n">list_level</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Go through the recordings</span>
+    <span class="k">for</span> <span class="n">it_level</span><span class="p">,</span> <span class="p">(</span><span class="n">level_name</span><span class="p">,</span> <span class="n">recording</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_t1</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="c1"># Instantiate required variables</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">raw_data_sets</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;___________&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reading Level </span><span class="si">{</span><span class="n">level_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Go through assessments in the recording</span>
+        <span class="k">for</span> <span class="n">assessment</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">recording</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># If variable are contextual add them to context</span>
+            <span class="k">if</span> <span class="n">assessment</span> <span class="ow">in</span> <span class="n">RECORDING_CONTEXT_KEYS</span><span class="p">:</span>
+                <span class="n">context</span><span class="p">[</span><span class="n">assessment</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># Else create a new level in the context to store information linked to</span>
+            <span class="c1"># the assessment</span>
+            <span class="n">context</span><span class="p">[</span><span class="n">assessment</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- - - - -&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">level_name</span><span class="si">}</span><span class="s2">: assessment </span><span class="si">{</span><span class="n">assessment</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Specific case of Standards (here it is not about Acc, Gyr, Mag but</span>
+            <span class="c1"># pressure)</span>
+            <span class="k">if</span> <span class="n">assessment</span> <span class="o">==</span> <span class="s2">&quot;Standards&quot;</span><span class="p">:</span>
+                <span class="c1"># Go through the sources</span>
+                <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">level_name</span><span class="si">}</span><span class="s2">: assessment </span><span class="si">{</span><span class="n">assessment</span><span class="si">}</span><span class="s2"> - source </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+
+                    <span class="c1"># Create a sub_dict at the level of the source</span>
+                    <span class="n">sub_dict</span> <span class="o">=</span> <span class="n">data_t1</span><span class="p">[</span><span class="n">level_name</span><span class="p">][</span><span class="n">assessment</span><span class="p">][</span><span class="n">source</span><span class="p">]</span>
+
+                    <span class="c1"># create a new level in the context to store information linked</span>
+                    <span class="c1"># to the source</span>
+                    <span class="n">context</span><span class="p">[</span><span class="n">assessment</span><span class="p">][</span><span class="n">source</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+                    <span class="c1"># Usual case</span>
+                    <span class="k">if</span> <span class="n">source</span> <span class="o">!=</span> <span class="s2">&quot;INDIP&quot;</span><span class="p">:</span>
+                        <span class="c1"># Go through sensor locations</span>
+                        <span class="k">for</span> <span class="n">sensor_location</span> <span class="ow">in</span> <span class="n">sub_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span>
+                                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">level_name</span><span class="si">}</span><span class="s2">: assessment </span><span class="si">{</span><span class="n">assessment</span><span class="si">}</span><span class="s2"> - &quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;source </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> - &quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;sensor_location </span><span class="si">{</span><span class="n">sensor_location</span><span class="si">}</span><span class="s2">&quot;</span>
+                                <span class="p">)</span>
+                            <span class="c1"># Storing contextual sensor frequency information</span>
+                            <span class="n">context</span><span class="p">[</span><span class="n">assessment</span><span class="p">][</span><span class="n">source</span><span class="p">][</span><span class="n">sensor_location</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                            <span class="n">context</span><span class="p">[</span><span class="n">assessment</span><span class="p">][</span><span class="n">source</span><span class="p">][</span><span class="n">sensor_location</span><span class="p">][</span>
+                                <span class="s2">&quot;Fs&quot;</span>
+                            <span class="p">]</span> <span class="o">=</span> <span class="n">sub_dict</span><span class="p">[</span><span class="n">sensor_location</span><span class="p">][</span><span class="s2">&quot;Fs&quot;</span><span class="p">]</span>
+
+                            <span class="c1"># Create a dataframe out of the source and sensor location</span>
+                            <span class="n">df</span> <span class="o">=</span> <span class="n">df_from_source</span><span class="p">(</span><span class="n">sub_dict</span><span class="p">,</span> <span class="n">sensor_location</span><span class="p">)</span>
+
+                            <span class="c1"># Create an identifier for the dataset</span>
+                            <span class="n">dataset_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">assessment</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">sensor_location</span><span class="si">}</span><span class="s2">&quot;</span>
+
+                            <span class="c1"># Create the definitions</span>
+                            <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+                                <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">column</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+                                <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+                            <span class="p">]</span>
+                            <span class="c1"># Create the raw_data_set objects</span>
+                            <span class="n">raw_data_sets</span> <span class="o">+=</span> <span class="p">[</span>
+                                <span class="n">RawDataSet</span><span class="p">(</span>
+                                    <span class="n">definition</span><span class="o">=</span><span class="n">RawDataSetDefinition</span><span class="p">(</span>
+                                        <span class="n">dataset_id</span><span class="p">,</span>
+                                        <span class="n">RawDataSetSource</span><span class="p">(</span><span class="n">source</span><span class="p">),</span>
+                                        <span class="n">definitions</span><span class="p">,</span>
+                                    <span class="p">),</span>
+                                    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+                                <span class="p">)</span>
+                            <span class="p">]</span>
+                    <span class="c1"># Specific case of INDIP</span>
+                    <span class="k">elif</span> <span class="n">source</span> <span class="o">==</span> <span class="s2">&quot;INDIP&quot;</span><span class="p">:</span>
+                        <span class="c1"># Storing contextual sensor frequency information</span>
+                        <span class="n">context</span><span class="p">[</span><span class="n">assessment</span><span class="p">][</span><span class="n">source</span><span class="p">][</span><span class="s2">&quot;Fs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sub_dict</span><span class="p">[</span><span class="s2">&quot;Fs&quot;</span><span class="p">]</span>
+
+                        <span class="c1"># Go through the possible scenarios</span>
+                        <span class="k">for</span> <span class="n">scenario</span> <span class="ow">in</span> <span class="n">sub_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                            <span class="k">if</span> <span class="n">scenario</span> <span class="o">==</span> <span class="s2">&quot;Fs&quot;</span><span class="p">:</span>
+                                <span class="k">continue</span>
+                            <span class="c1"># Storing contextual assessment, source and scenario</span>
+                            <span class="c1"># information</span>
+                            <span class="n">context</span><span class="p">[</span><span class="n">assessment</span><span class="p">][</span><span class="n">source</span><span class="p">][</span><span class="n">scenario</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+                            <span class="c1"># Go through the event of the specific scenario and add</span>
+                            <span class="c1"># to context</span>
+                            <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">sub_dict</span><span class="p">[</span><span class="n">scenario</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                                <span class="n">context</span><span class="p">[</span><span class="n">assessment</span><span class="p">][</span><span class="n">source</span><span class="p">][</span><span class="n">scenario</span><span class="p">][</span><span class="n">event</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_t1</span><span class="p">[</span>
+                                    <span class="n">level_name</span>
+                                <span class="p">][</span><span class="n">assessment</span><span class="p">][</span><span class="n">source</span><span class="p">][</span><span class="n">scenario</span><span class="p">][</span><span class="n">event</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> is not supported yet.&quot;</span><span class="p">)</span>
+
+                <span class="k">continue</span>
+
+            <span class="c1"># Usual case not Standards</span>
+            <span class="k">for</span> <span class="n">sensor_location</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">level_name</span><span class="si">}</span><span class="s2">: assessment </span><span class="si">{</span><span class="n">assessment</span><span class="si">}</span><span class="s2"> - &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;sensor_location </span><span class="si">{</span><span class="n">sensor_location</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># create a new level in the context for assessment and sensor_location</span>
+                <span class="n">context</span><span class="p">[</span><span class="n">assessment</span><span class="p">][</span><span class="n">sensor_location</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+                <span class="c1"># Create an identifier for the dataset</span>
+                <span class="n">dataset_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">assessment</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">sensor_location</span><span class="si">}</span><span class="s2">&quot;</span>
+
+                <span class="c1"># Create a dataframe out of the source and sensor location</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">df_from_source</span><span class="p">(</span><span class="n">data_t1</span><span class="p">[</span><span class="n">level_name</span><span class="p">][</span><span class="n">assessment</span><span class="p">],</span> <span class="n">sensor_location</span><span class="p">)</span>
+
+                <span class="c1"># update start and end for the level</span>
+                <span class="k">if</span> <span class="s2">&quot;Timestamp&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">start</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Timestamp</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">start</span><span class="p">)</span>
+                    <span class="n">end</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Timestamp</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">end</span><span class="p">)</span>
+
+                <span class="c1"># Create the definitions</span>
+                <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">column</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+                    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+                <span class="p">]</span>
+                <span class="c1"># Create the raw_data_set objects</span>
+                <span class="n">raw_data_sets</span> <span class="o">+=</span> <span class="p">[</span>
+                    <span class="n">RawDataSet</span><span class="p">(</span>
+                        <span class="n">definition</span><span class="o">=</span><span class="n">RawDataSetDefinition</span><span class="p">(</span>
+                            <span class="n">dataset_id</span><span class="p">,</span> <span class="n">RawDataSetSource</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="n">definitions</span>
+                        <span class="p">),</span>
+                        <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="p">]</span>
+
+        <span class="c1"># Update reading start and end</span>
+        <span class="k">if</span> <span class="n">it_level</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">reading_start</span> <span class="o">=</span> <span class="n">start</span>
+            <span class="n">reading_end</span> <span class="o">=</span> <span class="n">end</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">reading_start</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">reading_start</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
+            <span class="n">reading_end</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">reading_end</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+
+        <span class="c1"># Flatten the level context with . separator and cast it to a Context object</span>
+        <span class="n">formatted_context</span> <span class="o">=</span> <span class="n">context_from_dict</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+        <span class="c1"># Append the level with the raw_data_sets and the context to the level_list</span>
+        <span class="n">list_level</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">Level</span><span class="p">(</span>
+                <span class="n">id_</span><span class="o">=</span><span class="n">level_name</span><span class="p">,</span>
+                <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+                <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span>
+                <span class="n">raw_data_sets</span><span class="o">=</span><span class="n">raw_data_sets</span><span class="p">,</span>
+                <span class="n">context</span><span class="o">=</span><span class="n">formatted_context</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Create the reading</span>
+    <span class="n">path_split</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/Data/&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+    <span class="n">evaluation_code</span> <span class="o">=</span> <span class="n">path_split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">uuid</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_split</span><span class="p">)</span>
+
+    <span class="c1"># Create the evaluation</span>
+    <span class="n">evaluation</span> <span class="o">=</span> <span class="n">Evaluation</span><span class="p">(</span>
+        <span class="n">start</span><span class="o">=</span><span class="n">reading_start</span><span class="p">,</span>
+        <span class="n">end</span><span class="o">=</span><span class="n">reading_end</span><span class="p">,</span>
+        <span class="n">finished</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">definition</span><span class="o">=</span><span class="n">EpochDefinition</span><span class="p">(</span><span class="n">id_</span><span class="o">=</span><span class="n">evaluation_code</span><span class="p">),</span>
+        <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">reading</span> <span class="o">=</span> <span class="n">Reading</span><span class="p">(</span><span class="n">evaluation</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">list_level</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">reading</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

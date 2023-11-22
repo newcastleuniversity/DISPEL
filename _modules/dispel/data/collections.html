@@ -1,0 +1,1214 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.data.collections &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/data/collections';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.data....</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.data.collections</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A module for collections of measure values.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">nsmallest</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Union</span><span class="p">,</span>
+    <span class="n">ValuesView</span><span class="p">,</span>
+    <span class="n">cast</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">jellyfish</span> <span class="kn">import</span> <span class="n">damerau_levenshtein_distance</span>  <span class="c1"># pylint: disable=E0611</span>
+
+<span class="kn">from</span> <span class="nn">dispel</span> <span class="kn">import</span> <span class="n">__version__</span>
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Evaluation</span><span class="p">,</span> <span class="n">Reading</span><span class="p">,</span> <span class="n">Session</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureSet</span><span class="p">,</span> <span class="n">MeasureValue</span><span class="p">,</span> <span class="n">row_to_definition</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">MissingColumnError</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">DefinitionIdType</span><span class="p">,</span> <span class="n">ValueDefinition</span>
+<span class="kn">from</span> <span class="nn">dispel.utils</span> <span class="kn">import</span> <span class="n">convert_column_types</span><span class="p">,</span> <span class="n">plural</span>
+
+
+<div class="viewcode-block" id="SubjectNotFound">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.SubjectNotFound">[docs]</a>
+<span class="k">class</span> <span class="nc">SubjectNotFound</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class exception for not found subjects in measure collections.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SubjectNotFound.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.SubjectNotFound.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subject_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">subject_id</span><span class="si">=}</span><span class="s2"> not found in measure collection.&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="MeasureNotFound">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureNotFound">[docs]</a>
+<span class="k">class</span> <span class="nc">MeasureNotFound</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class exception for not found measures in measure collections.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MeasureNotFound.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureNotFound.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measure_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">measures</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+        <span class="n">top_3_closest_measures</span> <span class="o">=</span> <span class="n">nsmallest</span><span class="p">(</span>
+            <span class="mi">3</span><span class="p">,</span> <span class="n">measures</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">damerau_levenshtein_distance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">measure_id</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">measure_id</span><span class="si">=}</span><span class="s2"> not found in measure collection. Did you mean any &quot;</span>
+            <span class="sa">f</span><span class="s1">&#39;of these: &quot;</span><span class="si">{</span><span class="n">top_3_closest_measures</span><span class="si">}</span><span class="s1">&quot; ?&#39;</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="MeasureCollection">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection">[docs]</a>
+<span class="k">class</span> <span class="nc">MeasureCollection</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A measure collection from one or multiple readings.</span>
+
+<span class="sd">    The measure collection structure provides a common object to handle basic</span>
+<span class="sd">    transformations needed to perform analyses across multiple subjects and measures.</span>
+<span class="sd">    The data is stored in a pandas data frame and can be retrieved by calling</span>
+<span class="sd">    :attr:`data`. The returned data frame contains the measure values as well as some</span>
+<span class="sd">    automatically computed properties, such as the *trail number*, reflecting the number</span>
+<span class="sd">    of times a test was performed. A comprehensive list of properties can be found in</span>
+<span class="sd">    the table below.</span>
+
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | Column              | Description                                                |</span>
+<span class="sd">    +=====================+============================================================+</span>
+<span class="sd">    | subject_id          | A unique identifier of the subject                         |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | evaluation_uuid     | A unique identifier of the evaluation                      |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | evaluation_code     | The code identifying the type of evaluation                |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | session_uuid        | A unique identifier of a session of multiple evaluations   |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | session_code        | The code identifying the type of session                   |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | start_date          | The start date and time of the evaluation                  |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | end_date            | The end date and time of the evaluation                    |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | is_finished         | If the evaluation was completed or not                     |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | algo_version        | Version of the analysis library                            |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | measure_id          | The id of the measure                                      |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | measure_name        | The human readable name of the measure                     |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | measure_value       | The actual measure value                                   |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | measure_unit        | The unit of the measure, if applicable                     |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | measure_type        | The numpy type of the value                                |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | trial               | The number of times the evaluation was performed by the    |</span>
+<span class="sd">    |                     | subject                                                    |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+<span class="sd">    | relative_start_date | The relative start date based on the first evaluation for  |</span>
+<span class="sd">    |                     | each subject                                               |</span>
+<span class="sd">    +---------------------+------------------------------------------------------------+</span>
+
+<span class="sd">    The data frame might contain additional columns if the collection was constructed</span>
+<span class="sd">    using :meth:`from_data_frame` and ``only_required_columns`` set to ``False``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_REQUIRED_COLUMN_TYPES</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;subject_id&quot;</span><span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;evaluation_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;evaluation_code&quot;</span><span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;session_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;session_code&quot;</span><span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;datetime64[ms]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;datetime64[ms]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;is_finished&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measure_id&quot;</span><span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measure_name&quot;</span><span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measure_value&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measure_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measure_type&quot;</span><span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">_COLUMN_TYPES</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">_REQUIRED_COLUMN_TYPES</span><span class="p">,</span> <span class="s2">&quot;trial&quot;</span><span class="p">:</span> <span class="s2">&quot;int16&quot;</span><span class="p">}</span>
+
+<div class="viewcode-block" id="MeasureCollection.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_COLUMN_TYPES</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_measure_definitions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ValueDefinition</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;&lt;MeasureCollection: </span><span class="si">{</span><span class="n">plural</span><span class="p">(</span><span class="s2">&quot;subject&quot;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">subject_count</span><span class="p">)</span><span class="si">}</span><span class="s1">, &#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">plural</span><span class="p">(</span><span class="s2">&quot;evaluation&quot;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">evaluation_count</span><span class="p">)</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Can only use operators between two MeasureCollections.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_assert_add_type</span><span class="p">(</span><span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">MeasureCollection</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Can only add measures from MeasureCollection&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MeasureCollection&quot;</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_assert_add_type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="n">fc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
+        <span class="n">fc</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">fc</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fc</span>
+
+    <span class="k">def</span> <span class="fm">__iadd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MeasureCollection&quot;</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_assert_add_type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get measure collection data frame.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">measure_definitions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ValuesView</span><span class="p">[</span><span class="n">ValueDefinition</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get measure definitions from measure collection.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_measure_definitions</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get size of measure collection data frame.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">size</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">evaluation_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the number of different evaluations.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">evaluation_uuid</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">evaluation_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the evaluation ids in the measure collection.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">evaluation_uuid</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<div class="viewcode-block" id="MeasureCollection.get_evaluation_ids_for_subject">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.get_evaluation_ids_for_subject">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_evaluation_ids_for_subject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subject_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get evaluations related to a subject.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        subject_id</span>
+<span class="sd">            The subject identifier.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[str]</span>
+<span class="sd">            The list of evaluation ids.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;subject_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">subject_id</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">evaluation_uuid</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subject_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the number of different subjects.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">subject_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subject_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the subject ids in the measure collection.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">subject_id</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">session_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the number of different session.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">session_uuid</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">session_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the session ids in the measure collection.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">session_uuid</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">measure_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the number of different measures.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">measure_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">measure_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure ids in the measure collection.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">measure_id</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<div class="viewcode-block" id="MeasureCollection.get_measure_definition">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.get_measure_definition">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measure_definition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measure_id</span><span class="p">:</span> <span class="n">DefinitionIdType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ValueDefinition</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure definition for a specific measure id.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        measure_id</span>
+<span class="sd">            The measure identifier.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ValueDefinition</span>
+<span class="sd">            The corresponding measure definition.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        MeasureNotFound</span>
+<span class="sd">            If the measure id does not correspond to any known measure</span>
+<span class="sd">            definition.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">id_</span> <span class="o">:=</span> <span class="nb">str</span><span class="p">(</span><span class="n">measure_id</span><span class="p">))</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_measure_definitions</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MeasureNotFound</span><span class="p">(</span><span class="n">id_</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_measure_definitions</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_measure_definitions</span><span class="p">[</span><span class="n">id_</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.from_measure_set">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_measure_set">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_measure_set</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">measure_set</span><span class="p">:</span> <span class="n">MeasureSet</span><span class="p">,</span>
+        <span class="n">evaluation</span><span class="p">:</span> <span class="n">Evaluation</span><span class="p">,</span>
+        <span class="n">session</span><span class="p">:</span> <span class="n">Session</span><span class="p">,</span>
+        <span class="n">_ignore_consistency</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MeasureCollection&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a class instance from measure set.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        measure_set</span>
+<span class="sd">            The measure set whose measures are to be collected.</span>
+<span class="sd">        evaluation</span>
+<span class="sd">            The evaluation corresponding to the given measure set.</span>
+<span class="sd">        session</span>
+<span class="sd">            The session corresponding to the given evaluation.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        MeasureCollection</span>
+<span class="sd">            A measure collection containing all measures from the ``measure_set`` using</span>
+<span class="sd">            the ``evaluation`` and ``session`` to complement the necessary information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">fc</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">measure_set</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">fc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">cast</span><span class="p">(</span><span class="n">MeasureValue</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span> <span class="n">evaluation</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">_ignore_consistency</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_ignore_consistency</span><span class="p">:</span>
+            <span class="n">fc</span><span class="o">.</span><span class="n">_ensure_consistency</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">fc</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.from_reading">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_reading">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_reading</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="n">_ignore_consistency</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MeasureCollection&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a class instance from reading.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading from which the measure collection is to be initialized.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        MeasureCollection</span>
+<span class="sd">            A measure collection containing all measures from the ``reading`` measure</span>
+<span class="sd">            sets of each level. See also :meth:`from_measure_set`.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the reading session information is not provided.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">reading</span><span class="o">.</span><span class="n">session</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Reading has no session information&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_measure_set</span><span class="p">(</span>
+            <span class="n">reading</span><span class="o">.</span><span class="n">get_merged_measure_set</span><span class="p">(),</span>
+            <span class="n">reading</span><span class="o">.</span><span class="n">evaluation</span><span class="p">,</span>
+            <span class="n">reading</span><span class="o">.</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">_ignore_consistency</span><span class="o">=</span><span class="n">_ignore_consistency</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.from_readings">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_readings">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_readings</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">readings</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Reading</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;MeasureCollection&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a class instance from readings.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        readings</span>
+<span class="sd">            The readings from which the measure collection is to be initialized.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        MeasureCollection</span>
+<span class="sd">            A measure collection from all measure sets of all readings. See also</span>
+<span class="sd">            :meth:`from_reading`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">fc</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">reading</span> <span class="ow">in</span> <span class="n">readings</span><span class="p">:</span>
+            <span class="n">fc</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">from_reading</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="n">_ignore_consistency</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+        <span class="n">fc</span><span class="o">.</span><span class="n">_ensure_consistency</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">fc</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.from_data_frame">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_data_frame">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_data_frame</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">only_required_columns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MeasureCollection&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a class instance from a DataFrame.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data</span>
+<span class="sd">            A data frame containing the information relative to measures. The data frame</span>
+<span class="sd">            should contain the following columns (``subject_id`` or ``user_id``,</span>
+<span class="sd">            ``evaluation_uuid``, ``evaluation_code``, ``session_uuid``,</span>
+<span class="sd">            ``session_code``, ``start_date``, ``end_date``, ``is_finished``,</span>
+<span class="sd">            ``measure_id``, ``measure_name``, ``measure_value``, ``measure_unit``,</span>
+<span class="sd">            ``measure_type``).</span>
+<span class="sd">        only_required_columns</span>
+<span class="sd">            ``True`` if only the required columns are to be preserved in the measure</span>
+<span class="sd">            collection. ``False`` otherwise.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        MeasureCollection</span>
+<span class="sd">            A measure collection from a pandas data frame.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If duplicate measures for same evaluations exist in the initializing data</span>
+<span class="sd">            frame.</span>
+<span class="sd">        MissingColumnError</span>
+<span class="sd">            If required columns are missing from the data frame.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">fc</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="n">data_</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;subject_id&quot;</span><span class="p">,</span> <span class="s2">&quot;uuid_session&quot;</span><span class="p">:</span> <span class="s2">&quot;session_uuid&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">data_</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="s2">&quot;evaluation_uuid&quot;</span><span class="p">,</span> <span class="s2">&quot;measure_id&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Duplicate measures exist for same evaluations.&quot;</span><span class="p">)</span>
+
+        <span class="n">input_columns</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">data_</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="n">required_columns</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">fc</span><span class="o">.</span><span class="n">_REQUIRED_COLUMN_TYPES</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">required_columns</span> <span class="o">&lt;=</span> <span class="n">input_columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MissingColumnError</span><span class="p">(</span><span class="n">required_columns</span> <span class="o">-</span> <span class="n">input_columns</span><span class="p">)</span>
+
+        <span class="n">data_</span> <span class="o">=</span> <span class="n">convert_column_types</span><span class="p">(</span><span class="n">data_</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">fc</span><span class="o">.</span><span class="n">_COLUMN_TYPES</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">only_required_columns</span><span class="p">:</span>
+            <span class="n">data_</span> <span class="o">=</span> <span class="n">data_</span><span class="p">[</span><span class="n">fc</span><span class="o">.</span><span class="n">_REQUIRED_COLUMN_TYPES</span><span class="p">]</span>
+        <span class="n">fc</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data_</span>
+
+        <span class="n">definition_data</span> <span class="o">=</span> <span class="n">fc</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">&quot;measure_id&quot;</span><span class="p">)</span>
+        <span class="n">fc</span><span class="o">.</span><span class="n">_merge_measure_definitions</span><span class="p">(</span><span class="n">definition_data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">row_to_definition</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="n">fc</span><span class="o">.</span><span class="n">_ensure_consistency</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">fc</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.from_csv">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.from_csv">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_csv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MeasureCollection&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a class instance from a csv file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        path</span>
+<span class="sd">            The path to a csv file from which measures are to be collected.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        MeasureCollection</span>
+<span class="sd">            A measure collection from the CSV file specified in ``path``. See also</span>
+<span class="sd">            :meth:`from_data_frame`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_data_frame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_drop_nans</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ensure NaN measure values are dropped and the user is warned.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;measure_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Collection pruned of NaN measure values&quot;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;measure_value&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_sort_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sort data frame by start date.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;start_date&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_drop_duplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Drop measure collection duplicates.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        overwrite</span>
+<span class="sd">            ``True`` if recent measure information is to be replaced with existing one.</span>
+<span class="sd">            ``False`` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span>
+            <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;evaluation_uuid&quot;</span><span class="p">,</span> <span class="s2">&quot;measure_id&quot;</span><span class="p">],</span>
+            <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;last&quot;</span> <span class="k">if</span> <span class="n">overwrite</span> <span class="k">else</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span>
+            <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_update_trials</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update trial count values for all subjects.&quot;&quot;&quot;</span>
+        <span class="n">grouped</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;subject_id&quot;</span><span class="p">,</span> <span class="s2">&quot;measure_id&quot;</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">trial</span> <span class="o">=</span> <span class="p">(</span><span class="n">grouped</span><span class="o">.</span><span class="n">cumcount</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_COLUMN_TYPES</span><span class="p">[</span><span class="s2">&quot;trial&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;trial&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">trial</span>
+
+    <span class="k">def</span> <span class="nf">_update_relative_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update relative start date by measure for all subjects.&quot;&quot;&quot;</span>
+        <span class="n">grp_idx</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;subject_id&quot;</span><span class="p">,</span> <span class="s2">&quot;measure_id&quot;</span><span class="p">]</span>
+        <span class="n">grouped</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">grp_idx</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">first_start_date</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">start_date</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;first_start_date&quot;</span><span class="p">)</span>
+        <span class="n">joined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">first_start_date</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">grp_idx</span><span class="p">)</span>
+        <span class="n">relative</span> <span class="o">=</span> <span class="n">joined</span><span class="o">.</span><span class="n">start_date</span> <span class="o">-</span> <span class="n">joined</span><span class="o">.</span><span class="n">first_start_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;relative_start_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">relative</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">/</span> <span class="mi">86400</span>
+
+    <span class="k">def</span> <span class="nf">_ensure_consistency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ensure consistency of measure collection data frame.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_drop_nans</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sort_values</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_drop_duplicates</span><span class="p">(</span><span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_trials</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_relative_start</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_add_measure_definition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">definition</span><span class="p">:</span> <span class="n">ValueDefinition</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a measure definition to the measure collection.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        definition</span>
+<span class="sd">            The measure value definition to be added.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_measure_definitions</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">definition</span><span class="o">.</span><span class="n">id</span><span class="p">)]</span> <span class="o">=</span> <span class="n">definition</span>
+
+    <span class="k">def</span> <span class="nf">_merge_measure_definitions</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">definitions</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ValueDefinition</span><span class="p">],</span> <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Merge measure definitions.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        definitions</span>
+<span class="sd">            The measure value definitions to be merged.</span>
+<span class="sd">        overwrite</span>
+<span class="sd">            ``True`` If the measure value definitions are to be overwritten.</span>
+<span class="sd">            ``False`` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">overwrite</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">definition</span> <span class="ow">in</span> <span class="n">definitions</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_add_measure_definition</span><span class="p">(</span><span class="n">definition</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MeasureCollection.append">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.append">[docs]</a>
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">measure_value</span><span class="p">:</span> <span class="n">MeasureValue</span><span class="p">,</span>
+        <span class="n">evaluation</span><span class="p">:</span> <span class="n">Evaluation</span><span class="p">,</span>
+        <span class="n">session</span><span class="p">:</span> <span class="n">Session</span><span class="p">,</span>
+        <span class="n">_ignore_consistency</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adding measure value to the measure collection.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        measure_value</span>
+<span class="sd">            The measure value to be added to the collection.</span>
+<span class="sd">        evaluation</span>
+<span class="sd">            The evaluation corresponding to the given measure value.</span>
+<span class="sd">        session</span>
+<span class="sd">            The session corresponding to the given evaluation.</span>
+<span class="sd">        _ignore_consistency</span>
+<span class="sd">            If ``True``, methods for ensuring consistency of the data will be skipped.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">meta_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">subject_id</span><span class="o">=</span><span class="n">evaluation</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span>
+            <span class="n">evaluation_uuid</span><span class="o">=</span><span class="n">evaluation</span><span class="o">.</span><span class="n">uuid</span><span class="p">,</span>
+            <span class="n">evaluation_code</span><span class="o">=</span><span class="n">evaluation</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">session_code</span><span class="o">=</span><span class="n">session</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">session_uuid</span><span class="o">=</span><span class="n">session</span><span class="o">.</span><span class="n">uuid</span><span class="p">,</span>
+            <span class="n">trial</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">start_date</span><span class="o">=</span><span class="n">evaluation</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+            <span class="n">end_date</span><span class="o">=</span><span class="n">evaluation</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+            <span class="n">is_finished</span><span class="o">=</span><span class="n">evaluation</span><span class="o">.</span><span class="n">finished</span><span class="p">,</span>
+            <span class="n">algo_version</span><span class="o">=</span><span class="n">__version__</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Add measure value information to the pandas data frame</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span><span class="o">**</span><span class="n">meta_data</span><span class="p">,</span> <span class="o">**</span><span class="n">measure_value</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()},</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="c1"># Add measure definition</span>
+        <span class="n">measure_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">measure_value</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_measure_definitions</span><span class="p">[</span><span class="n">measure_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">measure_value</span><span class="o">.</span><span class="n">definition</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_ignore_consistency</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_consistency</span><span class="p">(</span><span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.extend">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.extend">[docs]</a>
+    <span class="k">def</span> <span class="nf">extend</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;MeasureCollection&quot;</span><span class="p">,</span>
+        <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">_ignore_consistency</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extend measure collection by another.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other</span>
+<span class="sd">            The object with which the measure collection is to be expanded.</span>
+<span class="sd">        overwrite</span>
+<span class="sd">            ``True`` if new measure information is to be replaced with existing one.</span>
+<span class="sd">            ``False`` otherwise.</span>
+<span class="sd">        _ignore_consistency</span>
+<span class="sd">            If ``True``, methods for ensuring consistency of the data will be skipped.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If the type of the object to be extended is not a measure</span>
+<span class="sd">            collection.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Unsupported extender type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2">. Measure collection &quot;</span>
+                <span class="s2">&quot;expansion can only support another MeasureCollection.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Adding measure collection data frame.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="c1"># Merging measure definitions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_merge_measure_definitions</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">measure_definitions</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_ignore_consistency</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_consistency</span><span class="p">(</span><span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.get_data">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.get_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">measure_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">subject_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve data from measure collection.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        measure_id</span>
+<span class="sd">            The identifier of the measure for which the data is being retrieved.</span>
+<span class="sd">        subject_id</span>
+<span class="sd">            The identifier of the subject for which the data is being retrieved.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.DataFrame</span>
+<span class="sd">            A pandas data frame filtered w.r.t. the given arguments.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">measure_id_dic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;measure_id&quot;</span><span class="p">:</span> <span class="n">measure_id</span><span class="p">}</span>
+        <span class="n">subject_id_dic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;subject_id&quot;</span><span class="p">:</span> <span class="n">subject_id</span><span class="p">}</span>
+
+        <span class="k">def</span> <span class="nf">_assert_existence</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;subject_id&quot;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subject_ids</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">SubjectNotFound</span><span class="p">(</span><span class="n">subject_id</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;measure_id&quot;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_ids</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">MeasureNotFound</span><span class="p">(</span><span class="n">measure_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_ids</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported type value.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">subject_id</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">measure_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">if</span> <span class="n">subject_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_assert_existence</span><span class="p">(</span><span class="n">measure_id_dic</span><span class="p">)</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;measure_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">measure_id</span>
+        <span class="k">elif</span> <span class="n">measure_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_assert_existence</span><span class="p">(</span><span class="n">subject_id_dic</span><span class="p">)</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;subject_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">subject_id</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_assert_existence</span><span class="p">({</span><span class="o">**</span><span class="n">measure_id_dic</span><span class="p">,</span> <span class="o">**</span><span class="n">subject_id_dic</span><span class="p">})</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;subject_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">subject_id</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;measure_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">measure_id</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.get_measure_values_over_time">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.get_measure_values_over_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measure_values_over_time</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">measure_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">subject_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">index</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;start_date&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve data as time indexed measure value series.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        measure_id</span>
+<span class="sd">            The identifier of the measure for which the data is being retrieved.</span>
+<span class="sd">        subject_id</span>
+<span class="sd">            The identifier of the subject for which the data is being retrieved.</span>
+<span class="sd">        index</span>
+<span class="sd">            The index of the measure values pandas series.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Series</span>
+<span class="sd">            A pandas series with start date as index and measure values as values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">subject_id</span><span class="o">=</span><span class="n">subject_id</span><span class="p">,</span> <span class="n">measure_id</span><span class="o">=</span><span class="n">measure_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">index</span><span class="p">)[</span><span class="s2">&quot;measure_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">measure_id</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.get_measure_values_by_trials">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.get_measure_values_by_trials">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measure_values_by_trials</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measure_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve measure values over all trials by subject.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        measure_id</span>
+<span class="sd">            The identifier of the measure for which the data is being retrieved.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.DataFrame</span>
+<span class="sd">            A pandas data frame with subjects as indexes, trials as columns and</span>
+<span class="sd">            measure values as values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">measure_id</span><span class="o">=</span><span class="n">measure_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&quot;subject_id&quot;</span><span class="p">,</span> <span class="s2">&quot;trial&quot;</span><span class="p">,</span> <span class="s2">&quot;measure_value&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.get_aggregated_measures_over_period">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.get_aggregated_measures_over_period">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_aggregated_measures_over_period</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">measure_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">period</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">aggregation</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get aggregated measure values over a given period.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        measure_id</span>
+<span class="sd">            The identifier of the measure for which the data is being computed.</span>
+<span class="sd">        period</span>
+<span class="sd">            The period on which the measure is to be aggregated.</span>
+<span class="sd">        aggregation</span>
+<span class="sd">            The aggregation method to be used.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.DataFrame</span>
+<span class="sd">            A pandas data frame regrouping aggregated measure values over a given</span>
+<span class="sd">            period. The resulting data frame contains subjects as rows, aggregation</span>
+<span class="sd">            periods as columns, and values based on the provided aggregation method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">measure_id</span><span class="o">=</span><span class="n">measure_id</span><span class="p">)</span>
+        <span class="n">grp</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;subject_id&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;start_date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">period</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">grp</span><span class="p">)</span><span class="o">.</span><span class="n">measure_value</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">aggregation</span><span class="p">)</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.to_dict">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.to_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert the measure collection to a dictionary.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.to_json">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.to_json">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert the measure collection to a JSON string.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        path</span>
+<span class="sd">            File path or object. If not specified, the result is returned as a string.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Optional[str]</span>
+<span class="sd">            If ``path`` is ``None``, returns the resulting json format as a string.</span>
+<span class="sd">            Otherwise, returns ``None``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureCollection.to_csv">
+<a class="viewcode-back" href="../../../api/dispel.data.collections.html#dispel.data.collections.MeasureCollection.to_csv">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Write object to a comma-separated values (csv) file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        path</span>
+<span class="sd">            File path or object, if ``None`` is provided the result is returned as a</span>
+<span class="sd">            string. If a file object is passed it should be opened with newline=’’,</span>
+<span class="sd">            disabling universal newlines.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Optional[str]</span>
+<span class="sd">            If ``path`` is ``None``, returns the resulting csv format as a string.</span>
+<span class="sd">            Otherwise, returns ``None``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

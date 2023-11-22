@@ -1,0 +1,1106 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.tasks.ps &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/tasks/ps';</script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.tasks.ps</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Pronation Supination assessment related functionality.</span>
+
+<span class="sd">This module contains functionality to extract measures for the</span>
+<span class="sd">*Pronation Supination* assessment (PS).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">DEFAULT_COLUMNS</span><span class="p">,</span> <span class="n">RawDataValueDefinition</span>
+<span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">GREATER_THAN_ZERO</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AVEnum</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">transformation</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="n">AggregateRawDataSetColumn</span><span class="p">,</span> <span class="n">ExtractStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">ProcessingStepGroup</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.modalities</span> <span class="kn">import</span> <span class="n">HandModality</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">Apply</span><span class="p">,</span> <span class="n">TransformStep</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.sensor</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Resample</span><span class="p">,</span>
+    <span class="n">SetTimestampIndex</span><span class="p">,</span>
+    <span class="n">TransformFindZeroCrossings</span><span class="p">,</span>
+    <span class="n">Upsample</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.registry</span> <span class="kn">import</span> <span class="n">process_factory</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.filter</span> <span class="kn">import</span> <span class="n">butterworth_low_pass_filter</span>
+<span class="kn">from</span> <span class="nn">dispel.stats.core</span> <span class="kn">import</span> <span class="n">npcv</span>
+
+<span class="n">TASK_NAME</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;Pronation-Supination Assessment&quot;</span><span class="p">,</span> <span class="s2">&quot;PS&quot;</span><span class="p">)</span>
+
+<span class="n">MIN_EVENT_ROTATION</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Define the minimal rotation of a valid event such as pronation and supination.&quot;&quot;&quot;</span>
+
+<span class="n">ACTIVE_PHASE_DUR</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s2">&quot;7s&quot;</span><span class="p">)</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Define the duration of the active test phase of the pronation supination test.&quot;&quot;&quot;</span>
+
+
+<span class="n">PS_AGGREGATION</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;median&quot;</span><span class="p">,</span> <span class="s2">&quot;median&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">npcv</span><span class="p">,</span> <span class="s2">&quot;non parametric coefficient of variation&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="Movement">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.Movement">[docs]</a>
+<span class="k">class</span> <span class="nc">Movement</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerated constant representing the event modalities.&quot;&quot;&quot;</span>
+
+    <span class="n">PRONATION</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;pronation&quot;</span><span class="p">,</span> <span class="s2">&quot;pro&quot;</span><span class="p">)</span>
+    <span class="n">SUPINATION</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;supination&quot;</span><span class="p">,</span> <span class="s2">&quot;sup&quot;</span><span class="p">)</span>
+    <span class="n">PROSUP</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;pronation_supination&quot;</span><span class="p">,</span> <span class="s2">&quot;prosup&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformIntegrateBetweenZeros">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformIntegrateBetweenZeros</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Integrate gyroscope signal between zero crossings.&quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;ps_event&quot;</span>
+    <span class="n">definitions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;zero_crossings&quot;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;zero crossings&quot;</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Zero-crossings of the gyroscope signal.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;rotation&quot;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rotation&quot;</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Rotation in degrees estimated by integrating the gyroscope &quot;</span>
+            <span class="s2">&quot;signal between two consecutive zero-crossings.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;abs_rotation&quot;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;absolute rotation&quot;</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Absolute rotation of the gyroscope between two zero crossings &quot;</span>
+            <span class="s2">&quot;in degrees.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="TransformIntegrateBetweenZeros.integrate_between_zeros">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.integrate_between_zeros">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">integrate_between_zeros</span><span class="p">(</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">zeros</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Integrate gyroscope between zero-crossings.&quot;&quot;&quot;</span>
+        <span class="n">integrals_</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ps_event</span> <span class="o">=</span> <span class="n">zeros</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zeros</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">i_0</span> <span class="o">=</span> <span class="n">zeros</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i_1</span> <span class="o">=</span> <span class="n">zeros</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">integrals_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span>
+                    <span class="n">data</span><span class="p">[</span><span class="n">i_0</span><span class="p">:</span><span class="n">i_1</span><span class="p">]</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i_0</span><span class="p">:</span><span class="n">i_1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">(),</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">ps_event</span><span class="p">[</span><span class="s2">&quot;rotation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">integrals_</span> <span class="o">+</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span>
+        <span class="n">ps_event</span><span class="p">[</span><span class="s2">&quot;rotation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">ps_event</span><span class="p">[</span><span class="s2">&quot;rotation&quot;</span><span class="p">])</span>
+        <span class="n">ps_event</span><span class="p">[</span><span class="s2">&quot;abs_rotation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ps_event</span><span class="o">.</span><span class="n">rotation</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ps_event</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformIdentifyEvent">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformIdentifyEvent">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformIdentifyEvent</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Identify pronation supination given the rotation and the hand used.</span>
+
+<span class="sd">    Only pronation event and supination event for which the associated rotation is</span>
+<span class="sd">    greater than MIN_EVENT_ROTATION in absolute value are considered.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;ps_event&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">TransformIntegrateBetweenZeros</span><span class="o">.</span><span class="n">definitions</span> <span class="o">+</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;event&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Event indicating if the motion was a pronation or supination.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="TransformIdentifyEvent.identify_event">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformIdentifyEvent.identify_event">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">identify_event</span><span class="p">(</span><span class="n">ps_event</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Identify whether the event is a supination or a pronation.&quot;&quot;&quot;</span>
+        <span class="n">level_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="n">ps_event</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">neg_mask</span> <span class="o">=</span> <span class="n">ps_event</span><span class="o">.</span><span class="n">rotation</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">MIN_EVENT_ROTATION</span>
+        <span class="n">pos_mask</span> <span class="o">=</span> <span class="n">ps_event</span><span class="o">.</span><span class="n">rotation</span> <span class="o">&gt;</span> <span class="n">MIN_EVENT_ROTATION</span>
+        <span class="k">if</span> <span class="n">level_id</span> <span class="o">==</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span>
+            <span class="n">ps_event</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">neg_mask</span><span class="p">,</span> <span class="s2">&quot;event&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;supination&quot;</span>
+            <span class="n">ps_event</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pos_mask</span><span class="p">,</span> <span class="s2">&quot;event&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pronation&quot;</span>
+        <span class="k">elif</span> <span class="n">level_id</span> <span class="o">==</span> <span class="s2">&quot;left&quot;</span><span class="p">:</span>
+            <span class="n">ps_event</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">neg_mask</span><span class="p">,</span> <span class="s2">&quot;event&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pronation&quot;</span>
+            <span class="n">ps_event</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pos_mask</span><span class="p">,</span> <span class="s2">&quot;event&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;supination&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;level_id: </span><span class="si">{</span><span class="n">level_id</span><span class="si">}</span><span class="s2"> is not in [&#39;left&#39;, &#39;right&#39;]&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ps_event</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformFilterEvent">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformFilterEvent">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformFilterEvent</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enrich event with time boundaries and only keep defined event.&quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;ps_event&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">TransformIdentifyEvent</span><span class="o">.</span><span class="n">definitions</span> <span class="o">+</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;start&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Start timestamp indicating the beginning of the event.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;datetime64[ns]&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;end&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;end timestamp indicating the end of the event.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;datetime64[ns]&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="TransformFilterEvent.filter_event">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformFilterEvent.filter_event">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">filter_event</span><span class="p">(</span><span class="n">ps_event</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add start and end of event and keep only defined events.&quot;&quot;&quot;</span>
+        <span class="n">event_start</span> <span class="o">=</span> <span class="n">ps_event</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">event_end</span> <span class="o">=</span> <span class="n">ps_event</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="c1"># Remove last un-needed zero</span>
+        <span class="n">ps_event</span> <span class="o">=</span> <span class="n">ps_event</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">ps_event</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">event_start</span>
+        <span class="n">ps_event</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">event_end</span>
+        <span class="k">return</span> <span class="n">ps_event</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformRemovePriorEvent">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformRemovePriorEvent</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove event ending before active test phase.&quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;ps_event&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">TransformFilterEvent</span><span class="o">.</span><span class="n">definitions</span>
+
+<div class="viewcode-block" id="TransformRemovePriorEvent.truncate_active_event">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.truncate_active_event">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">truncate_active_event</span><span class="p">(</span><span class="n">ps_event</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove potential event ending prior the active phase of 7 s.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ps_event</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ps_event</span><span class="o">.</span><span class="n">end</span> <span class="o">&gt;</span> <span class="n">level</span><span class="o">.</span><span class="n">end</span> <span class="o">-</span> <span class="n">ACTIVE_PHASE_DUR</span><span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformRotationSpeed">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformRotationSpeed">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformRotationSpeed</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute rotation speed per motion.&quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;ps_event&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">TransformFilterEvent</span><span class="o">.</span><span class="n">definitions</span> <span class="o">+</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;delta_t&quot;</span><span class="p">,</span> <span class="s2">&quot;Duration of the motion.&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;rotation_speed&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Average rotation speed in degrees during the motion.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;abs_rotation_speed&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Absolute value of the average rotation speed in degrees.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="TransformRotationSpeed.compute_rot_speed">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformRotationSpeed.compute_rot_speed">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">compute_rot_speed</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute average rotation speed during a pronation or supination.&quot;&quot;&quot;</span>
+        <span class="c1"># Time between two zero crossing is obtained by differentiating the</span>
+        <span class="c1"># timestamp of the index.</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;delta_t&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">end</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;rotation_speed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rotation</span> <span class="o">/</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;delta_t&quot;</span><span class="p">])</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;abs_rotation_speed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rotation_speed</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformAmplitudePeakToPeak">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformAmplitudePeakToPeak</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute amplitude of rotation peak to peak.&quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;ps_event_peak_peak&quot;</span>
+    <span class="n">definitions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;start&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Start timestamp indicating the beginning of the event.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;datetime64[ns]&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;end&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;end timestamp indicating the end of the event.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;datetime64[ns]&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;delta_t&quot;</span><span class="p">,</span> <span class="s2">&quot;Duration of the motion.&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;abs_rotation&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Absolute rotation for a pronation supination in degrees.&quot;</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="TransformAmplitudePeakToPeak.compute_abs_rot_peak_peak">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.compute_abs_rot_peak_peak">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">compute_abs_rot_peak_peak</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute absolute rotation peak to peak of pronation - supination.&quot;&quot;&quot;</span>
+        <span class="n">amplitude_gp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">index</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">amplitude</span> <span class="o">=</span> <span class="n">amplitude_gp</span><span class="p">[[</span><span class="s2">&quot;abs_rotation&quot;</span><span class="p">,</span> <span class="s2">&quot;event&quot;</span><span class="p">,</span> <span class="s2">&quot;delta_t&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">amplitude</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">amplitude_gp</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">amplitude</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">amplitude_gp</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">amplitude</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">amplitude_gp</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="n">amplitude</span> <span class="o">=</span> <span class="n">amplitude</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">amplitude</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">amplitude</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AggregateMotion">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.AggregateMotion">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateMotion</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An Aggregation of motion measures.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AggregateMotion.get_data_frames">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.AggregateMotion.get_data_frames">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the raw data from all data sets in question.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level from which to get the data sets.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[pandas.DataFrame]</span>
+<span class="sd">            A list of all raw data frames with the specified ids masked with</span>
+<span class="sd">            event being equal to the movement specified.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">movement</span><span class="o">.</span><span class="n">variable</span> <span class="o">==</span> <span class="s2">&quot;prosup&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span>
+                <span class="nb">map</span><span class="p">(</span>
+                    <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">get_raw_data_sets</span><span class="p">(</span><span class="n">level</span><span class="p">),</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="nb">map</span><span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">movement</span><span class="o">.</span><span class="n">variable</span><span class="p">],</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">get_raw_data_sets</span><span class="p">(</span><span class="n">level</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AggregateMotion.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.AggregateMotion.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">column_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">movement</span><span class="p">:</span> <span class="n">Movement</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">movement</span> <span class="o">=</span> <span class="n">movement</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;The </span><span class="se">{{</span><span class="s2">aggregation</span><span class="se">}}</span><span class="s2"> of </span><span class="si">{</span><span class="n">column_id</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">movement</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">movement</span><span class="o">.</span><span class="n">variable</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">column_id</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column_id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">),</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_id</span><span class="p">,</span> <span class="n">column_id</span><span class="p">,</span> <span class="n">PS_AGGREGATION</span><span class="p">,</span> <span class="n">definition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AggregateAmplitude">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.AggregateAmplitude">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateAmplitude</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation processing step for the amplitude peak to peak.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;ps_event_peak_peak&quot;</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="s2">&quot;abs_rotation&quot;</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">PS_AGGREGATION</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;amplitude&quot;</span><span class="p">,</span> <span class="s2">&quot;amp&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> amplitude of rotation of an&quot;</span>
+        <span class="s2">&quot;entire pronation supination cycle.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateDuration">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.AggregateDuration">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateDuration</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation processing step for the duration peak to peak.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;ps_event_peak_peak&quot;</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="s2">&quot;delta_t&quot;</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">)]</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="s2">&quot;dur&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> duration of an&quot;</span>
+        <span class="s2">&quot;entire pronation supination cycle.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractNEvent">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.ExtractNEvent">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractNEvent</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract number of events that are either pronation or supination.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;ps_event&quot;</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;The number of events that are a pronation or a supination.&quot;</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;event count&quot;</span><span class="p">,</span> <span class="s2">&quot;ec&quot;</span><span class="p">),</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int16&quot;</span><span class="p">,</span>
+        <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="ExtractNEvent.count_events">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.ExtractNEvent.count_events">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">count_events</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Count the number of pronation or supination.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">({</span><span class="s2">&quot;pronation&quot;</span><span class="p">,</span> <span class="s2">&quot;supination&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractAvgMovementPowerFromTimeSeries">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractAvgMovementPowerFromTimeSeries</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract average movement power from a time series.&quot;&quot;&quot;</span>
+
+    <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;The average power of the signal in the defined 0 - 4 Hz frequency band.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;movement power mean&quot;</span><span class="p">,</span> <span class="s2">&quot;ts_mvmt_power-mean&quot;</span><span class="p">),</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="ExtractAvgMovementPowerFromTimeSeries.average_power">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.average_power">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">average_power</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the average power of the time series.&quot;&quot;&quot;</span>
+        <span class="c1"># integrate the power in the appropriate frequency</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">data</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="decrement_simple">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.decrement_simple">[docs]</a>
+<span class="k">def</span> <span class="nf">decrement_simple</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute simplified version of decrement of a series.&quot;&quot;&quot;</span>
+    <span class="n">first_quarter</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span> <span class="p">(</span><span class="n">quarter_idx</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)]</span>
+    <span class="n">second_half</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="n">quarter_idx</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">first_quarter</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">second_half</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractAmplitudeDecrementSimple">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractAmplitudeDecrementSimple</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the simple version of decrement in amplitude.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;ps_event_peak_peak&quot;</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;The simple decrement of amplitude defined as the difference in &quot;</span>
+        <span class="s2">&quot;median amplitude between the first and last 25</span><span class="si">% o</span><span class="s2">f the task.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;amplitude simple decrement&quot;</span><span class="p">,</span> <span class="s2">&quot;amp_simple_dec&quot;</span><span class="p">),</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="ExtractAmplitudeDecrementSimple.decrement_amplitude_simple">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.decrement_amplitude_simple">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">decrement_amplitude_simple</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the simple decrement of amplitude.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">decrement_simple</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;abs_rotation&quot;</span><span class="p">])</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractSpeedDecrementSimple">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractSpeedDecrementSimple</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the simple version of decrement in speed.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;ps_event&quot;</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;The simple decrement of speed defined as the difference in &quot;</span>
+        <span class="s2">&quot;median speed between the first and last 25</span><span class="si">% o</span><span class="s2">f the task.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;speed simple decrement&quot;</span><span class="p">,</span> <span class="s2">&quot;speed_simple_dec&quot;</span><span class="p">),</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="ExtractSpeedDecrementSimple.decrement_speed_simple">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.decrement_speed_simple">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">decrement_speed_simple</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the simple decrement of speed.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">decrement_simple</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;abs_rotation&quot;</span><span class="p">])</span></div>
+</div>
+
+
+
+<span class="n">COL_TO_AGG</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;abs_rotation&quot;</span><span class="p">,</span> <span class="s2">&quot;abs_rotation_speed&quot;</span><span class="p">]</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Columns of the event data set that we want to aggregate as measures over</span>
+<span class="sd">the different events.&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="PreprocessingPSGroup">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.PreprocessingPSGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">PreprocessingPSGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pronation Supination preprocessing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">SetTimestampIndex</span><span class="p">(</span><span class="s2">&quot;gyroscope&quot;</span><span class="p">,</span> <span class="n">DEFAULT_COLUMNS</span><span class="p">,</span> <span class="n">duplicates</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">),</span>
+        <span class="c1"># Resample with mean then ffill to remove eventual remaining nans</span>
+        <span class="n">Resample</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts&quot;</span><span class="p">,</span>
+            <span class="n">freq</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+            <span class="n">aggregations</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;ffill&quot;</span><span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">DEFAULT_COLUMNS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">Apply</span><span class="p">(</span>
+            <span class="s2">&quot;gyroscope_ts_resampled&quot;</span><span class="p">,</span>
+            <span class="n">butterworth_low_pass_filter</span><span class="p">,</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zero_phase</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">],</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="MovementPowerGroup">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.MovementPowerGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">MovementPowerGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pronation Supination movement power processing steps group.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Apply</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_resampled&quot;</span><span class="p">,</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_resampled_low_pass_4hz&quot;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">butterworth_low_pass_filter</span><span class="p">,</span>
+            <span class="n">method_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">zero_phase</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">],</span>
+        <span class="p">),</span>
+        <span class="n">ExtractAvgMovementPowerFromTimeSeries</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_resampled_low_pass_4hz&quot;</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="EventDetectionAndFiltering">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.EventDetectionAndFiltering">[docs]</a>
+<span class="k">class</span> <span class="nc">EventDetectionAndFiltering</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pronation Supination event detection and filtering processing steps group.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Upsample</span><span class="p">(</span>
+            <span class="n">interpolation_method</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+            <span class="n">freq</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_resampled_butterworth_low_pass_filter&quot;</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">],</span>
+        <span class="p">),</span>
+        <span class="n">TransformFindZeroCrossings</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_resampled_butterworth_low_pass_filter_upsampled&quot;</span><span class="p">,</span>
+            <span class="n">column</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">,</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="s2">&quot;zero_crossings&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">TransformIntegrateBetweenZeros</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;gyroscope_ts_resampled_butterworth_low_pass_filter_upsampled&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;zero_crossings&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">),</span>
+        <span class="n">TransformIdentifyEvent</span><span class="p">(</span><span class="s2">&quot;ps_event&quot;</span><span class="p">,</span> <span class="n">storage_error</span><span class="o">=</span><span class="s2">&quot;overwrite&quot;</span><span class="p">),</span>
+        <span class="n">TransformFilterEvent</span><span class="p">(</span><span class="s2">&quot;ps_event&quot;</span><span class="p">,</span> <span class="n">storage_error</span><span class="o">=</span><span class="s2">&quot;overwrite&quot;</span><span class="p">),</span>
+        <span class="n">TransformRemovePriorEvent</span><span class="p">(</span><span class="s2">&quot;ps_event&quot;</span><span class="p">,</span> <span class="n">storage_error</span><span class="o">=</span><span class="s2">&quot;overwrite&quot;</span><span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateAmplitudeAndDurationGroup">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.AggregateAmplitudeAndDurationGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateAmplitudeAndDurationGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate amplitude and duration group.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ProcessingStepGroup</span><span class="p">(</span>
+            <span class="n">steps</span><span class="o">=</span><span class="p">[</span><span class="n">AggregateAmplitude</span><span class="p">(),</span> <span class="n">AggregateDuration</span><span class="p">()],</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">hand</span><span class="o">.</span><span class="n">av</span><span class="p">],</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">hand</span><span class="o">.</span><span class="n">abbr</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">hand</span> <span class="ow">in</span> <span class="n">HandModality</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregatePerHandAndMotionGroup">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.AggregatePerHandAndMotionGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregatePerHandAndMotionGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate per hand and motion group.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ProcessingStepGroup</span><span class="p">(</span>
+            <span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">AggregateMotion</span><span class="p">(</span><span class="s2">&quot;ps_event&quot;</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">movement</span><span class="p">)</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">COL_TO_AGG</span>
+            <span class="p">],</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">hand</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> <span class="n">movement</span><span class="o">.</span><span class="n">av</span><span class="p">],</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">hand</span><span class="o">.</span><span class="n">abbr</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">movement</span> <span class="ow">in</span> <span class="n">Movement</span>
+        <span class="k">for</span> <span class="n">hand</span> <span class="ow">in</span> <span class="n">HandModality</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="PerHandEventExtractionGroup">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.PerHandEventExtractionGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">PerHandEventExtractionGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pronation Supination per hand measure extraction group.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ProcessingStepGroup</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">ExtractNEvent</span><span class="p">(),</span>
+                <span class="n">ExtractAmplitudeDecrementSimple</span><span class="p">(),</span>
+                <span class="n">ExtractSpeedDecrementSimple</span><span class="p">(),</span>
+            <span class="p">],</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">hand</span><span class="o">.</span><span class="n">av</span><span class="p">],</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">hand</span><span class="o">.</span><span class="n">abbr</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">hand</span> <span class="ow">in</span> <span class="n">HandModality</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="EventMeasureExtractionGroup">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.EventMeasureExtractionGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">EventMeasureExtractionGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pronation Supination event-based measure extraction group.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">TransformRotationSpeed</span><span class="p">(</span><span class="s2">&quot;ps_event&quot;</span><span class="p">,</span> <span class="n">storage_error</span><span class="o">=</span><span class="s2">&quot;overwrite&quot;</span><span class="p">),</span>
+        <span class="c1"># Create a dataset for peak to peak</span>
+        <span class="n">TransformAmplitudePeakToPeak</span><span class="p">(</span><span class="s2">&quot;ps_event&quot;</span><span class="p">),</span>
+        <span class="c1"># Aggregate amplitude and duration per hand</span>
+        <span class="n">AggregateAmplitudeAndDurationGroup</span><span class="p">(),</span>
+        <span class="c1"># Aggregate per hand and Motion</span>
+        <span class="n">AggregatePerHandAndMotionGroup</span><span class="p">(),</span>
+        <span class="c1"># Aggregate per hand</span>
+        <span class="n">PerHandEventExtractionGroup</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="BDHPronationSupinationSteps">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.tasks.ps.html#dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">BDHPronationSupinationSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generic Pronation Supination processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">PreprocessingPSGroup</span><span class="p">(),</span>
+        <span class="n">MovementPowerGroup</span><span class="p">(),</span>
+        <span class="n">EventDetectionAndFiltering</span><span class="p">(),</span>
+        <span class="n">EventMeasureExtractionGroup</span><span class="p">(),</span>
+    <span class="p">]</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;task_name&quot;</span><span class="p">:</span> <span class="n">TASK_NAME</span><span class="p">}</span></div>
+
+
+
+<span class="n">process_ps</span> <span class="o">=</span> <span class="n">process_factory</span><span class="p">(</span>
+    <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+    <span class="n">steps</span><span class="o">=</span><span class="n">BDHPronationSupinationSteps</span><span class="p">(),</span>
+    <span class="n">codes</span><span class="o">=</span><span class="s2">&quot;sp-activity&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

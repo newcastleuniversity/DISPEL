@@ -1,0 +1,2078 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.bdh.tasks.typing.steps &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/bdh/tasks/typing/steps';</script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.bdh.tasks.typing.steps</h1><div class="highlight"><pre>
+<span></span><span class="c1"># pylint: disable=too-many-lines</span>
+<span class="sd">&quot;&quot;&quot;Typing module.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">FlagSeverity</span><span class="p">,</span> <span class="n">FlagType</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">DEFAULT_COLUMNS</span><span class="p">,</span> <span class="n">RawDataValueDefinition</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.assertions</span> <span class="kn">import</span> <span class="n">AssertEvaluationFinished</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="n">FlagReadingStep</span><span class="p">,</span> <span class="n">ProcessingStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">StorageError</span><span class="p">,</span> <span class="n">transformation</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+    <span class="n">DEFAULT_AGGREGATIONS_IQR</span><span class="p">,</span>
+    <span class="n">AggregateRawDataSetColumn</span><span class="p">,</span>
+    <span class="n">ExtractMultipleStep</span><span class="p">,</span>
+    <span class="n">ExtractStep</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.flags</span> <span class="kn">import</span> <span class="n">flag</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">ProcessingStepGroup</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level_filters</span> <span class="kn">import</span> <span class="n">LastLevelFilter</span><span class="p">,</span> <span class="n">NotEmptyDataSetFilter</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.modalities</span> <span class="kn">import</span> <span class="n">SensorModality</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">TransformStep</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.bdh.data</span> <span class="kn">import</span> <span class="n">BDHReading</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.bdh.tasks.typing.const</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.bdh.tasks.typing.keyboard</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.preprocessing</span> <span class="kn">import</span> <span class="n">Detrend</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.sensor</span> <span class="kn">import</span> <span class="n">Resample</span><span class="p">,</span> <span class="n">SetTimestampIndex</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tremor</span> <span class="kn">import</span> <span class="n">TremorMeasures</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.registry</span> <span class="kn">import</span> <span class="n">process_factory</span>
+
+<span class="c1"># Define constants</span>
+<span class="n">TASK_NAME</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;Typing test&quot;</span><span class="p">,</span> <span class="s2">&quot;TT&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Define transform steps</span>
+<div class="viewcode-block" id="TransformReactionTime">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionTime">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformReactionTime</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to find the reaction time for each word.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;key_typed&quot;</span><span class="p">]</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">transform_reaction_time</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;reaction_time_per_word&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_REACTION_TIME</span><span class="p">,</span> <span class="n">DEF_REACTION_TIME_FC</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateReactionTime">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTime">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateReactionTime</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation step for the reaction time measures.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformReactionTime</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="n">DEF_REACTION_TIME</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;reaction time&quot;</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> time spent between the appearance of a word and &quot;</span>
+        <span class="s2">&quot;the moment the user releases the first key for each word.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateReactionTimeCorrectLetter">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTimeCorrectLetter">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateReactionTimeCorrectLetter</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation step for reaction time first correct letter measures.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformReactionTime</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="n">DEF_REACTION_TIME_FC</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;reaction time first correct&quot;</span><span class="p">,</span> <span class="s2">&quot;rt_fc&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> time spent between the appearance of a word and &quot;</span>
+        <span class="s2">&quot;the moment the user releases the first correct letter key for &quot;</span>
+        <span class="s2">&quot;each word.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractReactionTimeSlope">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractReactionTimeSlope">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractReactionTimeSlope</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract reaction time slope.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    is_correct</span>
+<span class="sd">        A boolean value indicating if the ExtractStep should compute</span>
+<span class="sd">        the reaction time slope on any letter or with first correct</span>
+<span class="sd">        letter</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractReactionTimeSlope.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractReactionTimeSlope.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">is_correct</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;reaction_time&quot;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;reaction time&quot;</span>
+        <span class="n">abv</span> <span class="o">=</span> <span class="s2">&quot;rt&quot;</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;The mean slope of the reaction time to write the first&quot;</span>
+        <span class="k">if</span> <span class="n">is_correct</span><span class="p">:</span>
+            <span class="n">col</span> <span class="o">+=</span> <span class="s2">&quot;_first_correct&quot;</span>
+            <span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;correct slope&quot;</span>
+            <span class="n">abv</span> <span class="o">+=</span> <span class="s2">&quot;_fc&quot;</span>
+            <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;correct&quot;</span>
+        <span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;letter.&quot;</span>
+        <span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;slope&quot;</span>
+        <span class="n">abv</span> <span class="o">+=</span> <span class="s2">&quot;_slope&quot;</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;reaction_time_per_word&quot;</span><span class="p">],</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">compute_rt_slope</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">col</span><span class="p">),</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">abv</span><span class="p">),</span>
+                <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s2">. The slope is computed as the discrete &quot;</span>
+                <span class="s2">&quot;derivatives of the reaction time with respect to x: the &quot;</span>
+                <span class="s2">&quot;appearance of the word.&quot;</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractPatientScore">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractPatientScore">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractPatientScore</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract user&#39;s typing score.</span>
+
+<span class="sd">    The typing score is the total number of words correctly typed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;word&quot;</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">total_words_typed</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;number of correct words&quot;</span><span class="p">,</span> <span class="s2">&quot;n_correct_words&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The total number of words successfully typed.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformKeyInterval">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyInterval">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformKeyInterval</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to find the time intervals between two key pressed.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;key_typed&quot;</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">time_intervals</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;timestamp_out&quot;</span><span class="p">)</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;key_intervals&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_KEY_INTERVALS</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TransformWordDuration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDuration">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformWordDuration</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to compute the duration of a word.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;word&quot;</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">word_duration</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;word_duration&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_WORD_DURATION</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateWordDuration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDuration">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateWordDuration</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation step for Word duration measures.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformWordDuration</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="n">DEF_WORD_DURATION</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;word duration&quot;</span><span class="p">,</span> <span class="s2">&quot;word_duration&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> time spent to write a word.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformDifficultyLevel">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDifficultyLevel">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformDifficultyLevel</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to compute the difficulty level of each word.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;word&quot;</span>
+
+<div class="viewcode-block" id="TransformDifficultyLevel.get_difficulty">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDifficultyLevel.get_difficulty">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">get_difficulty</span><span class="p">(</span><span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the level of difficulty.&quot;&quot;&quot;</span>
+        <span class="n">difficulty_level</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grouper</span><span class="o">.</span><span class="n">group_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">difficulty_level</span><span class="p">)</span> <span class="o">-</span> <span class="n">difficulty_level</span><span class="p">)</span></div>
+
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;difficulty_level&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_DIFFICULTY_LEVEL</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TransformWordDurationPerDifficulty">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationPerDifficulty">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformWordDurationPerDifficulty</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute aggregates related to word duration per level difficulty.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;word_duration&quot;</span><span class="p">,</span> <span class="s2">&quot;difficulty_level&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="TransformWordDurationPerDifficulty.transform_duration_per_difficulty">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationPerDifficulty.transform_duration_per_difficulty">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">transform_duration_per_difficulty</span><span class="p">(</span>
+        <span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">word_duration</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">difficulty_level</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Aggregate word duration per level of difficulty.&quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">word</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;difficulty_level&quot;</span><span class="p">:</span> <span class="n">difficulty_level</span><span class="p">[</span><span class="s2">&quot;difficulty_level&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;word_duration&quot;</span><span class="p">:</span> <span class="n">word_duration</span><span class="p">[</span><span class="s2">&quot;word_duration&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;word&quot;</span><span class="p">:</span> <span class="n">word</span><span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="n">groups</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;difficulty_level&quot;</span><span class="p">])</span>
+        <span class="n">dict_measures</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">agg</span><span class="p">,</span> <span class="n">agg_func</span> <span class="ow">in</span> <span class="n">STR_TO_CALLABLE</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">dict_measures</span><span class="p">[</span><span class="n">agg</span><span class="p">]</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">agg_func</span><span class="p">)[</span><span class="s2">&quot;word_duration&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dict_measures</span><span class="p">)</span></div>
+
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;word_duration_per_difficulty&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">DEF_MEAN_WORD_DURATION</span><span class="p">,</span>
+        <span class="n">DEF_MEAN_MEDIAN_WORD_DURATION</span><span class="p">,</span>
+        <span class="n">DEF_STD_WORD_DURATION</span><span class="p">,</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractWordDurationPerDifficulty">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordDurationPerDifficulty">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractWordDurationPerDifficulty</span><span class="p">(</span><span class="n">ExtractMultipleStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract aggregated representations of word duration per difficulty.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractWordDurationPerDifficulty.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordDurationPerDifficulty.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">extract_word_duration</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">difficulty</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">agg</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Extract word duration aggregated representation.&quot;&quot;&quot;</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">difficulty</span><span class="p">,</span> <span class="n">agg</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="c1"># There is no data for the given level</span>
+                <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">nan</span>
+
+        <span class="n">functions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">difficulty</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_LEVELS</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">agg</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">STR_TO_CALLABLE</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">functions</span> <span class="o">+=</span> <span class="p">[</span>
+                    <span class="nb">dict</span><span class="p">(</span>
+                        <span class="n">func</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span>
+                            <span class="n">extract_word_duration</span><span class="p">,</span> <span class="n">difficulty</span><span class="o">=</span><span class="n">difficulty</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="n">agg</span>
+                        <span class="p">),</span>
+                        <span class="n">agg</span><span class="o">=</span><span class="n">agg</span><span class="p">,</span>
+                        <span class="n">difficulty</span><span class="o">=</span><span class="n">difficulty</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="p">]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">TransformWordDurationPerDifficulty</span><span class="o">.</span><span class="n">new_data_set_id</span><span class="p">,</span>
+            <span class="n">transform_functions</span><span class="o">=</span><span class="n">functions</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span>
+                    <span class="s2">&quot;word duration </span><span class="si">{difficulty}</span><span class="s2"> </span><span class="si">{agg}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;word_duration-</span><span class="si">{difficulty}</span><span class="s2">-</span><span class="si">{agg}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{agg}</span><span class="s2"> word duration for the </span><span class="si">{difficulty}</span><span class="s2"> &quot;</span>
+                <span class="s2">&quot;difficulty level.&quot;</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformWordDurationLevelDifference">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationLevelDifference">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformWordDurationLevelDifference</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to find the slope of word duration.</span>
+
+<span class="sd">    The slope is computed as the following: Let us consider the x-axis: level,</span>
+<span class="sd">    and y-axis: word_duration-mean, the slope is given by the differentiation</span>
+<span class="sd">    of y-axis (x-axis being incremented by one every-time).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TransformWordDurationLevelDifference.differentiate">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationLevelDifference.differentiate">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">differentiate</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Differentiate average word duration.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span></div>
+
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformWordDurationPerDifficulty</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;word_duration_per_difficulty_mean_difference&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_WORD_DUR_DIFF</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateWordDurationLevelSlope">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDurationLevelSlope">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateWordDurationLevelSlope</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation step for statistics about the slope of word duration.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformWordDurationLevelDifference</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="n">DEF_WORD_DUR_DIFF</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;word duration slope&quot;</span><span class="p">,</span> <span class="s2">&quot;word_duration_slope&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> of the word duration slope. The slope is &quot;</span>
+        <span class="s2">&quot;computed by differencing the word duration mean per difficulty &quot;</span>
+        <span class="s2">&quot;level w.r.t difficulty level.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractTimeToFinishLastThreeWords">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractTimeToFinishLastThreeWords">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractTimeToFinishLastThreeWords</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract aggregated representation of the last three words duration.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractTimeToFinishLastThreeWords.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractTimeToFinishLastThreeWords.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">extract_last_three</span><span class="p">(</span>
+            <span class="n">word_duration</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">agg</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Extract last three typed word duration.&quot;&quot;&quot;</span>
+            <span class="n">agg_func</span> <span class="o">=</span> <span class="n">STR_TO_CALLABLE</span><span class="p">[</span><span class="n">agg</span><span class="p">]</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">word_duration</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span> <span class="s2">&quot;word_duration&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">agg_func</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;word_duration&quot;</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">],</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">extract_last_three</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="n">agg</span><span class="p">),</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;last three word duration </span><span class="si">{</span><span class="n">agg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;word_duration-last_three-</span><span class="si">{</span><span class="n">agg</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">),</span>
+                <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">agg</span><span class="si">}</span><span class="s2"> duration of the last three words.&quot;</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformSubmissionState">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSubmissionState">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformSubmissionState</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a dataframe that contains the submission state.</span>
+
+<span class="sd">    This transform step translate the state at each time a user types a key. Available</span>
+<span class="sd">    states are the following: ``Correct``, ``Incorrect``, and ``Correcting``. The state</span>
+<span class="sd">    is ``Correct`` if the textbox is empty or if it forms a subpart of the word</span>
+<span class="sd">    displayed on the screen. The state is incorrect whenever the user types a key (that</span>
+<span class="sd">    is not backspace), leading to a textbox that does not form a subpart of the word</span>
+<span class="sd">    displayed on the screen. Finally, the state is identified as correcting whenever</span>
+<span class="sd">    the user corrects its mistake by typing backspace; it can be seen as an</span>
+<span class="sd">    intermediate state between an incorrect and a correct state.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;key_typed&quot;</span><span class="p">]</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">get_submission_state</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;submission_state&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">DEF_SUBMISSION_STATE</span><span class="p">,</span>
+        <span class="n">DEF_DISPLAYED_WORD</span><span class="p">,</span>
+        <span class="n">DEF_DISPLAYED_INPUT</span><span class="p">,</span>
+        <span class="n">DEF_KEY</span><span class="p">,</span>
+        <span class="n">DEF_SUCCESS</span><span class="p">,</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TransformDetectKeyAutocompletion">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectKeyAutocompletion">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformDetectKeyAutocompletion</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Detect the autocompletion at a key level.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformSubmissionState</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">detect_key_autocompletion</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;keys_with_autocompletion&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_DISPLAYED_WORD</span><span class="p">,</span> <span class="n">DEF_KEY</span><span class="p">,</span> <span class="n">DEF_AUTOCOMPLETE_KEY</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TransformDetectWordAutocompletion">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectWordAutocompletion">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformDetectWordAutocompletion</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A new dataset indicating if a word has been completed.</span>
+
+<span class="sd">    If autocompletion was used the associated word will be mark as True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformDetectKeyAutocompletion</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">detect_word_autocompletion</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;autocompletion_per_word&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_AUTOCOMPLETE_WORD</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractAutocomplete">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractAutocomplete">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractAutocomplete</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the number of autocompletions.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformDetectKeyAutocompletion</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;number of autocompletions&quot;</span><span class="p">,</span> <span class="s2">&quot;n_autocompletion&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The total number of autocompletions.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">total_autocomplete</span></div>
+
+
+
+<div class="viewcode-block" id="FlagAutoComplete">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoComplete">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagAutoComplete</span><span class="p">(</span><span class="n">FlagReadingStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag the reading if any autocomplete key is detected.&quot;&quot;&quot;</span>
+
+    <span class="c1"># pylint: disable=unused-argument</span>
+    <span class="n">task_name</span> <span class="o">=</span> <span class="n">TASK_NAME</span>
+    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;autocomplete&quot;</span><span class="p">,</span> <span class="s2">&quot;auto_complete&quot;</span><span class="p">)</span>
+    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">BEHAVIORAL</span>
+    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+    <span class="n">reason</span> <span class="o">=</span> <span class="s2">&quot;The user has autocompleted at least one word.&quot;</span>
+
+<div class="viewcode-block" id="FlagAutoComplete.flag_autocomplete">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoComplete.flag_autocomplete">[docs]</a>
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">flag_autocomplete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Indicate if there was no autocompletion during the evaluation.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">reading</span><span class="o">.</span><span class="n">get_merged_measure_set</span><span class="p">()</span><span class="o">.</span><span class="n">get_raw_value</span><span class="p">(</span><span class="s2">&quot;tt-n_autocompletion&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformStateDurations">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformStateDurations">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformStateDurations</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a data frame that contains the duration of each state.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">,</span> <span class="s2">&quot;key_intervals&quot;</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">]</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;state_durations&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">DEF_SUBMISSION_STATE</span><span class="p">,</span>
+        <span class="n">DEF_STATE_DUR</span><span class="p">,</span>
+        <span class="n">DEF_T_BETWEEN_STATE</span><span class="p">,</span>
+        <span class="n">DEF_SUCCESS</span><span class="p">,</span>
+        <span class="n">DEF_DISPLAYED_WORD</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">get_state_durations</span></div>
+
+
+
+<div class="viewcode-block" id="TransformReactionDuration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDuration">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformReactionDuration</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a data frame that contains the reaction duration.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformStateDurations</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;reaction_duration&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_INCORRECT_STATE_DURATION</span><span class="p">,</span> <span class="n">DEF_SUCCESS</span><span class="p">]</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">get_reaction_duration</span></div>
+
+
+
+<div class="viewcode-block" id="TransformReactionDurationCorrectSubmissions">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDurationCorrectSubmissions">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformReactionDurationCorrectSubmissions</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter reaction duration values for correct words.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformReactionDuration</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">get_correct_reaction_duration</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;reaction_durations_correct_submissions&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_REACTION_DURATION</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateReactionDuration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionDuration">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateReactionDuration</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation step for reaction duration measure.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformReactionDurationCorrectSubmissions</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="n">DEF_REACTION_DURATION</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;reaction duration&quot;</span><span class="p">,</span> <span class="s2">&quot;reaction_duration&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> reaction duration for a correct submission.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformCorrectingDuration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDuration">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformCorrectingDuration</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a data frame that contains correcting durations.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformStateDurations</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">get_correcting_duration</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;correcting_duration&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_CORRECTING_DURATION</span><span class="p">,</span> <span class="n">DEF_SUCCESS</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TransformCorrectingDurationCorrectSubmissions">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDurationCorrectSubmissions">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformCorrectingDurationCorrectSubmissions</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter correcting duration values for correct words.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformCorrectingDuration</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">get_correct_correcting_duration</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;correcting_duration_correct_submissions&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_CORRECTING_CORRECT_DURATION</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateCorrectingDuration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateCorrectingDuration">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateCorrectingDuration</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An extraction processing step for correcting duration measures.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformCorrectingDurationCorrectSubmissions</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="n">DEF_CORRECTING_CORRECT_DURATION</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;correcting duration&quot;</span><span class="p">,</span> <span class="s2">&quot;correcting_duration&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> correcting duration for a correct submission.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformReactingTime">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTime">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformReactingTime</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a data frame that contains reacting time.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformStateDurations</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">get_reacting_times</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;reacting_times&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_REACTING_TIME</span><span class="p">,</span> <span class="n">DEF_SUCCESS</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TransformReactingTimeCorrectSubmissions">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTimeCorrectSubmissions">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformReactingTimeCorrectSubmissions</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter reacting times values for correct words.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformReactingTime</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">get_correct_reacting_time</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;reacting_times_correct_submissions&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_REACTING_TIME_CORRECT</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateReactingTime">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactingTime">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateReactingTime</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation processing step for reacting time measures.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformReactingTimeCorrectSubmissions</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="n">DEF_REACTING_TIME_CORRECT</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;reacting time&quot;</span><span class="p">,</span> <span class="s2">&quot;reacting_time&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> reacting time for a correct word.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformCorrectSubmissionAndTime">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTime">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformCorrectSubmissionAndTime</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A data set to deal with correct (consecutive) words with(out) errors.</span>
+
+<span class="sd">    This transform step aims to create a data set appropriate to compute measure</span>
+<span class="sd">    related to successfully written words with(out) error, and also a streak of words</span>
+<span class="sd">    with(out) error(s).</span>
+
+<span class="sd">    The transformation, based on the ``submission_state`` data set, applies the</span>
+<span class="sd">    following modifications:</span>
+
+<span class="sd">    - Add the appearance timestamp as a column</span>
+<span class="sd">    - Create a boolean translating if the state is ``Correct`` or not</span>
+<span class="sd">    - Group the data frame by displayed word and aggregate with the min.</span>
+
+<span class="sd">    This results in a data frame indexed with ``displayed_word`` and has three columns:</span>
+<span class="sd">    ``appearance_timestamp``, ``is_error_free``, ``success``. Here</span>
+<span class="sd">    ``appearance_timestamp`` is the timestamp corresponding to the appearance of the</span>
+<span class="sd">    word, ``is_error_free`` is a boolean set to ``True`` if all correction_state were</span>
+<span class="sd">    ``Correct``. Finally, ``success`` indicates if the word was a correct submission.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;submission_state&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="TransformCorrectSubmissionAndTime.correct_and_ts">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTime.correct_and_ts">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">correct_and_ts</span><span class="p">(</span>
+        <span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">submission_state</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Group by word on screen and aggregate with the min.&quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">word</span><span class="p">[[</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">sub_state_copy</span> <span class="o">=</span> <span class="n">submission_state</span><span class="p">[[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">,</span> <span class="s2">&quot;submission_state&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">sub_state_copy</span><span class="p">[</span><span class="s2">&quot;is_error_free&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">sub_state_copy</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">KeyState</span><span class="o">.</span><span class="n">CORRECT</span>
+        <span class="p">)</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="n">sub_state_copy</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">)</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">is_error_free</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;is_error_free&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="n">is_error_free</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;word&quot;</span>
+        <span class="n">res</span><span class="p">[</span><span class="s2">&quot;is_error_free&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">is_error_free</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;correct_sub_and_time&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_SUCCESS</span><span class="p">,</span> <span class="n">DEF_IS_ERROR_FREE</span><span class="p">,</span> <span class="n">DEF_APPEARANCE_TS</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractWordTypedWithOrWoError">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordTypedWithOrWoError">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractWordTypedWithOrWoError</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the words successfully typed and written with(out) error.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractWordTypedWithOrWoError.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordTypedWithOrWoError.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_free</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">error_free</span><span class="p">:</span>
+            <span class="n">with_or_wo</span> <span class="o">=</span> <span class="s2">&quot;without&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">with_or_wo</span> <span class="o">=</span> <span class="s2">&quot;with&quot;</span>
+
+        <span class="k">def</span> <span class="nf">count_words_typed</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">error_free</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Count the number of words typed with(out) any error.&quot;&quot;&quot;</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">is_error_free</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">error_free</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">mask</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">success</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">])</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="n">TransformCorrectSubmissionAndTime</span><span class="o">.</span><span class="n">new_data_set_id</span><span class="p">,</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">count_words_typed</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">error_free</span><span class="p">),</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;words typed </span><span class="si">{</span><span class="n">with_or_wo</span><span class="si">}</span><span class="s2"> error&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;words_typed_</span><span class="si">{</span><span class="n">with_or_wo</span><span class="si">}</span><span class="s2">_error&quot;</span>
+                <span class="p">),</span>
+                <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Number of correct words typed </span><span class="si">{</span><span class="n">with_or_wo</span><span class="si">}</span><span class="s2"> error.&quot;</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformCorrectSubmissionAndTimeInRow">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTimeInRow">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformCorrectSubmissionAndTimeInRow</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to count consecutive states.</span>
+
+<span class="sd">    The transformation, based on the ``correct_sub_and_time`` data set, works as the</span>
+<span class="sd">    following : Assign a subgroup number to each group of consecutive ``is_error_free``</span>
+<span class="sd">    values. Then group by subgroup number and aggregate with count. Finally, it returns</span>
+<span class="sd">    a data frame with three columns: the count, the submission state and if the</span>
+<span class="sd">    sequence was free of error.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformCorrectSubmissionAndTime</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">find_consec_element_and_count</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;correct_sub_in_row&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_SUCCESS</span><span class="p">,</span> <span class="n">DEF_COUNT_CONSEC_STATES</span><span class="p">,</span> <span class="n">DEF_IS_ERROR_FREE</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractWordTypedWithOrWoErrorInRow">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordTypedWithOrWoErrorInRow">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractWordTypedWithOrWoErrorInRow</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the successfully typed words written with(out) error in a row.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractWordTypedWithOrWoErrorInRow.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordTypedWithOrWoErrorInRow.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_free</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">error_free</span><span class="p">:</span>
+            <span class="n">with_or_wo</span> <span class="o">=</span> <span class="s2">&quot;without&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">with_or_wo</span> <span class="o">=</span> <span class="s2">&quot;with&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="n">TransformCorrectSubmissionAndTimeInRow</span><span class="o">.</span><span class="n">new_data_set_id</span><span class="p">,</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">count_words_typed_in_row</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">error_free</span><span class="p">),</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;consecutive words typed </span><span class="si">{</span><span class="n">with_or_wo</span><span class="si">}</span><span class="s2"> error&quot;</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;consecutive_words_typed_</span><span class="si">{</span><span class="n">with_or_wo</span><span class="si">}</span><span class="s2">_error&quot;</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractIncorrectWords">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractIncorrectWords">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractIncorrectWords</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the number of incorrect words.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;word&quot;</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">count_incorrect_words</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;number of Incorrect words&quot;</span><span class="p">,</span> <span class="s2">&quot;n_incorrect_words&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of Incorrect words.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformSimilarityRatio">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatio">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformSimilarityRatio</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to compute similarity metric between answer and target.</span>
+
+<span class="sd">    The similarity metric that has been chosen is the ratio returned by the</span>
+<span class="sd">    sequence matcher from difflib. It is a float in the range [0, 1]. Where T</span>
+<span class="sd">    is the total number of elements in both sequences, and M is the number of</span>
+<span class="sd">    matches, this is 2.0*M / T. Note that this is 1.0 if the sequences are</span>
+<span class="sd">    identical, and 0.0 if they have nothing in common.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformSubmissionState</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">apply_similarity_ratio</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;similarity_ratio&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_DISPLAYED_INPUT</span><span class="p">,</span> <span class="n">DEF_DISPLAYED_WORD</span><span class="p">,</span> <span class="n">DEF_SIMILARITY_RATIO</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TransformSimilarityRatioGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatioGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformSimilarityRatioGroup</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Group similarity ratio by displayed_word and keep the max.</span>
+
+<span class="sd">    In order to only keep incorrect words we remove similarity ratio equal to one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformSimilarityRatio</span><span class="o">.</span><span class="n">new_data_set_id</span>
+
+<div class="viewcode-block" id="TransformSimilarityRatioGroup.group_and_max_sim_ratio">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatioGroup.group_and_max_sim_ratio">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">group_and_max_sim_ratio</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Group by displayed word and get the similarity ratio max.&quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">)[</span><span class="s2">&quot;similarity_ratio&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="n">res</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">]</span></div>
+
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;similarity_ratio_grouped&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_SIMILARITY_RATIO</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateSimilarityRatioMeasures">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateSimilarityRatioMeasures">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateSimilarityRatioMeasures</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate similarity ratio measures.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformSimilarityRatioGroup</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="n">DEF_SIMILARITY_RATIO</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;similarity ratio&quot;</span><span class="p">,</span> <span class="s2">&quot;sim_ratio&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> similarity ratio between word being typed and &quot;</span>
+        <span class="s2">&quot;word on screen.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractCountKeyPressed">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountKeyPressed">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractCountKeyPressed</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the number of keys pressed.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;key_typed&quot;</span>
+
+<div class="viewcode-block" id="ExtractCountKeyPressed.count_key_pressed">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountKeyPressed.count_key_pressed">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">count_key_pressed</span><span class="p">(</span><span class="n">key_typed</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Count the number of keys pressed.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">count_key_pressed</span><span class="p">(</span><span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">])</span></div>
+
+
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;keys pressed&quot;</span><span class="p">,</span> <span class="s2">&quot;keys_pressed&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of keys pressed.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformLettersTypedPerWordRatio">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLettersTypedPerWordRatio">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformLettersTypedPerWordRatio</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the ratio of the letters typed per word divided by its length.</span>
+
+<span class="sd">    This transform steps computes the ratio for completed words only.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">]</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">ratio_key_pressed</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;letters_typed_over_length&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_LETTER_TYPED_OVER_LEN</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateLettersTypedPerWordRatio">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersTypedPerWordRatio">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateLettersTypedPerWordRatio</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate measures related to the ratio of letters typed.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformLettersTypedPerWordRatio</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="n">DEF_LETTER_TYPED_OVER_LEN</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;letters typed over length&quot;</span><span class="p">,</span> <span class="s2">&quot;ratio_letters_typed_len&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> of the ratio of letters typed over the &quot;</span>
+        <span class="s2">&quot;respective length of the word for completed word only.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractCountCorrectLetters">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountCorrectLetters">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractCountCorrectLetters</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the number of correct letters.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractCountCorrectLetters.count_correct_letters">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountCorrectLetters.count_correct_letters">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">count_correct_letters</span><span class="p">(</span><span class="n">submission_state</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Count the number of correct letters.&quot;&quot;&quot;</span>
+        <span class="n">is_alphabet_letter</span> <span class="o">=</span> <span class="n">submission_state</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>
+        <span class="n">is_correct</span> <span class="o">=</span> <span class="n">submission_state</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">KeyState</span><span class="o">.</span><span class="n">CORRECT</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">is_alphabet_letter</span> <span class="o">&amp;</span> <span class="n">is_correct</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformSubmissionState</span><span class="o">.</span><span class="n">new_data_set_id</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;correct letters&quot;</span><span class="p">,</span> <span class="s2">&quot;correct_letters&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of correct letters.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformIsLetter">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIsLetter">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformIsLetter</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to find if a key is a letter.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;key_typed&quot;</span>
+
+<div class="viewcode-block" id="TransformIsLetter.is_letter">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIsLetter.is_letter">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">is_letter</span><span class="p">(</span><span class="n">key_typed</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Identify if a key typed is a letter.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span></div>
+
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;key_is_letter&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_IS_LETTER</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TransformLetterInterval">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLetterInterval">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformLetterInterval</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to compute the time between letters.</span>
+
+<span class="sd">    The time between letters is computed as the time separating two keys that</span>
+<span class="sd">    are letters (see isalpha() method), for example, interval between words</span>
+<span class="sd">    isn&#39;t considered.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    category</span>
+<span class="sd">        The category on which one wants to filter the data set. If not provided</span>
+<span class="sd">        the data set will return interval between letters for every words.</span>
+<span class="sd">        When provided category should be either ``Correct`` or ``Incorrect``.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the category provided is not allowed. Or if a category is provided</span>
+<span class="sd">        but the optional dataset word_is_typed is not provided.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TransformLetterInterval.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLetterInterval.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">WordState</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">transform_letter_interval</span><span class="p">(</span>
+            <span class="n">key_is_letter</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+            <span class="n">key_intervals</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+            <span class="n">submission_state</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Compute letter intervals for a given submission state.&quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">category</span><span class="p">:</span>
+                <span class="n">letter_intervals</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">letter_interval</span><span class="p">(</span>
+                    <span class="n">key_is_letter</span><span class="p">[</span><span class="s2">&quot;key_is_letter&quot;</span><span class="p">],</span> <span class="n">key_intervals</span><span class="p">[</span><span class="s2">&quot;key_intervals&quot;</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;letter_intervals&quot;</span><span class="p">:</span> <span class="n">letter_intervals</span><span class="p">,</span>
+                        <span class="s2">&quot;displayed_word&quot;</span><span class="p">:</span> <span class="n">submission_state</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                            <span class="n">mask</span><span class="p">,</span> <span class="s2">&quot;displayed_word&quot;</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+
+            <span class="n">extra_mask</span> <span class="o">=</span> <span class="n">submission_state</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">category</span> <span class="o">==</span> <span class="n">WordState</span><span class="o">.</span><span class="n">INCORRECT</span><span class="p">:</span>
+                <span class="n">extra_mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">extra_mask</span>
+
+            <span class="n">letter_intervals</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">letter_interval</span><span class="p">(</span>
+                <span class="n">key_is_letter</span><span class="p">[</span><span class="s2">&quot;key_is_letter&quot;</span><span class="p">],</span>
+                <span class="n">key_intervals</span><span class="p">[</span><span class="s2">&quot;key_intervals&quot;</span><span class="p">],</span>
+                <span class="n">extra_mask</span><span class="o">=</span><span class="n">extra_mask</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;letter_intervals&quot;</span><span class="p">:</span> <span class="n">letter_intervals</span><span class="p">,</span>
+                    <span class="s2">&quot;displayed_word&quot;</span><span class="p">:</span> <span class="n">submission_state</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                        <span class="n">mask</span><span class="p">,</span> <span class="s2">&quot;displayed_word&quot;</span>
+                    <span class="p">],</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+
+        <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;key_is_letter&quot;</span><span class="p">,</span> <span class="s2">&quot;key_intervals&quot;</span><span class="p">,</span> <span class="s2">&quot;submission_state&quot;</span><span class="p">]</span>
+        <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;letter_intervals&quot;</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;The time between consecutive letters&quot;</span>
+        <span class="k">if</span> <span class="n">category</span><span class="p">:</span>
+            <span class="n">category_name</span> <span class="o">=</span> <span class="n">category</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">new_data_set_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">description</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;for the </span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2"> words&quot;</span>
+        <span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;.&quot;</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="n">transform_letter_interval</span><span class="p">,</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="n">new_data_set_id</span><span class="p">,</span>
+            <span class="n">definitions</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+                    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;letter_intervals&quot;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;letter intervals&quot;</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+                    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+                    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">DEF_DISPLAYED_WORD</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AggregateLettersIntervals">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersIntervals">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateLettersIntervals</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract letter intervals related measures.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    category</span>
+<span class="sd">        The category on which one wants to extract measures. If not provided the</span>
+<span class="sd">        measures will be extracted based on the data set computed on every word.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AggregateLettersIntervals.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersIntervals.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">WordState</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_id</span> <span class="o">=</span> <span class="s2">&quot;letter_intervals&quot;</span>
+        <span class="n">measure_name</span> <span class="o">=</span> <span class="s2">&quot;letter intervals&quot;</span>
+        <span class="n">measure_abbr</span> <span class="o">=</span> <span class="s2">&quot;letter_intervals&quot;</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> time interval between two letters&quot;</span>
+        <span class="k">if</span> <span class="n">category</span><span class="p">:</span>
+            <span class="n">category_name</span> <span class="o">=</span> <span class="n">category</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="n">data_set_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">measure_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">measure_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">measure_abbr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">measure_abbr</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">description</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;for </span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2"> words only&quot;</span>
+
+        <span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;.&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="s2">&quot;letter_intervals&quot;</span><span class="p">,</span>
+            <span class="n">aggregations</span><span class="o">=</span><span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="n">measure_name</span><span class="p">,</span> <span class="n">measure_abbr</span><span class="p">),</span>
+                <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformTop10Interval">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformTop10Interval">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformTop10Interval</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to find the top ten percent letters intervals.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    category</span>
+<span class="sd">        The category on which one wants to extract measures. If not provided</span>
+<span class="sd">        the measures will be extracted based on the data set computed on every</span>
+<span class="sd">        letter intervals.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TransformTop10Interval.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformTop10Interval.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">KeyState</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">data_set_id</span> <span class="o">=</span> <span class="s2">&quot;letter_intervals&quot;</span>
+        <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;top_10_letter_intervals&quot;</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> time interval between two letters&quot;</span>
+        <span class="k">if</span> <span class="n">category</span><span class="p">:</span>
+            <span class="n">category_name</span> <span class="o">=</span> <span class="n">category</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">new_data_set_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">data_set_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">description</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;for </span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2"> letters only&quot;</span>
+        <span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;.&quot;</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="n">keep_top_ten</span><span class="p">,</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="n">new_data_set_id</span><span class="p">,</span>
+            <span class="n">definitions</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+                    <span class="n">id_</span><span class="o">=</span><span class="s2">&quot;letter_intervals&quot;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;letter intervals&quot;</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+                    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+                    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">],</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AggregateTop10IntervalDefaultMeasures">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateTop10IntervalDefaultMeasures">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateTop10IntervalDefaultMeasures</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract measures related to the top ten percent letters intervals.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    category</span>
+<span class="sd">        The category on which one wants to extract measures. If not provided</span>
+<span class="sd">        the measures will be extracted based on the data set computed on every</span>
+<span class="sd">        letter intervals.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AggregateTop10IntervalDefaultMeasures.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateTop10IntervalDefaultMeasures.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">KeyState</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_id</span> <span class="o">=</span> <span class="s2">&quot;top_10_letter_intervals&quot;</span>
+        <span class="n">measure_name_str</span> <span class="o">=</span> <span class="s2">&quot;top 10 letter intervals&quot;</span>
+        <span class="n">measure_abbr</span> <span class="o">=</span> <span class="s2">&quot;top_10_letter_intervals&quot;</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> of the top 10 percent time &quot;</span>
+            <span class="s2">&quot;interval between two letters&quot;</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">category</span><span class="p">:</span>
+            <span class="n">category_name</span> <span class="o">=</span> <span class="n">category</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="n">data_set_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">measure_name_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">measure_name_str</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">measure_abbr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">measure_abbr</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">description</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;for </span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="s2"> letters only&quot;</span>
+        <span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;.&quot;</span>
+        <span class="n">measure_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="n">measure_name_str</span><span class="p">,</span> <span class="n">measure_abbr</span><span class="p">)</span>
+        <span class="n">transform_functions</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS_IQR</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">column_id</span><span class="o">=</span><span class="s2">&quot;letter_intervals&quot;</span><span class="p">,</span>
+            <span class="n">aggregations</span><span class="o">=</span><span class="n">transform_functions</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">measure_name</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span>
+            <span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformMaxDeviation">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformMaxDeviation">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformMaxDeviation</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A transform step to evaluate the maximum deviation per word.</span>
+
+<span class="sd">    The deviation is computed as the squared error between the current interval</span>
+<span class="sd">    and the mean of these intervals within a word.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;letter_intervals&quot;</span>
+
+<div class="viewcode-block" id="TransformMaxDeviation.compute_max_letter_interval_deviation">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformMaxDeviation.compute_max_letter_interval_deviation">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">compute_max_letter_interval_deviation</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the maximum letter interval deviation.&quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">max_letter_interval_dev</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;max_deviation_letter_interval&quot;</span><span class="p">:</span> <span class="p">[]})</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;max_deviation_letter_interval&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_MAX_DEVIATION_LETTER_INTERVAL</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateMaxDeviation">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateMaxDeviation">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateMaxDeviation</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate step related to the maximum deviation of letter intervals.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;max_deviation_letter_interval&quot;</span><span class="p">]</span>
+    <span class="n">column_id</span> <span class="o">=</span> <span class="s2">&quot;max_deviation_letter_interval&quot;</span>
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS_IQR</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span>
+            <span class="s2">&quot;letter intervals maximum deviation &quot;</span><span class="p">,</span> <span class="s2">&quot;letter_interval_max_dev&quot;</span>
+        <span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> of the maximum deviation of &quot;</span>
+        <span class="s2">&quot;the letter interval for each word.&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformIntervalCorrectLettersUntilMistake">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIntervalCorrectLettersUntilMistake">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformIntervalCorrectLettersUntilMistake</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the interval between correct letters until a mistake.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    differentiate</span>
+<span class="sd">        An boolean indicating if we want to compute the interval or the</span>
+<span class="sd">        derivative of the intervals.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TransformIntervalCorrectLettersUntilMistake.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIntervalCorrectLettersUntilMistake.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">differentiate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_transform_function</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Format _interval_until_mistake as a transform function.&quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="n">interval_until_mistake</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">differentiate</span><span class="p">)</span>
+
+        <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;interval_until_mistake&quot;</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;The time interval between two consecutive correct letters&quot;</span>
+        <span class="n">raw_data_id_</span> <span class="o">=</span> <span class="s2">&quot;interval_until_mistake&quot;</span>
+        <span class="n">raw_data_name</span> <span class="o">=</span> <span class="s2">&quot;interval_until_mistake&quot;</span>
+        <span class="k">if</span> <span class="n">differentiate</span><span class="p">:</span>
+            <span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;after differentiation&quot;</span>
+            <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;derived_</span><span class="si">{</span><span class="n">new_data_set_id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">raw_data_id_</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;derived_</span><span class="si">{</span><span class="n">raw_data_id_</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">raw_data_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;derived </span><span class="si">{</span><span class="n">raw_data_name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;. Correct letters are considered until the user make a mistake.&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">,</span> <span class="s2">&quot;key_is_letter&quot;</span><span class="p">],</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="n">_transform_function</span><span class="p">,</span>
+            <span class="n">new_data_set_id</span><span class="o">=</span><span class="n">new_data_set_id</span><span class="p">,</span>
+            <span class="n">definitions</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+                    <span class="n">id_</span><span class="o">=</span><span class="n">raw_data_id_</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">raw_data_name</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+                    <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">],</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AggregateIntervalCorrectLetters">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateIntervalCorrectLetters">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateIntervalCorrectLetters</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interval between correct letters until a mistake - measures.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    differentiate</span>
+<span class="sd">        An boolean indicating if we want to compute the interval or the</span>
+<span class="sd">        derivative of the intervals.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AggregateIntervalCorrectLetters.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateIntervalCorrectLetters.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">differentiate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;interval until mistake&quot;</span>
+        <span class="n">abbr</span> <span class="o">=</span> <span class="s2">&quot;interval_until_mistake&quot;</span>
+        <span class="n">data_set_id</span> <span class="o">=</span> <span class="s2">&quot;interval_until_mistake&quot;</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> of the time interval between two &quot;</span>
+            <span class="s2">&quot;consecutive correct letters&quot;</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">differentiate</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;derived </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">abbr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;derived_</span><span class="si">{</span><span class="n">abbr</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">data_set_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;derived_</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;after differentiation&quot;</span>
+        <span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;. Correct letters are considered until the user make a mistake.&quot;</span>
+        <span class="n">measure_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">abbr</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">aggregations</span><span class="o">=</span><span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">measure_name</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+                <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractRatioWordsLetters">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractRatioWordsLetters">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractRatioWordsLetters</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the ratio of correct words divided by the number of letters.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;key_is_letter&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="ExtractRatioWordsLetters.compute_ratio">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractRatioWordsLetters.compute_ratio">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">compute_ratio</span><span class="p">(</span><span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">key_is_letter</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute ratio of correct words by number of letters typed.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">word</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">key_is_letter</span><span class="p">[</span><span class="s2">&quot;key_is_letter&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+
+
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;ratio correct words letters&quot;</span><span class="p">,</span> <span class="s2">&quot;ratio_correct_words_letters&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The number of correctly typed words divided by the total number &quot;</span>
+        <span class="s2">&quot;of letters.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractTypingSpeedSlope">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractTypingSpeedSlope">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractTypingSpeedSlope</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract typing speed slope to quantify the fatigability.</span>
+
+<span class="sd">    The typing speed slope is computed with discrete differentiation of the character</span>
+<span class="sd">    speed (or typing speed) per word and the differentiation of the appearance</span>
+<span class="sd">    timestamp of the words</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;submission_state&quot;</span><span class="p">]</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">compute_typing_speed_slope</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;typing speed slope&quot;</span><span class="p">,</span> <span class="s2">&quot;typing_speed_slope&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Typing speed slope.&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TypingPreprocessingIMUGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TypingPreprocessingIMUGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">TypingPreprocessingIMUGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A Preprocessing step to preprocess typing IMU Signal.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        The data set id on which the transformation is to be performed.</span>
+<span class="sd">    resample_freq</span>
+<span class="sd">        Optionally, the frequency to which resample the data during the</span>
+<span class="sd">        resample step.</span>
+<span class="sd">    columns</span>
+<span class="sd">        Optional argument to specify the columns on which the preprocessing</span>
+<span class="sd">        steps should be applied.</span>
+<span class="sd">    max_frequency_distance</span>
+<span class="sd">        An optional integer specifying the maximum accepted</span>
+<span class="sd">        distance between the expected frequency and the estimated frequency</span>
+<span class="sd">        above which we raise an error.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TypingPreprocessingIMUGroup.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TypingPreprocessingIMUGroup.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">resample_freq</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_frequency_distance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span> <span class="ow">or</span> <span class="n">DEFAULT_COLUMNS</span>
+        <span class="n">max_frequency_distance</span> <span class="o">=</span> <span class="n">max_frequency_distance</span> <span class="ow">or</span> <span class="mi">10</span>
+
+        <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">SetTimestampIndex</span><span class="p">(</span><span class="n">data_set_id</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">duplicates</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">),</span>
+            <span class="n">Resample</span><span class="p">(</span>
+                <span class="n">data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_ts&quot;</span><span class="p">,</span>
+                <span class="n">freq</span><span class="o">=</span><span class="n">resample_freq</span><span class="p">,</span>
+                <span class="n">aggregations</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;ffill&quot;</span><span class="p">],</span>
+                <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+                <span class="n">max_frequency_distance</span><span class="o">=</span><span class="n">max_frequency_distance</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">Detrend</span><span class="p">(</span><span class="n">data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_ts_resampled&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">level_filter</span> <span class="o">=</span> <span class="n">NotEmptyDataSetFilter</span><span class="p">(</span><span class="n">data_set_id</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">LastLevelFilter</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TypingTremorMeasuresGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TypingTremorMeasuresGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">TypingTremorMeasuresGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A group of typing processing steps for tremor measures.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">TremorMeasures</span><span class="p">(</span>
+            <span class="n">sensor</span><span class="o">=</span><span class="n">SensorModality</span><span class="o">.</span><span class="n">ACCELEROMETER</span><span class="p">,</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;accelerometer_ts_resampled_detrend&quot;</span><span class="p">,</span>
+            <span class="n">add_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">NotEmptyDataSetFilter</span><span class="p">(</span><span class="s2">&quot;accelerometer&quot;</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">TremorMeasures</span><span class="p">(</span>
+            <span class="n">sensor</span><span class="o">=</span><span class="n">SensorModality</span><span class="o">.</span><span class="n">GYROSCOPE</span><span class="p">,</span>
+            <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope_ts_resampled_detrend&quot;</span><span class="p">,</span>
+            <span class="n">add_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">NotEmptyDataSetFilter</span><span class="p">(</span><span class="s2">&quot;gyroscope&quot;</span><span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TransformKeyTyped">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyTyped">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformKeyTyped</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove all key pressed after the last word disappeared.&quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;key_typed&quot;</span>
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;key_typed&quot;</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">]</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">DEF_DISPLAYED_INPUT</span><span class="p">,</span> <span class="n">DEF_TS_OUT</span><span class="p">,</span> <span class="n">DEF_WORD_ID</span><span class="p">,</span> <span class="n">DEF_KEY</span><span class="p">]</span>
+
+    <span class="n">storage_error</span> <span class="o">=</span> <span class="n">StorageError</span><span class="o">.</span><span class="n">OVERWRITE</span>
+
+<div class="viewcode-block" id="TransformKeyTyped.remove_outdated_keys">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyTyped.remove_outdated_keys">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">remove_outdated_keys</span><span class="p">(</span><span class="n">key_typed</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove keys released after last word disappearance timestamp.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">key_typed</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;timestamp_out&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">word</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;disappearance_timestamp&quot;</span><span class="p">]</span>
+        <span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PreprocessingTypingGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.PreprocessingTypingGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">PreprocessingTypingGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH typing preprocessing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Assert test has been completed</span>
+        <span class="n">AssertEvaluationFinished</span><span class="p">(),</span>
+        <span class="c1"># Remove keys that appear after the last word has disappeared</span>
+        <span class="n">TransformKeyTyped</span><span class="p">(),</span>
+        <span class="c1"># Define key interval</span>
+        <span class="n">TransformKeyInterval</span><span class="p">(),</span>
+        <span class="c1"># Define each state</span>
+        <span class="n">TransformSubmissionState</span><span class="p">(),</span>
+        <span class="n">TransformStateDurations</span><span class="p">(),</span>
+        <span class="c1"># Detect autocompletion</span>
+        <span class="n">TransformDetectKeyAutocompletion</span><span class="p">(),</span>
+        <span class="n">TransformDetectWordAutocompletion</span><span class="p">(),</span>
+        <span class="c1"># Preprocessing IMU</span>
+        <span class="n">TypingPreprocessingIMUGroup</span><span class="p">(</span><span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;accelerometer&quot;</span><span class="p">),</span>
+        <span class="n">TypingPreprocessingIMUGroup</span><span class="p">(</span><span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;gyroscope&quot;</span><span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ReactionTimeGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ReactionTimeGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">ReactionTimeGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH Typing Reaction time processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">TransformReactionTime</span><span class="p">(),</span>
+        <span class="n">AggregateReactionTime</span><span class="p">(),</span>
+        <span class="n">AggregateReactionTimeCorrectLetter</span><span class="p">(),</span>
+        <span class="n">ExtractReactionTimeSlope</span><span class="p">(</span><span class="n">is_correct</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">ExtractReactionTimeSlope</span><span class="p">(</span><span class="n">is_correct</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="WordDurationGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.WordDurationGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">WordDurationGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH Typing word duration processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Word Duration</span>
+        <span class="n">TransformWordDuration</span><span class="p">(),</span>
+        <span class="n">AggregateWordDuration</span><span class="p">(),</span>
+        <span class="c1"># Word Duration per Difficulty level</span>
+        <span class="n">TransformDifficultyLevel</span><span class="p">(),</span>
+        <span class="n">TransformWordDurationPerDifficulty</span><span class="p">(),</span>
+        <span class="n">ExtractWordDurationPerDifficulty</span><span class="p">(),</span>
+        <span class="n">TransformWordDurationLevelDifference</span><span class="p">(),</span>
+        <span class="n">AggregateWordDurationLevelSlope</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TimeToFinishGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TimeToFinishGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">TimeToFinishGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH Typing time to finish processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Time to finish</span>
+        <span class="n">ExtractTimeToFinishLastThreeWords</span><span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">),</span>
+        <span class="n">ExtractTimeToFinishLastThreeWords</span><span class="p">(</span><span class="s2">&quot;median&quot;</span><span class="p">),</span>
+        <span class="n">ExtractTimeToFinishLastThreeWords</span><span class="p">(</span><span class="s2">&quot;std&quot;</span><span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ReactionCorrectingReactingDurationGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ReactionCorrectingReactingDurationGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">ReactionCorrectingReactingDurationGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH Typing reaction, correcting and reacting duration processing steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Reaction duration</span>
+        <span class="n">TransformReactionDuration</span><span class="p">(),</span>
+        <span class="n">TransformReactionDurationCorrectSubmissions</span><span class="p">(),</span>
+        <span class="n">AggregateReactionDuration</span><span class="p">(),</span>
+        <span class="c1"># Correcting duration</span>
+        <span class="n">TransformCorrectingDuration</span><span class="p">(),</span>
+        <span class="n">TransformCorrectingDurationCorrectSubmissions</span><span class="p">(),</span>
+        <span class="n">AggregateCorrectingDuration</span><span class="p">(),</span>
+        <span class="c1"># Reacting Time</span>
+        <span class="n">TransformReactingTime</span><span class="p">(),</span>
+        <span class="n">TransformReactingTimeCorrectSubmissions</span><span class="p">(),</span>
+        <span class="n">AggregateReactingTime</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="CountWordsGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.CountWordsGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">CountWordsGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH Typing step counting words typed successfully with(out) errors.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Counting words typed successfully with(out) errors</span>
+        <span class="n">TransformCorrectSubmissionAndTime</span><span class="p">(),</span>
+        <span class="n">ExtractWordTypedWithOrWoError</span><span class="p">(),</span>
+        <span class="n">ExtractWordTypedWithOrWoError</span><span class="p">(</span><span class="n">error_free</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+        <span class="n">TransformCorrectSubmissionAndTimeInRow</span><span class="p">(),</span>
+        <span class="n">ExtractWordTypedWithOrWoErrorInRow</span><span class="p">(),</span>
+        <span class="n">ExtractWordTypedWithOrWoErrorInRow</span><span class="p">(</span><span class="n">error_free</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+        <span class="n">ExtractIncorrectWords</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="CountLettersGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.CountLettersGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">CountLettersGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH Typing steps counting number of letters and similarity ratio.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Total number of letters</span>
+        <span class="n">TransformSimilarityRatio</span><span class="p">(),</span>
+        <span class="n">TransformSimilarityRatioGroup</span><span class="p">(),</span>
+        <span class="n">AggregateSimilarityRatioMeasures</span><span class="p">(),</span>
+        <span class="n">TransformLettersTypedPerWordRatio</span><span class="p">(),</span>
+        <span class="n">AggregateLettersTypedPerWordRatio</span><span class="p">(),</span>
+        <span class="n">ExtractCountCorrectLetters</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TimeBetweenLettersGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TimeBetweenLettersGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">TimeBetweenLettersGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH Typing steps measuring intervals between letters.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Time between letters</span>
+        <span class="n">TransformIsLetter</span><span class="p">(),</span>
+        <span class="n">TransformLetterInterval</span><span class="p">(),</span>
+        <span class="n">TransformLetterInterval</span><span class="p">(</span><span class="n">WordState</span><span class="o">.</span><span class="n">CORRECT</span><span class="p">),</span>
+        <span class="n">TransformLetterInterval</span><span class="p">(</span><span class="n">WordState</span><span class="o">.</span><span class="n">INCORRECT</span><span class="p">),</span>
+        <span class="n">AggregateLettersIntervals</span><span class="p">(),</span>
+        <span class="n">AggregateLettersIntervals</span><span class="p">(</span><span class="n">WordState</span><span class="o">.</span><span class="n">CORRECT</span><span class="p">),</span>
+        <span class="n">AggregateLettersIntervals</span><span class="p">(</span><span class="n">WordState</span><span class="o">.</span><span class="n">INCORRECT</span><span class="p">),</span>
+        <span class="c1"># Keep top 10 intervals</span>
+        <span class="n">TransformTop10Interval</span><span class="p">(),</span>
+        <span class="n">TransformTop10Interval</span><span class="p">(</span><span class="n">KeyState</span><span class="o">.</span><span class="n">CORRECT</span><span class="p">),</span>
+        <span class="n">AggregateTop10IntervalDefaultMeasures</span><span class="p">(),</span>
+        <span class="n">AggregateTop10IntervalDefaultMeasures</span><span class="p">(</span><span class="n">KeyState</span><span class="o">.</span><span class="n">CORRECT</span><span class="p">),</span>
+        <span class="n">TransformMaxDeviation</span><span class="p">(),</span>
+        <span class="n">AggregateMaxDeviation</span><span class="p">(),</span>
+        <span class="c1"># Speed for correct letters until mistake</span>
+        <span class="n">TransformIntervalCorrectLettersUntilMistake</span><span class="p">(),</span>
+        <span class="n">AggregateIntervalCorrectLetters</span><span class="p">(),</span>
+        <span class="n">TransformIntervalCorrectLettersUntilMistake</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">AggregateIntervalCorrectLetters</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="FlagAutoCompleteGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoCompleteGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagAutoCompleteGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH Typing steps to flag autocomplete behavior.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">ExtractAutocomplete</span><span class="p">(),</span> <span class="n">FlagAutoComplete</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="RatioAndSlopeGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.RatioAndSlopeGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">RatioAndSlopeGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH Typing steps measuring ratio of words letters and speed slope.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Ratio correct words and total letters</span>
+        <span class="n">ExtractRatioWordsLetters</span><span class="p">(),</span>
+        <span class="c1"># Typing frequency slope (fatigability)</span>
+        <span class="n">ExtractTypingSpeedSlope</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="BDHTypingSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.BDHTypingSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">BDHTypingSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BDH-specific processing steps for typing.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">PreprocessingTypingGroup</span><span class="p">(),</span>
+        <span class="n">ReactionTimeGroup</span><span class="p">(),</span>
+        <span class="n">ExtractPatientScore</span><span class="p">(),</span>
+        <span class="n">WordDurationGroup</span><span class="p">(),</span>
+        <span class="n">TimeToFinishGroup</span><span class="p">(),</span>
+        <span class="n">ReactionCorrectingReactingDurationGroup</span><span class="p">(),</span>
+        <span class="n">CountWordsGroup</span><span class="p">(),</span>
+        <span class="n">CountLettersGroup</span><span class="p">(),</span>
+        <span class="n">TimeBetweenLettersGroup</span><span class="p">(),</span>
+        <span class="n">RatioAndSlopeGroup</span><span class="p">(),</span>
+        <span class="n">FlagAutoCompleteGroup</span><span class="p">(),</span>
+        <span class="n">TypingTremorMeasuresGroup</span><span class="p">(),</span>
+    <span class="p">]</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;task_name&quot;</span><span class="p">:</span> <span class="n">TASK_NAME</span><span class="p">}</span></div>
+
+
+
+<span class="n">process_typing</span> <span class="o">=</span> <span class="n">process_factory</span><span class="p">(</span>
+    <span class="n">task_name</span><span class="o">=</span><span class="n">TASK_NAME</span><span class="p">,</span>
+    <span class="n">steps</span><span class="o">=</span><span class="n">BDHTypingSteps</span><span class="p">(),</span>
+    <span class="n">codes</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;typing&quot;</span><span class="p">,</span> <span class="s2">&quot;typing-activity&quot;</span><span class="p">),</span>
+    <span class="n">supported_type</span><span class="o">=</span><span class="n">BDHReading</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

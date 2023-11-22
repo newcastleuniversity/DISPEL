@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.data.measures &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/data/measures';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.data.measures</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.data.measures</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A module containing models for measures.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">FlagMixIn</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">MissingColumnError</span>
+<span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">RangeValidator</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DefinitionId</span><span class="p">,</span>
+    <span class="n">Value</span><span class="p">,</span>
+    <span class="n">ValueDefinition</span><span class="p">,</span>
+    <span class="n">ValueDefinitionPrototype</span><span class="p">,</span>
+    <span class="n">ValueSet</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="MeasureValue">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureValue">[docs]</a>
+<span class="k">class</span> <span class="nc">MeasureValue</span><span class="p">(</span><span class="n">FlagMixIn</span><span class="p">,</span> <span class="n">Value</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A measure value.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&lt;MeasureValue (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">flag_count_repr</span><span class="si">}</span><span class="s2">)&gt;&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_to_string</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MeasureValue.to_dict">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureValue.to_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stringify</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a dictionary representation of measure information.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        stringify</span>
+<span class="sd">            ``True`` if all dictionary values are converted to strings. ``False``</span>
+<span class="sd">            otherwise.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Dict[str, Optional[Any]]</span>
+<span class="sd">            A dictionary summarizing measure value information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">measure_min</span><span class="p">,</span> <span class="n">measure_max</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">validator</span><span class="p">,</span> <span class="n">RangeValidator</span><span class="p">):</span>
+            <span class="n">measure_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">validator</span><span class="o">.</span><span class="n">lower_bound</span>
+            <span class="n">measure_max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">validator</span><span class="o">.</span><span class="n">upper_bound</span>
+
+        <span class="k">if</span> <span class="n">stringify</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">measure_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_string</span><span class="p">(</span><span class="n">measure_min</span><span class="p">)</span>
+            <span class="n">measure_max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_string</span><span class="p">(</span><span class="n">measure_max</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">measure_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">measure_value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+            <span class="n">measure_unit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>
+            <span class="n">measure_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">data_type</span><span class="p">,</span>
+            <span class="n">measure_min</span><span class="o">=</span><span class="n">measure_min</span><span class="p">,</span>
+            <span class="n">measure_max</span><span class="o">=</span><span class="n">measure_max</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<span class="k">def</span> <span class="nf">_join_not_none</span><span class="p">(</span><span class="n">separator</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="p">)))</span>
+
+
+<div class="viewcode-block" id="MeasureId">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureId">[docs]</a>
+<span class="k">class</span> <span class="nc">MeasureId</span><span class="p">(</span><span class="n">DefinitionId</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The definition of a measure id for a task.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    task_name</span>
+<span class="sd">        The name and abbreviation of the task. Note that if no abbreviation is provided</span>
+<span class="sd">        the name is used directly in the id.</span>
+<span class="sd">    measure_name</span>
+<span class="sd">        The name of the measure and its abbreviation.</span>
+<span class="sd">    modalities</span>
+<span class="sd">        The modalities and their abbreviations under which the measure is constituted.</span>
+<span class="sd">    aggregation</span>
+<span class="sd">        A method that was used to aggregate a sequence of the underlying measure,</span>
+<span class="sd">        e.g., for the measure ``mean response time`` it would be ``mean``.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The abbreviations of values are passed using</span>
+<span class="sd">    :class:`~dispel.data.values.AbbreviatedValue`. To generate the actual id the `.abbr`</span>
+<span class="sd">    accessor is used. If one passes only strings, the class actually wraps those into</span>
+<span class="sd">    ``AbbreviatedValue`` instances.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import AbbreviatedValue as AV</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.measures import MeasureId</span>
+<span class="sd">    &gt;&gt;&gt; MeasureId(</span>
+<span class="sd">    ...     task_name=AV(&#39;Cognitive Processing Speed&#39;, &#39;CPS&#39;),</span>
+<span class="sd">    ...     measure_name=AV(&#39;reaction time&#39;, &#39;rt&#39;),</span>
+<span class="sd">    ...     modalities=[AV(&#39;digit-to-digit&#39;, &#39;dtd&#39;)],</span>
+<span class="sd">    ...     aggregation=&#39;mean&#39;</span>
+<span class="sd">    ... )</span>
+<span class="sd">    cps-dtd-rt-mean</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MeasureId.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureId.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">],</span>
+        <span class="n">measure_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">],</span>
+        <span class="n">modalities</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">aggregation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_name</span> <span class="o">=</span> <span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">task_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measure_name</span> <span class="o">=</span> <span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">measure_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modalities</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">modalities</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">modalities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">,</span> <span class="n">modalities</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aggregation</span> <span class="o">=</span> <span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">aggregation</span><span class="p">)</span> <span class="k">if</span> <span class="n">aggregation</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="n">id_</span> <span class="o">=</span> <span class="n">_join_not_none</span><span class="p">(</span>
+            <span class="s2">&quot;-&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">task_name</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">modalities</span><span class="p">))</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">modalities</span>
+                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">measure_name</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">aggregation</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregation</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">id_</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureId.from_str">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureId.from_str">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_str</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DefinitionId</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;See :meth:`dispel.data.values.DefinitionId.from_str`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value</span>
+<span class="sd">            The string from which the definition id is to be constructed.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        NotImplementedError</span>
+<span class="sd">            Always raised. This method is not implemented since there is no unambiguous</span>
+<span class="sd">            parsing of task ids.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Not unambiguous parsing of ids possible&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="MeasureValueDefinition">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureValueDefinition">[docs]</a>
+<span class="k">class</span> <span class="nc">MeasureValueDefinition</span><span class="p">(</span><span class="n">ValueDefinition</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The definition of measures from tasks.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    task_name</span>
+<span class="sd">        The full name of the task and its abbreviation, e.g., ``Cognitive Processing</span>
+<span class="sd">        Speed test`` and ``CPS`` passed using</span>
+<span class="sd">        :class:`~dispel.data.values.AbbreviatedValue`.</span>
+<span class="sd">    measure_name</span>
+<span class="sd">        The name of the measure, e.g. ``reaction time`` and its abbreviation passed</span>
+<span class="sd">        using :class:`~dispel.data.values.AbbreviatedValue`. Note that aggregation</span>
+<span class="sd">        methods are specified in ``aggregation`` and should not be direclty part of the</span>
+<span class="sd">        measure name.</span>
+<span class="sd">    unit</span>
+<span class="sd">        See :class:`~dispel.data.values.ValueDefinition`.</span>
+<span class="sd">    description</span>
+<span class="sd">        See :class:`~dispel.data.values.ValueDefinition`.</span>
+<span class="sd">    data_type</span>
+<span class="sd">        See :class:`~dispel.data.values.ValueDefinition`.</span>
+<span class="sd">    validator</span>
+<span class="sd">        See :class:`~dispel.data.values.ValueDefinition`.</span>
+<span class="sd">    modalities</span>
+<span class="sd">        The modalities of the tasks, i.e. if there is more than one variant of the task.</span>
+<span class="sd">        An example would be the ``digit-to-digit`` and ``symbol-to-digit`` or</span>
+<span class="sd">        ``predefined key 1``, ``predefined key 2`` and ``random key`` variants of the</span>
+<span class="sd">        CPS test. Abbreviations of the modalities can be passed using</span>
+<span class="sd">        :class:`~dispel.data.values.AbbreviatedValue`.</span>
+<span class="sd">    aggregation</span>
+<span class="sd">        If the measure is the result of an aggregation, the method that was used to</span>
+<span class="sd">        aggregate. E.g. for ``mean response time`` it would be ``mean``. Abbreviations</span>
+<span class="sd">        are passed using :class:`~dispel.data.values.AbbreviatedValue`.</span>
+<span class="sd">    precision</span>
+<span class="sd">        See :class:`~dispel.data.values.ValueDefinition`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import AbbreviatedValue as AV</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.measures import MeasureValueDefinition</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.validators import RangeValidator</span>
+<span class="sd">    &gt;&gt;&gt; MeasureValueDefinition(</span>
+<span class="sd">    ...     task_name = AV(&#39;Cognitive Processing Speed test&#39;, &#39;CPS&#39;),</span>
+<span class="sd">    ...     measure_name = AV(&#39;response time&#39;, &#39;rt&#39;),</span>
+<span class="sd">    ...     unit = &#39;s&#39;,</span>
+<span class="sd">    ...     description = &#39;The mean time to respond to a presented stimulus&#39;,</span>
+<span class="sd">    ...     data_type = &#39;float64&#39;,</span>
+<span class="sd">    ...     validator = RangeValidator(lower_bound=0),</span>
+<span class="sd">    ...     modalities = [</span>
+<span class="sd">    ...         AV(&#39;digit-to-digit&#39;, &#39;dtd&#39;),</span>
+<span class="sd">    ...         AV(&#39;predefined key 1&#39;, &#39;key1&#39;)</span>
+<span class="sd">    ...     ],</span>
+<span class="sd">    ...     aggregation = &#39;mean&#39;</span>
+<span class="sd">    ... )</span>
+<span class="sd">    &lt;MeasureValueDefinition: cps-dtd_key1-rt-mean (CPS digit-to-digit ...&gt;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MeasureValueDefinition.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureValueDefinition.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">],</span>
+        <span class="n">measure_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">],</span>
+        <span class="n">unit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">validator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">modalities</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">aggregation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">precision</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_name</span> <span class="o">=</span> <span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">task_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measure_name</span> <span class="o">=</span> <span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">measure_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modalities</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">modalities</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">modalities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">,</span> <span class="n">modalities</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aggregation</span> <span class="o">=</span> <span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">aggregation</span><span class="p">)</span> <span class="k">if</span> <span class="n">aggregation</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="n">id_</span> <span class="o">=</span> <span class="n">MeasureId</span><span class="p">(</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">task_name</span><span class="p">,</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">measure_name</span><span class="p">,</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">modalities</span><span class="p">,</span>
+            <span class="n">aggregation</span><span class="o">=</span><span class="n">aggregation</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">name</span> <span class="o">=</span> <span class="n">_join_not_none</span><span class="p">(</span>
+            <span class="s2">&quot; &quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">task_name</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span>
+                <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modalities</span><span class="p">))</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">modalities</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">aggregation</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregation</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">measure_name</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">id_</span><span class="o">=</span><span class="n">id_</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="n">data_type</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">validator</span><span class="p">,</span>
+            <span class="n">precision</span><span class="o">=</span><span class="n">precision</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="MeasureValueDefinitionPrototype">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureValueDefinitionPrototype">[docs]</a>
+<span class="k">class</span> <span class="nc">MeasureValueDefinitionPrototype</span><span class="p">(</span><span class="n">ValueDefinitionPrototype</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A task measure value definition prototype.</span>
+
+<span class="sd">    This is a convenience method that populates the ``cls`` argument with the</span>
+<span class="sd">    :class:`~dispel.data.measures.MeasureValueDefinition` class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MeasureValueDefinitionPrototype.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureValueDefinitionPrototype.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;cls&quot;</span><span class="p">,</span> <span class="n">MeasureValueDefinition</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="row_to_definition">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.row_to_definition">[docs]</a>
+<span class="k">def</span> <span class="nf">row_to_definition</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ValueDefinition</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a pandas series to a value definition.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    row</span>
+<span class="sd">        A pandas series containing definition information.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ValueDefinition</span>
+<span class="sd">        The corresponding value definition.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    MissingColumnError</span>
+<span class="sd">        If required fields are missing from the pandas&#39; series.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">expected_columns</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;measure_id&quot;</span><span class="p">,</span> <span class="s2">&quot;measure_name&quot;</span><span class="p">,</span> <span class="s2">&quot;measure_unit&quot;</span><span class="p">,</span> <span class="s2">&quot;measure_type&quot;</span><span class="p">}</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">expected_columns</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">MissingColumnError</span><span class="p">(</span><span class="n">expected_columns</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
+
+    <span class="n">validator</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="p">{</span><span class="s2">&quot;measure_min&quot;</span><span class="p">,</span> <span class="s2">&quot;measure_max&quot;</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+        <span class="n">validator</span> <span class="o">=</span> <span class="n">RangeValidator</span><span class="p">(</span>
+            <span class="n">lower_bound</span><span class="o">=</span><span class="n">cast</span><span class="p">(</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">measure_min</span><span class="p">)),</span>
+            <span class="n">upper_bound</span><span class="o">=</span><span class="n">cast</span><span class="p">(</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">measure_max</span><span class="p">)),</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">ValueDefinition</span><span class="p">(</span>
+        <span class="n">id_</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">measure_id</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">measure_name</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">measure_unit</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">measure_type</span><span class="p">,</span>
+        <span class="n">validator</span><span class="o">=</span><span class="n">validator</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="row_to_value">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.row_to_value">[docs]</a>
+<span class="k">def</span> <span class="nf">row_to_value</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MeasureValue</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a pandas series to a measure value.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    row</span>
+<span class="sd">        A pandas series containing definition information.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    MeasureValue</span>
+<span class="sd">        The corresponding measure value.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    MissingColumnError</span>
+<span class="sd">        If ``measure_value`` field is missing from the pandas&#39; series.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;measure_value&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">MissingColumnError</span><span class="p">(</span><span class="s2">&quot;measure_value&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">MeasureValue</span><span class="p">(</span>
+        <span class="n">row_to_definition</span><span class="p">(</span><span class="n">row</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;measure_value&quot;</span><span class="p">]])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;measure_type&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="MeasureSet">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureSet">[docs]</a>
+<span class="k">class</span> <span class="nc">MeasureSet</span><span class="p">(</span><span class="n">ValueSet</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A collection of measures.&quot;&quot;&quot;</span>
+
+    <span class="n">VALUE_CLS</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">Value</span><span class="p">]]</span> <span class="o">=</span> <span class="n">MeasureValue</span>
+
+<div class="viewcode-block" id="MeasureSet.from_data_frame">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureSet.from_data_frame">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_data_frame</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MeasureSet&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a MeasureSet from a data frame.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data</span>
+<span class="sd">            A data frame containing information about measures</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        MeasureSet</span>
+<span class="sd">            A measure set derived from the provided data frame.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">row_to_value</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_list</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="MeasureSet.to_list">
+<a class="viewcode-back" href="../../../api/dispel.data.measures.html#dispel.data.measures.MeasureSet.to_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stringify</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert measure set to a list of measure dictionaries.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        stringify</span>
+<span class="sd">            ``True`` if all dictionary values are converted to strings. ``False``</span>
+<span class="sd">            otherwise.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Dict[str, Optional[Any]]]</span>
+<span class="sd">            A dictionary summarizing measure value information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">cast</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VALUE_CLS</span><span class="p">,</span> <span class="n">measure</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">stringify</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+            <span class="k">for</span> <span class="n">measure</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+        <span class="p">]</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1468 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.processing.extract &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/processing/extract';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../processing.html" class="nav-link">dispel.processing</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.proce...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.processing.extract</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Extraction functionalities for processing module.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">Generator</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Sequence</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">Union</span><span class="p">,</span>
+    <span class="n">cast</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">deprecated</span> <span class="kn">import</span> <span class="n">deprecated</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">FlagSeverity</span><span class="p">,</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">WrappedResult</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MeasureId</span><span class="p">,</span>
+    <span class="n">MeasureSet</span><span class="p">,</span>
+    <span class="n">MeasureValue</span><span class="p">,</span>
+    <span class="n">MeasureValueDefinition</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DefinitionId</span><span class="p">,</span>
+    <span class="n">DefinitionIdType</span><span class="p">,</span>
+    <span class="n">ValueDefinition</span><span class="p">,</span>
+    <span class="n">ValueDefinitionPrototype</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ErrorHandling</span><span class="p">,</span>
+    <span class="n">ProcessingControlResult</span><span class="p">,</span>
+    <span class="n">ProcessingResult</span><span class="p">,</span>
+    <span class="n">ProcessingStep</span><span class="p">,</span>
+    <span class="n">ProcessResultType</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MutateDataSetProcessingStepBase</span><span class="p">,</span>
+    <span class="n">TransformationFunctionGeneratorType</span><span class="p">,</span>
+    <span class="n">WrapResultGeneratorType</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.flags</span> <span class="kn">import</span> <span class="n">FlagStepMixin</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">LevelFilterType</span><span class="p">,</span> <span class="n">LevelProcessingResult</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">TransformStepChainMixIn</span>
+<span class="kn">from</span> <span class="nn">dispel.stats.core</span> <span class="kn">import</span> <span class="n">iqr</span><span class="p">,</span> <span class="n">npcv</span><span class="p">,</span> <span class="n">percentile_95</span><span class="p">,</span> <span class="n">variation</span><span class="p">,</span> <span class="n">variation_increase</span>
+
+
+<div class="viewcode-block" id="MeasureDefinitionMixin">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin">[docs]</a>
+<span class="k">class</span> <span class="nc">MeasureDefinitionMixin</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A mixin class for processing steps producing measure values.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    definition</span>
+<span class="sd">        An optional value definition. If no value definition is provided, the</span>
+<span class="sd">        :data:`definition` class variable will be used. Alternatively, one can overwrite</span>
+<span class="sd">        :meth:`get_definition` to provide the definition.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#: The specification of the measure definition</span>
+    <span class="n">definition</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ValueDefinition</span><span class="p">,</span> <span class="n">ValueDefinitionPrototype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="MeasureDefinitionMixin.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;definition&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">definition</span> <span class="o">=</span> <span class="n">definition</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureDefinitionMixin.get_definition">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin.get_definition">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_definition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ValueDefinition</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure definition.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Optional parameters that will be passed along to the creation of measure</span>
+<span class="sd">            definitions from prototypes. See</span>
+<span class="sd">            :meth:`~dispel.data.values.ValueDefinitionPrototype.create_definition`</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ValueDefinition</span>
+<span class="sd">            The definition of the value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">definition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="p">),</span> <span class="s2">&quot;Definition must be set or get_definition must be overwritten.&quot;</span>
+
+        <span class="n">definition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">definition</span><span class="p">,</span> <span class="n">ValueDefinitionPrototype</span><span class="p">):</span>
+            <span class="n">definition</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">ValueDefinition</span><span class="p">,</span> <span class="n">definition</span><span class="o">.</span><span class="n">create_definition</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">definition</span></div>
+
+
+<div class="viewcode-block" id="MeasureDefinitionMixin.get_value">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureDefinitionMixin.get_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MeasureValue</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a measure value based on the definition.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value</span>
+<span class="sd">            The value</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Optional arguments passed to :meth:`get_definition`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        MeasureValue</span>
+<span class="sd">            The ``value`` wrapped with the definition from :meth:`get_definition`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">MeasureValue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_definition</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.ExtractStep">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractStep</span><span class="p">(</span>
+    <span class="n">MeasureDefinitionMixin</span><span class="p">,</span> <span class="n">TransformStepChainMixIn</span><span class="p">,</span> <span class="n">MutateDataSetProcessingStepBase</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A measure extraction processing step.</span>
+
+<span class="sd">    This class provides a convenient way to extract a measure from one or more data sets</span>
+<span class="sd">    by specifying their id, their level_ids or level filter, a transformation function</span>
+<span class="sd">    and a measure value definition.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_ids</span>
+<span class="sd">        An optional list of data set ids to be used for the transformation. See</span>
+<span class="sd">        :class:`~dispel.processing.data_set.DataSetProcessingStepMixin`.</span>
+<span class="sd">    transform_function</span>
+<span class="sd">        An optional function to be applied to the data sets. See</span>
+<span class="sd">        :class:`~dispel.processing.data_set.MutateDataSetProcessingStepBase`.</span>
+<span class="sd">    definition</span>
+<span class="sd">        An optional value definition or prototype. See</span>
+<span class="sd">        :class:`MeasureDefinitionMixin`.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional filter to limit the levels being processed. See</span>
+<span class="sd">        :class:`~dispel.processing.level.LevelProcessingStep`.</span>
+<span class="sd">    yield_if_nan</span>
+<span class="sd">        If ``True``, yield null values as measure values. Otherwise, processing</span>
+<span class="sd">        will not return a measure value in case of a null result for the extraction.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Assuming we wanted to compute the maximum value of a raw data set we can create the</span>
+<span class="sd">    following step</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import ValueDefinition</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import ExtractStep</span>
+<span class="sd">    &gt;&gt;&gt; step = ExtractStep(</span>
+<span class="sd">    ...     &#39;data-set-id&#39;,</span>
+<span class="sd">    ...     lambda data: data.max(axis=0),</span>
+<span class="sd">    ...     ValueDefinition(&#39;maximum&#39;,&#39;Maximum value&#39;)</span>
+<span class="sd">    ... )</span>
+
+<span class="sd">    A common approach is to define a processing step for re-use and leveraging the</span>
+<span class="sd">    ``@transformation`` decorator to specify the transformation function:</span>
+
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import ValueDefinition</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import ExtractStep</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.data_set import transformation</span>
+<span class="sd">    &gt;&gt;&gt; class MyExtractStep(ExtractStep):</span>
+<span class="sd">    ...     data_set_ids = &#39;data-set-id&#39;</span>
+<span class="sd">    ...     definition = ValueDefinition(&#39;maximum&#39;,&#39;Maximum value&#39;)</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @transformation</span>
+<span class="sd">    ...     def _max(self, data: pd.DataFrame) -&gt; float:</span>
+<span class="sd">    ...         return data.max(axis=0)</span>
+
+<span class="sd">    Often one wants to extract multiple measures from one data set. This can be achieved</span>
+<span class="sd">    by using prototypes and optional named arguments with ``@transformation``:</span>
+
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import ValueDefinitionPrototype</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import ExtractStep</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.data_set import transformation</span>
+<span class="sd">    &gt;&gt;&gt; class MyExtractStep(ExtractStep):</span>
+<span class="sd">    ...     data_set_ids = &#39;data-set-id&#39;</span>
+<span class="sd">    ...     definition = ValueDefinitionPrototype(</span>
+<span class="sd">    ...         id_=&#39;id-{agg_abbr}&#39;,</span>
+<span class="sd">    ...         name=&#39;{agg} value&#39;</span>
+<span class="sd">    ...     )</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @transformation(agg=&#39;Maximum&#39;, agg_abbr=&#39;max&#39;)</span>
+<span class="sd">    ...     def _max(self, data: pd.DataFrame) -&gt; float:</span>
+<span class="sd">    ...         return data.max(axis=0)</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @transformation(agg=&#39;Minimum&#39;, agg_abbr=&#39;min&#39;)</span>
+<span class="sd">    ...     def _min(self, data: pd.DataFrame) -&gt; float:</span>
+<span class="sd">    ...         return data.min(axis=0)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">yield_if_nan</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="ExtractStep.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.ExtractStep.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">transform_function</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">definition</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ValueDefinition</span><span class="p">,</span> <span class="n">ValueDefinitionPrototype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">yield_if_nan</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">definition</span><span class="p">,</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="n">transform_function</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">yield_if_nan</span> <span class="o">=</span> <span class="n">yield_if_nan</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">yield_if_nan</span></div>
+
+
+<div class="viewcode-block" id="ExtractStep.wrap_result">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.ExtractStep.wrap_result">[docs]</a>
+    <span class="k">def</span> <span class="nf">wrap_result</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WrapResultGeneratorType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wrap the result from the processing function into a class.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        res</span>
+<span class="sd">            Any result returned by the extraction step. If res is a</span>
+<span class="sd">            :class:`~dispel.data.flags.WrappedResult`, the flag contained</span>
+<span class="sd">            in the object will be automatically added to the</span>
+<span class="sd">            :class:`~dispel.data.measures.MeasureValue`, hence the flagged wrapped</span>
+<span class="sd">            results will always translate into flagged</span>
+<span class="sd">            :class:`~dispel.data.measures.MeasureValue`.</span>
+<span class="sd">        level</span>
+<span class="sd">            The current level</span>
+<span class="sd">        reading</span>
+<span class="sd">            The current reading</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional kwargs</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        LevelProcessingResult</span>
+<span class="sd">            The processing result</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">nan</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Extract step returned an iterable!&quot;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">if</span> <span class="n">is_wrapped</span> <span class="o">:=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">WrappedResult</span><span class="p">):</span>
+            <span class="n">measure_value</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">measure_value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">measure_value</span> <span class="o">=</span> <span class="n">res</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">is_nan</span> <span class="o">:=</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">measure_value</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span><span class="n">is_nan</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">yield_if_nan</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">measure_value</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="c1"># If result is wrapped, add the flag to the measure value</span>
+            <span class="k">if</span> <span class="n">is_wrapped</span><span class="p">:</span>
+                <span class="n">value</span><span class="o">.</span><span class="n">add_flags</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">ignore_duplicates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="k">yield</span> <span class="n">LevelProcessingResult</span><span class="p">(</span>
+                <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">sources</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_raw_data_sets</span><span class="p">(</span><span class="n">level</span><span class="p">),</span>
+                <span class="n">result</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+                <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+            <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractMultipleStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep">[docs]</a>
+<span class="nd">@deprecated</span><span class="p">(</span><span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Use ExtractStep and @transformation decorator&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">ExtractMultipleStep</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A measure extraction processing step for multiple measures.</span>
+
+<span class="sd">    This processing step allows to produce multiple</span>
+<span class="sd">    :class:`~dispel.data.measures.MeasureValue`\ s by providing a list of functions and a</span>
+<span class="sd">    :class:`~dispel.data.values.ValueDefinitionPrototype` to create the</span>
+<span class="sd">    :class:`~dispel.data.values.ValueDefinition`\ s from.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_ids</span>
+<span class="sd">        An optional list of data set ids to be used for the transformation. See</span>
+<span class="sd">        :class:`~dispel.processing.data_set.DataSetProcessingStepMixin`.</span>
+<span class="sd">    transform_functions</span>
+<span class="sd">        An optional list of dictionaries containing at least the processing function</span>
+<span class="sd">        under the key ``func``, which consumes the specified data sets though</span>
+<span class="sd">        ``data_set_ids`` as positional arguments and returns a measure value passed to</span>
+<span class="sd">        :class:`~dispel.data.measures.MeasureValue`. Additional keywords will be passed to</span>
+<span class="sd">        :meth:`~dispel.data.values.ValueDefinitionPrototype.create_definition`. If no</span>
+<span class="sd">        functions are provided, the :data:`transform_functions` class variable will be</span>
+<span class="sd">        used.</span>
+<span class="sd">    definition</span>
+<span class="sd">        A :class:`~dispel.data.values.ValueDefinitionPrototype` that is used to create the</span>
+<span class="sd">        :class:`~dispel.data.measures.MeasureValueDefinition`\ s for the transformation</span>
+<span class="sd">        functions provided in ``transform_functions``.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional filter to limit the levels being processed. See</span>
+<span class="sd">        :class:`~dispel.processing.level.LevelProcessingStep`.</span>
+<span class="sd">    yield_if_nan</span>
+<span class="sd">        If ``True``, yield null values as measure values. Otherwise, processing will not</span>
+<span class="sd">        return a measure value in case of a null result for the extraction.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    To ease the generation of multiple similar measures the :class:`ExtractMultipleStep`</span>
+<span class="sd">    provides a convenient way to do so. Assume you want to create both the mean and</span>
+<span class="sd">    median of a data set this can be achieved as follows:</span>
+
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import ValueDefinitionPrototype</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import ExtractMultipleStep</span>
+<span class="sd">    &gt;&gt;&gt; step = ExtractMultipleStep(</span>
+<span class="sd">    ...     &#39;data-set-id&#39;,</span>
+<span class="sd">    ...     [</span>
+<span class="sd">    ...         {&#39;func&#39;: np.mean, &#39;method&#39;: &#39;average&#39;},</span>
+<span class="sd">    ...         {&#39;func&#39;: np.median, &#39;method&#39;: &#39;median&#39;}</span>
+<span class="sd">    ...     ],</span>
+<span class="sd">    ...     ValueDefinitionPrototype(</span>
+<span class="sd">    ...         id_=&#39;measure-{method}&#39;,</span>
+<span class="sd">    ...         name=&#39;{method} measure&#39;,</span>
+<span class="sd">    ...         unit=&#39;s&#39;</span>
+<span class="sd">    ...     )</span>
+<span class="sd">    ... )</span>
+
+<span class="sd">    This extraction step will result in two measure values, one for the mean and one</span>
+<span class="sd">    with the median.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">transform_functions</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span>
+
+<div class="viewcode-block" id="ExtractMultipleStep.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">transform_functions</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">definition</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ValueDefinitionPrototype</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">yield_if_nan</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">definition</span><span class="p">,</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+            <span class="n">yield_if_nan</span><span class="o">=</span><span class="n">yield_if_nan</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">transform_functions</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">transform_functions</span> <span class="o">=</span> <span class="n">transform_functions</span></div>
+
+
+<div class="viewcode-block" id="ExtractMultipleStep.get_transform_functions">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep.get_transform_functions">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_transform_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformationFunctionGeneratorType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the transform functions applied to the data sets.&quot;&quot;&quot;</span>
+        <span class="k">yield from</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_transform_functions</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">function_spec</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_functions</span><span class="p">:</span>
+            <span class="n">spec</span> <span class="o">=</span> <span class="n">function_spec</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">yield</span> <span class="n">spec</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;func&quot;</span><span class="p">),</span> <span class="n">spec</span></div>
+</div>
+
+
+
+<span class="n">AggregationFunctionType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">],</span> <span class="nb">float</span><span class="p">]]</span>
+
+
+<div class="viewcode-block" id="agg_column">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.agg_column">[docs]</a>
+<span class="k">def</span> <span class="nf">agg_column</span><span class="p">(</span>
+    <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="n">AggregationFunctionType</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a function to apply an aggregation function on a column.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    column</span>
+<span class="sd">        The column to be aggregated</span>
+<span class="sd">    method</span>
+<span class="sd">        A function to apply on the column</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Callable[[pandas.DataFrame], float]</span>
+<span class="sd">        A function that aggregates one column of a `~pandas.DataFrame`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_function</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_function</span></div>
+
+
+
+<span class="c1">#: A list of basic used aggregation methods</span>
+<span class="n">BASIC_AGGREGATIONS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="s2">&quot;standard deviation&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1">#: A list of commonly used aggregation methods</span>
+<span class="n">DEFAULT_AGGREGATIONS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">*</span><span class="n">BASIC_AGGREGATIONS</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;median&quot;</span><span class="p">,</span> <span class="s2">&quot;median&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;minimum&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="s2">&quot;maximum&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1">#: A list of commonly used aggregation methods plus coefficient of variation</span>
+<span class="n">DEFAULT_AGGREGATIONS_CV</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">*</span><span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+    <span class="p">(</span><span class="n">variation</span><span class="p">,</span> <span class="s2">&quot;coefficient of variation&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1">#: A list of commonly used aggregation methods plus 95th percentile</span>
+<span class="n">DEFAULT_AGGREGATIONS_Q95</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">*</span><span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+    <span class="p">(</span><span class="n">percentile_95</span><span class="p">,</span> <span class="s2">&quot;95th percentile&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1">#: A list of commonly used aggregation methods plus inter-quartile range</span>
+<span class="n">DEFAULT_AGGREGATIONS_IQR</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">*</span><span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+    <span class="p">(</span><span class="n">iqr</span><span class="p">,</span> <span class="s2">&quot;iqr&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1">#: An extended list of commonly used aggregation methods</span>
+<span class="n">EXTENDED_AGGREGATIONS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">*</span><span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;skew&quot;</span><span class="p">,</span> <span class="s2">&quot;skewness&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;kurtosis&quot;</span><span class="p">,</span> <span class="s2">&quot;kurtosis&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">DEFAULT_AGGREGATIONS_Q95_CV</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">*</span><span class="n">DEFAULT_AGGREGATIONS_Q95</span><span class="p">,</span>
+    <span class="p">(</span><span class="n">variation</span><span class="p">,</span> <span class="s2">&quot;coefficient of variation&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1">#: A dictionary containing all aggregation methods</span>
+<span class="n">AGGREGATION_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">AggregationFunctionType</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">**</span><span class="p">{</span><span class="n">agg</span><span class="p">:</span> <span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="n">agg_label</span><span class="p">)</span> <span class="k">for</span> <span class="n">agg</span><span class="p">,</span> <span class="n">agg_label</span> <span class="ow">in</span> <span class="n">EXTENDED_AGGREGATIONS</span><span class="p">},</span>
+    <span class="s2">&quot;cv&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">variation</span><span class="p">,</span> <span class="s2">&quot;coefficient of variation&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;cvi&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">variation_increase</span><span class="p">,</span> <span class="s2">&quot;coefficient of variation increase&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;q95&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">percentile_95</span><span class="p">,</span> <span class="s2">&quot;95th percentile&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;npcv&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">npcv</span><span class="p">,</span> <span class="s2">&quot;non parametric coefficient of variation&quot;</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="c1">#: A set of aggregations for which the validator on definitions is ignored</span>
+<span class="n">AGGREGATION_CENTER_BASED</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="s2">&quot;skew&quot;</span><span class="p">,</span> <span class="s2">&quot;kurtosis&quot;</span><span class="p">,</span> <span class="s2">&quot;cv&quot;</span><span class="p">,</span> <span class="s2">&quot;cvi&quot;</span><span class="p">}</span>
+
+<span class="n">AggregationsDefinitionType</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">AggregationFunctionType</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span>
+
+
+<div class="viewcode-block" id="AggregateRawDataSetColumn">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateRawDataSetColumn</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;An extraction step that allows to summarise a column of a dataset.</span>
+
+<span class="sd">    This processing step encapsulates the class :class:`ExtractMultipleStep` and allows</span>
+<span class="sd">    to produce multiple :class:`~dispel.data.measures.MeasureValue`\ s derived on the same</span>
+<span class="sd">    column of a dataset.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_id</span>
+<span class="sd">        A single data set id</span>
+<span class="sd">    column_id</span>
+<span class="sd">        The column id of the dataset on which the transform function will be applied.</span>
+<span class="sd">    aggregations</span>
+<span class="sd">        Either a list of tuples (func, label) where ``func`` consumes the data sets</span>
+<span class="sd">        specified through ``data_set_id`` at the column ``column_id`` and returns a</span>
+<span class="sd">        single value passed to :class:`~dispel.data.measures.MeasureValue`. The ``label``</span>
+<span class="sd">        element of the tuple will be passed as ``aggregation`` keyword to</span>
+<span class="sd">        :meth:`~dispel.data.values.ValueDefinitionPrototype.create_definition`.</span>
+<span class="sd">        The label can be either a string or an</span>
+<span class="sd">        :class:`~dispel.data.values.AbbreviatedValue`. If it is a string the label is</span>
+<span class="sd">        wrapped with the label and aggregation method as abbreviation.</span>
+
+<span class="sd">        There are three constants :data:`BASIC_AGGREGATIONS`,</span>
+<span class="sd">        :data:`DEFAULT_AGGREGATIONS` and :data:`EXTENDED_AGGREGATIONS` that can be used</span>
+<span class="sd">        for common aggregation scenarios.</span>
+
+<span class="sd">        The function is passed to :meth:`pandas.Series.agg` and hence allows to specify</span>
+<span class="sd">        some default aggregation functions like ``&#39;mean&#39;`` or ``&#39;std&#39;`` without actually</span>
+<span class="sd">        having to pass a callable.</span>
+<span class="sd">    definition</span>
+<span class="sd">        A :class:`~dispel.data.values.ValueDefinitionPrototype` that is used to create the</span>
+<span class="sd">        :class:`~dispel.data.measures.MeasureValueDefinition`\ s for the aggregation</span>
+<span class="sd">        functions provided in ``aggregations``.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional :class:`~dispel.processing.level.LevelFilter` to determine the levels</span>
+<span class="sd">        for extraction. If no filter is provided, all levels will be considered. The</span>
+<span class="sd">        ``level_filter`` also accepts :class:`str`, :class:`~dispel.data.core.LevelId`\ s</span>
+<span class="sd">        and lists of either and passes them to a</span>
+<span class="sd">        :class:`~dispel.processing.level.LevelIdFilter` for convenience.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    To ease the generation of multiple similar measures for the same column of a</span>
+<span class="sd">    dataset, the :class:`AggregateRawDataSetColumn` provides a convenient way to do so.</span>
+<span class="sd">    Assume you want to create both the median and standard deviation of a specific</span>
+<span class="sd">    column of a data set, this can be achieved as follows:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import ValueDefinitionPrototype</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import AggregateRawDataSetColumn</span>
+<span class="sd">    &gt;&gt;&gt; step = AggregateRawDataSetColumn(</span>
+<span class="sd">    ...     &#39;data-set-id&#39;,</span>
+<span class="sd">    ...     &#39;column-name&#39;,</span>
+<span class="sd">    ...     aggregations=[</span>
+<span class="sd">    ...         (&#39;median&#39;, &#39;median&#39;),</span>
+<span class="sd">    ...         (&#39;std&#39;, &#39;standard deviation&#39;)</span>
+<span class="sd">    ...     ],</span>
+<span class="sd">    ...     definition=ValueDefinitionPrototype(</span>
+<span class="sd">    ...         id_=&#39;measure-{method}&#39;,</span>
+<span class="sd">    ...         name=&#39;{method} measure&#39;,</span>
+<span class="sd">    ...         unit=&#39;s&#39;</span>
+<span class="sd">    ...     )</span>
+<span class="sd">    ... )</span>
+
+<span class="sd">    This extraction step will result in two measure values, one for the medianand one</span>
+<span class="sd">    with the standard deviation of the column ``&#39;column-name&#39;`` of the data set</span>
+<span class="sd">    identified by ``&#39;data-set-id&#39;``.</span>
+
+<span class="sd">    This extraction step will result in three measure values, one for the median, one</span>
+<span class="sd">    for the standard deviation and one for the variation increase of the column</span>
+<span class="sd">    ``&#39;column-name&#39;`` of the data set identified by ``&#39;data-set-id&#39;``. The median and</span>
+<span class="sd">    variation increase measures will have associated COI references as provided.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">column_id</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="n">aggregations</span><span class="p">:</span> <span class="n">AggregationsDefinitionType</span>
+
+<div class="viewcode-block" id="AggregateRawDataSetColumn.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">column_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">aggregations</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AggregationsDefinitionType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">definition</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ValueDefinitionPrototype</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">definition</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+            <span class="n">yield_if_nan</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">column_id</span> <span class="o">=</span> <span class="n">column_id</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">column_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aggregations</span> <span class="o">=</span> <span class="n">aggregations</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregations</span></div>
+
+
+<div class="viewcode-block" id="AggregateRawDataSetColumn.get_column_id">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_column_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_column_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the id of the column to be aggregated.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">column_id</span></div>
+
+
+<div class="viewcode-block" id="AggregateRawDataSetColumn.get_aggregations">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_aggregations">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_aggregations</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">AggregationFunctionType</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">]]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the aggregations to be performed on the specified column.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregations</span></div>
+
+
+<div class="viewcode-block" id="AggregateRawDataSetColumn.get_agg_func_and_kwargs">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_agg_func_and_kwargs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_agg_func_and_kwargs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">AggregationFunctionType</span><span class="p">,</span> <span class="n">label</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the keyword arguments for the aggregation.&quot;&quot;&quot;</span>
+        <span class="n">agg_func</span> <span class="o">=</span> <span class="n">agg_column</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_column_id</span><span class="p">(),</span> <span class="n">func</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">AV</span><span class="p">):</span>
+            <span class="n">aggregation</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="k">elif</span> <span class="nb">callable</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+            <span class="n">aggregation</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">aggregation</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="p">))</span>
+
+        <span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;aggregation&quot;</span><span class="p">:</span> <span class="n">aggregation</span><span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">agg_func</span><span class="p">,</span> <span class="n">kwargs</span></div>
+
+
+<div class="viewcode-block" id="AggregateRawDataSetColumn.get_transform_functions">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_transform_functions">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_transform_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformationFunctionGeneratorType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the functions to transform the specified column.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_aggregations</span><span class="p">():</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_agg_func_and_kwargs</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AggregateRawDataSetColumn.get_definition">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn.get_definition">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_definition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ValueDefinition</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get value definition specific for aggregation.&quot;&quot;&quot;</span>
+        <span class="n">definition</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_definition</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># intercept flag of center-based aggregations</span>
+        <span class="k">assert</span> <span class="s2">&quot;aggregation&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">,</span> <span class="s2">&quot;Aggregation description missing&quot;</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">agg</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;aggregation&quot;</span><span class="p">],</span> <span class="n">AV</span>
+        <span class="p">),</span> <span class="s2">&quot;Aggregation keyword must be AbbreviatedValue&quot;</span>
+
+        <span class="k">if</span> <span class="n">definition</span><span class="o">.</span><span class="n">validator</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">agg</span><span class="o">.</span><span class="n">abbr</span> <span class="ow">in</span> <span class="n">AGGREGATION_CENTER_BASED</span><span class="p">:</span>
+            <span class="n">definition</span><span class="o">.</span><span class="n">validator</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">definition</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AggregateMeasures">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateMeasures</span><span class="p">(</span><span class="n">MeasureDefinitionMixin</span><span class="p">,</span> <span class="n">ProcessingStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate multiple measures into a single one.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    definition</span>
+<span class="sd">        The measure definition</span>
+<span class="sd">    measure_ids</span>
+<span class="sd">        A list of measure ids to be considered for aggregation</span>
+<span class="sd">    aggregation_method</span>
+<span class="sd">        The method used to aggregate the measure values, np.mean by default.</span>
+<span class="sd">    fail_if_missing</span>
+<span class="sd">        If ``True`` and any of the ``measure_ids`` is not present the</span>
+<span class="sd">        processing fails.</span>
+<span class="sd">    yield_if_nan</span>
+<span class="sd">        If ``True``, yield null values as measure values. Otherwise, processing will not</span>
+<span class="sd">        return a measure value in case of a null result for the aggregation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">measure_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DefinitionIdType</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">aggregation_method</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">fail_if_missing</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">yield_if_nan</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="AggregateMeasures.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">definition</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MeasureValueDefinition</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">measure_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">DefinitionIdType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">aggregation_method</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fail_if_missing</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">yield_if_nan</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">definition</span><span class="o">=</span><span class="n">definition</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">measure_ids</span> <span class="o">=</span> <span class="n">measure_ids</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_ids</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aggregation_method</span> <span class="o">=</span> <span class="n">aggregation_method</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregation_method</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fail_if_missing</span> <span class="o">=</span> <span class="n">fail_if_missing</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">fail_if_missing</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">yield_if_nan</span> <span class="o">=</span> <span class="n">yield_if_nan</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">yield_if_nan</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">error_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ErrorHandling</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get error handler corresponding to the ``fail_if_missing`` arg.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fail_if_missing</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ErrorHandling</span><span class="o">.</span><span class="n">RAISE</span>
+        <span class="k">return</span> <span class="n">ErrorHandling</span><span class="o">.</span><span class="n">IGNORE</span>
+
+<div class="viewcode-block" id="AggregateMeasures.get_measure_ids">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.get_measure_ids">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measure_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">DefinitionIdType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure ids considered for aggregation.&quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_ids</span></div>
+
+
+<div class="viewcode-block" id="AggregateMeasures.get_measure_set">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.get_measure_set">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_measure_set</span><span class="p">(</span><span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MeasureSet</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure set used for getting measure values for ids.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">reading</span><span class="o">.</span><span class="n">get_merged_measure_set</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="AggregateMeasures.get_measures">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.get_measures">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">MeasureValue</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measures for aggregation.&quot;&quot;&quot;</span>
+        <span class="n">measure_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_measure_ids</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">measure_ids</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">set</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+        <span class="p">),</span> <span class="s2">&quot;measure_ids needs to be a list, set or tuple of measure ids&quot;</span>
+
+        <span class="n">measure_set</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_measure_set</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fail_if_missing</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">measure_ids</span><span class="p">)</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">measure_set</span><span class="o">.</span><span class="n">ids</span><span class="p">()),</span> <span class="p">(</span>
+                <span class="s2">&quot;Not all specified measures are present&quot;</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">error_handler</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">cast</span><span class="p">(</span><span class="n">MeasureValue</span><span class="p">,</span> <span class="n">measure</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">measure</span> <span class="ow">in</span> <span class="n">measure_set</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">measure</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">measure_ids</span>
+        <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="AggregateMeasures.get_measure_values">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.get_measure_values">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measure_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure values for aggregation.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_measures</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="AggregateMeasures.aggregate">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.aggregate">[docs]</a>
+    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Aggregate measure values.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aggregation_method</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)(</span><span class="n">values</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AggregateMeasures.process_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateMeasures.process_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;See :meth:`~dispel.processing.core.ProcessingStep.process`.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_measure_values</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">yield_if_nan</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">ProcessingResult</span><span class="p">(</span>
+                    <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                    <span class="n">sources</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_measures</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+                    <span class="n">result</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+                <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">exception_message</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">ProcessingControlResult</span><span class="o">.</span><span class="n">from_assertion_error</span><span class="p">(</span>
+                <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">exception_message</span>
+            <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AggregateModalities">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateModalities">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateModalities</span><span class="p">(</span><span class="n">AggregateMeasures</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate measure values from different modalities.</span>
+
+<span class="sd">    This is a convenience step to address the common pattern of aggregating a measure</span>
+<span class="sd">    from different modalities of the same root measure. The measure ids are derived from</span>
+<span class="sd">    the provided ``definition`` and the ``modalities``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#: A list of modalities to use for aggregation</span>
+    <span class="n">modalities</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="AggregateModalities.get_modalities">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateModalities.get_modalities">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_modalities</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">]]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a list of modalities to be aggregated.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">modalities</span></div>
+
+
+<div class="viewcode-block" id="AggregateModalities.get_measure_ids">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.AggregateModalities.get_measure_ids">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measure_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">DefinitionIdType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get measure ids based on modalities and base measure definition.&quot;&quot;&quot;</span>
+        <span class="n">definition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_definition</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">definition</span><span class="p">,</span> <span class="n">MeasureValueDefinition</span>
+        <span class="p">),</span> <span class="s2">&quot;Definition must be a MeasureValueDefinition&quot;</span>
+
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">MeasureId</span><span class="p">(</span>
+                <span class="n">definition</span><span class="o">.</span><span class="n">task_name</span><span class="p">,</span>
+                <span class="n">definition</span><span class="o">.</span><span class="n">measure_name</span><span class="p">,</span>
+                <span class="n">modality</span><span class="p">,</span>
+                <span class="n">definition</span><span class="o">.</span><span class="n">aggregation</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">modality</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_modalities</span><span class="p">()</span>
+        <span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="MeasureFlagStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep">[docs]</a>
+<span class="k">class</span> <span class="nc">MeasureFlagStep</span><span class="p">(</span><span class="n">FlagStepMixin</span><span class="p">,</span> <span class="n">ProcessingStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A class for measure flag.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    measure_ids</span>
+<span class="sd">        The identifier(s) of the measure(s) that are to be flagged.</span>
+<span class="sd">    task_name</span>
+<span class="sd">        An optional abbreviated name value of the task used for the flag. See</span>
+<span class="sd">        :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flag_name</span>
+<span class="sd">        An optional abbreviated name value of the considered flag.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flag_type</span>
+<span class="sd">        An optional flag type.</span>
+<span class="sd">        See :class:`~dispel.data.flags.FlagType`.</span>
+<span class="sd">    flag_severity</span>
+<span class="sd">        An optional flag severity.</span>
+<span class="sd">        See :class:`~dispel.data.flags.FlagSeverity`.</span>
+<span class="sd">    reason</span>
+<span class="sd">        An optional string reason of the considered flag.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    stop_processing</span>
+<span class="sd">        An optional boolean that specifies whether the flag is stop_processing</span>
+<span class="sd">        i.e. raises an error or not. See</span>
+<span class="sd">        :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flagging_function</span>
+<span class="sd">        An optional flagging function to be applied to a</span>
+<span class="sd">        :class:`~dispel.data.measures.MeasureValue`&#39;s raw value.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    target_ids</span>
+<span class="sd">        An optional id(s) of the target measures to be flagged. If the user doesn&#39;t</span>
+<span class="sd">        specify the targets then the targets will automatically be the used measures.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Assuming you want to flag the step count measure value, you can create the</span>
+<span class="sd">    following flag step:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import AbbreviatedValue as AV</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import MeasureFlagStep</span>
+<span class="sd">    &gt;&gt;&gt; step = MeasureFlagStep(</span>
+<span class="sd">    ...     measure_ids=&#39;6mwt-step_count&#39;,</span>
+<span class="sd">    ...     task_name=AV(&#39;Six-minute walk test&#39;, &#39;6mwt&#39;),</span>
+<span class="sd">    ...     flag_name=AV(&#39;step count threshold&#39;, &#39;sct&#39;),</span>
+<span class="sd">    ...     flag_type=&#39;behavioral&#39;,</span>
+<span class="sd">    ...     flag_severity=FlagSeverity.DEVIATION,</span>
+<span class="sd">    ...     reason=&#39;The step count value exceeds 1000 steps.&#39;,</span>
+<span class="sd">    ...     flagging_function=lambda value: value &lt; 1000,</span>
+<span class="sd">    ... )</span>
+
+<span class="sd">    The flagging function will be called with the measure value corresponding to</span>
+<span class="sd">    provided measure id. If the function has named parameters matching ``level`` or</span>
+<span class="sd">    ``reading``, the respective level and reading will be passed to the flag</span>
+<span class="sd">    function.</span>
+
+<span class="sd">    Another common scenario is to define a class that can be reused.</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.flags import FlagType</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import MeasureFlagStep</span>
+<span class="sd">    &gt;&gt;&gt; class StepCountThreshold(MeasureFlagStep):</span>
+<span class="sd">    ...     measure_ids = &#39;6mwt-step_count&#39;</span>
+<span class="sd">    ...     task_name = AV(&#39;Six-minute walk test&#39;, &#39;6mwt&#39;)</span>
+<span class="sd">    ...     flag_name = AV(&#39;step count threshold&#39;, &#39;sct&#39;)</span>
+<span class="sd">    ...     flag_type = FlagType.BEHAVIORAL</span>
+<span class="sd">    ...     flag_severity = FlagSeverity.DEVIATION</span>
+<span class="sd">    ...     reason = &#39;The step count value exceeds 1000 steps.&#39;</span>
+<span class="sd">    ...     stop_processing = False</span>
+<span class="sd">    ...     flagging_function = lambda value: value &lt; 1000</span>
+
+<span class="sd">    Another convenient way to provide the flagging function is to use the</span>
+<span class="sd">    ``@flag`` decorator, one can also use multiple flags for the same class</span>
+<span class="sd">    as follows:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import MeasureFlagStep</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.flags import flag</span>
+<span class="sd">    &gt;&gt;&gt; class StepCountThreshold(MeasureFlagStep):</span>
+<span class="sd">    ...     measure_ids = &#39;6mwt-step_count&#39;</span>
+<span class="sd">    ...     task_name = AV(&#39;Six-minute walk test&#39;, &#39;6mwt&#39;)</span>
+<span class="sd">    ...     flag_name = AV(&#39;step count threshold&#39;, &#39;sct&#39;)</span>
+<span class="sd">    ...     flag_type = &#39;behavioral&#39;</span>
+<span class="sd">    ...     reason = &#39;The step count value exceeds {threshold} steps.&#39;</span>
+<span class="sd">    ...     stop_processing = False</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @flag(threshold=1000, flag_severity=FlagSeverity.INVALIDATION)</span>
+<span class="sd">    ...     def _threshold_1000(self, value: float) -&gt; bool:</span>
+<span class="sd">    ...         return value &lt; 1000</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @flag(threshold=800, flag_severity=FlagSeverity.DEVIATION)</span>
+<span class="sd">    ...     def _threshold_800(self, value: float) -&gt; bool:</span>
+<span class="sd">    ...         return value &lt; 800</span>
+
+<span class="sd">    Note that the ``@flag`` decorator can take keyword arguments. These kwargs are</span>
+<span class="sd">    merged with any keyword arguments that come from processing step groups in order to</span>
+<span class="sd">    format the flag ``reason``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">measure_ids</span><span class="p">:</span> <span class="n">DefinitionIdType</span>
+
+    <span class="n">target_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="MeasureFlagStep.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">measure_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DefinitionIdType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">FlagType</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_severity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">FlagSeverity</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">reason</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stop_processing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">flagging_function</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">target_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">measure_ids</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">measure_ids</span> <span class="o">=</span> <span class="n">measure_ids</span>
+
+        <span class="k">if</span> <span class="n">target_ids</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span> <span class="o">=</span> <span class="n">target_ids</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">task_name</span><span class="p">,</span>
+            <span class="n">flag_name</span><span class="o">=</span><span class="n">flag_name</span><span class="p">,</span>
+            <span class="n">flag_type</span><span class="o">=</span><span class="n">flag_type</span><span class="p">,</span>
+            <span class="n">flag_severity</span><span class="o">=</span><span class="n">flag_severity</span><span class="p">,</span>
+            <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
+            <span class="n">stop_processing</span><span class="o">=</span><span class="n">stop_processing</span><span class="p">,</span>
+            <span class="n">flagging_function</span><span class="o">=</span><span class="n">flagging_function</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureFlagStep.get_measure_ids">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_measure_ids">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measure_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">DefinitionIdType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure ids to be flagged.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">measure_ids</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">DefinitionId</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">measure_ids</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_ids</span></div>
+
+
+<div class="viewcode-block" id="MeasureFlagStep.get_target_ids">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_target_ids">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_target_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">DefinitionIdType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the ids of the target data sets to be flagged.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The identifiers of the target data sets.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_measure_ids</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">DefinitionId</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span></div>
+
+
+<div class="viewcode-block" id="MeasureFlagStep.get_measures">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_measures">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure value classes used for flag.&quot;&quot;&quot;</span>
+        <span class="n">measure_set</span> <span class="o">=</span> <span class="n">reading</span><span class="o">.</span><span class="n">get_merged_measure_set</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">measure_set</span><span class="p">[</span><span class="n">measure_id</span><span class="p">]</span> <span class="k">for</span> <span class="n">measure_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_measure_ids</span><span class="p">()]</span></div>
+
+
+<div class="viewcode-block" id="MeasureFlagStep.get_measure_values">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_measure_values">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measure_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure raw values used for flag.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">measure</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">measure</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_measures</span><span class="p">(</span><span class="n">reading</span><span class="p">)]</span></div>
+
+
+<div class="viewcode-block" id="MeasureFlagStep.process_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.process_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided reading.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading to be processed</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional arguments passed by :func:`~dispel.processing.process`.</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        ProcessResultType</span>
+<span class="sd">            The results from processing readings.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">flag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag_measure_values</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_measure_values</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">):</span>
+            <span class="k">yield</span> <span class="n">ProcessingControlResult</span><span class="o">.</span><span class="n">from_flag</span><span class="p">(</span>
+                <span class="n">flag</span><span class="o">=</span><span class="n">flag</span><span class="p">,</span>
+                <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">targets</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_flag_targets</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MeasureFlagStep.get_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.get_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Level</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get flag targets for measures.&quot;&quot;&quot;</span>
+        <span class="n">measure_set</span> <span class="o">=</span> <span class="n">reading</span><span class="o">.</span><span class="n">get_merged_measure_set</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">cast</span><span class="p">(</span><span class="n">MeasureValue</span><span class="p">,</span> <span class="n">measure_set</span><span class="p">[</span><span class="n">measure_id</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">measure_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_target_ids</span><span class="p">()</span>
+        <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="MeasureFlagStep.flag_measure_values">
+<a class="viewcode-back" href="../../../api/dispel.processing.extract.html#dispel.processing.extract.MeasureFlagStep.flag_measure_values">[docs]</a>
+    <span class="k">def</span> <span class="nf">flag_measure_values</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">measure_values</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Flag</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag the provided measure value.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">func_kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flagging_functions</span><span class="p">():</span>
+            <span class="n">new_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s2">&quot;reading&quot;</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getfullargspec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">args</span><span class="p">:</span>
+                <span class="n">new_kwargs</span><span class="p">[</span><span class="s2">&quot;reading&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reading</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">measure_values</span><span class="p">,</span> <span class="o">**</span><span class="n">new_kwargs</span><span class="p">):</span>
+                <span class="p">(</span><span class="n">merged_kwargs</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">func_kwargs</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flag</span><span class="p">(</span><span class="o">**</span><span class="n">merged_kwargs</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

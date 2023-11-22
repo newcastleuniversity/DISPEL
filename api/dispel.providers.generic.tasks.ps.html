@@ -1,0 +1,1328 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.generic.tasks.ps module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.generic.tasks.ps';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.generic.preprocessing module" href="dispel.providers.generic.preprocessing.html" />
+    <link rel="prev" title="dispel.providers.generic.tasks.msis29 module" href="dispel.providers.generic.tasks.msis29.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.generic.tasks.html" class="nav-link">dispel.providers.generic.tasks package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.generic.tasks.ps">
+<span id="dispel-providers-generic-tasks-ps-module"></span><h1>dispel.providers.generic.tasks.ps module<a class="headerlink" href="#module-dispel.providers.generic.tasks.ps" title="Link to this heading">#</a></h1>
+<p>Pronation Supination assessment related functionality.</p>
+<p>This module contains functionality to extract measures for the
+<em>Pronation Supination</em> assessment (PS).</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ACTIVE_PHASE_DUR">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">ACTIVE_PHASE_DUR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Timedelta('0</span> <span class="pre">days</span> <span class="pre">00:00:07')</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ACTIVE_PHASE_DUR" title="Link to this definition">#</a></dt>
+<dd><p>Define the duration of the active test phase of the pronation supination test.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateAmplitude">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">AggregateAmplitude</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#AggregateAmplitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn" title="dispel.processing.extract.AggregateRawDataSetColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn</span></code></a></p>
+<p>An aggregation processing step for the amplitude peak to peak.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateAmplitude.aggregations">
+<span class="sig-name descname"><span class="pre">aggregations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AggregationsDefinitionType</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('mean',</span> <span class="pre">'mean'),</span> <span class="pre">('median',</span> <span class="pre">'median'),</span> <span class="pre">(&lt;function</span> <span class="pre">npcv&gt;,</span> <span class="pre">'non</span> <span class="pre">parametric</span> <span class="pre">coefficient</span> <span class="pre">of</span> <span class="pre">variation')]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude.aggregations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateAmplitude.column_id">
+<span class="sig-name descname"><span class="pre">column_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'abs_rotation'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude.column_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateAmplitude.data_set_ids">
+<span class="sig-name descname"><span class="pre">data_set_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event_peak_peak'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude.data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>An iterable of data sets to be being processed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateAmplitude.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateAmplitudeAndDurationGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">AggregateAmplitudeAndDurationGroup</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#AggregateAmplitudeAndDurationGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateAmplitudeAndDurationGroup" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Aggregate amplitude and duration group.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateAmplitudeAndDurationGroup.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateAmplitudeAndDurationGroup.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateDuration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">AggregateDuration</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#AggregateDuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateDuration" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn" title="dispel.processing.extract.AggregateRawDataSetColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn</span></code></a></p>
+<p>An aggregation processing step for the duration peak to peak.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateDuration.aggregations">
+<span class="sig-name descname"><span class="pre">aggregations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AggregationsDefinitionType</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('mean',</span> <span class="pre">'mean')]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateDuration.aggregations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateDuration.column_id">
+<span class="sig-name descname"><span class="pre">column_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'delta_t'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateDuration.column_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateDuration.data_set_ids">
+<span class="sig-name descname"><span class="pre">data_set_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event_peak_peak'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateDuration.data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>An iterable of data sets to be being processed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateDuration.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateDuration.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateMotion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">AggregateMotion</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#AggregateMotion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateMotion" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn" title="dispel.processing.extract.AggregateRawDataSetColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn</span></code></a></p>
+<p>An Aggregation of motion measures.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateMotion.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">movement</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#AggregateMotion.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateMotion.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_set_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p></li>
+<li><p><strong>column_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p></li>
+<li><p><strong>movement</strong> (<a class="reference internal" href="#dispel.providers.generic.tasks.ps.Movement" title="dispel.providers.generic.tasks.ps.Movement"><em>Movement</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregateMotion.get_data_frames">
+<span class="sig-name descname"><span class="pre">get_data_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#AggregateMotion.get_data_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregateMotion.get_data_frames" title="Link to this definition">#</a></dt>
+<dd><p>Get the raw data from all data sets in question.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level from which to get the data sets.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of all raw data frames with the specified ids masked with
+event being equal to the movement specified.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregatePerHandAndMotionGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">AggregatePerHandAndMotionGroup</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#AggregatePerHandAndMotionGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregatePerHandAndMotionGroup" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Aggregate per hand and motion group.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.AggregatePerHandAndMotionGroup.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.AggregatePerHandAndMotionGroup.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">BDHPronationSupinationSteps</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#BDHPronationSupinationSteps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Generic Pronation Supination processing steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps.kwargs">
+<span class="sig-name descname"><span class="pre">kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'task_name':</span> <span class="pre">Pronation-Supination</span> <span class="pre">Assessment</span> <span class="pre">(PS)}</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps.kwargs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.tasks.ps.PreprocessingPSGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.MovementPowerGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.EventDetectionAndFiltering</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.EventMeasureExtractionGroup</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.COL_TO_AGG">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">COL_TO_AGG</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['abs_rotation',</span> <span class="pre">'abs_rotation_speed']</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.COL_TO_AGG" title="Link to this definition">#</a></dt>
+<dd><p>Columns of the event data set that we want to aggregate as measures over
+the different events.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.EventDetectionAndFiltering">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">EventDetectionAndFiltering</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#EventDetectionAndFiltering"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.EventDetectionAndFiltering" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Pronation Supination event detection and filtering processing steps group.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.EventDetectionAndFiltering.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.sensor.Upsample</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.sensor.TransformFindZeroCrossings</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.TransformIdentifyEvent</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.TransformFilterEvent</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.TransformRemovePriorEvent</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.EventDetectionAndFiltering.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.EventMeasureExtractionGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">EventMeasureExtractionGroup</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#EventMeasureExtractionGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.EventMeasureExtractionGroup" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Pronation Supination event-based measure extraction group.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.EventMeasureExtractionGroup.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.tasks.ps.TransformRotationSpeed</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.AggregateAmplitudeAndDurationGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.AggregatePerHandAndMotionGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.PerHandEventExtractionGroup</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.EventMeasureExtractionGroup.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">ExtractAmplitudeDecrementSimple</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#ExtractAmplitudeDecrementSimple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>Extract the simple version of decrement in amplitude.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.data_set_ids">
+<span class="sig-name descname"><span class="pre">data_set_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event_peak_peak'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>An iterable of data sets to be being processed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.decrement_amplitude_simple">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decrement_amplitude_simple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#ExtractAmplitudeDecrementSimple.decrement_amplitude_simple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.decrement_amplitude_simple" title="Link to this definition">#</a></dt>
+<dd><p>Compute the simple decrement of amplitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'The</span> <span class="pre">simple</span> <span class="pre">decrement</span> <span class="pre">of</span> <span class="pre">amplitude</span> <span class="pre">defined</span> <span class="pre">as</span> <span class="pre">the</span> <span class="pre">difference</span> <span class="pre">in</span> <span class="pre">median</span> <span class="pre">amplitude</span> <span class="pre">between</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">and</span> <span class="pre">last</span> <span class="pre">25%</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">task.'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.description" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">ExtractAvgMovementPowerFromTimeSeries</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#ExtractAvgMovementPowerFromTimeSeries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>Extract average movement power from a time series.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.average_power">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">average_power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#ExtractAvgMovementPowerFromTimeSeries.average_power"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.average_power" title="Link to this definition">#</a></dt>
+<dd><p>Compute the average power of the time series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'The</span> <span class="pre">average</span> <span class="pre">power</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">signal</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">defined</span> <span class="pre">0</span> <span class="pre">-</span> <span class="pre">4</span> <span class="pre">Hz</span> <span class="pre">frequency</span> <span class="pre">band.'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.description" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractNEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">ExtractNEvent</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#ExtractNEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractNEvent" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>Extract number of events that are either pronation or supination.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractNEvent.count_events">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">count_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#ExtractNEvent.count_events"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractNEvent.count_events" title="Link to this definition">#</a></dt>
+<dd><p>Count the number of pronation or supination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractNEvent.data_set_ids">
+<span class="sig-name descname"><span class="pre">data_set_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractNEvent.data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>An iterable of data sets to be being processed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractNEvent.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractNEvent.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractNEvent.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'The</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">events</span> <span class="pre">that</span> <span class="pre">are</span> <span class="pre">a</span> <span class="pre">pronation</span> <span class="pre">or</span> <span class="pre">a</span> <span class="pre">supination.'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractNEvent.description" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">ExtractSpeedDecrementSimple</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#ExtractSpeedDecrementSimple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>Extract the simple version of decrement in speed.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.data_set_ids">
+<span class="sig-name descname"><span class="pre">data_set_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>An iterable of data sets to be being processed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.decrement_speed_simple">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decrement_speed_simple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#ExtractSpeedDecrementSimple.decrement_speed_simple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.decrement_speed_simple" title="Link to this definition">#</a></dt>
+<dd><p>Compute the simple decrement of speed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.definition">
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinition" title="dispel.data.values.ValueDefinition"><span class="pre">ValueDefinition</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="dispel.data.values.html#dispel.data.values.ValueDefinitionPrototype" title="dispel.data.values.ValueDefinitionPrototype"><span class="pre">ValueDefinitionPrototype</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;dispel.data.measures.MeasureValueDefinitionPrototype</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.definition" title="Link to this definition">#</a></dt>
+<dd><p>The specification of the measure definition</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'The</span> <span class="pre">simple</span> <span class="pre">decrement</span> <span class="pre">of</span> <span class="pre">speed</span> <span class="pre">defined</span> <span class="pre">as</span> <span class="pre">the</span> <span class="pre">difference</span> <span class="pre">in</span> <span class="pre">median</span> <span class="pre">speed</span> <span class="pre">between</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">and</span> <span class="pre">last</span> <span class="pre">25%</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">task.'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.description" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.MIN_EVENT_ROTATION">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">MIN_EVENT_ROTATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.MIN_EVENT_ROTATION" title="Link to this definition">#</a></dt>
+<dd><p>Define the minimal rotation of a valid event such as pronation and supination.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.Movement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">Movement</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#Movement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.Movement" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the event modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.Movement.PRONATION">
+<span class="sig-name descname"><span class="pre">PRONATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.Movement.PRONATION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.Movement.PROSUP">
+<span class="sig-name descname"><span class="pre">PROSUP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.Movement.PROSUP" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.Movement.SUPINATION">
+<span class="sig-name descname"><span class="pre">SUPINATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.Movement.SUPINATION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.MovementPowerGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">MovementPowerGroup</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#MovementPowerGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.MovementPowerGroup" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Pronation Supination movement power processing steps group.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.MovementPowerGroup.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.processing.transform.Apply</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.MovementPowerGroup.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.PerHandEventExtractionGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">PerHandEventExtractionGroup</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#PerHandEventExtractionGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.PerHandEventExtractionGroup" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Pronation Supination per hand measure extraction group.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.PerHandEventExtractionGroup.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.level.ProcessingStepGroup</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.PerHandEventExtractionGroup.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.PreprocessingPSGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">PreprocessingPSGroup</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#PreprocessingPSGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.PreprocessingPSGroup" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>Pronation Supination preprocessing steps.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.PreprocessingPSGroup.steps">
+<span class="sig-name descname"><span class="pre">steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><span class="pre">ProcessingStep</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;dispel.providers.generic.sensor.SetTimestampIndex</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.providers.generic.sensor.Resample</span> <span class="pre">object&gt;,</span> <span class="pre">&lt;dispel.processing.transform.Apply</span> <span class="pre">object&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.PreprocessingPSGroup.steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">TransformAmplitudePeakToPeak</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformAmplitudePeakToPeak"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Compute amplitude of rotation peak to peak.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.compute_abs_rot_peak_peak">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compute_abs_rot_peak_peak</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformAmplitudePeakToPeak.compute_abs_rot_peak_peak"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.compute_abs_rot_peak_peak" title="Link to this definition">#</a></dt>
+<dd><p>Compute absolute rotation peak to peak of pronation - supination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">start</span> <span class="pre">(Start</span> <span class="pre">timestamp</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">beginning</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">event.)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">end</span> <span class="pre">(end</span> <span class="pre">timestamp</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">event.)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">delta_t</span> <span class="pre">(Duration</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">motion.,</span> <span class="pre">s)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">abs_rotation</span> <span class="pre">(Absolute</span> <span class="pre">rotation</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">pronation</span> <span class="pre">supination</span> <span class="pre">in</span> <span class="pre">degrees.,</span> <span class="pre">deg)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.new_data_set_id">
+<span class="sig-name descname"><span class="pre">new_data_set_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event_peak_peak'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.new_data_set_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformFilterEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">TransformFilterEvent</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformFilterEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformFilterEvent" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Enrich event with time boundaries and only keep defined event.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformFilterEvent.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">zero_crossings</span> <span class="pre">(zero</span> <span class="pre">crossings)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">rotation</span> <span class="pre">(rotation,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">abs_rotation</span> <span class="pre">(absolute</span> <span class="pre">rotation,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">event</span> <span class="pre">(Event</span> <span class="pre">indicating</span> <span class="pre">if</span> <span class="pre">the</span> <span class="pre">motion</span> <span class="pre">was</span> <span class="pre">a</span> <span class="pre">pronation</span> <span class="pre">or</span> <span class="pre">supination.)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">start</span> <span class="pre">(Start</span> <span class="pre">timestamp</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">beginning</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">event.)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">end</span> <span class="pre">(end</span> <span class="pre">timestamp</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">event.)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformFilterEvent.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformFilterEvent.filter_event">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filter_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ps_event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformFilterEvent.filter_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformFilterEvent.filter_event" title="Link to this definition">#</a></dt>
+<dd><p>Add start and end of event and keep only defined events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ps_event</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformFilterEvent.new_data_set_id">
+<span class="sig-name descname"><span class="pre">new_data_set_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformFilterEvent.new_data_set_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformIdentifyEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">TransformIdentifyEvent</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformIdentifyEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformIdentifyEvent" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Identify pronation supination given the rotation and the hand used.</p>
+<p>Only pronation event and supination event for which the associated rotation is
+greater than MIN_EVENT_ROTATION in absolute value are considered.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformIdentifyEvent.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">zero_crossings</span> <span class="pre">(zero</span> <span class="pre">crossings)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">rotation</span> <span class="pre">(rotation,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">abs_rotation</span> <span class="pre">(absolute</span> <span class="pre">rotation,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">event</span> <span class="pre">(Event</span> <span class="pre">indicating</span> <span class="pre">if</span> <span class="pre">the</span> <span class="pre">motion</span> <span class="pre">was</span> <span class="pre">a</span> <span class="pre">pronation</span> <span class="pre">or</span> <span class="pre">supination.)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformIdentifyEvent.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformIdentifyEvent.identify_event">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identify_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ps_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformIdentifyEvent.identify_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformIdentifyEvent.identify_event" title="Link to this definition">#</a></dt>
+<dd><p>Identify whether the event is a supination or a pronation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ps_event</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformIdentifyEvent.new_data_set_id">
+<span class="sig-name descname"><span class="pre">new_data_set_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformIdentifyEvent.new_data_set_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">TransformIntegrateBetweenZeros</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformIntegrateBetweenZeros"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Integrate gyroscope signal between zero crossings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">zero_crossings</span> <span class="pre">(zero</span> <span class="pre">crossings)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">rotation</span> <span class="pre">(rotation,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">abs_rotation</span> <span class="pre">(absolute</span> <span class="pre">rotation,</span> <span class="pre">deg)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.integrate_between_zeros">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">integrate_between_zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zeros</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformIntegrateBetweenZeros.integrate_between_zeros"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.integrate_between_zeros" title="Link to this definition">#</a></dt>
+<dd><p>Integrate gyroscope between zero-crossings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>zeros</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.new_data_set_id">
+<span class="sig-name descname"><span class="pre">new_data_set_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.new_data_set_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformRemovePriorEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">TransformRemovePriorEvent</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformRemovePriorEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Remove event ending before active test phase.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">zero_crossings</span> <span class="pre">(zero</span> <span class="pre">crossings)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">rotation</span> <span class="pre">(rotation,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">abs_rotation</span> <span class="pre">(absolute</span> <span class="pre">rotation,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">event</span> <span class="pre">(Event</span> <span class="pre">indicating</span> <span class="pre">if</span> <span class="pre">the</span> <span class="pre">motion</span> <span class="pre">was</span> <span class="pre">a</span> <span class="pre">pronation</span> <span class="pre">or</span> <span class="pre">supination.)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">start</span> <span class="pre">(Start</span> <span class="pre">timestamp</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">beginning</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">event.)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">end</span> <span class="pre">(end</span> <span class="pre">timestamp</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">event.)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.new_data_set_id">
+<span class="sig-name descname"><span class="pre">new_data_set_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.new_data_set_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.truncate_active_event">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">truncate_active_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ps_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformRemovePriorEvent.truncate_active_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.truncate_active_event" title="Link to this definition">#</a></dt>
+<dd><p>Remove potential event ending prior the active phase of 7 s.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ps_event</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformRotationSpeed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">TransformRotationSpeed</span></span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformRotationSpeed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformRotationSpeed" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>Compute rotation speed per motion.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformRotationSpeed.compute_rot_speed">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compute_rot_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#TransformRotationSpeed.compute_rot_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformRotationSpeed.compute_rot_speed" title="Link to this definition">#</a></dt>
+<dd><p>Compute average rotation speed during a pronation or supination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformRotationSpeed.definitions">
+<span class="sig-name descname"><span class="pre">definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataValueDefinition" title="dispel.data.raw.RawDataValueDefinition"><span class="pre">RawDataValueDefinition</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RawDataValueDefinition:</span> <span class="pre">zero_crossings</span> <span class="pre">(zero</span> <span class="pre">crossings)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">rotation</span> <span class="pre">(rotation,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">abs_rotation</span> <span class="pre">(absolute</span> <span class="pre">rotation,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">event</span> <span class="pre">(Event</span> <span class="pre">indicating</span> <span class="pre">if</span> <span class="pre">the</span> <span class="pre">motion</span> <span class="pre">was</span> <span class="pre">a</span> <span class="pre">pronation</span> <span class="pre">or</span> <span class="pre">supination.)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">start</span> <span class="pre">(Start</span> <span class="pre">timestamp</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">beginning</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">event.)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">end</span> <span class="pre">(end</span> <span class="pre">timestamp</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">event.)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">delta_t</span> <span class="pre">(Duration</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">motion.,</span> <span class="pre">s)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">rotation_speed</span> <span class="pre">(Average</span> <span class="pre">rotation</span> <span class="pre">speed</span> <span class="pre">in</span> <span class="pre">degrees</span> <span class="pre">during</span> <span class="pre">the</span> <span class="pre">motion.,</span> <span class="pre">deg)&gt;,</span> <span class="pre">&lt;RawDataValueDefinition:</span> <span class="pre">abs_rotation_speed</span> <span class="pre">(Absolute</span> <span class="pre">value</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">average</span> <span class="pre">rotation</span> <span class="pre">speed</span> <span class="pre">in</span> <span class="pre">degrees.,</span> <span class="pre">deg)&gt;]</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformRotationSpeed.definitions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.TransformRotationSpeed.new_data_set_id">
+<span class="sig-name descname"><span class="pre">new_data_set_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ps_event'</span></em><a class="headerlink" href="#dispel.providers.generic.tasks.ps.TransformRotationSpeed.new_data_set_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.generic.tasks.ps.decrement_simple">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.generic.tasks.ps.</span></span><span class="sig-name descname"><span class="pre">decrement_simple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/generic/tasks/ps.html#decrement_simple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.generic.tasks.ps.decrement_simple" title="Link to this definition">#</a></dt>
+<dd><p>Compute simplified version of decrement of a series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.generic.tasks.msis29.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.generic.tasks.msis29 module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.generic.preprocessing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.generic.preprocessing module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ACTIVE_PHASE_DUR"><code class="docutils literal notranslate"><span class="pre">ACTIVE_PHASE_DUR</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude"><code class="docutils literal notranslate"><span class="pre">AggregateAmplitude</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateAmplitude.aggregations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateAmplitude.column_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateAmplitude.data_set_ids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateAmplitude.definition"><code class="docutils literal notranslate"><span class="pre">AggregateAmplitude.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateAmplitudeAndDurationGroup"><code class="docutils literal notranslate"><span class="pre">AggregateAmplitudeAndDurationGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateAmplitudeAndDurationGroup.steps"><code class="docutils literal notranslate"><span class="pre">AggregateAmplitudeAndDurationGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateDuration"><code class="docutils literal notranslate"><span class="pre">AggregateDuration</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateDuration.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateDuration.aggregations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateDuration.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateDuration.column_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateDuration.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateDuration.data_set_ids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateDuration.definition"><code class="docutils literal notranslate"><span class="pre">AggregateDuration.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateMotion"><code class="docutils literal notranslate"><span class="pre">AggregateMotion</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateMotion.__init__"><code class="docutils literal notranslate"><span class="pre">AggregateMotion.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregateMotion.get_data_frames"><code class="docutils literal notranslate"><span class="pre">AggregateMotion.get_data_frames()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregatePerHandAndMotionGroup"><code class="docutils literal notranslate"><span class="pre">AggregatePerHandAndMotionGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.AggregatePerHandAndMotionGroup.steps"><code class="docutils literal notranslate"><span class="pre">AggregatePerHandAndMotionGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps"><code class="docutils literal notranslate"><span class="pre">BDHPronationSupinationSteps</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps.kwargs"><code class="docutils literal notranslate"><span class="pre">BDHPronationSupinationSteps.kwargs</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.BDHPronationSupinationSteps.steps"><code class="docutils literal notranslate"><span class="pre">BDHPronationSupinationSteps.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.COL_TO_AGG"><code class="docutils literal notranslate"><span class="pre">COL_TO_AGG</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.EventDetectionAndFiltering"><code class="docutils literal notranslate"><span class="pre">EventDetectionAndFiltering</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.EventDetectionAndFiltering.steps"><code class="docutils literal notranslate"><span class="pre">EventDetectionAndFiltering.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.EventMeasureExtractionGroup"><code class="docutils literal notranslate"><span class="pre">EventMeasureExtractionGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.EventMeasureExtractionGroup.steps"><code class="docutils literal notranslate"><span class="pre">EventMeasureExtractionGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple"><code class="docutils literal notranslate"><span class="pre">ExtractAmplitudeDecrementSimple</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractAmplitudeDecrementSimple.data_set_ids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.decrement_amplitude_simple"><code class="docutils literal notranslate"><span class="pre">ExtractAmplitudeDecrementSimple.decrement_amplitude_simple()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.definition"><code class="docutils literal notranslate"><span class="pre">ExtractAmplitudeDecrementSimple.definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractAmplitudeDecrementSimple.description"><code class="docutils literal notranslate"><span class="pre">ExtractAmplitudeDecrementSimple.description</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries"><code class="docutils literal notranslate"><span class="pre">ExtractAvgMovementPowerFromTimeSeries</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.average_power"><code class="docutils literal notranslate"><span class="pre">ExtractAvgMovementPowerFromTimeSeries.average_power()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.definition"><code class="docutils literal notranslate"><span class="pre">ExtractAvgMovementPowerFromTimeSeries.definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractAvgMovementPowerFromTimeSeries.description"><code class="docutils literal notranslate"><span class="pre">ExtractAvgMovementPowerFromTimeSeries.description</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractNEvent"><code class="docutils literal notranslate"><span class="pre">ExtractNEvent</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractNEvent.count_events"><code class="docutils literal notranslate"><span class="pre">ExtractNEvent.count_events()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractNEvent.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractNEvent.data_set_ids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractNEvent.definition"><code class="docutils literal notranslate"><span class="pre">ExtractNEvent.definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractNEvent.description"><code class="docutils literal notranslate"><span class="pre">ExtractNEvent.description</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple"><code class="docutils literal notranslate"><span class="pre">ExtractSpeedDecrementSimple</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractSpeedDecrementSimple.data_set_ids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.decrement_speed_simple"><code class="docutils literal notranslate"><span class="pre">ExtractSpeedDecrementSimple.decrement_speed_simple()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.definition"><code class="docutils literal notranslate"><span class="pre">ExtractSpeedDecrementSimple.definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.ExtractSpeedDecrementSimple.description"><code class="docutils literal notranslate"><span class="pre">ExtractSpeedDecrementSimple.description</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.MIN_EVENT_ROTATION"><code class="docutils literal notranslate"><span class="pre">MIN_EVENT_ROTATION</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.Movement"><code class="docutils literal notranslate"><span class="pre">Movement</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.Movement.PRONATION"><code class="docutils literal notranslate"><span class="pre">Movement.PRONATION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.Movement.PROSUP"><code class="docutils literal notranslate"><span class="pre">Movement.PROSUP</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.Movement.SUPINATION"><code class="docutils literal notranslate"><span class="pre">Movement.SUPINATION</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.MovementPowerGroup"><code class="docutils literal notranslate"><span class="pre">MovementPowerGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.MovementPowerGroup.steps"><code class="docutils literal notranslate"><span class="pre">MovementPowerGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.PerHandEventExtractionGroup"><code class="docutils literal notranslate"><span class="pre">PerHandEventExtractionGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.PerHandEventExtractionGroup.steps"><code class="docutils literal notranslate"><span class="pre">PerHandEventExtractionGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.PreprocessingPSGroup"><code class="docutils literal notranslate"><span class="pre">PreprocessingPSGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.PreprocessingPSGroup.steps"><code class="docutils literal notranslate"><span class="pre">PreprocessingPSGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak"><code class="docutils literal notranslate"><span class="pre">TransformAmplitudePeakToPeak</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.compute_abs_rot_peak_peak"><code class="docutils literal notranslate"><span class="pre">TransformAmplitudePeakToPeak.compute_abs_rot_peak_peak()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.definitions"><code class="docutils literal notranslate"><span class="pre">TransformAmplitudePeakToPeak.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformAmplitudePeakToPeak.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformAmplitudePeakToPeak.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformFilterEvent"><code class="docutils literal notranslate"><span class="pre">TransformFilterEvent</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformFilterEvent.definitions"><code class="docutils literal notranslate"><span class="pre">TransformFilterEvent.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformFilterEvent.filter_event"><code class="docutils literal notranslate"><span class="pre">TransformFilterEvent.filter_event()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformFilterEvent.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformFilterEvent.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformIdentifyEvent"><code class="docutils literal notranslate"><span class="pre">TransformIdentifyEvent</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformIdentifyEvent.definitions"><code class="docutils literal notranslate"><span class="pre">TransformIdentifyEvent.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformIdentifyEvent.identify_event"><code class="docutils literal notranslate"><span class="pre">TransformIdentifyEvent.identify_event()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformIdentifyEvent.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformIdentifyEvent.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros"><code class="docutils literal notranslate"><span class="pre">TransformIntegrateBetweenZeros</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.definitions"><code class="docutils literal notranslate"><span class="pre">TransformIntegrateBetweenZeros.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.integrate_between_zeros"><code class="docutils literal notranslate"><span class="pre">TransformIntegrateBetweenZeros.integrate_between_zeros()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformIntegrateBetweenZeros.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformIntegrateBetweenZeros.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent"><code class="docutils literal notranslate"><span class="pre">TransformRemovePriorEvent</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.definitions"><code class="docutils literal notranslate"><span class="pre">TransformRemovePriorEvent.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformRemovePriorEvent.new_data_set_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformRemovePriorEvent.truncate_active_event"><code class="docutils literal notranslate"><span class="pre">TransformRemovePriorEvent.truncate_active_event()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformRotationSpeed"><code class="docutils literal notranslate"><span class="pre">TransformRotationSpeed</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformRotationSpeed.compute_rot_speed"><code class="docutils literal notranslate"><span class="pre">TransformRotationSpeed.compute_rot_speed()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformRotationSpeed.definitions"><code class="docutils literal notranslate"><span class="pre">TransformRotationSpeed.definitions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.TransformRotationSpeed.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformRotationSpeed.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.generic.tasks.ps.decrement_simple"><code class="docutils literal notranslate"><span class="pre">decrement_simple()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.generic.tasks.ps.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

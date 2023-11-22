@@ -1,0 +1,1397 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.processing.data_set module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.processing.data_set';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.processing.data_trace module" href="dispel.processing.data_trace.html" />
+    <link rel="prev" title="dispel.processing.core module" href="dispel.processing.core.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.processing.html" class="nav-link">dispel.processing package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.proce...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.processing.data_set">
+<span id="dispel-processing-data-set-module"></span><h1>dispel.processing.data_set module<a class="headerlink" href="#module-dispel.processing.data_set" title="Link to this heading">#</a></h1>
+<p>Data set processing functionalities.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStep">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.data_set.</span></span><span class="sig-name descname"><span class="pre">DataSetProcessingStep</span></span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStep" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.processing.data_set.DataSetProcessingStepMixin" title="dispel.processing.data_set.DataSetProcessingStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin</span></code></a>, <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep" title="dispel.processing.level.LevelProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a></p>
+<p>A processing step that processes data sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_set_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>Iterable</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – Optional data set ids to be processed. See <a class="reference internal" href="#dispel.processing.data_set.DataSetProcessingStepMixin" title="dispel.processing.data_set.DataSetProcessingStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin</span></code></a>.</p></li>
+<li><p><strong>level_filter</strong> (<a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>dispel.processing.level.LevelFilter</em></a>) – Optional level filter. See <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep" title="dispel.processing.level.LevelProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStep.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStep.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStep.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_set_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><em>None</em>) – </p></li>
+<li><p><strong>level_filter</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em>] </em><em>| </em><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>LevelFilter</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStep.assert_valid_data_sets">
+<span class="sig-name descname"><span class="pre">assert_valid_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStep.assert_valid_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStep.assert_valid_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Perform assertions that a given data sets can be processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStep.flag_data_sets">
+<span class="sig-name descname"><span class="pre">flag_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStep.flag_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStep.flag_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Flag the provided data sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.Flag" title="dispel.data.flags.Flag"><em>Flag</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStep.process_data_sets">
+<span class="sig-name descname"><span class="pre">process_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStep.process_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStep.process_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Process the provided data sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStep.process_level">
+<span class="sig-name descname"><span class="pre">process_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStep.process_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStep.process_level" title="Link to this definition">#</a></dt>
+<dd><p>Process the provided Level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.data_set.</span></span><span class="sig-name descname"><span class="pre">DataSetProcessingStepMixin</span></span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepMixin" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.utils.html#dispel.processing.utils.TaskMixin" title="dispel.processing.utils.TaskMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">TaskMixin</span></code></a>, <a class="reference internal" href="#dispel.processing.data_set.DataSetProcessingStepProtocol" title="dispel.processing.data_set.DataSetProcessingStepProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol</span></code></a>, <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStepProtocol" title="dispel.processing.level.LevelProcessingStepProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStepProtocol</span></code></a></p>
+<p>A mixin class that processes data sets.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepMixin.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepMixin.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepMixin.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepMixin.assert_valid_level">
+<span class="sig-name descname"><span class="pre">assert_valid_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepMixin.assert_valid_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepMixin.assert_valid_level" title="Link to this definition">#</a></dt>
+<dd><p>Assert that the level has the appropriate valid data sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepMixin.data_set_ids">
+<span class="sig-name descname"><span class="pre">data_set_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepMixin.data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>An iterable of data sets to be being processed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepMixin.get_data_frames">
+<span class="sig-name descname"><span class="pre">get_data_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepMixin.get_data_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepMixin.get_data_frames" title="Link to this definition">#</a></dt>
+<dd><p>Get the raw data from all data sets in question.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level from which to get the data sets.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of all raw data frames with the specified ids.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepMixin.get_data_set_ids">
+<span class="sig-name descname"><span class="pre">get_data_set_ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepMixin.get_data_set_ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepMixin.get_data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>Get the data set ids to be processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepMixin.get_raw_data_sets">
+<span class="sig-name descname"><span class="pre">get_raw_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepMixin.get_raw_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepMixin.get_raw_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Get the raw data sets from all data sets in question.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level from which to get the data sets.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of all raw data sets with the specified ids.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet">RawDataSet</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepProtocol">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.data_set.</span></span><span class="sig-name descname"><span class="pre">DataSetProcessingStepProtocol</span></span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepProtocol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepProtocol" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Abstract class for data set processing steps.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepProtocol.assert_valid_data_sets">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">assert_valid_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepProtocol.assert_valid_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.assert_valid_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Assert that the to be processed data sets are valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepProtocol.flag_data_sets">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flag_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepProtocol.flag_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.flag_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Flag the provided data sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.Flag" title="dispel.data.flags.Flag"><em>Flag</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_frames">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_data_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepProtocol.get_data_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_frames" title="Link to this definition">#</a></dt>
+<dd><p>Get the raw data from all data sets in question.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level from which to get the data sets.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of all raw data frames with the specified ids.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_set_ids">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_data_set_ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepProtocol.get_data_set_ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_set_ids" title="Link to this definition">#</a></dt>
+<dd><p>Get the data set ids to be processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_sets_flag_targets">
+<span class="sig-name descname"><span class="pre">get_data_sets_flag_targets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepProtocol.get_data_sets_flag_targets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_sets_flag_targets" title="Link to this definition">#</a></dt>
+<dd><p>Get the level flag targets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – The data sets to be flagged.</p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level associated with the data sets.</p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – The reading associated with the data set flag.</p></li>
+<li><p><strong>kwargs</strong> – Additional keyword arguments eventually used for flag targets extraction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An iterable of entities that are flagged.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Iterable[EntityType]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepProtocol.get_raw_data_sets">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_raw_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepProtocol.get_raw_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.get_raw_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Get the raw data sets from all data sets in question.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level from which to get the data sets.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of all raw data sets with the specified ids.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet">RawDataSet</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.DataSetProcessingStepProtocol.process_data_sets">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#DataSetProcessingStepProtocol.process_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.process_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Process the provided data sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – The data sets to be processed.</p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level to be processed.</p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – The reading to be processed.</p></li>
+<li><p><strong>kwargs</strong> – Additional arguments passed by
+<a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep.process_level" title="dispel.processing.level.LevelProcessingStep.process_level"><code class="xref py py-meth docutils literal notranslate"><span class="pre">process_level()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ProcessResultType</em> – Results from processing the data sets.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.data_set.FlagDataSetStep">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.data_set.</span></span><span class="sig-name descname"><span class="pre">FlagDataSetStep</span></span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#FlagDataSetStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.FlagDataSetStep" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>, <a class="reference internal" href="#dispel.processing.data_set.DataSetProcessingStep" title="dispel.processing.data_set.DataSetProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSetProcessingStep</span></code></a></p>
+<p>A data set flag class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_set_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>Iterable</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – An optional id or iterable of ids for raw data set(s) to be used for the
+flag. See <a class="reference internal" href="#dispel.processing.data_set.DataSetProcessingStepMixin" title="dispel.processing.data_set.DataSetProcessingStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin</span></code></a>.</p></li>
+<li><p><strong>level_filter</strong> (<a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>dispel.processing.level.LevelFilter</em></a>) – An optional filter to limit the levels being processed.
+See <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep" title="dispel.processing.level.LevelProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a>.</p></li>
+<li><p><strong>task_name</strong> (<a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>dispel.data.values.AbbreviatedValue</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional abbreviated name value of the task used for the flag.
+See <code class="xref py py-class docutils literal notranslate"><span class="pre">FLagStepMixin</span></code>.</p></li>
+<li><p><strong>flag_name</strong> (<a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>dispel.data.values.AbbreviatedValue</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional abbreviated name value of the considered flag.
+See <a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>.</p></li>
+<li><p><strong>flag_type</strong> (<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><em>dispel.data.flags.FlagType</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional flag type.
+See <a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagType</span></code></a>.</p></li>
+<li><p><strong>flag_severity</strong> (<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><em>dispel.data.flags.FlagSeverity</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional flag severity.
+See <a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagSeverity</span></code></a>.</p></li>
+<li><p><strong>reason</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – An optional string reason of the considered flag.
+See <a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>.</p></li>
+<li><p><strong>stop_processing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – An optional boolean that specifies whether the flag is stop_processing,
+i.e., raises an error or not.
+See <a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>.</p></li>
+<li><p><strong>flagging_function</strong> (<em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>] </em><em>| </em><em>None</em>) – An optional flagging function to be applied to the pandas data frames of the
+provided raw data sets.
+See <a class="reference internal" href="dispel.processing.flags.html#dispel.processing.flags.FlagStepMixin" title="dispel.processing.flags.FlagStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlagStepMixin</span></code></a>.</p></li>
+<li><p><strong>target_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>Iterable</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><em>None</em>) – An optional id(s) of the target data sets to be flagged. If the user doesn’t
+specify the targets then the targets will automatically be the used data sets.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Assuming you want to flag the accelerometer signal data of the U-Turn task to
+verify that it doesn’t exceed a certain threshold, you can use the following
+flag step:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">FlagDataSetStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">step</span> <span class="o">=</span> <span class="n">FlagDataSetStep</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s1">&#39;accelerometer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">level_filter</span> <span class="o">=</span> <span class="s1">&#39;utt&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">task_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;U-Turn test&#39;</span><span class="p">,</span> <span class="s1">&#39;utt&#39;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;accelerometer signal threshold&#39;</span><span class="p">,</span> <span class="s1">&#39;ast&#39;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">TECHNICAL</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">INVALIDATION</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">reason</span> <span class="o">=</span> <span class="s1">&#39;The U-Turn accelerometer signal exceeds 50 m/s^2.&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">stop_processing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">flagging_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">50.</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The flagging function will be called with the level <code class="docutils literal notranslate"><span class="pre">'utt'</span></code> as specified in the
+<code class="docutils literal notranslate"><span class="pre">level_filter</span></code> argument. If the function has a named parameter matching
+<code class="docutils literal notranslate"><span class="pre">reading</span></code>, the reading will be passed to the flagging function.</p>
+<p>Another common scenario is to define a class that can be reused.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">FlagType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">FlagDataSetStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UTTAccelerometerSignal</span><span class="p">(</span><span class="n">FlagDataSetStep</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s1">&#39;accelerometer&#39;</span>
+<span class="gp">... </span>    <span class="n">level_filter</span> <span class="o">=</span> <span class="s1">&#39;utt&#39;</span>
+<span class="gp">... </span>    <span class="n">task_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;U-Turn test&#39;</span><span class="p">,</span> <span class="s1">&#39;utt&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;u-turn duration&#39;</span><span class="p">,</span> <span class="s1">&#39;utt_dur&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">TECHNICAL</span>
+<span class="gp">... </span>    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">INVALIDATION</span>
+<span class="gp">... </span>    <span class="n">reason</span> <span class="o">=</span> <span class="s1">&#39;The U-Turn accelerometer signal exceeds 50 m/s^2.&#39;</span>
+<span class="gp">... </span>    <span class="n">stop_processing</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">... </span>    <span class="n">flagging_function</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">50</span>
+</pre></div>
+</div>
+<p>Another convenient way to provide the flagging function is to use the
+<code class="docutils literal notranslate"><span class="pre">&#64;flag</span></code> decorator, one can also use multiple flags for the same class
+as well as multiple data sets. Below is an example of the flag of a data set
+(<code class="docutils literal notranslate"><span class="pre">userInput</span></code>) through the use of multiple ones in the flagging function
+(<code class="docutils literal notranslate"><span class="pre">userInput</span></code>, <code class="docutils literal notranslate"><span class="pre">screen</span></code>).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.flags</span> <span class="kn">import</span> <span class="n">flag</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">FlagLevelStep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UTTAccelerometerSignal</span><span class="p">(</span><span class="n">FlagDataSetStep</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;userInput&#39;</span><span class="p">,</span> <span class="s1">&#39;screen&#39;</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">target_ids</span> <span class="o">=</span> <span class="s1">&#39;userInput&#39;</span>
+<span class="gp">... </span>    <span class="n">level_filter</span> <span class="o">=</span> <span class="s1">&#39;cps&#39;</span>
+<span class="gp">... </span>    <span class="n">task_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;Cognitive processing speed test&#39;</span><span class="p">,</span> <span class="s1">&#39;cps&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s1">&#39;answer timestamps&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">TECHNICAL</span>
+<span class="gp">... </span>    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">INVALIDATION</span>
+<span class="gp">... </span>    <span class="n">reason</span> <span class="o">=</span> <span class="s1">&#39;The user answer timestamps do not match the screen info.&#39;</span>
+<span class="gp">... </span>    <span class="n">stop_processing</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="nd">@flag</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">_timestamps</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">user_input</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">screen</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="gp">... </span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">user_input</span><span class="o">.</span><span class="n">ts</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">ts</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">&#64;flag</span></code> decorator can take keyword arguments. These kwargs are
+merged with any keyword arguments that come from processing step groups in order to
+format the flag <code class="docutils literal notranslate"><span class="pre">reason</span></code>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.FlagDataSetStep.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_severity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_processing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flagging_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#FlagDataSetStep.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.FlagDataSetStep.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_set_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><em>None</em>) – </p></li>
+<li><p><strong>level_filter</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em>] </em><em>| </em><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>LevelFilter</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>task_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>AbbreviatedValue</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>flag_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>AbbreviatedValue</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>flag_type</strong> (<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagType" title="dispel.data.flags.FlagType"><em>FlagType</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>flag_severity</strong> (<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.FlagSeverity" title="dispel.data.flags.FlagSeverity"><em>FlagSeverity</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>reason</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.values.html#dispel.data.values.AbbreviatedValue" title="dispel.data.values.AbbreviatedValue"><em>AbbreviatedValue</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>stop_processing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
+<li><p><strong>flagging_function</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>] </em><em>| </em><em>None</em>) – </p></li>
+<li><p><strong>target_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.FlagDataSetStep.flag_data_sets">
+<span class="sig-name descname"><span class="pre">flag_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#FlagDataSetStep.flag_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.FlagDataSetStep.flag_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Flag the provided data sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.data.flags.html#dispel.data.flags.Flag" title="dispel.data.flags.Flag"><em>Flag</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.FlagDataSetStep.get_data_sets_flag_targets">
+<span class="sig-name descname"><span class="pre">get_data_sets_flag_targets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#FlagDataSetStep.get_data_sets_flag_targets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.FlagDataSetStep.get_data_sets_flag_targets" title="Link to this definition">#</a></dt>
+<dd><p>Get flag targets for data sets flagging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a>[<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a> | <a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a> | <a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a> | <a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a> | <a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.FlagDataSetStep.get_flag_targets">
+<span class="sig-name descname"><span class="pre">get_flag_targets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#FlagDataSetStep.get_flag_targets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.FlagDataSetStep.get_flag_targets" title="Link to this definition">#</a></dt>
+<dd><p>Get flag targets for data set flagging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a>[<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a> | <a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a> | <a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a> | <a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a> | <a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.FlagDataSetStep.get_target_ids">
+<span class="sig-name descname"><span class="pre">get_target_ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#FlagDataSetStep.get_target_ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.FlagDataSetStep.get_target_ids" title="Link to this definition">#</a></dt>
+<dd><p>Get the ids of the target data sets to be flagged.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The identifiers of the target data sets.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.FlagDataSetStep.process_data_sets">
+<span class="sig-name descname"><span class="pre">process_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#FlagDataSetStep.process_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.FlagDataSetStep.process_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Process the provided data sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.data_set.FlagDataSetStep.target_ids">
+<span class="sig-name descname"><span class="pre">target_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dispel.processing.data_set.FlagDataSetStep.target_ids" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.data_set.MutateDataSetProcessingStepBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.data_set.</span></span><span class="sig-name descname"><span class="pre">MutateDataSetProcessingStepBase</span></span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#MutateDataSetProcessingStepBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.processing.data_set.DataSetProcessingStep" title="dispel.processing.data_set.DataSetProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSetProcessingStep</span></code></a></p>
+<p>A base class for transformation and extraction steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_set_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>Iterable</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – An optional list of data set ids to be used for the transformation. See
+<a class="reference internal" href="#dispel.processing.data_set.DataSetProcessingStepMixin" title="dispel.processing.data_set.DataSetProcessingStepMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin</span></code></a>.</p></li>
+<li><p><strong>transform_function</strong> – An optional function to be applied to the data sets. If no function is passed
+the class variable <a class="reference internal" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.transform_function" title="dispel.processing.data_set.MutateDataSetProcessingStepBase.transform_function"><code class="xref py py-data docutils literal notranslate"><span class="pre">transform_function</span></code></a> will be used. Alternatively, the
+<a class="reference internal" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_function" title="dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_function"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_transform_function()</span></code></a> can be overwritten to provide the transformation
+function. If there is more than one function to be applied one can overwrite
+<a class="reference internal" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_functions" title="dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_functions"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_transform_functions()</span></code></a>. Otherwise, all class functions decorated with
+<code class="docutils literal notranslate"><span class="pre">&#64;transformation</span></code> will be considered as a transformation function.</p></li>
+<li><p><strong>level_filter</strong> (<a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>dispel.processing.level.LevelFilter</em></a>) – An optional filter to limit the levels being processed. See
+<a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingStep" title="dispel.processing.level.LevelProcessingStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingStep</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.MutateDataSetProcessingStepBase.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#MutateDataSetProcessingStepBase.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_set_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><em>None</em>) – </p></li>
+<li><p><strong>transform_function</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>None</em>) – </p></li>
+<li><p><strong>level_filter</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><em>List</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelId" title="dispel.data.levels.LevelId"><em>LevelId</em></a><em>] </em><em>| </em><a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><em>LevelFilter</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_function">
+<span class="sig-name descname"><span class="pre">get_transform_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#MutateDataSetProcessingStepBase.get_transform_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_function" title="Link to this definition">#</a></dt>
+<dd><p>Get the transformation function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><em>Callable</em></a>[[…], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>] | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_functions">
+<span class="sig-name descname"><span class="pre">get_transform_functions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#MutateDataSetProcessingStepBase.get_transform_functions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_functions" title="Link to this definition">#</a></dt>
+<dd><p>Get all transformation functions associated with this step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><em>Callable</em></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>]], None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.MutateDataSetProcessingStepBase.process_data_sets">
+<span class="sig-name descname"><span class="pre">process_data_sets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#MutateDataSetProcessingStepBase.process_data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.process_data_sets" title="Link to this definition">#</a></dt>
+<dd><p>Process the provided data sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingResult" title="dispel.processing.core.ProcessingResult"><em>ProcessingResult</em></a> | <a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingControlResult" title="dispel.processing.core.ProcessingControlResult"><em>ProcessingControlResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.data_set.MutateDataSetProcessingStepBase.transform_function">
+<span class="sig-name descname"><span class="pre">transform_function</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.transform_function" title="Link to this definition">#</a></dt>
+<dd><p>The function to be applied to the data sets.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.MutateDataSetProcessingStepBase.wrap_result">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrap_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#MutateDataSetProcessingStepBase.wrap_result"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.wrap_result" title="Link to this definition">#</a></dt>
+<dd><p>Wrap the transformation result into a processing result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – </p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.12)"><em>Generator</em></a>[<a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingResult" title="dispel.processing.level.LevelProcessingResult"><em>LevelProcessingResult</em></a> | <a class="reference internal" href="#dispel.processing.data_set.RawDataSetProcessingResult" title="dispel.processing.data_set.RawDataSetProcessingResult"><em>RawDataSetProcessingResult</em></a>, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.data_set.RawDataSetProcessingResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.data_set.</span></span><span class="sig-name descname"><span class="pre">RawDataSetProcessingResult</span></span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#RawDataSetProcessingResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.RawDataSetProcessingResult" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelProcessingResult" title="dispel.processing.level.LevelProcessingResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelProcessingResult</span></code></a></p>
+<p>The processing result of a transform step.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.processing.data_set.RawDataSetProcessingResult.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concatenate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dispel.processing.data_set.RawDataSetProcessingResult.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+<li><p><strong>step</strong> (<a class="reference internal" href="dispel.processing.core.html#dispel.processing.core.ProcessingStep" title="dispel.processing.core.ProcessingStep"><em>ProcessingStep</em></a>) – </p></li>
+<li><p><strong>sources</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a><em>] </em><em>| </em><a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a>) – </p></li>
+<li><p><strong>result</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureValue" title="dispel.data.measures.MeasureValue"><em>MeasureValue</em></a><em> | </em><a class="reference internal" href="dispel.data.measures.html#dispel.data.measures.MeasureSet" title="dispel.data.measures.MeasureSet"><em>MeasureSet</em></a><em> | </em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.LevelEpoch" title="dispel.data.levels.LevelEpoch"><em>LevelEpoch</em></a><em> | </em><a class="reference internal" href="dispel.data.raw.html#dispel.data.raw.RawDataSet" title="dispel.data.raw.RawDataSet"><em>RawDataSet</em></a>) – </p></li>
+<li><p><strong>concatenate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.data_set.RawDataSetProcessingResult.concatenate">
+<span class="sig-name descname"><span class="pre">concatenate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#dispel.processing.data_set.RawDataSetProcessingResult.concatenate" title="Link to this definition">#</a></dt>
+<dd><p>Whether to concatenate the result if it already exists in the
+given level</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.data_set.RawDataSetProcessingResult.overwrite">
+<span class="sig-name descname"><span class="pre">overwrite</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#dispel.processing.data_set.RawDataSetProcessingResult.overwrite" title="Link to this definition">#</a></dt>
+<dd><p>Whether to overwrite the result if it already exists in the given
+level</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.processing.data_set.StorageError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.processing.data_set.</span></span><span class="sig-name descname"><span class="pre">StorageError</span></span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#StorageError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.StorageError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>Raw data set storage handler.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.data_set.StorageError.CONCATENATE">
+<span class="sig-name descname"><span class="pre">CONCATENATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'concatenate'</span></em><a class="headerlink" href="#dispel.processing.data_set.StorageError.CONCATENATE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.data_set.StorageError.IGNORE">
+<span class="sig-name descname"><span class="pre">IGNORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ignore'</span></em><a class="headerlink" href="#dispel.processing.data_set.StorageError.IGNORE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.data_set.StorageError.OVERWRITE">
+<span class="sig-name descname"><span class="pre">OVERWRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'overwrite'</span></em><a class="headerlink" href="#dispel.processing.data_set.StorageError.OVERWRITE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.processing.data_set.StorageError.RAISE">
+<span class="sig-name descname"><span class="pre">RAISE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'raise'</span></em><a class="headerlink" href="#dispel.processing.data_set.StorageError.RAISE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.processing.data_set.StorageError.concatenate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concatenate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#dispel.processing.data_set.StorageError.concatenate" title="Link to this definition">#</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the handling is to concatenate.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.processing.data_set.StorageError.overwrite">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">overwrite</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#dispel.processing.data_set.StorageError.overwrite" title="Link to this definition">#</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the handling is to overwrite.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.processing.data_set.decorated_processing_function">
+<span class="sig-prename descclassname"><span class="pre">dispel.processing.data_set.</span></span><span class="sig-name descname"><span class="pre">decorated_processing_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reading</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#decorated_processing_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.decorated_processing_function" title="Link to this definition">#</a></dt>
+<dd><p>Decorate functions for processing steps.</p>
+<p>Pass reading and/or level in args if existent in function arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em>) – The processing function to be decorated.</p></li>
+<li><p><strong>data_sets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a><em>]</em>) – The data frames on which the processing function is to be applied.</p></li>
+<li><p><strong>reading</strong> (<a class="reference internal" href="dispel.data.core.html#dispel.data.core.Reading" title="dispel.data.core.Reading"><em>Reading</em></a>) – The corresponding reading.</p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The corresponding level.</p></li>
+<li><p><strong>kwargs</strong> – Additional key word arguments to be passed to the processing function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The output of the given processing function.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.processing.data_set.transformation">
+<span class="sig-prename descclassname"><span class="pre">dispel.processing.data_set.</span></span><span class="sig-name descname"><span class="pre">transformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/processing/data_set.html#transformation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.processing.data_set.transformation" title="Link to this definition">#</a></dt>
+<dd><p>Decorate a function as a transformation function.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.processing.core.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.processing.core module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.processing.data_trace.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.processing.data_trace module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStep"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStep.__init__"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStep.assert_valid_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.assert_valid_data_sets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStep.flag_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.flag_data_sets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStep.process_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.process_data_sets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStep.process_level"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStep.process_level()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepMixin"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepMixin.__init__"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepMixin.assert_valid_level"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.assert_valid_level()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepMixin.data_set_ids"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.data_set_ids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepMixin.get_data_frames"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.get_data_frames()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepMixin.get_data_set_ids"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.get_data_set_ids()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepMixin.get_raw_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepMixin.get_raw_data_sets()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepProtocol"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.assert_valid_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.assert_valid_data_sets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.flag_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.flag_data_sets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_frames"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.get_data_frames()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_set_ids"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.get_data_set_ids()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_sets_flag_targets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.get_data_sets_flag_targets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.get_raw_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.get_raw_data_sets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.DataSetProcessingStepProtocol.process_data_sets"><code class="docutils literal notranslate"><span class="pre">DataSetProcessingStepProtocol.process_data_sets()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.FlagDataSetStep"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.FlagDataSetStep.__init__"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.FlagDataSetStep.flag_data_sets"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.flag_data_sets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.FlagDataSetStep.get_data_sets_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.get_data_sets_flag_targets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.FlagDataSetStep.get_flag_targets"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.get_flag_targets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.FlagDataSetStep.get_target_ids"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.get_target_ids()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.FlagDataSetStep.process_data_sets"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.process_data_sets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.FlagDataSetStep.target_ids"><code class="docutils literal notranslate"><span class="pre">FlagDataSetStep.target_ids</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.__init__"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_function"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.get_transform_function()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_functions"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.get_transform_functions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.process_data_sets"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.process_data_sets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.transform_function"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.transform_function</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.MutateDataSetProcessingStepBase.wrap_result"><code class="docutils literal notranslate"><span class="pre">MutateDataSetProcessingStepBase.wrap_result()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.RawDataSetProcessingResult"><code class="docutils literal notranslate"><span class="pre">RawDataSetProcessingResult</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.RawDataSetProcessingResult.__init__"><code class="docutils literal notranslate"><span class="pre">RawDataSetProcessingResult.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.RawDataSetProcessingResult.concatenate"><code class="docutils literal notranslate"><span class="pre">RawDataSetProcessingResult.concatenate</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.RawDataSetProcessingResult.overwrite"><code class="docutils literal notranslate"><span class="pre">RawDataSetProcessingResult.overwrite</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.StorageError"><code class="docutils literal notranslate"><span class="pre">StorageError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.StorageError.CONCATENATE"><code class="docutils literal notranslate"><span class="pre">StorageError.CONCATENATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.StorageError.IGNORE"><code class="docutils literal notranslate"><span class="pre">StorageError.IGNORE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.StorageError.OVERWRITE"><code class="docutils literal notranslate"><span class="pre">StorageError.OVERWRITE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.StorageError.RAISE"><code class="docutils literal notranslate"><span class="pre">StorageError.RAISE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.StorageError.concatenate"><code class="docutils literal notranslate"><span class="pre">StorageError.concatenate</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.StorageError.overwrite"><code class="docutils literal notranslate"><span class="pre">StorageError.overwrite</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.decorated_processing_function"><code class="docutils literal notranslate"><span class="pre">decorated_processing_function()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.processing.data_set.transformation"><code class="docutils literal notranslate"><span class="pre">transformation()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.processing.data_set.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

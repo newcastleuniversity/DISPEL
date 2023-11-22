@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.processing.epochs &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/processing/epochs';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../processing.html" class="nav-link">dispel.processing</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.proce...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.processing.epochs</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Epoch-specific processing steps.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">ABCMeta</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.epochs</span> <span class="kn">import</span> <span class="n">Epoch</span><span class="p">,</span> <span class="n">EpochDefinition</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span><span class="p">,</span> <span class="n">LevelEpoch</span><span class="p">,</span> <span class="n">LevelEpochMeasureValue</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValue</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RawDataSet</span><span class="p">,</span>
+    <span class="n">RawDataSetDefinition</span><span class="p">,</span>
+    <span class="n">RawDataSetSource</span><span class="p">,</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="n">ProcessResultType</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DataSetProcessingStepProtocol</span><span class="p">,</span>
+    <span class="n">MutateDataSetProcessingStepBase</span><span class="p">,</span>
+    <span class="n">RawDataSetProcessingResult</span><span class="p">,</span>
+    <span class="n">StorageError</span><span class="p">,</span>
+    <span class="n">WrapResultGeneratorType</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="n">ExtractStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">LevelProcessingResult</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">TransformStepChainMixIn</span>
+
+
+<div class="viewcode-block" id="LevelEpochDefinitionMixIn">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochDefinitionMixIn">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelEpochDefinitionMixIn</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A mixin-class for processing steps producing epoch measure sets.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    definition</span>
+<span class="sd">        An optional epoch definition. If no epoch definition is provided, the</span>
+<span class="sd">        :data:`definition` class variable will be used. Alternatively, one can overwrite</span>
+<span class="sd">        :meth:`get_definition` to provide the definition.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    definition</span>
+<span class="sd">        The epoch definition. This will be used in :func:`get_definition` by default.</span>
+<span class="sd">        You can overwrite the function to implement custom logic.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">definition</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">EpochDefinition</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="LevelEpochDefinitionMixIn.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochDefinitionMixIn.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;definition&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">definition</span> <span class="o">=</span> <span class="n">definition</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LevelEpochDefinitionMixIn.get_definition">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochDefinitionMixIn.get_definition">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_definition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EpochDefinition</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the measure definition.</span>
+
+<span class="sd">        Other Parameters</span>
+<span class="sd">        ----------------</span>
+<span class="sd">        _kwargs</span>
+<span class="sd">            Optional parameters that will be passed along to the creation of epoch</span>
+<span class="sd">            definitions. This can be used to implement custom logic in the epoch</span>
+<span class="sd">            definition that depends on processing arguments.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        EpochDefinition</span>
+<span class="sd">            The definition of the epoch</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">definition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="p">),</span> <span class="s2">&quot;Definition must be set or get_definition must be overwritten.&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="CreateLevelEpochStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep">[docs]</a>
+<span class="k">class</span> <span class="nc">CreateLevelEpochStep</span><span class="p">(</span>
+    <span class="n">LevelEpochDefinitionMixIn</span><span class="p">,</span> <span class="n">TransformStepChainMixIn</span><span class="p">,</span> <span class="n">MutateDataSetProcessingStepBase</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A processing step to create epochs.</span>
+
+<span class="sd">    This class provides a convenient way to create epochs from one or more data sets by</span>
+<span class="sd">    specifying their id, their level_ids or level filter, a transformation function and</span>
+<span class="sd">    an epoch definition.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Assuming you have a data set and a method that derives specific epochs from this</span>
+<span class="sd">    data set that are leveraged down the line for further processing. The following</span>
+<span class="sd">    example illustrates creating level epochs from raw data sets.</span>
+
+<span class="sd">    First, we specify a definition for our epochs to be extracted:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.epochs import EpochDefinition</span>
+<span class="sd">    &gt;&gt;&gt; definition = EpochDefinition(</span>
+<span class="sd">    ...     id_=&#39;epoch-id&#39;,</span>
+<span class="sd">    ...     name=&#39;Epoch name&#39;,</span>
+<span class="sd">    ...     description=&#39;A detailed description of the epoch&#39;</span>
+<span class="sd">    ... )</span>
+
+<span class="sd">    Next, we create a processing step that leverages a data set and returns the start</span>
+<span class="sd">    and end of our bouts.</span>
+
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from scipy import signal</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.data_set import transformation</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.epochs import CreateLevelEpochStep</span>
+<span class="sd">    &gt;&gt;&gt; class MyCreateLevelEpochStep(CreateLevelEpochStep):</span>
+<span class="sd">    ...     data_set_ids = &#39;data-set-id&#39;</span>
+<span class="sd">    ...     definition = definition</span>
+<span class="sd">    ...     @transformation</span>
+<span class="sd">    ...     def detect_bouts(self, data: pd.DataFrame) -&gt; pd.DataFrame:</span>
+<span class="sd">    ...         offset = pd.Timedelta(seconds=5)</span>
+<span class="sd">    ...         peaks = signal.find_peaks(data[&#39;column&#39;])</span>
+<span class="sd">    ...         ts = data.index.iloc[peaks].to_series()</span>
+<span class="sd">    ...         return pd.DataFrame(dict(start=ts - offset, end=ts + offset))</span>
+
+<span class="sd">    The example above inspects the data set for peaks and returns epochs that start five</span>
+<span class="sd">    seconds before the peak and end five seconds after.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#: If provided, the epochs will be additionally stored as a data set</span>
+    <span class="n">epoch_data_set_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The behavior to handle multiple epochs being processed.</span>
+    <span class="n">storage_error</span> <span class="o">=</span> <span class="n">StorageError</span><span class="o">.</span><span class="n">CONCATENATE</span>
+
+<div class="viewcode-block" id="CreateLevelEpochStep.get_epoch_data_set_id">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.get_epoch_data_set_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_epoch_data_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the data set id for the newly created epoch data set.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">epoch_data_set_id</span></div>
+
+
+<div class="viewcode-block" id="CreateLevelEpochStep.get_epoch_data_set">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.get_epoch_data_set">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_epoch_data_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epochs</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RawDataSet</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get raw data set representation of a sequence of epochs.&quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=superfluous-parens</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">data_set_id</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_epoch_data_set_id</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No epoch data set ID was specified&quot;</span><span class="p">)</span>
+
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">RawDataSetDefinition</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">data_set_id</span><span class="p">,</span>
+            <span class="n">source</span><span class="o">=</span><span class="n">RawDataSetSource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">),</span>
+            <span class="n">value_definitions_list</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;Epoch Start&quot;</span><span class="p">),</span>
+                <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">,</span> <span class="s2">&quot;Epoch End&quot;</span><span class="p">),</span>
+                <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span> <span class="s2">&quot;Epoch Object&quot;</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="n">is_computed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">RawDataSet</span><span class="p">(</span>
+            <span class="n">definition</span><span class="p">,</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="n">epoch</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">epoch</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="s2">&quot;epoch&quot;</span><span class="p">:</span> <span class="n">epoch</span><span class="p">}</span>
+                    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">epochs</span>
+                <span class="p">]</span>
+            <span class="p">),</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CreateLevelEpochStep.transform_row_to_epoch">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.transform_row_to_epoch">[docs]</a>
+    <span class="k">def</span> <span class="nf">transform_row_to_epoch</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">definition</span><span class="p">:</span> <span class="n">EpochDefinition</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LevelEpoch</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get epoch representation for a row in a returned data set.</span>
+
+<span class="sd">        This function is called by :func:`transform_data_frame_to_epochs` to transform a</span>
+<span class="sd">        row into an epoch. It is applied when the transformation function returned a</span>
+<span class="sd">        :class:`pandas.DataFrame`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        row</span>
+<span class="sd">            The row in the data frame to be transformed into an epoch.</span>
+<span class="sd">        definition</span>
+<span class="sd">            The epoch definition.</span>
+
+<span class="sd">        Other Parameters</span>
+<span class="sd">        ----------------</span>
+<span class="sd">        _kwargs</span>
+<span class="sd">            Optional keyword arguments pushed down from the processing function. This</span>
+<span class="sd">            can be used to implement custom logic in transforming rows to epochs based</span>
+<span class="sd">            on processing arguments.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LevelEpoch</span>
+<span class="sd">            The epoch representing the provided `row`. It uses the `start` and `end`</span>
+<span class="sd">            column/names of the provided series as start and end of the epoch,</span>
+<span class="sd">            respectively.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_epoch</span> <span class="o">=</span> <span class="n">LevelEpoch</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">definition</span><span class="o">=</span><span class="n">definition</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;measure_values&quot;</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_value</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">measure_values</span><span class="p">:</span>
+                <span class="n">_epoch</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">_value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_epoch</span></div>
+
+
+<div class="viewcode-block" id="CreateLevelEpochStep.transform_data_frame_to_epochs">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.transform_data_frame_to_epochs">[docs]</a>
+    <span class="k">def</span> <span class="nf">transform_data_frame_to_epochs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">definition</span><span class="p">:</span> <span class="n">EpochDefinition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a sequence of epochs for a data frame.</span>
+
+<span class="sd">        This function is called if the result from a transformation function was a</span>
+<span class="sd">        :class:`pandas.DataFrame`. It converts each row into an epoch.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data</span>
+<span class="sd">            The data frame containing the epoch information. Each row is passed to</span>
+<span class="sd">            :func:`transform_row_to_epoch` to convert it to an epoch.</span>
+<span class="sd">        definition</span>
+<span class="sd">            The epoch definition.</span>
+
+<span class="sd">        Other Parameters</span>
+<span class="sd">        ----------------</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Optional keyword arguments pushed down from the processing function.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[LevelEpoch]</span>
+<span class="sd">            A sequence of epochs representing the provided epochs from `data`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">transform_row_to_epoch</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">definition</span><span class="o">=</span><span class="n">definition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="CreateLevelEpochStep.wrap_result">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.CreateLevelEpochStep.wrap_result">[docs]</a>
+    <span class="k">def</span> <span class="nf">wrap_result</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">res</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Epoch</span><span class="p">,</span> <span class="n">LevelEpoch</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WrapResultGeneratorType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wrap the result from the processing function into a class.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        res</span>
+<span class="sd">            The result passed from the transformation function. Supported values are</span>
+<span class="sd">            :class:`Epoch`, :class:`LevelEpoch`, and :class:`pandas.DataFrame`.</span>
+
+<span class="sd">            If an :class:`Epoch` was provided, the start and end times are copied to a</span>
+<span class="sd">            new :class:`LevelEpoch` with the definition obtained from</span>
+<span class="sd">            :func:`get_definition`. If a :class:`LevelEpoch` was returned, both values</span>
+<span class="sd">            and flag will be copied over. If a :class:`pandas.DataFrame` was</span>
+<span class="sd">            handed back, the data frame will be transformed using</span>
+<span class="sd">            :func:`transform_data_frame_to_epochs`.</span>
+<span class="sd">        level</span>
+<span class="sd">            The current level</span>
+<span class="sd">        reading</span>
+<span class="sd">            The current reading</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional kwargs</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        LevelProcessingResult</span>
+<span class="sd">            The processing result</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            Will be risen if the value returned from the transformation function is of</span>
+<span class="sd">            any other type than :class:`Epoch` or :class:`pandas.DataFrame`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">epochs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">definition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_definition</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="o">=</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">Epoch</span><span class="p">):</span>
+            <span class="n">epoch</span> <span class="o">=</span> <span class="n">LevelEpoch</span><span class="p">(</span>
+                <span class="n">start</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                <span class="n">end</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+                <span class="n">definition</span><span class="o">=</span><span class="n">definition</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">LevelEpoch</span><span class="p">):</span>
+                <span class="n">epoch</span><span class="o">.</span><span class="n">add_flags</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">res</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                    <span class="n">epoch</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+            <span class="n">epochs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="n">epochs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_data_frame_to_epochs</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">definition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">res</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Unsupported type returned from transformation: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># yield all epochs</span>
+        <span class="n">data_sets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_raw_data_sets</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">epochs</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">LevelProcessingResult</span><span class="p">(</span>
+                <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="n">data_sets</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="n">epoch</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span>
+            <span class="p">)</span>
+
+        <span class="c1"># yield epochs as data sets if needed</span>
+        <span class="n">epoch_data_set_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_epoch_data_set_id</span><span class="p">(</span>
+            <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="o">=</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">epochs</span> <span class="ow">and</span> <span class="n">epoch_data_set_id</span><span class="p">:</span>
+            <span class="n">epoch_data_set</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_epoch_data_set</span><span class="p">(</span>
+                <span class="n">epochs</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="o">=</span><span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span>
+
+            <span class="k">yield</span> <span class="n">RawDataSetProcessingResult</span><span class="p">(</span>
+                <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">sources</span><span class="o">=</span><span class="n">data_sets</span><span class="p">,</span>
+                <span class="n">result</span><span class="o">=</span><span class="n">epoch_data_set</span><span class="p">,</span>
+                <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+                <span class="n">concatenate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">storage_error</span><span class="o">.</span><span class="n">concatenate</span><span class="p">,</span>
+                <span class="n">overwrite</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">storage_error</span><span class="o">.</span><span class="n">overwrite</span><span class="p">,</span>
+            <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LevelEpochFilter">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochFilter">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelEpochFilter</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A base class to filter level epochs during processing.</span>
+
+<span class="sd">    :class:`LevelEpochFilter` provides a basic mechanism for processing steps using</span>
+<span class="sd">    :class:`LevelEpochProcessingStepMixIn` to filter epochs to be processed. Each filter</span>
+<span class="sd">    has to implement the :meth:`~LevelEpochFilter.filter` method that consumes an</span>
+<span class="sd">    iterable of level epochs and returns a list of epochs to be considered during</span>
+<span class="sd">    processing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LevelEpochFilter.filter">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochFilter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epochs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter level epochs.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        epochs</span>
+<span class="sd">            The epochs to be filtered.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        NotImplementedError</span>
+<span class="sd">            This method is not implemented since there is no unambiguous definition of</span>
+<span class="sd">            filters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter level epochs.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="DefaultLevelEpochFilter">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.DefaultLevelEpochFilter">[docs]</a>
+<span class="k">class</span> <span class="nc">DefaultLevelEpochFilter</span><span class="p">(</span><span class="n">LevelEpochFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A default level epoch filter that passes all epochs for processing.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DefaultLevelEpochFilter.filter">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.DefaultLevelEpochFilter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epochs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter level epochs.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">epochs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LevelEpochIdFilter">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochIdFilter">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelEpochIdFilter</span><span class="p">(</span><span class="n">LevelEpochFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A level epoch filter that returns epochs with a specific id.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    id_</span>
+<span class="sd">        The definition id of the epoch to be matched.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LevelEpochIdFilter.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochIdFilter.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">id_</span></div>
+
+
+<div class="viewcode-block" id="LevelEpochIdFilter.filter">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochIdFilter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epochs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter all epochs matching the provided id.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">epoch</span> <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">epochs</span> <span class="k">if</span> <span class="n">epoch</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LevelEpochProcessingStepMixIn">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelEpochProcessingStepMixIn</span><span class="p">(</span><span class="n">DataSetProcessingStepProtocol</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A mixin class for all processing steps using epochs to create measures.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    epoch_filter</span>
+<span class="sd">        The filter to be used when processing epochs.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    The most common use case will be extracting measures for epochs using</span>
+<span class="sd">    :class:`LevelEpochExtractStep`. The mixin class can also be combined with</span>
+<span class="sd">    :class:`CreateLevelEpochStep` to create new epochs from existing epochs.</span>
+
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.data_set import transformation</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.epochs import (LevelEpochIdFilter,</span>
+<span class="sd">    ...     CreateLevelEpochStep, LevelEpochProcessingStepMixIn)</span>
+<span class="sd">    &gt;&gt;&gt; class MyStep(LevelEpochProcessingStepMixIn, CreateLevelEpochStep):</span>
+<span class="sd">    ...     data_set_ids = &#39;data-set-id&#39;</span>
+<span class="sd">    ...     epoch_filter = LevelEpochIdFilter(&#39;existing-epoch-id&#39;)</span>
+<span class="sd">    ...     definition = EpochDefinition(</span>
+<span class="sd">    ...         id_=&#39;epoch-id&#39;,</span>
+<span class="sd">    ...         name=&#39;Epoch name&#39;,</span>
+<span class="sd">    ...         description=&#39;The new epochs derived from existing-epoch-id&#39;</span>
+<span class="sd">    ...     )</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @transformation</span>
+<span class="sd">    ...     def detect_epochs(self, data: pd.DataFrame) -&gt; pd.DataFrame:</span>
+<span class="sd">    ...         new_epoch_data_set = ...</span>
+<span class="sd">    ...         return new_epoch_data_set</span>
+
+<span class="sd">    The above example passes for each epoch with `existing-epoch-id` the view of</span>
+<span class="sd">    `data-set-id` to the `detect_epochs` function. The returned data frame in turn will</span>
+<span class="sd">    be converted to new epochs defined in `MyStep.definition`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#: The filter to be used when processing epochs.</span>
+    <span class="n">epoch_filter</span><span class="p">:</span> <span class="n">LevelEpochFilter</span> <span class="o">=</span> <span class="n">DefaultLevelEpochFilter</span><span class="p">()</span>
+
+<div class="viewcode-block" id="LevelEpochProcessingStepMixIn.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">epoch_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelEpochFilter</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">epoch_filter</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">epoch_filter</span> <span class="o">=</span> <span class="n">epoch_filter</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LevelEpochProcessingStepMixIn.get_epoch_filter">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.get_epoch_filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_epoch_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LevelEpochFilter</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the epoch filter.</span>
+
+<span class="sd">        This function is called by :meth:`LevelEpochProcessingStepMixIn.get_epochs` to</span>
+<span class="sd">        filter down relevant epochs for processing.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LevelEpochFilter</span>
+<span class="sd">            The filter to be used for processing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">epoch_filter</span></div>
+
+
+<div class="viewcode-block" id="LevelEpochProcessingStepMixIn.get_epochs">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.get_epochs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_epochs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">_reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get epochs to be processed.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The current level</span>
+
+<span class="sd">        Other Parameters</span>
+<span class="sd">        ----------------</span>
+<span class="sd">        _reading</span>
+<span class="sd">            The reading being processed. This parameter is not used in the default</span>
+<span class="sd">            implementation, but can be used in any inheriting class to implement custom</span>
+<span class="sd">            logic.</span>
+<span class="sd">        _kwargs</span>
+<span class="sd">            Additional arguments passed from processing.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Iterable[LevelEpoch]</span>
+<span class="sd">            The epochs to be processed. Those are the epochs of the level that passed</span>
+<span class="sd">            the epoch filter returned by</span>
+<span class="sd">            :meth:`LevelEpochProcessingStepMixIn.get_epoch_filter`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=not-callable</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_epoch_filter</span><span class="p">()(</span><span class="n">level</span><span class="o">.</span><span class="n">epochs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LevelEpochProcessingStepMixIn.get_epoch_data_set_view">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.get_epoch_data_set_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_epoch_data_set_view</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">epoch</span><span class="p">:</span> <span class="n">LevelEpoch</span><span class="p">,</span> <span class="n">data_set</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the view of a data set specific to an epoch.</span>
+
+<span class="sd">        This method can be overwritten to implement custom logic to retrieve relevant</span>
+<span class="sd">        parts of the passed `data_set`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        epoch</span>
+<span class="sd">            The epoch for which to return the data set view</span>
+<span class="sd">        data_set</span>
+<span class="sd">            The data set for which to return a view</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.DataFrame</span>
+<span class="sd">            The `data_set` view specific to the passed `epoch`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="n">epoch</span><span class="o">.</span><span class="n">is_incomplete</span><span class="p">,</span> <span class="s2">&quot;Can only process complete epochs&quot;</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">data_set</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span>
+        <span class="p">),</span> <span class="s2">&quot;Require pd.DatetimeIndex for processed data sets&quot;</span>
+
+        <span class="k">return</span> <span class="n">data_set</span><span class="p">[</span><span class="n">epoch</span><span class="o">.</span><span class="n">start</span> <span class="p">:</span> <span class="n">epoch</span><span class="o">.</span><span class="n">end</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="LevelEpochProcessingStepMixIn.get_epoch_data_set_views">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.get_epoch_data_set_views">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_epoch_data_set_views</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">LevelEpoch</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get epoch based data set views for processing.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data_sets</span>
+<span class="sd">            An iterable of :class:`pandas.DataFrame` to be processed.</span>
+<span class="sd">        level</span>
+<span class="sd">            The current level</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading</span>
+
+<span class="sd">        Other Parameters</span>
+<span class="sd">        ----------------</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional arguments passed from processing.</span>
+
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Sequence[Tuple[LevelEpoch, Sequence[pandas.DataFrame]]]</span>
+<span class="sd">            A sequence of tuples that contain the epoch and the respective views of data</span>
+<span class="sd">            sets to be processed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">epoch_views</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_epochs</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">epoch_views</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">epoch</span><span class="p">,</span>
+                    <span class="p">[</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">get_epoch_data_set_view</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">data_set</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">data_set</span> <span class="ow">in</span> <span class="n">data_sets</span>
+                    <span class="p">],</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">epoch_views</span></div>
+
+
+<div class="viewcode-block" id="LevelEpochProcessingStepMixIn.process_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingStepMixIn.process_data_sets">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided data sets.&quot;&quot;&quot;</span>
+        <span class="n">epoch_views</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_epoch_data_set_views</span><span class="p">(</span><span class="n">data_sets</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">data_set_view</span> <span class="ow">in</span> <span class="n">epoch_views</span><span class="p">:</span>
+            <span class="k">yield from</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">process_data_sets</span><span class="p">(</span>
+                <span class="n">data_set_view</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LevelEpochProcessingResult">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochProcessingResult">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">LevelEpochProcessingResult</span><span class="p">(</span><span class="n">LevelProcessingResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A processing result originating from processing epochs.&quot;&quot;&quot;</span>
+
+    <span class="n">epoch</span><span class="p">:</span> <span class="n">LevelEpoch</span></div>
+
+
+
+<div class="viewcode-block" id="LevelEpochExtractStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochExtractStep">[docs]</a>
+<span class="k">class</span> <span class="nc">LevelEpochExtractStep</span><span class="p">(</span><span class="n">LevelEpochProcessingStepMixIn</span><span class="p">,</span> <span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A measure extraction processing step for epochs.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Assuming you have a set of epochs that for which you would like to extract a</span>
+<span class="sd">    specific measure from a data set leveraging the data between the start and the end</span>
+<span class="sd">    of each epoch, you can do this as follows:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import AbbreviatedValue as AV</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.measures import MeasureValueDefinition</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.data_set import transformation</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.epochs import LevelEpochExtractStep, LevelEpochIdFilter</span>
+<span class="sd">    &gt;&gt;&gt; class MyLevelEpochExtractStep(LevelEpochExtractStep):</span>
+<span class="sd">    ...     data_set_ids = &#39;data_set_id&#39;</span>
+<span class="sd">    ...     epoch_filter = LevelEpochIdFilter(&#39;a&#39;)</span>
+<span class="sd">    ...     definition = MeasureValueDefinition(</span>
+<span class="sd">    ...         task_name=AV(&#39;My Task&#39;, &#39;MT&#39;),</span>
+<span class="sd">    ...         measure_name=AV(&#39;Maximum&#39;, &#39;max&#39;),</span>
+<span class="sd">    ...         data_type=&#39;int16&#39;</span>
+<span class="sd">    ...     )</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @transformation</span>
+<span class="sd">    ...     def max(self, data: pd.DataFrame) -&gt; float:</span>
+<span class="sd">    ...        return data[&#39;column&#39;].max()</span>
+
+<span class="sd">    The example above will create a measure value for each epoch containing the maximum</span>
+<span class="sd">    of the `&#39;column&#39;` column in the data set with the `&#39;data_set_id&#39;`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LevelEpochExtractStep.get_value">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochExtractStep.get_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MeasureValue</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a measure value based on the definition.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value</span>
+<span class="sd">            The value</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Optional arguments passed to :meth:`get_definition`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        MeasureValue</span>
+<span class="sd">            The ``value`` wrapped with the definition from :meth:`get_definition`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="s2">&quot;epoch&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">,</span> <span class="s2">&quot;Missing epoch in passed arguments&quot;</span>
+        <span class="k">return</span> <span class="n">LevelEpochMeasureValue</span><span class="p">(</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;epoch&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_definition</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">value</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LevelEpochExtractStep.wrap_result">
+<a class="viewcode-back" href="../../../api/dispel.processing.epochs.html#dispel.processing.epochs.LevelEpochExtractStep.wrap_result">[docs]</a>
+    <span class="k">def</span> <span class="nf">wrap_result</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WrapResultGeneratorType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wrap the result from the processing function into a class.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        res</span>
+<span class="sd">            Any result returned by the extraction step. If res is a WrappedResult, the</span>
+<span class="sd">            flag contained in the object will be automatically added to the</span>
+<span class="sd">            :class:`~dispel.data.measures.MeasureValue` hence the flagged wrapped</span>
+<span class="sd">            results will always translate into flagged</span>
+<span class="sd">            :class:`~dispel.data.measures.MeasureValue` .</span>
+<span class="sd">        level</span>
+<span class="sd">            The current level</span>
+<span class="sd">        reading</span>
+<span class="sd">            The current reading</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional kwargs</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        LevelProcessingResult</span>
+<span class="sd">            The processing result</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=stop-iteration-return</span>
+        <span class="n">wrapped_result</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">wrap_result</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">wrapped_result</span><span class="p">,</span> <span class="n">LevelProcessingResult</span>
+        <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected LevelProcessingResult, but got: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">wrapped_result</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="k">assert</span> <span class="s2">&quot;epoch&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">,</span> <span class="s2">&quot;Missing epoch in passed arguments&quot;</span>
+        <span class="n">epoch</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;epoch&quot;</span><span class="p">]</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">LevelEpoch</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sources</span> <span class="o">:=</span> <span class="n">wrapped_result</span><span class="o">.</span><span class="n">sources</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
+            <span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="n">sources</span><span class="p">]</span>
+
+        <span class="c1"># Create new one with the wrapped result from super</span>
+        <span class="k">yield</span> <span class="n">LevelEpochProcessingResult</span><span class="p">(</span>
+            <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">sources</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">epoch</span><span class="p">],</span>
+            <span class="n">result</span><span class="o">=</span><span class="n">wrapped_result</span><span class="o">.</span><span class="n">result</span><span class="p">,</span>
+            <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+            <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

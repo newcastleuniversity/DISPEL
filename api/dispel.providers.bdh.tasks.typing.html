@@ -1,0 +1,1052 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.bdh.tasks.typing package &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.bdh.tasks.typing';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.bdh.tasks.typing.const module" href="dispel.providers.bdh.tasks.typing.const.html" />
+    <link rel="prev" title="dispel.providers.bdh.tasks package" href="dispel.providers.bdh.tasks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.bdh.tasks.html" class="nav-link">dispel.providers.bdh.tasks package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.bdh.tasks.typing">
+<span id="dispel-providers-bdh-tasks-typing-package"></span><h1>dispel.providers.bdh.tasks.typing package<a class="headerlink" href="#module-dispel.providers.bdh.tasks.typing" title="Link to this heading">#</a></h1>
+<p>Typing-specific processing steps.</p>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html">dispel.providers.bdh.tasks.typing.const module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.KeyState"><code class="docutils literal notranslate"><span class="pre">KeyState</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.KeyState.CORRECT"><code class="docutils literal notranslate"><span class="pre">KeyState.CORRECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.KeyState.CORRECTING"><code class="docutils literal notranslate"><span class="pre">KeyState.CORRECTING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.KeyState.INCORRECT"><code class="docutils literal notranslate"><span class="pre">KeyState.INCORRECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.KeyState.INIT"><code class="docutils literal notranslate"><span class="pre">KeyState.INIT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.N_LEVELS"><code class="docutils literal notranslate"><span class="pre">N_LEVELS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.WordState"><code class="docutils literal notranslate"><span class="pre">WordState</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.WordState.CORRECT"><code class="docutils literal notranslate"><span class="pre">WordState.CORRECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.WordState.INCORRECT"><code class="docutils literal notranslate"><span class="pre">WordState.INCORRECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.const.html#dispel.providers.bdh.tasks.typing.const.WordState.INIT"><code class="docutils literal notranslate"><span class="pre">WordState.INIT</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html">dispel.providers.bdh.tasks.typing.keyboard module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.apply_similarity_ratio"><code class="docutils literal notranslate"><span class="pre">apply_similarity_ratio()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.compute_rt_slope"><code class="docutils literal notranslate"><span class="pre">compute_rt_slope()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.compute_typing_speed_slope"><code class="docutils literal notranslate"><span class="pre">compute_typing_speed_slope()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.count_incorrect_words"><code class="docutils literal notranslate"><span class="pre">count_incorrect_words()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.count_key_pressed"><code class="docutils literal notranslate"><span class="pre">count_key_pressed()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.count_words_typed_in_row"><code class="docutils literal notranslate"><span class="pre">count_words_typed_in_row()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.detect_key_autocompletion"><code class="docutils literal notranslate"><span class="pre">detect_key_autocompletion()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.detect_word_autocompletion"><code class="docutils literal notranslate"><span class="pre">detect_word_autocompletion()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.filter_intervals"><code class="docutils literal notranslate"><span class="pre">filter_intervals()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.find_consec_element_and_count"><code class="docutils literal notranslate"><span class="pre">find_consec_element_and_count()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_correct_correcting_duration"><code class="docutils literal notranslate"><span class="pre">get_correct_correcting_duration()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_correct_reacting_time"><code class="docutils literal notranslate"><span class="pre">get_correct_reacting_time()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_correct_reaction_duration"><code class="docutils literal notranslate"><span class="pre">get_correct_reaction_duration()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_correcting_duration"><code class="docutils literal notranslate"><span class="pre">get_correcting_duration()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_reacting_times"><code class="docutils literal notranslate"><span class="pre">get_reacting_times()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_reaction_duration"><code class="docutils literal notranslate"><span class="pre">get_reaction_duration()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_state_durations"><code class="docutils literal notranslate"><span class="pre">get_state_durations()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_submission_state"><code class="docutils literal notranslate"><span class="pre">get_submission_state()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.interval_until_mistake"><code class="docutils literal notranslate"><span class="pre">interval_until_mistake()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.keep_top_ten"><code class="docutils literal notranslate"><span class="pre">keep_top_ten()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.letter_interval"><code class="docutils literal notranslate"><span class="pre">letter_interval()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.max_letter_interval_dev"><code class="docutils literal notranslate"><span class="pre">max_letter_interval_dev()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.ratio_key_pressed"><code class="docutils literal notranslate"><span class="pre">ratio_key_pressed()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.similarity_ratio"><code class="docutils literal notranslate"><span class="pre">similarity_ratio()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.time_intervals"><code class="docutils literal notranslate"><span class="pre">time_intervals()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.total_autocomplete"><code class="docutils literal notranslate"><span class="pre">total_autocomplete()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.total_words_typed"><code class="docutils literal notranslate"><span class="pre">total_words_typed()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.transform_reaction_time"><code class="docutils literal notranslate"><span class="pre">transform_reaction_time()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.word_duration"><code class="docutils literal notranslate"><span class="pre">word_duration()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html">dispel.providers.bdh.tasks.typing.steps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateCorrectingDuration"><code class="docutils literal notranslate"><span class="pre">AggregateCorrectingDuration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateCorrectingDuration.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateCorrectingDuration.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateCorrectingDuration.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateCorrectingDuration.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateCorrectingDuration.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateCorrectingDuration.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateCorrectingDuration.definition"><code class="docutils literal notranslate"><span class="pre">AggregateCorrectingDuration.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateIntervalCorrectLetters"><code class="docutils literal notranslate"><span class="pre">AggregateIntervalCorrectLetters</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateIntervalCorrectLetters.__init__"><code class="docutils literal notranslate"><span class="pre">AggregateIntervalCorrectLetters.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersIntervals"><code class="docutils literal notranslate"><span class="pre">AggregateLettersIntervals</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersIntervals.__init__"><code class="docutils literal notranslate"><span class="pre">AggregateLettersIntervals.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersTypedPerWordRatio"><code class="docutils literal notranslate"><span class="pre">AggregateLettersTypedPerWordRatio</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersTypedPerWordRatio.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateLettersTypedPerWordRatio.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersTypedPerWordRatio.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateLettersTypedPerWordRatio.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersTypedPerWordRatio.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateLettersTypedPerWordRatio.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateLettersTypedPerWordRatio.definition"><code class="docutils literal notranslate"><span class="pre">AggregateLettersTypedPerWordRatio.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateMaxDeviation"><code class="docutils literal notranslate"><span class="pre">AggregateMaxDeviation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateMaxDeviation.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateMaxDeviation.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateMaxDeviation.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateMaxDeviation.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateMaxDeviation.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateMaxDeviation.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateMaxDeviation.definition"><code class="docutils literal notranslate"><span class="pre">AggregateMaxDeviation.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactingTime"><code class="docutils literal notranslate"><span class="pre">AggregateReactingTime</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactingTime.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateReactingTime.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactingTime.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateReactingTime.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactingTime.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateReactingTime.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactingTime.definition"><code class="docutils literal notranslate"><span class="pre">AggregateReactingTime.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionDuration"><code class="docutils literal notranslate"><span class="pre">AggregateReactionDuration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionDuration.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateReactionDuration.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionDuration.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateReactionDuration.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionDuration.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateReactionDuration.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionDuration.definition"><code class="docutils literal notranslate"><span class="pre">AggregateReactionDuration.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTime"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTime</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTime.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTime.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTime.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTime.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTime.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTime.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTime.definition"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTime.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTimeCorrectLetter"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTimeCorrectLetter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTimeCorrectLetter.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTimeCorrectLetter.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTimeCorrectLetter.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTimeCorrectLetter.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTimeCorrectLetter.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTimeCorrectLetter.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateReactionTimeCorrectLetter.definition"><code class="docutils literal notranslate"><span class="pre">AggregateReactionTimeCorrectLetter.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateSimilarityRatioMeasures"><code class="docutils literal notranslate"><span class="pre">AggregateSimilarityRatioMeasures</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateSimilarityRatioMeasures.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateSimilarityRatioMeasures.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateSimilarityRatioMeasures.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateSimilarityRatioMeasures.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateSimilarityRatioMeasures.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateSimilarityRatioMeasures.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateSimilarityRatioMeasures.definition"><code class="docutils literal notranslate"><span class="pre">AggregateSimilarityRatioMeasures.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateTop10IntervalDefaultMeasures"><code class="docutils literal notranslate"><span class="pre">AggregateTop10IntervalDefaultMeasures</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateTop10IntervalDefaultMeasures.__init__"><code class="docutils literal notranslate"><span class="pre">AggregateTop10IntervalDefaultMeasures.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDuration"><code class="docutils literal notranslate"><span class="pre">AggregateWordDuration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDuration.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateWordDuration.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDuration.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateWordDuration.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDuration.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateWordDuration.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDuration.definition"><code class="docutils literal notranslate"><span class="pre">AggregateWordDuration.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDurationLevelSlope"><code class="docutils literal notranslate"><span class="pre">AggregateWordDurationLevelSlope</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDurationLevelSlope.aggregations"><code class="docutils literal notranslate"><span class="pre">AggregateWordDurationLevelSlope.aggregations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDurationLevelSlope.column_id"><code class="docutils literal notranslate"><span class="pre">AggregateWordDurationLevelSlope.column_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDurationLevelSlope.data_set_ids"><code class="docutils literal notranslate"><span class="pre">AggregateWordDurationLevelSlope.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.AggregateWordDurationLevelSlope.definition"><code class="docutils literal notranslate"><span class="pre">AggregateWordDurationLevelSlope.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.BDHTypingSteps"><code class="docutils literal notranslate"><span class="pre">BDHTypingSteps</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.BDHTypingSteps.kwargs"><code class="docutils literal notranslate"><span class="pre">BDHTypingSteps.kwargs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.BDHTypingSteps.steps"><code class="docutils literal notranslate"><span class="pre">BDHTypingSteps.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.CountLettersGroup"><code class="docutils literal notranslate"><span class="pre">CountLettersGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.CountLettersGroup.steps"><code class="docutils literal notranslate"><span class="pre">CountLettersGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.CountWordsGroup"><code class="docutils literal notranslate"><span class="pre">CountWordsGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.CountWordsGroup.steps"><code class="docutils literal notranslate"><span class="pre">CountWordsGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractAutocomplete"><code class="docutils literal notranslate"><span class="pre">ExtractAutocomplete</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractAutocomplete.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractAutocomplete.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractAutocomplete.definition"><code class="docutils literal notranslate"><span class="pre">ExtractAutocomplete.definition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractAutocomplete.transform_function"><code class="docutils literal notranslate"><span class="pre">ExtractAutocomplete.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountCorrectLetters"><code class="docutils literal notranslate"><span class="pre">ExtractCountCorrectLetters</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountCorrectLetters.count_correct_letters"><code class="docutils literal notranslate"><span class="pre">ExtractCountCorrectLetters.count_correct_letters()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountCorrectLetters.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractCountCorrectLetters.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountCorrectLetters.definition"><code class="docutils literal notranslate"><span class="pre">ExtractCountCorrectLetters.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountKeyPressed"><code class="docutils literal notranslate"><span class="pre">ExtractCountKeyPressed</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountKeyPressed.count_key_pressed"><code class="docutils literal notranslate"><span class="pre">ExtractCountKeyPressed.count_key_pressed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountKeyPressed.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractCountKeyPressed.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractCountKeyPressed.definition"><code class="docutils literal notranslate"><span class="pre">ExtractCountKeyPressed.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractIncorrectWords"><code class="docutils literal notranslate"><span class="pre">ExtractIncorrectWords</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractIncorrectWords.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractIncorrectWords.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractIncorrectWords.definition"><code class="docutils literal notranslate"><span class="pre">ExtractIncorrectWords.definition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractIncorrectWords.transform_function"><code class="docutils literal notranslate"><span class="pre">ExtractIncorrectWords.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractPatientScore"><code class="docutils literal notranslate"><span class="pre">ExtractPatientScore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractPatientScore.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractPatientScore.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractPatientScore.definition"><code class="docutils literal notranslate"><span class="pre">ExtractPatientScore.definition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractPatientScore.transform_function"><code class="docutils literal notranslate"><span class="pre">ExtractPatientScore.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractRatioWordsLetters"><code class="docutils literal notranslate"><span class="pre">ExtractRatioWordsLetters</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractRatioWordsLetters.compute_ratio"><code class="docutils literal notranslate"><span class="pre">ExtractRatioWordsLetters.compute_ratio()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractRatioWordsLetters.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractRatioWordsLetters.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractRatioWordsLetters.definition"><code class="docutils literal notranslate"><span class="pre">ExtractRatioWordsLetters.definition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractReactionTimeSlope"><code class="docutils literal notranslate"><span class="pre">ExtractReactionTimeSlope</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractReactionTimeSlope.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractReactionTimeSlope.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractTimeToFinishLastThreeWords"><code class="docutils literal notranslate"><span class="pre">ExtractTimeToFinishLastThreeWords</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractTimeToFinishLastThreeWords.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractTimeToFinishLastThreeWords.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractTypingSpeedSlope"><code class="docutils literal notranslate"><span class="pre">ExtractTypingSpeedSlope</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractTypingSpeedSlope.data_set_ids"><code class="docutils literal notranslate"><span class="pre">ExtractTypingSpeedSlope.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractTypingSpeedSlope.definition"><code class="docutils literal notranslate"><span class="pre">ExtractTypingSpeedSlope.definition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractTypingSpeedSlope.transform_function"><code class="docutils literal notranslate"><span class="pre">ExtractTypingSpeedSlope.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordDurationPerDifficulty"><code class="docutils literal notranslate"><span class="pre">ExtractWordDurationPerDifficulty</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordDurationPerDifficulty.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractWordDurationPerDifficulty.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordTypedWithOrWoError"><code class="docutils literal notranslate"><span class="pre">ExtractWordTypedWithOrWoError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordTypedWithOrWoError.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractWordTypedWithOrWoError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordTypedWithOrWoErrorInRow"><code class="docutils literal notranslate"><span class="pre">ExtractWordTypedWithOrWoErrorInRow</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ExtractWordTypedWithOrWoErrorInRow.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractWordTypedWithOrWoErrorInRow.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoComplete"><code class="docutils literal notranslate"><span class="pre">FlagAutoComplete</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoComplete.flag_autocomplete"><code class="docutils literal notranslate"><span class="pre">FlagAutoComplete.flag_autocomplete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoComplete.flag_name"><code class="docutils literal notranslate"><span class="pre">FlagAutoComplete.flag_name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoComplete.flag_severity"><code class="docutils literal notranslate"><span class="pre">FlagAutoComplete.flag_severity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoComplete.flag_type"><code class="docutils literal notranslate"><span class="pre">FlagAutoComplete.flag_type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoComplete.reason"><code class="docutils literal notranslate"><span class="pre">FlagAutoComplete.reason</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoComplete.task_name"><code class="docutils literal notranslate"><span class="pre">FlagAutoComplete.task_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoCompleteGroup"><code class="docutils literal notranslate"><span class="pre">FlagAutoCompleteGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.FlagAutoCompleteGroup.steps"><code class="docutils literal notranslate"><span class="pre">FlagAutoCompleteGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.PreprocessingTypingGroup"><code class="docutils literal notranslate"><span class="pre">PreprocessingTypingGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.PreprocessingTypingGroup.steps"><code class="docutils literal notranslate"><span class="pre">PreprocessingTypingGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.RatioAndSlopeGroup"><code class="docutils literal notranslate"><span class="pre">RatioAndSlopeGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.RatioAndSlopeGroup.steps"><code class="docutils literal notranslate"><span class="pre">RatioAndSlopeGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ReactionCorrectingReactingDurationGroup"><code class="docutils literal notranslate"><span class="pre">ReactionCorrectingReactingDurationGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ReactionCorrectingReactingDurationGroup.steps"><code class="docutils literal notranslate"><span class="pre">ReactionCorrectingReactingDurationGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ReactionTimeGroup"><code class="docutils literal notranslate"><span class="pre">ReactionTimeGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.ReactionTimeGroup.steps"><code class="docutils literal notranslate"><span class="pre">ReactionTimeGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TimeBetweenLettersGroup"><code class="docutils literal notranslate"><span class="pre">TimeBetweenLettersGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TimeBetweenLettersGroup.steps"><code class="docutils literal notranslate"><span class="pre">TimeBetweenLettersGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TimeToFinishGroup"><code class="docutils literal notranslate"><span class="pre">TimeToFinishGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TimeToFinishGroup.steps"><code class="docutils literal notranslate"><span class="pre">TimeToFinishGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTime"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTime</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTime.correct_and_ts"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTime.correct_and_ts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTime.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTime.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTime.definitions"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTime.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTime.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTime.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTimeInRow"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTimeInRow</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTimeInRow.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTimeInRow.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTimeInRow.definitions"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTimeInRow.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTimeInRow.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTimeInRow.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectSubmissionAndTimeInRow.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformCorrectSubmissionAndTimeInRow.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDuration"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDuration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDuration.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDuration.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDuration.definitions"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDuration.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDuration.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDuration.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDuration.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDuration.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDurationCorrectSubmissions"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDurationCorrectSubmissions</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDurationCorrectSubmissions.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDurationCorrectSubmissions.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDurationCorrectSubmissions.definitions"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDurationCorrectSubmissions.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDurationCorrectSubmissions.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDurationCorrectSubmissions.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformCorrectingDurationCorrectSubmissions.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformCorrectingDurationCorrectSubmissions.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectKeyAutocompletion"><code class="docutils literal notranslate"><span class="pre">TransformDetectKeyAutocompletion</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectKeyAutocompletion.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformDetectKeyAutocompletion.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectKeyAutocompletion.definitions"><code class="docutils literal notranslate"><span class="pre">TransformDetectKeyAutocompletion.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectKeyAutocompletion.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformDetectKeyAutocompletion.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectKeyAutocompletion.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformDetectKeyAutocompletion.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectWordAutocompletion"><code class="docutils literal notranslate"><span class="pre">TransformDetectWordAutocompletion</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectWordAutocompletion.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformDetectWordAutocompletion.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectWordAutocompletion.definitions"><code class="docutils literal notranslate"><span class="pre">TransformDetectWordAutocompletion.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectWordAutocompletion.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformDetectWordAutocompletion.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDetectWordAutocompletion.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformDetectWordAutocompletion.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDifficultyLevel"><code class="docutils literal notranslate"><span class="pre">TransformDifficultyLevel</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDifficultyLevel.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformDifficultyLevel.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDifficultyLevel.definitions"><code class="docutils literal notranslate"><span class="pre">TransformDifficultyLevel.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDifficultyLevel.get_difficulty"><code class="docutils literal notranslate"><span class="pre">TransformDifficultyLevel.get_difficulty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformDifficultyLevel.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformDifficultyLevel.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIntervalCorrectLettersUntilMistake"><code class="docutils literal notranslate"><span class="pre">TransformIntervalCorrectLettersUntilMistake</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIntervalCorrectLettersUntilMistake.__init__"><code class="docutils literal notranslate"><span class="pre">TransformIntervalCorrectLettersUntilMistake.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIsLetter"><code class="docutils literal notranslate"><span class="pre">TransformIsLetter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIsLetter.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformIsLetter.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIsLetter.definitions"><code class="docutils literal notranslate"><span class="pre">TransformIsLetter.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIsLetter.is_letter"><code class="docutils literal notranslate"><span class="pre">TransformIsLetter.is_letter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformIsLetter.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformIsLetter.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyInterval"><code class="docutils literal notranslate"><span class="pre">TransformKeyInterval</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyInterval.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformKeyInterval.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyInterval.definitions"><code class="docutils literal notranslate"><span class="pre">TransformKeyInterval.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyInterval.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformKeyInterval.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyInterval.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformKeyInterval.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyTyped"><code class="docutils literal notranslate"><span class="pre">TransformKeyTyped</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyTyped.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformKeyTyped.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyTyped.definitions"><code class="docutils literal notranslate"><span class="pre">TransformKeyTyped.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyTyped.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformKeyTyped.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyTyped.remove_outdated_keys"><code class="docutils literal notranslate"><span class="pre">TransformKeyTyped.remove_outdated_keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformKeyTyped.storage_error"><code class="docutils literal notranslate"><span class="pre">TransformKeyTyped.storage_error</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLetterInterval"><code class="docutils literal notranslate"><span class="pre">TransformLetterInterval</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLetterInterval.__init__"><code class="docutils literal notranslate"><span class="pre">TransformLetterInterval.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLettersTypedPerWordRatio"><code class="docutils literal notranslate"><span class="pre">TransformLettersTypedPerWordRatio</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLettersTypedPerWordRatio.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformLettersTypedPerWordRatio.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLettersTypedPerWordRatio.definitions"><code class="docutils literal notranslate"><span class="pre">TransformLettersTypedPerWordRatio.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLettersTypedPerWordRatio.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformLettersTypedPerWordRatio.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformLettersTypedPerWordRatio.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformLettersTypedPerWordRatio.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformMaxDeviation"><code class="docutils literal notranslate"><span class="pre">TransformMaxDeviation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformMaxDeviation.compute_max_letter_interval_deviation"><code class="docutils literal notranslate"><span class="pre">TransformMaxDeviation.compute_max_letter_interval_deviation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformMaxDeviation.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformMaxDeviation.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformMaxDeviation.definitions"><code class="docutils literal notranslate"><span class="pre">TransformMaxDeviation.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformMaxDeviation.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformMaxDeviation.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTime"><code class="docutils literal notranslate"><span class="pre">TransformReactingTime</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTime.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformReactingTime.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTime.definitions"><code class="docutils literal notranslate"><span class="pre">TransformReactingTime.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTime.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformReactingTime.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTime.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformReactingTime.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTimeCorrectSubmissions"><code class="docutils literal notranslate"><span class="pre">TransformReactingTimeCorrectSubmissions</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTimeCorrectSubmissions.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformReactingTimeCorrectSubmissions.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTimeCorrectSubmissions.definitions"><code class="docutils literal notranslate"><span class="pre">TransformReactingTimeCorrectSubmissions.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTimeCorrectSubmissions.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformReactingTimeCorrectSubmissions.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactingTimeCorrectSubmissions.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformReactingTimeCorrectSubmissions.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDuration"><code class="docutils literal notranslate"><span class="pre">TransformReactionDuration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDuration.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformReactionDuration.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDuration.definitions"><code class="docutils literal notranslate"><span class="pre">TransformReactionDuration.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDuration.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformReactionDuration.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDuration.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformReactionDuration.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDurationCorrectSubmissions"><code class="docutils literal notranslate"><span class="pre">TransformReactionDurationCorrectSubmissions</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDurationCorrectSubmissions.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformReactionDurationCorrectSubmissions.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDurationCorrectSubmissions.definitions"><code class="docutils literal notranslate"><span class="pre">TransformReactionDurationCorrectSubmissions.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDurationCorrectSubmissions.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformReactionDurationCorrectSubmissions.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionDurationCorrectSubmissions.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformReactionDurationCorrectSubmissions.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionTime"><code class="docutils literal notranslate"><span class="pre">TransformReactionTime</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionTime.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformReactionTime.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionTime.definitions"><code class="docutils literal notranslate"><span class="pre">TransformReactionTime.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionTime.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformReactionTime.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformReactionTime.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformReactionTime.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatio"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatio</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatio.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatio.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatio.definitions"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatio.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatio.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatio.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatio.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatio.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatioGroup"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatioGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatioGroup.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatioGroup.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatioGroup.definitions"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatioGroup.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatioGroup.group_and_max_sim_ratio"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatioGroup.group_and_max_sim_ratio()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSimilarityRatioGroup.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformSimilarityRatioGroup.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformStateDurations"><code class="docutils literal notranslate"><span class="pre">TransformStateDurations</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformStateDurations.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformStateDurations.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformStateDurations.definitions"><code class="docutils literal notranslate"><span class="pre">TransformStateDurations.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformStateDurations.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformStateDurations.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformStateDurations.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformStateDurations.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSubmissionState"><code class="docutils literal notranslate"><span class="pre">TransformSubmissionState</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSubmissionState.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformSubmissionState.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSubmissionState.definitions"><code class="docutils literal notranslate"><span class="pre">TransformSubmissionState.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSubmissionState.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformSubmissionState.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformSubmissionState.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformSubmissionState.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformTop10Interval"><code class="docutils literal notranslate"><span class="pre">TransformTop10Interval</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformTop10Interval.__init__"><code class="docutils literal notranslate"><span class="pre">TransformTop10Interval.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDuration"><code class="docutils literal notranslate"><span class="pre">TransformWordDuration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDuration.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformWordDuration.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDuration.definitions"><code class="docutils literal notranslate"><span class="pre">TransformWordDuration.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDuration.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformWordDuration.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDuration.transform_function"><code class="docutils literal notranslate"><span class="pre">TransformWordDuration.transform_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationLevelDifference"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationLevelDifference</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationLevelDifference.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationLevelDifference.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationLevelDifference.definitions"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationLevelDifference.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationLevelDifference.differentiate"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationLevelDifference.differentiate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationLevelDifference.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationLevelDifference.new_data_set_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationPerDifficulty"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationPerDifficulty</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationPerDifficulty.data_set_ids"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationPerDifficulty.data_set_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationPerDifficulty.definitions"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationPerDifficulty.definitions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationPerDifficulty.new_data_set_id"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationPerDifficulty.new_data_set_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TransformWordDurationPerDifficulty.transform_duration_per_difficulty"><code class="docutils literal notranslate"><span class="pre">TransformWordDurationPerDifficulty.transform_duration_per_difficulty()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TypingPreprocessingIMUGroup"><code class="docutils literal notranslate"><span class="pre">TypingPreprocessingIMUGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TypingPreprocessingIMUGroup.__init__"><code class="docutils literal notranslate"><span class="pre">TypingPreprocessingIMUGroup.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TypingTremorMeasuresGroup"><code class="docutils literal notranslate"><span class="pre">TypingTremorMeasuresGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.TypingTremorMeasuresGroup.steps"><code class="docutils literal notranslate"><span class="pre">TypingTremorMeasuresGroup.steps</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.WordDurationGroup"><code class="docutils literal notranslate"><span class="pre">WordDurationGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.bdh.tasks.typing.steps.html#dispel.providers.bdh.tasks.typing.steps.WordDurationGroup.steps"><code class="docutils literal notranslate"><span class="pre">WordDurationGroup.steps</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.bdh.tasks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.bdh.tasks package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.bdh.tasks.typing.const.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.bdh.tasks.typing.const module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.bdh.tasks.typing.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

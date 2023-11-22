@@ -1,0 +1,1273 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.bdh.tasks.typing.keyboard &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/bdh/tasks/typing/keyboard';</script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.bdh.tasks.typing.keyboard</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Keyboard functions to extract relevant properties for Typing.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">difflib</span> <span class="kn">import</span> <span class="n">SequenceMatcher</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">unidecode</span> <span class="kn">import</span> <span class="n">unidecode</span>
+
+<span class="kn">from</span> <span class="nn">dispel.providers.bdh.tasks.typing.const</span> <span class="kn">import</span> <span class="n">KeyState</span>
+
+
+<div class="viewcode-block" id="transform_reaction_time">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.transform_reaction_time">[docs]</a>
+<span class="k">def</span> <span class="nf">transform_reaction_time</span><span class="p">(</span>
+    <span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">key_typed</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the reaction time and the first correct letter reaction time.</span>
+
+<span class="sd">    The reaction time is the time elapsed between the appearance of a word</span>
+<span class="sd">    and the time the user typed a letter. The first correct letter reaction</span>
+<span class="sd">    time follows the same definition but measures the time elapsed until a</span>
+<span class="sd">    correct letter is typed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    word : pd.DataFrame</span>
+<span class="sd">        A data frame listing all the words displayed on screen during the</span>
+<span class="sd">        test with the following columns: ``words``, ``appearance_timestamp``</span>
+<span class="sd">        and ``disappearance_timestamp``.</span>
+
+<span class="sd">    key_typed : pd.DataFrame</span>
+<span class="sd">        The dataframe with the list of key pressed by the user,</span>
+<span class="sd">        it should contain the columns: ``timestamp_out`` and ``key``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A DataFrame with two columns: the reaction time and the</span>
+<span class="sd">        reaction time to the first correct letter.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_compute_reaction_time</span><span class="p">(</span>
+        <span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">key_typed</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">first_correct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="c1"># Mask df_key between start and end</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;timestamp_out&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span>
+            <span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;timestamp_out&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;disappearance_timestamp&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">first_correct</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="n">key_typed</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,</span> <span class="s2">&quot;timestamp_out&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">]</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+
+        <span class="c1"># Find the first correct letter in the masked keys</span>
+        <span class="n">condition</span> <span class="o">=</span> <span class="n">key_typed</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,</span> <span class="s2">&quot;key&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># Take the first timestamp flagging this condition</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">key_typed</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">][</span><span class="n">condition</span><span class="p">][</span><span class="s2">&quot;timestamp_out&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+            <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;reaction_time&quot;</span><span class="p">:</span> <span class="n">word</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">_compute_reaction_time</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key_typed</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">),</span>
+            <span class="s2">&quot;reaction_time_first_correct&quot;</span><span class="p">:</span> <span class="n">word</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">_compute_reaction_time</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key_typed</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">),</span>
+        <span class="p">}</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="compute_rt_slope">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.compute_rt_slope">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_rt_slope</span><span class="p">(</span><span class="n">df_reaction_time</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">col</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the mean of the reaction time slope.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_reaction_time : pd.DataFrame</span>
+<span class="sd">        The reaction time dataframe (first letter and first correct letter)</span>
+
+<span class="sd">    col : String</span>
+<span class="sd">        The column to be used : reaction_time or reaction_time_first_correct</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        A float which is the mean slope of the reaction time (first letter</span>
+<span class="sd">         or first correct letter)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">df_reaction_time</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+        <span class="o">/</span> <span class="n">df_reaction_time</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="total_words_typed">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.total_words_typed">[docs]</a>
+<span class="k">def</span> <span class="nf">total_words_typed</span><span class="p">(</span><span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find total number of words typed.</span>
+
+<span class="sd">    The total number of words typed successfully is the number of True values</span>
+<span class="sd">    in the columns ``success``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    word: pd.DataFrame</span>
+<span class="sd">        A data frame containing the word information with the column</span>
+<span class="sd">        ``success``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        Number of words successfully typed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">word</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="time_intervals">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.time_intervals">[docs]</a>
+<span class="k">def</span> <span class="nf">time_intervals</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">interval_column</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find time intervals between consecutive element of a data frame.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: pd.DataFrame</span>
+<span class="sd">        Any data frame with a timestamp index.</span>
+<span class="sd">    interval_column: Optional[str]</span>
+<span class="sd">        When specified, indicates that the interval should be computed with</span>
+<span class="sd">        values from a column and not the index.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.Series</span>
+<span class="sd">        Time intervals between samples.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">interval_column</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">interval_column</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="word_duration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.word_duration">[docs]</a>
+<span class="k">def</span> <span class="nf">word_duration</span><span class="p">(</span><span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the time spent per word.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    word: pd.DataFrame</span>
+<span class="sd">        A data frame containing the word information with the column</span>
+<span class="sd">        ``success``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.Series</span>
+<span class="sd">        A data frame containing the time spent per word.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">word</span><span class="p">[</span><span class="s2">&quot;disappearance_timestamp&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">word</span><span class="p">[</span><span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">]</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="get_submission_state">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_submission_state">[docs]</a>
+<span class="k">def</span> <span class="nf">get_submission_state</span><span class="p">(</span><span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">key_typed</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the submission state.</span>
+
+<span class="sd">    Create a data frame that contains the state at each time a user types a</span>
+<span class="sd">    key. Available states are the following: ``Correct``, ``Incorrect``, and</span>
+<span class="sd">    ``Correcting``. The state is ``Correct`` if the textbox is empty or if</span>
+<span class="sd">    it forms a subpart of the word displayed on the screen. The state is</span>
+<span class="sd">    incorrect whenever the user types a key (that is not backspace), leading</span>
+<span class="sd">    to a textbox that does not form a subpart of the word displayed on the</span>
+<span class="sd">    screen. Finally, the state is identified as correcting whenever the user</span>
+<span class="sd">    corrects its mistake by typing backspace; it can be seen as an</span>
+<span class="sd">    intermediate state between an incorrect and a correct state.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    word : pd.DataFrame</span>
+<span class="sd">        A data frame listing all the words displayed on screen during the</span>
+<span class="sd">        test with the following columns: ``words``, ``appearance_timestamp``</span>
+<span class="sd">        and ``disappearance_timestamp``.</span>
+
+<span class="sd">    key_typed : pd.DataFrame</span>
+<span class="sd">        The dataframe with the list of key pressed by the user,</span>
+<span class="sd">        it should contain the columns: ``timestamp_out`` and ``key``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame that contains the user state after each keystroke.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_displayed_word</span><span class="p">(</span><span class="n">timestamp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find the word displayed on screen.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">word</span><span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">timestamp</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">[</span><span class="s2">&quot;disappearance_timestamp&quot;</span><span class="p">])</span>
+            <span class="o">&amp;</span> <span class="p">(</span><span class="n">timestamp</span> <span class="o">&gt;</span> <span class="n">word</span><span class="p">[</span><span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">])</span>
+        <span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">input_and_screen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;displayed_input&quot;</span><span class="p">:</span> <span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;displayed_input&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;displayed_word&quot;</span><span class="p">:</span> <span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;timestamp_out&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">_displayed_word</span><span class="p">),</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="n">is_correct</span> <span class="o">=</span> <span class="n">input_and_screen</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">unidecode</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;displayed_input&quot;</span><span class="p">]),</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">backspace_pressed</span> <span class="o">=</span> <span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Backspace&quot;</span>
+    <span class="n">word_changed</span> <span class="o">=</span> <span class="n">input_and_screen</span><span class="p">[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">input_and_screen</span><span class="p">[</span>
+        <span class="s2">&quot;displayed_word&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">word_changed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># update the states</span>
+    <span class="n">submission_state</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">KeyState</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">KeyState</span><span class="o">.</span><span class="n">INIT</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">is_correct</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">is_correct</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">word_changed</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">or</span> <span class="n">is_correct</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">submission_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">KeyState</span><span class="o">.</span><span class="n">CORRECT</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_correct</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">backspace_pressed</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">submission_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">KeyState</span><span class="o">.</span><span class="n">CORRECTING</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_correct</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">submission_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">KeyState</span><span class="o">.</span><span class="n">INCORRECT</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;submission_state&quot;</span><span class="p">:</span> <span class="n">submission_state</span><span class="p">,</span>
+            <span class="s2">&quot;displayed_word&quot;</span><span class="p">:</span> <span class="n">input_and_screen</span><span class="p">[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;displayed_input&quot;</span><span class="p">:</span> <span class="n">input_and_screen</span><span class="p">[</span><span class="s2">&quot;displayed_input&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">],</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">word</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">key_typed</span><span class="p">[</span><span class="s2">&quot;timestamp_out&quot;</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="detect_key_autocompletion">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.detect_key_autocompletion">[docs]</a>
+<span class="k">def</span> <span class="nf">detect_key_autocompletion</span><span class="p">(</span><span class="n">submission_state</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Detect the autocompletion at the key level.</span>
+
+<span class="sd">    Create a data frame that contains all the typed keys</span>
+<span class="sd">    the autocompletion status.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    submission_state : pd.DataFrame</span>
+<span class="sd">        A data frame that contains the user state after each keystroke.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        An new dataset with the displayed word, all the key typed and</span>
+<span class="sd">        autocompletion information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">submission_state_copy</span> <span class="o">=</span> <span class="n">submission_state</span><span class="p">[[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">,</span> <span class="s2">&quot;key&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Detect the non autocompleted keys</span>
+    <span class="n">to_keep</span> <span class="o">=</span> <span class="p">(</span><span class="n">submission_state_copy</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span>
+        <span class="n">submission_state_copy</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;Backspace&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">submission_state_copy</span><span class="p">[</span><span class="s2">&quot;autocomplete_per_key&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">~</span><span class="n">to_keep</span>
+
+    <span class="k">return</span> <span class="n">submission_state_copy</span></div>
+
+
+
+<div class="viewcode-block" id="detect_word_autocompletion">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.detect_word_autocompletion">[docs]</a>
+<span class="k">def</span> <span class="nf">detect_word_autocompletion</span><span class="p">(</span><span class="n">keys_with_autocompletion</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Detect the autocompletion for all the words.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    keys_with_autocompletion : pd.DataFrame</span>
+<span class="sd">        A data frame that .</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        The word dataset without the autocompleted words</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Detect the words with autocompletion from the keys</span>
+    <span class="n">per_word_autocompletion</span> <span class="o">=</span> <span class="n">keys_with_autocompletion</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="s2">&quot;displayed_word&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;autocomplete_per_key&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">any</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">per_word_autocompletion</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;autocomplete_per_word&quot;</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="total_autocomplete">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.total_autocomplete">[docs]</a>
+<span class="k">def</span> <span class="nf">total_autocomplete</span><span class="p">(</span><span class="n">keys_with_autocompletion</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the total number of autocompletions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    keys_with_autocompletion: pd.DataFrame</span>
+<span class="sd">        A dataframe indicating whether a key was autocompleted or not.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        Number of autocompletions performed by the user.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">keys_with_autocompletion</span><span class="p">[</span><span class="s2">&quot;autocomplete_per_key&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="get_state_durations">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_state_durations">[docs]</a>
+<span class="k">def</span> <span class="nf">get_state_durations</span><span class="p">(</span>
+    <span class="n">submission_state</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">key_intervals</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return submission state duration.</span>
+
+<span class="sd">    To compute the state duration, we group by displayed word and</span>
+<span class="sd">    by submission state. Indeed, we want to compute statistics</span>
+<span class="sd">    per word on the time spent in a given state or between states.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    submission_state : pd.DataFrame</span>
+<span class="sd">        Data frame containing the submission state each time a user</span>
+<span class="sd">        types a key.</span>
+<span class="sd">    key_intervals : pd.DataFrame</span>
+<span class="sd">        Time intervals between samples</span>
+<span class="sd">    word : pd.DataFrame</span>
+<span class="sd">        A data frame listing all the words displayed on screen during</span>
+<span class="sd">        the test with the following columns: ``words``,</span>
+<span class="sd">        ``appearance_timestamp`` and ``disappearance_timestamp``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame that contains duration of each correcting state.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># We group by displayed word and submission_state to keep track of</span>
+    <span class="c1"># whether the state corresponds to a successfully typed word or</span>
+    <span class="c1"># not. Otherwise, two correctly typed words would just regroup into</span>
+    <span class="c1"># one `Correct` state.</span>
+    <span class="n">temp_df</span> <span class="o">=</span> <span class="n">submission_state</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">intervals</span> <span class="o">=</span> <span class="n">key_intervals</span><span class="p">[</span><span class="s2">&quot;key_intervals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">temp_df</span><span class="p">[</span><span class="s2">&quot;key_intervals&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">intervals</span>
+    <span class="n">temp_df</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">submission_state</span><span class="p">[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">word</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">t_between_states</span> <span class="o">=</span> <span class="n">submission_state</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+    <span class="n">temp_df</span><span class="p">[</span><span class="s2">&quot;t_between_states&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_between_states</span>
+    <span class="n">temp_df</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">submission_state</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="n">temp_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;displayed_word&quot;</span><span class="p">,</span>
+            <span class="p">(</span>
+                <span class="n">submission_state</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">()</span>
+                <span class="o">!=</span> <span class="n">submission_state</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">]</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">submission_state</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s2">&quot;key_intervals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">success</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">all</span><span class="p">())</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;t_between_states&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">t_between_states</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">displayed_word</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">values</span>
+    <span class="c1"># These columns were created by the groupby object being converted</span>
+    <span class="c1"># into a dataframe.</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="get_reaction_duration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_reaction_duration">[docs]</a>
+<span class="k">def</span> <span class="nf">get_reaction_duration</span><span class="p">(</span><span class="n">state_durations</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the reaction duration.</span>
+
+<span class="sd">    The reaction duration is the time elapsed in an incorrect state</span>
+<span class="sd">    for a correct submission.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    state_durations : pd.DataFrame</span>
+<span class="sd">        Data frame containing submission states and duration.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame that contains reaction duration.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">state_durations</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">state_durations</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">KeyState</span><span class="o">.</span><span class="n">INCORRECT</span><span class="p">,</span>
+        <span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span><span class="p">],</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="get_correct_reaction_duration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_correct_reaction_duration">[docs]</a>
+<span class="k">def</span> <span class="nf">get_correct_reaction_duration</span><span class="p">(</span>
+    <span class="n">reaction_duration</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return reaction durations for correct words.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    reaction_duration : pd.DataFrame</span>
+<span class="sd">        Data frame containing reacting durations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame that contains reaction duration for correct</span>
+<span class="sd">        words.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">reaction_duration</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">reaction_duration</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span> <span class="s2">&quot;duration&quot;</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="get_correcting_duration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_correcting_duration">[docs]</a>
+<span class="k">def</span> <span class="nf">get_correcting_duration</span><span class="p">(</span><span class="n">state_durations</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute correcting duration.</span>
+
+<span class="sd">    The Correcting Duration is the time elapsed in a correcting state</span>
+<span class="sd">    for a correct submission, in other words, the time spent correcting</span>
+<span class="sd">    a mistake.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    state_durations : pd.DataFrame</span>
+<span class="sd">        Data frame containing submission states and duration.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame that contains correcting duration.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">state_durations</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">state_durations</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">KeyState</span><span class="o">.</span><span class="n">CORRECTING</span><span class="p">,</span>
+        <span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span><span class="p">],</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="get_correct_correcting_duration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_correct_correcting_duration">[docs]</a>
+<span class="k">def</span> <span class="nf">get_correct_correcting_duration</span><span class="p">(</span>
+    <span class="n">correcting_duration</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return correcting duration for correct words.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    correcting_duration : pd.DataFrame</span>
+<span class="sd">        Data frame containing correcting durations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame that contains correcting duration for correct</span>
+<span class="sd">        words.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">correcting_duration</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">correcting_duration</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span> <span class="s2">&quot;duration&quot;</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="get_reacting_times">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_reacting_times">[docs]</a>
+<span class="k">def</span> <span class="nf">get_reacting_times</span><span class="p">(</span><span class="n">state_durations</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return reacting times.</span>
+
+<span class="sd">    The reacting time is the time elapsed between an incorrect state</span>
+<span class="sd">    and a correcting state for a correct submission, in other words,</span>
+<span class="sd">    the time to react to a mistake.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    state_durations : pd.DataFrame</span>
+<span class="sd">        Data frame containing submission states and duration.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame containing reacting times.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">state_durations</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">state_durations</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">KeyState</span><span class="o">.</span><span class="n">CORRECTING</span><span class="p">,</span>
+        <span class="p">[</span><span class="s2">&quot;t_between_states&quot;</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span><span class="p">],</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="get_correct_reacting_time">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.get_correct_reacting_time">[docs]</a>
+<span class="k">def</span> <span class="nf">get_correct_reacting_time</span><span class="p">(</span><span class="n">reacting_times</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return reacting times for correct words.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    reacting_times : pd.DataFrame</span>
+<span class="sd">        Data frame containing correction differences.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame that contains reacting duration for correct words.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">reacting_times</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">reacting_times</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span> <span class="s2">&quot;t_between_states&quot;</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="find_consec_element_and_count">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.find_consec_element_and_count">[docs]</a>
+<span class="k">def</span> <span class="nf">find_consec_element_and_count</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find consecutive elements and count them.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : pd.DataFrame</span>
+<span class="sd">        Data frame to compute measure related to successfully written words</span>
+<span class="sd">        with(out) error, and also a streak of words with(out) error(s).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame with three columns: the count, the submission state and if</span>
+<span class="sd">        the sequence was free of error</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1"># Assign a group to each consecutive elements</span>
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;subgroup&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;is_error_free&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;is_error_free&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;subgroup&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;is_error_free&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
+            <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span>
+            <span class="s2">&quot;is_error_free&quot;</span><span class="p">:</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;is_error_free&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span>
+        <span class="p">}</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="count_words_typed_in_row">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.count_words_typed_in_row">[docs]</a>
+<span class="k">def</span> <span class="nf">count_words_typed_in_row</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">error_free</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the successfully typed words with(out) error in a row.</span>
+
+<span class="sd">    The parameter ``error_free`` indicates if we look at consecutive words that has</span>
+<span class="sd">    been successfully typed and: without error (True) or with error (False).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        Dataframe containing typing data</span>
+<span class="sd">    error_free</span>
+<span class="sd">        If True, only count words typed with no error</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        Number of words typed in a row</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">is_error_free</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">error_free</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">mask</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">success</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">return</span> <span class="mi">0</span></div>
+
+
+
+<div class="viewcode-block" id="similarity_ratio">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.similarity_ratio">[docs]</a>
+<span class="k">def</span> <span class="nf">similarity_ratio</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the similarity ratio.&quot;&quot;&quot;</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">return</span> <span class="n">SequenceMatcher</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">ratio</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="apply_similarity_ratio">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.apply_similarity_ratio">[docs]</a>
+<span class="k">def</span> <span class="nf">apply_similarity_ratio</span><span class="p">(</span><span class="n">submission_state</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply similarity ratio.</span>
+
+<span class="sd">    The similarity ratio is computed between the word being typed</span>
+<span class="sd">    ``displayed_input`` and the word on screen ``displayed_word``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    submission_state</span>
+<span class="sd">        A data frame that contains the user state after each keystroke.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        Similarity ratio between the displayed input and</span>
+<span class="sd">        displayed_word.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">submission_state</span><span class="p">[[</span><span class="s2">&quot;displayed_input&quot;</span><span class="p">,</span> <span class="s2">&quot;displayed_word&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;similarity_ratio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">similarity_ratio</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+
+<div class="viewcode-block" id="count_incorrect_words">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.count_incorrect_words">[docs]</a>
+<span class="k">def</span> <span class="nf">count_incorrect_words</span><span class="p">(</span><span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the number of incorrect words.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    word : pd.DataFrame</span>
+<span class="sd">        A data frame of the words.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        The number of incorrect words.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">~</span><span class="n">word</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="count_key_pressed">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.count_key_pressed">[docs]</a>
+<span class="k">def</span> <span class="nf">count_key_pressed</span><span class="p">(</span><span class="n">key_pressed</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count the number of keys pressed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    key_pressed</span>
+<span class="sd">        A pd.Series indicating the key pressed during the test.</span>
+<span class="sd">    alphabet</span>
+<span class="sd">        An optional argument indicating if the count should be done on alphabet</span>
+<span class="sd">        letters only.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        The number of keys pressed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">alphabet</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">key_pressed</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">key_pressed</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="ratio_key_pressed">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.ratio_key_pressed">[docs]</a>
+<span class="k">def</span> <span class="nf">ratio_key_pressed</span><span class="p">(</span>
+    <span class="n">submission_state</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Group by word and count the letters typed for completed words.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    submission_state</span>
+<span class="sd">        A data frame that contains the user state after each keystroke.</span>
+<span class="sd">    word</span>
+<span class="sd">        A data frame listing all the words displayed on screen during the</span>
+<span class="sd">        test with the following columns: ``words``, ``appearance_timestamp``</span>
+<span class="sd">        and ``disappearance_timestamp``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A data frame with a column ``letters_typed_over_length``</span>
+<span class="sd">        containing the following ratio: number of letters typed divided</span>
+<span class="sd">        by the length of the word (for completed words).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">submission_state</span><span class="p">[[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">,</span> <span class="s2">&quot;key&quot;</span><span class="p">]]</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">count_key_pressed</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">],</span> <span class="kc">True</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="c1"># keep the completed words only</span>
+    <span class="n">completed_word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">],</span> <span class="s2">&quot;word&quot;</span><span class="p">]</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">completed_word</span><span class="p">]</span>
+
+    <span class="c1"># compute word length</span>
+    <span class="n">word_length</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+    <span class="c1"># return the ratio letters typed over word length</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;letters_typed_over_length&quot;</span><span class="p">:</span> <span class="n">res</span> <span class="o">/</span> <span class="n">word_length</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">index</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="letter_interval">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.letter_interval">[docs]</a>
+<span class="k">def</span> <span class="nf">letter_interval</span><span class="p">(</span>
+    <span class="n">key_is_letter</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
+    <span class="n">key_intervals</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
+    <span class="n">extra_mask</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the interval between two consecutive letters.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    key_is_letter</span>
+<span class="sd">        A boolean series indicating if a key is a letter.</span>
+<span class="sd">    key_intervals</span>
+<span class="sd">        A series of float indicating the time between two consecutive keys.</span>
+<span class="sd">    extra_mask</span>
+<span class="sd">        An optional series of boolean that will be used as an extra mask</span>
+<span class="sd">        to filter intervals.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Tuple[pd.Series, pd.Series]</span>
+<span class="sd">        The first element of the tuple is the time between each consecutive</span>
+<span class="sd">        letter keys. The second element is the mask that has been used to</span>
+<span class="sd">        filter the `key_intervals` to find the letters of interests.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">key_is_letter</span> <span class="o">&amp;</span> <span class="n">key_is_letter</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">extra_mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">&amp;</span> <span class="n">extra_mask</span>
+    <span class="k">return</span> <span class="n">key_intervals</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">mask</span></div>
+
+
+
+<div class="viewcode-block" id="keep_top_ten">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.keep_top_ten">[docs]</a>
+<span class="k">def</span> <span class="nf">keep_top_ten</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Keep top 10% intervals.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A dataframe of letter intervals with the column `letter_intervals`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        The top 10 percent letter intervals.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;letter_intervals&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="n">res</span> <span class="o">&gt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">90</span><span class="p">)]</span></div>
+
+
+
+<div class="viewcode-block" id="max_letter_interval_dev">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.max_letter_interval_dev">[docs]</a>
+<span class="k">def</span> <span class="nf">max_letter_interval_dev</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the maximum letter interval deviation from the mean.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;letter_intervals&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;letter_intervals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="filter_intervals">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.filter_intervals">[docs]</a>
+<span class="k">def</span> <span class="nf">filter_intervals</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">differentiate</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute letter intervals prior a mistake within a word.&quot;&quot;&quot;</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;submission_state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">KeyState</span><span class="o">.</span><span class="n">CORRECT</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="c1"># Find first non-correct element if there is one</span>
+    <span class="n">not_correct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="o">~</span><span class="n">mask</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">not_correct</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># turn to False every Correct letters typed after a mistake</span>
+        <span class="n">mask</span><span class="p">[</span><span class="n">not_correct</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">:]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">&amp;</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;is_letter&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">differentiate</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="interval_until_mistake">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.interval_until_mistake">[docs]</a>
+<span class="k">def</span> <span class="nf">interval_until_mistake</span><span class="p">(</span>
+    <span class="n">submission_state</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">key_is_letter</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">differentiate</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute letter intervals prior a mistake for each word.&quot;&quot;&quot;</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;interval_until_mistake&quot;</span>
+    <span class="k">if</span> <span class="n">differentiate</span><span class="p">:</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;derived_</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">submission_state</span><span class="p">[[</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">,</span> <span class="s2">&quot;submission_state&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">res</span><span class="p">[</span><span class="s2">&quot;is_letter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">key_is_letter</span><span class="p">[</span><span class="s2">&quot;key_is_letter&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">multi_index_res</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">filter_intervals</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">differentiate</span><span class="p">))</span>
+        <span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">multi_index_res</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">col</span><span class="p">:</span> <span class="p">[]})</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">col</span><span class="p">:</span> <span class="n">multi_index_res</span><span class="o">.</span><span class="n">values</span><span class="p">})</span></div>
+
+
+
+<div class="viewcode-block" id="compute_typing_speed_slope">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.bdh.tasks.typing.keyboard.html#dispel.providers.bdh.tasks.typing.keyboard.compute_typing_speed_slope">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_typing_speed_slope</span><span class="p">(</span>
+    <span class="n">word</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">submission_state</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the slope of the typing speed.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_compute_char_speed</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+        <span class="c1"># Return the mean interval between the characters of a word</span>
+        <span class="k">return</span> <span class="n">group</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1"># Get the right columns and change index for the merge</span>
+    <span class="n">df_word_filtered</span> <span class="o">=</span> <span class="n">word</span><span class="p">[[</span><span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+    <span class="c1"># Compute the typing speed for each word</span>
+    <span class="n">char_speed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">submission_state</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;displayed_word&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">_compute_char_speed</span><span class="p">),</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean_char_speed&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="c1"># Index based inner join to discard uncompleted words</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_word_filtered</span><span class="p">,</span> <span class="n">char_speed</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Return the mean slope</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">res</span><span class="p">[</span><span class="s2">&quot;mean_char_speed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+        <span class="o">/</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;appearance_timestamp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

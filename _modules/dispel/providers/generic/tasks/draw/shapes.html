@@ -1,0 +1,1442 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.tasks.draw.shapes &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/tasks/draw/shapes';</script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.tasks.draw.shapes</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A module dedicated to format user and reference trajectories.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.core</span> <span class="kn">import</span> <span class="n">compute_rotation_matrix_2d</span><span class="p">,</span> <span class="n">euclidean_distance</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.interpolators</span> <span class="kn">import</span> <span class="n">cubic_splines</span><span class="p">,</span> <span class="n">custom_interpolator_1d</span>
+
+<span class="n">LEVEL_TO_MODEL</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;square_counter_clock&quot;</span><span class="p">:</span> <span class="s2">&quot;squareCounterClock&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;square_clock&quot;</span><span class="p">:</span> <span class="s2">&quot;squareClock&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;infinity&quot;</span><span class="p">:</span> <span class="s2">&quot;infinity&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;spiral&quot;</span><span class="p">:</span> <span class="s2">&quot;spiral&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">AREA_RADIUS</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;The radius of a circle centered in the first reference point of a drawing</span>
+<span class="sd">shape that  define the valid starting area.&quot;&quot;&quot;</span>
+
+<span class="n">CTL</span> <span class="o">=</span> <span class="p">(</span><span class="mi">56</span><span class="p">,</span> <span class="mi">639</span><span class="p">)</span>
+<span class="n">CBL</span> <span class="o">=</span> <span class="p">(</span><span class="mi">56</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
+<span class="n">CBR</span> <span class="o">=</span> <span class="p">(</span><span class="mi">319</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
+<span class="n">CTR</span> <span class="o">=</span> <span class="p">(</span><span class="mi">319</span><span class="p">,</span> <span class="mi">639</span><span class="p">)</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Corner definitions, i.e. CTL for Corner Top Left, ...&quot;&quot;&quot;</span>
+
+<span class="n">HALF_SCREEN_X</span> <span class="o">=</span> <span class="mf">187.5</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Define the half of the x axis of the screen.&quot;&quot;&quot;</span>
+
+<span class="n">HALF_SCREEN_Y</span> <span class="o">=</span> <span class="mi">406</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Define the half of the y axis of the screen.&quot;&quot;&quot;</span>
+
+<span class="n">SHAPE_BOUNDARIES</span> <span class="o">=</span> <span class="p">((</span><span class="mi">56</span><span class="p">,</span> <span class="mi">319</span><span class="p">),</span> <span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">639</span><span class="p">))</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Define boundaries of a square-like shape in order to detect if a user point</span>
+<span class="sd">is inside or outside the shape in the screen x and y axes coordinates.&quot;&quot;&quot;</span>
+
+<span class="n">SHAPE_SIZE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;ADS&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;infinity&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;spiral&quot;</span><span class="p">:</span> <span class="mi">779</span><span class="p">,</span>
+        <span class="s2">&quot;square_clock&quot;</span><span class="p">:</span> <span class="mi">1038</span><span class="p">,</span>
+        <span class="s2">&quot;square_counter_clock&quot;</span><span class="p">:</span> <span class="mi">1038</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;BDH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;infinity&quot;</span><span class="p">:</span> <span class="mi">641</span><span class="p">,</span>
+        <span class="s2">&quot;spiral&quot;</span><span class="p">:</span> <span class="mi">607</span><span class="p">,</span>
+        <span class="s2">&quot;square_clock&quot;</span><span class="p">:</span> <span class="mi">124</span><span class="p">,</span>
+        <span class="s2">&quot;square_counter_clock&quot;</span><span class="p">:</span> <span class="mi">124</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Define the number of points of the reference shape.&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="generate_model_coordinates">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.generate_model_coordinates">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_model_coordinates</span><span class="p">(</span><span class="n">level_name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate the model coordinates for a given level name.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level_name</span>
+<span class="sd">        The name of the desired level.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Dict[str, numpy.ndarray]</span>
+<span class="sd">        The 2 dimension numpy array corresponding to the desired level (shape).</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the given level name is unrecognized.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">level_name</span> <span class="o">==</span> <span class="s2">&quot;squareCounterClock&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">generate_square_counter_clock</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">level_name</span> <span class="o">==</span> <span class="s2">&quot;squareClock&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">generate_square_clock</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">level_name</span> <span class="o">==</span> <span class="s2">&quot;infinity&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">generate_infinity</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">level_name</span> <span class="o">==</span> <span class="s2">&quot;spiral&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">generate_spiral</span><span class="p">()</span>
+
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown level name: </span><span class="si">{</span><span class="n">level_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_infinity">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.generate_infinity">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_infinity</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate the &#39;infinity&#39; level (shape).&quot;&quot;&quot;</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mi">280</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">90</span>
+
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">compute_rotation_matrix_2d</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">angle</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">))])</span>
+    <span class="n">y_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">))])</span>
+
+    <span class="n">width</span> <span class="o">=</span> <span class="mi">375</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="mi">812</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="n">x_rot</span> <span class="o">+</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">y_rot</span> <span class="o">=</span> <span class="n">y_rot</span> <span class="o">-</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">xr</span><span class="o">=</span><span class="n">x_rot</span><span class="p">,</span> <span class="n">yr</span><span class="o">=</span><span class="n">y_rot</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_square_clock">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.generate_square_clock">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_square_clock</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate the &#39;squareClock&#39; level (shape).&quot;&quot;&quot;</span>
+    <span class="n">d_inter_point</span> <span class="o">=</span> <span class="mf">1.5</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">50</span>
+
+    <span class="n">x_start</span> <span class="o">=</span> <span class="mi">56</span>
+    <span class="n">y_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">123</span>
+    <span class="n">y_end</span> <span class="o">=</span> <span class="o">-</span><span class="mi">566</span> <span class="o">-</span> <span class="mi">123</span>
+
+    <span class="n">n_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_end</span> <span class="o">-</span> <span class="n">y_start</span><span class="p">)</span> <span class="o">/</span> <span class="n">d_inter_point</span><span class="p">)</span>
+    <span class="n">y_seg_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">y_start</span><span class="p">,</span> <span class="n">y_end</span><span class="p">,</span> <span class="n">n_points</span><span class="p">)</span>
+    <span class="n">x_seg_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_seg_1</span><span class="p">),</span> <span class="n">x_start</span><span class="p">)</span>
+
+    <span class="n">y_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">566</span> <span class="o">-</span> <span class="mi">123</span>
+    <span class="n">x_start</span> <span class="o">=</span> <span class="mi">56</span>
+    <span class="n">x_end</span> <span class="o">=</span> <span class="mi">56</span> <span class="o">+</span> <span class="mi">263</span>
+
+    <span class="n">n_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">x_end</span> <span class="o">-</span> <span class="n">x_start</span><span class="p">)</span> <span class="o">/</span> <span class="n">d_inter_point</span><span class="p">)</span>
+    <span class="n">x_seg_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x_start</span><span class="p">,</span> <span class="n">x_end</span><span class="p">,</span> <span class="n">n_points</span><span class="p">)</span>
+    <span class="n">y_seg_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_seg_2</span><span class="p">),</span> <span class="n">y_start</span><span class="p">)</span>
+
+    <span class="n">x_start</span> <span class="o">=</span> <span class="mi">56</span> <span class="o">+</span> <span class="mi">263</span>
+    <span class="n">y_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">566</span> <span class="o">-</span> <span class="mi">123</span>
+    <span class="n">y_end</span> <span class="o">=</span> <span class="o">-</span><span class="mi">123</span> <span class="o">-</span> <span class="n">step</span>
+
+    <span class="n">n_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_end</span> <span class="o">-</span> <span class="n">y_start</span><span class="p">)</span> <span class="o">/</span> <span class="n">d_inter_point</span><span class="p">)</span>
+    <span class="n">y_seg_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">y_start</span><span class="p">,</span> <span class="n">y_end</span><span class="p">,</span> <span class="n">n_points</span><span class="p">)</span>
+    <span class="n">x_seg_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_seg_3</span><span class="p">),</span> <span class="n">x_start</span><span class="p">)</span>
+
+    <span class="n">y_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">123</span> <span class="o">-</span> <span class="n">step</span>
+    <span class="n">x_start</span> <span class="o">=</span> <span class="mi">56</span> <span class="o">+</span> <span class="mi">263</span>
+    <span class="n">x_end</span> <span class="o">=</span> <span class="mi">56</span> <span class="o">+</span> <span class="n">step</span>
+
+    <span class="n">n_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x_end</span> <span class="o">-</span> <span class="n">x_start</span><span class="p">)</span> <span class="o">/</span> <span class="n">d_inter_point</span><span class="p">)</span>
+    <span class="n">x_seg_4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x_start</span><span class="p">,</span> <span class="n">x_end</span><span class="p">,</span> <span class="n">n_points</span><span class="p">)</span>
+    <span class="n">y_seg_4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_seg_4</span><span class="p">),</span> <span class="n">y_start</span><span class="p">)</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">x_seg_1</span><span class="p">,</span> <span class="n">x_seg_2</span><span class="p">,</span> <span class="n">x_seg_3</span><span class="p">,</span> <span class="n">x_seg_4</span><span class="p">))</span>
+    <span class="n">y_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">y_seg_1</span><span class="p">,</span> <span class="n">y_seg_2</span><span class="p">,</span> <span class="n">y_seg_3</span><span class="p">,</span> <span class="n">y_seg_4</span><span class="p">))</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x_rot</span><span class="p">)</span>
+    <span class="n">y_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y_rot</span><span class="p">)</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">x_rot</span><span class="p">)</span>
+    <span class="n">y_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">y_rot</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">xr</span><span class="o">=</span><span class="n">x_rot</span><span class="p">,</span> <span class="n">yr</span><span class="o">=</span><span class="n">y_rot</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_square_counter_clock">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.generate_square_counter_clock">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_square_counter_clock</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate the &#39;squareCounterClock&#39; level (shape).&quot;&quot;&quot;</span>
+    <span class="n">rectangle_coordinates</span> <span class="o">=</span> <span class="n">generate_square_clock</span><span class="p">()</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="n">rectangle_coordinates</span><span class="p">[</span><span class="s2">&quot;xr&quot;</span><span class="p">]</span>
+    <span class="n">y_rot</span> <span class="o">=</span> <span class="n">rectangle_coordinates</span><span class="p">[</span><span class="s2">&quot;yr&quot;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">xr</span><span class="o">=</span><span class="mi">375</span> <span class="o">-</span> <span class="n">x_rot</span><span class="p">,</span> <span class="n">yr</span><span class="o">=</span><span class="n">y_rot</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_spiral">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.generate_spiral">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_spiral</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate the &#39;spiral&#39; level (shape).&quot;&quot;&quot;</span>
+    <span class="n">inter_point_distance</span> <span class="o">=</span> <span class="mf">0.2359</span>
+
+    <span class="c1"># Initialization</span>
+    <span class="n">pi_number</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">path_theta</span> <span class="o">=</span> <span class="p">((</span><span class="n">inter_point_distance</span> <span class="o">*</span> <span class="mf">1.7</span> <span class="o">*</span> <span class="p">(</span><span class="n">pi_number</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">200</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="n">path_cumulative_theta</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">path_lv</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[[],</span> <span class="p">[]]</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">path_cumulative_distance</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Generation of the points</span>
+    <span class="k">while</span> <span class="n">path_cumulative_distance</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">pi_number</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">path_cumulative_distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">path_cumulative_theta</span><span class="p">)</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">path_cumulative_distance</span>
+        <span class="n">path_lv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">path_cumulative_distance</span><span class="p">))</span>
+        <span class="n">path_lv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">path_cumulative_distance</span><span class="p">))</span>
+        <span class="n">path_cumulative_theta</span> <span class="o">=</span> <span class="n">path_cumulative_theta</span> <span class="o">+</span> <span class="n">path_theta</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">path_lv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">8</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">path_lv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="mi">8</span>
+
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">90</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">compute_rotation_matrix_2d</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">angle</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">))])</span>
+    <span class="n">y_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">))])</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="n">x_rot</span> <span class="o">+</span> <span class="mi">375</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">y_rot</span> <span class="o">=</span> <span class="n">y_rot</span> <span class="o">-</span> <span class="mi">812</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="mi">375</span> <span class="o">-</span> <span class="n">x_rot</span>
+
+    <span class="n">x_rot</span> <span class="o">=</span> <span class="n">x_rot</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="o">-</span><span class="mi">190</span><span class="p">]</span> <span class="o">-</span> <span class="mi">10</span>
+    <span class="n">y_rot</span> <span class="o">=</span> <span class="n">y_rot</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="o">-</span><span class="mi">190</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">xr</span><span class="o">=</span><span class="n">x_rot</span><span class="p">,</span> <span class="n">yr</span><span class="o">=</span><span class="n">y_rot</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_proper_level_to_model">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.get_proper_level_to_model">[docs]</a>
+<span class="k">def</span> <span class="nf">get_proper_level_to_model</span><span class="p">(</span><span class="n">level_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the correct camel type key to explore the &#39;screen&#39; data set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level_id</span>
+<span class="sd">        The desired level id to consider.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        The corresponding level id in Camel type.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    KeyError</span>
+<span class="sd">        If the given identifier doesn&#39;t match any level.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="n">level_id</span><span class="o">.</span><span class="n">startswith</span><span class="p">,</span> <span class="n">LEVEL_TO_MODEL</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">LEVEL_TO_MODEL</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">level_id</span><span class="si">}</span><span class="s2"> does not match any level_id.&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_change_references</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set up the user and reference shapes into the device reference in pt.</span>
+
+<span class="sd">    It also corrects the old data format. Indeed, the expected trajectory has</span>
+<span class="sd">    been made based on a negative y axis. New formats don&#39;t provide yPosition</span>
+<span class="sd">    in a negative referential, but in a positive one. Then, that is why we</span>
+<span class="sd">    check the sign of the yPosition of the user&#39;s trajectory: if it is</span>
+<span class="sd">    negative, the trajectory is in the same referential than the expected one.</span>
+<span class="sd">    If not, a rotation is applied to the user&#39;s trajectory by changing the</span>
+<span class="sd">    positive sign of the user&#39;s yPosition into a negative one.</span>
+<span class="sd">    Then, the data format is projected to the screen references in ``points``</span>
+<span class="sd">    of the device.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame corresponding to the user or reference trajectory.</span>
+<span class="sd">    height</span>
+<span class="sd">        The height in `pts` corresponding to the screen of the user&#39;s</span>
+<span class="sd">        smartphone.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The updated (if necessary) pandas data frame corresponding to the user</span>
+<span class="sd">        trajectory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">ordinate</span> <span class="o">:=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ordinate</span> <span class="o">+</span> <span class="n">height</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">height</span> <span class="o">-</span> <span class="n">ordinate</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+
+<div class="viewcode-block" id="check_is_in_area">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.check_is_in_area">[docs]</a>
+<span class="k">def</span> <span class="nf">check_is_in_area</span><span class="p">(</span><span class="n">ser</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">x_ref</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y_ref</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return if the user points are within a specific area.</span>
+
+<span class="sd">    The area is considered as the circle of 40 pts radius with x_ref and y_ref</span>
+<span class="sd">    as its center.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ser</span>
+<span class="sd">        A pandas series corresponding to a user point.</span>
+<span class="sd">    x_ref</span>
+<span class="sd">        The x coordinate of the reference trajectory to be considered as the</span>
+<span class="sd">        center of the area.</span>
+<span class="sd">    y_ref</span>
+<span class="sd">        The y coordinate of the reference trajectory to be considered as the</span>
+<span class="sd">        center of the area.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        Whether the point is in the starting area or not.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Acceptance threshold is the area radius +- 10% tolerance</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">ser</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">x_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">ser</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">AREA_RADIUS</span> <span class="o">*</span> <span class="mf">1.1</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="flag_valid_area">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.flag_valid_area">[docs]</a>
+<span class="k">def</span> <span class="nf">flag_valid_area</span><span class="p">(</span><span class="n">user</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a series named `isValidArea` to determine if a point is valid.</span>
+
+<span class="sd">    e.g. if a point or a Series of point belongs to a draw which has triggered</span>
+<span class="sd">    the starting area condition.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    user</span>
+<span class="sd">        A pandas data frame with user trajectory, touch actions</span>
+<span class="sd">        and timestamps of touch events.</span>
+<span class="sd">    reference</span>
+<span class="sd">        The reference trajectory corresponding to the current shape.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The same pandas data frame given as input plus a pandas Series</span>
+<span class="sd">        `isValidArea`.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If no `down` touch action is detected.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">user</span><span class="p">[[</span><span class="s2">&quot;touchAction&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">down</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">actions</span><span class="p">[</span><span class="s2">&quot;touchAction&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">down</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No down touchAction&quot;</span><span class="p">)</span>
+
+    <span class="n">ref_x</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+    <span class="n">ref_y</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+    <span class="n">down</span> <span class="o">=</span> <span class="n">down</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">check_is_in_area</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">ref_x</span><span class="p">,</span> <span class="n">ref_y</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Flag every action posterior to the first valid event as valid</span>
+    <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;isValidArea&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1"># Find the closest down point to the center of the valid area</span>
+    <span class="n">index_min</span> <span class="o">=</span> <span class="n">down</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">down</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">index_min</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">first_valid</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">down</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">down</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">actions</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">first_valid</span><span class="p">:,</span> <span class="s2">&quot;isValidArea&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;isValidArea&quot;</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="get_user_path">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.get_user_path">[docs]</a>
+<span class="k">def</span> <span class="nf">get_user_path</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">float</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract user path coordinates, timestamps and touch actions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame corresponding to the &#39;screen&#39; raw data set.</span>
+<span class="sd">    reference</span>
+<span class="sd">        The reference trajectory corresponding to the current shape.</span>
+<span class="sd">    height</span>
+<span class="sd">        The height in `pts` corresponding to the screen of the user&#39;s</span>
+<span class="sd">        smartphone.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        A pandas data frame composed of user path coordinates, timestamps,</span>
+<span class="sd">        touch actions and the valid or non valid flag.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;xPosition&quot;</span><span class="p">,</span> <span class="s2">&quot;yPosition&quot;</span><span class="p">,</span> <span class="s2">&quot;touchAction&quot;</span><span class="p">,</span> <span class="s2">&quot;tsTouch&quot;</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">]</span>
+    <span class="n">renamed_cols</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;xPosition&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;yPosition&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">}</span>
+    <span class="n">checked_data</span> <span class="o">=</span> <span class="n">_change_references</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">renamed_cols</span><span class="p">),</span> <span class="n">height</span><span class="p">)</span>
+    <span class="n">flags</span> <span class="o">=</span> <span class="n">flag_valid_area</span><span class="p">(</span><span class="n">checked_data</span><span class="p">,</span> <span class="n">reference</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">checked_data</span><span class="p">,</span> <span class="n">flags</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_reference_path">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.get_reference_path">[docs]</a>
+<span class="k">def</span> <span class="nf">get_reference_path</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the reference trajectory x and y coordinates.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level</span>
+<span class="sd">        The desired level on which you want to compute model path.</span>
+<span class="sd">    height</span>
+<span class="sd">        The height in `pts` corresponding to the screen of the user&#39;s</span>
+<span class="sd">        smartphone.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        A pandas data frame composed of the reference trajectory x and y</span>
+<span class="sd">        coordinates.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check if BDH FORMAT</span>
+    <span class="c1"># When it is in BDH format we will correct the orientation first by</span>
+    <span class="c1"># Rotating the model path by 90 degree vertical</span>
+    <span class="k">if</span> <span class="s2">&quot;target_figure_position_xy&quot;</span> <span class="ow">in</span> <span class="n">level</span><span class="o">.</span><span class="n">context</span><span class="p">:</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">get_raw_value</span><span class="p">(</span><span class="s2">&quot;target_figure_position_xy&quot;</span><span class="p">)</span>
+        <span class="n">model_path</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">])</span>
+        <span class="n">model_path</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">model_path</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Interpolating to have same resolution</span>
+        <span class="n">shape_name</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">up_sampling_factor</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">SHAPE_SIZE</span><span class="p">[</span><span class="s2">&quot;ADS&quot;</span><span class="p">][</span><span class="n">shape_name</span><span class="p">]</span> <span class="o">/</span> <span class="n">SHAPE_SIZE</span><span class="p">[</span><span class="s2">&quot;BDH&quot;</span><span class="p">][</span><span class="n">shape_name</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">_ref</span> <span class="o">=</span> <span class="n">model_path</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">shape_name</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;spiral&quot;</span><span class="p">,</span> <span class="s2">&quot;infinity&quot;</span><span class="p">}:</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;cubic&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;linear&quot;</span>
+
+        <span class="n">model_path</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">custom_interpolator_1d</span><span class="p">(</span><span class="n">_ref</span><span class="p">,</span> <span class="n">up_sampling_factor</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="c1"># For the specific case of infinity shape</span>
+        <span class="c1"># We also correct the starting point of the model path to match the</span>
+        <span class="c1"># Small flag indicating the center of the start area.</span>
+        <span class="k">if</span> <span class="n">shape_name</span> <span class="o">==</span> <span class="s2">&quot;infinity&quot;</span><span class="p">:</span>
+            <span class="n">roll_</span> <span class="o">=</span> <span class="n">model_path</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+            <span class="n">model_path</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">model_path</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="o">-</span><span class="n">roll_</span><span class="p">)</span>
+            <span class="n">model_path</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">model_path</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="o">-</span><span class="n">roll_</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_change_references</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+    <span class="n">raw</span> <span class="o">=</span> <span class="n">generate_model_coordinates</span><span class="p">(</span><span class="n">get_proper_level_to_model</span><span class="p">(</span><span class="n">level_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="o">.</span><span class="n">id</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">_change_references</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">raw</span><span class="p">[</span><span class="s2">&quot;xr&quot;</span><span class="p">],</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">raw</span><span class="p">[</span><span class="s2">&quot;yr&quot;</span><span class="p">]}),</span> <span class="n">height</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_valid_path">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.get_valid_path">[docs]</a>
+<span class="k">def</span> <span class="nf">get_valid_path</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Keep only the valid trajectory of the user.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        The pandas data frame obtained via a</span>
+<span class="sd">        :class:`~dispel.providers.generic.tasks.draw.touch.DrawShape`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The pandas data frame given in input but composed of only the valid</span>
+<span class="sd">        user trajectory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;isValidArea&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="up_sample_user_path">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.up_sample_user_path">[docs]</a>
+<span class="k">def</span> <span class="nf">up_sample_user_path</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">up_sampling_factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute an up-sampled Bezier curve for a given user trajectory.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame composed of the valid user trajectory and no</span>
+<span class="sd">        duplicates.</span>
+<span class="sd">    up_sampling_factor</span>
+<span class="sd">        The up sampling factor you want to apply.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        A pandas data frame composed of x and y up sampled user coordinates,</span>
+<span class="sd">        namely ``x`` and ``y``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path_user</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">cubic_splines</span><span class="p">(</span><span class="n">path_user</span><span class="p">,</span> <span class="n">up_sampling_factor</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_valid_up_sampled_path">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.get_valid_up_sampled_path">[docs]</a>
+<span class="k">def</span> <span class="nf">get_valid_up_sampled_path</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract an up sampled user trajectory.</span>
+
+<span class="sd">    It starts by filtering and keeping only the valid trajectory, then remove</span>
+<span class="sd">    x and y potential duplicates (needed for the interpolation), and then apply</span>
+<span class="sd">    the interpolation. It only returns a pandas data frame composed of x and y</span>
+<span class="sd">    up sampled user coordinates, namely ``x`` and ``y``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        The pandas data frame obtained via a</span>
+<span class="sd">        :class:`~dispel.providers.generic.tasks.draw.touch.DrawShape`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        A pandas data frame composed of valid up sampled user coordinates</span>
+<span class="sd">        ``x`` and ``y``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">valid_paths</span> <span class="o">=</span> <span class="n">get_valid_path</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">valid_paths</span> <span class="o">=</span> <span class="n">valid_paths</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">])</span>
+    <span class="n">valid_paths_up</span> <span class="o">=</span> <span class="n">up_sample_user_path</span><span class="p">(</span><span class="n">valid_paths</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">valid_paths_up</span></div>
+
+
+
+<div class="viewcode-block" id="get_segment_deceleration">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.get_segment_deceleration">[docs]</a>
+<span class="k">def</span> <span class="nf">get_segment_deceleration</span><span class="p">(</span><span class="n">level_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">range</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve the segment of the deceleration profile of a given shape.</span>
+
+<span class="sd">    The aim of that is to compute intentional tremors for square-like shapes.</span>
+<span class="sd">    Segments on which to compute intentional tremors have been determined by</span>
+<span class="sd">    capturing the velocity profile of each shape against 50 Healthy Control</span>
+<span class="sd">    Participants evaluations. For each shape, the segment</span>
+<span class="sd">    is defined as model points where the mean velocity is comprised between 50%</span>
+<span class="sd">    and 20% of the maximum of the velocity profile.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level_id</span>
+<span class="sd">        The level id on which to retrieve proper the deceleration profile of</span>
+<span class="sd">        the shape.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    range</span>
+<span class="sd">        The list of model path indexes to consider to build the signal to study</span>
+<span class="sd">        intentional tremors.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    KeyError</span>
+<span class="sd">        If passed level_id is not in segments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#: Those ranges have been extracted from the exploratory work on</span>
+    <span class="c1"># intentional tremors (see `Draw Tremor.ipynb` in `Exploratory Data</span>
+    <span class="c1"># Analysis`). They corresponds to segments approaching the second corner of</span>
+    <span class="c1"># the shape, and on which we expect to observe intentonal tremors from</span>
+    <span class="c1"># patients. Those segments may need to be tweaked with patient data.</span>
+    <span class="n">segments</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;square_clock-right&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">415</span><span class="p">,</span> <span class="mi">472</span><span class="p">),</span>
+        <span class="s2">&quot;square_clock-left&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">415</span><span class="p">,</span> <span class="mi">479</span><span class="p">),</span>
+        <span class="s2">&quot;square_counter_clock-right&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">422</span><span class="p">,</span> <span class="mi">476</span><span class="p">),</span>
+        <span class="s2">&quot;square_counter_clock-left&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">386</span><span class="p">,</span> <span class="mi">490</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="n">level_id</span><span class="o">.</span><span class="n">startswith</span><span class="p">,</span> <span class="n">segments</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">segments</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+        <span class="s2">&quot;The intentional tremors for the desired level is not&quot;</span>
+        <span class="s2">&quot; implemented, please provide a level in&quot;</span>
+        <span class="s2">&quot; [square_clock-right, square_clock-right-02,&quot;</span>
+        <span class="s2">&quot; square_clock-left,square_clock-left-02,&quot;</span>
+        <span class="s2">&quot; square_counter_clock-right,&quot;</span>
+        <span class="s2">&quot; square_counter_clock-right-02, square_counter_clock-left,&quot;</span>
+        <span class="s2">&quot; square_counter_clock-left-02]&quot;</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="remove_overshoots">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.remove_overshoots">[docs]</a>
+<span class="k">def</span> <span class="nf">remove_overshoots</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Format data to remove overshoots from user trajectory.</span>
+
+<span class="sd">    Set the first user point as the closest point from the head of the</span>
+<span class="sd">    reference trajectory and set the last user point as the closest point from</span>
+<span class="sd">    the tail of the reference trajectory.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame corresponding to the user data coming from an</span>
+<span class="sd">        aggregated valid touch of a</span>
+<span class="sd">        :class:`~dispel.providers.generic.tasks.draw.touch.DrawShape`.</span>
+<span class="sd">    reference</span>
+<span class="sd">        A pandas data frame corresponding to the reference trajectory coming</span>
+<span class="sd">        from a :class:`~dispel.providers.generic.tasks.draw.touch.DrawShape`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The user data without overshoots (head and tail).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Set x and y coordinates from the first and the last reference trajectory.</span>
+    <span class="n">x_ref_start</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+    <span class="n">y_ref_start</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+    <span class="n">x_ref_end</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+    <span class="n">y_ref_end</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+    <span class="c1"># Compute the distance of user points from the head of the reference.</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;distance_first&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">euclidean_distance</span><span class="p">([</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]],</span> <span class="p">[</span><span class="n">x_ref_start</span><span class="p">,</span> <span class="n">y_ref_start</span><span class="p">]),</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Compute the distance of user points from the tail of the reference.</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;distance_last&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">euclidean_distance</span><span class="p">([</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]],</span> <span class="p">[</span><span class="n">x_ref_end</span><span class="p">,</span> <span class="n">y_ref_end</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="c1"># Flag which points are in the valid starting area.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">check_is_in_area</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">x_ref_start</span><span class="p">,</span> <span class="n">y_ref_start</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;start_area&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># Flag which points are in the end area defined by the 40 pts radius circle</span>
+    <span class="c1"># with (x_ref_end, y_ref_end) point as its center.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">check_is_in_area</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">x_ref_end</span><span class="p">,</span> <span class="n">y_ref_end</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+            <span class="s2">&quot;end_area&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># Determine the first user point going out from the valid starting area.</span>
+    <span class="n">min_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;start_area&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">index</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">min_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">first_out_start_area</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;start_area&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+    <span class="c1"># Determine the last user point before going within the end area.</span>
+    <span class="n">max_end_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;end_area&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">index</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_end_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">max_out_end</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="o">~</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;end_area&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_end_data</span><span class="p">))]</span><span class="o">.</span><span class="n">index</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_out_end</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">last_out_end_area</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_out_end</span><span class="p">)</span>
+    <span class="c1"># Remove early starting points from user trajectory.</span>
+    <span class="n">mask_start</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;start_area&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">first_out_start_area</span><span class="p">),</span> <span class="s2">&quot;distance_first&quot;</span>
+    <span class="p">]</span>
+    <span class="n">idx_start</span> <span class="o">=</span> <span class="n">mask_start</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_start</span> <span class="o">==</span> <span class="n">mask_start</span><span class="o">.</span><span class="n">min</span><span class="p">()]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="c1"># Remove overshoot from user trajectory.</span>
+    <span class="n">mask_end</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;end_area&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;</span> <span class="n">last_out_end_area</span><span class="p">),</span> <span class="s2">&quot;distance_last&quot;</span>
+    <span class="p">]</span>
+    <span class="n">idx_end</span> <span class="o">=</span> <span class="n">mask_end</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_end</span> <span class="o">==</span> <span class="n">mask_end</span><span class="o">.</span><span class="n">min</span><span class="p">()]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx_start</span> <span class="p">:</span> <span class="n">idx_end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="remove_reference_head">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.remove_reference_head">[docs]</a>
+<span class="k">def</span> <span class="nf">remove_reference_head</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove the reference head if the first user point doesn&#39;t match.</span>
+
+<span class="sd">    The function removes the reference head when the reference point that is</span>
+<span class="sd">    the closest to the first user point is different from the first reference</span>
+<span class="sd">    point.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame containing the user trajectory</span>
+<span class="sd">        (with or without overshoot).</span>
+<span class="sd">    reference</span>
+<span class="sd">        A pandas data frame containing the reference trajectory.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The reference trajectory without the head if needed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">reference</span>
+    <span class="n">new_ref</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1"># Flag which points are in the valid starting area defined by the 40 pts</span>
+    <span class="c1"># radius circle.</span>
+    <span class="n">new_ref</span> <span class="o">=</span> <span class="n">new_ref</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">new_ref</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">check_is_in_area</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">new_ref</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">new_ref</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;y&quot;</span><span class="p">]),</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;start_area&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># Compute the distance of reference points from the head of the user</span>
+    <span class="c1"># trajectory.</span>
+    <span class="n">new_ref</span><span class="p">[</span><span class="s2">&quot;distance_first&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_ref</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">euclidean_distance</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]],</span> <span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;y&quot;</span><span class="p">]]</span>
+        <span class="p">),</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Determine the first reference point going out from the valid starting</span>
+    <span class="c1"># area.</span>
+    <span class="n">first_out_start_area</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">new_ref</span><span class="p">[</span><span class="o">~</span><span class="n">new_ref</span><span class="p">[</span><span class="s2">&quot;start_area&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+    <span class="c1"># Remove reference points anterior to the closest one to the first point of</span>
+    <span class="c1"># the user trajectory.</span>
+    <span class="n">mask_start</span> <span class="o">=</span> <span class="n">new_ref</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">new_ref</span><span class="p">[</span><span class="s2">&quot;start_area&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_ref</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">first_out_start_area</span><span class="p">),</span>
+        <span class="s2">&quot;distance_first&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">ref_idx_first</span> <span class="o">=</span> <span class="n">mask_start</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_start</span> <span class="o">==</span> <span class="n">mask_start</span><span class="o">.</span><span class="n">min</span><span class="p">()]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">new_ref</span><span class="p">[</span><span class="n">ref_idx_first</span><span class="p">:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="s2">&quot;old_index&quot;</span><span class="p">})</span></div>
+
+
+
+<span class="c1"># The next functions define 4 parts of the square-like shapes, splitting them</span>
+<span class="c1"># by drawing a line at the center of each axis of shapes.</span>
+
+
+<div class="viewcode-block" id="top_left">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.top_left">[docs]</a>
+<span class="k">def</span> <span class="nf">top_left</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the top left part of a square-like shape (user/reference).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame containing at least a trajectory</span>
+<span class="sd">        (x and y coordinates) of a square-like shape.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The top left part of the square-like shape given as input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">HALF_SCREEN_X</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">HALF_SCREEN_Y</span><span class="p">)]</span></div>
+
+
+
+<div class="viewcode-block" id="bottom_left">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.bottom_left">[docs]</a>
+<span class="k">def</span> <span class="nf">bottom_left</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the bottom left part of a square-like shape (user/reference).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame containing at least a trajectory</span>
+<span class="sd">        (x and y coordinates) of a square-like shape.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The bottom left part of the square-like shape given as input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">HALF_SCREEN_X</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">HALF_SCREEN_Y</span><span class="p">)]</span></div>
+
+
+
+<div class="viewcode-block" id="top_right">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.top_right">[docs]</a>
+<span class="k">def</span> <span class="nf">top_right</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the top right part of a square-like shape (user/reference).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame containing at least a trajectory</span>
+<span class="sd">        (x and y coordinates) of a square-like shape.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The top right part of the square-like shape given as input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">HALF_SCREEN_X</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">HALF_SCREEN_Y</span><span class="p">)]</span></div>
+
+
+
+<div class="viewcode-block" id="bottom_right">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.bottom_right">[docs]</a>
+<span class="k">def</span> <span class="nf">bottom_right</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the bottom right part of a square-like shape (user/reference).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame containing at least a trajectory</span>
+<span class="sd">        (x and y coordinates) of a square-like shape.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The bottom right part of the square-like shape given as input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">HALF_SCREEN_X</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">HALF_SCREEN_Y</span><span class="p">)]</span></div>
+
+
+
+<div class="viewcode-block" id="extract_distance_axis_sc">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.extract_distance_axis_sc">[docs]</a>
+<span class="k">def</span> <span class="nf">extract_distance_axis_sc</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ref</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the distance between draws and reference perpendicular axes.</span>
+
+<span class="sd">    This function is specific to the `square_clock` shapes.</span>
+
+<span class="sd">    This distance is defined as follow: the distance between a user trajectory</span>
+<span class="sd">    and an encountered perpendicular axis corresponding to a 90° trajectory</span>
+<span class="sd">    change of the square-like shape. If the user overshoots</span>
+<span class="sd">    (goes outside the square) the 90° trajectory change, the distance will be</span>
+<span class="sd">    the perpendicular projection of the most distant user point to the axis and</span>
+<span class="sd">    the axis itself. If the user never overshoot (stay within the square) the</span>
+<span class="sd">    axis, the considered distance will be the perpendicular projection of the</span>
+<span class="sd">    closest user point of the axis and the axis itself.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame composed of at least the user trajectory to</span>
+<span class="sd">        consider.</span>
+
+<span class="sd">    ref</span>
+<span class="sd">        A pandas data frame composed of at least the reference trajectory to</span>
+<span class="sd">        consider.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Tuple[float, float, float]</span>
+<span class="sd">        A tuple composed of the extracted aforementioned distances (for the 3</span>
+<span class="sd">        axes).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">top_r</span> <span class="o">=</span> <span class="n">top_right</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">top_r_ref</span> <span class="o">=</span> <span class="n">top_right</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span>
+    <span class="n">top_r_dist</span> <span class="o">=</span> <span class="n">top_r</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">top_r_ref</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="n">bott_r</span> <span class="o">=</span> <span class="n">bottom_right</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">bott_r_ref</span> <span class="o">=</span> <span class="n">bottom_right</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span>
+    <span class="n">bott_r_dist</span> <span class="o">=</span> <span class="n">bott_r_ref</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">bott_r</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+    <span class="n">bott_l</span> <span class="o">=</span> <span class="n">bottom_left</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">bott_l_ref</span> <span class="o">=</span> <span class="n">bottom_left</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span>
+    <span class="n">bott_l_dist</span> <span class="o">=</span> <span class="n">bott_l_ref</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">bott_l</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">top_r_dist</span><span class="p">,</span> <span class="n">bott_r_dist</span><span class="p">,</span> <span class="n">bott_l_dist</span></div>
+
+
+
+<div class="viewcode-block" id="extract_distance_axis_scc">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.extract_distance_axis_scc">[docs]</a>
+<span class="k">def</span> <span class="nf">extract_distance_axis_scc</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ref</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the distance between draws and reference perpendicular axes.</span>
+
+<span class="sd">    This function is specific to the `square_counter_clock` shapes.</span>
+
+<span class="sd">    This distance is defined as follow: the distance between a user trajectory</span>
+<span class="sd">    and an encountered perpendicular axis corresponding to a 90° trajectory</span>
+<span class="sd">    change of the square-like shape. If the user overshoots</span>
+<span class="sd">    (goes outside the square) the 90° trajectory change, the distance will be</span>
+<span class="sd">    the perpendicular projection of the most distant user point to the axis and</span>
+<span class="sd">    the axis itself. If the user never overshoot (stay within the square) the</span>
+<span class="sd">    axis, the considered distance will be the perpendicular projection of the</span>
+<span class="sd">    closest user point of the axis and the axis itself.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas data frame composed of at least the user trajectory to</span>
+<span class="sd">        consider.</span>
+
+<span class="sd">    ref</span>
+<span class="sd">        A pandas data frame composed of at least the reference trajectory to</span>
+<span class="sd">        consider.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Tuple[float, float, float]</span>
+<span class="sd">        A tuple composed of the extracted aforementioned distances (for the 3</span>
+<span class="sd">        axes).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">top_l</span> <span class="o">=</span> <span class="n">top_left</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">top_l_ref</span> <span class="o">=</span> <span class="n">top_left</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span>
+    <span class="n">top_l_dist</span> <span class="o">=</span> <span class="n">top_l_ref</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">top_l</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+    <span class="n">bott_l</span> <span class="o">=</span> <span class="n">bottom_left</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">bott_l_ref</span> <span class="o">=</span> <span class="n">bottom_left</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span>
+    <span class="n">bott_l_dist</span> <span class="o">=</span> <span class="n">bott_l_ref</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">bott_l</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+    <span class="n">bott_r</span> <span class="o">=</span> <span class="n">bottom_right</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">bott_r_ref</span> <span class="o">=</span> <span class="n">bottom_right</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span>
+    <span class="n">bott_r_dist</span> <span class="o">=</span> <span class="n">bott_r</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">bott_r_ref</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">top_l_dist</span><span class="p">,</span> <span class="n">bott_l_dist</span><span class="p">,</span> <span class="n">bott_r_dist</span></div>
+
+
+
+<div class="viewcode-block" id="get_max_dist_corner">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.get_max_dist_corner">[docs]</a>
+<span class="k">def</span> <span class="nf">get_max_dist_corner</span><span class="p">(</span>
+    <span class="n">user</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">attrib</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ref</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">corner</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve the Fréchet distance within a corner zone.</span>
+
+<span class="sd">    The Fréchet distance is the maximum of the minimum distance between the</span>
+<span class="sd">    user and the reference trajectories based on the dynamic time warping</span>
+<span class="sd">    attributions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    user</span>
+<span class="sd">        The user trajectory user for computing the DTW attributions.</span>
+<span class="sd">    attrib</span>
+<span class="sd">        The related dynamic time warping attributions for the considered</span>
+<span class="sd">        reference trajectory with the user trajectory of interest.</span>
+<span class="sd">    ref</span>
+<span class="sd">        The reference trajectory</span>
+<span class="sd">    corner</span>
+<span class="sd">        The corner zone of the reference trajectory to consider.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        The maximum of the minimum distances from DTW attributions within the</span>
+<span class="sd">        considered corner zone.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">is_in</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">check_is_in_area</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">corner</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">corner</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">ref</span><span class="p">[</span><span class="n">is_in</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+    <span class="k">if</span> <span class="n">idx</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">narrow_attrib</span> <span class="o">=</span> <span class="n">attrib</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">attrib</span><span class="o">.</span><span class="n">expect</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span>
+    <span class="n">max_dist</span> <span class="o">=</span> <span class="n">narrow_attrib</span><span class="o">.</span><span class="n">min_distance</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">user_idx</span> <span class="o">=</span> <span class="n">narrow_attrib</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">narrow_attrib</span><span class="o">.</span><span class="n">min_distance</span> <span class="o">==</span> <span class="n">max_dist</span><span class="p">,</span> <span class="s2">&quot;actual&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">user_point</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_idx</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">user_point</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">SHAPE_BOUNDARIES</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="o">&amp;</span> <span class="p">(</span><span class="n">user_point</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">SHAPE_BOUNDARIES</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        <span class="o">&amp;</span> <span class="p">(</span><span class="n">user_point</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">SHAPE_BOUNDARIES</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="o">&amp;</span> <span class="p">(</span><span class="n">user_point</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">SHAPE_BOUNDARIES</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="p">):</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">max_dist</span>
+    <span class="k">return</span> <span class="n">max_dist</span></div>
+
+
+
+<div class="viewcode-block" id="scc_corners_max_dist">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.scc_corners_max_dist">[docs]</a>
+<span class="k">def</span> <span class="nf">scc_corners_max_dist</span><span class="p">(</span>
+    <span class="n">user</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ref</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">attrib</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute maximum distance per corner zones.</span>
+
+<span class="sd">    For square counter clock shapes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    user</span>
+<span class="sd">        A pandas data frame composed of at least the user trajectory used for</span>
+<span class="sd">        computing DTW attributions.</span>
+<span class="sd">    ref</span>
+<span class="sd">        A pandas data frame composed of at least the reference trajectory.</span>
+<span class="sd">    attrib</span>
+<span class="sd">        The related dynamic time warping attributions for the considered</span>
+<span class="sd">        reference trajectory with the user trajectory of interest.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Tuple[float, float, float]</span>
+<span class="sd">        A tuple composed of the extracted aforementioned distances (for the 3</span>
+<span class="sd">        related corners).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dist_ctl</span> <span class="o">=</span> <span class="n">get_max_dist_corner</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">attrib</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">CTL</span><span class="p">)</span>
+    <span class="n">dist_cbl</span> <span class="o">=</span> <span class="n">get_max_dist_corner</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">attrib</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">CBL</span><span class="p">)</span>
+    <span class="n">dist_cbr</span> <span class="o">=</span> <span class="n">get_max_dist_corner</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">attrib</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">CBR</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dist_ctl</span><span class="p">,</span> <span class="n">dist_cbl</span><span class="p">,</span> <span class="n">dist_cbr</span></div>
+
+
+
+<div class="viewcode-block" id="sc_corners_max_dist">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.draw.shapes.html#dispel.providers.generic.tasks.draw.shapes.sc_corners_max_dist">[docs]</a>
+<span class="k">def</span> <span class="nf">sc_corners_max_dist</span><span class="p">(</span>
+    <span class="n">user</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ref</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">attrib</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute maximum distance per corner zones.</span>
+
+<span class="sd">    For square clock shapes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">     user</span>
+<span class="sd">        A pandas data frame composed of at least the user trajectory used for</span>
+<span class="sd">        computing DTW attributions.</span>
+<span class="sd">    ref</span>
+<span class="sd">        A pandas data frame composed of at least the reference trajectory.</span>
+<span class="sd">    attrib</span>
+<span class="sd">        The related dynamic time warping attributions for the considered</span>
+<span class="sd">        reference trajectory with the user trajectory of interest.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Tuple[float, float, float]</span>
+<span class="sd">        A tuple composed of the extracted aforementioned distances (for the 3</span>
+<span class="sd">        related corners).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dist_ctr</span> <span class="o">=</span> <span class="n">get_max_dist_corner</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">attrib</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">CTR</span><span class="p">)</span>
+    <span class="n">dist_cbr</span> <span class="o">=</span> <span class="n">get_max_dist_corner</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">attrib</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">CBR</span><span class="p">)</span>
+    <span class="n">dist_cbl</span> <span class="o">=</span> <span class="n">get_max_dist_corner</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">attrib</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">CBL</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dist_ctr</span><span class="p">,</span> <span class="n">dist_cbr</span><span class="p">,</span> <span class="n">dist_cbl</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

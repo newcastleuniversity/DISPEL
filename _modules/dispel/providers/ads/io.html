@@ -1,0 +1,1046 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.ads.io &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/ads/io';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.ads.io</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Functionality to read ADS files.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Device</span><span class="p">,</span> <span class="n">Evaluation</span><span class="p">,</span> <span class="n">ReadingSchema</span><span class="p">,</span> <span class="n">Session</span>
+<span class="kn">from</span> <span class="nn">dispel.data.devices</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AndroidPlatform</span><span class="p">,</span>
+    <span class="n">AndroidScreen</span><span class="p">,</span>
+    <span class="n">IOSPlatform</span><span class="p">,</span>
+    <span class="n">IOSScreen</span><span class="p">,</span>
+    <span class="n">Screen</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.data.epochs</span> <span class="kn">import</span> <span class="n">EpochDefinition</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Context</span><span class="p">,</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RawDataSet</span><span class="p">,</span>
+    <span class="n">RawDataSetDefinition</span><span class="p">,</span>
+    <span class="n">RawDataSetSource</span><span class="p">,</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">Value</span><span class="p">,</span> <span class="n">ValueDefinition</span>
+<span class="kn">from</span> <span class="nn">dispel.io.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">convert_data_frame_type</span><span class="p">,</span>
+    <span class="n">convert_literal_type</span><span class="p">,</span>
+    <span class="n">get_data_type_mapping</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.io.utils</span> <span class="kn">import</span> <span class="n">load_json</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.ads.data</span> <span class="kn">import</span> <span class="n">ADSModalities</span><span class="p">,</span> <span class="n">ADSReading</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.cps.utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">EXPECTED_DURATION_D2D</span><span class="p">,</span>
+    <span class="n">EXPECTED_DURATION_S2D</span><span class="p">,</span>
+    <span class="n">LEVEL_DURATION_DEF</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.registry</span> <span class="kn">import</span> <span class="n">register_reader</span>
+
+
+<div class="viewcode-block" id="parse_screen">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parse_screen">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_screen</span><span class="p">(</span><span class="n">platform</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">screen_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Screen</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse a screen dictionary into a Screen class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    platform</span>
+<span class="sd">        The device platform.</span>
+<span class="sd">    screen_dict</span>
+<span class="sd">        The screen information dictionary.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Screen</span>
+<span class="sd">        The screen information.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If given an unsupported platform.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">width_dp_pt</span> <span class="o">=</span> <span class="n">screen_dict</span><span class="p">[</span><span class="s2">&quot;widthPixels&quot;</span><span class="p">]</span>
+    <span class="n">height_dp_pt</span> <span class="o">=</span> <span class="n">screen_dict</span><span class="p">[</span><span class="s2">&quot;heightPixels&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;iOS&quot;</span><span class="p">:</span>
+        <span class="n">scale_factor</span> <span class="o">=</span> <span class="n">screen_dict</span><span class="p">[</span><span class="s2">&quot;scaleFactor&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">IOSScreen</span><span class="p">(</span>
+            <span class="n">width_pixels</span><span class="o">=</span><span class="n">width_dp_pt</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">,</span>
+            <span class="n">height_pixels</span><span class="o">=</span><span class="n">height_dp_pt</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">,</span>
+            <span class="n">density_dpi</span><span class="o">=</span><span class="n">screen_dict</span><span class="p">[</span><span class="s2">&quot;densityDpi&quot;</span><span class="p">],</span>
+            <span class="n">width_dp_pt</span><span class="o">=</span><span class="n">width_dp_pt</span><span class="p">,</span>
+            <span class="n">height_dp_pt</span><span class="o">=</span><span class="n">height_dp_pt</span><span class="p">,</span>
+            <span class="n">scale_factor</span><span class="o">=</span><span class="n">scale_factor</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;Android&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">AndroidScreen</span><span class="p">(</span>
+            <span class="n">width_dp_pt</span><span class="p">,</span>
+            <span class="n">height_dp_pt</span><span class="p">,</span>
+            <span class="n">screen_dict</span><span class="p">[</span><span class="s2">&quot;densityDpi&quot;</span><span class="p">],</span>
+            <span class="n">screen_dict</span><span class="p">[</span><span class="s2">&quot;xDpi&quot;</span><span class="p">],</span>
+            <span class="n">screen_dict</span><span class="p">[</span><span class="s2">&quot;yDpi&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="s2">&quot;Platform only supports the following values: `iOS` and `Android`.&quot;</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_device">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parse_device">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_device</span><span class="p">(</span><span class="n">device_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Device</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse a device dictionary into a Device class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    device_dict</span>
+<span class="sd">        The device information dictionary.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Device</span>
+<span class="sd">        The device information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">platform_str</span> <span class="o">=</span> <span class="n">device_dict</span><span class="p">[</span><span class="s2">&quot;platform&quot;</span><span class="p">]</span>
+    <span class="n">platform</span> <span class="o">=</span> <span class="n">IOSPlatform</span><span class="p">()</span> <span class="k">if</span> <span class="n">platform_str</span> <span class="o">==</span> <span class="s2">&quot;iOS&quot;</span> <span class="k">else</span> <span class="n">AndroidPlatform</span><span class="p">()</span>
+    <span class="n">screen</span> <span class="o">=</span> <span class="n">parse_screen</span><span class="p">(</span><span class="n">platform_str</span><span class="p">,</span> <span class="n">device_dict</span><span class="p">[</span><span class="s2">&quot;screen&quot;</span><span class="p">])</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">device_dict</span><span class="p">[</span><span class="s2">&quot;osVersion&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">platform_str</span> <span class="o">==</span> <span class="s2">&quot;iOS&quot;</span>
+        <span class="k">else</span> <span class="n">device_dict</span><span class="p">[</span><span class="s2">&quot;kernelVersion&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Device</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">platform</span><span class="p">,</span>
+        <span class="n">device_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">),</span>
+        <span class="n">device_dict</span><span class="p">[</span><span class="s2">&quot;modelCode&quot;</span><span class="p">],</span>
+        <span class="n">version</span><span class="p">,</span>
+        <span class="n">device_dict</span><span class="p">[</span><span class="s2">&quot;versionNumber&quot;</span><span class="p">],</span>
+        <span class="n">device_dict</span><span class="p">[</span><span class="s2">&quot;buildNumber&quot;</span><span class="p">],</span>
+        <span class="n">screen</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_session">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parse_session">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_session</span><span class="p">(</span><span class="n">session_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Session</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse the session information into a Session class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    session_dict</span>
+<span class="sd">        The session information dictionary.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Session</span>
+<span class="sd">        The session related information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">session_dict</span><span class="p">[</span><span class="s2">&quot;startDate&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">session_dict</span><span class="p">[</span><span class="s2">&quot;endDate&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Session</span><span class="p">(</span>
+        <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+        <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span>
+        <span class="n">definition</span><span class="o">=</span><span class="n">EpochDefinition</span><span class="p">(</span><span class="n">id_</span><span class="o">=</span><span class="n">session_dict</span><span class="p">[</span><span class="s2">&quot;sessionCode&quot;</span><span class="p">]),</span>
+        <span class="n">uuid</span><span class="o">=</span><span class="n">session_dict</span><span class="p">[</span><span class="s2">&quot;uuidSession&quot;</span><span class="p">],</span>
+        <span class="n">evaluation_codes</span><span class="o">=</span><span class="n">session_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;evaluationCodes&quot;</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_evaluation">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parse_evaluation">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_evaluation</span><span class="p">(</span>
+    <span class="n">id_</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">evaluation</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Evaluation</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse the evaluation information into an Evaluation class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    id_</span>
+<span class="sd">        The evaluation identifier</span>
+<span class="sd">    evaluation</span>
+<span class="sd">        The evaluation dictionary information</span>
+<span class="sd">    user_id</span>
+<span class="sd">        The identifier of the user</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Evaluation</span>
+<span class="sd">        The evaluation related information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;beginTimestamp&quot;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ms&quot;</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;endTimestamp&quot;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ms&quot;</span><span class="p">)</span>
+
+    <span class="n">evaluation_code</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">Evaluation</span><span class="p">(</span>
+        <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+        <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span>
+        <span class="n">definition</span><span class="o">=</span><span class="n">EpochDefinition</span><span class="p">(</span><span class="n">id_</span><span class="o">=</span><span class="n">evaluation_code</span><span class="p">),</span>
+        <span class="n">uuid</span><span class="o">=</span><span class="n">id_</span><span class="p">,</span>
+        <span class="n">finished</span><span class="o">=</span><span class="n">cast</span><span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;finished&quot;</span><span class="p">]),</span>
+        <span class="n">exit_reason</span><span class="o">=</span><span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;exitReason&quot;</span><span class="p">]),</span>
+        <span class="n">user_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="create_ads_value_definitions">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.create_ads_value_definitions">[docs]</a>
+<span class="k">def</span> <span class="nf">create_ads_value_definitions</span><span class="p">(</span>
+    <span class="n">value_sample</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">raw_data_set_id</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create ADS related value definition classes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value_sample</span>
+<span class="sd">        A list of an ads raw data sensor value level</span>
+<span class="sd">    raw_data_set_id</span>
+<span class="sd">        The raw data set id</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    List[RawDataValueDefinition]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">value_definitions</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">value_dict</span> <span class="ow">in</span> <span class="n">value_sample</span><span class="p">:</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">value_dict</span><span class="p">[</span><span class="s2">&quot;unit&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="n">value_dict</span><span class="p">[</span><span class="s2">&quot;unit&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;n/a&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">value_definitions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+                <span class="n">value_dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">raw_data_set_id</span><span class="p">,</span> <span class="n">value_dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]]),</span>
+                <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="n">get_data_type_mapping</span><span class="p">(</span><span class="n">value_dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">value_definitions</span></div>
+
+
+
+<div class="viewcode-block" id="create_ads_raw_data_set_definition">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.create_ads_raw_data_set_definition">[docs]</a>
+<span class="k">def</span> <span class="nf">create_ads_raw_data_set_definition</span><span class="p">(</span>
+    <span class="n">value_definitions</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">],</span> <span class="n">raw_data_set_id</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RawDataSetDefinition</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create ADS raw data set definition.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value_definitions</span>
+<span class="sd">        An iterable of raw data value definitions</span>
+<span class="sd">    raw_data_set_id</span>
+<span class="sd">        The raw data set id</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    RawDataSetDefinition</span>
+<span class="sd">        The definition of the raw data set</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># check if value is computed or measured</span>
+    <span class="n">is_computed</span> <span class="o">=</span> <span class="n">raw_data_set_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;accelerometer&quot;</span><span class="p">,</span> <span class="s2">&quot;gyroscope&quot;</span><span class="p">,</span> <span class="s2">&quot;gps&quot;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">RawDataSetDefinition</span><span class="p">(</span>
+        <span class="n">raw_data_set_id</span><span class="p">,</span> <span class="n">RawDataSetSource</span><span class="p">(</span><span class="s2">&quot;ADS&quot;</span><span class="p">),</span> <span class="n">value_definitions</span><span class="p">,</span> <span class="n">is_computed</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_frame_measurement_data</span><span class="p">(</span><span class="n">measurements</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a list of raw ADS measurements to a pandas data frame format.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    measurements</span>
+<span class="sd">        A list of dictionary value measurements</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">measurements</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;values&quot;</span><span class="p">]]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="p">[</span><span class="n">value</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">measurement</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]]</span>
+            <span class="k">for</span> <span class="n">measurement</span> <span class="ow">in</span> <span class="n">measurements</span>
+        <span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">convert_data_frame_type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_ads_raw_data_set">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.get_ads_raw_data_set">[docs]</a>
+<span class="k">def</span> <span class="nf">get_ads_raw_data_set</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">raw_data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read the ads raw data sets.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level</span>
+<span class="sd">        An evaluation level as in ADS json format, e.g.</span>
+<span class="sd">        ``data[&#39;mobileEvaluationTest&#39;][&#39;levels&#39;][level_num]`` with</span>
+<span class="sd">        ``level_num in {0,1,2,...}``</span>
+<span class="sd">    raw_data_set_id</span>
+<span class="sd">        The raw data set id</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The raw data set data frame.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the raw data set id is not found in level data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># go through sensors (e.g. level[&#39;sensors&#39;] = {&#39;user_input&#39;, &#39;screen&#39;})</span>
+    <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">raw_data_set_id</span><span class="p">,</span> <span class="n">level</span><span class="p">[</span><span class="s2">&quot;sensors&quot;</span><span class="p">]):</span>
+        <span class="n">raw_data_set</span> <span class="o">=</span> <span class="n">_frame_measurement_data</span><span class="p">(</span><span class="n">sensor</span><span class="p">[</span><span class="s2">&quot;measurements&quot;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">raw_data_set</span>
+
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown raw_data_set_id </span><span class="si">{</span><span class="n">raw_data_set_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_raw_data_set_value_definitions">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parse_raw_data_set_value_definitions">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_raw_data_set_value_definitions</span><span class="p">(</span>
+    <span class="n">level</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">raw_data_set_id</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RawDataSetDefinition</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse ADS raw data set value definitions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level : dict</span>
+<span class="sd">        An evaluation level as in ADS json format, e.g.</span>
+<span class="sd">        ``level = data[&#39;mobileEvaluationTest&#39;][&#39;levels&#39;][level_id]`` with</span>
+<span class="sd">        ``level_id`` in ``{0, 1, 2, ...}``</span>
+<span class="sd">    raw_data_set_id</span>
+<span class="sd">        The raw data set id</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    RawDataSetDefinition</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># initialize value_definition</span>
+    <span class="n">value_definitions</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># go through sensors (e.g. level[&#39;sensors&#39;] = {&#39;user_input&#39;, &#39;screen&#39;})</span>
+    <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">level</span><span class="p">[</span><span class="s2">&quot;sensors&quot;</span><span class="p">]:</span>
+        <span class="c1"># check if id matches the sensor</span>
+        <span class="k">if</span> <span class="n">sensor</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">raw_data_set_id</span><span class="p">:</span>
+            <span class="c1"># get measurements values and create definition</span>
+            <span class="n">value_definitions</span> <span class="o">=</span> <span class="n">create_ads_value_definitions</span><span class="p">(</span>
+                <span class="n">sensor</span><span class="p">[</span><span class="s2">&quot;measurements&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;values&quot;</span><span class="p">],</span> <span class="n">raw_data_set_id</span>
+            <span class="p">)</span>
+
+    <span class="c1"># create definition</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">create_ads_raw_data_set_definition</span><span class="p">(</span><span class="n">value_definitions</span><span class="p">,</span> <span class="n">raw_data_set_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">definition</span></div>
+
+
+
+<div class="viewcode-block" id="create_ads_raw_data_set">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.create_ads_raw_data_set">[docs]</a>
+<span class="k">def</span> <span class="nf">create_ads_raw_data_set</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">raw_data_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RawDataSet</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create ADS raw data set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : dict</span>
+<span class="sd">        An evaluation level as in ADS json format, e.g.</span>
+<span class="sd">        ``data[&#39;mobileEvaluationTest&#39;][&#39;levels&#39;][level_num]`` with</span>
+<span class="sd">        ``level_num`` in ``{0, 1, 2, ...}``</span>
+<span class="sd">    raw_data_set_id</span>
+<span class="sd">        The raw data set id</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    RawDataSet</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># parse raw dataset and set definitions</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">parse_raw_data_set_value_definitions</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">raw_data_set_id</span><span class="p">)</span>
+
+    <span class="c1"># create dataframe and update types</span>
+    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">convert_data_frame_type</span><span class="p">(</span><span class="n">get_ads_raw_data_set</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">raw_data_set_id</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">RawDataSet</span><span class="p">(</span><span class="n">definition</span><span class="p">,</span> <span class="n">data_frame</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_ads_raw_data_set_ids">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.get_ads_raw_data_set_ids">[docs]</a>
+<span class="k">def</span> <span class="nf">get_ads_raw_data_set_ids</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the ads raw data sets ids.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A sample of an ads raw data sensor level</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Generator[str, None, None]</span>
+<span class="sd">        The list of raw data set ids</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">sensor</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sensor</span><span class="p">[</span><span class="s2">&quot;measurements&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_context">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parse_context">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_context</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Context</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse the context information available for each level.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A dictionary extracted from a json corresponding to the context related</span>
+<span class="sd">        information</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Context</span>
+<span class="sd">        The context representation of the passed ``data``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_values_for_context</span><span class="p">(</span><span class="n">value_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">value_data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Value</span><span class="p">(</span>
+            <span class="n">ValueDefinition</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value_data</span><span class="p">[</span><span class="s2">&quot;unit&quot;</span><span class="p">]),</span>
+            <span class="n">convert_literal_type</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value_data</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]),</span>
+        <span class="p">)</span>
+
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">_values_for_context</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">Context</span><span class="p">(</span><span class="n">values</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="enrich_context">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.enrich_context">[docs]</a>
+<span class="k">def</span> <span class="nf">enrich_context</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">evaluation_code</span><span class="p">,</span> <span class="n">level_modalities</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enrich the context information with test specific information.&quot;&quot;&quot;</span>
+    <span class="c1"># CPS</span>
+    <span class="k">if</span> <span class="n">evaluation_code</span> <span class="o">==</span> <span class="s2">&quot;cps&quot;</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level_modalities</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">level_modalities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;symbol_to_digit&quot;</span><span class="p">:</span>
+            <span class="n">duration</span> <span class="o">=</span> <span class="n">EXPECTED_DURATION_S2D</span>
+        <span class="k">elif</span> <span class="n">level_modalities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;digit_to_digit&quot;</span><span class="p">:</span>
+            <span class="n">duration</span> <span class="o">=</span> <span class="n">EXPECTED_DURATION_D2D</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unexpected modality </span><span class="si">{</span><span class="n">level_modalities</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">duration</span><span class="p">,</span> <span class="n">LEVEL_DURATION_DEF</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_level">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parse_level">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_level</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">evaluation_code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ads_modalities</span><span class="p">:</span> <span class="n">ADSModalities</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Level</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse a specific level.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A dictionary extracted from a json corresponding to a level.</span>
+<span class="sd">    evaluation_code</span>
+<span class="sd">        The evaluation code, e.g. ``CPS``.</span>
+<span class="sd">    ads_modalities</span>
+<span class="sd">        The AdS modalities object.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Level</span>
+<span class="sd">        The level representation of ``data``.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">parse_context</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;contexts&quot;</span><span class="p">])</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;beginTimestamp&quot;</span><span class="p">]),</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ms&quot;</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;endTimestamp&quot;</span><span class="p">]),</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ms&quot;</span><span class="p">)</span>
+
+    <span class="c1"># level_id</span>
+    <span class="n">level_modalities</span> <span class="o">=</span> <span class="n">ads_modalities</span><span class="o">.</span><span class="n">get_modalities_from_context</span><span class="p">(</span>
+        <span class="n">evaluation_code</span><span class="o">=</span><span class="n">evaluation_code</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span>
+    <span class="p">)</span>
+
+    <span class="n">raw_data_set_ids</span> <span class="o">=</span> <span class="n">get_ads_raw_data_set_ids</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;sensors&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Remove duplicate UserInput from Mood</span>
+    <span class="k">if</span> <span class="n">evaluation_code</span> <span class="o">==</span> <span class="s2">&quot;mood&quot;</span><span class="p">:</span>
+        <span class="n">raw_data_set_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">raw_data_set_ids</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">raw_data_set_ids</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;userInput&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;Several answers to the same question have been detected. The &quot;</span>
+                <span class="s2">&quot;last answer is kept.&quot;</span><span class="p">,</span>
+                <span class="ne">UserWarning</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">raw_data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;userInput&quot;</span><span class="p">]</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;sensors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;sensors&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+    <span class="c1"># init raw_data_sets data structure</span>
+    <span class="n">raw_data_sets</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">raw_data_set_id</span> <span class="ow">in</span> <span class="n">raw_data_set_ids</span><span class="p">:</span>
+        <span class="n">raw_data_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_ads_raw_data_set</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">raw_data_set_id</span><span class="p">))</span>
+
+    <span class="n">enrich_context</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">evaluation_code</span><span class="p">,</span> <span class="n">level_modalities</span><span class="p">)</span>
+
+    <span class="c1"># fill levels</span>
+    <span class="k">return</span> <span class="n">Level</span><span class="p">(</span>
+        <span class="n">id_</span><span class="o">=</span><span class="n">level_modalities</span><span class="p">,</span>
+        <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+        <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span>
+        <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">,</span>
+        <span class="n">raw_data_sets</span><span class="o">=</span><span class="n">raw_data_sets</span><span class="p">,</span>
+        <span class="n">measure_set</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_levels">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parse_levels">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_levels</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">evaluation_code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ads_modalities</span><span class="p">:</span> <span class="n">ADSModalities</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Level</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Extract a list of Level from ``levels_data``.</span>
+
+<span class="sd">    Here ``levels_data`` refers to ``data[&#39;mobileEvaluationTest&#39;][&#39;levels&#39;]``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A dictionary extracted from a json corresponding to every level</span>
+<span class="sd">        related information.</span>
+<span class="sd">    evaluation_code</span>
+<span class="sd">        The evaluation code, e.g. ``CPS``</span>
+<span class="sd">    ads_modalities</span>
+<span class="sd">        The AdS modalities object.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    List[Level]</span>
+<span class="sd">        A list of :class:`~dispel.data.core.Level`\ s.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">levels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">level_data</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parse_level</span><span class="p">(</span><span class="n">level_data</span><span class="p">,</span> <span class="n">evaluation_code</span><span class="p">,</span> <span class="n">ads_modalities</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">levels</span></div>
+
+
+
+<div class="viewcode-block" id="parsable_ads_json">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parsable_ads_json">[docs]</a>
+<span class="k">def</span> <span class="nf">parsable_ads_json</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Infer if a value can be automatically read with :func:`parse_ads_raw_json`.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="s2">&quot;mobileEvaluationTest&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="parse_ads_raw_json">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.parse_ads_raw_json">[docs]</a>
+<span class="nd">@register_reader</span><span class="p">(</span><span class="n">parsable_ads_json</span><span class="p">,</span> <span class="n">ADSReading</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">parse_ads_raw_json</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ADSReading</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse data from ADS JSON file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        The ADS raw data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ADSReading</span>
+<span class="sd">        The :class:`~dispel.data.ads.ADSReading` representation of the ADS JSON</span>
+<span class="sd">        raw data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">evaluation</span> <span class="o">=</span> <span class="n">parse_evaluation</span><span class="p">(</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;uuid&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;mobileEvaluationTest&quot;</span><span class="p">],</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;userId&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># sessions</span>
+    <span class="n">session_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mobileSession&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">session_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">session</span> <span class="o">=</span> <span class="n">parse_session</span><span class="p">(</span><span class="n">session_data</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># `data[&#39;mobileSession&#39;]` is `None` in the passive test.</span>
+        <span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">(</span>
+            <span class="n">start</span><span class="o">=</span><span class="n">evaluation</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+            <span class="n">end</span><span class="o">=</span><span class="n">evaluation</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">EpochDefinition</span><span class="p">(</span><span class="n">id_</span><span class="o">=</span><span class="s2">&quot;n/a&quot;</span><span class="p">),</span>
+            <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;n/a&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="n">schema</span> <span class="o">=</span> <span class="n">ReadingSchema</span><span class="p">(</span><span class="s2">&quot;ADS&quot;</span><span class="p">,</span> <span class="s2">&quot;konectom&quot;</span><span class="p">,</span> <span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="n">parse_device</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;mobileDevice&quot;</span><span class="p">])</span>
+
+    <span class="c1"># parse levels</span>
+    <span class="n">levels_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;mobileEvaluationTest&quot;</span><span class="p">][</span><span class="s2">&quot;levels&quot;</span><span class="p">]</span>
+    <span class="n">levels</span> <span class="o">=</span> <span class="n">parse_levels</span><span class="p">(</span>
+        <span class="n">levels_data</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">evaluation</span><span class="o">.</span><span class="n">id</span><span class="p">),</span> <span class="n">ADSModalities</span><span class="p">(</span><span class="n">device</span><span class="o">.</span><span class="n">app_version_number</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ADSReading</span><span class="p">(</span>
+        <span class="n">evaluation</span><span class="o">=</span><span class="n">evaluation</span><span class="p">,</span>
+        <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+        <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span>
+        <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span>
+        <span class="n">date</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;receptionDate&quot;</span><span class="p">),</span>
+        <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="read_ads">
+<a class="viewcode-back" href="../../../../api/dispel.providers.ads.io.html#dispel.providers.ads.io.read_ads">[docs]</a>
+<span class="k">def</span> <span class="nf">read_ads</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ADSReading</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read raw ADS JSON file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    path</span>
+<span class="sd">        The path to the JSON file containing the data to be read.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ADSReading</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">parse_ads_raw_json</span><span class="p">(</span><span class="n">load_json</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">))</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

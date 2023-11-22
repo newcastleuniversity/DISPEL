@@ -1,0 +1,1128 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.tasks.gait.lee &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/tasks/gait/lee';</script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.tasks.gait.lee</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Step detection module specific to Lee et al. algorithm.</span>
+
+<span class="sd">This module contains functionality to perform step detection with a revisited</span>
+<span class="sd">version of the Lee et al. algorithm.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">enum</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">GREATER_THAN_ZERO</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="n">ProcessingStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+    <span class="n">AggregateRawDataSetColumn</span><span class="p">,</span>
+    <span class="n">ExtractStep</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">ProcessingStepGroup</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.bout_strategy</span> <span class="kn">import</span> <span class="n">BoutStrategyModality</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DetectStepsProcessingBase</span><span class="p">,</span>
+    <span class="n">DetectStepsWithoutBoutsBase</span><span class="p">,</span>
+    <span class="n">ExtractPowerBoutDivSteps</span><span class="p">,</span>
+    <span class="n">ExtractStepCount</span><span class="p">,</span>
+    <span class="n">ExtractStepDurationAll</span><span class="p">,</span>
+    <span class="n">FootUsed</span><span class="p">,</span>
+    <span class="n">StepEvent</span><span class="p">,</span>
+    <span class="n">power_bout_div_steps</span><span class="p">,</span>
+    <span class="n">step_count</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.gait.hip</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ExtractHipRotation</span><span class="p">,</span>
+    <span class="n">ExtractHipRotationWithoutBouts</span><span class="p">,</span>
+    <span class="n">HipRotationGroup</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.core</span> <span class="kn">import</span> <span class="n">index_time_diff</span>
+
+
+<div class="viewcode-block" id="StepState">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.StepState">[docs]</a>
+<span class="k">class</span> <span class="nc">StepState</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Step detection states for Lee et al. algorithm.&quot;&quot;&quot;</span>
+
+    <span class="n">PEAK</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">VALLEY</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">INTMD</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">INITIAL</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span></div>
+
+
+
+<span class="n">LEE_MOD</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;Lee algorithm&quot;</span><span class="p">,</span> <span class="s2">&quot;lee&quot;</span><span class="p">)</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;A modality indicating something has been computed with Lee algorithm.&quot;&quot;&quot;</span>
+
+<span class="c1"># MODEL CONSTANTS</span>
+<span class="n">K_SIGMA</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Parameter K_SIGMA should be selected such that the step deviation can</span>
+<span class="sd">reflect the long-term variation in the statistics of the vertical acceleration.</span>
+<span class="sd">The value of 25 is assigned to K to cover one step cycle in normal walking</span>
+<span class="sd">speed with the sampling rate of 50 Hz.&quot;&quot;&quot;</span>
+<span class="n">M_SIGMA</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Parameter M should be selected with :math:`\beta` such that the statistics</span>
+<span class="sd">of peak or valley intervals can reflect the time-varying speed of walking or</span>
+<span class="sd">running and the noisy peaks or valleys can be delineated from real peaks or</span>
+<span class="sd">valleys.&quot;&quot;&quot;</span>
+<span class="n">ALPHA</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Parameter :math:`\alpha` is a magnitude constant that should be assigned</span>
+<span class="sd">so as not to disturb the peak or valley detection due to large step deviation</span>
+<span class="sd">during step mode change, especially from running to walking.&quot;&quot;&quot;</span>
+<span class="n">BETA</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Parameter :math:`\beta` is a time scale constant that should be assigned</span>
+<span class="sd">with M. It is used to rescale (as a denominator) the standard deviation of</span>
+<span class="sd">the last M peak or valley time-intervals when computing the time threshold</span>
+<span class="sd">used to accept or reject any peak or valley candidate.&quot;&quot;&quot;</span>
+
+<span class="c1"># Parameters Initialization (not defined in the paper).</span>
+<span class="n">DEFAULT_MU</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Default parameter :math:`\mu` is used to initiate the average time between</span>
+<span class="sd">two consecutive peaks (valleys) for the last M peaks (valleys).&quot;&quot;&quot;</span>
+<span class="n">DEFAULT_SIGMA</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Default parameter :math:`\sigma` is used to initiate the standard deviation</span>
+<span class="sd">of the time between two consecutive peaks (valleys) for the last M peaks</span>
+<span class="sd">(valleys).&quot;&quot;&quot;</span>
+<span class="n">DEFAULT_SIGMA_A</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Default parameter :math:`\sigma` is used to initiate the standard deviation</span>
+<span class="sd">of the vertical acceleration for recent K_SIGMA acceleration samples.&quot;&quot;&quot;</span>
+<span class="n">DEFAULT_PEAK_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.025</span>  <span class="c1"># the adaptive time threshold for peaks</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Default parameter peak threshold is used to initialize the adaptive time</span>
+<span class="sd">threshold for peaks. This threshold will be used to accept or reject a peak</span>
+<span class="sd">candidate based on the time-interval separating it from the previous peak in</span>
+<span class="sd">addition to other conditions.&quot;&quot;&quot;</span>
+<span class="n">DEFAULT_VALLEY_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.025</span>  <span class="c1"># the adaptive time threshold for valley</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Default parameter valley threshold is used to initialize the valley</span>
+<span class="sd">threshold. This threshold will be used to accept or reject any valley</span>
+<span class="sd">candidates based on the time interval separating it from the previous valley</span>
+<span class="sd">candidate and other conditions.&quot;&quot;&quot;</span>
+<span class="n">DEFAULT_VALLEY_ACC</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Default parameter used to initialize the vertical acceleration of a</span>
+<span class="sd">valley.&quot;&quot;&quot;</span>
+<span class="n">DEFAULT_PEAK_ACC</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Default parameter used to initialize the vertical acceleration of a</span>
+<span class="sd">peak.&quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">_detect_candidate</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">index_sample</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">mu_a</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">sigma_a</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StepState</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Detect peak and valley candidates in the signal.</span>
+
+<span class="sd">    This function labels each sample as valley, peak, or intermediate.</span>
+<span class="sd">    The sample is considered a peak if: case 1 it is the first sample or case 2</span>
+<span class="sd">    , if the sample vertical acceleration is greater than the previous and next</span>
+<span class="sd">    vertical acceleration and more significant than the average detection step</span>
+<span class="sd">    (plus a modulation).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A series of the vertical acceleration.</span>
+<span class="sd">    index_sample</span>
+<span class="sd">        An integer indicating which sample is under examination.</span>
+<span class="sd">    mu_a</span>
+<span class="sd">        The average of the vertical acceleration of a step. Defined as</span>
+<span class="sd">        the mean of the magnitude of the recent peak and recent valley.</span>
+<span class="sd">    sigma_a</span>
+<span class="sd">        The standard deviation of the vertical acceleration.</span>
+<span class="sd">    alpha</span>
+<span class="sd">        A constant to modulate the threshold on vertical acceleration used to</span>
+<span class="sd">        label a sample.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    StepState</span>
+<span class="sd">        A label indicating if the sample is a good candidate for a peak,</span>
+<span class="sd">        a valley or an intermediate sample.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">index_sample</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span>
+    <span class="n">acc_minus</span><span class="p">,</span> <span class="n">acc</span><span class="p">,</span> <span class="n">acc_plus</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index_sample</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">index_sample</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">acc</span> <span class="o">&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">acc_minus</span><span class="p">,</span> <span class="n">acc_plus</span><span class="p">),</span> <span class="n">mu_a</span> <span class="o">+</span> <span class="n">sigma_a</span> <span class="o">/</span> <span class="n">alpha</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span>
+    <span class="k">if</span> <span class="n">acc</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">acc_minus</span><span class="p">,</span> <span class="n">acc_plus</span><span class="p">),</span> <span class="n">mu_a</span> <span class="o">-</span> <span class="n">sigma_a</span> <span class="o">/</span> <span class="n">alpha</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span>
+    <span class="k">return</span> <span class="n">StepState</span><span class="o">.</span><span class="n">INTMD</span>
+
+
+<span class="k">def</span> <span class="nf">_update_peak_valley</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">new_state</span><span class="p">:</span> <span class="n">StepState</span><span class="p">,</span>
+    <span class="n">index_sample</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">beta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">m_sigma</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update a peak or a valley.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A data frame of the vertical acceleration and states.</span>
+<span class="sd">    new_state</span>
+<span class="sd">        Either peak or valley, it indicates if a peak or a valley is to be</span>
+<span class="sd">        updated.</span>
+<span class="sd">    index_sample</span>
+<span class="sd">        An integer indicating which sample is under examination.</span>
+<span class="sd">    beta</span>
+<span class="sd">        A time scale constant.</span>
+<span class="sd">    m_sigma</span>
+<span class="sd">        A parameter used to delineate noisy peaks or valley from real peaks or</span>
+<span class="sd">        valleys.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Tuple[float, float]</span>
+<span class="sd">        The vertical acceleration of current sample. And the minimum time</span>
+<span class="sd">        distance to the recent peak (or valley).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">peaks_or_valley</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">new_state</span><span class="p">]</span>
+    <span class="n">t_between</span> <span class="o">=</span> <span class="n">index_time_diff</span><span class="p">(</span><span class="n">peaks_or_valley</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_between</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># enough data</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="n">t_between</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">m_sigma</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+        <span class="n">mu_x</span> <span class="o">=</span> <span class="n">t_between</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">m_sigma</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_between</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># just enough for the mean</span>
+        <span class="n">mu_x</span> <span class="o">=</span> <span class="n">t_between</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">m_sigma</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="n">DEFAULT_SIGMA</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># initialization</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="n">DEFAULT_SIGMA</span>
+        <span class="n">mu_x</span> <span class="o">=</span> <span class="n">DEFAULT_MU</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="n">mu_x</span> <span class="o">-</span> <span class="n">sigma</span> <span class="o">/</span> <span class="n">beta</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index_sample</span><span class="p">][</span><span class="s2">&quot;vertical_acc&quot;</span><span class="p">],</span> <span class="n">threshold</span>
+
+
+<span class="k">def</span> <span class="nf">_update_sigma</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update sigma.</span>
+
+<span class="sd">    ``sigma_a`` is defined as the standard deviation of the vertical</span>
+<span class="sd">    acceleration for recent ``k_sigma`` acceleration samples.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A series of the last k_sigma vertical acceleration.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        The standard deviation of the vertical acceleration over the last</span>
+<span class="sd">        k_sigma samples.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">DEFAULT_SIGMA_A</span>
+
+
+<span class="k">def</span> <span class="nf">_check_state</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
+    <span class="n">last_state</span><span class="p">:</span> <span class="n">StepState</span><span class="p">,</span>
+    <span class="n">expected_state</span><span class="p">:</span> <span class="n">StepState</span><span class="p">,</span>
+    <span class="n">index_s</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">index_c</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">t_thresh</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">acc_threshold</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">greater</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">further</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check conditions on the last_state, time, and vertical acceleration.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A series of the vertical acceleration.</span>
+<span class="sd">    last_state</span>
+<span class="sd">        Either peak or valley, it indicates if a peak or a valley was the last</span>
+<span class="sd">        specific state.</span>
+<span class="sd">    expected_state</span>
+<span class="sd">        Expected value for the last_state.</span>
+<span class="sd">    index_s</span>
+<span class="sd">        Index of the last state.</span>
+<span class="sd">    index_c</span>
+<span class="sd">        Index of the current state.</span>
+<span class="sd">    t_thresh</span>
+<span class="sd">        A threshold on time to remove close peaks/valleys</span>
+<span class="sd">    acc_threshold</span>
+<span class="sd">        A threshold on the vertical acceleration to potentially replace</span>
+<span class="sd">        peaks/valleys.</span>
+<span class="sd">    greater</span>
+<span class="sd">        A boolean deciding if acc_threshold should be compared with a greater</span>
+<span class="sd">        or less than comparator.</span>
+<span class="sd">    further</span>
+<span class="sd">        A boolean deciding if the time threshold should be compared with a</span>
+<span class="sd">        a greater or less than comparator.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        A boolean indicating if the conditions are respected</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Does the last_state matches the expected state</span>
+    <span class="n">c_1</span> <span class="o">=</span> <span class="n">last_state</span> <span class="o">==</span> <span class="n">expected_state</span>
+    <span class="c1"># Is the current sample far enough from the previous specific state</span>
+    <span class="n">c_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">index_c</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">index_s</span><span class="p">])</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">further</span><span class="p">:</span>
+        <span class="n">c_2</span> <span class="o">=</span> <span class="n">c_2</span> <span class="o">&gt;</span> <span class="n">t_thresh</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">c_2</span> <span class="o">=</span> <span class="n">c_2</span> <span class="o">&lt;=</span> <span class="n">t_thresh</span>
+    <span class="c1"># If the acceleration threshold is provided compare it to the current</span>
+    <span class="c1"># sample</span>
+    <span class="k">if</span> <span class="n">acc_threshold</span><span class="p">:</span>
+        <span class="n">c_3</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">index_c</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="n">greater</span><span class="p">:</span>
+            <span class="n">c_3</span> <span class="o">=</span> <span class="n">c_3</span> <span class="o">&gt;</span> <span class="n">acc_threshold</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">c_3</span> <span class="o">=</span> <span class="n">c_3</span> <span class="o">&lt;=</span> <span class="n">acc_threshold</span>
+        <span class="k">return</span> <span class="n">c_1</span> <span class="ow">and</span> <span class="n">c_2</span> <span class="ow">and</span> <span class="n">c_3</span>
+    <span class="k">return</span> <span class="n">c_1</span> <span class="ow">and</span> <span class="n">c_2</span>
+
+
+<span class="k">def</span> <span class="nf">_detect_steps</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Step Detection Algorithm from Lee et al. 2015.</span>
+
+<span class="sd">    Full reference: Lee, H.-H.; Choi, S.; Lee, M.-J.</span>
+<span class="sd">    Step Detection Robust against the Dynamics of Smartphones.</span>
+<span class="sd">    Sensors 2015, 15, 27230-27250.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A series of the vertical acceleration.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        A data frame containing the candidate and final state detected, as</span>
+<span class="sd">        well as the step_index, a variable keeping track of when a step is</span>
+<span class="sd">        detected.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;vertical_acc&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+            <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="n">StepState</span><span class="o">.</span><span class="n">INTMD</span><span class="p">,</span>
+            <span class="s2">&quot;candidate_state&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">&quot;step_index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># the adaptive time threshold for peaks</span>
+    <span class="n">peak_threshold</span> <span class="o">=</span> <span class="n">DEFAULT_PEAK_THRESHOLD</span>
+    <span class="c1"># the adaptive time threshold for valley</span>
+    <span class="n">valley_threshold</span> <span class="o">=</span> <span class="n">DEFAULT_VALLEY_THRESHOLD</span>
+    <span class="n">acc_valley</span> <span class="o">=</span> <span class="n">DEFAULT_VALLEY_ACC</span>
+    <span class="n">acc_peak</span> <span class="o">=</span> <span class="n">DEFAULT_PEAK_ACC</span>
+    <span class="c1"># the step average</span>
+    <span class="n">mu_a</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;vertical_acc&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="c1"># the step deviation of the vertical acceleration</span>
+    <span class="n">sigma_a</span> <span class="o">=</span> <span class="n">DEFAULT_SIGMA_A</span>
+
+    <span class="c1"># ``last_state`` tracks the last particular state, either peak or valley</span>
+    <span class="c1"># and will replace Sn-1 in the algorithm description page 27240.</span>
+    <span class="n">last_state</span> <span class="o">=</span> <span class="n">StepState</span><span class="o">.</span><span class="n">INITIAL</span>
+    <span class="n">step_index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">it_peak</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">it_valley</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">_set_state</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">StepState</span><span class="p">,</span> <span class="n">state_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;state&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the state at a given index.&quot;&quot;&quot;</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">state_column</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span>
+
+    <span class="k">for</span> <span class="n">it_n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># Determine if the sample is a potential peak or valley candidate</span>
+        <span class="n">candidate_state</span> <span class="o">=</span> <span class="n">_detect_candidate</span><span class="p">(</span>
+            <span class="n">res</span><span class="p">[</span><span class="s2">&quot;vertical_acc&quot;</span><span class="p">],</span> <span class="n">it_n</span><span class="p">,</span> <span class="n">mu_a</span><span class="p">,</span> <span class="n">sigma_a</span><span class="p">,</span> <span class="n">ALPHA</span>
+        <span class="p">)</span>
+        <span class="c1"># Save the candidate state</span>
+        <span class="n">_set_state</span><span class="p">(</span><span class="n">it_n</span><span class="p">,</span> <span class="n">candidate_state</span><span class="p">,</span> <span class="s2">&quot;candidate_state&quot;</span><span class="p">)</span>
+        <span class="c1"># Initialize the ``state`` to &#39;intermediate&#39;</span>
+        <span class="n">_set_state</span><span class="p">(</span><span class="n">it_n</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">INTMD</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">candidate_state</span> <span class="o">==</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">_check_state</span><span class="p">(</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;vertical_acc&quot;</span><span class="p">],</span>
+                <span class="n">last_state</span><span class="o">=</span><span class="n">last_state</span><span class="p">,</span>
+                <span class="n">expected_state</span><span class="o">=</span><span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span><span class="p">,</span>
+                <span class="n">index_s</span><span class="o">=</span><span class="n">it_peak</span><span class="p">,</span>
+                <span class="n">index_c</span><span class="o">=</span><span class="n">it_n</span><span class="p">,</span>
+                <span class="n">t_thresh</span><span class="o">=</span><span class="n">peak_threshold</span><span class="p">,</span>
+            <span class="p">):</span>
+                <span class="c1"># (2)</span>
+                <span class="n">_set_state</span><span class="p">(</span><span class="n">it_n</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">)</span>
+                <span class="n">last_state</span> <span class="o">=</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span>
+                <span class="n">it_peak</span> <span class="o">=</span> <span class="n">it_n</span>
+                <span class="n">acc_peak</span><span class="p">,</span> <span class="n">peak_threshold</span> <span class="o">=</span> <span class="n">_update_peak_valley</span><span class="p">(</span>
+                    <span class="n">res</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">,</span> <span class="n">it_n</span><span class="p">,</span> <span class="n">BETA</span><span class="p">,</span> <span class="n">M_SIGMA</span>
+                <span class="p">)</span>
+                <span class="n">mu_a</span> <span class="o">=</span> <span class="p">(</span><span class="n">acc_peak</span> <span class="o">+</span> <span class="n">acc_valley</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="k">elif</span> <span class="n">_check_state</span><span class="p">(</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;vertical_acc&quot;</span><span class="p">],</span>
+                <span class="n">last_state</span><span class="o">=</span><span class="n">last_state</span><span class="p">,</span>
+                <span class="n">expected_state</span><span class="o">=</span><span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">,</span>
+                <span class="n">index_s</span><span class="o">=</span><span class="n">it_peak</span><span class="p">,</span>
+                <span class="n">index_c</span><span class="o">=</span><span class="n">it_n</span><span class="p">,</span>
+                <span class="n">t_thresh</span><span class="o">=</span><span class="n">peak_threshold</span><span class="p">,</span>
+                <span class="n">acc_threshold</span><span class="o">=</span><span class="n">acc_peak</span><span class="p">,</span>
+                <span class="n">further</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">):</span>
+                <span class="c1"># (3)</span>
+                <span class="n">_set_state</span><span class="p">(</span><span class="n">it_peak</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">INTMD</span><span class="p">)</span>
+                <span class="n">_set_state</span><span class="p">(</span><span class="n">it_n</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">)</span>
+                <span class="n">last_state</span> <span class="o">=</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span>
+                <span class="n">it_peak</span> <span class="o">=</span> <span class="n">it_n</span>
+                <span class="n">acc_peak</span><span class="p">,</span> <span class="n">peak_threshold</span> <span class="o">=</span> <span class="n">_update_peak_valley</span><span class="p">(</span>
+                    <span class="n">res</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">,</span> <span class="n">it_n</span><span class="p">,</span> <span class="n">BETA</span><span class="p">,</span> <span class="n">M_SIGMA</span>
+                <span class="p">)</span>
+            <span class="c1"># This should only be triggered once at the initialization of the</span>
+            <span class="c1"># algorithm, when it is 1.</span>
+            <span class="k">elif</span> <span class="n">last_state</span> <span class="o">==</span> <span class="n">StepState</span><span class="o">.</span><span class="n">INITIAL</span><span class="p">:</span>
+                <span class="c1"># (1)</span>
+                <span class="n">_set_state</span><span class="p">(</span><span class="n">it_n</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">)</span>
+                <span class="n">last_state</span> <span class="o">=</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span>
+                <span class="n">it_peak</span> <span class="o">=</span> <span class="n">it_n</span>
+                <span class="n">acc_peak</span><span class="p">,</span> <span class="n">peak_threshold</span> <span class="o">=</span> <span class="n">_update_peak_valley</span><span class="p">(</span>
+                    <span class="n">res</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">,</span> <span class="n">it_n</span><span class="p">,</span> <span class="n">BETA</span><span class="p">,</span> <span class="n">M_SIGMA</span>
+                <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">candidate_state</span> <span class="o">==</span> <span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">_check_state</span><span class="p">(</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;vertical_acc&quot;</span><span class="p">],</span>
+                <span class="n">last_state</span><span class="o">=</span><span class="n">last_state</span><span class="p">,</span>
+                <span class="n">expected_state</span><span class="o">=</span><span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">,</span>
+                <span class="n">index_s</span><span class="o">=</span><span class="n">it_valley</span><span class="p">,</span>
+                <span class="n">index_c</span><span class="o">=</span><span class="n">it_n</span><span class="p">,</span>
+                <span class="n">t_thresh</span><span class="o">=</span><span class="n">valley_threshold</span><span class="p">,</span>
+            <span class="p">):</span>
+                <span class="c1"># (4)</span>
+                <span class="n">_set_state</span><span class="p">(</span><span class="n">it_n</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span><span class="p">)</span>
+                <span class="n">last_state</span> <span class="o">=</span> <span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span>
+                <span class="n">it_valley</span> <span class="o">=</span> <span class="n">it_n</span>
+                <span class="n">acc_valley</span><span class="p">,</span> <span class="n">valley_threshold</span> <span class="o">=</span> <span class="n">_update_peak_valley</span><span class="p">(</span>
+                    <span class="n">res</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span><span class="p">,</span> <span class="n">it_n</span><span class="p">,</span> <span class="n">BETA</span><span class="p">,</span> <span class="n">M_SIGMA</span>
+                <span class="p">)</span>
+                <span class="n">step_index</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">mu_a</span> <span class="o">=</span> <span class="p">(</span><span class="n">acc_peak</span> <span class="o">+</span> <span class="n">acc_valley</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="k">elif</span> <span class="n">_check_state</span><span class="p">(</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;vertical_acc&quot;</span><span class="p">],</span>
+                <span class="n">last_state</span><span class="o">=</span><span class="n">last_state</span><span class="p">,</span>
+                <span class="n">expected_state</span><span class="o">=</span><span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span><span class="p">,</span>
+                <span class="n">index_s</span><span class="o">=</span><span class="n">it_valley</span><span class="p">,</span>
+                <span class="n">index_c</span><span class="o">=</span><span class="n">it_n</span><span class="p">,</span>
+                <span class="n">t_thresh</span><span class="o">=</span><span class="n">valley_threshold</span><span class="p">,</span>
+                <span class="n">acc_threshold</span><span class="o">=</span><span class="n">acc_valley</span><span class="p">,</span>
+                <span class="n">greater</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">further</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">):</span>
+                <span class="c1"># (5)</span>
+                <span class="n">_set_state</span><span class="p">(</span><span class="n">it_valley</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">INTMD</span><span class="p">)</span>
+                <span class="n">_set_state</span><span class="p">(</span><span class="n">it_n</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span><span class="p">)</span>
+                <span class="n">last_state</span> <span class="o">=</span> <span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span>
+                <span class="n">it_valley</span> <span class="o">=</span> <span class="n">it_n</span>
+                <span class="n">acc_valley</span><span class="p">,</span> <span class="n">valley_threshold</span> <span class="o">=</span> <span class="n">_update_peak_valley</span><span class="p">(</span>
+                    <span class="n">res</span><span class="p">,</span> <span class="n">StepState</span><span class="o">.</span><span class="n">VALLEY</span><span class="p">,</span> <span class="n">it_n</span><span class="p">,</span> <span class="n">BETA</span><span class="p">,</span> <span class="n">M_SIGMA</span>
+                <span class="p">)</span>
+        <span class="c1"># Update sigma</span>
+        <span class="n">sigma_a</span> <span class="o">=</span> <span class="n">_update_sigma</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">it_n</span> <span class="o">-</span> <span class="n">K_SIGMA</span><span class="p">)</span> <span class="p">:</span> <span class="n">it_n</span><span class="p">][</span><span class="s2">&quot;vertical_acc&quot;</span><span class="p">])</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">it_n</span><span class="p">],</span> <span class="s2">&quot;step_index&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">step_index</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+
+<div class="viewcode-block" id="detect_steps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.detect_steps">[docs]</a>
+<span class="k">def</span> <span class="nf">detect_steps</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run step Detection Algorithm from Lee et al. and format the results.</span>
+
+<span class="sd">    We use a revisited Lee et al. algorithm since we don&#39;t perform step</span>
+<span class="sd">    detection on the acceleration norm but on the vertical acceleration.</span>
+<span class="sd">    The results are formatted to return a generic data frame with the following</span>
+<span class="sd">    columns: ``timestamp``, ``event``, ``foot``. Where ``event`` annotate what</span>
+<span class="sd">    is happening as in Bourke et al. doi:10.3390/s20205906.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A data frame containing a column &#39;vertical_acc&#39; referring to the</span>
+<span class="sd">        vertical acceleration.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        A pandas data frame with columns ``event``, ``foot`` and ``timestamp``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">detected_steps</span> <span class="o">=</span> <span class="n">_detect_steps</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;vertical_acc&quot;</span><span class="p">])</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">detected_steps</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">detected_steps</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">StepState</span><span class="o">.</span><span class="n">PEAK</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="n">StepEvent</span><span class="o">.</span><span class="n">INITIAL_CONTACT</span><span class="p">,</span>
+            <span class="s2">&quot;foot&quot;</span><span class="p">:</span> <span class="n">FootUsed</span><span class="o">.</span><span class="n">UNKNOWN</span><span class="p">,</span>
+            <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="s2">&quot;timestamp&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="LeeDetectSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeDetectSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeDetectSteps</span><span class="p">(</span><span class="n">DetectStepsProcessingBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Detect steps using Lee et al. algorithm on vertical acceleration.&quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;lee_with_walking_bouts&quot;</span>
+
+<div class="viewcode-block" id="LeeDetectSteps.step_detection_method">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeDetectSteps.step_detection_method">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">step_detection_method</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Define and declare the step detection as a static method.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">detect_steps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeDetectStepsWithoutBout">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeDetectStepsWithoutBout">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeDetectStepsWithoutBout</span><span class="p">(</span><span class="n">DetectStepsWithoutBoutsBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Detect steps using Lee et al. algorithm on vertical acceleration.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;vertical_acceleration&quot;</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;lee&quot;</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">detect_steps</span></div>
+
+
+
+<div class="viewcode-block" id="LeeStepCountWithoutBout">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepCountWithoutBout">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeStepCountWithoutBout</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract step count with lee dataset without walking bouts.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeStepCountWithoutBout.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepCountWithoutBout.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;lee&quot;</span>
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;step count&quot;</span><span class="p">,</span> <span class="s2">&quot;sc&quot;</span><span class="p">),</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int16&quot;</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The number of steps detected with lee algorithm.&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="n">step_count</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">definition</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeStepPowerWithoutBout">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepPowerWithoutBout">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeStepPowerWithoutBout</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract step count with lee dataset without walking bouts.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeStepPowerWithoutBout.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepPowerWithoutBout.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;vertical_acceleration&quot;</span><span class="p">,</span> <span class="s2">&quot;lee&quot;</span><span class="p">]</span>
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;step power&quot;</span><span class="p">,</span> <span class="s2">&quot;sp&quot;</span><span class="p">),</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int16&quot;</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The integral of the centered acceleration magnitude &quot;</span>
+            <span class="s2">&quot;between the first and last step divided by the &quot;</span>
+            <span class="s2">&quot;number of steps computed with lee algorithm.&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span>
+            <span class="n">transform_function</span><span class="o">=</span><span class="n">power_bout_div_steps</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">definition</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeStepDurWithoutBout">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepDurWithoutBout">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeStepDurWithoutBout</span><span class="p">(</span><span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract step duration without walking bout.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeStepDurWithoutBout.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepDurWithoutBout.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;step duration&quot;</span><span class="p">,</span> <span class="s2">&quot;step_dur&quot;</span><span class="p">),</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The </span><span class="si">{aggregation}</span><span class="s2"> time of a detected step.&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="s2">&quot;lee_step_duration&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;step_duration&quot;</span><span class="p">,</span>
+            <span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+            <span class="n">definition</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeStepCount">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepCount">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeStepCount</span><span class="p">(</span><span class="n">ExtractStepCount</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract step count.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeStepCount.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepCount.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;movement_bouts&quot;</span><span class="p">,</span> <span class="s2">&quot;lee_with_walking_bouts&quot;</span><span class="p">]</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeStepPower">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepPower">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeStepPower</span><span class="p">(</span><span class="n">ExtractPowerBoutDivSteps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract step power.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeStepPower.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepPower.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;movement_bouts&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;vertical_acceleration&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lee_with_walking_bouts&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeStepDur">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepDur">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeStepDur</span><span class="p">(</span><span class="n">ExtractStepDurationAll</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract step power.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeStepDur.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeStepDur.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;movement_bouts&quot;</span><span class="p">,</span> <span class="s2">&quot;lee_with_walking_bouts_step_duration&quot;</span><span class="p">],</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeTransformHipRotation">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeTransformHipRotation">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeTransformHipRotation</span><span class="p">(</span><span class="n">HipRotationGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Transform for positive and negative hip rotation.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeTransformHipRotation.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeTransformHipRotation.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">on_walking_bouts</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">step_detection_id</span> <span class="o">=</span> <span class="s2">&quot;lee&quot;</span>
+        <span class="k">if</span> <span class="n">on_walking_bouts</span><span class="p">:</span>
+            <span class="n">step_detection_id</span> <span class="o">+=</span> <span class="s2">&quot;_with_walking_bouts&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">step_detection_id</span><span class="o">=</span><span class="n">step_detection_id</span><span class="p">,</span>
+            <span class="n">on_walking_bouts</span><span class="o">=</span><span class="n">on_walking_bouts</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeHipRotation">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeHipRotation">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeHipRotation</span><span class="p">(</span><span class="n">ExtractHipRotation</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract Hip Rotation.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeHipRotation.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeHipRotation.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_id</span> <span class="o">=</span> <span class="s2">&quot;lee_with_walking_bouts&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_id</span><span class="o">=</span><span class="n">data_set_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeHipRotationWithoutBout">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeHipRotationWithoutBout">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeHipRotationWithoutBout</span><span class="p">(</span><span class="n">ExtractHipRotationWithoutBouts</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract Hip Rotation.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeHipRotationWithoutBout.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeHipRotationWithoutBout.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_id</span> <span class="o">=</span> <span class="s2">&quot;lee&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_id</span><span class="o">=</span><span class="n">data_set_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeMeasuresGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeMeasuresGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeMeasuresGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract Lee measures based on Lee Steps and a bout strategy.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeMeasuresGroup.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeMeasuresGroup.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bout_strategy</span><span class="p">:</span> <span class="n">BoutStrategyModality</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">LeeStepCount</span><span class="p">(</span><span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">bout_cls</span><span class="p">),</span>
+            <span class="n">LeeStepPower</span><span class="p">(</span><span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">bout_cls</span><span class="p">),</span>
+            <span class="n">LeeStepDur</span><span class="p">(</span><span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">bout_cls</span><span class="p">),</span>
+            <span class="n">LeeHipRotation</span><span class="p">(</span><span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">bout_cls</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LeeMeasuresWithoutBoutGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeMeasuresWithoutBoutGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">LeeMeasuresWithoutBoutGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract Lee measures based on Lee Steps and a bout strategy.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LeeMeasuresWithoutBoutGroup.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.gait.lee.html#dispel.providers.generic.tasks.gait.lee.LeeMeasuresWithoutBoutGroup.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">LeeStepCountWithoutBout</span><span class="p">(),</span>
+            <span class="n">LeeStepPowerWithoutBout</span><span class="p">(),</span>
+            <span class="n">LeeStepDurWithoutBout</span><span class="p">(),</span>
+            <span class="n">LeeHipRotationWithoutBout</span><span class="p">(),</span>
+        <span class="p">]</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

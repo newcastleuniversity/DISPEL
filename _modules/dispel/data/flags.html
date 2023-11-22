@@ -1,0 +1,995 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.data.flags &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/data/flags';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.data.flags</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.data.flags</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A module containing models for flags.</span>
+
+<span class="sd">Flags are basically a structured way to mark the data contained in a certain entity as</span>
+<span class="sd">deviating or invalidating assumptions while processing.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">operator</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">InitVar</span><span class="p">,</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">singledispatchmethod</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Generic</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Set</span><span class="p">,</span>
+    <span class="n">TypeVar</span><span class="p">,</span>
+    <span class="n">Union</span><span class="p">,</span>
+    <span class="n">cast</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AVEnum</span><span class="p">,</span> <span class="n">DefinitionId</span>
+<span class="kn">from</span> <span class="nn">dispel.utils</span> <span class="kn">import</span> <span class="n">plural</span><span class="p">,</span> <span class="n">raise_multiple_errors</span>
+
+
+<div class="viewcode-block" id="FlagType">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagType">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagType</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An enumeration for flag types.&quot;&quot;&quot;</span>
+
+    <span class="n">TECHNICAL</span> <span class="o">=</span> <span class="s2">&quot;technical&quot;</span>
+    <span class="n">BEHAVIORAL</span> <span class="o">=</span> <span class="s2">&quot;behavioral&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="FlagSeverity">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagSeverity">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagSeverity</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An enumeration for flag severity.&quot;&quot;&quot;</span>
+
+    <span class="n">DEVIATION</span> <span class="o">=</span> <span class="s2">&quot;deviation&quot;</span>
+    <span class="n">INVALIDATION</span> <span class="o">=</span> <span class="s2">&quot;invalidation&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="FlagId">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagId">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagId</span><span class="p">(</span><span class="n">DefinitionId</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The identifier of an entity flag for a task.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    task_name</span>
+<span class="sd">        The name and abbreviation of the task. Note that if no abbreviation is provided</span>
+<span class="sd">        the name is used directly in the id.</span>
+<span class="sd">    flag_name</span>
+<span class="sd">        The name of the flag and its abbreviation.</span>
+<span class="sd">    flag_type</span>
+<span class="sd">        The type of the flag. See :class:`~dispel.data.flags.FlagType`.</span>
+<span class="sd">    flag_severity</span>
+<span class="sd">        The severity of the flag. See :class:`~dispel.data.flags.FlagSeverity`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The abbreviations of values are passed using</span>
+<span class="sd">    :class:`~dispel.data.values.AbbreviatedValue`. To generate the actual id the `.abbr`</span>
+<span class="sd">    accessor is used. If one passes only strings, the class actually wraps those into</span>
+<span class="sd">    ``AbbreviatedValue`` instances.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import AbbreviatedValue as AV</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.flags import FlagId, FlagType</span>
+<span class="sd">    &gt;&gt;&gt; FlagId(</span>
+<span class="sd">    ...     task_name=AV(&#39;Cognitive Processing Speed&#39;, &#39;CPS&#39;),</span>
+<span class="sd">    ...     flag_name=AV(&#39;tilt angle&#39;, &#39;ta&#39;),</span>
+<span class="sd">    ...     flag_type=FlagType.BEHAVIORAL,</span>
+<span class="sd">    ...     flag_severity=FlagSeverity.DEVIATION,</span>
+<span class="sd">    ... )</span>
+<span class="sd">    cps-behavioral-deviation-ta</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FlagId.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagId.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">],</span>
+        <span class="n">flag_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AV</span><span class="p">],</span>
+        <span class="n">flag_type</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">FlagType</span><span class="p">],</span>
+        <span class="n">flag_severity</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">FlagSeverity</span><span class="p">],</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_name</span> <span class="o">=</span> <span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">task_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">flag_name</span><span class="p">)</span>
+        <span class="c1"># flag type</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">flag_type</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">from_abbr</span><span class="p">(</span><span class="n">flag_type</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_type</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">FlagType</span><span class="p">,</span> <span class="n">flag_type</span><span class="p">)</span><span class="o">.</span><span class="n">av</span>
+        <span class="c1"># flag severity</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">flag_severity</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">from_abbr</span><span class="p">(</span><span class="n">flag_severity</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_severity</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">FlagSeverity</span><span class="p">,</span> <span class="n">flag_severity</span><span class="p">)</span><span class="o">.</span><span class="n">av</span>
+
+        <span class="n">id_</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">task_name</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">flag_type</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">flag_severity</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">flag_name</span><span class="o">.</span><span class="n">abbr</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">id_</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FlagId.from_str">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagId.from_str">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_str</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;FlagId&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a flag id from a string representation.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value</span>
+<span class="sd">            The string from which the flag id is to be constructed. It ought to respect</span>
+<span class="sd">            the following format ``&lt;task_name&gt;-&lt;flag_type&gt;-&lt;flag_name&gt;`` where the flag</span>
+<span class="sd">            type should one of the enumerations defined in</span>
+<span class="sd">            :class:`~dispel.data.flags.FlagType`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        FlagId</span>
+<span class="sd">            The initialised flag identifier.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the flag string representation does not respect the required format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">components</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">components</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Flag Id format is not respected. Please provide an id that follows &quot;</span>
+                <span class="s2">&quot;the following format: ``&lt;task_name&gt;-&lt;flag_type&gt;-&lt;flag_name&gt;``&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">flag_name</span><span class="o">=</span><span class="n">components</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+            <span class="n">flag_type</span><span class="o">=</span><span class="n">components</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">flag_severity</span><span class="o">=</span><span class="n">components</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FlagId.format">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagId.format">[docs]</a>
+    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;FlagId&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Format an flag identifier.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">FlagId</span><span class="p">(</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">task_name</span><span class="p">,</span>
+            <span class="n">flag_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">flag_name</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+            <span class="n">flag_type</span><span class="o">=</span><span class="n">FlagType</span><span class="o">.</span><span class="n">from_abbr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flag_type</span><span class="o">.</span><span class="n">abbr</span><span class="p">),</span>
+            <span class="n">flag_severity</span><span class="o">=</span><span class="n">FlagSeverity</span><span class="o">.</span><span class="n">from_abbr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flag_severity</span><span class="o">.</span><span class="n">abbr</span><span class="p">),</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<span class="n">FlagIdType</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">FlagId</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="Flag">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.Flag">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Flag</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class for entity flag.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: The flag identifier (string or id format)</span>
+    <span class="n">id_</span><span class="p">:</span> <span class="n">InitVar</span><span class="p">[</span><span class="n">FlagIdType</span><span class="p">]</span>
+
+    <span class="c1">#: The flag identifier</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">FlagId</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1">#: The detailed reason for the flag</span>
+    <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="c1">#: Stop processing</span>
+    <span class="n">stop_processing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_</span><span class="p">:</span> <span class="n">FlagIdType</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">id_</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">FlagId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="n">id_</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">id_</span><span class="p">,</span> <span class="n">FlagId</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">id_</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;Flag id should be either a convertible string id or an &quot;</span>
+                <span class="s2">&quot;FlagId class.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reason</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_processing</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Flag.format">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.Flag.format">[docs]</a>
+    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Flag&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Format an flag.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Flag</span><span class="p">(</span>
+            <span class="n">id_</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+            <span class="n">reason</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">reason</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+            <span class="n">stop_processing</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stop_processing</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FlagAlreadyExists">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagAlreadyExists">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagAlreadyExists</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised when the same flag is added twice to an entity.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    flag</span>
+<span class="sd">        The duplicated flag.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FlagAlreadyExists.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagAlreadyExists.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">Flag</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;If the flag to be added (</span><span class="si">{</span><span class="n">flag</span><span class="si">}</span><span class="s2">) corresponds to another use case, please &quot;</span>
+            <span class="s2">&quot;make sure to specify a different reason at least.&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FlagNotFound">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagNotFound">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagNotFound</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised when a flag is not found in the mix in.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    flag_id</span>
+<span class="sd">        The flag id.</span>
+<span class="sd">    entity</span>
+<span class="sd">        The flag Mix-In entity where the flag was not found.</span>
+<span class="sd">    message</span>
+<span class="sd">        An optional error message to be added at the end.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FlagNotFound.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagNotFound.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">flag_id</span><span class="p">:</span> <span class="n">FlagIdType</span><span class="p">,</span>
+        <span class="n">entity</span><span class="p">:</span> <span class="s2">&quot;FlagMixIn&quot;</span><span class="p">,</span>
+        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">complete_message</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;No flag with </span><span class="si">{</span><span class="n">flag_id</span><span class="si">=}</span><span class="s2"> has been found for </span><span class="si">{</span><span class="n">entity</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">complete_message</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="verify_flag_uniqueness">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.verify_flag_uniqueness">[docs]</a>
+<span class="k">def</span> <span class="nf">verify_flag_uniqueness</span><span class="p">(</span><span class="n">flags</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Flag</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check whether all provided flags are unique.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    flags</span>
+<span class="sd">        The flags whose uniqueness is to be verified.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    FlagAlreadyExists</span>
+<span class="sd">        Per non-unique flag.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">accumulated_errors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="ne">Exception</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">flags</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">flag</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">counter</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">accumulated_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">FlagAlreadyExists</span><span class="p">(</span><span class="n">flag</span><span class="p">))</span>
+
+    <span class="n">raise_multiple_errors</span><span class="p">(</span><span class="n">accumulated_errors</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="FlagMixIn">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagMixIn">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagMixIn</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag Mix-In class that groups multiple flags.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FlagMixIn.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagMixIn.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_flags</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Flag</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">flag_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">FlagId</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the unique ids of the flags in the mix in.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flags</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">flag_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the number of flags in the mix in.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_flags</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">flag_count_repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the string representation of the flag count.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">plural</span><span class="p">(</span><span class="s2">&quot;flag&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag_count</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether the flag mix in contains no flags.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag_count</span> <span class="o">==</span> <span class="mi">0</span>
+
+<div class="viewcode-block" id="FlagMixIn.get_flags">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagMixIn.get_flags">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">FlagIdType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Flag</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve flags from the mix in.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flag_id</span>
+<span class="sd">            The id corresponding to the flags that are to be retrieved. If ``None`` is</span>
+<span class="sd">            provided, all flags will be returned.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Flag]</span>
+<span class="sd">            The flags corresponding to the given id.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        FlagNotFound</span>
+<span class="sd">            If the given flag id does not correspond to any flag in the mix-in.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">flag_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_flags</span><span class="p">)</span>
+
+        <span class="n">flags</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">flag_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flags</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flags</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">FlagNotFound</span><span class="p">(</span>
+                <span class="n">flag_id</span><span class="p">,</span>
+                <span class="bp">self</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;Please provide one of the following ids </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">flag_ids</span><span class="si">}</span><span class="s2"> or nothing &quot;</span>
+                <span class="s2">&quot;to retrieve all flags.&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">flags</span></div>
+
+
+<div class="viewcode-block" id="FlagMixIn.has_flag">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagMixIn.has_flag">[docs]</a>
+    <span class="nd">@singledispatchmethod</span>
+    <span class="k">def</span> <span class="nf">has_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether the flag is inside the mix in.&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+    <span class="nd">@has_flag</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Flag</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">Flag</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether the flag is inside the mix in.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flag</span>
+<span class="sd">            The flag whose existence is the mix in is to be checked.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            ``True`` if the flag exists inside the mix in. ``False`` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">flag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flags</span>
+
+    <span class="nd">@has_flag</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="nd">@has_flag</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">FlagId</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_flag_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag_id</span><span class="p">:</span> <span class="n">FlagIdType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether the flag id is inside the mix in.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flag_id</span>
+<span class="sd">            The flag id whose existence is the mix in is to be checked.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            ``True`` if the flag exists inside the mix in. ``False`` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">flag_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag_ids</span>
+
+<div class="viewcode-block" id="FlagMixIn.add_flag">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagMixIn.add_flag">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">ignore_duplicates</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a flag to the flag mix in.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flag</span>
+<span class="sd">            The flag to be added to the mix in.</span>
+<span class="sd">        ignore_duplicates</span>
+<span class="sd">            Set to ``True`` to ignore if a flag with the same id is already present.</span>
+<span class="sd">            ``False`` will raise an ``FlagAlreadyExists``</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        FlagAlreadyExists</span>
+<span class="sd">            If `ignore_duplicates` is `False` and the flag already exists.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">exists</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_flag</span><span class="p">(</span><span class="n">flag</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ignore_duplicates</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">FlagAlreadyExists</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_flags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FlagMixIn.add_flags">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.FlagMixIn.add_flags">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_flags</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">flags</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Flag</span><span class="p">],</span> <span class="s2">&quot;FlagMixIn&quot;</span><span class="p">],</span>
+        <span class="n">ignore_duplicates</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add multiple flags to mix in.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flags</span>
+<span class="sd">            The flags to be added. It can both an iterable of flags or an instance of</span>
+<span class="sd">            ``FlagMixIn``.</span>
+<span class="sd">        ignore_duplicates</span>
+<span class="sd">            Set to `True` to ignore if a flag with the same id is already present.</span>
+<span class="sd">            ``False`` will raise an ``FlagAlreadyExists``</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">flags</span><span class="p">,</span> <span class="n">FlagMixIn</span><span class="p">):</span>
+            <span class="n">flags</span> <span class="o">=</span> <span class="n">flags</span><span class="o">.</span><span class="n">get_flags</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">flag</span> <span class="ow">in</span> <span class="n">flags</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_flag</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">ignore_duplicates</span><span class="p">)</span></div>
+</div>
+
+
+
+<span class="n">WrappedResultType</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;WrappedResultType&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="WrappedResult">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.WrappedResult">[docs]</a>
+<span class="k">class</span> <span class="nc">WrappedResult</span><span class="p">(</span><span class="n">FlagMixIn</span><span class="p">,</span> <span class="n">Generic</span><span class="p">[</span><span class="n">WrappedResultType</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A wrapped result to carry potential flags.</span>
+
+<span class="sd">    This class provides a convenient way to add flags to values from extract steps that</span>
+<span class="sd">    are known to be invalid. This avoids having to write a separate flag step and is</span>
+<span class="sd">    useful in cases where the information to flag a result is only accessible in the</span>
+<span class="sd">    extract function.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    measure_value</span>
+<span class="sd">        The value of the measure returned by the extraction function.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    measure_value</span>
+<span class="sd">        The value of the measure returned by the extraction function.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Assuming we wanted to flag measures directly inside a custom extraction function</span>
+<span class="sd">    based on some metrics calculated, one can do</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import WrappedResult</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.data.flags import Flag</span>
+<span class="sd">    &gt;&gt;&gt; from typing import Union</span>
+<span class="sd">    &gt;&gt;&gt; def custom_aggregation_func(data) -&gt; Union[WrappedResult, float]:</span>
+<span class="sd">    ...     result = data.agg(&#39;mean&#39;)</span>
+<span class="sd">    ...     if len(data) &lt; 3:</span>
+<span class="sd">    ...         inv = Flag(</span>
+<span class="sd">    ...             reason=&#39;Not enough data point&#39;,</span>
+<span class="sd">    ...             flag_severity=FlagSeverity.INVALIDATION</span>
+<span class="sd">    ...         )</span>
+<span class="sd">    ...         result = WrappedResult(result, inv)</span>
+<span class="sd">    ...     return result</span>
+
+<span class="sd">    During processing, the class `ExtractStep` allows the transformation function to</span>
+<span class="sd">    output ``WrappedResult`` objects. The extract step will automatically add any flags</span>
+<span class="sd">    present in the ``WrappedResult`` object to the measure value. The ``WrappedResult``</span>
+<span class="sd">    class supports basic operations with other scalars or ``WrappedResult`` object:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.extract import WrappedResult</span>
+<span class="sd">    &gt;&gt;&gt; res1 = WrappedResult(measure_value=1)</span>
+<span class="sd">    &gt;&gt;&gt; res2 = WrappedResult(measure_value=2)</span>
+<span class="sd">    &gt;&gt;&gt; melted_res = res1 + res2</span>
+<span class="sd">    &gt;&gt;&gt; melted_res2 = res1 + 1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="WrappedResult.__init__">
+<a class="viewcode-back" href="../../../api/dispel.data.flags.html#dispel.data.flags.WrappedResult.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measure_value</span><span class="p">:</span> <span class="n">WrappedResultType</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measure_value</span><span class="p">:</span> <span class="n">WrappedResultType</span> <span class="o">=</span> <span class="n">measure_value</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_binary_operator</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">WrappedResultType</span><span class="p">,</span> <span class="n">WrappedResultType</span><span class="p">],</span> <span class="n">WrappedResultType</span><span class="p">],</span>
+        <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">WrappedResultType</span><span class="p">,</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span><span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform binary operation on values.&quot;&quot;&quot;</span>
+        <span class="c1"># Get measure value for both WrappedResult and float object</span>
+        <span class="k">if</span> <span class="n">is_wrapped</span> <span class="o">:=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">WrappedResult</span><span class="p">):</span>
+            <span class="n">value_other</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">WrappedResult</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">measure_value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">value_other</span> <span class="o">=</span> <span class="n">other</span>
+
+        <span class="c1"># Create a new WrappedResult object with the combination</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">WrappedResult</span><span class="p">(</span>
+            <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">measure_value</span><span class="p">,</span> <span class="n">value_other</span><span class="p">)</span>
+        <span class="p">)</span>  <span class="c1"># type: WrappedResult[WrappedResultType]</span>
+
+        <span class="c1"># Inherit flag from current objet</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">add_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ignore_duplicates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># If other is also wrapped, inherit his flag as well</span>
+        <span class="k">if</span> <span class="n">is_wrapped</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">add_flags</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">WrappedResult</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">res</span>
+
+    <span class="k">def</span> <span class="nf">_unary_operation</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">WrappedResultType</span><span class="p">],</span> <span class="n">WrappedResultType</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">WrappedResult</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">measure_value</span><span class="p">))</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">add_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+    <span class="k">def</span> <span class="fm">__abs__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unary_operation</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">abs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binary_operator</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binary_operator</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">sub</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binary_operator</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">mul</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__truediv__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;WrappedResult[WrappedResultType]&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binary_operator</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">truediv</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

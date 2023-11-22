@@ -1,0 +1,1199 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.processing.data_set &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/processing/data_set';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../processing.html" class="nav-link">dispel.processing</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.proce...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.processing.data_set</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Data set processing functionalities.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">Generator</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Sequence</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">Union</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">FlagSeverity</span><span class="p">,</span> <span class="n">FlagType</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">RawDataSet</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="n">ErrorHandling</span><span class="p">,</span> <span class="n">ProcessResultType</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.flags</span> <span class="kn">import</span> <span class="n">FlagStepMixin</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LevelFilterType</span><span class="p">,</span>
+    <span class="n">LevelProcessingControlResult</span><span class="p">,</span>
+    <span class="n">LevelProcessingResult</span><span class="p">,</span>
+    <span class="n">LevelProcessingStep</span><span class="p">,</span>
+    <span class="n">LevelProcessingStepProtocol</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.utils</span> <span class="kn">import</span> <span class="n">TaskMixin</span>
+
+
+<div class="viewcode-block" id="RawDataSetProcessingResult">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.RawDataSetProcessingResult">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">RawDataSetProcessingResult</span><span class="p">(</span><span class="n">LevelProcessingResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The processing result of a transform step.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: Whether to concatenate the result if it already exists in the</span>
+    <span class="c1">#: given level</span>
+    <span class="n">concatenate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1">#: Whether to overwrite the result if it already exists in the given</span>
+    <span class="c1">#: level</span>
+    <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">concatenate</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">overwrite</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;You cannot both concatenate and overwrite the output of the &quot;</span>
+                <span class="s2">&quot;transformation function. Only one of these arguments must be set to &quot;</span>
+                <span class="s2">&quot;``True``.&quot;</span>
+            <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="StorageError">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.StorageError">[docs]</a>
+<span class="k">class</span> <span class="nc">StorageError</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Raw data set storage handler.&quot;&quot;&quot;</span>
+
+    <span class="n">RAISE</span> <span class="o">=</span> <span class="s2">&quot;raise&quot;</span>
+    <span class="n">IGNORE</span> <span class="o">=</span> <span class="s2">&quot;ignore&quot;</span>
+    <span class="n">OVERWRITE</span> <span class="o">=</span> <span class="s2">&quot;overwrite&quot;</span>
+    <span class="n">CONCATENATE</span> <span class="o">=</span> <span class="s2">&quot;concatenate&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">overwrite</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return ``True`` if the handling is to overwrite.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">OVERWRITE</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">concatenate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return ``True`` if the handling is to concatenate.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">CONCATENATE</span></div>
+
+
+
+<div class="viewcode-block" id="DataSetProcessingStepProtocol">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol">[docs]</a>
+<span class="k">class</span> <span class="nc">DataSetProcessingStepProtocol</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Abstract class for data set processing steps.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DataSetProcessingStepProtocol.process_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.process_data_sets">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">process_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided data sets.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data_sets</span>
+<span class="sd">            The data sets to be processed.</span>
+<span class="sd">        level</span>
+<span class="sd">            The level to be processed.</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading to be processed.</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional arguments passed by</span>
+<span class="sd">            :meth:`~dispel.processing.level.LevelProcessingStep.process_level`.</span>
+
+<span class="sd">        Yields</span>
+<span class="sd">        ------</span>
+<span class="sd">        ProcessResultType</span>
+<span class="sd">            Results from processing the data sets.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">yield</span> <span class="bp">NotImplemented</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepProtocol.get_data_set_ids">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_set_ids">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_data_set_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the data set ids to be processed.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepProtocol.get_raw_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.get_raw_data_sets">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_raw_data_sets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataSet</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the raw data sets from all data sets in question.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level from which to get the data sets.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[RawDataSet]</span>
+<span class="sd">            A list of all raw data sets with the specified ids.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepProtocol.get_data_frames">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_frames">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_data_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the raw data from all data sets in question.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level from which to get the data sets.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[pandas.DataFrame]</span>
+<span class="sd">            A list of all raw data frames with the specified ids.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepProtocol.assert_valid_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.assert_valid_data_sets">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">assert_valid_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Assert that the to be processed data sets are valid.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepProtocol.flag_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.flag_data_sets">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">flag_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Flag</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag the provided data sets.&quot;&quot;&quot;</span>
+        <span class="k">yield</span> <span class="bp">NotImplemented</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepProtocol.get_data_sets_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepProtocol.get_data_sets_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data_sets_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the level flag targets.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data_sets</span>
+<span class="sd">            The data sets to be flagged.</span>
+<span class="sd">        level</span>
+<span class="sd">            The level associated with the data sets.</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading associated with the data set flag.</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional keyword arguments eventually used for flag targets extraction.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Iterable[EntityType]</span>
+<span class="sd">            An iterable of entities that are flagged.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_raw_data_sets</span><span class="p">(</span><span class="n">level</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="DataSetProcessingStepMixin">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin">[docs]</a>
+<span class="k">class</span> <span class="nc">DataSetProcessingStepMixin</span><span class="p">(</span>
+    <span class="n">TaskMixin</span><span class="p">,</span>
+    <span class="n">DataSetProcessingStepProtocol</span><span class="p">,</span>
+    <span class="n">LevelProcessingStepProtocol</span><span class="p">,</span>
+    <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A mixin class that processes data sets.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: An iterable of data sets to be being processed</span>
+    <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+
+<div class="viewcode-block" id="DataSetProcessingStepMixin.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;data_set_ids&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">data_set_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">data_set_ids</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepMixin.get_data_set_ids">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.get_data_set_ids">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data_set_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the data set ids to be processed.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_ids</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_ids</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_set_ids</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepMixin.get_raw_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.get_raw_data_sets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_raw_data_sets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataSet</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the raw data sets from all data sets in question.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level from which to get the data sets.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[RawDataSet]</span>
+<span class="sd">            A list of all raw data sets with the specified ids.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data_set_ids</span><span class="p">()))</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepMixin.get_data_frames">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.get_data_frames">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the raw data from all data sets in question.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level</span>
+<span class="sd">            The level from which to get the data sets.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[pandas.DataFrame]</span>
+<span class="sd">            A list of all raw data frames with the specified ids.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_raw_data_sets</span><span class="p">(</span><span class="n">level</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStepMixin.assert_valid_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStepMixin.assert_valid_level">[docs]</a>
+    <span class="k">def</span> <span class="nf">assert_valid_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Assert that the level has the appropriate valid data sets.&quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">assert_valid_level</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">id_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data_set_ids</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">level</span><span class="o">.</span><span class="n">has_raw_data_set</span><span class="p">(</span><span class="n">id_</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">id_</span><span class="si">}</span><span class="s2"> not found.&quot;</span><span class="p">,</span> <span class="n">ErrorHandling</span><span class="o">.</span><span class="n">RAISE</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="DataSetProcessingStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep">[docs]</a>
+<span class="k">class</span> <span class="nc">DataSetProcessingStep</span><span class="p">(</span>
+    <span class="n">DataSetProcessingStepMixin</span><span class="p">,</span> <span class="n">LevelProcessingStep</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A processing step that processes data sets.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_ids</span>
+<span class="sd">        Optional data set ids to be processed. See :class:`DataSetProcessingStepMixin`.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        Optional level filter. See :class:`~dispel.processing.level.LevelProcessingStep`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DataSetProcessingStep.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span> <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStep.process_level">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.process_level">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_level</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided Level.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">flag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag_data_sets</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">data_sets</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data_frames</span><span class="p">(</span><span class="n">level</span><span class="p">)),</span> <span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">):</span>
+            <span class="k">yield</span> <span class="n">LevelProcessingControlResult</span><span class="o">.</span><span class="n">from_flag</span><span class="p">(</span>
+                <span class="n">flag</span><span class="o">=</span><span class="n">flag</span><span class="p">,</span>
+                <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">targets</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_data_sets_flag_targets</span><span class="p">(</span><span class="n">data_sets</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">),</span>
+                <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assert_valid_data_sets</span><span class="p">(</span><span class="n">data_sets</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">LevelProcessingControlResult</span><span class="o">.</span><span class="n">from_assertion_error</span><span class="p">(</span>
+                <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">exception</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_data_sets</span><span class="p">(</span><span class="n">data_sets</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStep.assert_valid_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.assert_valid_data_sets">[docs]</a>
+    <span class="k">def</span> <span class="nf">assert_valid_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform assertions that a given data sets can be processed.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStep.flag_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.flag_data_sets">[docs]</a>
+    <span class="k">def</span> <span class="nf">flag_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Flag</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag the provided data sets.&quot;&quot;&quot;</span>
+        <span class="k">yield from</span> <span class="p">[]</span></div>
+
+
+<div class="viewcode-block" id="DataSetProcessingStep.process_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.DataSetProcessingStep.process_data_sets">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided data sets.&quot;&quot;&quot;</span>
+        <span class="k">yield from</span> <span class="p">[]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="transformation">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.transformation">[docs]</a>
+<span class="k">def</span> <span class="nf">transformation</span><span class="p">(</span><span class="n">_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorate a function as a transformation function.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="n">func</span><span class="o">.</span><span class="n">__transform_function__</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">func</span><span class="o">.</span><span class="n">__transform_kwargs__</span> <span class="o">=</span> <span class="n">kwargs</span>
+        <span class="k">return</span> <span class="n">func</span>
+
+    <span class="k">if</span> <span class="n">_func</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span><span class="p">(</span><span class="n">_func</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="decorated_processing_function">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.decorated_processing_function">[docs]</a>
+<span class="k">def</span> <span class="nf">decorated_processing_function</span><span class="p">(</span>
+    <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+    <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorate functions for processing steps.</span>
+
+<span class="sd">    Pass reading and/or level in args if existent in function arguments.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    func</span>
+<span class="sd">        The processing function to be decorated.</span>
+<span class="sd">    data_sets</span>
+<span class="sd">        The data frames on which the processing function is to be applied.</span>
+<span class="sd">    reading</span>
+<span class="sd">        The corresponding reading.</span>
+<span class="sd">    level</span>
+<span class="sd">        The corresponding level.</span>
+<span class="sd">    kwargs</span>
+<span class="sd">        Additional key word arguments to be passed to the processing function.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Any</span>
+<span class="sd">        The output of the given processing function.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">func_args</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getfullargspec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">args</span>
+    <span class="n">new_kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="s2">&quot;level&quot;</span> <span class="ow">in</span> <span class="n">func_args</span><span class="p">:</span>
+        <span class="n">new_kwargs</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">level</span>
+    <span class="k">if</span> <span class="s2">&quot;reading&quot;</span> <span class="ow">in</span> <span class="n">func_args</span><span class="p">:</span>
+        <span class="n">new_kwargs</span><span class="p">[</span><span class="s2">&quot;reading&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reading</span>
+
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">data_sets</span><span class="p">,</span> <span class="o">**</span><span class="n">new_kwargs</span><span class="p">)</span></div>
+
+
+
+<span class="n">TransformationFunctionGeneratorType</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">[</span>
+    <span class="n">Tuple</span><span class="p">[</span><span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+<span class="p">]</span>
+
+<span class="n">WrapResultGeneratorType</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">[</span>
+    <span class="n">Union</span><span class="p">[</span><span class="n">LevelProcessingResult</span><span class="p">,</span> <span class="n">RawDataSetProcessingResult</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="MutateDataSetProcessingStepBase">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase">[docs]</a>
+<span class="k">class</span> <span class="nc">MutateDataSetProcessingStepBase</span><span class="p">(</span><span class="n">DataSetProcessingStep</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A base class for transformation and extraction steps.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_ids</span>
+<span class="sd">        An optional list of data set ids to be used for the transformation. See</span>
+<span class="sd">        :class:`DataSetProcessingStepMixin`.</span>
+<span class="sd">    transform_function</span>
+<span class="sd">        An optional function to be applied to the data sets. If no function is passed</span>
+<span class="sd">        the class variable :data:`transform_function` will be used. Alternatively, the</span>
+<span class="sd">        :meth:`get_transform_function` can be overwritten to provide the transformation</span>
+<span class="sd">        function. If there is more than one function to be applied one can overwrite</span>
+<span class="sd">        :meth:`get_transform_functions`. Otherwise, all class functions decorated with</span>
+<span class="sd">        ``@transformation`` will be considered as a transformation function.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional filter to limit the levels being processed. See</span>
+<span class="sd">        :class:`~dispel.processing.level.LevelProcessingStep`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#: The function to be applied to the data sets.</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="MutateDataSetProcessingStepBase.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">transform_function</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span> <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transform_function</span> <span class="o">=</span> <span class="n">transform_function</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_function</span></div>
+
+
+<div class="viewcode-block" id="MutateDataSetProcessingStepBase.get_transform_function">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_transform_function</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the transformation function.&quot;&quot;&quot;</span>
+        <span class="c1"># unbind bound methods</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_function</span>
+        <span class="k">if</span> <span class="n">func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;__func__&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">func</span><span class="o">.</span><span class="vm">__func__</span>  <span class="c1"># type: ignore</span>
+        <span class="k">return</span> <span class="n">func</span></div>
+
+
+<div class="viewcode-block" id="MutateDataSetProcessingStepBase.get_transform_functions">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.get_transform_functions">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_transform_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformationFunctionGeneratorType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get all transformation functions associated with this step.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">func</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_transform_function</span><span class="p">():</span>
+            <span class="k">yield</span> <span class="n">func</span><span class="p">,</span> <span class="p">{}</span>
+
+        <span class="n">members</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="n">inspect</span><span class="o">.</span><span class="n">isroutine</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">members</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;__transform_function__&quot;</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">func</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">__transform_kwargs__</span>  <span class="c1"># type: ignore</span></div>
+
+
+<div class="viewcode-block" id="MutateDataSetProcessingStepBase.wrap_result">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.wrap_result">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">wrap_result</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WrapResultGeneratorType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wrap the transformation result into a processing result.&quot;&quot;&quot;</span>
+        <span class="k">yield</span> <span class="bp">NotImplemented</span></div>
+
+
+<div class="viewcode-block" id="MutateDataSetProcessingStepBase.process_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.MutateDataSetProcessingStepBase.process_data_sets">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided data sets.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">function</span><span class="p">,</span> <span class="n">func_kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_transform_functions</span><span class="p">():</span>
+            <span class="p">(</span><span class="n">merged_kwargs</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">func_kwargs</span><span class="p">)</span>
+
+            <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrap_result</span><span class="p">(</span>
+                <span class="n">decorated_processing_function</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">data_sets</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="n">level</span><span class="p">),</span>
+                <span class="n">level</span><span class="p">,</span>
+                <span class="n">reading</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">merged_kwargs</span><span class="p">,</span>
+            <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FlagDataSetStep">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagDataSetStep</span><span class="p">(</span><span class="n">FlagStepMixin</span><span class="p">,</span> <span class="n">DataSetProcessingStep</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A data set flag class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_ids</span>
+<span class="sd">        An optional id or iterable of ids for raw data set(s) to be used for the</span>
+<span class="sd">        flag. See :class:`DataSetProcessingStepMixin`.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional filter to limit the levels being processed.</span>
+<span class="sd">        See :class:`~dispel.processing.level.LevelProcessingStep`.</span>
+<span class="sd">    task_name</span>
+<span class="sd">        An optional abbreviated name value of the task used for the flag.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FLagStepMixin`.</span>
+<span class="sd">    flag_name</span>
+<span class="sd">        An optional abbreviated name value of the considered flag.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flag_type</span>
+<span class="sd">        An optional flag type.</span>
+<span class="sd">        See :class:`~dispel.data.flags.FlagType`.</span>
+<span class="sd">    flag_severity</span>
+<span class="sd">        An optional flag severity.</span>
+<span class="sd">        See :class:`~dispel.data.flags.FlagSeverity`.</span>
+<span class="sd">    reason</span>
+<span class="sd">        An optional string reason of the considered flag.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    stop_processing</span>
+<span class="sd">        An optional boolean that specifies whether the flag is stop_processing,</span>
+<span class="sd">        i.e., raises an error or not.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    flagging_function</span>
+<span class="sd">        An optional flagging function to be applied to the pandas data frames of the</span>
+<span class="sd">        provided raw data sets.</span>
+<span class="sd">        See :class:`~dispel.processing.flags.FlagStepMixin`.</span>
+<span class="sd">    target_ids</span>
+<span class="sd">        An optional id(s) of the target data sets to be flagged. If the user doesn&#39;t</span>
+<span class="sd">        specify the targets then the targets will automatically be the used data sets.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Assuming you want to flag the accelerometer signal data of the U-Turn task to</span>
+<span class="sd">    verify that it doesn&#39;t exceed a certain threshold, you can use the following</span>
+<span class="sd">    flag step:</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.values import AbbreviatedValue as AV</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.data_set import FlagDataSetStep</span>
+<span class="sd">    &gt;&gt;&gt; step = FlagDataSetStep(</span>
+<span class="sd">    ...     data_set_ids = &#39;accelerometer&#39;,</span>
+<span class="sd">    ...     level_filter = &#39;utt&#39;,</span>
+<span class="sd">    ...     task_name = AV(&#39;U-Turn test&#39;, &#39;utt&#39;),</span>
+<span class="sd">    ...     flag_name = AV(&#39;accelerometer signal threshold&#39;, &#39;ast&#39;),</span>
+<span class="sd">    ...     flag_type = FlagType.TECHNICAL,</span>
+<span class="sd">    ...     flag_severity = FlagSeverity.INVALIDATION,</span>
+<span class="sd">    ...     reason = &#39;The U-Turn accelerometer signal exceeds 50 m/s^2.&#39;,</span>
+<span class="sd">    ...     stop_processing=False,</span>
+<span class="sd">    ...     flagging_function=lambda data: data.max().max() &lt; 50.</span>
+<span class="sd">    ... )</span>
+
+<span class="sd">    The flagging function will be called with the level ``&#39;utt&#39;`` as specified in the</span>
+<span class="sd">    ``level_filter`` argument. If the function has a named parameter matching</span>
+<span class="sd">    ``reading``, the reading will be passed to the flagging function.</span>
+
+<span class="sd">    Another common scenario is to define a class that can be reused.</span>
+
+<span class="sd">    &gt;&gt;&gt; from dispel.data.flags import FlagType</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.data_set import FlagDataSetStep</span>
+<span class="sd">    &gt;&gt;&gt; class UTTAccelerometerSignal(FlagDataSetStep):</span>
+<span class="sd">    ...     data_set_ids = &#39;accelerometer&#39;</span>
+<span class="sd">    ...     level_filter = &#39;utt&#39;</span>
+<span class="sd">    ...     task_name = AV(&#39;U-Turn test&#39;, &#39;utt&#39;)</span>
+<span class="sd">    ...     flag_name = AV(&#39;u-turn duration&#39;, &#39;utt_dur&#39;)</span>
+<span class="sd">    ...     flag_type = FlagType.TECHNICAL</span>
+<span class="sd">    ...     flag_severity = FlagSeverity.INVALIDATION</span>
+<span class="sd">    ...     reason = &#39;The U-Turn accelerometer signal exceeds 50 m/s^2.&#39;</span>
+<span class="sd">    ...     stop_processing = True</span>
+<span class="sd">    ...     flagging_function = lambda data: data.max().max() &lt; 50</span>
+
+<span class="sd">    Another convenient way to provide the flagging function is to use the</span>
+<span class="sd">    ``@flag`` decorator, one can also use multiple flags for the same class</span>
+<span class="sd">    as well as multiple data sets. Below is an example of the flag of a data set</span>
+<span class="sd">    (``userInput``) through the use of multiple ones in the flagging function</span>
+<span class="sd">    (``userInput``, ``screen``).</span>
+
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.flags import flag</span>
+<span class="sd">    &gt;&gt;&gt; from dispel.processing.level import FlagLevelStep</span>
+<span class="sd">    &gt;&gt;&gt; class UTTAccelerometerSignal(FlagDataSetStep):</span>
+<span class="sd">    ...     data_set_ids = [&#39;userInput&#39;, &#39;screen&#39;]</span>
+<span class="sd">    ...     target_ids = &#39;userInput&#39;</span>
+<span class="sd">    ...     level_filter = &#39;cps&#39;</span>
+<span class="sd">    ...     task_name = AV(&#39;Cognitive processing speed test&#39;, &#39;cps&#39;)</span>
+<span class="sd">    ...     flag_name = AV(&#39;answer timestamps&#39;, &#39;at&#39;)</span>
+<span class="sd">    ...     flag_type = FlagType.TECHNICAL</span>
+<span class="sd">    ...     flag_severity = FlagSeverity.INVALIDATION</span>
+<span class="sd">    ...     reason = &#39;The user answer timestamps do not match the screen info.&#39;</span>
+<span class="sd">    ...     stop_processing = False</span>
+<span class="sd">    ...</span>
+<span class="sd">    ...     @flag</span>
+<span class="sd">    ...     def _timestamps(</span>
+<span class="sd">    ...         self,</span>
+<span class="sd">    ...         user_input: pd.DataFrame,</span>
+<span class="sd">    ...         screen: pd.DataFrame</span>
+<span class="sd">    ...     ) -&gt; bool:</span>
+<span class="sd">    ...         return list(user_input.ts) == list(screen.ts)</span>
+
+<span class="sd">    Note that the ``@flag`` decorator can take keyword arguments. These kwargs are</span>
+<span class="sd">    merged with any keyword arguments that come from processing step groups in order to</span>
+<span class="sd">    format the flag ``reason``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">target_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="FlagDataSetStep.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">task_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">FlagType</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">flag_severity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">FlagSeverity</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">reason</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">AV</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stop_processing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">flagging_function</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">target_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">target_ids</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span> <span class="o">=</span> <span class="n">target_ids</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_set_ids</span><span class="o">=</span><span class="n">data_set_ids</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">,</span>
+            <span class="n">task_name</span><span class="o">=</span><span class="n">task_name</span><span class="p">,</span>
+            <span class="n">flag_name</span><span class="o">=</span><span class="n">flag_name</span><span class="p">,</span>
+            <span class="n">flag_type</span><span class="o">=</span><span class="n">flag_type</span><span class="p">,</span>
+            <span class="n">flag_severity</span><span class="o">=</span><span class="n">flag_severity</span><span class="p">,</span>
+            <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
+            <span class="n">stop_processing</span><span class="o">=</span><span class="n">stop_processing</span><span class="p">,</span>
+            <span class="n">flagging_function</span><span class="o">=</span><span class="n">flagging_function</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FlagDataSetStep.get_target_ids">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.get_target_ids">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_target_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the ids of the target data sets to be flagged.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The identifiers of the target data sets.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data_set_ids</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_ids</span></div>
+
+
+<div class="viewcode-block" id="FlagDataSetStep.process_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.process_data_sets">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the provided data sets.&quot;&quot;&quot;</span>
+        <span class="k">yield from</span> <span class="p">[]</span></div>
+
+
+<div class="viewcode-block" id="FlagDataSetStep.get_data_sets_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.get_data_sets_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data_sets_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get flag targets for data sets flagging.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flag_targets</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FlagDataSetStep.get_flag_targets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.get_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Level</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get flag targets for data set flagging.&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Missing level in kwargs.&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="n">id_</span><span class="p">)</span> <span class="k">for</span> <span class="n">id_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_target_ids</span><span class="p">()]</span></div>
+
+
+<div class="viewcode-block" id="FlagDataSetStep.flag_data_sets">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_set.html#dispel.processing.data_set.FlagDataSetStep.flag_data_sets">[docs]</a>
+    <span class="k">def</span> <span class="nf">flag_data_sets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_sets</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+        <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span>
+        <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Flag</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag the provided data sets.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">func_kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flagging_functions</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">decorated_processing_function</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">data_sets</span><span class="p">,</span> <span class="n">reading</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+                <span class="p">(</span><span class="n">merged_kwargs</span> <span class="o">:=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">func_kwargs</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flag</span><span class="p">(</span><span class="o">**</span><span class="n">merged_kwargs</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

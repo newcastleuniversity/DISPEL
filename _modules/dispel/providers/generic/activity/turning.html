@@ -1,0 +1,1287 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.activity.turning &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/activity/turning';</script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.activity.turning</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A module to detect and process turns during tests.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">RawDataValueDefinition</span>
+<span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">GREATER_THAN_ZERO</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AVEnum</span>
+<span class="kn">from</span> <span class="nn">dispel.processing</span> <span class="kn">import</span> <span class="n">ProcessingStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">DataSetProcessingStepMixin</span><span class="p">,</span> <span class="n">transformation</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+    <span class="n">AggregateRawDataSetColumn</span><span class="p">,</span>
+    <span class="n">ExtractStep</span><span class="p">,</span>
+    <span class="n">MeasureDefinitionMixin</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">ProcessingStepGroup</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">TransformStep</span>
+
+<span class="n">EL_GOHARY_TH_MAX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">EL_GOHARY_TH_MIN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">EL_GOHARY_TH_MERGE</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">EL_GOHARY_FINAL_TH_MERGE</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">TH_MIN_TURN_DURATION</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">TH_MAX_TURN_DURATION</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">TH_MIN_TURN_ANGLE_DEGREE</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">U_REFINE_TH_MAX_TURN_DURATION</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
+<span class="n">U_REFINE_TH_CURR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">170</span><span class="p">)</span>
+<span class="n">U_REFINE_TH_LAST</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">170</span><span class="p">)</span>
+<span class="n">U_REFINE_TH_SUM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">270</span><span class="p">)</span>
+<span class="n">U_REFINE_TH_MIN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">TURN_DATA_SET_DEFINITION</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;The start of the turn&quot;</span><span class="p">),</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">,</span> <span class="s2">&quot;The end of the turn&quot;</span><span class="p">),</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="s2">&quot;The duration of the turn&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">),</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;angle&quot;</span><span class="p">,</span> <span class="s2">&quot;The angle of the turn&quot;</span><span class="p">,</span> <span class="s2">&quot;rad&quot;</span><span class="p">),</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;turn_cls&quot;</span><span class="p">,</span> <span class="s2">&quot;The Turn class&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">TURN_SPEED_PROPERTIES_SET_DEFINITION</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;mean of turn speed across a turn&quot;</span><span class="p">,</span> <span class="s2">&quot;rad/s&quot;</span><span class="p">),</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;q95&quot;</span><span class="p">,</span> <span class="s2">&quot;95th centile of turn speed across a turn&quot;</span><span class="p">,</span> <span class="s2">&quot;rad/s&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="Turn">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.Turn">[docs]</a>
+<span class="k">class</span> <span class="nc">Turn</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to encapsulate turns and turn related gyroscope data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    start</span>
+<span class="sd">        The start date time of the turn.</span>
+<span class="sd">    end</span>
+<span class="sd">        The end date time of the turn.</span>
+<span class="sd">    data</span>
+<span class="sd">        The angular velocity time series of the turn. The data set should</span>
+<span class="sd">        ensure to be at least of the duration of time provided with</span>
+<span class="sd">        ``start`` and ``end``. It should be in rad/s and sampling has to be</span>
+<span class="sd">        at a constant frequency.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    start</span>
+<span class="sd">        The start date time of the turn.</span>
+<span class="sd">    end</span>
+<span class="sd">        The end date time of the turn.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Turn.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.Turn.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="Turn.expand">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.Turn.expand">[docs]</a>
+    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Turn&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Expand the ``start`` and ``end`` of the turn to the given threshold.</span>
+
+<span class="sd">        This expands the turn until start and end are below the provided</span>
+<span class="sd">        threshold of turn speed. The expansion relies on the data provided</span>
+<span class="sd">        during the construction of the turn and should not be confused with</span>
+<span class="sd">        what is available via :data:`data`, which is always limited to the</span>
+<span class="sd">        boundaries specified with :data:`start` and :data:`end`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        threshold</span>
+<span class="sd">            The threshold until which to expand the turn.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Turn</span>
+<span class="sd">            A new turn with expanded start and end time stamps based on</span>
+<span class="sd">            associated data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">below</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">&lt;</span> <span class="n">threshold</span>
+
+        <span class="n">before</span> <span class="o">=</span> <span class="n">below</span><span class="p">[:</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">]</span>  <span class="c1"># type: ignore</span>
+        <span class="n">after</span> <span class="o">=</span> <span class="n">below</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="p">:]</span>  <span class="c1"># type: ignore</span>
+
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span>
+        <span class="n">freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">freq</span><span class="o">.</span><span class="n">delta</span>
+
+        <span class="c1"># adjust start</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">before</span><span class="p">[</span><span class="n">before</span><span class="p">]</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">before</span><span class="p">[</span><span class="n">before</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">freq</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">before</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">before</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># adjust end</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">after</span><span class="p">[</span><span class="n">after</span><span class="p">]</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">after</span><span class="p">[</span><span class="n">after</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">freq</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">after</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">after</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">Turn</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the angular velocity data associated with the turn.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Series</span>
+<span class="sd">            Angular velocity series between :data:`start` and :data:`end` of</span>
+<span class="sd">            the turn.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">]</span>  <span class="c1"># type: ignore</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">duration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the duration of the turn.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            The duration of the turn in seconds.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">direction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the direction of the turn.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            The direction of the turn. If the turning direction is positive</span>
+<span class="sd">            ``1`` is returned. Otherwise ``-1``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">angle</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the angle of the turn.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            The angle of the turn in rad/s.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">freq</span><span class="o">.</span><span class="n">delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="n">delta</span>
+
+<div class="viewcode-block" id="Turn.merge">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.Turn.merge">[docs]</a>
+    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Turn&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Merge this turn with another one.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other</span>
+<span class="sd">            The other turn to merge this one with.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Turn</span>
+<span class="sd">            The new merged turn. The new turn uses the earlier start and later</span>
+<span class="sd">            end of both, respectively. The data will be based on this turn.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Turn</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">start</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">end</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&lt;Turn: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">duration</span><span class="si">}</span><span class="s2"> s, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">angle</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> rad, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="si">}</span><span class="s2">)&gt;&quot;</span>
+        <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransformAbsTurnSpeed">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.TransformAbsTurnSpeed">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformAbsTurnSpeed</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get absolute turns speed.&quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;abs_turn_speed&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;abs_turn_speed&quot;</span><span class="p">,</span> <span class="s2">&quot;The absolute value of the average turn speed&quot;</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_abs_turn_speed</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;angle&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="merge_turns">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.merge_turns">[docs]</a>
+<span class="k">def</span> <span class="nf">merge_turns</span><span class="p">(</span>
+    <span class="n">turns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Turn</span><span class="p">],</span>
+    <span class="n">th_time</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">),</span>
+    <span class="n">th_curr</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
+    <span class="n">th_last</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
+    <span class="n">th_sum</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Turn</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Merge turns that add up to approximately u-turns.</span>
+
+<span class="sd">    This function takes a list of turns and merges each of them with its</span>
+<span class="sd">    preceding turn if that ended less than a time threshold ago and the</span>
+<span class="sd">    consecutive turns are below a set of thresholds in size.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    turns</span>
+<span class="sd">        A list of Turn objects to be potentially merged.</span>
+<span class="sd">    th_time</span>
+<span class="sd">        A pandas.Timedelta containing the maximum time distance between turns</span>
+<span class="sd">        that should be used for merging.</span>
+<span class="sd">    th_curr</span>
+<span class="sd">        A float indicating the maximum value of the current turn to be</span>
+<span class="sd">        considered for merging</span>
+<span class="sd">    th_last</span>
+<span class="sd">        A float indicating the maximum value of the last turn to be</span>
+<span class="sd">        considered for merging</span>
+<span class="sd">    th_sum</span>
+<span class="sd">        A float indicating the maximum value of the sum of current and</span>
+<span class="sd">        previous turn to be considered for merging</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    List[Turn]</span>
+<span class="sd">        A list of merged turns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">merged_turns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Turn</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="n">turns</span><span class="p">:</span>
+        <span class="c1"># initial turn</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">merged_turns</span><span class="p">:</span>
+            <span class="n">merged_turns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">turn</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">last_turn</span> <span class="o">=</span> <span class="n">merged_turns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="n">condition</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;dir&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="n">last_turn</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span>
+                <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">turn</span><span class="o">.</span><span class="n">start</span> <span class="o">-</span> <span class="n">last_turn</span><span class="o">.</span><span class="n">end</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">th_time</span><span class="p">,</span>
+                <span class="s2">&quot;curr&quot;</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">turn</span><span class="o">.</span><span class="n">angle</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">th_curr</span><span class="p">,</span>
+                <span class="s2">&quot;last&quot;</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">last_turn</span><span class="o">.</span><span class="n">angle</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">th_last</span><span class="p">,</span>
+                <span class="s2">&quot;sum&quot;</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">turn</span><span class="o">.</span><span class="n">angle</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">last_turn</span><span class="o">.</span><span class="n">angle</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">th_sum</span><span class="p">,</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">condition</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+                <span class="n">merged_turns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_turn</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">turn</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">merged_turns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">turn</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">merged_turns</span></div>
+
+
+
+<div class="viewcode-block" id="el_gohary_detect_turns">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.el_gohary_detect_turns">[docs]</a>
+<span class="k">def</span> <span class="nf">el_gohary_detect_turns</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Turn</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Detect turns based on the El Gohary et al. algorithm [1]_ .</span>
+
+<span class="sd">    This method performs the detection after aligning and filtering the</span>
+<span class="sd">    gyroscope time series (see El Gohary et al. algorithm 1, row 4).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas series of angular velocity used to search for turns.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    List[Turn]</span>
+<span class="sd">        A list of detected turns.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] El-Gohary, Mahmoud, et al. &quot;Continuous monitoring of turning in</span>
+<span class="sd">       patients with movement disability.&quot; Sensors 14.1 (2014): 356-369.</span>
+<span class="sd">       https://doi.org/10.3390/s140100356</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># detect peaks</span>
+    <span class="n">peak_index</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">find_peaks</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">abs</span><span class="p">(),</span> <span class="n">EL_GOHARY_TH_MAX</span><span class="p">)</span>
+    <span class="n">peaks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">peak_index</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">peak_index</span><span class="p">])</span>
+
+    <span class="c1"># initialize turns with peaks found</span>
+    <span class="n">turns</span> <span class="o">=</span> <span class="p">[</span><span class="n">Turn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">peaks</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
+
+    <span class="c1"># expand turns</span>
+    <span class="n">expanded_turns</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">EL_GOHARY_TH_MIN</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">turns</span><span class="p">]</span>
+
+    <span class="c1"># merge turns</span>
+    <span class="n">merged_turns</span> <span class="o">=</span> <span class="n">merge_turns</span><span class="p">(</span><span class="n">expanded_turns</span><span class="p">,</span> <span class="n">EL_GOHARY_TH_MERGE</span><span class="p">)</span>
+
+    <span class="c1"># filter turns</span>
+    <span class="n">filtered_turns</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="n">merged_turns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">TH_MIN_TURN_DURATION</span> <span class="o">&lt;</span> <span class="n">turn</span><span class="o">.</span><span class="n">duration</span> <span class="o">&lt;</span> <span class="n">TH_MAX_TURN_DURATION</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span>
+            <span class="n">turn</span><span class="o">.</span><span class="n">angle</span>
+        <span class="p">)</span> <span class="o">&gt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">TH_MIN_TURN_ANGLE_DEGREE</span><span class="p">):</span>
+            <span class="n">filtered_turns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">turn</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">filtered_turns</span></div>
+
+
+
+<div class="viewcode-block" id="remove_turns_below_thres">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.remove_turns_below_thres">[docs]</a>
+<span class="k">def</span> <span class="nf">remove_turns_below_thres</span><span class="p">(</span><span class="n">turns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Turn</span><span class="p">],</span> <span class="n">th_min</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Turn</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove turns that are below a given threshold.</span>
+
+<span class="sd">    This function receives a list of turns and removes the ones that are lower</span>
+<span class="sd">    than a given threshold.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    turns</span>
+<span class="sd">        A list of Turn objects to be potentially merged.</span>
+<span class="sd">    th_min</span>
+<span class="sd">        Minimum angle in radians</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    List[Turn]</span>
+<span class="sd">        A list of merged turns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filtered_turns</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="n">turns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">turn</span><span class="o">.</span><span class="n">angle</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">th_min</span><span class="p">:</span>
+            <span class="n">filtered_turns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">turn</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">filtered_turns</span></div>
+
+
+
+<div class="viewcode-block" id="ElGoharyTurnDetection">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.ElGoharyTurnDetection">[docs]</a>
+<span class="k">class</span> <span class="nc">ElGoharyTurnDetection</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;El Gohary et al. turn detection processing step.</span>
+
+<span class="sd">    This processing step is to apply the :func:`el_gohary_detect_turns` to</span>
+<span class="sd">    an angular velocity time series that has undergone the described filtering.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    component</span>
+<span class="sd">        The column name of the series contained in raw data set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">TURN_DATA_SET_DEFINITION</span>
+
+<div class="viewcode-block" id="ElGoharyTurnDetection.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.ElGoharyTurnDetection.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">component</span> <span class="o">=</span> <span class="n">component</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ElGoharyTurnDetection.get_new_data_set_id">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.ElGoharyTurnDetection.get_new_data_set_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_new_data_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the id of the new data set to be created.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_ids</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="si">}</span><span class="s2">_turns&quot;</span></div>
+
+
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_detect_turns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">turns</span> <span class="o">=</span> <span class="n">el_gohary_detect_turns</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="p">])</span>
+        <span class="c1"># Check if turns is empty</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">turns</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">_def</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">_def</span> <span class="ow">in</span> <span class="n">TURN_DATA_SET_DEFINITION</span><span class="p">])</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+                <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">duration</span><span class="p">,</span>
+                <span class="s2">&quot;angle&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">angle</span><span class="p">,</span>
+                <span class="s2">&quot;turn_cls&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="n">turns</span>
+        <span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">out</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="refine_turns">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.refine_turns">[docs]</a>
+<span class="k">def</span> <span class="nf">refine_turns</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
+    <span class="n">turns_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">th_time</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">),</span>
+    <span class="n">th_curr</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
+    <span class="n">th_last</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
+    <span class="n">th_sum</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
+    <span class="n">th_min</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Turn</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Refine turns from El-Gohary output.</span>
+
+<span class="sd">    This function refines turns by merging consecutive turns with time distance</span>
+<span class="sd">    (defined as the period between the end of a turn and the start of the next)</span>
+<span class="sd">    less than a specified threshold as well as a set of thresholds constraining</span>
+<span class="sd">    the size of refined merged angles.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data</span>
+<span class="sd">        A pandas series of angular velocity used to search for turns.</span>
+<span class="sd">    turns_df</span>
+<span class="sd">        A pd.DataFrame containing the turns to be refined.</span>
+<span class="sd">    th_time</span>
+<span class="sd">        A pandas.Timedelta containing the maximum time distance between turns</span>
+<span class="sd">        that should be used for merging.</span>
+<span class="sd">    th_curr</span>
+<span class="sd">        A float indicating the maximum value of the current turn to be</span>
+<span class="sd">        considered for merging (in radians)</span>
+<span class="sd">    th_last</span>
+<span class="sd">        A float indicating the maximum value of the last turn to be</span>
+<span class="sd">        considered for merging (in radians)</span>
+<span class="sd">    th_sum</span>
+<span class="sd">        A float indicating the maximum value of the sum of current and</span>
+<span class="sd">        previous turn to be considered for merging (in radians)</span>
+<span class="sd">    th_min</span>
+<span class="sd">        A float indicating the minimum value of the angles to be kept in the</span>
+<span class="sd">        data (in radians)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    List[Turn]</span>
+<span class="sd">        A list of refined turns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># convert dataframe to list of Turn objects</span>
+    <span class="n">turns</span> <span class="o">=</span> <span class="p">[</span><span class="n">Turn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">turns_df</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">],</span> <span class="n">turns_df</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">])]</span>
+
+    <span class="c1"># merge each turn with its previous if it is of same direction and the</span>
+    <span class="c1"># previous ended EL_GOHARY_FINAL_TH_MERGE seconds ago or less</span>
+    <span class="n">merged_turns</span> <span class="o">=</span> <span class="n">merge_turns</span><span class="p">(</span><span class="n">turns</span><span class="p">,</span> <span class="n">th_time</span><span class="p">,</span> <span class="n">th_curr</span><span class="p">,</span> <span class="n">th_last</span><span class="p">,</span> <span class="n">th_sum</span><span class="p">)</span>
+
+    <span class="c1"># remove turns smaller than threshold</span>
+    <span class="n">turns</span> <span class="o">=</span> <span class="n">remove_turns_below_thres</span><span class="p">(</span><span class="n">merged_turns</span><span class="p">,</span> <span class="n">th_min</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">turns</span></div>
+
+
+
+<div class="viewcode-block" id="RefineTurns">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.RefineTurns">[docs]</a>
+<span class="k">class</span> <span class="nc">RefineTurns</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;El Gohary et al. turn detection processing step.</span>
+
+<span class="sd">    This processing step is to apply the :func:`el_gohary_detect_turns` to</span>
+<span class="sd">    a angular velocity time series that has undergone the described filtering.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    component</span>
+<span class="sd">        The column name of the series contained in raw data set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">TURN_DATA_SET_DEFINITION</span>
+    <span class="n">th_time</span> <span class="o">=</span> <span class="n">EL_GOHARY_FINAL_TH_MERGE</span>
+
+<div class="viewcode-block" id="RefineTurns.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.RefineTurns.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">component</span> <span class="o">=</span> <span class="n">component</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RefineTurns.get_new_data_set_id">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.RefineTurns.get_new_data_set_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_new_data_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get new data set id.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_ids</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">_refined&quot;</span>  <span class="c1"># type: ignore</span></div>
+
+
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_refine_turns</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">angular_velocity</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">turns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">turns</span> <span class="o">=</span> <span class="n">refine_turns</span><span class="p">(</span><span class="n">angular_velocity</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="p">],</span> <span class="n">turns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">th_time</span><span class="p">)</span>
+        <span class="c1"># Check if turns is empty</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">turns</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">_def</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">_def</span> <span class="ow">in</span> <span class="n">TURN_DATA_SET_DEFINITION</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                    <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+                    <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">duration</span><span class="p">,</span>
+                    <span class="s2">&quot;angle&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">angle</span><span class="p">,</span>
+                    <span class="s2">&quot;turn_cls&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="p">,</span>
+                <span class="p">}</span>
+                <span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="n">turns</span>
+            <span class="p">]</span>
+        <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RefineUTurns">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.RefineUTurns">[docs]</a>
+<span class="k">class</span> <span class="nc">RefineUTurns</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Refine Turns based on assumption of 180 degrees.</span>
+
+<span class="sd">    This processing step is to consecutive turns occuring soon after another</span>
+<span class="sd">    and merge them if they are smaller than a threshold.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    component</span>
+<span class="sd">        The column name of the series contained in raw data set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">TURN_DATA_SET_DEFINITION</span>
+    <span class="n">th_time</span> <span class="o">=</span> <span class="n">U_REFINE_TH_MAX_TURN_DURATION</span>
+    <span class="n">th_curr</span> <span class="o">=</span> <span class="n">U_REFINE_TH_CURR</span>
+    <span class="n">th_last</span> <span class="o">=</span> <span class="n">U_REFINE_TH_LAST</span>
+    <span class="n">th_sum</span> <span class="o">=</span> <span class="n">U_REFINE_TH_SUM</span>
+    <span class="n">th_min</span> <span class="o">=</span> <span class="n">U_REFINE_TH_MIN</span>
+
+<div class="viewcode-block" id="RefineUTurns.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.RefineUTurns.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">component</span> <span class="o">=</span> <span class="n">component</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RefineUTurns.get_new_data_set_id">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.RefineUTurns.get_new_data_set_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_new_data_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get new data set id.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_ids</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">_u_refined&quot;</span>  <span class="c1"># type: ignore</span></div>
+
+
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_refine_turns</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">angular_velocity</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">turns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">turns</span> <span class="o">=</span> <span class="n">refine_turns</span><span class="p">(</span>
+            <span class="n">angular_velocity</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="p">],</span>
+            <span class="n">turns</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">th_time</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">th_curr</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">th_last</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">th_sum</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">th_min</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># Check if turns is empty</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">turns</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">_def</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">_def</span> <span class="ow">in</span> <span class="n">TURN_DATA_SET_DEFINITION</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                    <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+                    <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">duration</span><span class="p">,</span>
+                    <span class="s2">&quot;angle&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="o">.</span><span class="n">angle</span><span class="p">,</span>
+                    <span class="s2">&quot;turn_cls&quot;</span><span class="p">:</span> <span class="n">turn</span><span class="p">,</span>
+                <span class="p">}</span>
+                <span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="n">turns</span>
+            <span class="p">]</span>
+        <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="WithinTurnSpeed">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.WithinTurnSpeed">[docs]</a>
+<span class="k">class</span> <span class="nc">WithinTurnSpeed</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute within-turn properties of the turn speed.</span>
+
+<span class="sd">    This processing step is to compute sensor-derived aggregated properties</span>
+<span class="sd">    of the angular velocity signal within each turn.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    component</span>
+<span class="sd">        The column name of the series contained in raw data set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">TURN_SPEED_PROPERTIES_SET_DEFINITION</span>
+
+<div class="viewcode-block" id="WithinTurnSpeed.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.WithinTurnSpeed.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">component</span> <span class="o">=</span> <span class="n">component</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WithinTurnSpeed.get_new_data_set_id">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.WithinTurnSpeed.get_new_data_set_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_new_data_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get new data set id.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;abs_turn_speed_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># type: ignore</span></div>
+
+
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_compute_within_turn_aggregates</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">angular_velocity</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">turns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">turns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;q95&quot;</span><span class="p">])</span>
+
+        <span class="n">aggregates_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">turn</span> <span class="ow">in</span> <span class="n">turns</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="n">turn_properties</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">turn</span><span class="o">.</span><span class="n">start</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">turn</span><span class="o">.</span><span class="n">end</span>
+            <span class="n">angular_velocity_turn</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">angular_velocity</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="p">])</span>
+            <span class="n">turn_properties</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">angular_velocity_turn</span><span class="p">)</span>
+            <span class="n">turn_properties</span><span class="p">[</span><span class="s2">&quot;q95&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">angular_velocity_turn</span><span class="p">,</span> <span class="mi">95</span><span class="p">)</span>
+            <span class="n">aggregates_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">turn_properties</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">aggregates_list</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TurnModality">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.TurnModality">[docs]</a>
+<span class="k">class</span> <span class="nc">TurnModality</span><span class="p">(</span><span class="n">AVEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An enumeration for turn modalities.&quot;&quot;&quot;</span>
+
+    <span class="n">ALL</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;all turns&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">)</span>
+    <span class="n">FIRST_FIVE</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;first five turns&quot;</span><span class="p">,</span> <span class="s2">&quot;first5&quot;</span><span class="p">)</span>
+    <span class="n">FIRST_FOUR</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;first four turns&quot;</span><span class="p">,</span> <span class="s2">&quot;first4&quot;</span><span class="p">)</span>
+    <span class="n">TWO_THREE_FOUR</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;second, third, and forth turn&quot;</span><span class="p">,</span> <span class="s2">&quot;2to4&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="n">TURN_ID_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">TurnModality</span><span class="o">.</span><span class="n">FIRST_FIVE</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">TurnModality</span><span class="o">.</span><span class="n">FIRST_FOUR</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span>
+    <span class="n">TurnModality</span><span class="o">.</span><span class="n">TWO_THREE_FOUR</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="TurnModalityMixIn">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.TurnModalityMixIn">[docs]</a>
+<span class="k">class</span> <span class="nc">TurnModalityMixIn</span><span class="p">(</span>
+    <span class="n">MeasureDefinitionMixin</span><span class="p">,</span> <span class="n">DataSetProcessingStepMixin</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A modality to filter on subsets of turns.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    turn_modality</span>
+<span class="sd">        A TurnModality object denoting the turns to be used.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TurnModalityMixIn.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.TurnModalityMixIn.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">turn_modality</span><span class="p">:</span> <span class="n">TurnModality</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">turn_modality</span> <span class="o">=</span> <span class="n">turn_modality</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TurnModalityMixIn.get_definition">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.TurnModalityMixIn.get_definition">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_definition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get definition.&quot;&quot;&quot;</span>
+        <span class="n">modalities</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;modalities&quot;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">modalities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">turn_modality</span><span class="o">.</span><span class="n">av</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_definition</span><span class="p">(</span><span class="n">modalities</span><span class="o">=</span><span class="n">modalities</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TurnModalityMixIn.get_data_frames">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.TurnModalityMixIn.get_data_frames">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get data frames.&quot;&quot;&quot;</span>
+        <span class="n">dfs</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_data_frames</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">turn_modality</span> <span class="ow">is</span> <span class="n">TurnModality</span><span class="o">.</span><span class="n">ALL</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">dfs</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">TURN_ID_MAPPING</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">turn_modality</span><span class="p">])]]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractNumberOfTurns">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.ExtractNumberOfTurns">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractNumberOfTurns</span><span class="p">(</span><span class="n">TurnModalityMixIn</span><span class="p">,</span> <span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the number of turns during the utt test.&quot;&quot;&quot;</span>
+
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;number of turns&quot;</span><span class="p">,</span> <span class="s2">&quot;turns&quot;</span><span class="p">),</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+        <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;The number of turns detected during the &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="se">{{</span><span class="s2">task_name</span><span class="se">}}</span><span class="s2"> using the El Gohary et al. 2014 &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;(https://dx.doi.org/10.3390/s140100356) &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;algorithm. Only turns with durations between &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MIN_TURN_DURATION</span><span class="si">}</span><span class="s2"> and &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MAX_TURN_DURATION</span><span class="si">}</span><span class="s2"> s and turn angles over &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MIN_TURN_ANGLE_DEGREE</span><span class="si">}</span><span class="s2">° are considered.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="nb">len</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateAbsTurnSpeed">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.AggregateAbsTurnSpeed">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateAbsTurnSpeed</span><span class="p">(</span><span class="n">TurnModalityMixIn</span><span class="p">,</span> <span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate absolute turn speed based on modality.&quot;&quot;&quot;</span>
+
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;absolute turn speed&quot;</span><span class="p">,</span> <span class="s2">&quot;ts&quot;</span><span class="p">),</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;rad/s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+        <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="se">{{</span><span class="s2">aggregation</span><span class="se">}}</span><span class="s2"> absolute turn speed detected &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;in </span><span class="se">{{</span><span class="s2">task_name</span><span class="se">}}</span><span class="s2"> using the El Gohary et al. 2014 &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;(https://dx.doi.org/10.3390/s140100356) &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;algorithm. Only turns with durations between &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MIN_TURN_DURATION</span><span class="si">}</span><span class="s2"> and &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MAX_TURN_DURATION</span><span class="si">}</span><span class="s2"> s and turn angles over &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MIN_TURN_ANGLE_DEGREE</span><span class="si">}</span><span class="s2">° are considered.&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateTurnDuration">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.AggregateTurnDuration">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateTurnDuration</span><span class="p">(</span><span class="n">TurnModalityMixIn</span><span class="p">,</span> <span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate turn duration based on modality.&quot;&quot;&quot;</span>
+
+    <span class="n">aggregations</span> <span class="o">=</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;turn duration&quot;</span><span class="p">,</span> <span class="s2">&quot;dur&quot;</span><span class="p">),</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+        <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="se">{{</span><span class="s2">aggregation</span><span class="se">}}</span><span class="s2"> turn duration &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;in </span><span class="se">{{</span><span class="s2">task_name</span><span class="se">}}</span><span class="s2"> using the El Gohary et al. 2014 &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;(https://dx.doi.org/10.3390/s140100356) &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;algorithm. Only turns with durations between &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MIN_TURN_DURATION</span><span class="si">}</span><span class="s2"> and &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MAX_TURN_DURATION</span><span class="si">}</span><span class="s2"> s and turn angles over &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MIN_TURN_ANGLE_DEGREE</span><span class="si">}</span><span class="s2">° are considered.&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="AggregateTurnSpeedProperties">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.AggregateTurnSpeedProperties">[docs]</a>
+<span class="k">class</span> <span class="nc">AggregateTurnSpeedProperties</span><span class="p">(</span><span class="n">TurnModalityMixIn</span><span class="p">,</span> <span class="n">AggregateRawDataSetColumn</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate properties based on modality.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AggregateTurnSpeedProperties.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.AggregateTurnSpeedProperties.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">turn_modality</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">,</span> <span class="n">column_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">turn_modality</span> <span class="o">=</span> <span class="n">turn_modality</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span> <span class="o">=</span> <span class="n">data_set_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">column_id</span> <span class="o">=</span> <span class="n">column_id</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">turn_modality</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">column_id</span><span class="p">,</span>
+            <span class="n">aggregations</span><span class="o">=</span><span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+            <span class="n">definition</span><span class="o">=</span><span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">column_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">column_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;rad/s&quot;</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+                <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="se">{{</span><span class="s2">aggregation</span><span class="se">}}</span><span class="s2"> turn properties detected &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;in </span><span class="se">{{</span><span class="s2">task_name</span><span class="se">}}</span><span class="s2"> using the El Gohary et al. 2014&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;(https://dx.doi.org/10.3390/s140100356) &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;algorithm. Only turns with durations between &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MIN_TURN_DURATION</span><span class="si">}</span><span class="s2"> and &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MAX_TURN_DURATION</span><span class="si">}</span><span class="s2"> s and turn angles over &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TH_MIN_TURN_ANGLE_DEGREE</span><span class="si">}</span><span class="s2">° are considered.&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractTurnMeasures">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.ExtractTurnMeasures">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractTurnMeasures</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract Turn Measures based on Turn Selection Modality.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractTurnMeasures.__init__">
+<a class="viewcode-back" href="../../../../../api/dispel.providers.generic.activity.turning.html#dispel.providers.generic.activity.turning.ExtractTurnMeasures.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">turns_data_set_id</span><span class="p">,</span> <span class="n">turn_modality</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">ExtractNumberOfTurns</span><span class="p">(</span>
+                <span class="n">turn_modality</span><span class="o">=</span><span class="n">turn_modality</span><span class="p">,</span> <span class="n">data_set_ids</span><span class="o">=</span><span class="n">turns_data_set_id</span>
+            <span class="p">),</span>
+            <span class="n">AggregateTurnDuration</span><span class="p">(</span>
+                <span class="n">turn_modality</span><span class="o">=</span><span class="n">turn_modality</span><span class="p">,</span>
+                <span class="n">data_set_id</span><span class="o">=</span><span class="n">turns_data_set_id</span><span class="p">,</span>
+                <span class="n">column_id</span><span class="o">=</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">AggregateAbsTurnSpeed</span><span class="p">(</span>
+                <span class="n">turn_modality</span><span class="o">=</span><span class="n">turn_modality</span><span class="p">,</span>
+                <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;abs_turn_speed&quot;</span><span class="p">,</span>
+                <span class="n">column_id</span><span class="o">=</span><span class="s2">&quot;abs_turn_speed&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">AggregateTurnSpeedProperties</span><span class="p">(</span>
+                <span class="n">turn_modality</span><span class="o">=</span><span class="n">turn_modality</span><span class="p">,</span>
+                <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;abs_turn_speed_x&quot;</span><span class="p">,</span>
+                <span class="n">column_id</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">AggregateTurnSpeedProperties</span><span class="p">(</span>
+                <span class="n">turn_modality</span><span class="o">=</span><span class="n">turn_modality</span><span class="p">,</span>
+                <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;abs_turn_speed_x&quot;</span><span class="p">,</span>
+                <span class="n">column_id</span><span class="o">=</span><span class="s2">&quot;q95&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">AggregateTurnSpeedProperties</span><span class="p">(</span>
+                <span class="n">turn_modality</span><span class="o">=</span><span class="n">turn_modality</span><span class="p">,</span>
+                <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;abs_turn_speed_norm&quot;</span><span class="p">,</span>
+                <span class="n">column_id</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">AggregateTurnSpeedProperties</span><span class="p">(</span>
+                <span class="n">turn_modality</span><span class="o">=</span><span class="n">turn_modality</span><span class="p">,</span>
+                <span class="n">data_set_id</span><span class="o">=</span><span class="s2">&quot;abs_turn_speed_norm&quot;</span><span class="p">,</span>
+                <span class="n">column_id</span><span class="o">=</span><span class="s2">&quot;q95&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

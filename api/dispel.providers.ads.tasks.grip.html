@@ -1,0 +1,1645 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dispel.providers.ads.tasks.grip module &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dispel.providers.ads.tasks.grip';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dispel.providers.ads.tasks.passive module" href="dispel.providers.ads.tasks.passive.html" />
+    <link rel="prev" title="dispel.providers.ads.tasks.gait module" href="dispel.providers.ads.tasks.gait.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dispel.html">dispel package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.data.html">dispel.data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.collections.html">dispel.data.collections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.core.html">dispel.data.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.devices.html">dispel.data.devices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.epochs.html">dispel.data.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.flags.html">dispel.data.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.levels.html">dispel.data.levels module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.measures.html">dispel.data.measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.raw.html">dispel.data.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.validators.html">dispel.data.validators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.data.values.html">dispel.data.values module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.io.html">dispel.io package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.core.html">dispel.io.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.export.html">dispel.io.export module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.flags.html">dispel.io.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.raw.html">dispel.io.raw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.io.utils.html">dispel.io.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.processing.html">dispel.processing package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.assertions.html">dispel.processing.assertions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.core.html">dispel.processing.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_set.html">dispel.processing.data_set module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.data_trace.html">dispel.processing.data_trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.epochs.html">dispel.processing.epochs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.extract.html">dispel.processing.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.flags.html">dispel.processing.flags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level.html">dispel.processing.level module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.level_filters.html">dispel.processing.level_filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.modalities.html">dispel.processing.modalities module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.trace.html">dispel.processing.trace module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.transform.html">dispel.processing.transform module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.processing.utils.html">dispel.processing.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="dispel.providers.html">dispel.providers package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="dispel.providers.ads.html">dispel.providers.ads package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4 current active"><a class="reference internal" href="dispel.providers.ads.tasks.html">dispel.providers.ads.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.data.html">dispel.providers.ads.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.ads.io.html">dispel.providers.ads.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.apdm.html">dispel.providers.apdm package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.tasks.html">dispel.providers.apdm.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.data.html">dispel.providers.apdm.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.apdm.io.html">dispel.providers.apdm.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.bdh.html">dispel.providers.bdh package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.io.html">dispel.providers.bdh.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.tasks.html">dispel.providers.bdh.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.data.html">dispel.providers.bdh.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.bdh.transform.html">dispel.providers.bdh.transform module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.digital_artefacts.html">dispel.providers.digital_artefacts package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.io.html">dispel.providers.digital_artefacts.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.tasks.html">dispel.providers.digital_artefacts.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.digital_artefacts.data.html">dispel.providers.digital_artefacts.data module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.generic.html">dispel.providers.generic package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.activity.html">dispel.providers.generic.activity package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.flags.html">dispel.providers.generic.flags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tasks.html">dispel.providers.generic.tasks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.preprocessing.html">dispel.providers.generic.preprocessing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.sensor.html">dispel.providers.generic.sensor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.surveys.html">dispel.providers.generic.surveys module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.touch.html">dispel.providers.generic.touch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.generic.tremor.html">dispel.providers.generic.tremor module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.mobilized.html">dispel.providers.mobilized package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.mobilized.io.html">dispel.providers.mobilized.io module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dispel.providers.sensorlog.html">dispel.providers.sensorlog package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.data.html">dispel.providers.sensorlog.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.io.html">dispel.providers.sensorlog.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dispel.providers.sensorlog.processing.html">dispel.providers.sensorlog.processing module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.providers.registry.html">dispel.providers.registry module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.signal.html">dispel.signal package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.accelerometer.html">dispel.signal.accelerometer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.core.html">dispel.signal.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.dtw.html">dispel.signal.dtw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.filter.html">dispel.signal.filter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.geometric.html">dispel.signal.geometric module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.interpolators.html">dispel.signal.interpolators module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.orientation.html">dispel.signal.orientation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.sensor.html">dispel.signal.sensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.signal.vectorial.html">dispel.signal.vectorial module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.sphinxext.html">dispel.sphinxext package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_directive.html">dispel.sphinxext.dispel_directive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.dispel_measures.html">dispel.sphinxext.dispel_measures module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.sphinxext.templates.html">dispel.sphinxext.templates module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dispel.stats.html">dispel.stats package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.core.html">dispel.stats.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.learning.html">dispel.stats.learning module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dispel.stats.reliability.html">dispel.stats.reliability module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.docutils.html">dispel.docutils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispel.utils.html">dispel.utils module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">dispel</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="dispel.providers.ads.tasks.html" class="nav-link">dispel.providers.ads.tasks package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-dispel.providers.ads.tasks.grip">
+<span id="dispel-providers-ads-tasks-grip-module"></span><h1>dispel.providers.ads.tasks.grip module<a class="headerlink" href="#module-dispel.providers.ads.tasks.grip" title="Link to this heading">#</a></h1>
+<p>Grip Force test related functionality.</p>
+<p>This module contains functionality to extract measures for the <em>Grip Force</em>
+test (GRIP).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.CategoryToDiff">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">CategoryToDiff</span></span><a class="headerlink" href="#dispel.providers.ads.tasks.grip.CategoryToDiff" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+<p>Tuple-like object with the two pressure categories used to compute mean
+applied force difference.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.CategoryToDiff.__new__">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__new__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dispel.providers.ads.tasks.grip.CategoryToDiff.__new__" title="Link to this definition">#</a></dt>
+<dd><p>Create new instance of CategoryToDiff(category_1, category_2)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.CategoryToDiff.category_1">
+<span class="sig-name descname"><span class="pre">category_1</span></span><a class="headerlink" href="#dispel.providers.ads.tasks.grip.CategoryToDiff.category_1" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.CategoryToDiff.category_2">
+<span class="sig-name descname"><span class="pre">category_2</span></span><a class="headerlink" href="#dispel.providers.ads.tasks.grip.CategoryToDiff.category_2" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractAppliedForceStats">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">ExtractAppliedForceStats</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractAppliedForceStats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractAppliedForceStats" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep" title="dispel.processing.extract.ExtractMultipleStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractMultipleStep</span></code></a></p>
+<p>An extraction processing step for applied force measures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> – The hand used to perform the test.</p></li>
+<li><p><strong>category</strong> – The pressure category indicating on which category the applied force
+stats are computed.</p></li>
+<li><p><strong>plateau</strong> – The plateau on which the extraction is to be performed.</p></li>
+<li><p><strong>percentile</strong> – Compute the q-th percentile of the applied forces in the
+aggregation methods.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractAppliedForceStats.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plateau</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">90</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractAppliedForceStats.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractAppliedForceStats.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality"><em>HandModality</em></a>) – </p></li>
+<li><p><strong>category</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>plateau</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.PlateauModality" title="dispel.providers.ads.tasks.grip.PlateauModality"><em>PlateauModality</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>percentile</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractMeanAppliedForceDiff">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">ExtractMeanAppliedForceDiff</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractMeanAppliedForceDiff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractMeanAppliedForceDiff" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep" title="dispel.processing.extract.ExtractMultipleStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractMultipleStep</span></code></a></p>
+<p>An extraction processing step for mean applied force difference (MAF).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> – The hand used to perform the test.</p></li>
+<li><p><strong>categories_to_diff</strong> – The <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code> CategoryToDiff containing the two pressure
+categories on which the MAF difference is compute.</p></li>
+<li><p><strong>plateau</strong> – The plateau on which the extraction is to be performed.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractMeanAppliedForceDiff.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories_to_diff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plateau</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractMeanAppliedForceDiff.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractMeanAppliedForceDiff.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality"><em>HandModality</em></a>) – </p></li>
+<li><p><strong>categories_to_diff</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.CategoryToDiff" title="dispel.providers.ads.tasks.grip.CategoryToDiff"><em>CategoryToDiff</em></a>) – </p></li>
+<li><p><strong>plateau</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.PlateauModality" title="dispel.providers.ads.tasks.grip.PlateauModality"><em>PlateauModality</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractOvershootStats">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">ExtractOvershootStats</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractOvershootStats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractOvershootStats" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn" title="dispel.processing.extract.AggregateRawDataSetColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn</span></code></a></p>
+<p>An extraction processing step for overshoot measures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hand</strong> – The hand on which the overshoot measures are to be computed.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractOvershootStats.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractOvershootStats.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractOvershootStats.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hand</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality"><em>HandModality</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractRMSPressure">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">ExtractRMSPressure</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractRMSPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractRMSPressure" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>An extraction processing step for pressure accuracy measures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> – The hand used to perform the test</p></li>
+<li><p><strong>category</strong> – The pressure category indicating on which category the RMSE is
+computed.</p></li>
+<li><p><strong>plateau</strong> – The plateau on which the extraction is to be performed</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractRMSPressure.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plateau</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractRMSPressure.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractRMSPressure.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality"><em>HandModality</em></a>) – </p></li>
+<li><p><strong>category</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>plateau</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.PlateauModality" title="dispel.providers.ads.tasks.grip.PlateauModality"><em>PlateauModality</em></a><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractReactionTimeStats">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">ExtractReactionTimeStats</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractReactionTimeStats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractReactionTimeStats" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.AggregateRawDataSetColumn" title="dispel.processing.extract.AggregateRawDataSetColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">AggregateRawDataSetColumn</span></code></a></p>
+<p>An extraction processing step for Reaction Time measures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hand</strong> – The hand used to perform the test</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractReactionTimeStats.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractReactionTimeStats.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractReactionTimeStats.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hand</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality"><em>HandModality</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractThumbPositionVariation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">ExtractThumbPositionVariation</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractThumbPositionVariation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractThumbPositionVariation" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractMultipleStep" title="dispel.processing.extract.ExtractMultipleStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractMultipleStep</span></code></a></p>
+<p>An extraction processing step for thumb position on screen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hand</strong> – The hand used to perform the test</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractThumbPositionVariation.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractThumbPositionVariation.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractThumbPositionVariation.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hand</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality"><em>HandModality</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractTransitionTime">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">ExtractTransitionTime</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractTransitionTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractTransitionTime" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.extract.html#dispel.processing.extract.ExtractStep" title="dispel.processing.extract.ExtractStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractStep</span></code></a></p>
+<p>An extraction processing step for Transition Time measures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> – The hand used to perform the test</p></li>
+<li><p><strong>transition</strong> – A tuple indicating the two plateaus defining a transition. e.g.:
+{‘low’,’high’} indicates a transition from the <code class="docutils literal notranslate"><span class="pre">'low'</span></code> plateau to the
+<code class="docutils literal notranslate"><span class="pre">'high'</span></code> plateau.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.ExtractTransitionTime.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transition</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#ExtractTransitionTime.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.ExtractTransitionTime.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality"><em>HandModality</em></a>) – </p></li>
+<li><p><strong>transition</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a><em>[</em><a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a><em>, </em><a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.FilterIncompleteSequences">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">FilterIncompleteSequences</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#FilterIncompleteSequences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.FilterIncompleteSequences" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.LevelFilter" title="dispel.processing.level.LevelFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelFilter</span></code></a></p>
+<p>A filter to skip levels that do not contain eight sequences.</p>
+<p class="rubric">Notes</p>
+<p>The filter expects concatenated levels from
+<a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.ConcatenateLevels" title="dispel.processing.transform.ConcatenateLevels"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConcatenateLevels</span></code></a> and should contain the
+target pressure values in the context (i.e. <code class="docutils literal notranslate"><span class="pre">targetPressure_{index}</span></code>.)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.FilterIncompleteSequences.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#FilterIncompleteSequences.filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.FilterIncompleteSequences.filter" title="Link to this definition">#</a></dt>
+<dd><p>Check if there is contextual info for the eight sequences.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>levels</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.12)"><em>Set</em></a>[<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.FilterIncompleteSequences.repr">
+<span class="sig-name descname"><span class="pre">repr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#FilterIncompleteSequences.repr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.FilterIncompleteSequences.repr" title="Link to this definition">#</a></dt>
+<dd><p>Get representation of the filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.FilterTransition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">FilterTransition</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#FilterTransition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.FilterTransition" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dispel.providers.ads.tasks.grip.FilterIncompleteSequences" title="dispel.providers.ads.tasks.grip.FilterIncompleteSequences"><code class="xref py py-class docutils literal notranslate"><span class="pre">FilterIncompleteSequences</span></code></a></p>
+<p>Filter incomplete sequences or level without the selected transition.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.FilterTransition.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_pressure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#FilterTransition.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.FilterTransition.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_pressure</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a>) – </p></li>
+<li><p><strong>to_pressure</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.FilterTransition.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#FilterTransition.filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.FilterTransition.filter" title="Link to this definition">#</a></dt>
+<dd><p>Filter for transitions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>levels</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.12)"><em>Set</em></a>[<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.FilterTransition.repr">
+<span class="sig-name descname"><span class="pre">repr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#FilterTransition.repr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.FilterTransition.repr" title="Link to this definition">#</a></dt>
+<dd><p>Get representation of the filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.GripTremorMeasures">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">GripTremorMeasures</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#GripTremorMeasures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.GripTremorMeasures" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.level.html#dispel.processing.level.ProcessingStepGroup" title="dispel.processing.level.ProcessingStepGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingStepGroup</span></code></a></p>
+<p>A group of grip processing steps for tremor measures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> – The hand on which the tremor measures are to be computed.</p></li>
+<li><p><strong>sensor</strong> – The sensor on which the tremor measures are to be computed.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.GripTremorMeasures.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#GripTremorMeasures.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.GripTremorMeasures.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hand</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality"><em>HandModality</em></a>) – </p></li>
+<li><p><strong>sensor</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.SensorModality" title="dispel.processing.modalities.SensorModality"><em>SensorModality</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.PlateauModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">PlateauModality</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#PlateauModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.PlateauModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the plateau modality.</p>
+<p>This modality defines the subpart of the plateau that is kept
+for measure computation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.PlateauModality.LAST_FIVE">
+<span class="sig-name descname"><span class="pre">LAST_FIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.PlateauModality.LAST_FIVE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.PlateauModality.MIDDLE_FOUR">
+<span class="sig-name descname"><span class="pre">MIDDLE_FOUR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.PlateauModality.MIDDLE_FOUR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.PlateauModality.MIDDLE_TWO">
+<span class="sig-name descname"><span class="pre">MIDDLE_TWO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.PlateauModality.MIDDLE_TWO" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.PositionModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">PositionModality</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#PositionModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.PositionModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Screen thumb position for grip force task.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.PositionModality.X">
+<span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.PositionModality.X" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.PositionModality.Y">
+<span class="sig-name descname"><span class="pre">Y</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.PositionModality.Y" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.PositionModality.column">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">column</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.PositionModality.column" title="Link to this definition">#</a></dt>
+<dd><p>Create a camel case string of position modalities.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TargetPressureModality">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">TargetPressureModality</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TargetPressureModality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.data.values.html#dispel.data.values.AVEnum" title="dispel.data.values.AVEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">AVEnum</span></code></a></p>
+<p>Enumerated constant representing the pressure modalities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TargetPressureModality.HIGH">
+<span class="sig-name descname"><span class="pre">HIGH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TargetPressureModality.HIGH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TargetPressureModality.LOW">
+<span class="sig-name descname"><span class="pre">LOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TargetPressureModality.LOW" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TargetPressureModality.MEDIUM">
+<span class="sig-name descname"><span class="pre">MEDIUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TargetPressureModality.MEDIUM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TargetPressureModality.VERY_HIGH">
+<span class="sig-name descname"><span class="pre">VERY_HIGH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TargetPressureModality.VERY_HIGH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformOvershoot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">TransformOvershoot</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformOvershoot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformOvershoot" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>An extraction step to measure the overshoot/undershoot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hand</strong> – The hand on which the overshoot is to be computed.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformOvershoot.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformOvershoot.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformOvershoot.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hand</strong> (<a class="reference internal" href="dispel.processing.modalities.html#dispel.processing.modalities.HandModality" title="dispel.processing.modalities.HandModality"><em>HandModality</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformPlateau">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">TransformPlateau</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformPlateau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformPlateau" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>An transform processing step for plateau detection.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformPlateau.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformPlateau.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformPlateau.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformPressureError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">TransformPressureError</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformPressureError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformPressureError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>A TransformStep for pressure error related measures.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformPressureError.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plateau</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformPressureError.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformPressureError.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plateau</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.PlateauModality" title="dispel.providers.ads.tasks.grip.PlateauModality"><em>PlateauModality</em></a><em> | </em><em>None</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformRefinedTargetCategory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">TransformRefinedTargetCategory</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformRefinedTargetCategory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformRefinedTargetCategory" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>A TransformStep for to identify pressure categories.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformRefinedTargetCategory.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plateau</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformRefinedTargetCategory.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformRefinedTargetCategory.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plateau</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.PlateauModality" title="dispel.providers.ads.tasks.grip.PlateauModality"><em>PlateauModality</em></a><em> | </em><em>None</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformTimeDefinedPlateau">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">TransformTimeDefinedPlateau</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformTimeDefinedPlateau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformTimeDefinedPlateau" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>An transform processing step for time-defined plateau.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformTimeDefinedPlateau.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plateau</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformTimeDefinedPlateau.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformTimeDefinedPlateau.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plateau</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.PlateauModality" title="dispel.providers.ads.tasks.grip.PlateauModality"><em>PlateauModality</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformTimeRelatedInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">TransformTimeRelatedInfo</span></span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformTimeRelatedInfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformTimeRelatedInfo" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dispel.processing.transform.html#dispel.processing.transform.TransformStep" title="dispel.processing.transform.TransformStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformStep</span></code></a></p>
+<p>An extraction processing step for Time related measures.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.TransformTimeRelatedInfo.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#TransformTimeRelatedInfo.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.TransformTimeRelatedInfo.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.applied_force">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">applied_force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detected_plateau</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cat_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#applied_force"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.applied_force" title="Link to this definition">#</a></dt>
+<dd><p>Select the applied force or partial ‘detected-plateau’ column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>detected_plateau</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A dataframe with column ‘detected-plateau’ typically obtained after
+applying the TransformStep : <a class="reference internal" href="#dispel.providers.ads.tasks.grip.TransformPlateau" title="dispel.providers.ads.tasks.grip.TransformPlateau"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformPlateau</span></code></a>.</p></li>
+<li><p><strong>category</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A dataframe with column <code class="docutils literal notranslate"><span class="pre">'pressure-category'</span></code> typically obtained
+after applying the TransformStep :
+:class: <cite>TransformRefinedTargetCategory.</cite></p></li>
+<li><p><strong>cat_str</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a><em> | </em><em>None</em>) – The pressure category indicating on which
+category the applied force is selected.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The applied force or the ‘detected-plateau’ column on the defined
+pressure category cat_str.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Series</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.avg_diff_discrete_pdf">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">avg_diff_discrete_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#avg_diff_discrete_pdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.avg_diff_discrete_pdf" title="Link to this definition">#</a></dt>
+<dd><p>Compute the average of the differentiated discrete PDF.</p>
+<p>This corresponds to the average of the second discrete
+derivative of the pressure signal. In the process of computing the
+metric, we add several columns, namely ‘discrete-pdf’, ‘diff-discrete-pdf’
+and <cite>level-sequence</cite> where we set the contextual level information
+under a series format with integers going from 0 to 7 indicating
+which level we are in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The two columns ‘discrete-pdf’ and ‘pressure’ of the data frame
+obtained by concatenating the levels.</p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Context" title="dispel.data.levels.Context"><em>Context</em></a>) – The merged context obtained from the concatenation of the
+levels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new data frame with <cite>discrete-pdf</cite>, <cite>diff-discrete-pdf</cite>,
+<cite>avg-diff-discrete-pdf</cite> and <cite>level-sequence</cite> columns</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.compute_overshoot">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">compute_overshoot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_plateau</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#compute_overshoot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.compute_overshoot" title="Link to this definition">#</a></dt>
+<dd><p>Compute pressure overshoot when changing pressure level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pressure</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>_plateau</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>time_info</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.compute_plateau">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">compute_plateau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#compute_plateau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.compute_plateau" title="Link to this definition">#</a></dt>
+<dd><p>Compute the plateau.</p>
+<p>To compute the plateau we follow several steps:
+The first step is to compute the first and second discrete
+derivative of the resampled and interpolated pressure signal.
+(see <a class="reference internal" href="#dispel.providers.ads.tasks.grip.avg_diff_discrete_pdf" title="dispel.providers.ads.tasks.grip.avg_diff_discrete_pdf"><code class="xref py py-func docutils literal notranslate"><span class="pre">avg_diff_discrete_pdf()</span></code></a>).</p>
+<p>Then we initialize our plateau detection algorithm by finding the
+spikes in the second discrete derivative of the signal (see
+<a class="reference internal" href="#dispel.providers.ads.tasks.grip.compute_second_derivative_spikes" title="dispel.providers.ads.tasks.grip.compute_second_derivative_spikes"><code class="xref py py-func docutils literal notranslate"><span class="pre">compute_second_derivative_spikes()</span></code></a>).</p>
+<p>A third step consists in filling all small gaps in the detected
+plateau. (see <a class="reference internal" href="#dispel.providers.ads.tasks.grip.fill_plateau" title="dispel.providers.ads.tasks.grip.fill_plateau"><code class="xref py py-func docutils literal notranslate"><span class="pre">fill_plateau()</span></code></a>).</p>
+<p>Once plateau are filled we filter the result by removing the very
+short detected plateau (see <a class="reference internal" href="#dispel.providers.ads.tasks.grip.remove_short_plateau" title="dispel.providers.ads.tasks.grip.remove_short_plateau"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_short_plateau()</span></code></a>).</p>
+<p>The next step consists in extending the plateau filling large
+gap under certain conditions. (see
+<a class="reference internal" href="#dispel.providers.ads.tasks.grip.extend_and_convert_plateau" title="dispel.providers.ads.tasks.grip.extend_and_convert_plateau"><code class="xref py py-func docutils literal notranslate"><span class="pre">extend_and_convert_plateau()</span></code></a>).</p>
+<p>Finally we create a target pressure signal based on the identified
+plateau. The idea is that a plateau often goes beyond the level
+border and hence should not be compared to the target pressure
+of the next level but on the main one on which the plateau resides.
+(see <a class="reference internal" href="#dispel.providers.ads.tasks.grip.refined_target" title="dispel.providers.ads.tasks.grip.refined_target"><code class="xref py py-func docutils literal notranslate"><span class="pre">refined_target()</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – The data on which the plateau computation is to be performed.</p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – The level corresponding to the given data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The pandas data frame containing the different plateaus.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.compute_second_derivative_spikes">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">compute_second_derivative_spikes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#compute_second_derivative_spikes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.compute_second_derivative_spikes" title="Link to this definition">#</a></dt>
+<dd><p>Find spikes in diff discrete pdf.</p>
+<p>The method is simple, we compare the moving average of the second
+derivative of the pressure signal (diff discrete pdf) to the
+average of the latter on the entire level-sequence. A spike or a
+plateau is detected if the moving average is higher than the
+level mean.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A data frame with the two columns ‘diff-discrete-pdf’ and
+‘avg-diff-discrete-pdf’ (e.g.: obtained with avg_diff_discrete_pdf).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A series with values in {0, 1} indicating if a plateau has been
+detected.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Series</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – A value error is raised if the length of the data is too short.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.compute_transition">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">compute_transition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transition</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#compute_transition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.compute_transition" title="Link to this definition">#</a></dt>
+<dd><p>Find all the transitions time of the selected transition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>transition</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><em>Tuple</em></a><em>[</em><a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a><em>, </em><a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.extend_and_convert_plateau">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">extend_and_convert_plateau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detected_plateau</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#extend_and_convert_plateau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.extend_and_convert_plateau" title="Link to this definition">#</a></dt>
+<dd><p>Extend the plateau under certain conditions.</p>
+<p>The main idea is to fill large gaps between a current index and
+a lookahead index where a plateau is detected. Gaps are filled whenever the
+lookahead mean (defined as the mean between the current index and the
+lookahead) does not differ too much (0.5 pressure unit)
+from a <cite>lookbehind</cite> mean (defined as the mean from a lookbehind index until
+the current index
+).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pressure</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A Series of ‘pressure’</p></li>
+<li><p><strong>detected_plateau</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A series of detected plateau</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated series ‘detected-plateau’ where large gaps have been filled
+and then where ‘1’ have been replaced with values from the ‘pressure’
+column.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Series</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – A value error is raised if the length of the data is too short.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.fill_plateau">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">fill_plateau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#fill_plateau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.fill_plateau" title="Link to this definition">#</a></dt>
+<dd><p>Fill small gaps in the plateau.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A series of values in {0, 1} typically the one obtained after applying
+the <cite>compute_second_derivative_spikes</cite> function.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A modified version of the series where small gaps in the plateau have
+been filled.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Series</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – A value error is raised if the length of the data is too short.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.filter_category">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">filter_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cat_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#filter_category"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.filter_category" title="Link to this definition">#</a></dt>
+<dd><p>Filter data based on category.</p>
+<p>The data frame data is filtered to only keep values for which the
+<cite>‘pressure-category’</cite> is equal to the <cite>cat_str</cite>. The exception is
+when <cite>cat_str == ‘all’</cite> where data is returned without filtering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A dataframe typically obtained after applying the TransformStep :
+<a class="reference internal" href="#dispel.providers.ads.tasks.grip.TransformPlateau" title="dispel.providers.ads.tasks.grip.TransformPlateau"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformPlateau</span></code></a>.</p></li>
+<li><p><strong>category</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A dataframe with column <code class="docutils literal notranslate"><span class="pre">'pressure-category'</span></code> typically obtained
+after applying the TransformStep :
+:class: <cite>TransformRefinedTargetCategory.</cite></p></li>
+<li><p><strong>cat_str</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a><em> | </em><em>None</em>) – The pressure category indicating on which
+category the applied force is selected.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The filtered version of the data frame data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.get_target_pressure">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">get_target_pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#get_target_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.get_target_pressure" title="Link to this definition">#</a></dt>
+<dd><p>Get target pressure from context and level sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>context</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Context" title="dispel.data.levels.Context"><em>Context</em></a>) – The merged context obtained from the concatenation of the
+levels.</p></li>
+<li><p><strong>seq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The sequence of interest: e.g. a value in {0,1,..,7}</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Target pressure corresponding to the sequence seq.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.reaction_time_between_level">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">reaction_time_between_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plateau</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#reaction_time_between_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.reaction_time_between_level" title="Link to this definition">#</a></dt>
+<dd><p>Compute the reaction time between the 8 different levels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plateau</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – </p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.refined_target">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">refined_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contexts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#refined_target"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.refined_target" title="Link to this definition">#</a></dt>
+<dd><p>Refine the target pressure for the detected plateau.</p>
+<p>The method is simple, on each detected plateau, we take
+the maximum occurring target sequence as <cite>the label</cite> and add
+the refined target as the value of the target pressure for this
+label (or level sequence).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A dataframe with the columns {‘detected-plateau’, ‘level-sequence’}</p></li>
+<li><p><strong>contexts</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Context" title="dispel.data.levels.Context"><em>Context</em></a>) – The merged context obtained from the concatenation of the
+levels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The series ‘refined-target’ corresponding to the target pressure
+extended to the size of the ‘detected-plateau’.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Series</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.remove_short_plateau">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">remove_short_plateau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plateau_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#remove_short_plateau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.remove_short_plateau" title="Link to this definition">#</a></dt>
+<dd><p>Remove plateau shorter than plateau_size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A series of values in {0, 1}, typically the one obtained after applying
+the <cite>fill_plateau</cite> function.</p></li>
+<li><p><strong>plateau_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The minimum size of a plateau, by default 30</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A modified version of the series where plateau shorter than
+the threshold plateau_size have been removed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Series</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.rms_pressure_error">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">rms_pressure_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure_error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#rms_pressure_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.rms_pressure_error" title="Link to this definition">#</a></dt>
+<dd><p>Compute the Root Mean Square of <cite>‘pressure-error’</cite> column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pressure_error</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A dataframe with column <cite>‘pressure-error’</cite> typically obtained after
+applying the TransformStep : <a class="reference internal" href="#dispel.providers.ads.tasks.grip.TransformPressureError" title="dispel.providers.ads.tasks.grip.TransformPressureError"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformPressureError</span></code></a>.</p></li>
+<li><p><strong>category</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A dataframe with column <cite>‘pressure-category’</cite> typically obtained after
+applying the TransformStep : <a class="reference internal" href="#dispel.providers.ads.tasks.grip.TransformRefinedTargetCategory" title="dispel.providers.ads.tasks.grip.TransformRefinedTargetCategory"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformRefinedTargetCategory</span></code></a>.</p></li>
+<li><p><strong>only_category</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.TargetPressureModality" title="dispel.providers.ads.tasks.grip.TargetPressureModality"><em>TargetPressureModality</em></a><em> | </em><em>None</em>) – The pressure category indicating on which
+category the RMSE is computed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Root Mean Square of the <cite>‘pressure-error’</cite> column on the defined
+pressure category cat str</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.smooth_discrete_pdf">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">smooth_discrete_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#smooth_discrete_pdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.smooth_discrete_pdf" title="Link to this definition">#</a></dt>
+<dd><p>Compute the discrete probability density function (PDF).</p>
+<p>Then smooth the values by filtering out small spikes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>Series</em></a>) – A series of a signal. e.g. ‘pressure’</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A series of the discrete derivative of the signal where small
+spikes have been smoothed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.Series</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – Raises a value error if the pandas.Series is too short.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.target_pressure_to_category">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">target_pressure_to_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contexts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#target_pressure_to_category"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.target_pressure_to_category" title="Link to this definition">#</a></dt>
+<dd><p>Create a mapping between target pressure and their level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>contexts</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Context" title="dispel.data.levels.Context"><em>Context</em></a>) – The merged context obtained from the concatenation of the
+levels.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The first element is a dictionary with as keys, the values of
+the four different target pressure and as values, the pressure category
+i.e values are in <cite>{‘low’, ‘medium’, ‘high’, ‘very_high’}</cite>.
+The Second element is the sequence of pressure category e.g.:
+<cite>[‘low’, ‘high’, ‘very_high’, ‘medium’, ‘high’, ‘medium’,
+‘very_high’,’low’]</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[Dict[Any, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>], List]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dispel.providers.ads.tasks.grip.time_defined_plateau">
+<span class="sig-prename descclassname"><span class="pre">dispel.providers.ads.tasks.grip.</span></span><span class="sig-name descname"><span class="pre">time_defined_plateau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plateau</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dispel/providers/ads/tasks/grip.html#time_defined_plateau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dispel.providers.ads.tasks.grip.time_defined_plateau" title="Link to this definition">#</a></dt>
+<dd><p>Extract time-defined plateau.</p>
+<p>This function extracts the plateaus as defined in the plateau modality.
+More formally, given a level that is defined by the following time
+windows: [start: end]. The plateau offset refines this time windows
+only keeping the section
+<code class="docutils literal notranslate"><span class="pre">[start</span> <span class="pre">+</span> <span class="pre">plateau.start_offset:</span> <span class="pre">end</span> <span class="pre">-</span> <span class="pre">plateau.end_offset]</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)"><em>DataFrame</em></a>) – A data frame such as the one obtained after resampling screen.
+e.g.: <cite>screen_ts_resampled</cite></p></li>
+<li><p><strong>level</strong> (<a class="reference internal" href="dispel.data.levels.html#dispel.data.levels.Level" title="dispel.data.levels.Level"><em>Level</em></a>) – Any Level</p></li>
+<li><p><strong>plateau</strong> (<a class="reference internal" href="#dispel.providers.ads.tasks.grip.PlateauModality" title="dispel.providers.ads.tasks.grip.PlateauModality"><em>PlateauModality</em></a>) – A plateau modality defining the time windows on which measures
+will be computed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A data frame with three columns: <code class="docutils literal notranslate"><span class="pre">detected-plateau</span></code> is equals to
+the pressure on the plateau zero otherwise.
+<code class="docutils literal notranslate"><span class="pre">level-sequence</span></code> are integers indicating the level.
+<code class="docutils literal notranslate"><span class="pre">refined-target</span></code> is the target value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0.dev0+680.gfbe024fa36)">pandas.DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dispel.providers.ads.tasks.gait.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">dispel.providers.ads.tasks.gait module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dispel.providers.ads.tasks.passive.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dispel.providers.ads.tasks.passive module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.CategoryToDiff"><code class="docutils literal notranslate"><span class="pre">CategoryToDiff</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.CategoryToDiff.__new__"><code class="docutils literal notranslate"><span class="pre">CategoryToDiff.__new__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.CategoryToDiff.category_1"><code class="docutils literal notranslate"><span class="pre">CategoryToDiff.category_1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.CategoryToDiff.category_2"><code class="docutils literal notranslate"><span class="pre">CategoryToDiff.category_2</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractAppliedForceStats"><code class="docutils literal notranslate"><span class="pre">ExtractAppliedForceStats</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractAppliedForceStats.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractAppliedForceStats.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractMeanAppliedForceDiff"><code class="docutils literal notranslate"><span class="pre">ExtractMeanAppliedForceDiff</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractMeanAppliedForceDiff.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractMeanAppliedForceDiff.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractOvershootStats"><code class="docutils literal notranslate"><span class="pre">ExtractOvershootStats</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractOvershootStats.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractOvershootStats.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractRMSPressure"><code class="docutils literal notranslate"><span class="pre">ExtractRMSPressure</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractRMSPressure.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractRMSPressure.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractReactionTimeStats"><code class="docutils literal notranslate"><span class="pre">ExtractReactionTimeStats</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractReactionTimeStats.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractReactionTimeStats.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractThumbPositionVariation"><code class="docutils literal notranslate"><span class="pre">ExtractThumbPositionVariation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractThumbPositionVariation.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractThumbPositionVariation.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractTransitionTime"><code class="docutils literal notranslate"><span class="pre">ExtractTransitionTime</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.ExtractTransitionTime.__init__"><code class="docutils literal notranslate"><span class="pre">ExtractTransitionTime.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.FilterIncompleteSequences"><code class="docutils literal notranslate"><span class="pre">FilterIncompleteSequences</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.FilterIncompleteSequences.filter"><code class="docutils literal notranslate"><span class="pre">FilterIncompleteSequences.filter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.FilterIncompleteSequences.repr"><code class="docutils literal notranslate"><span class="pre">FilterIncompleteSequences.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.FilterTransition"><code class="docutils literal notranslate"><span class="pre">FilterTransition</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.FilterTransition.__init__"><code class="docutils literal notranslate"><span class="pre">FilterTransition.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.FilterTransition.filter"><code class="docutils literal notranslate"><span class="pre">FilterTransition.filter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.FilterTransition.repr"><code class="docutils literal notranslate"><span class="pre">FilterTransition.repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.GripTremorMeasures"><code class="docutils literal notranslate"><span class="pre">GripTremorMeasures</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.GripTremorMeasures.__init__"><code class="docutils literal notranslate"><span class="pre">GripTremorMeasures.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.PlateauModality"><code class="docutils literal notranslate"><span class="pre">PlateauModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.PlateauModality.LAST_FIVE"><code class="docutils literal notranslate"><span class="pre">PlateauModality.LAST_FIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.PlateauModality.MIDDLE_FOUR"><code class="docutils literal notranslate"><span class="pre">PlateauModality.MIDDLE_FOUR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.PlateauModality.MIDDLE_TWO"><code class="docutils literal notranslate"><span class="pre">PlateauModality.MIDDLE_TWO</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.PositionModality"><code class="docutils literal notranslate"><span class="pre">PositionModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.PositionModality.X"><code class="docutils literal notranslate"><span class="pre">PositionModality.X</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.PositionModality.Y"><code class="docutils literal notranslate"><span class="pre">PositionModality.Y</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.PositionModality.column"><code class="docutils literal notranslate"><span class="pre">PositionModality.column</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TargetPressureModality"><code class="docutils literal notranslate"><span class="pre">TargetPressureModality</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TargetPressureModality.HIGH"><code class="docutils literal notranslate"><span class="pre">TargetPressureModality.HIGH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TargetPressureModality.LOW"><code class="docutils literal notranslate"><span class="pre">TargetPressureModality.LOW</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TargetPressureModality.MEDIUM"><code class="docutils literal notranslate"><span class="pre">TargetPressureModality.MEDIUM</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TargetPressureModality.VERY_HIGH"><code class="docutils literal notranslate"><span class="pre">TargetPressureModality.VERY_HIGH</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformOvershoot"><code class="docutils literal notranslate"><span class="pre">TransformOvershoot</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformOvershoot.__init__"><code class="docutils literal notranslate"><span class="pre">TransformOvershoot.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformPlateau"><code class="docutils literal notranslate"><span class="pre">TransformPlateau</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformPlateau.__init__"><code class="docutils literal notranslate"><span class="pre">TransformPlateau.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformPressureError"><code class="docutils literal notranslate"><span class="pre">TransformPressureError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformPressureError.__init__"><code class="docutils literal notranslate"><span class="pre">TransformPressureError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformRefinedTargetCategory"><code class="docutils literal notranslate"><span class="pre">TransformRefinedTargetCategory</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformRefinedTargetCategory.__init__"><code class="docutils literal notranslate"><span class="pre">TransformRefinedTargetCategory.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformTimeDefinedPlateau"><code class="docutils literal notranslate"><span class="pre">TransformTimeDefinedPlateau</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformTimeDefinedPlateau.__init__"><code class="docutils literal notranslate"><span class="pre">TransformTimeDefinedPlateau.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformTimeRelatedInfo"><code class="docutils literal notranslate"><span class="pre">TransformTimeRelatedInfo</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.TransformTimeRelatedInfo.__init__"><code class="docutils literal notranslate"><span class="pre">TransformTimeRelatedInfo.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.applied_force"><code class="docutils literal notranslate"><span class="pre">applied_force()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.avg_diff_discrete_pdf"><code class="docutils literal notranslate"><span class="pre">avg_diff_discrete_pdf()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.compute_overshoot"><code class="docutils literal notranslate"><span class="pre">compute_overshoot()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.compute_plateau"><code class="docutils literal notranslate"><span class="pre">compute_plateau()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.compute_second_derivative_spikes"><code class="docutils literal notranslate"><span class="pre">compute_second_derivative_spikes()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.compute_transition"><code class="docutils literal notranslate"><span class="pre">compute_transition()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.extend_and_convert_plateau"><code class="docutils literal notranslate"><span class="pre">extend_and_convert_plateau()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.fill_plateau"><code class="docutils literal notranslate"><span class="pre">fill_plateau()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.filter_category"><code class="docutils literal notranslate"><span class="pre">filter_category()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.get_target_pressure"><code class="docutils literal notranslate"><span class="pre">get_target_pressure()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.reaction_time_between_level"><code class="docutils literal notranslate"><span class="pre">reaction_time_between_level()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.refined_target"><code class="docutils literal notranslate"><span class="pre">refined_target()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.remove_short_plateau"><code class="docutils literal notranslate"><span class="pre">remove_short_plateau()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.rms_pressure_error"><code class="docutils literal notranslate"><span class="pre">rms_pressure_error()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.smooth_discrete_pdf"><code class="docutils literal notranslate"><span class="pre">smooth_discrete_pdf()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.target_pressure_to_category"><code class="docutils literal notranslate"><span class="pre">target_pressure_to_category()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispel.providers.ads.tasks.grip.time_defined_plateau"><code class="docutils literal notranslate"><span class="pre">time_defined_plateau()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/dispel.providers.ads.tasks.grip.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.surveys &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/surveys';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.surveys</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Core functionality to process surveys.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RawDataSet</span><span class="p">,</span>
+    <span class="n">RawDataSetDefinition</span><span class="p">,</span>
+    <span class="n">RawDataSetSource</span><span class="p">,</span>
+    <span class="n">RawDataValueDefinition</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="n">ProcessingResult</span><span class="p">,</span> <span class="n">ProcessingStep</span><span class="p">,</span> <span class="n">ProcessResultType</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_AGGREGATIONS</span><span class="p">,</span>
+    <span class="n">ExtractMultipleStep</span><span class="p">,</span>
+    <span class="n">ExtractStep</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LevelFilterProcessingStepMixin</span><span class="p">,</span>
+    <span class="n">LevelFilterType</span><span class="p">,</span>
+    <span class="n">ProcessingStepGroup</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">SURVEY_RESPONSES_LEVEL_ID</span> <span class="o">=</span> <span class="s2">&quot;survey_responses&quot;</span>
+<span class="n">RAW_DATA_SET_DEFINITION</span> <span class="o">=</span> <span class="n">RawDataSetDefinition</span><span class="p">(</span>
+    <span class="s2">&quot;responses&quot;</span><span class="p">,</span>
+    <span class="n">RawDataSetSource</span><span class="p">(</span><span class="s2">&quot;processing&quot;</span><span class="p">),</span>
+    <span class="n">value_definitions_list</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;question_id&quot;</span><span class="p">,</span> <span class="s2">&quot;Question index&quot;</span><span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;ts_question_displayed&quot;</span><span class="p">,</span> <span class="s2">&quot;Time the question was shown to the subject&quot;</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;ts_question_hidden&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Time the question was hidden&quot;</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The question is either hidden by going back to a &quot;</span>
+            <span class="s2">&quot;previous question or providing a response.&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;ts_response&quot;</span><span class="p">,</span> <span class="s2">&quot;The time the response was provided&quot;</span><span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;response&quot;</span><span class="p">,</span> <span class="s2">&quot;The response provided by the subject&quot;</span><span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+            <span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="s2">&quot;The time it took the subject to respond&quot;</span>
+        <span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">is_computed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_level_to_question_response</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">context_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a level into a question dictionary.&quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ts_response&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;response_time&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">level</span><span class="o">.</span><span class="n">has_raw_data_set</span><span class="p">(</span><span class="s2">&quot;userInput&quot;</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="s2">&quot;userInput&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">response</span><span class="p">[</span><span class="s2">&quot;ts_response&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;tsAnswer&quot;</span><span class="p">]</span>
+        <span class="n">response</span><span class="p">[</span><span class="s2">&quot;response&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;answer&quot;</span><span class="p">]</span>
+        <span class="n">response</span><span class="p">[</span><span class="s2">&quot;response_time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;tsAnswer&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">level</span><span class="o">.</span><span class="n">start</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;question_id&quot;</span><span class="p">:</span> <span class="n">level</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">get_raw_value</span><span class="p">(</span><span class="n">context_id</span><span class="p">),</span>
+        <span class="s2">&quot;ts_question_displayed&quot;</span><span class="p">:</span> <span class="n">level</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+        <span class="s2">&quot;ts_question_hidden&quot;</span><span class="p">:</span> <span class="n">level</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">response</span><span class="p">,</span>
+    <span class="p">}</span>
+
+
+<div class="viewcode-block" id="ConcatenateSurveyLevels">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ConcatenateSurveyLevels">[docs]</a>
+<span class="k">class</span> <span class="nc">ConcatenateSurveyLevels</span><span class="p">(</span><span class="n">LevelFilterProcessingStepMixin</span><span class="p">,</span> <span class="n">ProcessingStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Concatenate individual survey question and response levels.</span>
+
+<span class="sd">    This step creates a single raw data set out of individual levels to</span>
+<span class="sd">    simplify the analysis of responses.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    context_id</span>
+<span class="sd">        The context id that identifies which question was posed to the user.</span>
+<span class="sd">    level_filter</span>
+<span class="sd">        An optional filter to only apply the concatenation to specific levels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ConcatenateSurveyLevels.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ConcatenateSurveyLevels.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">level_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LevelFilterType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">context_id</span> <span class="o">=</span> <span class="n">context_id</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">level_filter</span><span class="o">=</span><span class="n">level_filter</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ConcatenateSurveyLevels.get_levels">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ConcatenateSurveyLevels.get_levels">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_levels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Level</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the levels used for the concatenation.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_level_filter</span><span class="p">()(</span><span class="n">reading</span><span class="o">.</span><span class="n">levels</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ConcatenateSurveyLevels.get_raw_data_sets">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ConcatenateSurveyLevels.get_raw_data_sets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_raw_data_sets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataSet</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the raw data sets used for the concatenation.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">level</span><span class="o">.</span><span class="n">get_raw_data_set</span><span class="p">(</span><span class="s2">&quot;userInput&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">lvl</span><span class="p">:</span> <span class="n">lvl</span><span class="o">.</span><span class="n">has_raw_data_set</span><span class="p">(</span><span class="s2">&quot;userInput&quot;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_levels</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="ConcatenateSurveyLevels.process_reading">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ConcatenateSurveyLevels.process_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">process_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResultType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Concatenate individual levels.&quot;&quot;&quot;</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_levels</span><span class="p">(</span><span class="n">reading</span><span class="p">):</span>
+            <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_level_to_question_response</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">context_id</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">entries</span><span class="p">:</span>
+            <span class="n">data_set</span> <span class="o">=</span> <span class="n">RawDataSet</span><span class="p">(</span>
+                <span class="n">RAW_DATA_SET_DEFINITION</span><span class="p">,</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;ts_question_hidden&quot;</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="n">new_level</span> <span class="o">=</span> <span class="n">Level</span><span class="p">(</span>
+                <span class="n">id_</span><span class="o">=</span><span class="n">SURVEY_RESPONSES_LEVEL_ID</span><span class="p">,</span>
+                <span class="n">start</span><span class="o">=</span><span class="n">reading</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                <span class="n">end</span><span class="o">=</span><span class="n">reading</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+                <span class="n">raw_data_sets</span><span class="o">=</span><span class="p">[</span><span class="n">data_set</span><span class="p">],</span>
+            <span class="p">)</span>
+            <span class="k">yield</span> <span class="n">ProcessingResult</span><span class="p">(</span>
+                <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_raw_data_sets</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span> <span class="n">result</span><span class="o">=</span><span class="n">new_level</span>
+            <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SurveyQuestion">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.SurveyQuestion">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">SurveyQuestion</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A data class for survey questions.&quot;&quot;&quot;</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The id that identifies the question.</span>
+
+<span class="sd">    This is the value of the context variable specified for</span>
+<span class="sd">    :class:`ConcatenateSurveyLevels`.&quot;&quot;&quot;</span>
+
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An abbreviated form of the question presented to the user.</span>
+
+<span class="sd">    This is used as part of the measure name.&quot;&quot;&quot;</span>
+
+    <span class="n">abbr</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The abbreviation of the question.</span>
+
+<span class="sd">    This is used as the part of the measure name&quot;&quot;&quot;</span>
+
+    <span class="n">full</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The full description of the question posed to the user.&quot;&quot;&quot;</span>
+
+    <span class="n">responses</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A dictionary of responses and their labels.&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">av</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the abbreviated value representation for the question.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">AV</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="si">}</span><span class="s2"> question&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;q_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">abbr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractSurveyResponse">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ExtractSurveyResponse">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractSurveyResponse</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the actual value of the survey question.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractSurveyResponse.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ExtractSurveyResponse.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">question</span><span class="p">:</span> <span class="n">SurveyQuestion</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">question</span> <span class="o">=</span> <span class="n">question</span>
+
+        <span class="k">def</span> <span class="nf">_get_last_response</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;question_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">question</span><span class="o">.</span><span class="n">id</span>
+            <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">][</span><span class="s2">&quot;response&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">RAW_DATA_SET_DEFINITION</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">_get_last_response</span><span class="p">,</span>
+            <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+                <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;response&quot;</span><span class="p">,</span> <span class="s2">&quot;res&quot;</span><span class="p">),</span>
+                <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The final response to the question &quot;</span> <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">question</span><span class="o">.</span><span class="n">full</span><span class="si">}</span><span class="s1">&quot;.&#39;</span><span class="p">,</span>
+                <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+                <span class="c1"># TODO: Fix the hashing crashing networkx including the validator lead</span>
+                <span class="c1">#  to unstable hashing of the measure validator=SetValidator(</span>
+                <span class="c1">#  question.responses)</span>
+            <span class="p">),</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">SURVEY_RESPONSES_LEVEL_ID</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractSurveyResponseTimesSummary">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ExtractSurveyResponseTimesSummary">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractSurveyResponseTimesSummary</span><span class="p">(</span><span class="n">ExtractMultipleStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract measures on response times to questions.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractSurveyResponseTimesSummary.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ExtractSurveyResponseTimesSummary.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">question</span><span class="p">:</span> <span class="n">SurveyQuestion</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">question</span> <span class="o">=</span> <span class="n">question</span>
+
+        <span class="k">def</span> <span class="nf">_aggregate_response_time_factory</span><span class="p">(</span><span class="n">agg</span><span class="p">):</span>
+            <span class="k">def</span> <span class="nf">_summarize_response</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;question_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">question</span><span class="o">.</span><span class="n">id</span>
+                <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">][</span><span class="s2">&quot;response_time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">agg</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">_summarize_response</span>
+
+        <span class="n">functions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">_aggregate_response_time_factory</span><span class="p">(</span><span class="n">agg</span><span class="p">),</span>
+                <span class="s2">&quot;measure_name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;response time&quot;</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;aggregation&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="n">agg_label</span><span class="p">,</span> <span class="n">agg</span><span class="p">),</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">agg_label</span><span class="si">}</span><span class="s2"> response time for question &quot;</span>
+                <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">question</span><span class="o">.</span><span class="n">full</span><span class="si">}</span><span class="s1">&quot;.&#39;</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">agg</span><span class="p">,</span> <span class="n">agg_label</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;total&quot;</span><span class="p">),</span> <span class="o">*</span><span class="n">DEFAULT_AGGREGATIONS</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="k">def</span> <span class="nf">_total_time</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;question_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">question</span><span class="o">.</span><span class="n">id</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">][</span><span class="s2">&quot;ts_question_displayed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+                <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">][</span><span class="s2">&quot;ts_response&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+
+        <span class="n">functions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">_total_time</span><span class="p">,</span>
+                <span class="s2">&quot;measure_name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;time until response&quot;</span><span class="p">,</span> <span class="s2">&quot;tur&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;The total time between first presenting &quot;</span>
+                <span class="sa">f</span><span class="s1">&#39;the question &quot;</span><span class="si">{</span><span class="n">question</span><span class="o">.</span><span class="n">full</span><span class="si">}</span><span class="s1">&quot; until the final &#39;</span>
+                <span class="sa">f</span><span class="s2">&quot;response.&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">RAW_DATA_SET_DEFINITION</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">functions</span><span class="p">,</span>
+            <span class="n">definition</span><span class="p">,</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">SURVEY_RESPONSES_LEVEL_ID</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractSurveyResponseSummary">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ExtractSurveyResponseSummary">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractSurveyResponseSummary</span><span class="p">(</span><span class="n">ExtractMultipleStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract measures on response changes.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractSurveyResponseSummary.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ExtractSurveyResponseSummary.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">question</span><span class="p">:</span> <span class="n">SurveyQuestion</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">question</span> <span class="o">=</span> <span class="n">question</span>
+
+        <span class="k">def</span> <span class="nf">_aggregate_response_factory</span><span class="p">(</span><span class="n">agg</span><span class="p">):</span>
+            <span class="k">def</span> <span class="nf">_summarize_response</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;question_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">question</span><span class="o">.</span><span class="n">id</span>
+                <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">][</span><span class="s2">&quot;response&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">agg</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">_summarize_response</span>
+
+        <span class="n">functions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">_aggregate_response_factory</span><span class="p">(</span><span class="n">agg</span><span class="p">),</span>
+                <span class="s2">&quot;measure_name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;response change&quot;</span><span class="p">,</span> <span class="s2">&quot;rc&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;aggregation&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="n">agg_label</span><span class="p">,</span> <span class="n">agg</span><span class="p">),</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">agg_label</span><span class="si">}</span><span class="s2"> response change for the &quot;</span>
+                <span class="sa">f</span><span class="s1">&#39;question &quot;</span><span class="si">{</span><span class="n">question</span><span class="o">.</span><span class="n">full</span><span class="si">}</span><span class="s1">&quot;.&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">agg</span><span class="p">,</span> <span class="n">agg_label</span> <span class="ow">in</span> <span class="n">DEFAULT_AGGREGATIONS</span>
+        <span class="p">]</span>
+
+        <span class="k">def</span> <span class="nf">_total_responses</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;question_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">question</span><span class="o">.</span><span class="n">id</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+
+        <span class="n">functions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;func&quot;</span><span class="p">:</span> <span class="n">_total_responses</span><span class="p">,</span>
+                <span class="s2">&quot;measure_name&quot;</span><span class="p">:</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;response count&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The number of responses that were given to &quot;</span>
+                <span class="sa">f</span><span class="s1">&#39;the question &quot;</span><span class="si">{</span><span class="n">question</span><span class="o">.</span><span class="n">full</span><span class="si">}</span><span class="s1">&quot;.&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">RAW_DATA_SET_DEFINITION</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">functions</span><span class="p">,</span>
+            <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(),</span>
+            <span class="n">level_filter</span><span class="o">=</span><span class="n">SURVEY_RESPONSES_LEVEL_ID</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractSurveyResponseMeasures">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ExtractSurveyResponseMeasures">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractSurveyResponseMeasures</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract measures for individual questions.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractSurveyResponseMeasures.__init__">
+<a class="viewcode-back" href="../../../../api/dispel.providers.generic.surveys.html#dispel.providers.generic.surveys.ExtractSurveyResponseMeasures.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">question</span><span class="p">:</span> <span class="n">SurveyQuestion</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">question</span> <span class="o">=</span> <span class="n">question</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">ExtractSurveyResponse</span><span class="p">(</span><span class="n">question</span><span class="p">),</span>
+                <span class="n">ExtractSurveyResponseTimesSummary</span><span class="p">(</span><span class="n">question</span><span class="p">),</span>
+                <span class="n">ExtractSurveyResponseSummary</span><span class="p">(</span><span class="n">question</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="n">question</span><span class="o">=</span><span class="n">question</span><span class="p">,</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">question</span><span class="o">.</span><span class="n">av</span><span class="p">],</span>
+        <span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

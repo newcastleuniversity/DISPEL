@@ -1,0 +1,1035 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.processing.data_trace &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/processing/data_trace';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../processing.html" class="nav-link">dispel.processing</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.proce...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.processing.data_trace</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A module containing the data trace graph (DTG).</span>
+
+<span class="sd">The data trace is a directed acyclic graph that traces the creation of the main data</span>
+<span class="sd">entities:</span>
+
+<span class="sd">    - :class:`~dispel.data.core.Reading`,</span>
+<span class="sd">    - :class:`~dispel.data.core.Level`,</span>
+<span class="sd">    - :class:`~dispel.data.raw.RawDataSet`,</span>
+<span class="sd">    - :class:`~dispel.data.measures.MeasureValue`.</span>
+
+<span class="sd">It links the creation of each entity with its creators.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">singledispatchmethod</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">networkx.classes.coreviews</span> <span class="kn">import</span> <span class="n">MultiAdjacencyView</span>
+<span class="kn">from</span> <span class="nn">networkx.classes.reportviews</span> <span class="kn">import</span> <span class="n">NodeView</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">FlagMixIn</span><span class="p">,</span> <span class="n">verify_flag_uniqueness</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span><span class="p">,</span> <span class="n">LevelEpoch</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValue</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">RawDataSet</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FlagError</span><span class="p">,</span>
+    <span class="n">ProcessingControlResult</span><span class="p">,</span>
+    <span class="n">ProcessingResult</span><span class="p">,</span>
+    <span class="n">ProcessingStep</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.epochs</span> <span class="kn">import</span> <span class="n">CreateLevelEpochStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="n">ExtractStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">LevelProcessingControlResult</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">ConcatenateLevels</span><span class="p">,</span> <span class="n">TransformStep</span>
+<span class="kn">from</span> <span class="nn">dispel.utils</span> <span class="kn">import</span> <span class="n">multidispatchmethod</span><span class="p">,</span> <span class="n">plural</span>
+
+
+<div class="viewcode-block" id="NodeNotFound">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.NodeNotFound">[docs]</a>
+<span class="k">class</span> <span class="nc">NodeNotFound</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised when a node is not found in the data trace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    entity</span>
+<span class="sd">        The entity corresponding to the exception.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="NodeNotFound.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.NodeNotFound.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;No node corresponding to </span><span class="si">{</span><span class="n">entity</span><span class="si">=}</span><span class="s2"> was found in the data trace.&quot;</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="EdgeNotFound">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.EdgeNotFound">[docs]</a>
+<span class="k">class</span> <span class="nc">EdgeNotFound</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised when an edge is not found in the data trace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    source</span>
+<span class="sd">        The entity corresponding to the source node of the edge in question.</span>
+<span class="sd">    result</span>
+<span class="sd">        The entity corresponding to the result node of the edge in question.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EdgeNotFound.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.EdgeNotFound.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;No edge corresponding to the nodes </span><span class="si">{</span><span class="n">source</span><span class="si">=}</span><span class="s2"> and </span><span class="si">{</span><span class="n">result</span><span class="si">=}</span><span class="s2"> in the data &quot;</span>
+            <span class="s2">&quot;trace graph.&quot;</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="MissingSourceNode">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.MissingSourceNode">[docs]</a>
+<span class="k">class</span> <span class="nc">MissingSourceNode</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised if the source node of a data trace is missing.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    entity</span>
+<span class="sd">        The entity corresponding to the absent source node.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MissingSourceNode.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.MissingSourceNode.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;No source node corresponding to </span><span class="si">{</span><span class="n">entity</span><span class="si">=}</span><span class="s2"> was found in the data trace &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;graph.&quot;</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="NodeHasMultipleParents">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.NodeHasMultipleParents">[docs]</a>
+<span class="k">class</span> <span class="nc">NodeHasMultipleParents</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised if a node is to have multiple parents.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    entity</span>
+<span class="sd">        The entity corresponding to the exception.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="NodeHasMultipleParents.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.NodeHasMultipleParents.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;The result node corresponding to </span><span class="si">{</span><span class="n">entity</span><span class="si">=}</span><span class="s2"> already exists in the data &quot;</span>
+            <span class="s2">&quot;trace and thus cannot have multiple parents.&quot;</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="GraphNoCycle">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.GraphNoCycle">[docs]</a>
+<span class="k">class</span> <span class="nc">GraphNoCycle</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised if a cycle is to be created in the data trace graph.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    source</span>
+<span class="sd">        The source node that has caused the graph cycle.</span>
+<span class="sd">    result</span>
+<span class="sd">        The result node that has caused the graph cycle.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GraphNoCycle.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.GraphNoCycle.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;A data trace cycle has been detected. The </span><span class="si">{</span><span class="n">source</span><span class="si">=}</span><span class="s2"> is already a &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;predecessor of </span><span class="si">{</span><span class="n">result</span><span class="si">=}</span><span class="s2">.&quot;</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="DataTrace">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace">[docs]</a>
+<span class="k">class</span> <span class="nc">DataTrace</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representation of the data trace graph.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DataTrace.__init__">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_processing_step_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">:</span> <span class="n">EntityType</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&lt;DataTrace of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_reading</span><span class="p">()</span><span class="si">}</span><span class="s2">: (&quot;</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">plural</span><span class="p">(</span><span class="s2">&quot;entity&quot;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">entity_count</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;entities&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">, &#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">plural</span><span class="p">(</span><span class="s2">&quot;processing step&quot;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">processing_step_count</span><span class="p">)</span><span class="si">}</span><span class="s1">)&gt;&#39;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="DataTrace.populate">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.populate">[docs]</a>
+    <span class="nd">@singledispatchmethod</span>
+    <span class="k">def</span> <span class="nf">populate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">entity</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
+            <span class="n">Level</span><span class="p">,</span>
+            <span class="n">Reading</span><span class="p">,</span>
+            <span class="n">ProcessingResult</span><span class="p">,</span>
+            <span class="n">ProcessingControlResult</span><span class="p">,</span>
+            <span class="n">LevelProcessingControlResult</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="ne">Exception</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Populate the data trace with the provided entity.</span>
+
+<span class="sd">        If the provided entity is a :class:`~dispel.data.core.Reading` or a</span>
+<span class="sd">        :class:`~dispel.data.core.Level`, then the entity and its components are injected</span>
+<span class="sd">        as data traces.</span>
+
+<span class="sd">        If the provided entities are processing results, then the associated results are</span>
+<span class="sd">        added as data traces and also set inside the corresponding reading.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        entity</span>
+<span class="sd">            The entity to injected inside the data trace.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Optional[List[Exception]]</span>
+<span class="sd">            If existent, the list of exceptions to be raised at the end of the</span>
+<span class="sd">            processing.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        NotImplementedError</span>
+<span class="sd">            If the provided entity type is not supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unsupported type for data trace population: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span></div>
+
+
+    <span class="nd">@populate</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Reading</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">Reading</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Populate data trace with newly created reading.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">measure</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">measure_set</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">cast</span><span class="p">(</span><span class="n">MeasureValue</span><span class="p">,</span> <span class="n">measure</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">levels</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+
+    <span class="nd">@populate</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Level</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">Level</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Populate data trace with newly created level.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">raw_data_set</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">raw_data_sets</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">raw_data_set</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">measure</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">measure_set</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">cast</span><span class="p">(</span><span class="n">MeasureValue</span><span class="p">,</span> <span class="n">measure</span><span class="p">))</span>
+
+    <span class="nd">@populate</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">ProcessingResult</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_processing_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">ProcessingResult</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Populate data trace with processing result.&quot;&quot;&quot;</span>
+        <span class="c1"># Setting result entity in reading</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_reading</span><span class="p">()</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">entity</span><span class="o">.</span><span class="n">get_kwargs</span><span class="p">())</span>
+
+        <span class="c1"># Setting data traces in data trace graph</span>
+        <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">get_sources</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">entity</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">entity</span><span class="o">.</span><span class="n">step</span><span class="p">)</span>
+
+        <span class="c1"># Populate the data trace with the result if needed</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="n">Level</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">result</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_processing_step_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="nd">@populate</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">ProcessingControlResult</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_processing_control_result</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">ProcessingControlResult</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="ne">Exception</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Handle the processing control results.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">FlagError</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">get_targets</span><span class="p">():</span>
+                <span class="n">target</span><span class="o">.</span><span class="n">add_flag</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">flag</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">entity</span><span class="o">.</span><span class="n">error_handling</span><span class="o">.</span><span class="n">should_raise</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">entity</span><span class="o">.</span><span class="n">error</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="DataTrace.from_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.from_reading">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_reading</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;DataTrace&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise a data trace graph from a reading.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reading</span>
+<span class="sd">            The reading associated to the data trace.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        DataTrace</span>
+<span class="sd">            The initialised data trace graph.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data_trace</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="n">data_trace</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">reading</span>
+        <span class="n">data_trace</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span>
+        <span class="n">data_trace</span><span class="o">.</span><span class="n">populate</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data_trace</span></div>
+
+
+<div class="viewcode-block" id="DataTrace.get_reading">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.get_reading">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Reading</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the reading associated with the data trace graph.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entity</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">Reading</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">entity</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The root node entity is not a reading but a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DataTrace.nodes">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.nodes">[docs]</a>
+    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NodeView</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve all the nodes inside the data trace graph.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        NodeView</span>
+<span class="sd">            The list of nodes inside the data trace graph.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">nodes</span></div>
+
+
+<div class="viewcode-block" id="DataTrace.is_leaf">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.is_leaf">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_leaf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Determine whether the entity is a leaf.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">out_degree</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+<div class="viewcode-block" id="DataTrace.leaves">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.leaves">[docs]</a>
+    <span class="k">def</span> <span class="nf">leaves</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve all leaves of the data trace graph.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Iterable[EntityType]</span>
+<span class="sd">            The leaf nodes of the data trace graph.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_leaf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">entity_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the entity count in the data trace graph.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            The number of entities in the data trace graph.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">leaf_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the leaf count of the data trace graph.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            The number of leaf nodes in the data trace graph.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">leaves</span><span class="p">()))</span>
+
+<div class="viewcode-block" id="DataTrace.has_node">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.has_node">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check whether a node exists in the data trace graph.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        entity</span>
+<span class="sd">            The entity of the node whose existence in the data trace graph is to be</span>
+<span class="sd">            checked.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            ``True`` if the corresponding node exists inside the graph. ``False``</span>
+<span class="sd">            otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DataTrace.parents">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.parents">[docs]</a>
+    <span class="k">def</span> <span class="nf">parents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MultiAdjacencyView</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get direct predecessors of an entity.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">pred</span><span class="p">[</span><span class="n">entity</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="DataTrace.children">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.children">[docs]</a>
+    <span class="k">def</span> <span class="nf">children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MultiAdjacencyView</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get direct successors of an entity.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">succ</span><span class="p">[</span><span class="n">entity</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="DataTrace.add_trace">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.add_trace">[docs]</a>
+    <span class="nd">@multidispatchmethod</span>
+    <span class="k">def</span> <span class="nf">add_trace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a single data trace to the graph.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        source</span>
+<span class="sd">            The source entity that led to the creation of the result entity.</span>
+<span class="sd">        result</span>
+<span class="sd">            The result entity created from the source entity.</span>
+<span class="sd">        step</span>
+<span class="sd">            The processing step that has led to the creation of the result if</span>
+<span class="sd">            existent.</span>
+<span class="sd">        kwargs</span>
+<span class="sd">            Additional keywords arguments passed to downstream dispatchers.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        NotImplementedError</span>
+<span class="sd">            If the source and/or result types are not supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;The two node types are not supported.&quot;</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_add_trace</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">source</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">,</span>
+        <span class="n">result</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">,</span>
+        <span class="n">step</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">allow_multiple_parents</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add an edge to the data trace graph.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">MissingSourceNode</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">had_result</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_multiple_parents</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NodeHasMultipleParents</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">step</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">hash</span><span class="p">(</span><span class="n">step</span><span class="p">),</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">had_result</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">find_cycle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">GraphNoCycle</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNoCycle</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Reading</span><span class="p">,</span> <span class="n">Level</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_reading_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Level</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">allow_multiple_parents</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Reading</span><span class="p">,</span> <span class="n">MeasureValue</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_reading_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">MeasureValue</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">allow_multiple_parents</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Level</span><span class="p">,</span> <span class="n">RawDataSet</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_level_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">RawDataSet</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">allow_multiple_parents</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Level</span><span class="p">,</span> <span class="n">MeasureValue</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_level_measure</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">MeasureValue</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">allow_multiple_parents</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Level</span><span class="p">,</span> <span class="n">LevelEpoch</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_level_epoch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">LevelEpoch</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">ProcessingStep</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">allow_multiple_parents</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">MeasureValue</span><span class="p">,</span> <span class="n">Level</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_measure_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">MeasureValue</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">ProcessingStep</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">RawDataSet</span><span class="p">,</span> <span class="n">RawDataSet</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">RawDataSet</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">RawDataSet</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">TransformStep</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">RawDataSet</span><span class="p">,</span> <span class="n">MeasureValue</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">RawDataSet</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">MeasureValue</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">ExtractStep</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">RawDataSet</span><span class="p">,</span> <span class="n">LevelEpoch</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_create_level_epoch</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">RawDataSet</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">LevelEpoch</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">CreateLevelEpochStep</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">LevelEpoch</span><span class="p">,</span> <span class="n">MeasureValue</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_extract_level_epoch_measure</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">LevelEpoch</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">MeasureValue</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">ExtractStep</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">RawDataSet</span><span class="p">,</span> <span class="n">Level</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_concatenate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">RawDataSet</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">Level</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">ConcatenateLevels</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+
+    <span class="nd">@add_trace</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">MeasureValue</span><span class="p">,</span> <span class="n">MeasureValue</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_aggregate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">MeasureValue</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">MeasureValue</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">ProcessingStep</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">processing_step_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the processing steps count in the data trace graph.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            The number of different processing steps in the data trace graph.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processing_step_count</span>
+
+<div class="viewcode-block" id="DataTrace.check_data_set_usage">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.check_data_set_usage">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_data_set_usage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataSet</span><span class="p">]:</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Check the usage of the raw data sets inside the data trace graph.</span>
+
+<span class="sd">        It means checking if all leaf nodes are :class:`dispel.data.measures.MeasureValue`</span>
+<span class="sd">        and raise warnings if any are found.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[RawDataSet]</span>
+<span class="sd">            The list of unused data sets.</span>
+
+<span class="sd">        Warns</span>
+<span class="sd">        -----</span>
+<span class="sd">        UserWarning</span>
+<span class="sd">            If leaf entities do not correspond to measure values.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If a leaf node if neither a measure value nor a raw data set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">unused_data_sets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataSet</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">leaves</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">RawDataSet</span><span class="p">):</span>
+                <span class="n">unused_data_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                    <span class="s2">&quot;No measure has been created from the following entity &quot;</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="ne">UserWarning</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">MeasureValue</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;The created leaf nodes should either be raw data sets or measure &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;values. Found </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">unused_data_sets</span></div>
+
+
+<div class="viewcode-block" id="DataTrace.get_flags">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.get_flags">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">EntityType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Flag</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get all flags related to the entity.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        entity</span>
+<span class="sd">            The entity whose related flags are to be retrieved.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Flag]</span>
+<span class="sd">            A list of all flags related to the entity.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">flags</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Flag</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">FlagMixIn</span><span class="p">):</span>
+            <span class="n">flags</span> <span class="o">+=</span> <span class="n">entity</span><span class="o">.</span><span class="n">get_flags</span><span class="p">()</span>
+
+        <span class="c1"># collect all flags from its ancestors</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">ancestors</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">entity</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">FlagMixIn</span><span class="p">):</span>
+                <span class="n">flags</span> <span class="o">+=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_flags</span><span class="p">()</span>
+
+        <span class="n">verify_flag_uniqueness</span><span class="p">(</span><span class="n">flags</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">flags</span></div>
+
+
+<div class="viewcode-block" id="DataTrace.get_measure_flags">
+<a class="viewcode-back" href="../../../api/dispel.processing.data_trace.html#dispel.processing.data_trace.DataTrace.get_measure_flags">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_measure_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Flag</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get all measure flags related to the entity.</span>
+
+<span class="sd">        If no entity is provided, the default entity is the reading and every measure</span>
+<span class="sd">        flag coming from the reading will be returned.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        entity</span>
+<span class="sd">            An optional entity whose related measure flags are to be retrieved,</span>
+<span class="sd">            if ``None`` is provided the default entity is the root of the data trace.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Flag]</span>
+<span class="sd">            A list of all measure flags related to the entity. If no entity is</span>
+<span class="sd">            provided, all measure flags are returned.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">entity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="k">if</span> <span class="n">entity</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">entity</span>
+        <span class="n">measure_flags</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Flag</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">chain</span><span class="p">(</span>
+            <span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">ancestors</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">entity</span><span class="p">),</span>
+            <span class="p">[</span><span class="n">entity</span><span class="p">],</span>
+            <span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">descendants</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">entity</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">MeasureValue</span><span class="p">):</span>
+                <span class="n">measure_flags</span> <span class="o">+=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_flags</span><span class="p">()</span>
+
+        <span class="n">verify_flag_uniqueness</span><span class="p">(</span><span class="n">measure_flags</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">measure_flags</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

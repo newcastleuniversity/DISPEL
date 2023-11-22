@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dispel.providers.generic.tasks.sbt_utt.sbt &#8212; dispel 0.1.dev1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dispel/providers/generic/tasks/sbt_utt/sbt';</script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/dispel-logo.png" class="logo__image only-light" alt="dispel 0.1.dev1 documentation - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/dispel-logo.png" class="logo__image only-dark" alt="dispel 0.1.dev1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../measures.html">
+                        Measures
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../api/modules.html">
+                        dispel
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../../providers.html" class="nav-link">dispel.providers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dispel.provi...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for dispel.providers.generic.tasks.sbt_utt.sbt</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Static Balance Test module.</span>
+
+<span class="sd">A module containing the functionality to process the *Static Balance* test</span>
+<span class="sd">(SBT).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">medfilt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">iqr</span> <span class="k">as</span> <span class="n">scipy_iqr</span>
+
+<span class="kn">from</span> <span class="nn">dispel.data.core</span> <span class="kn">import</span> <span class="n">EntityType</span><span class="p">,</span> <span class="n">Reading</span>
+<span class="kn">from</span> <span class="nn">dispel.data.flags</span> <span class="kn">import</span> <span class="n">FlagSeverity</span><span class="p">,</span> <span class="n">FlagType</span>
+<span class="kn">from</span> <span class="nn">dispel.data.levels</span> <span class="kn">import</span> <span class="n">Level</span>
+<span class="kn">from</span> <span class="nn">dispel.data.measures</span> <span class="kn">import</span> <span class="n">MeasureValueDefinitionPrototype</span>
+<span class="kn">from</span> <span class="nn">dispel.data.raw</span> <span class="kn">import</span> <span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span> <span class="n">RawDataValueDefinition</span>
+<span class="kn">from</span> <span class="nn">dispel.data.validators</span> <span class="kn">import</span> <span class="n">GREATER_THAN_ZERO</span>
+<span class="kn">from</span> <span class="nn">dispel.data.values</span> <span class="kn">import</span> <span class="n">AbbreviatedValue</span> <span class="k">as</span> <span class="n">AV</span>
+<span class="kn">from</span> <span class="nn">dispel.processing</span> <span class="kn">import</span> <span class="n">ProcessingStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.data_set</span> <span class="kn">import</span> <span class="n">FlagDataSetStep</span><span class="p">,</span> <span class="n">transformation</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.extract</span> <span class="kn">import</span> <span class="n">ExtractStep</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.flags</span> <span class="kn">import</span> <span class="n">flag</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.level</span> <span class="kn">import</span> <span class="n">LevelIdFilter</span><span class="p">,</span> <span class="n">ProcessingStepGroup</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.modalities</span> <span class="kn">import</span> <span class="n">LimbModality</span><span class="p">,</span> <span class="n">SensorModality</span>
+<span class="kn">from</span> <span class="nn">dispel.processing.transform</span> <span class="kn">import</span> <span class="n">TransformStep</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.flags.generic</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FrequencyLowerThanSBTThres</span><span class="p">,</span>
+    <span class="n">MaxTimeIncrement</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.flags.le_flags</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FlagAdjustmentNonBeltSBT</span><span class="p">,</span>
+    <span class="n">FlagNonBeltSBT</span><span class="p">,</span>
+    <span class="n">FlagPostAdjustExcessiveMotion</span><span class="p">,</span>
+    <span class="n">FlagStabilisationExcessiveMotion</span><span class="p">,</span>
+    <span class="n">PlacementClassificationGroup</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.preprocessing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FilterPhysiologicalNoise</span><span class="p">,</span>
+    <span class="n">FilterSensorNoise</span><span class="p">,</span>
+    <span class="n">PreprocessingSteps</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.sensor</span> <span class="kn">import</span> <span class="n">RenameColumns</span><span class="p">,</span> <span class="n">TransformUserAcceleration</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.sbt_utt.const</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FIXED_SIGN_AMP_THRESHOLD</span><span class="p">,</span>
+    <span class="n">KERNEL_WINDOW_SEGMENT</span><span class="p">,</span>
+    <span class="n">MIN_COVERAGE_THRESHOLD</span><span class="p">,</span>
+    <span class="n">TASK_NAME_SBT</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.sbt_utt.sbt_bouts</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SBTBoutExtractStep</span><span class="p">,</span>
+    <span class="n">SBTBoutStrategyModality</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tasks.sbt_utt.sbt_func</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">circle_area</span><span class="p">,</span>
+    <span class="n">data_coverage_fraction</span><span class="p">,</span>
+    <span class="n">ellipse_area</span><span class="p">,</span>
+    <span class="n">label_bouts</span><span class="p">,</span>
+    <span class="n">reject_short_bouts</span><span class="p">,</span>
+    <span class="n">sway_jerk</span><span class="p">,</span>
+    <span class="n">sway_total_excursion</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.providers.generic.tremor</span> <span class="kn">import</span> <span class="n">TremorMeasures</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.accelerometer</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AP_ML_COLUMN_MAPPINGS</span><span class="p">,</span>
+    <span class="n">transform_ap_ml_acceleration</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dispel.signal.core</span> <span class="kn">import</span> <span class="n">derive_time_data_frame</span><span class="p">,</span> <span class="n">euclidean_norm</span>
+
+
+<div class="viewcode-block" id="SBTTremorMeasuresGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.SBTTremorMeasuresGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">SBTTremorMeasuresGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tremor measure for the SBT from accelerometer.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SBTTremorMeasuresGroup.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.SBTTremorMeasuresGroup.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">new_column_names</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;userAccelerationX&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;userAccelerationY&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;userAccelerationZ&quot;</span><span class="p">:</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">RenameColumns</span><span class="p">(</span><span class="n">data_set_id</span><span class="p">,</span> <span class="o">**</span><span class="n">new_column_names</span><span class="p">),</span>
+            <span class="n">TremorMeasures</span><span class="p">(</span>
+                <span class="n">sensor</span><span class="o">=</span><span class="n">SensorModality</span><span class="o">.</span><span class="n">ACCELEROMETER</span><span class="p">,</span>
+                <span class="n">data_set_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_set_id</span><span class="si">}</span><span class="s2">_renamed&quot;</span><span class="p">,</span>
+                <span class="n">add_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformAxisNames">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.TransformAxisNames">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformAxisNames</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A raw data set transformation processing step to change axis names.</span>
+
+<span class="sd">    This step is done to match Martinez et al 2012.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;martinez_accelerations&quot;</span>
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">transform_ap_ml_acceleration</span>
+
+<div class="viewcode-block" id="TransformAxisNames.get_definitions">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.TransformAxisNames.get_definitions">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_definitions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the data set definitions.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">RawDataValueDefinition</span><span class="p">(</span>
+                <span class="n">column</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2"> data&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;G&quot;</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">AP_ML_COLUMN_MAPPINGS</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+        <span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformJerkNorm">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.TransformJerkNorm">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformJerkNorm</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Transform AP/ML acceleration into jerk norm.&quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="n">TransformAxisNames</span><span class="o">.</span><span class="n">new_data_set_id</span>  <span class="c1"># pylint: disable=E1101</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;jerk_norm&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;jerk_norm&quot;</span><span class="p">,</span> <span class="s2">&quot;Jerk norm (AP/ML)&quot;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="TransformJerkNorm.jerk_norm">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.TransformJerkNorm.jerk_norm">[docs]</a>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">jerk_norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the jerk norm.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">euclidean_norm</span><span class="p">(</span><span class="n">derive_time_data_frame</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s2">&quot;ap&quot;</span><span class="p">,</span> <span class="s2">&quot;ml&quot;</span><span class="p">]]))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FlagExcessiveMotion">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.FlagExcessiveMotion">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagExcessiveMotion</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;TransformStep that creates a flag signal to mark excessive motion.</span>
+
+<span class="sd">    The flagging segments the accelerometer norm which</span>
+<span class="sd">    can be considered an excessive motion (w.r.t, normal sway during balance,</span>
+<span class="sd">    e.g., belt placing or re-gaining balance after tripping,</span>
+<span class="sd">    based on the amplitude.</span>
+<span class="sd">    Developed using the SBT_flag_scenarios.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;jerk_norm&quot;</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;flagged_motion&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;flag&quot;</span><span class="p">,</span> <span class="s2">&quot;Excessive Motion Segments&quot;</span><span class="p">)]</span>
+
+<div class="viewcode-block" id="FlagExcessiveMotion.detect_excessive_motion">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.FlagExcessiveMotion.detect_excessive_motion">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">detect_excessive_motion</span><span class="p">(</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">fixed_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">FIXED_SIGN_AMP_THRESHOLD</span><span class="p">,</span>
+        <span class="n">kernel_width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">KERNEL_WINDOW_SEGMENT</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flag segments of excessive motion in accelerometer jerk during sway.</span>
+
+<span class="sd">        Output is a raw_dataset with 0 (not excessive motion) or 1</span>
+<span class="sd">        (excessive motion)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data</span>
+<span class="sd">            A data frame with the jerk_norm.</span>
+<span class="sd">        fixed_threshold</span>
+<span class="sd">            A threshold to cap the amplitude of the jerk that we consider</span>
+<span class="sd">            normal to look only in that kind of data for the statistical</span>
+<span class="sd">            threshold definition.</span>
+<span class="sd">        kernel_width</span>
+<span class="sd">            The width of the running window used to median filter the</span>
+<span class="sd">            excessive_motion mask. This is to prevent spikes from appearing</span>
+<span class="sd">            when the signal surpasses the statistical_threshold for few</span>
+<span class="sd">            instances.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Series</span>
+<span class="sd">            A Series with flagged_motion which becomes a new</span>
+<span class="sd">            raw_dataset</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Identify which part of the magnitude of the accelerometer signal</span>
+        <span class="c1"># is greater than a fixed threshold</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;jerk_norm&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">fixed_threshold</span>
+
+        <span class="c1"># Define an adaptive threshold based on 2.5 IQR on the quiet</span>
+        <span class="c1"># activity periods</span>
+        <span class="n">statistical_threshold</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">scipy_iqr</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">,</span> <span class="s2">&quot;jerk_norm&quot;</span><span class="p">])</span>
+
+        <span class="c1"># Detect excessive motion</span>
+        <span class="n">mask_excessive_motion</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">jerk_norm</span> <span class="o">&gt;</span> <span class="n">statistical_threshold</span>
+
+        <span class="c1"># Smoothing the values removing small gap (2+ secs , 50Hz+1 * 2)</span>
+        <span class="c1"># TODO think if I can play with decorators here (perfect composition)</span>
+        <span class="n">flag_smooth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+            <span class="n">medfilt</span><span class="p">(</span><span class="n">mask_excessive_motion</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="n">kernel_width</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">reject_short_bouts</span><span class="p">(</span><span class="n">label_bouts</span><span class="p">(</span><span class="n">flag_smooth</span><span class="p">),</span> <span class="n">flag_smooth</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TransformMergeValidSegments">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.TransformMergeValidSegments">[docs]</a>
+<span class="k">class</span> <span class="nc">TransformMergeValidSegments</span><span class="p">(</span><span class="n">TransformStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mask the AP-ML acceleration, under the flagged_motion.</span>
+
+<span class="sd">    The output contains only segments of AP-ML acceleration which were not</span>
+<span class="sd">    identified as an excessive motion.</span>
+<span class="sd">    Outputs the merged valid AP/ML/Vertical acceleration data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;martinez_accelerations&quot;</span><span class="p">,</span> <span class="s2">&quot;flagged_motion&quot;</span><span class="p">]</span>
+    <span class="n">new_data_set_id</span> <span class="o">=</span> <span class="s2">&quot;concat_valid_martinez_acc&quot;</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;Continuous valid acceleration V data merged&quot;</span><span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;ml&quot;</span><span class="p">,</span> <span class="s2">&quot;Continuous valid acceleration ML data merged&quot;</span><span class="p">),</span>
+        <span class="n">RawDataValueDefinition</span><span class="p">(</span><span class="s2">&quot;ap&quot;</span><span class="p">,</span> <span class="s2">&quot;Continuous valid acceleration AP data merged&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+
+    <span class="nd">@transformation</span>
+    <span class="k">def</span> <span class="nf">_valid_concat_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Take only valid_continuous_data segments and concatenate them.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data</span>
+<span class="sd">            Martinez Accelerations (AP,ML, V)</span>
+<span class="sd">        flag</span>
+<span class="sd">            Masking flag (1: excessive motion data, 0: valid data)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        DataFrame</span>
+<span class="sd">            Outputs the masked Martinez Accelerations (AP,ML, V)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Filtering data masked by excessive motion flag</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">flag</span><span class="p">[</span><span class="s2">&quot;flag&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;ml&quot;</span><span class="p">,</span> <span class="s2">&quot;ap&quot;</span><span class="p">]]</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractValidSegmentCoverage">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractValidSegmentCoverage">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractValidSegmentCoverage</span><span class="p">(</span><span class="n">ExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract segments of data without excessive motion.</span>
+
+<span class="sd">    The coverage is defined as a ratio, with numerator the length of the valid</span>
+<span class="sd">    data (not flagged as invalid) and, denominator being the length of</span>
+<span class="sd">    the data contained originally in the recording. This value is</span>
+<span class="sd">    standardized to a percentage (0-100) %.</span>
+<span class="sd">    It has value between 0 and 100 %.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="s2">&quot;flagged_motion&quot;</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+        <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;coverage valid data&quot;</span><span class="p">,</span> <span class="s2">&quot;coverage_valid&quot;</span><span class="p">),</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;%&quot;</span><span class="p">,</span>
+        <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The portion of data (being 100 % the complete recording &quot;</span>
+        <span class="s2">&quot;length) which is valid, i.e., that does not contain &quot;</span>
+        <span class="s2">&quot;a signal with excessive motion.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">transform_function</span> <span class="o">=</span> <span class="n">data_coverage_fraction</span></div>
+
+
+
+<div class="viewcode-block" id="FlagMinSegmentCoverage">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.FlagMinSegmentCoverage">[docs]</a>
+<span class="k">class</span> <span class="nc">FlagMinSegmentCoverage</span><span class="p">(</span><span class="n">FlagDataSetStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flag minimum length of valid recording without excessive motion.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    acceptance_threshold</span>
+<span class="sd">        The threshold below which the data set is to be flagged. If the</span>
+<span class="sd">        fed signal does not last for more than ``acceptance_threshold`` of the</span>
+<span class="sd">        total recorded test length, then the associated level is flagged.</span>
+<span class="sd">        Should be within ``[0, 100] %``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_set_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flagged_motion&quot;</span><span class="p">]</span>
+    <span class="n">flag_name</span> <span class="o">=</span> <span class="n">AV</span><span class="p">(</span><span class="s2">&quot;Too short sway&quot;</span><span class="p">,</span> <span class="s2">&quot;sway_too_short&quot;</span><span class="p">)</span>
+    <span class="n">flag_type</span> <span class="o">=</span> <span class="n">FlagType</span><span class="o">.</span><span class="n">BEHAVIORAL</span>
+    <span class="n">flag_severity</span> <span class="o">=</span> <span class="n">FlagSeverity</span><span class="o">.</span><span class="n">DEVIATION</span>
+    <span class="n">reason</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;After removing segments with excessive motion&quot;</span>
+        <span class="s2">&quot;(i.e., behavioural flag bouts) the remaining data is &quot;</span>
+        <span class="s2">&quot;too short </span><span class="si">{percentage_valid}</span><span class="s2"> </span><span class="si">% o</span><span class="s2">f the total, i.e., &quot;</span>
+        <span class="s2">&quot;less than </span><span class="si">{threshold}</span><span class="s2"> %&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">MIN_COVERAGE_THRESHOLD</span>
+
+    <span class="nd">@flag</span>
+    <span class="k">def</span> <span class="nf">_min_valid_length_flag</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">acceptance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">acceptance_threshold</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">percentage_valid</span> <span class="o">=</span> <span class="n">data_coverage_fraction</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_flag_kwargs</span><span class="p">(</span>
+            <span class="n">threshold</span><span class="o">=</span><span class="n">acceptance_threshold</span><span class="p">,</span>
+            <span class="n">percentage_valid</span><span class="o">=</span><span class="n">percentage_valid</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">percentage_valid</span> <span class="o">&gt;=</span> <span class="n">acceptance_threshold</span>
+
+<div class="viewcode-block" id="FlagMinSegmentCoverage.get_flag_targets">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.FlagMinSegmentCoverage.get_flag_targets">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_flag_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reading</span><span class="p">:</span> <span class="n">Reading</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Level</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntityType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get flag targets.&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Level cannot be null&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">level</span><span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractSwayTotalExcursion">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractSwayTotalExcursion">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractSwayTotalExcursion</span><span class="p">(</span><span class="n">SBTBoutExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract Sway Total Excursion.</span>
+
+<span class="sd">    For details about the algorithm, check equation (eq.8) by Prieto(1996)</span>
+<span class="sd">    https://doi.org/10.1109/10.532130</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_ids</span>
+<span class="sd">        The data set ids that will be used to extract Sway Total Excursion</span>
+<span class="sd">        measures.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractSwayTotalExcursion.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractSwayTotalExcursion.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;The Sway Total Excursion (a.k.a. TOTEX) computed with the eq.8 &quot;</span>
+            <span class="s2">&quot;of Prieto (1996) algorithm. This measure quantifies the total &quot;</span>
+            <span class="s2">&quot;amount of acceleration increments in the &quot;</span>
+            <span class="s2">&quot;Anterior/Posterior-Medio/Lateral plane of the movement.&quot;</span>
+            <span class="s2">&quot;It is computed with the bout strategy </span><span class="si">{bout_strategy_repr}</span><span class="s2">. See&quot;</span>
+            <span class="s2">&quot;also https://doi.org/10.1109/10.532130.&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;sway total excursion&quot;</span><span class="p">,</span> <span class="s2">&quot;totex&quot;</span><span class="p">),</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;mG&quot;</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_compute_totex</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">sway_total_excursion</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ap</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">ml</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e3</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_ids</span><span class="p">,</span> <span class="n">_compute_totex</span><span class="p">,</span> <span class="n">definition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractSwayJerk">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractSwayJerk">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractSwayJerk</span><span class="p">(</span><span class="n">SBTBoutExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract Sway Jerk.</span>
+
+<span class="sd">    For details about the algorithm, check Table 2 by Mancini(2012),</span>
+<span class="sd">    https://doi.org/10.1186/1743-0003-9-59</span>
+<span class="sd">    It is a complementary measure to the sway areas, as it covers also the</span>
+<span class="sd">    amount of sway occurred within a given geometric area. It takes special</span>
+<span class="sd">    relevance when algorithms to remove outliers are applied and the timeseries</span>
+<span class="sd">    span used for different measures is different. In other words, a normalised</span>
+<span class="sd">    version of the sway total excursion. See an example of</span>
+<span class="sd">    concomitant use with sway total excursion in Mancini(2012)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_ids</span>
+<span class="sd">        The data set ids that will be used to extract Sway Jerk</span>
+<span class="sd">        measures.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractSwayJerk.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractSwayJerk.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;The Sway Jerk provides a means of quantifying the average &quot;</span>
+            <span class="s2">&quot;sway occurred on a plane per time unit over the total of &quot;</span>
+            <span class="s2">&quot;an assessment.&quot;</span>
+            <span class="s2">&quot;It is computed with the bout strategy </span><span class="si">{bout_strategy_repr}</span><span class="s2">. See&quot;</span>
+            <span class="s2">&quot; also https://doi.org/10.1186/1743-0003-9-59.&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;sway jerk&quot;</span><span class="p">,</span> <span class="s2">&quot;jerk&quot;</span><span class="p">),</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;mG/s&quot;</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_compute_jerk</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">sway_jerk</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ap</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">ml</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e3</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_ids</span><span class="p">,</span> <span class="n">_compute_jerk</span><span class="p">,</span> <span class="n">definition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractCircleArea">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractCircleArea">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractCircleArea</span><span class="p">(</span><span class="n">SBTBoutExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract circle Area.</span>
+
+<span class="sd">    For details about the algorithm, check equation (eq.12) by Prieto(1996)</span>
+<span class="sd">    https://doi.org/10.1109/10.532130</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_ids</span>
+<span class="sd">        The data set ids that will be considered to extract Circle Area</span>
+<span class="sd">        measures.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractCircleArea.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractCircleArea.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;The ellipse area computed with the eq.12 of Prieto (1996) &quot;</span>
+            <span class="s2">&quot;algorithm. It is computed with the bout strategy &quot;</span>
+            <span class="s2">&quot;</span><span class="si">{bout_strategy_repr}</span><span class="s2">. See also &quot;</span>
+            <span class="s2">&quot;https://doi.org/10.1109/10.532130.&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;circle area&quot;</span><span class="p">,</span> <span class="s2">&quot;ca&quot;</span><span class="p">),</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;microG^2&quot;</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_compute_circle_area</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">circle_area</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ap</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">ml</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e6</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_ids</span><span class="p">,</span> <span class="n">_compute_circle_area</span><span class="p">,</span> <span class="n">definition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractEllipseArea">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractEllipseArea">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractEllipseArea</span><span class="p">(</span><span class="n">SBTBoutExtractStep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract Ellipse Area.</span>
+
+<span class="sd">    For details about the algorithm, check equation eq.18 of Schubert(2014)</span>
+<span class="sd">    https://doi.org/10.1016/j.gaitpost.2013.09.001)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_set_ids</span>
+<span class="sd">        The data set ids that will be considered to extract Ellipse Area</span>
+<span class="sd">        measures.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractEllipseArea.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractEllipseArea.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;The ellipse area computed with the eq.18 of Schubert (2014) &quot;</span>
+            <span class="s2">&quot;algorithm. It is computed with the bout strategy &quot;</span>
+            <span class="s2">&quot;</span><span class="si">{bout_strategy_repr}</span><span class="s2">. This is a PCA-based variation of &quot;</span>
+            <span class="s2">&quot;https://doi.org/10.1016/j.gaitpost.2013.09.001.&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">definition</span> <span class="o">=</span> <span class="n">MeasureValueDefinitionPrototype</span><span class="p">(</span>
+            <span class="n">measure_name</span><span class="o">=</span><span class="n">AV</span><span class="p">(</span><span class="s2">&quot;ellipse area&quot;</span><span class="p">,</span> <span class="s2">&quot;ea&quot;</span><span class="p">),</span>
+            <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;microG^2&quot;</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">GREATER_THAN_ZERO</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_compute_ellipse_area</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ellipse_area</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ap</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">ml</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e6</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_set_ids</span><span class="p">,</span> <span class="n">_compute_ellipse_area</span><span class="p">,</span> <span class="n">definition</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ExtractSpatioTemporalMeasuresBatch">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractSpatioTemporalMeasuresBatch">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractSpatioTemporalMeasuresBatch</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract postural adjustment measures given a bout strategy.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ExtractSpatioTemporalMeasuresBatch.__init__">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractSpatioTemporalMeasuresBatch.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bout_strategy</span><span class="p">:</span> <span class="n">SBTBoutStrategyModality</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data_set_id</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;martinez_accelerations&quot;</span><span class="p">]</span>
+        <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingStep</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">ExtractSwayTotalExcursion</span><span class="p">(</span>
+                <span class="n">data_set_id</span><span class="p">,</span> <span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">bout_cls</span>
+            <span class="p">),</span>
+            <span class="n">ExtractSwayJerk</span><span class="p">(</span><span class="n">data_set_id</span><span class="p">,</span> <span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">bout_cls</span><span class="p">),</span>
+            <span class="n">ExtractCircleArea</span><span class="p">(</span><span class="n">data_set_id</span><span class="p">,</span> <span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">bout_cls</span><span class="p">),</span>
+            <span class="n">ExtractEllipseArea</span><span class="p">(</span><span class="n">data_set_id</span><span class="p">,</span> <span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">bout_cls</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TechnicalFlagsGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.TechnicalFlagsGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">TechnicalFlagsGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A ProcessingStepGroup concatenating TechnicalFlagsGroup steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">FrequencyLowerThanSBTThres</span><span class="p">(),</span>
+        <span class="n">MaxTimeIncrement</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="FormattingGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.FormattingGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">FormattingGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A ProcessingStepGroup concatenating Formatting steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">TransformUserAcceleration</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="PreProcessingStepsGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.PreProcessingStepsGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">PreProcessingStepsGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A ProcessingStepGroup concatenating PreProcessingStepsGroup steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">PreprocessingSteps</span><span class="p">(</span>
+            <span class="s2">&quot;accelerometer&quot;</span><span class="p">,</span>
+            <span class="n">LimbModality</span><span class="o">.</span><span class="n">LOWER_LIMB</span><span class="p">,</span>
+            <span class="n">SensorModality</span><span class="o">.</span><span class="n">ACCELEROMETER</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">FilterSensorNoise</span><span class="p">(</span>
+            <span class="s2">&quot;acc_ts_rotated_resampled_detrend&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span>
+        <span class="p">),</span>
+        <span class="n">FilterPhysiologicalNoise</span><span class="p">(</span>
+            <span class="s2">&quot;acc_ts_rotated_resampled_detrend_svgf&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">ACCELEROMETER_COLUMNS</span>
+        <span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="TremorAndAxesGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.TremorAndAxesGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">TremorAndAxesGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A ProcessingStepGroup concatenating TremorAndAxesGroup steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">SBTTremorMeasuresGroup</span><span class="p">(</span><span class="s2">&quot;acc_ts_rotated_resampled_detrend&quot;</span><span class="p">),</span>
+        <span class="n">TransformAxisNames</span><span class="p">(</span><span class="s2">&quot;acc_ts_rotated_resampled_detrend_svgf_bhpf&quot;</span><span class="p">),</span>
+        <span class="n">TransformJerkNorm</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="DetectExcessiveMotionGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.DetectExcessiveMotionGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">DetectExcessiveMotionGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A ProcessingStepGroup concatenating DetectExcessiveMotionGroup steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Steps Group to obtain Sway Path</span>
+        <span class="n">FlagExcessiveMotion</span><span class="p">(),</span>
+        <span class="n">TransformMergeValidSegments</span><span class="p">(),</span>
+        <span class="n">ExtractValidSegmentCoverage</span><span class="p">(),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractSpatioTemporalMeasuresGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.ExtractSpatioTemporalMeasuresGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtractSpatioTemporalMeasuresGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A ProcessingStepGroup concatenating ExtractSpatioTemporalMeasuresBatch steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ExtractSpatioTemporalMeasuresBatch</span><span class="p">(</span>
+            <span class="n">bout_strategy</span><span class="o">=</span><span class="n">bout_strategy</span><span class="p">,</span>
+            <span class="n">modalities</span><span class="o">=</span><span class="p">[</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">av</span><span class="p">],</span>
+            <span class="n">bout_strategy_repr</span><span class="o">=</span><span class="n">bout_strategy</span><span class="o">.</span><span class="n">av</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">bout_strategy</span> <span class="ow">in</span> <span class="n">SBTBoutStrategyModality</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="BehaviouralFlagsGroup">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.BehaviouralFlagsGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">BehaviouralFlagsGroup</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A ProcessingStepGroup concatenating BehaviouralFlagsGroup steps.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># Detect Placement Steps</span>
+        <span class="n">PlacementClassificationGroup</span><span class="p">(),</span>
+        <span class="n">FlagNonBeltSBT</span><span class="p">(),</span>
+        <span class="n">FlagAdjustmentNonBeltSBT</span><span class="p">(),</span>
+        <span class="n">FlagStabilisationExcessiveMotion</span><span class="p">(),</span>
+        <span class="n">FlagPostAdjustExcessiveMotion</span><span class="p">(),</span>
+    <span class="p">]</span>
+
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;task_name&quot;</span><span class="p">:</span> <span class="n">TASK_NAME_SBT</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="SBTProcessingSteps">
+<a class="viewcode-back" href="../../../../../../api/dispel.providers.generic.tasks.sbt_utt.sbt.html#dispel.providers.generic.tasks.sbt_utt.sbt.SBTProcessingSteps">[docs]</a>
+<span class="k">class</span> <span class="nc">SBTProcessingSteps</span><span class="p">(</span><span class="n">ProcessingStepGroup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;All processing steps to extract SBT measures.&quot;&quot;&quot;</span>
+
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">TechnicalFlagsGroup</span><span class="p">(),</span>
+        <span class="n">FormattingGroup</span><span class="p">(),</span>
+        <span class="n">PreProcessingStepsGroup</span><span class="p">(),</span>
+        <span class="n">TremorAndAxesGroup</span><span class="p">(),</span>
+        <span class="n">DetectExcessiveMotionGroup</span><span class="p">(),</span>
+        <span class="n">ExtractSpatioTemporalMeasuresGroup</span><span class="p">(),</span>
+        <span class="n">BehaviouralFlagsGroup</span><span class="p">(),</span>
+    <span class="p">]</span>
+
+    <span class="n">level_filter</span> <span class="o">=</span> <span class="n">LevelIdFilter</span><span class="p">(</span><span class="s2">&quot;sbt&quot;</span><span class="p">)</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;task_name&quot;</span><span class="p">:</span> <span class="n">TASK_NAME_SBT</span><span class="p">}</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
