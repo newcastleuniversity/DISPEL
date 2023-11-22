@@ -1,6 +1,11 @@
-"""Core utility function used in cwt.
+"""Core functionality for measure extraction based on continuous wavelet transform.
 
-The code implementation is inspired by CWT.
+Part of this module is based on a modified version of GaitPy.
+
+References
+----------
+.. [1] Czech M et al. (2019) GaitPy: An Open-Source Python Package for Gait Analysis
+Using an Accelerometer on the Lower Back.
 """
 
 import warnings

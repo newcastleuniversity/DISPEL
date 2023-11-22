@@ -952,7 +952,7 @@ def walking_detection_harmonic(
         sampling rate.
     """
     # Define the size of the temporal window
-    # 3 seconds as in CWT
+    # 3 seconds as in GaitPy
     if vertical_acc.index.freq is None:
         raise ValueError(
             "One is trying to detect walking bout"
