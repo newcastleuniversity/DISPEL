@@ -1,0 +1,159 @@
+{
+  "uuid": "da5a7d6b-eca2-4960-bb36-d5dd11561ce6",
+  "userId": "b0f0b56a-5f55-4f18-aabb-cfab35993231",
+  "activationCode": "83MWCXZO",
+  "receptionDate": 1604481767468,
+  "mobileSession": {
+    "uuidSession": "ae02367e-c7f5-4f38-b54f-790fe00cb69f",
+    "sessionCode": "konectomDaily",
+    "evaluationCodes": [
+      "mood",
+      "cps",
+      "pinch",
+      "drawing",
+      "gripForce",
+      "sbtUtt"
+    ],
+    "isFinished": false,
+    "startDate": "2020-11-04T10:22:28.701+01:00",
+    "endDate": null
+  },
+  "mobileDevice": {
+    "model": null,
+    "modelCode": "iPhone10,6",
+    "osVersion": "14.2",
+    "kernelVersion": null,
+    "buildNumber": "39",
+    "versionNumber": "1.0.2",
+    "platform": "iOS",
+    "screen": {
+      "widthPixels": 375,
+      "heightPixels": 812,
+      "densityDpi": 463,
+      "xDpi": null,
+      "yDpi": null,
+      "scaleFactor": 3
+    }
+  },
+  "mobileEvaluationTest": {
+    "code": "mood",
+    "finished": true,
+    "exitReason": "nominal",
+    "startDate": "2020-11-04T10:22:28.705+01:00",
+    "beginTimestamp": 1604481748705,
+    "endTimestamp": 1604481766068,
+    "levels": [
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1604481750591",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsDisplay",
+                    "value": "1604481748730",
+                    "unit": "ms"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMoodscale",
+            "value": "mood",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1604481748730",
+        "endTimestamp": "1604481751594"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "answer",
+                    "value": "1",
+                    "unit": "n/a"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1604481755604",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsDisplay",
+                    "value": "1604481751631",
+                    "unit": "ms"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMoodscale",
+            "value": "physicalState",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1604481751631",
+        "endTimestamp": "1604481756713"
+      },
+      {
+        "sensors": [
+          {
+            "name": "userInput",
+            "measurements": [
+              {
+                "values": [
+                  {
+                    "name": "answer",
+                    "value": "5",
+                    "unit": "n/a"
+                  },
+                  {
+                    "name": "tsAnswer",
+                    "value": "1604481763524",
+                    "unit": "ms"
+                  },
+                  {
+                    "name": "tsDisplay",
+                    "value": "1604481758019",
+                    "unit": "ms"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "name": "idMoodscale",
+            "value": "physicalState",
+            "unit": "n/a"
+          }
+        ],
+        "beginTimestamp": "1604481758019",
+        "endTimestamp": "1604481764653"
+      }
+    ]
+  }
+}

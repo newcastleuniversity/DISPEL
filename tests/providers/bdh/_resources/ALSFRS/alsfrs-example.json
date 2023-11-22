@@ -1,0 +1,141 @@
+{"body": {"levels": [
+  {
+    "effective_time_frame": {
+      "end_timestamp": 1646667349195,
+      "begin_timestamp": 1646667239256
+    },
+    "name": "alsfrs",
+    "raw_data": {
+      "activity_sequence": {
+        "displayed_question_id": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "response_timestamp": [
+          1646667241560,
+          1646667243471,
+          1646667245210,
+          1646667246791,
+          1646667250173,
+          1646667251603,
+          1646667252907,
+          1646667254098,
+          1646667255425,
+          1646667256653,
+          1646667257896,
+          1646667259346,
+          1646667349036
+        ],
+        "response_id": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "press_in_timestamp": [
+          1646667241416,
+          1646667243350,
+          1646667245123,
+          1646667246721,
+          1646667250042,
+          1646667251498,
+          1646667252808,
+          1646667253981,
+          1646667255325,
+          1646667256542,
+          1646667257770,
+          1646667259222,
+          1646667348966
+        ],
+        "response_text": [
+          "No change",
+          "No change",
+          "No changes (all foods and liquids)",
+          "No changes",
+          "I eat most of my meals through mouth",
+          "No change",
+          "No change",
+          "No change",
+          "No change",
+          "No change",
+          "No change",
+          "No change",
+          "No respiratory support"
+        ],
+        "displayed_question_text": [
+          "Compared to the time before you had symptoms of ALS: Have you noticed any changes in your speech?",
+          "Compared to the time before you had symptoms of ALS: Have you noticed any changes (increases) in the amount of saliva in your mouth (regardless of any medication use)?",
+          "Compared to the time before you had symptoms of ALS: Have there been any changes in your ability to swallow?",
+          "Compared to the time before you had symptoms of ALS: Has your handwriting changed? Please choose the best answer that describes your handwriting with your dominant (usual) hand without a cuff or brace.",
+          "The following question refers to your ability to cut foods and handle utensils (feed yourself) compared to before you had symptoms of ALS.",
+          "Compared to the time before you had symptoms of ALS: Describe your ability cutting food and handling utensils",
+          "Compared to the time before you had symptoms of ALS: Has your ability to dress and perform self-care activities (i.e. bathing, teeth brushing, shaving, combing your hair, other hygienic activities) changed?",
+          "Compared to the time before you had symptoms of ALS: Has your ability to turn in bed and adjust the bed clothes (i.e.. cover yourself with the sheet or blanket) changed?",
+          "Compared to the time before you had symptoms of ALS: Has your ability to walk changed?",
+          "Compared to the time before you had symptoms of ALS: Has your ability to climb stairs changed?",
+          "Compared to the time before you had symptoms of ALS: Do you experience shortness of breath or have difficulty breathing?",
+          "Compared to the time before you had symptoms of ALS: Do you experience shortness of breath or have difficulty breathing while lying down on your back?",
+          "Compared to the time before you had symptoms of ALS: Do you require respiratory (breathing) support?"
+        ],
+        "presentation_timestamp": [
+          1646667239256,
+          1646667241970,
+          1646667243852,
+          1646667245610,
+          1646667247172,
+          1646667250582,
+          1646667252077,
+          1646667253314,
+          1646667254612,
+          1646667255924,
+          1646667257285,
+          1646667258599,
+          1646667260056
+        ]
+      },
+      "calibrated_gyroscope": {
+        "x": [],
+        "y": [],
+        "z": [],
+        "timestamp": []
+      },
+      "raw_gyroscope": {
+        "x": [],
+        "y": [],
+        "z": [],
+        "timestamp": []
+      },
+      "calibrated_accelerometer": {
+        "x": [],
+        "y": [],
+        "z": [],
+        "timestamp": []
+      },
+      "raw_accelerometer": {
+        "x": [],
+        "y": [],
+        "z": [],
+        "timestamp": []
+      }
+    }
+  }]}, "header": {"acquisition_provenance": {"source": {"name": "Konectom Research U", "build_number": 8, "version": "1.0.0"}, "source_device": {"screen_height_pixels": 2312, "kernel_version": "4.14.116", "model_name": "HONOR 20 LITE", "screen_width_pixels": 1080, "os_version": "10", "time_since_boot": 1928207198, "battery_percentage": 41.999998688697815, "model_number": "MAR-LX3A", "time_zone": "Europe/Paris", "platform": "android", "cpu_load": null}}, "completion": "completed", "cluster_activity_codes": ["alsfrs"], "interruption_reason": null, "attempt_number": 1, "effective_time_frame": {"end_timestamp": 1646667349195, "begin_timestamp": 1646667239256}, "session_cluster_id": "cfb7a917-2860-4e82-98ae-b9faaf45e1ec", "inclinic_mode": false, "raw_data": {"activity_sequence": {"source": {"manufacturer": "BHS"}, "computed": true, "columns": {"displayed_question_id": {"description": "Id of the question presented to the user."}, "response_timestamp": {"description": "The timestamp at which the question was answered by the user (measurement since January 1st 1970).", "unit": "ms"}, "response_id": {"description": "The id of the response to the question given by the user."}, "press_in_timestamp": {"description": "The timestamp at which the user pressed in the selected response (measurement since 1 July 1970).", "unit": "ms"}, "response_text": {"description": "The selected response text as displayed to the user in the language displayed to the user."}, "presentation_timestamp": {"description": "The timestamp at which the question was displayed to the user (measurement since January 1st 1970).", "unit": "ms"}, "displayed_question_text": {"description": "The text of the question actually displayed to the user."}}}, "calibrated_gyroscope": {"source": {"version": null, "manufacturer": null}, "computed": false, "columns": {"x": {"description": "The unbiased gyration measured on the x-axis of the device in rad/s (Unbiased Rotation Rate on ios)", "unit": "RPS"}, "y": {"description": "The unbiased gyration measured on the y-axis of the device in rad/s (Unbiased Rotation Rate on ios)", "unit": "RPS"}, "z": {"description": "The unbiased gyration measured on the z-axis of the device in rad/s (Unbiased Rotation Rate on ios)", "unit": "RPS"}, "timestamp": {"description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)", "unit": "ms"}}}, "calibrated_accelerometer": {"source": {"version": null, "manufacturer": null}, "computed": false, "columns": {"x": {"description": "The x-axis of the accelerometer in G (G=9.81m/s^2), without gravity (User Acceleration on ios, Linear Acceleration on android)", "unit": "G"}, "y": {"description": "The y-axis of the accelerometer in G (G=9.81m/s^2), without gravity (User Acceleration on ios, Linear Acceleration on android)", "unit": "G"}, "z": {"description": "The z-axis of the accelerometer in G (G=9.81m/s^2), without gravity (User Acceleration on ios, Linear Acceleration on android)", "unit": "G"}, "timestamp": {"description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)", "unit": "ms"}}}, "raw_gyroscope": {"source": {"version": null, "manufacturer": null}, "computed": false, "columns": {"x": {"description": "The x-axis of the gyroscope in RPS (Radians Per Second)", "unit": "RPS"}, "y": {"description": "The y-axis of the gyroscope in RPS (Radians Per Second)", "unit": "RPS"}, "z": {"description": "The z-axis of the gyroscope in RPS (Radians Per Second)", "unit": "RPS"}, "timestamp": {"description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)", "unit": "ms"}}}, "raw_accelerometer": {"source": {"version": null, "manufacturer": null}, "computed": false, "columns": {"x": {"description": "The x-axis of the accelerometer in G (G=9.81m/s^2). Not collected on android versions older than 8.0 Oreo (API 26)", "unit": "G"}, "y": {"description": "The y-axis of the accelerometer in G (G=9.81m/s^2). Not collected on android versions older than 8.0 Oreo (API 26)", "unit": "G"}, "z": {"description": "The z-axis of the accelerometer in G (G=9.81m/s^2). Not collected on android versions older than 8.0 Oreo (API 26)", "unit": "G"}, "timestamp": {"description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)", "unit": "ms"}}}}, "id": "080488b8-5a09-49bf-8ab3-fee11c5cdb89", "upload_datetime": "2022-03-07T15:35:48.315651+00:00", "user_id": "9f714549-0a93-4eba-a3f7-a0cd1f6bb98a", "study_id": "4b815ee3-0cd7-49c2-959a-0cc77cf13e69", "schema_id": {"namespace": "konectom2", "name": "alsfrs-activity", "version": "2.2.0"}}}

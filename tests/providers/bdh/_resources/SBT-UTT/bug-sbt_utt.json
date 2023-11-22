@@ -1,0 +1,440 @@
+{
+  "header": {
+    "cluster_activity_codes": [],
+    "attempt_number": 1,
+    "interruption_reason": "user_restart",
+    "completion": "completed",
+    "effective_time_frame": {
+      "end_timestamp": 1607424017828,
+      "begin_timestamp": 1607424001691
+    },
+    "configuration": {
+      "level_configuration_variables": {
+        "mode": {
+          "description": "The mode of the level (static-balance or u-turn)"
+        }
+      },
+      "activity_configuration_variables": {
+        "user_locale": {
+          "description": "The language in which instructions are given to the user."
+        }
+      }
+    },
+    "session_cluster_id": "00000000-0000-0000-0000-000000000000",
+    "inclinic_mode": false,
+    "raw_data": {
+      "raw_accelerometer": {
+        "columns": {
+          "y": {
+            "unit": "G",
+            "description": "The y-axis of the accelerometer in G (G=9.81m/s^2). Not collected on android versions older than 8.0 Oreo (API 26)"
+          },
+          "timestamp": {
+            "unit": "ms",
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)"
+          },
+          "z": {
+            "unit": "G",
+            "description": "The z-axis of the accelerometer in G (G=9.81m/s^2). Not collected on android versions older than 8.0 Oreo (API 26)"
+          },
+          "x": {
+            "unit": "G",
+            "description": "The x-axis of the accelerometer in G (G=9.81m/s^2). Not collected on android versions older than 8.0 Oreo (API 26)"
+          }
+        },
+        "computed": false,
+        "source": {
+          "version": null,
+          "manufacturer": null
+        }
+      },
+      "voice_instructions": {
+        "columns": {
+          "file_name": {
+            "description": "The name of the file that contains the instruction or the stimulus that was heard by the user."
+          },
+          "start_timestamp": {
+            "description": "The timestamp of the beginning of the voice instruction",
+            "unit": "ms"
+          }
+        },
+        "computed": true,
+        "source": {
+          "manufacturer": "BHS"
+        }
+      },
+      "gravity": {
+        "columns": {
+          "y": {
+            "unit": "G",
+            "description": "Acceleration along the y-axis due to gravity in G"
+          },
+          "timestamp": {
+            "unit": "ms",
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)"
+          },
+          "z": {
+            "unit": "G",
+            "description": "Acceleration along the z-axis due to gravity in G"
+          },
+          "x": {
+            "unit": "G",
+            "description": "Acceleration along the x-axis due to gravity in G"
+          }
+        },
+        "computed": false,
+        "source": {
+          "version": null,
+          "manufacturer": null
+        }
+      },
+      "calibrated_gyroscope": {
+        "columns": {
+          "y": {
+            "unit": "RPS",
+            "description": "The unbiased gyration measured on the y-axis of the device in rad/s (Unbiased Rotation Rate on ios)"
+          },
+          "timestamp": {
+            "unit": "ms",
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)"
+          },
+          "z": {
+            "unit": "RPS",
+            "description": "The unbiased gyration measured on the z-axis of the device in rad/s (Unbiased Rotation Rate on ios)"
+          },
+          "x": {
+            "unit": "RPS",
+            "description": "The unbiased gyration measured on the x-axis of the device in rad/s (Unbiased Rotation Rate on ios)"
+          }
+        },
+        "computed": false,
+        "source": {
+          "version": null,
+          "manufacturer": null
+        }
+      },
+      "calibrated_accelerometer": {
+        "columns": {
+          "y": {
+            "unit": "G",
+            "description": "The y-axis of the accelerometer in G (G=9.81m/s^2), without gravity (User Acceleration on ios, Linear Acceleration on android)"
+          },
+          "timestamp": {
+            "unit": "ms",
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)"
+          },
+          "z": {
+            "unit": "G",
+            "description": "The z-axis of the accelerometer in G (G=9.81m/s^2), without gravity (User Acceleration on ios, Linear Acceleration on android)"
+          },
+          "x": {
+            "unit": "G",
+            "description": "The x-axis of the accelerometer in G (G=9.81m/s^2), without gravity (User Acceleration on ios, Linear Acceleration on android)"
+          }
+        },
+        "computed": false,
+        "source": {
+          "version": null,
+          "manufacturer": null
+        }
+      },
+      "calibrated_magnetic_field": {
+        "columns": {
+          "y": {
+            "unit": "\u03bcT",
+            "description": "The strength of the calibrated magnetic field along the y direction (from Calibrated Magnetic Field on ios, not collected  on android)"
+          },
+          "timestamp": {
+            "unit": "ms",
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)"
+          },
+          "z": {
+            "unit": "\u03bcT",
+            "description": "The strength of the calibrated magnetic field along the z direction (from Calibrated Magnetic Field on ios, not collected on android)"
+          },
+          "x": {
+            "unit": "\u03bcT",
+            "description": "The strength of the calibrated magnetic field along the x direction (from Calibrated Magnetic Field on ios, not collected on android)"
+          }
+        },
+        "computed": false,
+        "source": {
+          "version": null,
+          "manufacturer": null
+        }
+      },
+      "attitude": {
+        "columns": {
+          "y": {
+            "unit": "rad",
+            "description": "Device orientation roll angle (around y-axis) from Attitude sensor on ios"
+          },
+          "w": {
+            "description": null
+          },
+          "timestamp": {
+            "unit": "ms",
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)"
+          },
+          "z": {
+            "unit": "rad",
+            "description": "Device orientation yaw angle (around z-axis) from Attitude sensor on ios"
+          },
+          "x": {
+            "unit": "rad",
+            "description": "Device orientation pitch angle (around x-axis) from Attitude sensor on ios"
+          }
+        },
+        "computed": false,
+        "source": {
+          "version": null,
+          "manufacturer": null
+        }
+      },
+      "heading": {
+        "columns": {
+          "heading": {
+            "unit": "degree",
+            "description": "Device heading relative to start of activity, calculated by ios CoreMotion. Data is not captured on android and ios < 11"
+          },
+          "timestamp": {
+            "unit": "ms",
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)"
+          }
+        },
+        "computed": false,
+        "source": {
+          "version": null,
+          "manufacturer": null
+        }
+      },
+      "raw_magnetic_field": {
+        "columns": {
+          "y": {
+            "unit": "\u03bcT",
+            "description": "The strength of the magnetic field along the y direction (from Magnetic Field on ios, not collected on android)"
+          },
+          "timestamp": {
+            "unit": "ms",
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)"
+          },
+          "z": {
+            "unit": "\u03bcT",
+            "description": "The strength of the magnetic field along the z direction (from Magnetic Field on ios, not collected on android)"
+          },
+          "x": {
+            "unit": "\u03bcT",
+            "description": "The strength of the magnetic field along the x direction (from Magnetic Field on ios, not collected on android)"
+          }
+        },
+        "computed": false,
+        "source": {
+          "version": null,
+          "manufacturer": null
+        }
+      },
+      "raw_gyroscope": {
+        "columns": {
+          "y": {
+            "unit": "RPS",
+            "description": "The y-axis of the gyroscope in RPS (Radians Per Second)"
+          },
+          "timestamp": {
+            "unit": "ms",
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)"
+          },
+          "z": {
+            "unit": "RPS",
+            "description": "The z-axis of the gyroscope in RPS (Radians Per Second)"
+          },
+          "x": {
+            "unit": "RPS",
+            "description": "The x-axis of the gyroscope in RPS (Radians Per Second)"
+          }
+        },
+        "computed": false,
+        "source": {
+          "version": null,
+          "manufacturer": null
+        }
+      }
+    },
+    "acquisition_provenance": {
+      "source": {
+        "version": "1.8.0-rc",
+        "build_number": 5,
+        "name": "Konectom S"
+      },
+      "source_device": {
+        "time_zone": "Europe/Paris",
+        "screen_width_pixels": 750,
+        "model_name": "iPhone10,4",
+        "time_since_boot": null,
+        "battery_percentage": null,
+        "kernel_version": null,
+        "platform": "ios",
+        "model_number": "E1706AA5-9536-463C-BBA6-5B72E355603F",
+        "cpu_load": null,
+        "os_version": "13.7",
+        "screen_height_pixels": 1334
+      }
+    },
+    "user_id": "15613bac-8386-48df-94db-7aab9799007c",
+    "id": "1fd46078-7b24-4c5b-a7b4-d1c796134908",
+    "upload_datetime": "2020-12-08T16:13:16.676186",
+    "schema_id": {
+      "namespace": "konectom2",
+      "name": "sbut-activity",
+      "version": "2.0.0-dev"
+    }
+  },
+  "body": {
+    "configuration": {
+      "user_locale": "en-us"
+    },
+    "levels": [
+      {
+        "configuration": {
+          "mode": "static-balance"
+        },
+        "raw_data": {
+          "raw_accelerometer": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "voice_instructions": {
+            "file_name": [],
+            "start_timestamp": []
+          },
+          "gravity": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "calibrated_gyroscope": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "calibrated_accelerometer": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "calibrated_magnetic_field": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "attitude": {
+            "y": [],
+            "w": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "heading": {
+            "heading": [],
+            "timestamp": []
+          },
+          "raw_magnetic_field": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "raw_gyroscope": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          }
+        },
+        "effective_time_frame": {
+          "end_timestamp": 0,
+          "begin_timestamp": 1607424001691
+        },
+        "name": "sb"
+      },
+      {
+        "configuration": {
+          "mode": "u-turn"
+        },
+        "raw_data": {
+          "raw_accelerometer": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "voice_instructions": {
+            "file_name": [
+              "SOUND-UTU030_USEN"
+            ],
+            "start_timestamp": [
+              1607424001691
+            ]
+          },
+          "gravity": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "calibrated_gyroscope": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "calibrated_accelerometer": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "calibrated_magnetic_field": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "attitude": {
+            "y": [],
+            "w": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "heading": {
+            "heading": [],
+            "timestamp": []
+          },
+          "raw_magnetic_field": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          },
+          "raw_gyroscope": {
+            "y": [],
+            "timestamp": [],
+            "z": [],
+            "x": []
+          }
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1607424017831,
+          "begin_timestamp": 0
+        },
+        "name": "ut"
+      }
+    ]
+  }
+}

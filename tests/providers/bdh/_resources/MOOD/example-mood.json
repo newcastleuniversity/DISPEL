@@ -1,0 +1,182 @@
+{
+  "header": {
+    "acquisition_provenance": {
+      "source": {
+        "name": "Konectom U",
+        "version": "2.1.0-rc3",
+        "build_number": 1
+      },
+      "source_device": {
+        "platform": "ios",
+        "os_version": "14.4",
+        "screen_width_pixels": 828,
+        "screen_height_pixels": 1792,
+        "battery_percentage": 67.00000166893005,
+        "time_zone": "Asia/Kolkata",
+        "time_since_boot": null,
+        "cpu_load": null,
+        "model_name": "iPhone12,1",
+        "model_number": "1DBCB700-E58F-47AF-B3F9-B7855CCF9EC5",
+        "kernel_version": null
+      }
+    },
+    "completion": "completed",
+    "interruption_reason": null,
+    "effective_time_frame": {
+      "begin_timestamp": 1615848240261,
+      "end_timestamp": 1615848244844
+    },
+    "raw_data": {
+      "answers": {
+        "computed": true,
+        "source": {
+          "manufacturer": "BHS"
+        },
+        "columns": {
+          "displayed_question_id": {
+            "description": "Id of the question presented to the user."
+          },
+          "displayed_question_text": {
+            "description": "The text of the question actually displayed to the user."
+          },
+          "response_id": {
+            "description": "The id of the response to the question given by the user."
+          },
+          "response_text": {
+            "description": "The selected response text as displayed to the user in the language displayed to the user."
+          },
+          "presentation_timestamp": {
+            "unit": "ms",
+            "description": "The timestamp at which the question was displayed to the user (measurement since January 1st 1970)."
+          },
+          "response_timestamp": {
+            "unit": "ms",
+            "description": "The timestamp at which the question was answered by the user (measurement since January 1st 1970)."
+          }
+        }
+      },
+      "validated_answers": {
+        "computed": true,
+        "source": {
+          "manufacturer": "BHS"
+        },
+        "columns": {
+          "displayed_question_id": {
+            "description": "Id of the question presented to the user."
+          },
+          "response_id": {
+            "description": "The id of the response to the question given by the user."
+          },
+          "presentation_timestamp": {
+            "unit": "ms",
+            "description": "The timestamp at which the question was displayed to the user (measurement since January 1st 1970)."
+          },
+          "response_timestamp": {
+            "unit": "ms",
+            "description": "The timestamp at which the question was answered by the user (measurement since January 1st 1970)."
+          },
+          "validation_timestamp": {
+            "unit": "ms",
+            "description": "The timestamp at which the user validated the answer by pressing the 'next' button (measurement since January 1st 1970)."
+          }
+        }
+      }
+    },
+    "inclinic_mode": false,
+    "session_cluster_id": "b72f1b8f-4ef8-4156-924f-04b828339aa0",
+    "cluster_activity_codes": [
+      "mood"
+    ],
+    "attempt_number": 1,
+    "id": "98b8998f-d87e-4684-87e1-0151594d9599",
+    "upload_datetime": "2021-03-12T22:45:46.873215",
+    "user_id": "102af584-a03e-4552-a18a-23f355828517",
+    "study_id": "dbad0cfe-9fbe-4250-b04a-cdb19a82d6e3",
+    "schema_id": {
+      "namespace": "konectom2",
+      "name": "mood-activity",
+      "version": "2.0.0"
+    },
+    "activity_start_local_datetime": "2021-03-16T04:14:00.261000+05:30",
+    "measures": {
+      "activity_measures": {
+        "response_to_physical": {
+          "description": "The validated answer to the physical state question, rescaled between 0 and 100"
+        },
+        "response_to_psychological": {
+          "description": "The validated answer to the mental state question, rescaled between 0 and 100"
+        },
+        "total_score": {
+          "description": "The mean of the validated answers to both the mental and the physical state questions, rescaled between 0 and 100"
+        }
+      }
+    }
+  },
+  "body": {
+    "levels": [
+      {
+        "name": "mood",
+        "effective_time_frame": {
+          "begin_timestamp": 1615848240261,
+          "end_timestamp": 1615848244844
+        },
+        "raw_data": {
+          "answers": {
+            "displayed_question_id": [
+              1,
+              2
+            ],
+            "displayed_question_text": [
+              "How is your mood today?",
+              "In general, how is your physical state?"
+            ],
+            "presentation_timestamp": [
+              1615848240261,
+              1615848242276
+            ],
+            "response_id": [
+              1,
+              1
+            ],
+            "response_text": [
+              "Excellent",
+              "Excellent"
+            ],
+            "response_timestamp": [
+              1615848241465,
+              1615848243038
+            ]
+          },
+          "validated_answers": {
+            "displayed_question_id": [
+              1,
+              2
+            ],
+            "response_id": [
+              1,
+              1
+            ],
+            "presentation_timestamp": [
+              1615848240261,
+              1615848242276
+            ],
+            "response_timestamp": [
+              1615848241465,
+              1615848243038
+            ],
+            "validation_timestamp": [
+              1615848242231,
+              1615848243673
+            ]
+          }
+        },
+        "sensor_validity": {}
+      }
+    ],
+    "measures": {
+      "response_to_physical": 100,
+      "response_to_psychological": 100,
+      "total_score": 100.0
+    }
+  }
+}

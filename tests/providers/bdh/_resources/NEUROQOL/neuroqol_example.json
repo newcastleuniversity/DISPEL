@@ -1,0 +1,1264 @@
+{
+  "body": {
+    "configuration": {
+      "max_questions": 8,
+      "min_questions": 4,
+      "sub_tests": [
+        "upper_extremity",
+        "lower_extremity",
+        "sleep",
+        "fatigue",
+        "anxiety",
+        "depression",
+        "stigma",
+        "cognitive_function",
+        "ability_participate_social_roles",
+        "satisfaction_social_roles"
+      ]
+    },
+    "levels": [
+      {
+        "name": "upper_extremity",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910833431,
+              1643910834429,
+              1643910835563,
+              1643910836612,
+              1643910838244,
+              1643910839559,
+              1643910840909
+            ],
+            "response_id": [
+              "B6776B17-F53E-4343-9B72-17B4E7516BCD",
+              "CD8A20D2-4CD4-4F28-96D6-E179B724A7C3",
+              "D90DE440-1D74-4479-BE42-F03DBD7A00A8",
+              "F4BE3EDD-E8D5-47B8-8B81-352A07B5D7FC",
+              "87075452-C62C-4C2F-B241-701621ABC513",
+              "04EBD4A9-86B5-4E6B-8EC4-0A03A2050B1C",
+              "2A554BB8-BE9C-4757-9BA1-4F614B81E0D6"
+            ],
+            "form_item_id": [
+              "838C279A-A21D-469D-A907-98E6BC1C58C2",
+              "014EB837-8B7F-4E3E-AC78-885852ADC07A",
+              "C0A3111A-686E-4DED-BF6A-AACC3F49473C",
+              "5D551382-93D6-492F-8965-E688360C07BD",
+              "544EAA7D-12C8-4F26-A0E7-04D949EDC77D",
+              "7BD9E81E-33BB-4096-AF97-A36482124A7F",
+              "65266CBA-6BBD-43FF-9501-27426999EC96"
+            ],
+            "displayed_question_id_1": [
+              null,
+              null,
+              "9387D583-099A-4889-9AAA-F2EB8621D9F9",
+              "9387D583-099A-4889-9AAA-F2EB8621D9F9",
+              null,
+              null,
+              "9387D583-099A-4889-9AAA-F2EB8621D9F9"
+            ],
+            "press_in_timestamp": [
+              1643910833382,
+              1643910834402,
+              1643910835478,
+              1643910836533,
+              1643910838175,
+              1643910839476,
+              1643910840810
+            ],
+            "displayed_question_id_2": [
+              "6C134388-565C-4AEB-B2E4-F4D690A7EA61",
+              "43595F3B-FFFC-4059-AFFF-A30CBD641DEE",
+              "93BB19BB-10CF-4381-AE5E-6337C23A8F81",
+              "8A41DC9F-2F8A-4B36-B0A9-CD80B25F2D75",
+              "D4A94715-61BD-4F90-A4E9-A2B294B1B29A",
+              "BED78803-8B2C-48B7-AC81-7BF9635A0059",
+              "5DAF45E0-CED8-42D2-BED0-B984131B5437"
+            ],
+            "response_text": [
+              "Without any difficulty",
+              "Without any difficulty",
+              "No Difficulty",
+              "A Little Difficulty",
+              "Without any difficulty",
+              "With a little difficulty",
+              "A Little Difficulty"
+            ],
+            "presentation_timestamp": [
+              1643910832793,
+              1643910833630,
+              1643910834630,
+              1643910835762,
+              1643910836844,
+              1643910838459,
+              1643910839792
+            ],
+            "displayed_question_text": [
+              "Are you able to button your shirt?",
+              "Are you able to cut your toe nails?",
+              "How much DIFFICULTY do you currently have removing wrappings from small objects?",
+              "How much DIFFICULTY do you currently have opening medications or vitamin containers (e.g., childproof containers, small bottles)?",
+              "Are you able to trim your fingernails?",
+              "Are you able to bend down and pick up clothing from the floor?",
+              "How much DIFFICULTY do you currently have taking off a pullover shirt?"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910840000,
+          "start_time": 1643910833000,
+          "t_score": -0.8132587233518789,
+          "standard_error": 0.2676179022904041
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910840909,
+          "begin_timestamp": 1643910832793
+        }
+      },
+      {
+        "name": "lower_extremity",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910842373,
+              1643910843506,
+              1643910845039,
+              1643910846122
+            ],
+            "response_id": [
+              "BBA47846-3061-4E01-A0CE-59AF1001516D",
+              "8EBFE56E-D9C9-4FEC-80DA-FE8D137D8845",
+              "EE3152AA-265A-4F84-BAD6-36AF23CA4069",
+              "464A694E-846E-4229-812F-A450826ED0D1"
+            ],
+            "form_item_id": [
+              "7C5B5E98-0272-4F3D-B1CD-C52969B58505",
+              "D56D4EC7-DEC7-48BF-9F14-7739B42F505B",
+              "3904C128-7B92-4C71-95EA-B0CF75633C2D",
+              "9E97A543-6F67-401F-A30C-5C7C952BE79E"
+            ],
+            "displayed_question_id_1": [
+              "9387D583-099A-4889-9AAA-F2EB8621D9F9",
+              "9387D583-099A-4889-9AAA-F2EB8621D9F9",
+              "9387D583-099A-4889-9AAA-F2EB8621D9F9",
+              null
+            ],
+            "press_in_timestamp": [
+              1643910842324,
+              1643910843440,
+              1643910844970,
+              1643910846055
+            ],
+            "displayed_question_id_2": [
+              "10775BC3-5F51-41B1-9CB8-BD2ACBBC0045",
+              "7F385782-D78A-4DBF-B5F5-61EFB3B61D56",
+              "8D433EB3-EA4A-4980-84E7-2922E7A9BCC6",
+              "EFF77C16-C16E-42EE-B8DB-75058FDBE9EB"
+            ],
+            "response_text": [
+              "A Little Difficulty",
+              "A Little Difficulty",
+              "No Difficulty",
+              "Without any difficulty"
+            ],
+            "presentation_timestamp": [
+              1643910841326,
+              1643910842656,
+              1643910843789,
+              1643910845354
+            ],
+            "displayed_question_text": [
+              "How much DIFFICULTY do you currently have climbing stairs step over step without a handrail (alternating feet)?",
+              "How much DIFFICULTY do you currently have standing up from a low, soft couch?",
+              "How much DIFFICULTY do you currently have walking on uneven surfaces (e.g., grass, dirt road or sidewalk)?",
+              "Are you able to get up off the floor from lying on your back without help?"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910846000,
+          "start_time": 1643910842000,
+          "t_score": -0.08433936994398446,
+          "standard_error": 0.2718744367287741
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910846122,
+          "begin_timestamp": 1643910841326
+        }
+      },
+      {
+        "name": "sleep",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910847154,
+              1643910848403,
+              1643910850268,
+              1643910851351,
+              1643910852784,
+              1643910854466,
+              1643910855499,
+              1643910856746
+            ],
+            "response_id": [
+              "2C8E1077-2551-496F-A36E-7761843BF2CD",
+              "447F663A-3D6A-47EB-A49D-F76F6A5C7463",
+              "F21C13CF-661C-4EA4-8CA2-F34713CBB9E0",
+              "E853C9FD-1F45-4AE1-87F9-4D974812BDD2",
+              "3C09DFE6-22F0-4332-A3EC-59E77290A818",
+              "3D6C73A1-B2E2-4C9F-9838-B516EBE3DA07",
+              "714765CE-E8DC-4D19-AE49-8CCEBE3661AD",
+              "06F084DD-558B-4848-83DE-729B79E36C17"
+            ],
+            "form_item_id": [
+              "D8EDCDBB-0F40-4798-9A2D-9EF5CEFDFDED",
+              "4D7FF34A-845A-4E91-BD7A-878D391122C0",
+              "8DF81535-B40B-42FF-AFDD-AAE30CD12D6D",
+              "7D108F25-6E62-41E4-A3D1-5A502F54FE6D",
+              "516AF8C5-630E-4CC5-8CBB-BD7247709F7A",
+              "5FA4111F-5533-4EB4-AF62-97CAC553348A",
+              "342E83A9-27D0-455A-8FF8-A306274ADC70",
+              "8D3A908B-02E1-4D4E-8376-A91D50447ACE"
+            ],
+            "displayed_question_id_1": [
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B"
+            ],
+            "press_in_timestamp": [
+              1643910847112,
+              1643910848355,
+              1643910850223,
+              1643910851282,
+              1643910852722,
+              1643910854381,
+              1643910855430,
+              1643910856614
+            ],
+            "displayed_question_id_2": [
+              "7A039567-6371-4FD1-B1EC-50F1B8A58141",
+              "EDCD1615-37EC-47B1-8ECC-8CA3B20FB3E7",
+              "0E4E0C39-90F6-417D-B2DF-5831B5040138",
+              "1DF10743-2022-4D42-A5E7-BF0E1C7FDBE4",
+              "33AB33FF-9C1E-477B-BD6E-3AC4A75505EE",
+              "07F0B767-A257-4408-B052-F92FA7963C60",
+              "0055CC79-BEF5-4DD0-A1B7-497315919859",
+              "40CAE235-01AE-4779-B2C4-F4A410ACDF5A"
+            ],
+            "response_text": [
+              "Sometimes",
+              "Sometimes",
+              "Rarely",
+              "Never",
+              "Sometimes",
+              "Rarely",
+              "Rarely",
+              "Rarely"
+            ],
+            "presentation_timestamp": [
+              1643910846503,
+              1643910847486,
+              1643910848735,
+              1643910850617,
+              1643910851700,
+              1643910853133,
+              1643910854882,
+              1643910855964
+            ],
+            "displayed_question_text": [
+              "In the past 7 days I had trouble stopping my thoughts at bedtime",
+              "In the past 7 days I had difficulty falling asleep",
+              "In the past 7 days I avoided or cancelled activities with my friends because I was tired from having a bad night's sleep",
+              "In the past 7 days I felt physically tense during the middle of the night or early morning hours",
+              "In the past 7 days I had to force myself to get up in the morning",
+              "In the past 7 days I had trouble sleeping because of bad dreams",
+              "In the past 7 days I was sleepy during the daytime",
+              "In the past 7 days Pain woke me up"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910856000,
+          "start_time": 1643910847000,
+          "t_score": 0.4608826395878842,
+          "standard_error": 0.3048417246230962
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910856746,
+          "begin_timestamp": 1643910846503
+        }
+      },
+      {
+        "name": "fatigue",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910857979,
+              1643910859294,
+              1643910860444,
+              1643910861859
+            ],
+            "response_id": [
+              "24B463DD-75A9-4497-B08A-97E0F26CE337",
+              "EC9EABB1-21C2-4055-9C73-D8B38A65AF78",
+              "63893C49-8C4E-44D2-9ED9-B7B904AE6E23",
+              "3D899925-1117-4CD0-8387-CF3DEA1470A8"
+            ],
+            "form_item_id": [
+              "885EF1BC-6A4A-4D82-9B89-1E1A6D901AA1",
+              "68303B00-01DA-41E7-BB5E-B20FE6EBF0A5",
+              "C4E7702B-038C-424A-85BD-BF9D7233747E",
+              "EF63F732-C72B-43F9-923B-72A71E7DDA0A"
+            ],
+            "displayed_question_id_1": [
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B"
+            ],
+            "press_in_timestamp": [
+              1643910857863,
+              1643910859210,
+              1643910860377,
+              1643910861796
+            ],
+            "displayed_question_id_2": [
+              "255B0E00-D93A-404F-B43E-995964B4D024",
+              "8399FB1C-507E-4BAF-B381-2A0CA992C8FB",
+              "03057F7C-6FB8-4112-9A5F-57710FCE0CC3",
+              "E14E9E77-5A73-4E91-AA1D-DFF7D12C23F8"
+            ],
+            "response_text": [
+              "Rarely",
+              "Sometimes",
+              "Never",
+              "Never"
+            ],
+            "presentation_timestamp": [
+              1643910857421,
+              1643910858711,
+              1643910859862,
+              1643910861080
+            ],
+            "displayed_question_text": [
+              "In the past 7 days I felt exhausted",
+              "In the past 7 days I felt that I had no energy",
+              "In the past 7 days I was frustrated by being too tired to do the things I wanted to do",
+              "In the past 7 days I felt fatigued"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910861000,
+          "start_time": 1643910858000,
+          "t_score": -0.8012148570632193,
+          "standard_error": 0.25522795310636054
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910861859,
+          "begin_timestamp": 1643910857421
+        }
+      },
+      {
+        "name": "anxiety",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910863008,
+              1643910864126,
+              1643910865406,
+              1643910866608
+            ],
+            "response_id": [
+              "25D0CE13-3783-431D-BA2A-02DFBEF38B08",
+              "B5B32BE8-E41A-4CFF-A9FF-96F0D27B2C4A",
+              "A2778381-E244-4A4E-BA4F-F2B063229E03",
+              "4C8B5F2B-760F-4F3D-9FAB-0FB555938932"
+            ],
+            "form_item_id": [
+              "DAF0C971-957C-4CF8-9F02-766C12F7901F",
+              "209E6D6A-CEBE-4393-B59B-95004E2F0340",
+              "90941458-2A71-4E19-BA1D-CCE11C8AE38D",
+              "1FD8700D-1772-4A2F-8F60-FC16A9D2CE3C"
+            ],
+            "displayed_question_id_1": [
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B"
+            ],
+            "press_in_timestamp": [
+              1643910862925,
+              1643910864008,
+              1643910865324,
+              1643910866567
+            ],
+            "displayed_question_id_2": [
+              "19379073-AEAD-4C78-90A0-5E44038D5CAB",
+              "FD6D3B13-D636-4DD2-B087-619ED85D15EA",
+              "CBC0AB25-6FA4-47FB-B009-035CD87C691A",
+              "D66456D0-6E0B-4BC7-9314-BF74F0C5396D"
+            ],
+            "response_text": [
+              "Sometimes",
+              "Rarely",
+              "Never",
+              "Never"
+            ],
+            "presentation_timestamp": [
+              1643910862494,
+              1643910863609,
+              1643910864824,
+              1643910866108
+            ],
+            "displayed_question_text": [
+              "In the past 7 days I felt uneasy",
+              "In the past 7 days Many situations made me worry",
+              "In the past 7 days I felt nervous",
+              "In the past 7 days I felt tense"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910866000,
+          "start_time": 1643910863000,
+          "t_score": -0.12825639558453072,
+          "standard_error": 0.2683579119863332
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910866608,
+          "begin_timestamp": 1643910862494
+        }
+      },
+      {
+        "name": "depression",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910868023,
+              1643910869256,
+              1643910870324,
+              1643910872523
+            ],
+            "response_id": [
+              "AF7C8E5B-86A0-4FE0-820F-CC05E02FA949",
+              "13E856C2-224D-4D73-901B-43F6AB4085C2",
+              "8BC486A4-63B5-4526-BC58-ADCB9071B5C5",
+              "93880952-A223-4041-973D-AB4130F40933"
+            ],
+            "form_item_id": [
+              "EEF230F1-A7FF-4F13-82E9-8817F8C59B99",
+              "F691C241-8B37-430A-AD36-F1AE4462646F",
+              "6547A7D2-2DAE-49AB-9FAB-B44CF02A411C",
+              "83A52C45-D1C5-44A0-9CB5-2473EBC07E31"
+            ],
+            "displayed_question_id_1": [
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B"
+            ],
+            "press_in_timestamp": [
+              1643910867922,
+              1643910869189,
+              1643910870221,
+              1643910872458
+            ],
+            "displayed_question_id_2": [
+              "C24FEEED-B48C-4BD4-972B-5AB30A5A6353",
+              "8A09E253-F607-45F9-8AEF-A35391887D93",
+              "D8D3DC16-AA2B-4B59-B216-EAD42223E476",
+              "3A0AF3E2-6B81-4B9C-B18D-B39AB489A966"
+            ],
+            "response_text": [
+              "Never",
+              "Often",
+              "Sometimes",
+              "Rarely"
+            ],
+            "presentation_timestamp": [
+              1643910867441,
+              1643910868738,
+              1643910869721,
+              1643910871036
+            ],
+            "displayed_question_text": [
+              "In the past 7 days I felt depressed",
+              "In the past 7 days I felt unhappy",
+              "In the past 7 days I felt hopeless",
+              "In the past 7 days I felt that my life was empty"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910872000,
+          "start_time": 1643910868000,
+          "t_score": 0.3448963477101356,
+          "standard_error": 0.2348916415677409
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910872523,
+          "begin_timestamp": 1643910867441
+        }
+      },
+      {
+        "name": "stigma",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910874449,
+              1643910875898,
+              1643910877432,
+              1643910878750
+            ],
+            "response_id": [
+              "8661724C-BF4E-4573-8A17-967CFE4E740D",
+              "1A480E8F-AE21-4F4E-AB0D-2F8C7DD612A3",
+              "2E62F236-D8F1-4E14-BA12-677D61FFD7C2",
+              "01CB0E14-538C-45E4-A34E-540D6FEA71F0"
+            ],
+            "form_item_id": [
+              "B10DE66E-C484-4043-AC67-FB9BBAB6E40A",
+              "0E3F3F4E-5988-4570-84AF-358FAEC500A4",
+              "B5BF3F2B-8D3D-4075-91F9-8BB4DA01420F",
+              "EF044D11-62DE-4E9B-9613-36C92B8E05A8"
+            ],
+            "displayed_question_id_1": [
+              "8DFBE5EF-01B0-4DD7-BE51-C2ACBE89B64D",
+              "8DFBE5EF-01B0-4DD7-BE51-C2ACBE89B64D",
+              "8DFBE5EF-01B0-4DD7-BE51-C2ACBE89B64D",
+              "8DFBE5EF-01B0-4DD7-BE51-C2ACBE89B64D"
+            ],
+            "press_in_timestamp": [
+              1643910874102,
+              1643910875804,
+              1643910877347,
+              1643910878615
+            ],
+            "displayed_question_id_2": [
+              "842CEC9B-6E56-41CF-A6DA-F2C526F11B03",
+              "8BEC150A-3C68-4618-BC4F-8152950C8744",
+              "514FF8CB-E5E9-49AB-A45D-52062CEFC4FB",
+              "CA6061F5-02FD-4534-AB8A-337CDE26B1F3"
+            ],
+            "response_text": [
+              "Rarely",
+              "Sometimes",
+              "Sometimes",
+              "Often"
+            ],
+            "presentation_timestamp": [
+              1643910873619,
+              1643910875101,
+              1643910876721,
+              1643910878031
+            ],
+            "displayed_question_text": [
+              "Lately Because of my illness, I felt left out of things",
+              "Lately Because of my illness, I felt embarrassed in social situations",
+              "Lately Because of my illness, some people avoided me",
+              "Lately Because of my illness, people tended to ignore my good points"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910878000,
+          "start_time": 1643910874000,
+          "t_score": 1.0057676718634645,
+          "standard_error": 0.265701027845108
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910878750,
+          "begin_timestamp": 1643910873619
+        }
+      },
+      {
+        "name": "cognitive_function",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910879998,
+              1643910882362,
+              1643910883595,
+              1643910884681
+            ],
+            "response_id": [
+              "82DD5A0C-B3F4-42D8-B6FB-954B2901376B",
+              "FB95B140-6C43-408C-824B-DCB8B5A4189E",
+              "34953D2E-FB30-470E-91CE-3F4E68DF3FDA",
+              "8B1A94CC-1E42-44CB-85C4-2D56C723C096"
+            ],
+            "form_item_id": [
+              "324D1A92-08F2-4A19-BE81-96FE80717760",
+              "A1C7D8F9-BF51-4D19-92C9-4776BE952E93",
+              "B442476F-657E-4ED4-A47B-AD0C3EEF8930",
+              "7A6BA1E0-4385-4391-B330-AD7EF8D95187"
+            ],
+            "displayed_question_id_1": [
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B"
+            ],
+            "press_in_timestamp": [
+              1643910879932,
+              1643910882312,
+              1643910883527,
+              1643910884626
+            ],
+            "displayed_question_id_2": [
+              "32AB2072-1699-4203-A575-8992B84D81B8",
+              "3E2CEE63-7593-491B-B164-A78D1DA79E6E",
+              "8BC8BD1A-D400-4DAB-A078-7AF85B357871",
+              "D243DE66-155A-4475-961F-23C1761BB319"
+            ],
+            "response_text": [
+              "Sometimes (2-3 times)",
+              "Rarely (once)",
+              "Never",
+              "Never"
+            ],
+            "presentation_timestamp": [
+              1643910879330,
+              1643910880546,
+              1643910882811,
+              1643910884128
+            ],
+            "displayed_question_text": [
+              "In the past 7 days I reacted slowly to things that were said or done",
+              "In the past 7 days I had trouble planning out steps of a task",
+              "In the past 7 days I had trouble thinking clearly",
+              "In the past 7 days I had trouble getting started on very simple tasks"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910884000,
+          "start_time": 1643910880000,
+          "t_score": -0.16774215555998756,
+          "standard_error": 0.2953986350264367
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910884681,
+          "begin_timestamp": 1643910879330
+        }
+      },
+      {
+        "name": "ability_participate_social_roles",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910885743,
+              1643910886790,
+              1643910887825,
+              1643910889806
+            ],
+            "response_id": [
+              "6D657B79-0BF0-4207-B6F6-CF5EEE2B6ACE",
+              "A0B5CDD2-FBD1-44A5-80A3-27E82381A996",
+              "A5088605-B6CF-4C83-B93C-FF860F7C3ABC",
+              "45751E14-5BA9-4C84-AFB2-E206D7175B9C"
+            ],
+            "form_item_id": [
+              "44C671F4-EE4C-42C9-BB80-555CCA968FB9",
+              "2AD7CA6E-C95E-45C8-8534-8DBCDDE7DB91",
+              "0A3A1443-9274-4D91-B983-AFD599AACB30",
+              "D67A3BED-CA8F-42FC-B690-ED1897AD2B47"
+            ],
+            "displayed_question_id_1": [
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B"
+            ],
+            "press_in_timestamp": [
+              1643910885643,
+              1643910886724,
+              1643910887762,
+              1643910889723
+            ],
+            "displayed_question_id_2": [
+              "BD48552E-78C1-443D-9964-51AEA8338AE5",
+              "52F95079-3ED5-4A19-99CE-B8E50B8A4E38",
+              "9092EAA3-95F3-46DF-B281-277DAC88AC3B",
+              "1CB1F1BD-33EA-4ECF-9A98-C4315D57DD5B"
+            ],
+            "response_text": [
+              "Rarely",
+              "Never",
+              "Rarely",
+              "Sometimes"
+            ],
+            "presentation_timestamp": [
+              1643910885211,
+              1643910886208,
+              1643910887374,
+              1643910888242
+            ],
+            "displayed_question_text": [
+              "In the past 7 days I am able to do all of the activities with friends that people expect me to do",
+              "In the past 7 days I am able to do all of my usual work (include work at home)",
+              "In the past 7 days I am able to perform my daily routines",
+              "In the past 7 days I am able to do all of the work that people expect me to do (include work at home)"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910889000,
+          "start_time": 1643910885000,
+          "t_score": -1.3640526864591762,
+          "standard_error": 0.1739517884166932
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910889806,
+          "begin_timestamp": 1643910885211
+        }
+      },
+      {
+        "name": "satisfaction_social_roles",
+        "raw_data": {
+          "activity_sequence": {
+            "response_timestamp": [
+              1643910890939,
+              1643910900019,
+              1643910901481,
+              1643910902813
+            ],
+            "response_id": [
+              "595A91E8-E376-4299-B353-CF863CC40AF5",
+              "8FA7A6EB-2421-4F70-898D-D8008222CD8C",
+              "35B52DD9-DC3C-492C-9E33-06D4F31B9963",
+              "85E9F345-9B3C-4227-8B12-885A3FE13888"
+            ],
+            "form_item_id": [
+              "7EEDC026-A5E7-4E16-AC85-34CB3FCC8A06",
+              "427C0F6F-D753-498A-BBAD-6CF0673BBC5A",
+              "71898ABC-F02D-4D7A-8E43-8CFC1EC2C9AB",
+              "4658BDF6-1208-4233-BCAA-F4C8CC1786B2"
+            ],
+            "displayed_question_id_1": [
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B",
+              "8AB8BA58-3BB0-40B6-B656-C24F1169069B"
+            ],
+            "press_in_timestamp": [
+              1643910890841,
+              1643910899981,
+              1643910901415,
+              1643910902730
+            ],
+            "displayed_question_id_2": [
+              "8F62FBC5-4E36-4461-A733-675BE12DCBAC",
+              "8749E56F-AABB-49CF-B485-1AC30B8EB6FD",
+              "5DB8405D-72DC-43B8-B84D-FF5B4B952A68",
+              "E0382219-8F06-41BD-B1D8-D0BACFFA27E2"
+            ],
+            "response_text": [
+              "A little bit",
+              "A little bit",
+              "A little bit",
+              "A little bit"
+            ],
+            "presentation_timestamp": [
+              1643910890338,
+              1643910891421,
+              1643910900465,
+              1643910901915
+            ],
+            "displayed_question_text": [
+              "In the past 7 days I am satisfied with my ability to take care of personal and household responsibilities",
+              "In the past 7 days I am satisfied with how much work I can do (include work at home)",
+              "In the past 7 days I am satisfied with my ability to do household chores or tasks",
+              "In the past 7 days I am satisfied with my ability to do the work that is really important to me (include work at home)"
+            ]
+          },
+          "calibrated_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_gyroscope": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "calibrated_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          },
+          "raw_accelerometer": {
+            "x": [],
+            "y": [],
+            "z": [],
+            "timestamp": []
+          }
+        },
+        "mobile_computed_measures": {
+          "end_time": 1643910902000,
+          "start_time": 1643910890000,
+          "t_score": -1.0336049654039434,
+          "standard_error": 0.13016376832183252
+        },
+        "effective_time_frame": {
+          "end_timestamp": 1643910902813,
+          "begin_timestamp": 1643910890338
+        }
+      }
+    ],
+    "mobile_computed_measures": {
+      "cat_version": "1.6"
+    },
+    "measures": { }
+  },
+  "header": {
+    "acquisition_provenance": {
+      "source": {
+        "name": "Konectom U",
+        "build_number": 1,
+        "version": "2.4.10"
+      },
+      "source_device": {
+        "screen_height_pixels": 2400,
+        "kernel_version": "4.14.190-21840848-abA715FXXS7BUJ1",
+        "model_name": "A71",
+        "screen_width_pixels": 1080,
+        "os_version": "11",
+        "time_since_boot": -802545460,
+        "battery_percentage": 54.00000214576721,
+        "model_number": "SM-A715F",
+        "time_zone": "Europe/Brussels",
+        "platform": "android",
+        "cpu_load": null
+      }
+    },
+    "completion": "completed",
+    "cluster_activity_codes": [
+      "neuroqol"
+    ],
+    "interruption_reason": null,
+    "attempt_number": 1,
+    "configuration": {
+      "activity_configuration_variables": {
+        "min_questions": {
+          "description": "Minimum number of questions"
+        },
+        "max_questions": {
+          "description": "Maximum number of questions"
+        },
+        "sub_tests": {
+          "description": "List of subtests"
+        }
+      }
+    },
+    "effective_time_frame": {
+      "end_timestamp": 1643910903110,
+      "begin_timestamp": 1643910832793
+    },
+    "session_cluster_id": "ccef8e03-81a2-435c-8c6d-16e9c2dc7d5a",
+    "inclinic_mode": false,
+    "raw_data": {
+      "activity_sequence": {
+        "source": {
+          "manufacturer": "BHS"
+        },
+        "computed": true,
+        "columns": {
+          "response_timestamp": {
+            "description": "The timestamp at which the question was answered by the user (when the user pressed out, measurement since 1 January 1970).",
+            "unit": "ms"
+          },
+          "response_id": {
+            "description": "The id of the response to the question given by the user."
+          },
+          "form_item_id": {
+            "description": "ID for the form."
+          },
+          "displayed_question_id_1": {
+            "description": "ID for the first part of the question."
+          },
+          "displayed_question_id_2": {
+            "description": "ID for the first part of the question."
+          },
+          "press_in_timestamp": {
+            "description": "The timestamp at which the user pressed in the selected response (measurement since 1 January 1970).",
+            "unit": "ms"
+          },
+          "response_text": {
+            "description": "The text of the answer, as displayed to the user."
+          },
+          "displayed_question_text": {
+            "description": "The text of the question, as displayed to the user."
+          },
+          "presentation_timestamp": {
+            "description": "The timestamp at which the question was displayed to the user in UTC (measurement since 1 January 1970).",
+            "unit": "ms"
+          }
+        }
+      },
+      "calibrated_gyroscope": {
+        "source": {
+          "version": null,
+          "manufacturer": null
+        },
+        "computed": false,
+        "columns": {
+          "x": {
+            "description": "The unbiased gyration measured on the x-axis of the device in rad/s (Unbiased Rotation Rate on ios)",
+            "unit": "RPS"
+          },
+          "y": {
+            "description": "The unbiased gyration measured on the y-axis of the device in rad/s (Unbiased Rotation Rate on ios)",
+            "unit": "RPS"
+          },
+          "z": {
+            "description": "The unbiased gyration measured on the z-axis of the device in rad/s (Unbiased Rotation Rate on ios)",
+            "unit": "RPS"
+          },
+          "timestamp": {
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)",
+            "unit": "ms"
+          }
+        }
+      },
+      "calibrated_accelerometer": {
+        "source": {
+          "version": null,
+          "manufacturer": null
+        },
+        "computed": false,
+        "columns": {
+          "x": {
+            "description": "The x-axis of the accelerometer in G (G=9.81m/s^2), without gravity (User Acceleration on ios, Linear Acceleration on android)",
+            "unit": "G"
+          },
+          "y": {
+            "description": "The y-axis of the accelerometer in G (G=9.81m/s^2), without gravity (User Acceleration on ios, Linear Acceleration on android)",
+            "unit": "G"
+          },
+          "z": {
+            "description": "The z-axis of the accelerometer in G (G=9.81m/s^2), without gravity (User Acceleration on ios, Linear Acceleration on android)",
+            "unit": "G"
+          },
+          "timestamp": {
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)",
+            "unit": "ms"
+          }
+        }
+      },
+      "raw_gyroscope": {
+        "source": {
+          "version": null,
+          "manufacturer": null
+        },
+        "computed": false,
+        "columns": {
+          "x": {
+            "description": "The x-axis of the gyroscope in RPS (Radians Per Second)",
+            "unit": "RPS"
+          },
+          "y": {
+            "description": "The y-axis of the gyroscope in RPS (Radians Per Second)",
+            "unit": "RPS"
+          },
+          "z": {
+            "description": "The z-axis of the gyroscope in RPS (Radians Per Second)",
+            "unit": "RPS"
+          },
+          "timestamp": {
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)",
+            "unit": "ms"
+          }
+        }
+      },
+      "raw_accelerometer": {
+        "source": {
+          "version": null,
+          "manufacturer": null
+        },
+        "computed": false,
+        "columns": {
+          "x": {
+            "description": "The x-axis of the accelerometer in G (G=9.81m/s^2). Not collected on android versions older than 8.0 Oreo (API 26)",
+            "unit": "G"
+          },
+          "y": {
+            "description": "The y-axis of the accelerometer in G (G=9.81m/s^2). Not collected on android versions older than 8.0 Oreo (API 26)",
+            "unit": "G"
+          },
+          "z": {
+            "description": "The z-axis of the accelerometer in G (G=9.81m/s^2). Not collected on android versions older than 8.0 Oreo (API 26)",
+            "unit": "G"
+          },
+          "timestamp": {
+            "description": "The timestamp of the measurement (in ms since the 1st of January 1970 at midnight UTC)",
+            "unit": "ms"
+          }
+        }
+      }
+    },
+    "mobile_computed_measures": {
+      "activity_measures": {
+        "cat_version": {
+          "description": "Version of CAT module"
+        }
+      },
+      "level_measures": {
+        "end_time": {
+          "description": "End time of the subset",
+          "unit": "ms"
+        },
+        "start_time": {
+          "description": "Start time of the subset",
+          "unit": "ms"
+        },
+        "t_score": {
+          "description": "The t_score for each subset"
+        },
+        "standard_error": {
+          "description": "The standard error for each subset"
+        }
+      }
+    },
+    "id": "10bf8a07-6ef7-455e-96c9-84814526ede8",
+    "upload_datetime": "2022-02-03T17:55:05.256778+00:00",
+    "user_id": "ee8ce052-2046-4b93-8d4a-f32bf8bcb2e7",
+    "study_id": "9a84bce5-885f-48e0-9208-070f8cc277af",
+    "schema_id": {
+      "namespace": "konectom2",
+      "name": "neuroqol-activity",
+      "version": "2.2.0"
+    },
+    "data_quality_warnings": [],
+    "activity_start_local_datetime": "2022-02-03T18:53:52.793000+01:00",
+    "measures": {
+      "bal_version": "v0.3.0"
+    },
+    "data_replay_information": { }
+  }
+}

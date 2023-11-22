@@ -1,0 +1,117 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+      - release
+  pull_request:
+    branches:
+      - main
+
+env:
+  PIP_CACHE_DIR: ${{ github.workspace }}/.cache/pip
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    strategy:
+      matrix:
+        python-version: [3.9, '3.10']
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies and run tests
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get -y install libsndfile1
+          python -m venv venv
+          source venv/bin/activate
+          pip install ".[docs,dev]"
+          python -m pytest --cov dispel --cov-report term --cov-report xml:coverage.xml --junitxml junit.xml
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          file: coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Install linters
+        run: pip install mypy ruff isort black types-Deprecated types-docutils
+      - name: Run linters
+        run: |
+          mypy dispel
+          ruff dispel tests
+          isort -c dispel tests
+          black dispel tests --check
+
+  doc_lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install doc8
+        run: pip install doc8
+      - name: Run doc8
+        run: doc8 docs *.rst --ignore-path docs/_build --ignore-path README.rst --max-line-length 88
+
+  doc_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Install dependencies and run doc tests
+        run: |
+          pip install ".[docs]" pytest pytest-xdist pytest-doctestplus mypy-extensions
+          python -m pytest --doctest-glob="*.rst" --doctest-plus ".[docs,dispel]" --junitxml junit.xml
+
+  release:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/release'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+      - name: Install semantic-release
+        run: npm install semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github -D
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+
+  pages:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: pip install ".[docs]" pytest pytest-xdist pytest-doctestplus mypy-extensions
+      - name: Generate documentation
+        run: |
+          sphinx-apidoc -e -M -o docs/api dispel
+          make -C docs html
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./docs/_build/html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
