@@ -1,6 +1,6 @@
-"""Core utility function used in del din.
+"""Core utility function used in cwt.
 
-The code implementation is inspired by GaitPy.
+The code implementation is inspired by CWT.
 """
 
 import warnings
@@ -540,7 +540,7 @@ def _detrend_and_low_pass(data: pd.Series, sampling_rate: float) -> pd.Series:
     """
     Detrend and eventually filter the data.
 
-    Before computing the wavelet, in gaitpy library the authors decide
+    Before computing the wavelet, in cwt library the authors decide
     to always detrend the vertical acceleration signal and eventually
     low-pass filter if the sampling frequency is greater than 40 Hz.
 
@@ -665,11 +665,11 @@ def compute_ln_asymmetry(data: pd.Series) -> pd.Series:
     return pd.Series(np.log(min_ / max_), index=data.index)
 
 
-def gaitpy_step_detection(data: pd.DataFrame) -> pd.DataFrame:
+def cwt_step_detection(data: pd.DataFrame) -> pd.DataFrame:
     """
     Detect Initial and Final contact of the foot in vertical acceleration.
 
-    This method is based on GaitPy algorithm which consists in using wavelets
+    This method is based on CWT algorithm which consists in using wavelets
     transforms to decompose the vertical acceleration signal and the velocity
     to detect initial and final contacts. It is then formatted to the step
     data set format.
@@ -708,23 +708,23 @@ def gaitpy_step_detection(data: pd.DataFrame) -> pd.DataFrame:
     return pd.concat([df_ic, df_fc]).sort_index()
 
 
-class GaitPyDetectStepsWithoutBout(DetectStepsWithoutBoutsBase):
+class CWTDetectStepsWithoutBout(DetectStepsWithoutBoutsBase):
     """
     Detect Initial and Final contact of the foot without walking bouts.
 
     For more information about the step detection methodology, see:
-    :class:`GaitPyDetectSteps`.
+    :class:`CWTDetectSteps`.
     """
 
-    new_data_set_id = "gaitpy"
-    transform_function = gaitpy_step_detection
+    new_data_set_id = "cwt"
+    transform_function = cwt_step_detection
 
 
-class GaitPyDetectSteps(DetectStepsProcessingBase):
+class CWTDetectSteps(DetectStepsProcessingBase):
     """
     Detect Initial and Final contact of the foot in vertical acceleration.
 
-    This method is based on GaitPy algorithm which consists in using wavelets
+    This method is based on CWT algorithm which consists in using wavelets
     transforms to decompose the vertical acceleration signal and the velocity
     to detect initial and final contacts. It is ran on each of the detected
     walking bout and then aggregated in a common data frame with an extra
@@ -734,15 +734,15 @@ class GaitPyDetectSteps(DetectStepsProcessingBase):
     detrended. The second one linking to the walking bout data set.
     """
 
-    new_data_set_id = "gaitpy_with_walking_bouts"
+    new_data_set_id = "cwt_with_walking_bouts"
 
     @staticmethod
     def step_detection_method(data: pd.DataFrame) -> pd.DataFrame:
         """Define and declare the step detection as a static method."""
-        return gaitpy_step_detection(data)
+        return cwt_step_detection(data)
 
 
-class FormatAccelerationGaitPy(ProcessingStepGroup):
+class FormatAccelerationCWT(ProcessingStepGroup):
     """Format acceleration to vertical acceleration."""
 
     data_set_id = "acc"
@@ -766,11 +766,11 @@ class FormatAccelerationGaitPy(ProcessingStepGroup):
     ]
 
 
-def _optimize_gaitpy_step_dataset(gaitpy_step: pd.DataFrame) -> pd.DataFrame:
+def _optimize_cwt_step_dataset(cwt_step: pd.DataFrame) -> pd.DataFrame:
     """
     Apply physiological constraints to filter impossible gait events.
 
-    Several optimization steps are applied to the gaitpy step dataset. The
+    Several optimization steps are applied to the cwt step dataset. The
     first optimization implies constraint on times. Maximum allowable time are
     defined for: loading phases (each initial contact requires 1 forward final
     contact within 0.225 seconds) and stance phases (each initial contact
@@ -780,8 +780,8 @@ def _optimize_gaitpy_step_dataset(gaitpy_step: pd.DataFrame) -> pd.DataFrame:
 
     Parameters
     ----------
-    gaitpy_step
-        The step dataset computed applying GaitPy wavelet transforms and
+    cwt_step
+        The step dataset computed applying CWT wavelet transforms and
         peak detection.
 
     Returns
@@ -789,8 +789,8 @@ def _optimize_gaitpy_step_dataset(gaitpy_step: pd.DataFrame) -> pd.DataFrame:
     pandas.DataFrame
         A data frame with optimized gait cycle.
     """
-    ic_times = gaitpy_step.loc[gaitpy_step["event"] == StepEvent.INITIAL_CONTACT].index
-    fc_times = gaitpy_step.loc[gaitpy_step["event"] == StepEvent.FOOT_OFF].index
+    ic_times = cwt_step.loc[cwt_step["event"] == StepEvent.INITIAL_CONTACT].index
+    fc_times = cwt_step.loc[cwt_step["event"] == StepEvent.FOOT_OFF].index
 
     initial_contacts = []
     final_contacts = []
@@ -848,11 +848,11 @@ def _optimize_gaitpy_step_dataset(gaitpy_step: pd.DataFrame) -> pd.DataFrame:
     return res
 
 
-class OptimizeGaitpyStepDataset(TransformStep):
+class OptimizeCwtStepDataset(TransformStep):
     """
     Apply physiological constraints to filter impossible gait events.
 
-    It expects a unique data set id, linking to the gaitpy step data set.
+    It expects a unique data set id, linking to the cwt step data set.
     """
 
     definitions = [IC_DEF, FC_DEF, FC_OPP_FOOT_DEF, GAIT_CYCLE_DEF, DEF_BOUT_ID]
@@ -863,11 +863,11 @@ class OptimizeGaitpyStepDataset(TransformStep):
 
     @transformation
     def _transform_function(self, data: pd.DataFrame) -> pd.DataFrame:
-        """Optimize gaitpy dataset for each walking bout."""
+        """Optimize cwt dataset for each walking bout."""
         bout_ids = data["bout_id"].unique()
         list_df = []
         for bout_id in bout_ids:
-            res = _optimize_gaitpy_step_dataset(data[data.bout_id == bout_id])
+            res = _optimize_cwt_step_dataset(data[data.bout_id == bout_id])
             res["bout_id"] = bout_id  # pylint: disable=E1137
             if len(res) > 0:
                 list_df.append(res)
@@ -878,11 +878,11 @@ class OptimizeGaitpyStepDataset(TransformStep):
         )
 
 
-class OptimizeGaitpyStepDatasetWithoutWalkingBout(TransformStep):
+class OptimizeCwtStepDatasetWithoutWalkingBout(TransformStep):
     """
     Apply physiological constraints to filter impossible gait events.
 
-    It expects a unique data set id, linking to the gaitpy step data set
+    It expects a unique data set id, linking to the cwt step data set
     without walking bouts.
     """
 
@@ -892,7 +892,7 @@ class OptimizeGaitpyStepDatasetWithoutWalkingBout(TransformStep):
         """Overwrite new_data_set_id."""
         return f"{self.data_set_ids}_optimized"
 
-    transform_function = _optimize_gaitpy_step_dataset
+    transform_function = _optimize_cwt_step_dataset
 
 
 def _height_change_com(
@@ -946,7 +946,7 @@ class HeightChangeCOM(TransformStep):
     """Compute the height changes of the center of mass.
 
     It expects two data set ids, first: the data set id mapping the output of
-    FormatAccelerationGaitPy and second an id linking to the acceleration
+    FormatAccelerationCWT and second an id linking to the acceleration
     dataset containing the acceleration with gravity rotated resampled and
     detrended.
     """
@@ -977,8 +977,8 @@ def compute_stride_duration(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1014,8 +1014,8 @@ def compute_step_duration_and_cadence(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1056,8 +1056,8 @@ def compute_stance(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1085,8 +1085,8 @@ def compute_initial_double_support(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1117,8 +1117,8 @@ def compute_terminal_double_support(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1149,8 +1149,8 @@ def compute_double_support(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1181,8 +1181,8 @@ def compute_single_limb_support(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1213,8 +1213,8 @@ def compute_swing(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1242,8 +1242,8 @@ def compute_step_length(
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
     height_changes_com
         A panda series with the changes in height of the center of mass.
     sensor_height
@@ -1288,8 +1288,8 @@ def compute_stride_length(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1320,8 +1320,8 @@ def compute_gait_speed(data: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     data
-        The gaitpy_optimized with step events output of the TransformStep
-        OptimizeGaitpyStepDataset.
+        The cwt_optimized with step events output of the TransformStep
+        OptimizeCwtStepDataset.
 
     Returns
     -------
@@ -1341,7 +1341,7 @@ def _cwt_measure_extraction(
     Parameters
     ----------
     data
-        The data frame of the gaitpy step dataset after optimization, with
+        The data frame of the cwt step dataset after optimization, with
         step annotated with IC, FC, FC_opp_foot and GaitCycle.
     height_changes_com
         A data frame with the changes in height of the center of mass.
@@ -1451,7 +1451,7 @@ def get_sensor_height(context: Context) -> float:
 class CWTMeasureTransformation(TransformStep):
     """Compute temporal and spatial measures for each gait cycle.
 
-    It expects two data set ids, first: The data set id of the gaitpy step
+    It expects two data set ids, first: The data set id of the cwt step
     dataset after optimization, with step annotated with IC, FC, FC_opp_foot
     and GaitCycle and second, the data set id of the height changes of the
     center of mass.
@@ -1479,7 +1479,7 @@ class CWTMeasureTransformation(TransformStep):
 class CWTMeasureWithoutBoutTransformation(TransformStep):
     """Compute temporal and spatial measures for each gait cycle.
 
-    It expects two data set ids, first: The data set id of the gaitpy step
+    It expects two data set ids, first: The data set id of the cwt step
     dataset after optimization, with step annotated with IC, FC, FC_opp_foot
     and GaitCycle and second, the data set id of the height changes of the
     center of mass.
@@ -1544,15 +1544,15 @@ class AggregateCWTMeasureWithoutBout(AggregateRawDataSetColumn):
         )
 
 
-class GaitPyCountSteps(GaitBoutExtractStep):
-    """Extract the total number of steps counted with gaitpy."""
+class CWTCountSteps(GaitBoutExtractStep):
+    """Extract the total number of steps counted with cwt."""
 
     def __init__(self, data_set_id, **kwargs):
         definition = MeasureValueDefinitionPrototype(
             measure_name=AV("step count", "sc"),
             data_type="int16",
             validator=GREATER_THAN_ZERO,
-            description="The number of steps detected with gaitpy algorithm "
+            description="The number of steps detected with cwt algorithm "
             "with the bout strategy {bout_strategy_repr}.",
         )
         super().__init__(
@@ -1560,30 +1560,30 @@ class GaitPyCountSteps(GaitBoutExtractStep):
         )
 
 
-class GaitPyPowerBoutDivSteps(ExtractPowerBoutDivSteps):
-    """Extract step power from GaitPy with walking bouts."""
+class CWTPowerBoutDivSteps(ExtractPowerBoutDivSteps):
+    """Extract step power from CWT with walking bouts."""
 
     def __init__(self, **kwargs):
         data_set_ids = [
             "walking_placement_no_turn_bouts",
             "vertical_acceleration",
-            "gaitpy_with_walking_bouts",
+            "cwt_with_walking_bouts",
         ]
         super().__init__(data_set_ids=data_set_ids, **kwargs)
 
 
-class GaitPyPowerBoutDivStepsWithoutBout(ExtractStep):
-    """Extract step power with GaitPy dataset without walking bouts."""
+class CWTPowerBoutDivStepsWithoutBout(ExtractStep):
+    """Extract step power with CWT dataset without walking bouts."""
 
     def __init__(self, **kwargs):
-        data_set_ids = ["vertical_acceleration", "gaitpy"]
+        data_set_ids = ["vertical_acceleration", "cwt"]
         definition = MeasureValueDefinitionPrototype(
             measure_name=AV("step power", "sp"),
             data_type="int16",
             validator=GREATER_THAN_ZERO,
             description="The integral of the centered acceleration magnitude "
             "between the first and last step divided by the "
-            "number of steps computed with the GaitPy algorithm.",
+            "number of steps computed with the CWT algorithm.",
         )
         super().__init__(
             data_set_ids=data_set_ids,
@@ -1593,13 +1593,13 @@ class GaitPyPowerBoutDivStepsWithoutBout(ExtractStep):
         )
 
 
-class GaitPyStepCountWithoutBout(ExtractStep):
-    """Extract step count with GaitPy dataset without walking bouts."""
+class CWTStepCountWithoutBout(ExtractStep):
+    """Extract step count with CWT dataset without walking bouts."""
 
     def __init__(self, **kwargs):
         data_set_ids = "cwt_measures"
         description = (
-            "The number of steps detected with gaitpy"
+            "The number of steps detected with cwt"
             " algorithm not using walking bouts."
         )
         definition = MeasureValueDefinitionPrototype(
@@ -1694,8 +1694,8 @@ class AggregateAllCWTMeasuresWithoutBout(ProcessingStepGroup):
         super().__init__(steps=steps, **kwargs)
 
 
-class GaitPyMeasures(ProcessingStepGroup):
-    """Extract Del Din measures based on GaitPy Steps and a bout strategy."""
+class CWTMeasures(ProcessingStepGroup):
+    """Extract Del Din measures based on CWT Steps and a bout strategy."""
 
     def __init__(self, bout_strategy: BoutStrategyModality, **kwargs):
         data_set_id = "cwt_measures_with_walking_bouts"
@@ -1703,37 +1703,37 @@ class GaitPyMeasures(ProcessingStepGroup):
             AggregateAllCWTMeasures(
                 data_set_id=data_set_id, bout_strategy=bout_strategy.bout_cls
             ),
-            GaitPyCountSteps(
+            CWTCountSteps(
                 data_set_id=data_set_id, bout_strategy=bout_strategy.bout_cls
             ),
-            GaitPyStepPower(bout_strategy=bout_strategy.bout_cls),
-            GaitPyStepIntensity(bout_strategy=bout_strategy.bout_cls),
-            GaitPyStepRegularity(bout_strategy=bout_strategy.bout_cls),
-            GaitPyStrideRegularity(bout_strategy=bout_strategy.bout_cls),
+            CWTStepPower(bout_strategy=bout_strategy.bout_cls),
+            CWTStepIntensity(bout_strategy=bout_strategy.bout_cls),
+            CWTStepRegularity(bout_strategy=bout_strategy.bout_cls),
+            CWTStrideRegularity(bout_strategy=bout_strategy.bout_cls),
         ]
         super().__init__(steps, **kwargs)
 
 
-class GaitPyMeasuresWithoutBout(ProcessingStepGroup):
-    """Extract Del Din measures based on GaitPy Steps and a bout strategy."""
+class CWTMeasuresWithoutBout(ProcessingStepGroup):
+    """Extract Del Din measures based on CWT Steps and a bout strategy."""
 
     def __init__(self, **kwargs):
         data_set_id = "cwt_measures"
         steps: List[ProcessingStep] = [
             AggregateAllCWTMeasuresWithoutBout(data_set_id=data_set_id),
-            GaitPyStepCountWithoutBout(),
-            GaitPyStepPowerWithoutBout(),
-            GaitPyStepIntensityWithoutBout(),
-            GaitPyStepRegularityWithoutBout(),
-            GaitPyStrideRegularityWithoutBout(),
+            CWTStepCountWithoutBout(),
+            CWTStepPowerWithoutBout(),
+            CWTStepIntensityWithoutBout(),
+            CWTStepRegularityWithoutBout(),
+            CWTStrideRegularityWithoutBout(),
         ]
         super().__init__(steps, **kwargs)
 
 
-class GaitPyStepPowerWithoutBout(AggregateRawDataSetColumn):
+class CWTStepPowerWithoutBout(AggregateRawDataSetColumn):
     """Extract step power without walking bout."""
 
-    data_set_ids = "gaitpy_optimized_step_vigor"
+    data_set_ids = "cwt_optimized_step_vigor"
     column_id = "step_power"
     aggregations = DEFAULT_AGGREGATIONS_Q95
     definition = MeasureValueDefinitionPrototype(
@@ -1745,23 +1745,23 @@ class GaitPyStepPowerWithoutBout(AggregateRawDataSetColumn):
     )
 
 
-class GaitPyStepPower(ExtractStepPowerAll):
-    """Extract step power for gaitpy."""
+class CWTStepPower(ExtractStepPowerAll):
+    """Extract step power for cwt."""
 
     def __init__(self, **kwargs):
         super().__init__(
             data_set_ids=[
                 "walking_placement_no_turn_bouts",
-                "gaitpy_with_walking_bouts_optimized_step_vigor",
+                "cwt_with_walking_bouts_optimized_step_vigor",
             ],
             **kwargs,
         )
 
 
-class GaitPyStepIntensityWithoutBout(AggregateRawDataSetColumn):
+class CWTStepIntensityWithoutBout(AggregateRawDataSetColumn):
     """Extract step intensity without walking bout."""
 
-    data_set_ids = "gaitpy_optimized_step_vigor"
+    data_set_ids = "cwt_optimized_step_vigor"
     column_id = "step_intensity"
     aggregations = DEFAULT_AGGREGATIONS
     definition = MeasureValueDefinitionPrototype(
@@ -1773,23 +1773,23 @@ class GaitPyStepIntensityWithoutBout(AggregateRawDataSetColumn):
     )
 
 
-class GaitPyStepIntensity(ExtractStepIntensityAll):
-    """Extract step intensity for gaitpy."""
+class CWTStepIntensity(ExtractStepIntensityAll):
+    """Extract step intensity for cwt."""
 
     def __init__(self, **kwargs):
         super().__init__(
             data_set_ids=[
                 "walking_placement_no_turn_bouts",
-                "gaitpy_with_walking_bouts_optimized_step_vigor",
+                "cwt_with_walking_bouts_optimized_step_vigor",
             ],
             **kwargs,
         )
 
 
-class GaitPyStepRegularityWithoutBout(AggregateRawDataSetColumn):
+class CWTStepRegularityWithoutBout(AggregateRawDataSetColumn):
     """Extract step regularity without walking bout."""
 
-    data_set_ids = "gaitpy_optimized_gait_regularity"
+    data_set_ids = "cwt_optimized_gait_regularity"
     column_id = "step_regularity"
     aggregations = DEFAULT_AGGREGATIONS
     definition = MeasureValueDefinitionPrototype(
@@ -1801,10 +1801,10 @@ class GaitPyStepRegularityWithoutBout(AggregateRawDataSetColumn):
     )
 
 
-class GaitPyStrideRegularityWithoutBout(AggregateRawDataSetColumn):
+class CWTStrideRegularityWithoutBout(AggregateRawDataSetColumn):
     """Extract stride regularity without walking bout."""
 
-    data_set_ids = "gaitpy_optimized_gait_regularity"
+    data_set_ids = "cwt_optimized_gait_regularity"
     column_id = "stride_regularity"
     aggregations = DEFAULT_AGGREGATIONS
     definition = MeasureValueDefinitionPrototype(
@@ -1816,27 +1816,27 @@ class GaitPyStrideRegularityWithoutBout(AggregateRawDataSetColumn):
     )
 
 
-class GaitPyStepRegularity(ExtractStepRegularity):
-    """Extract step regularity for gaitpy."""
+class CWTStepRegularity(ExtractStepRegularity):
+    """Extract step regularity for cwt."""
 
     def __init__(self, **kwargs):
         super().__init__(
             data_set_ids=[
                 "walking_placement_no_turn_bouts",
-                "gaitpy_with_walking_bouts_optimized_gait_regularity",
+                "cwt_with_walking_bouts_optimized_gait_regularity",
             ],
             **kwargs,
         )
 
 
-class GaitPyStrideRegularity(ExtractStrideRegularity):
-    """Extract stride regularity for gaitpy."""
+class CWTStrideRegularity(ExtractStrideRegularity):
+    """Extract stride regularity for cwt."""
 
     def __init__(self, **kwargs):
         super().__init__(
             data_set_ids=[
                 "walking_placement_no_turn_bouts",
-                "gaitpy_with_walking_bouts_optimized_gait_regularity",
+                "cwt_with_walking_bouts_optimized_gait_regularity",
             ],
             **kwargs,
         )

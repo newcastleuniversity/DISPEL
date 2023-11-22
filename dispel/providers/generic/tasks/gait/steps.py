@@ -74,18 +74,18 @@ from dispel.providers.generic.tasks.gait.core import (
     TransformStepVigor,
     TransformStepVigorWithoutBout,
 )
-from dispel.providers.generic.tasks.gait.del_din import (
+from dispel.providers.generic.tasks.gait.cwt import (
     STEP_LENGTH_HEIGHT_RATIO,
+    CWTDetectSteps,
+    CWTDetectStepsWithoutBout,
+    CWTMeasures,
+    CWTMeasuresWithoutBout,
     CWTMeasureTransformation,
     CWTMeasureWithoutBoutTransformation,
-    FormatAccelerationGaitPy,
-    GaitPyDetectSteps,
-    GaitPyDetectStepsWithoutBout,
-    GaitPyMeasures,
-    GaitPyMeasuresWithoutBout,
+    FormatAccelerationCWT,
     HeightChangeCOM,
-    OptimizeGaitpyStepDataset,
-    OptimizeGaitpyStepDatasetWithoutWalkingBout,
+    OptimizeCwtStepDataset,
+    OptimizeCwtStepDatasetWithoutWalkingBout,
     get_subject_height,
 )
 from dispel.providers.generic.tasks.gait.lee import (
@@ -152,7 +152,7 @@ class ComputeDistanceInertial(LevelProcessingStep, MeasureDefinitionMixin):
             MeasureValue,
             level.measure_set.get(
                 ExtractStepCount.definition.create_definition(
-                    modalities=[AV("gaitpy", "gp"), NO_BOUT_MODALITY],
+                    modalities=[AV("cwt", "gp"), NO_BOUT_MODALITY],
                     bout_strategy_repr=NO_BOUT_MODALITY.abbr,
                     step_detector="unknown",
                     **kwargs,
@@ -385,32 +385,32 @@ class LeeDetectionAndTransformSteps(ProcessingStepGroup):
     ]
 
 
-class GaitPySteps(ProcessingStepGroup):
-    """GaitPy transformation steps."""
+class CWTSteps(ProcessingStepGroup):
+    """CWT transformation steps."""
 
     steps = [
-        # Format Acceleration to run GaitPy Step Detection
-        FormatAccelerationGaitPy(),
-        # Detect Steps using GaitPy Wavelet Transform
-        GaitPyDetectStepsWithoutBout(data_set_ids="acc_ts_g_rotated_resampled_detrend"),
-        GaitPyDetectSteps(
+        # Format Acceleration to run CWT Step Detection
+        FormatAccelerationCWT(),
+        # Detect Steps using CWT Wavelet Transform
+        CWTDetectStepsWithoutBout(data_set_ids="acc_ts_g_rotated_resampled_detrend"),
+        CWTDetectSteps(
             data_set_ids=[
                 "walking_placement_no_turn_bouts",
                 "acc_ts_g_rotated_resampled_detrend",
             ]
         ),
         # Apply Physiological constraints
-        OptimizeGaitpyStepDatasetWithoutWalkingBout("gaitpy"),
-        OptimizeGaitpyStepDataset("gaitpy_with_walking_bouts"),
+        OptimizeCwtStepDatasetWithoutWalkingBout("cwt"),
+        OptimizeCwtStepDataset("cwt_with_walking_bouts"),
         HeightChangeCOM(
             data_set_ids=[
-                "gaitpy_with_walking_bouts_optimized",
+                "cwt_with_walking_bouts_optimized",
                 "acc_ts_g_rotated_resampled_detrend",
             ],
             new_data_set_id="height_change_com_with_walking_bouts",
         ),
         HeightChangeCOM(
-            data_set_ids=["gaitpy_optimized", "acc_ts_g_rotated_resampled_detrend"],
+            data_set_ids=["cwt_optimized", "acc_ts_g_rotated_resampled_detrend"],
             new_data_set_id="height_change_com",
         ),
         # add euclidean norm of accelerometer combined with gyro
@@ -426,7 +426,7 @@ class GaitPySteps(ProcessingStepGroup):
             "norm",
             data_set_ids=[
                 "acc_ts_g_rotated_resampled_euclidean_norm",
-                "gaitpy_optimized",
+                "cwt_optimized",
             ],
         ),
         # compute step power with bout information
@@ -434,32 +434,32 @@ class GaitPySteps(ProcessingStepGroup):
             "norm",
             data_set_ids=[
                 "acc_ts_g_rotated_resampled_euclidean_norm",
-                "gaitpy_with_walking_bouts_optimized",
+                "cwt_with_walking_bouts_optimized",
             ],
         ),
         TransformGaitRegularityWithoutBout(
             "norm",
             data_set_ids=[
                 "acc_ts_g_rotated_resampled_euclidean_norm_detrend",
-                "gaitpy_optimized",
+                "cwt_optimized",
             ],
         ),
         TransformGaitRegularity(
             "norm",
             data_set_ids=[
                 "acc_ts_g_rotated_resampled_euclidean_norm_detrend",
-                "gaitpy_with_walking_bouts_optimized",
+                "cwt_with_walking_bouts_optimized",
             ],
         ),
-        # Compute the GaitPy measures for each gait cycle
+        # Compute the CWT measures for each gait cycle
         CWTMeasureWithoutBoutTransformation(
-            data_set_ids=["gaitpy_optimized", "height_change_com"],
+            data_set_ids=["cwt_optimized", "height_change_com"],
             new_data_set_id="cwt_measures",
         ),
-        # Compute the GaitPy measures for each gait cycle
+        # Compute the CWT measures for each gait cycle
         CWTMeasureTransformation(
             data_set_ids=[
-                "gaitpy_with_walking_bouts_optimized",
+                "cwt_with_walking_bouts_optimized",
                 "height_change_com_with_walking_bouts",
             ],
             new_data_set_id="cwt_measures_with_walking_bouts",
@@ -481,20 +481,20 @@ class LeeMeasureSteps(ProcessingStepGroup):
     steps.append(LeeMeasuresWithoutBoutGroup(modalities=[LEE_MOD, NO_BOUT_MODALITY]))
 
 
-class GaitPyMeasureSteps(ProcessingStepGroup):
-    """GaitPy measure extraction steps."""
+class CWTMeasureSteps(ProcessingStepGroup):
+    """CWT measure extraction steps."""
 
     steps: List[ProcessingStep] = [
-        GaitPyMeasures(
+        CWTMeasures(
             bout_strategy=bout_strategy,
-            modalities=[AV("gaitpy", "gp"), bout_strategy.av],
+            modalities=[AV("cwt", "gp"), bout_strategy.av],
             bout_strategy_repr=bout_strategy.av,
         )
         for bout_strategy in BoutStrategyModality
     ]
     steps.append(
-        GaitPyMeasuresWithoutBout(
-            modalities=[AV("gaitpy", "gp"), NO_BOUT_MODALITY],
+        CWTMeasuresWithoutBout(
+            modalities=[AV("cwt", "gp"), NO_BOUT_MODALITY],
         )
     )
 
@@ -521,10 +521,10 @@ class GaitCoreSteps(ProcessingStepGroup):
         TurnDetectionSteps(),
         # Merge walking dynamics bouts, placement bout and turn bouts.
         MergeDynamicsPlacementTurn(),
-        # GaitPy transformation
-        GaitPySteps(),
-        # GaitPy Measures computation
-        GaitPyMeasureSteps(),
+        # CWT transformation
+        CWTSteps(),
+        # CWT Measures computation
+        CWTMeasureSteps(),
         # Distance steps inertial
         StepsDistanceInertial(),
     ]

@@ -952,7 +952,7 @@ def walking_detection_harmonic(
         sampling rate.
     """
     # Define the size of the temporal window
-    # 3 seconds as in GaitPy
+    # 3 seconds as in CWT
     if vertical_acc.index.freq is None:
         raise ValueError(
             "One is trying to detect walking bout"
@@ -1485,7 +1485,7 @@ class DetectBouts(TransformStep):
 
 
 class DetectBoutsHarmonic(DetectBouts):
-    """Detect walking bouts with GaitPy."""
+    """Detect walking bouts with CWT."""
 
     data_set_ids = "vertical_acceleration"
     new_data_set_id = "movement_bouts"
