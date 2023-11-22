@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.5...v1.1.0) (2023-11-21)
+
+
+### Features
+
+* **docs:** add logo and update providers list. ([a399d3a](https://github.com/newcastleuniversity/DISPEL/commit/a399d3a14840c9b9a981be8826ecab5e91367c31))
+
 ## [1.0.5](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.4...v1.0.5) (2023-11-21)
 
 
