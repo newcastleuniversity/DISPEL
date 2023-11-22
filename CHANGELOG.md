@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/newcastleuniversity/DISPEL/compare/v1.1.0...v1.1.1) (2023-11-22)
+
+
+### Bug Fixes
+
+* **naming:** rename gp to cwt ([7fe3537](https://github.com/newcastleuniversity/DISPEL/commit/7fe3537e11c59212efe95e66ef2b2936dcfd5f6c))
+
 # [1.1.0](https://github.com/newcastleuniversity/DISPEL/compare/v1.0.5...v1.1.0) (2023-11-21)
 
 
