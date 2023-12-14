@@ -1,4 +1,4 @@
-![Dispel Logo](https://github.com/newcastleuniversity/DISPEL/blob/main/docs/_static/dispel-logo.png)
+![Dispel Logo](https://raw.githubusercontent.com/newcastleuniversity/DISPEL/main/docs/_static/dispel-logo.png)
 
 --------------------------------------------------------------------------------
 
