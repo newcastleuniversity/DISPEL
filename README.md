@@ -32,8 +32,8 @@ for how to install and get started with `DISPEL`.
 
 DISPEL is a community-driven project with several skillful engineers and researchers contributing to it.
 
-DISPEL is currently maintained by [Alf Scotland](https://github.com/alf-scotland), [Angelos Karatsidis](https://github.com/Karatsidis) and [Gautier Cosne](https://github.com/gcosne), with major contributions of talented individuals in various forms and means.
-A non-exhaustive list needs to mention: Adrien Juraver, Joaquin Penalver de Andres, Ali Neishabouri, Clément Dulong, Oussama Tchita, Loïc Carment, Angéline Plaud, Kevin Bouaou.
+DISPEL is currently maintained by [Chloe Hinchliffe](https://github.com/Chloe1458), [Alf Scotland](https://github.com/alf-scotland), [Adrien Juraver](https://github.com/adrienju), [Angelos Karatsidis](https://github.com/Karatsidis) and [Gautier Cosne](https://github.com/gcosne), with major contributions of talented individuals in various forms and means.
+A non-exhaustive list needs to mention: Joaquin Penalver de Andres, Ali Neishabouri, Clément Dulong, Oussama Tchita, Loïc Carment, Angéline Plaud, Kevin Bouaou.
 
 ## License
 
