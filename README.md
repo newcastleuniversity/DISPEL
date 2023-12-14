@@ -1,4 +1,4 @@
-![Dispel Logo](./docs/_static/dispel-logo.png)
+![Dispel Logo](https://github.com/newcastleuniversity/DISPEL/blob/main/docs/_static/dispel-logo.png)
 
 --------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ DISPEL is a python DIgital Signal ProcEssing Library developed to standardize ex
 
 ## Contribution
 
-Join our efforts in enhancing DISPEL's capabilities by contributing new processing modules and improvements; for detailed guidelines, please refer to our [CONTRIBUTING](CONTRIBUTING.rst) file.
+Join our efforts in enhancing DISPEL's capabilities by contributing new processing modules and improvements; for detailed guidelines, please refer to our [CONTRIBUTING](https://github.com/newcastleuniversity/DISPEL/blob/main/CONTRIBUTING.rst) file.
 
 ## Documentation
 
@@ -32,9 +32,9 @@ for how to install and get started with `DISPEL`.
 
 DISPEL is a community-driven project with several skillful engineers and researchers contributing to it.
 
-DISPEL is currently maintained by [Alf Scotland](https://github.com/alf-scotland), [Angelos Karatsidis](https://github.com/akaratsidis),  with major contributions of talented individuals in various forms and means.
-A non-exhaustive list needs to mention: Gautier Cosne, Adrien Juraver, Joaquin Penalver de Andres, Ali Neishabouri, Clément Dulong, Oussama Tchita, Loïc Carment, Angéline Plaud, Kevin Bouaou.
+DISPEL is currently maintained by [Alf Scotland](https://github.com/alf-scotland), [Angelos Karatsidis](https://github.com/Karatsidis) and [Gautier Cosne](https://github.com/gcosne), with major contributions of talented individuals in various forms and means.
+A non-exhaustive list needs to mention: Adrien Juraver, Joaquin Penalver de Andres, Ali Neishabouri, Clément Dulong, Oussama Tchita, Loïc Carment, Angéline Plaud, Kevin Bouaou.
 
 ## License
 
-DISPEL has a MIT-license, as found in the [LICENSE](LICENSE) file.
+DISPEL has a MIT-license, as found in the [LICENSE](https://github.com/newcastleuniversity/DISPEL/blob/main/LICENSE) file.
